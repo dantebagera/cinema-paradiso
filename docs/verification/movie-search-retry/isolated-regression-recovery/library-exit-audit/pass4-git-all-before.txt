@@ -1,0 +1,816 @@
+ M app.py
+ M docs/tv-contracts.md
+ M docs/verification/tv-normal-import/parity/library.png
+ M docs/verification/tv-normal-import/parity/series.png
+ M docs/verification/tv-numeric-repair/verify-live-desktop.cjs
+ M native/player/CMakeLists.txt
+ M native/player/qml/Main.qml
+ D native/player/resources/icons/forward-10.svg
+ D native/player/resources/icons/rewind-10.svg
+ M native/player/runtime-metadata.json
+ M native/player/src/MpvItem.cpp
+ M native/player/src/MpvItem.h
+ M native/player/src/PlayerBridge.cpp
+ M native/player/src/PlayerBridge.h
+ M native/player/tools/smoke_player.py
+ M services/acquisition_store.py
+ M services/catalog_repository.py
+ M services/catalog_store.py
+ M services/curation_store.py
+ M services/iptv_movie_store.py
+ M services/library_ingestion.py
+ M services/movie_acquisition.py
+ M services/playback_history.py
+ M services/player_catalog.py
+ M services/player_config.py
+ M services/player_manager.py
+ M services/player_protocol.py
+ M services/tv_acquisition.py
+ M services/tv_catalog_repository.py
+ M services/tv_filename_parser.py
+ M services/tv_metadata.py
+ M services/tv_monitoring.py
+ M services/tv_playback.py
+ M services/tv_read_model.py
+ M services/tv_routes.py
+ M services/tv_search.py
+ M services/verified_import.py
+ M src/App.jsx
+ M src/api/movieDetails.js
+ M src/components/RelatedMovieRail.jsx
+ M src/components/SharedMovieCards.jsx
+ M src/components/movie-card/MovieCard.jsx
+ M src/components/movie-card/expandedCardViewport.js
+ M src/components/movie-card/movieCard.css
+ M src/discoverUtils.js
+ M src/features/discover/DiscoverWorkspace.jsx
+ M src/features/home/HomeWorkspace.jsx
+ M src/features/iptv/IPTVWorkspace.jsx
+ M src/features/iptv/iptv.css
+ M src/features/library/LibraryWorkspace.jsx
+ M src/features/movie-lists/ListsWorkspace.jsx
+ M src/features/movie-lists/MovieListsWorkspace.jsx
+ M src/features/movie-lists/TVListsWorkspace.jsx
+ M src/features/notifications/NotificationWindow.jsx
+ M src/features/search/AdvancedSearchBuilder.jsx
+ M src/features/search/SearchField.jsx
+ M src/features/tv/MediaWorkspace.jsx
+ M src/features/tv/TVAcquisitionReview.jsx
+ M src/features/tv/TVBulkActionBar.jsx
+ M src/features/tv/TVFileView.jsx
+ M src/features/tv/TVLibraryImport.jsx
+ M src/features/tv/TVSearchControls.jsx
+ M src/features/tv/TVWorkspace.jsx
+ M src/features/tv/tv.css
+ M src/main.jsx
+ M src/styles.css
+ M src/styles/identityReview.css
+ M src/styles/metadataAuthority.css
+ M src/styles/movieRelationships.css
+ M src/utils/homeMovies.js
+ M tests/discover_paging_server.py
+ M tests/e2e/app-smoke.spec.js
+ M tests/e2e/caret-visibility.spec.js
+ M tests/e2e/continue-watching.spec.js
+ M tests/e2e/cross-page-selection.spec.js
+ M tests/e2e/discover-paging.spec.js
+ M tests/e2e/movie-awards.spec.js
+ M tests/e2e/movie-relationships.spec.js
+ M tests/e2e/native-tv.spec.js
+ M tests/e2e/tv-download-contracts.spec.js
+ M tests/e2e/tv-expanded-parity.spec.js
+ M tests/e2e/tv-normal-import.spec.js
+ M tests/e2e/tv-parity.spec.js
+ M tests/e2e/tv-stabilization.spec.js
+ M tests/frontend_source.py
+ M tests/homeMovies.test.mjs
+ M tests/movie_relationships.test.mjs
+ M tests/native_tv_server.py
+ M tests/test_advanced_library_api.py
+ M tests/test_ai_control_ui.py
+ M tests/test_continue_watching_ui.py
+ M tests/test_discover_hover_ui.py
+ M tests/test_full_row_card_grids_ui.py
+ M tests/test_iptv_movie_gates_0_5.py
+ M tests/test_iptv_ui.py
+ M tests/test_library_action_ux.py
+ M tests/test_library_ingestion_ownership.py
+ M tests/test_library_ingestion_paths.py
+ M tests/test_library_ingestion_queue.py
+ M tests/test_library_reconcile.py
+ M tests/test_native_player.py
+ M tests/test_playback_history.py
+ M tests/test_player_manager.py
+ M tests/test_poster_editor_ui.py
+ M tests/test_power_ui.py
+ M tests/test_qbittorrent_ui.py
+ M tests/test_sql_migration_parity.py
+ M tests/test_tv_catalog.py
+ M tests/test_tv_vertical_slice.py
+ M tests/test_unified_movie_card_ui.py
+ M tests/test_user_curation_store.py
+ M tests/test_verified_tv_acquisition.py
+ M tests/test_watched_watchlist_ui.py
+ M tests/test_workspace_layout_ui.py
+?? docs/handoffs/2026-10-15-database-performance-discussion.md
+?? docs/handoffs/2026-10-20-home-performance-implementation.md
+?? docs/plans/2026-10-10-tv-follow-season-packs-and-source-diagnostics-plan.md
+?? docs/plans/2026-10-10-tv-pack-auxiliary-files-fix.md
+?? docs/plans/2026-10-11-mostafa-ui-preview-setup.md
+?? docs/plans/2026-10-11-mostafa-ui-ux-integration-plan.md
+?? docs/plans/2026-10-12-mostafa-performance-plan.md
+?? docs/plans/2026-10-12-upcoming-movies-backend-rule.md
+?? docs/plans/2026-10-13-movie-follow-startup-scan-fix.md
+?? docs/plans/2026-10-14-automatic-download-library-following-refresh.md
+?? docs/plans/2026-10-14-cp-performance-findings.md
+?? docs/plans/2026-10-14-cp-performance-plan.md
+?? docs/plans/2026-10-14-followed-releases-height.md
+?? docs/plans/2026-10-14-following-card-compact-title.md
+?? docs/plans/2026-10-14-following-card-filters-and-download.md
+?? docs/plans/2026-10-14-library-combined-header.md
+?? docs/plans/2026-10-14-library-database-query-plan.md
+?? docs/plans/2026-10-14-new-ui-main-integration.md
+?? docs/plans/2026-10-14-shared-reveal-scrollbars.md
+?? docs/plans/2026-10-14-trailer-header-actions.md
+?? docs/plans/2026-10-15-database-browse-performance-zero-regression-plan.md
+?? docs/plans/2026-10-18-movie-tv-database-adoption-plan.md
+?? docs/plans/2026-10-19-following-full-width-details.md
+?? docs/plans/2026-10-19-home-dashboard-hybrid-technical.md
+?? docs/plans/2026-10-19-home-dashboard-hybrid.md
+?? docs/plans/2026-10-19-home-header-film-projector.md
+?? docs/plans/2026-10-20-home-loading-performance.md
+?? docs/plans/2026-10-20-native-player-playlists-and-settings.md
+?? docs/plans/2026-10-22-native-player-unicode-paths.md
+?? docs/plans/2026-10-23-global-tv-card-density.md
+?? docs/plans/2026-10-23-movie-library-search-and-retry-performance.md
+?? docs/plans/2026-10-23-tv-first-tab-delay.md
+?? docs/plans/2026-10-23-tv-library-loading-performance.md
+?? docs/plans/2026-10-23-tv-visible-load.md
+?? docs/plans/2026-10-24-isolated-regression-and-recovery.md
+?? docs/plans/2026-10-24-library-exit-audit-final.md
+?? docs/plans/2026-10-24-movie-search-retry-controlled-activation.md
+?? docs/plans/assets/2026-10-19-home-dashboard-hybrid/01-slim-header.png
+?? docs/plans/assets/2026-10-19-home-dashboard-hybrid/02-old-following-actions.png
+?? docs/plans/assets/2026-10-19-home-dashboard-hybrid/03-current-following-toolbar.png
+?? docs/plans/assets/2026-10-19-home-dashboard-hybrid/04-current-trending-upcoming.png
+?? docs/plans/assets/2026-10-19-home-dashboard-hybrid/05-current-inline-movie-details.png
+?? docs/plans/assets/2026-10-19-home-dashboard-hybrid/06-old-new-trailers.png
+?? docs/plans/assets/2026-10-19-home-dashboard-hybrid/07-old-continue-watching-and-inspector.png
+?? docs/plans/assets/2026-10-19-home-dashboard-hybrid/08-existing-layout-measurements.json
+?? docs/plans/assets/2026-10-19-home-dashboard-hybrid/09-preparation-baseline.txt
+?? docs/plans/assets/2026-10-19-home-dashboard-hybrid/10-source-fingerprints.json
+?? docs/plans/assets/2026-10-23-library-search-retry-evidence.json
+?? docs/verification/download-completion/automatic-following.png
+?? docs/verification/download-completion/automatic-library.png
+?? docs/verification/download-completion/verification.md
+?? docs/verification/following-card-compact-title/baseline.log
+?? docs/verification/following-card-compact-title/build.log
+?? docs/verification/following-card-compact-title/focused.log
+?? docs/verification/following-card-compact-title/following-compact-1600.png
+?? docs/verification/following-card-compact-title/following-compact-1920.png
+?? docs/verification/following-card-compact-title/label-red.log
+?? docs/verification/following-card-compact-title/regression.log
+?? docs/verification/following-card/README.md
+?? docs/verification/following-card/build.log
+?? docs/verification/following-card/following-awaiting.png
+?? docs/verification/following-card/following-header.png
+?? docs/verification/following-card/following-monitoring.png
+?? docs/verification/following-card/node.log
+?? docs/verification/following-card/python-final.log
+?? docs/verification/following-full-width-details/build.log
+?? docs/verification/following-full-width-details/following-expanded-1280.png
+?? docs/verification/following-full-width-details/following-expanded-1600.png
+?? docs/verification/following-full-width-details/following-expanded-1920.png
+?? docs/verification/following-full-width-details/home-following-regression.log
+?? docs/verification/global-tv-card-density/dense-1366.png
+?? docs/verification/global-tv-card-density/dense-1920.png
+?? docs/verification/global-tv-card-density/discover-1366.png
+?? docs/verification/global-tv-card-density/discover-1920.png
+?? docs/verification/global-tv-card-density/expanded-1366.png
+?? docs/verification/global-tv-card-density/expanded-1920.png
+?? docs/verification/global-tv-card-density/expanded-preview-1366.png
+?? docs/verification/global-tv-card-density/library-1366.png
+?? docs/verification/global-tv-card-density/library-1920.png
+?? docs/verification/global-tv-card-density/lists-1366.png
+?? docs/verification/global-tv-card-density/lists-1920.png
+?? docs/verification/global-tv-card-density/report.md
+?? docs/verification/home-header/approved-mockup.png
+?? docs/verification/home-header/artwork-prompt.txt
+?? docs/verification/home-header/build.log
+?? docs/verification/home-header/home-desktop-1600.png
+?? docs/verification/home-header/home-header-1280.png
+?? docs/verification/home-header/home-header-1600.png
+?? docs/verification/home-header/home-header-1920.png
+?? docs/verification/home-header/node-tests.log
+?? docs/verification/home-header/python-tests.log
+?? docs/verification/home-header/verified-playwright.log
+?? docs/verification/home-performance/progress.md
+?? docs/verification/home-performance/results.md
+?? docs/verification/library-combined-header/RESULT.md
+?? docs/verification/library-combined-header/baseline.log
+?? docs/verification/library-combined-header/build.log
+?? docs/verification/library-combined-header/combined-header-movie-File-View-1280.png
+?? docs/verification/library-combined-header/combined-header-movie-File-View-1600.png
+?? docs/verification/library-combined-header/combined-header-movie-File-View-2048.png
+?? docs/verification/library-combined-header/combined-header-movie-Media-View-1280.png
+?? docs/verification/library-combined-header/combined-header-movie-Media-View-1600.png
+?? docs/verification/library-combined-header/combined-header-movie-Media-View-2048.png
+?? docs/verification/library-combined-header/combined-header-tv-File-View-1280.png
+?? docs/verification/library-combined-header/combined-header-tv-File-View-1600.png
+?? docs/verification/library-combined-header/combined-header-tv-File-View-2048.png
+?? docs/verification/library-combined-header/combined-header-tv-Media-View-1280.png
+?? docs/verification/library-combined-header/combined-header-tv-Media-View-1600.png
+?? docs/verification/library-combined-header/combined-header-tv-Media-View-2048.png
+?? docs/verification/library-combined-header/combined-header-tv-long-file-query-1280.png
+?? docs/verification/library-combined-header/discover-1280.png
+?? docs/verification/library-combined-header/discover-1600.png
+?? docs/verification/library-combined-header/discover-1920.png
+?? docs/verification/library-combined-header/discover-filters-open.png
+?? docs/verification/library-combined-header/final-build.log
+?? docs/verification/library-combined-header/final-focused.log
+?? docs/verification/library-combined-header/final-full.log
+?? docs/verification/library-combined-header/final-python.log
+?? docs/verification/library-combined-header/focused.log
+?? docs/verification/library-combined-header/full.log
+?? docs/verification/library-combined-header/library-empty.png
+?? docs/verification/library-combined-header/lists-controls.png
+?? docs/verification/library-combined-header/long-query-red.log
+?? docs/verification/library-combined-header/python.log
+?? docs/verification/library-combined-header/search-clear-and-filter-reset.png
+?? docs/verification/library-combined-header/sticky-discover-expanded.png
+?? docs/verification/library-combined-header/sticky-library-files.png
+?? docs/verification/library-combined-header/sticky-tv-library-files.png
+?? docs/verification/library-combined-header/tv-selection-expanded.png
+?? docs/verification/mostafa-performance/RESULT.md
+?? docs/verification/mostafa-performance/after.json
+?? docs/verification/mostafa-performance/artwork-after.log
+?? docs/verification/mostafa-performance/artwork-before.log
+?? docs/verification/mostafa-performance/artwork-final-regression.log
+?? docs/verification/mostafa-performance/artwork-performance.json
+?? docs/verification/mostafa-performance/baseline-after.log
+?? docs/verification/mostafa-performance/baseline.log
+?? docs/verification/mostafa-performance/baseline.py
+?? docs/verification/mostafa-performance/before.json
+?? docs/verification/mostafa-performance/benchmark.mjs
+?? docs/verification/mostafa-performance/compare-protection.py
+?? docs/verification/mostafa-performance/desktop-regression.log
+?? docs/verification/mostafa-performance/diff-check.log
+?? docs/verification/mostafa-performance/identical-before.json
+?? docs/verification/mostafa-performance/interactions-before.json
+?? docs/verification/mostafa-performance/list-benchmark-independent.json
+?? docs/verification/mostafa-performance/list-benchmark.mjs
+?? docs/verification/mostafa-performance/list-performance.json
+?? docs/verification/mostafa-performance/live-after.log
+?? docs/verification/mostafa-performance/live-process-proof.json
+?? docs/verification/mostafa-performance/native-result.json
+?? docs/verification/mostafa-performance/native-tv.log
+?? docs/verification/mostafa-performance/node-final.log
+?? docs/verification/mostafa-performance/preview-build.log
+?? docs/verification/mostafa-performance/preview-start.log
+?? docs/verification/mostafa-performance/preview-start.stderr.log
+?? docs/verification/mostafa-performance/preview-stop.log
+?? docs/verification/mostafa-performance/protection-after.json
+?? docs/verification/mostafa-performance/protection-before-complete.json
+?? docs/verification/mostafa-performance/protection-before.json
+?? docs/verification/mostafa-performance/protection-comparison.json
+?? docs/verification/mostafa-performance/protection-comparison.log
+?? docs/verification/mostafa-performance/protection-refreshed.json
+?? docs/verification/mostafa-performance/python-build.log
+?? docs/verification/mostafa-performance/python-environment-rerun.log
+?? docs/verification/mostafa-performance/python-focused-final.log
+?? docs/verification/mostafa-performance/python-focused.log
+?? docs/verification/mostafa-performance/python-full.log
+?? docs/verification/mostafa-performance/python-result.json
+?? docs/verification/mostafa-performance/python-shared-final.log
+?? docs/verification/mostafa-performance/python-shared-ui.log
+?? docs/verification/mostafa-performance/run-python-verification.ps1
+?? docs/verification/mostafa-performance/shutdown-after-completion.ps1
+?? docs/verification/mostafa-performance/shutdown-dispatch.json
+?? docs/verification/mostafa-performance/tv-expanded-parity.log
+?? docs/verification/mostafa-performance/tv-parity-rerun-results/.last-run.json
+?? docs/verification/mostafa-performance/tv-parity-rerun.log
+?? docs/verification/mostafa-performance/tv-parity.log
+?? docs/verification/mostafa-performance/tv-stream.log
+?? docs/verification/mostafa-performance/warm-after.json
+?? docs/verification/mostafa-performance/warm-after.log
+?? docs/verification/mostafa-ui-ux/RESULT.md
+?? docs/verification/mostafa-ui-ux/baseline-tv-state.json
+?? docs/verification/mostafa-ui-ux/logs/baseline-python-frozen.log
+?? docs/verification/mostafa-ui-ux/logs/collection-final.log
+?? docs/verification/mostafa-ui-ux/logs/desktop-verified.log
+?? docs/verification/mostafa-ui-ux/logs/discover-paging-complete.log
+?? docs/verification/mostafa-ui-ux/logs/layout-owner-final.log
+?? docs/verification/mostafa-ui-ux/logs/native-tv-verified.log
+?? docs/verification/mostafa-ui-ux/logs/navigation-final.log
+?? docs/verification/mostafa-ui-ux/logs/node-verified.log
+?? docs/verification/mostafa-ui-ux/logs/projection-baseline.log
+?? docs/verification/mostafa-ui-ux/logs/projection-current.log
+?? docs/verification/mostafa-ui-ux/logs/python-final.log
+?? docs/verification/mostafa-ui-ux/logs/python-owner-final.log
+?? docs/verification/mostafa-ui-ux/logs/tv-download-contracts-verified.log
+?? docs/verification/mostafa-ui-ux/logs/tv-expanded-parity-verified.log
+?? docs/verification/mostafa-ui-ux/logs/tv-follow-season-packs-verified.log
+?? docs/verification/mostafa-ui-ux/logs/tv-geometry-final.log
+?? docs/verification/mostafa-ui-ux/logs/tv-normal-import-verified.log
+?? docs/verification/mostafa-ui-ux/logs/tv-parity-complete.log
+?? docs/verification/mostafa-ui-ux/logs/tv-protected.log
+?? docs/verification/mostafa-ui-ux/logs/tv-stabilization-complete.log
+?? docs/verification/mostafa-ui-ux/logs/tv-stream-final.log
+?? docs/verification/mostafa-ui-ux/original-runtime-unchanged.json
+?? docs/verification/mostafa-ui-ux/overlay-baseline.json
+?? docs/verification/mostafa-ui-ux/restored-prior-evidence.json
+?? docs/verification/mostafa-ui-ux/source-guard.json
+?? docs/verification/movie-follow/2026-10-13/baseline-hashes.json
+?? docs/verification/movie-follow/2026-10-13/baseline-tests.log
+?? docs/verification/movie-follow/2026-10-13/broader-tests.log
+?? docs/verification/movie-follow/2026-10-13/budget-green-tests.log
+?? docs/verification/movie-follow/2026-10-13/budget-red-tests.log
+?? docs/verification/movie-follow/2026-10-13/build.log
+?? docs/verification/movie-follow/2026-10-13/desktop-final-tests.log
+?? docs/verification/movie-follow/2026-10-13/desktop-tests.log
+?? docs/verification/movie-follow/2026-10-13/desktop-verified-tests.log
+?? docs/verification/movie-follow/2026-10-13/final-verified-tests.log
+?? docs/verification/movie-follow/2026-10-13/focused-tests.log
+?? docs/verification/movie-follow/2026-10-13/movie-follow.png
+?? docs/verification/movie-follow/2026-10-13/red-tests.log
+?? docs/verification/movie-follow/2026-10-13/verification.md
+?? docs/verification/movie-search-retry/4000-final-page.png
+?? docs/verification/movie-search-retry/README.md
+?? docs/verification/movie-search-retry/activation-2026-10-24/README.md
+?? docs/verification/movie-search-retry/activation-2026-10-24/live-library.png
+?? docs/verification/movie-search-retry/activation-2026-10-24/preflight.json
+?? docs/verification/movie-search-retry/activation-2026-10-24/recovery-location.txt
+?? docs/verification/movie-search-retry/activation-2026-10-24/result.json
+?? docs/verification/movie-search-retry/automatic-completion.png
+?? docs/verification/movie-search-retry/automatic-library.png
+?? docs/verification/movie-search-retry/baseline.json
+?? docs/verification/movie-search-retry/bounded-4000-reads.json
+?? docs/verification/movie-search-retry/bounded-final.json
+?? docs/verification/movie-search-retry/bounded-pass.json
+?? docs/verification/movie-search-retry/broader-suite.log
+?? docs/verification/movie-search-retry/build-corrective.log
+?? docs/verification/movie-search-retry/cache-memory.json
+?? docs/verification/movie-search-retry/commit-event-ack-evidence.json
+?? docs/verification/movie-search-retry/completion-suite.log
+?? docs/verification/movie-search-retry/corrective-automatic-completion.png
+?? docs/verification/movie-search-retry/corrective-automatic-library.png
+?? docs/verification/movie-search-retry/corrective-search-final-page.png
+?? docs/verification/movie-search-retry/desktop-functional-evidence.json
+?? docs/verification/movie-search-retry/final-ingestion-suite.log
+?? docs/verification/movie-search-retry/final-owner-suite.json
+?? docs/verification/movie-search-retry/final-owner-suite.log
+?? docs/verification/movie-search-retry/final-sql-parity-suite.log
+?? docs/verification/movie-search-retry/ingestion-suite.log
+?? docs/verification/movie-search-retry/isolated-regression-recovery/README.md
+?? docs/verification/movie-search-retry/isolated-regression-recovery/bounded-pass.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/cross-failure-summary.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/cross-result.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/guard-probe.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/job-close-control.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/location.txt
+?? docs/verification/movie-search-retry/isolated-regression-recovery/movie-owners-final.log
+?? docs/verification/movie-search-retry/isolated-regression-recovery/movie-owners.log
+?? docs/verification/movie-search-retry/isolated-regression-recovery/node-first-result.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/node-full.log
+?? docs/verification/movie-search-retry/isolated-regression-recovery/node-result.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/owners-first-result.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/owners-result.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass2/README.md
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass2/bounded-pass-2.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass2/cross-result.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass2/guard-26244.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass2/guard-54724.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass2/pass2-assertion-mapping.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass2/pass2-baseline-provenance.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass2/pass2-cross-domain.log
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass2/pass2-owned-processes-at-close.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass2/pass2-preflight.log
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass2/pass2-preservation.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass2/pass2-recovery.log
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass2/pass2-six-assertions.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass2/pass2-six-assertions.log
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass2/pass2-test_full_row_card_grids_ui.patch
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass2/pass2-test_library_action_ux.patch
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass2/recovery-boot-results.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass2/recovery-desktop.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass2/result.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/README.md
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/bounded-pass-3.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/final-review.md
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/guard-34644.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/guard-35188.unflushed.empty
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/harness/budget-pass2.py
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/harness/budget-pass3.py
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/harness/dispatch3.py
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/harness/guard.py
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/harness/guard_probe.py
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/harness/pass2_preflight.py
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/harness/pass3-browser-fixture.cjs
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/harness/pass3-playwright.config.cjs
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/harness/pass3_behavior.py
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/harness/pass3_evidence.py
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/harness/pass3_finalize.py
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/harness/pass3_prepare.py
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/harness/pass3_prepare_browser.py
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/harness/pass3_recovery_dispatch.py
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/harness/pass3_store_checks.py
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/harness/pass3_support.py
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/harness/pass3_support_tests.py
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/harness/pass3_ui_server.py
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/harness/sitecustomize.py
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/harness/specs/following-refresh.spec.js
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/harness/specs/home-dashboard-hybrid.spec.js
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/harness/specs/home-loading.spec.js
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/harness/specs/library-search-performance.spec.js
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/harness/specs/pass3-browser-fixture.cjs
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/pass3-browser-home-following.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/pass3-browser-home-following.log
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/pass3-browser-library.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/pass3-browser-library.log
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/pass3-browser-prepare.log
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/pass3-evidence-stage.log
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/pass3-final-seal-2.log
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/pass3-final-seal.log
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/pass3-guard-controls.log
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/pass3-harness-green.log
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/pass3-harness-red.log
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/pass3-home-following-desktop.log
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/pass3-library-desktop-2.log
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/pass3-library-desktop.log
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/pass3-owned-processes-at-close.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/pass3-post-recovery-stores.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/pass3-post-recovery-stores.log
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/pass3-prepare.log
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/pass3-prepared.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/pass3-preservation.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/pass3-progress.md
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/pass3-repeat-evidence.log
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/pass3-source-before.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/pass3-tv-module.log
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/pass3-ui-home-following-ownership.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/pass3-ui-home-following-server.log
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/pass3-ui-library-ownership.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/pass3-ui-library-server-before-pass3-ui-library-9af3c3da33a2455b93dd34172bb34601.log
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/pass3-ui-library-server.log
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/pass3-unit-runs.jsonl
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/result.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/screenshots/home-following/following-refresh-pass3-ma-5370f-efresh-calls-ownership-only/manual-scan-ownership.png
+?? docs/verification/movie-search-retry/isolated-regression-recovery/pass3/screenshots/home-following/home-dashboard-hybrid-heal-be2b8--detail-text-stays-readable/health-large-counts.png
+?? docs/verification/movie-search-retry/isolated-regression-recovery/preservation-proof.json
+?? docs/verification/movie-search-retry/isolated-regression-recovery/result.json
+?? docs/verification/movie-search-retry/own-source.diff
+?? docs/verification/movie-search-retry/performance-baseline.json
+?? docs/verification/movie-search-retry/performance-candidate.json
+?? docs/verification/movie-search-retry/playwright-corrective-completion.log
+?? docs/verification/movie-search-retry/playwright-corrective-search.log
+?? docs/verification/movie-search-retry/poster-completed-following.png
+?? docs/verification/movie-search-retry/process-crash-evidence.json
+?? docs/verification/movie-search-retry/qualification-bounded-published.log
+?? docs/verification/movie-search-retry/qualification-concurrent-overrides.log
+?? docs/verification/movie-search-retry/qualification-desktop-results.json
+?? docs/verification/movie-search-retry/qualification-desktop.log
+?? docs/verification/movie-search-retry/qualification-dispatch-red.log
+?? docs/verification/movie-search-retry/qualification-dispatch-valid-red.log
+?? docs/verification/movie-search-retry/qualification-fifo-green.log
+?? docs/verification/movie-search-retry/qualification-fifo-validation.log
+?? docs/verification/movie-search-retry/qualification-final-fifo-queue.log
+?? docs/verification/movie-search-retry/qualification-final-restart-api.log
+?? docs/verification/movie-search-retry/qualification-metadata-bounded.log
+?? docs/verification/movie-search-retry/qualification-process-inventory.log
+?? docs/verification/movie-search-retry/qualification-remaining-owners.log
+?? docs/verification/movie-search-retry/qualification-storage-regressions.log
+?? docs/verification/movie-search-retry/restart-dispatch-order.json
+?? docs/verification/movie-search-retry/restart-order.json
+?? docs/verification/movie-search-retry/results.json
+?? docs/verification/movie-search-retry/search-final-page.png
+?? docs/verification/movie-search-retry/search-suite.log
+?? docs/verification/movie-search-retry/selection-contract.json
+?? docs/verification/movie-search-retry/snapshot-branches.json
+?? docs/verification/movie-search-retry/tv-import-suite.log
+?? docs/verification/native-player-playlists/RESULT.md
+?? docs/verification/native-player-playlists/assembly.log
+?? docs/verification/native-player-playlists/auto-fixtures-state.json
+?? docs/verification/native-player-playlists/auto-fixtures-stderr.log
+?? docs/verification/native-player-playlists/auto-smoke-final.log
+?? docs/verification/native-player-playlists/installation.json
+?? docs/verification/native-player-playlists/native-build.log
+?? docs/verification/native-player-playlists/playlist.png
+?? docs/verification/native-player-playlists/runtime-status.json
+?? docs/verification/native-player-playlists/settings.png
+?? docs/verification/native-player-playlists/shortcuts.png
+?? docs/verification/native-player-playlists/shutdown-request.json
+?? docs/verification/native-player-playlists/single-file-smoke.json
+?? docs/verification/native-player-playlists/ui-fixtures-state.json
+?? docs/verification/native-player-playlists/ui-fixtures-stderr.log
+?? docs/verification/native-player-unicode/MpvItem.cpp.diff
+?? docs/verification/native-player-unicode/RESULT.md
+?? docs/verification/native-player-unicode/arabic-filename.png
+?? docs/verification/native-player-unicode/assembly.log
+?? docs/verification/native-player-unicode/build.log
+?? docs/verification/native-player-unicode/final-unit-suite.log
+?? docs/verification/native-player-unicode/installation.log
+?? docs/verification/native-player-unicode/installed-inventory.json
+?? docs/verification/native-player-unicode/les-miserables.png
+?? docs/verification/native-player-unicode/live-status.json
+?? docs/verification/native-player-unicode/retained-runtime-files.txt
+?? docs/verification/native-player-unicode/runtime-metadata.json.diff
+?? docs/verification/native-player-unicode/smoke_player.py.diff
+?? docs/verification/native-player-unicode/test_arabic_directory_and_accented_filename.json
+?? docs/verification/native-player-unicode/test_arabic_external_subtitle_on_ascii_video.json
+?? docs/verification/native-player-unicode/test_arabic_filename.json
+?? docs/verification/native-player-unicode/test_ascii_filename_remains_playable.json
+?? docs/verification/native-player-unicode/test_real_les_miserables_with_accented_filename.json
+?? docs/verification/native-player-unicode/timeline-pre-controls.png
+?? docs/verification/native-player-unicode/timeline-staged-final.log
+?? docs/verification/native-player-unicode/timeline-staged.log
+?? docs/verification/native-player-unicode/timeline-subtitle-search.png
+?? docs/verification/native-player-unicode/timeline-timeline-pointer.png
+?? docs/verification/native-player-unicode/timeline-timeline-preview.png
+?? docs/verification/native-player-unicode/unicode-installed.log
+?? docs/verification/native-player-unicode/unicode-staged-final.log
+?? docs/verification/native-player-unicode/unicode-staged.log
+?? docs/verification/new-ui-main/2026-10-14/RESULT.md
+?? docs/verification/new-ui-main/2026-10-14/database-after-activation.json
+?? docs/verification/new-ui-main/2026-10-14/database-pre-activation-complete.json
+?? docs/verification/new-ui-main/2026-10-14/desktop/movie-follow-desktop/movie-follow.png
+?? docs/verification/new-ui-main/2026-10-14/desktop/upcoming-desktop-combined/discover-upcoming-advanced.png
+?? docs/verification/new-ui-main/2026-10-14/desktop/upcoming-desktop-combined/discover-upcoming-final.png
+?? docs/verification/new-ui-main/2026-10-14/desktop/upcoming-desktop-combined/discover-upcoming-first.png
+?? docs/verification/new-ui-main/2026-10-14/desktop/upcoming-desktop-combined/home-upcoming.png
+?? docs/verification/new-ui-main/2026-10-14/final-proof.json
+?? docs/verification/new-ui-main/2026-10-14/historical-screenshot-preservation.json
+?? docs/verification/new-ui-main/2026-10-14/live-desktop/library-probe.json
+?? docs/verification/new-ui-main/2026-10-14/live-desktop/library-probe.png
+?? docs/verification/new-ui-main/2026-10-14/live-desktop/main-home.png
+?? docs/verification/new-ui-main/2026-10-14/live-desktop/main-library.png
+?? docs/verification/new-ui-main/2026-10-14/live-desktop/main-tv-library.png
+?? docs/verification/new-ui-main/2026-10-14/live-desktop/result.json
+?? docs/verification/new-ui-main/2026-10-14/live-desktop/tv-probe.json
+?? docs/verification/new-ui-main/2026-10-14/live-desktop/tv-probe.png
+?? docs/verification/new-ui-main/2026-10-14/live-first-start.json
+?? docs/verification/new-ui-main/2026-10-14/live-restart.json
+?? docs/verification/new-ui-main/2026-10-14/logs/baseline-node.json
+?? docs/verification/new-ui-main/2026-10-14/logs/baseline-node.log
+?? docs/verification/new-ui-main/2026-10-14/logs/broad-desktop.json
+?? docs/verification/new-ui-main/2026-10-14/logs/broad-desktop.log
+?? docs/verification/new-ui-main/2026-10-14/logs/combined-build.json
+?? docs/verification/new-ui-main/2026-10-14/logs/combined-build.log
+?? docs/verification/new-ui-main/2026-10-14/logs/combined-node.json
+?? docs/verification/new-ui-main/2026-10-14/logs/combined-node.log
+?? docs/verification/new-ui-main/2026-10-14/logs/combined-python-focused.json
+?? docs/verification/new-ui-main/2026-10-14/logs/combined-python-focused.log
+?? docs/verification/new-ui-main/2026-10-14/logs/corrected-streaming-wiring.json
+?? docs/verification/new-ui-main/2026-10-14/logs/corrected-streaming-wiring.log
+?? docs/verification/new-ui-main/2026-10-14/logs/full-python-candidate.json
+?? docs/verification/new-ui-main/2026-10-14/logs/full-python-candidate.log
+?? docs/verification/new-ui-main/2026-10-14/logs/iptv-owner-regressions.json
+?? docs/verification/new-ui-main/2026-10-14/logs/iptv-owner-regressions.log
+?? docs/verification/new-ui-main/2026-10-14/logs/live-render-confirmed.log
+?? docs/verification/new-ui-main/2026-10-14/logs/live-render-corrected.log
+?? docs/verification/new-ui-main/2026-10-14/logs/live-render-final.log
+?? docs/verification/new-ui-main/2026-10-14/logs/live-render-probe.log
+?? docs/verification/new-ui-main/2026-10-14/logs/live-render-tv-probe.log
+?? docs/verification/new-ui-main/2026-10-14/logs/live-render.log
+?? docs/verification/new-ui-main/2026-10-14/logs/main-baseline-corrected.json
+?? docs/verification/new-ui-main/2026-10-14/logs/main-baseline-corrected.log
+?? docs/verification/new-ui-main/2026-10-14/logs/main-existing-failure-baseline.json
+?? docs/verification/new-ui-main/2026-10-14/logs/main-existing-failure-baseline.log
+?? docs/verification/new-ui-main/2026-10-14/logs/main-final-full-python.json
+?? docs/verification/new-ui-main/2026-10-14/logs/main-final-full-python.log
+?? docs/verification/new-ui-main/2026-10-14/logs/main-final-node.json
+?? docs/verification/new-ui-main/2026-10-14/logs/main-final-node.log
+?? docs/verification/new-ui-main/2026-10-14/logs/main-launcher-and-retained-contracts.json
+?? docs/verification/new-ui-main/2026-10-14/logs/main-launcher-and-retained-contracts.log
+?? docs/verification/new-ui-main/2026-10-14/logs/main-retained-contracts-confirmed.json
+?? docs/verification/new-ui-main/2026-10-14/logs/main-retained-contracts-confirmed.log
+?? docs/verification/new-ui-main/2026-10-14/logs/motivating-desktop-red.json
+?? docs/verification/new-ui-main/2026-10-14/logs/motivating-desktop-red.log
+?? docs/verification/new-ui-main/2026-10-14/logs/movie-follow-desktop.json
+?? docs/verification/new-ui-main/2026-10-14/logs/movie-follow-desktop.log
+?? docs/verification/new-ui-main/2026-10-14/logs/native-tv-desktop.json
+?? docs/verification/new-ui-main/2026-10-14/logs/native-tv-desktop.log
+?? docs/verification/new-ui-main/2026-10-14/logs/promotion-selection.log
+?? docs/verification/new-ui-main/2026-10-14/logs/red-main-fixes.json
+?? docs/verification/new-ui-main/2026-10-14/logs/red-main-fixes.log
+?? docs/verification/new-ui-main/2026-10-14/logs/schema-and-streaming-green.json
+?? docs/verification/new-ui-main/2026-10-14/logs/schema-and-streaming-green.log
+?? docs/verification/new-ui-main/2026-10-14/logs/schema-atomicity-confirmed.json
+?? docs/verification/new-ui-main/2026-10-14/logs/schema-atomicity-confirmed.log
+?? docs/verification/new-ui-main/2026-10-14/logs/schema-atomicity-red-final.json
+?? docs/verification/new-ui-main/2026-10-14/logs/schema-atomicity-red-final.log
+?? docs/verification/new-ui-main/2026-10-14/logs/schema-atomicity-red-valid.json
+?? docs/verification/new-ui-main/2026-10-14/logs/schema-atomicity-red-valid.log
+?? docs/verification/new-ui-main/2026-10-14/logs/schema-atomicity-red.json
+?? docs/verification/new-ui-main/2026-10-14/logs/schema-atomicity-red.log
+?? docs/verification/new-ui-main/2026-10-14/logs/tv-controls-fresh.json
+?? docs/verification/new-ui-main/2026-10-14/logs/tv-controls-fresh.log
+?? docs/verification/new-ui-main/2026-10-14/logs/tv-normal-fresh.json
+?? docs/verification/new-ui-main/2026-10-14/logs/tv-normal-fresh.log
+?? docs/verification/new-ui-main/2026-10-14/logs/tv-parity-fresh.json
+?? docs/verification/new-ui-main/2026-10-14/logs/tv-parity-fresh.log
+?? docs/verification/new-ui-main/2026-10-14/logs/tv-streaming-fresh.json
+?? docs/verification/new-ui-main/2026-10-14/logs/tv-streaming-fresh.log
+?? docs/verification/new-ui-main/2026-10-14/logs/upcoming-desktop-combined.json
+?? docs/verification/new-ui-main/2026-10-14/logs/upcoming-desktop-combined.log
+?? docs/verification/new-ui-main/2026-10-14/pinned-input-preservation.json
+?? docs/verification/new-ui-main/2026-10-14/post-activation-comparison.json
+?? docs/verification/new-ui-main/2026-10-14/promotion-manifest.json
+?? docs/verification/new-ui-main/2026-10-14/recovery-location.json
+?? docs/verification/new-ui-main/2026-10-14/restart-request.json
+?? docs/verification/new-ui-main/2026-10-14/review.md
+?? docs/verification/new-ui-main/2026-10-14/schema-initialization-performance.json
+?? docs/verification/scrollbars/README.md
+?? docs/verification/scrollbars/following-hover.png
+?? docs/verification/scrollbars/following-idle.png
+?? docs/verification/scrollbars/isolated-build.log
+?? docs/verification/scrollbars/node-suite.log
+?? docs/verification/tv-follow-season-packs/README.md
+?? docs/verification/tv-follow-season-packs/baseline-python.log
+?? docs/verification/tv-follow-season-packs/build-completed.log
+?? docs/verification/tv-follow-season-packs/build-final.log
+?? docs/verification/tv-follow-season-packs/build.log
+?? docs/verification/tv-follow-season-packs/desktop-green.log
+?? docs/verification/tv-follow-season-packs/desktop-native-tv-completed.log
+?? docs/verification/tv-follow-season-packs/desktop-native-tv-final.log
+?? docs/verification/tv-follow-season-packs/desktop-packs-final.log
+?? docs/verification/tv-follow-season-packs/desktop-red.log
+?? docs/verification/tv-follow-season-packs/desktop-tv-download-contracts-completed.log
+?? docs/verification/tv-follow-season-packs/desktop-tv-download-contracts-final.log
+?? docs/verification/tv-follow-season-packs/desktop-tv-follow-season-packs-completed.log
+?? docs/verification/tv-follow-season-packs/desktop-tv-follow-season-packs-final.log
+?? docs/verification/tv-follow-season-packs/desktop-tv-normal-import-completed.log
+?? docs/verification/tv-follow-season-packs/desktop-tv-normal-import-final.log
+?? docs/verification/tv-follow-season-packs/desktop-tv-stabilization-completed.log
+?? docs/verification/tv-follow-season-packs/desktop-tv-stabilization-final.log
+?? docs/verification/tv-follow-season-packs/final-scope-green.log
+?? docs/verification/tv-follow-season-packs/final-scope-red.log
+?? docs/verification/tv-follow-season-packs/focused-completed.log
+?? docs/verification/tv-follow-season-packs/focused-final.log
+?? docs/verification/tv-follow-season-packs/focused.log
+?? docs/verification/tv-follow-season-packs/full-python-completed.log
+?? docs/verification/tv-follow-season-packs/full-python-final.log
+?? docs/verification/tv-follow-season-packs/full-python.log
+?? docs/verification/tv-follow-season-packs/gap-pack-green.log
+?? docs/verification/tv-follow-season-packs/gap-pack-red.log
+?? docs/verification/tv-follow-season-packs/iptv-timing-dependency-check.json
+?? docs/verification/tv-follow-season-packs/iptv-timing-pristine-baseline.log
+?? docs/verification/tv-follow-season-packs/iptv-timing-rerun.log
+?? docs/verification/tv-follow-season-packs/iptv-timing-single-current.log
+?? docs/verification/tv-follow-season-packs/main-checkout-tests.log
+?? docs/verification/tv-follow-season-packs/new-ownership-green.log
+?? docs/verification/tv-follow-season-packs/node-completed.log
+?? docs/verification/tv-follow-season-packs/node.log
+?? docs/verification/tv-follow-season-packs/planning-green.log
+?? docs/verification/tv-follow-season-packs/planning-red.log
+?? docs/verification/tv-follow-season-packs/production-fingerprints-after.json
+?? docs/verification/tv-follow-season-packs/production-fingerprints-before.json
+?? docs/verification/tv-follow-season-packs/progress.md
+?? docs/verification/tv-follow-season-packs/queued-1366.png
+?? docs/verification/tv-follow-season-packs/queued-1920.png
+?? docs/verification/tv-follow-season-packs/recognition-green.log
+?? docs/verification/tv-follow-season-packs/recognition-red.log
+?? docs/verification/tv-follow-season-packs/review-1366.png
+?? docs/verification/tv-follow-season-packs/review-1920.png
+?? docs/verification/tv-follow-season-packs/review-green.log
+?? docs/verification/tv-follow-season-packs/review-red.log
+?? docs/verification/tv-follow-season-packs/source-delivery.json
+?? docs/verification/tv-follow-season-packs/source-review.png
+?? docs/verification/tv-follow-season-packs/thirteen-episode-green.log
+?? docs/verification/tv-follow-season-packs/transfer-review-red.log
+?? docs/verification/tv-library-performance/active-run.json
+?? docs/verification/tv-library-performance/capture_visible.mjs
+?? docs/verification/tv-library-performance/capture_visible.ps1
+?? docs/verification/tv-library-performance/compiled_desktop.ps1
+?? docs/verification/tv-library-performance/first-tab-fix-2026-10-23.md
+?? docs/verification/tv-library-performance/live-first-load-2026-10-23-1534.md
+?? docs/verification/tv-library-performance/memory-comparison.json
+?? docs/verification/tv-library-performance/probe.py
+?? docs/verification/tv-library-performance/progress.md
+?? docs/verification/tv-library-performance/report-compact-attempt.md
+?? docs/verification/tv-library-performance/report-control-correction.md
+?? docs/verification/tv-library-performance/report-desktop-stop.md
+?? docs/verification/tv-library-performance/report-final.md
+?? docs/verification/tv-library-performance/report-local-artwork.md
+?? docs/verification/tv-library-performance/report-resumed.md
+?? docs/verification/tv-library-performance/report-revised-attempt.md
+?? docs/verification/tv-library-performance/report-simultaneous-measurements.md
+?? docs/verification/tv-library-performance/report.md
+?? docs/verification/tv-library-performance/run_check.py
+?? docs/verification/tv-library-performance/task-root.txt
+?? docs/verification/tv-library-performance/visible-load-final-2026-10-23.md
+?? docs/verification/tv-library-performance/visible-load-root.txt
+?? docs/verification/tv-library-performance/visible_server.py
+?? docs/verification/tv-pack-auxiliary-files/README.md
+?? docs/verification/tv-pack-auxiliary-files/baseline-focused.log
+?? docs/verification/tv-pack-auxiliary-files/cleanup-red.log
+?? docs/verification/tv-pack-auxiliary-files/complete-green.log
+?? docs/verification/tv-pack-auxiliary-files/desktop-normal-import.log
+?? docs/verification/tv-pack-auxiliary-files/evidence-delivery.json
+?? docs/verification/tv-pack-auxiliary-files/final-targeted.log
+?? docs/verification/tv-pack-auxiliary-files/focused-final.log
+?? docs/verification/tv-pack-auxiliary-files/focused.log
+?? docs/verification/tv-pack-auxiliary-files/full-python-completed.log
+?? docs/verification/tv-pack-auxiliary-files/full-python-final.log
+?? docs/verification/tv-pack-auxiliary-files/full-python.log
+?? docs/verification/tv-pack-auxiliary-files/green.log
+?? docs/verification/tv-pack-auxiliary-files/junction-red.log
+?? docs/verification/tv-pack-auxiliary-files/live-manifest-read-only.json
+?? docs/verification/tv-pack-auxiliary-files/live-read-only.json
+?? docs/verification/tv-pack-auxiliary-files/main-checkout-tests.log
+?? docs/verification/tv-pack-auxiliary-files/pre-repair-main-source.json
+?? docs/verification/tv-pack-auxiliary-files/red.log
+?? docs/verification/tv-pack-auxiliary-files/save-path-green.log
+?? docs/verification/tv-pack-auxiliary-files/save-path-red.log
+?? docs/verification/tv-pack-auxiliary-files/source-delivery.json
+?? docs/verification/upcoming-movies/2026-10-12/desktop-upcoming.log
+?? docs/verification/upcoming-movies/2026-10-12/discover-upcoming-advanced.png
+?? docs/verification/upcoming-movies/2026-10-12/discover-upcoming-final.png
+?? docs/verification/upcoming-movies/2026-10-12/discover-upcoming-first.png
+?? docs/verification/upcoming-movies/2026-10-12/home-upcoming.png
+?? docs/verification/upcoming-movies/2026-10-12/node-suite.log
+?? docs/verification/upcoming-movies/2026-10-12/python-focused.log
+?? docs/verification/upcoming-movies/2026-10-12/verification.md
+?? native/player/resources/icons/next-file.svg
+?? native/player/resources/icons/playlist.svg
+?? native/player/resources/icons/previous-file.svg
+?? native/player/resources/icons/settings.svg
+?? native/player/tools/smoke_queue.py
+?? services/player_queue.py
+?? src/assets/home-film-projector.png
+?? src/components/AnchoredPopover.jsx
+?? src/components/CatalogMetadataFilters.jsx
+?? src/components/HorizontalCardRail.jsx
+?? src/components/ListsToolbar.jsx
+?? src/components/Sidebar.jsx
+?? src/components/Tooltip.jsx
+?? src/components/WorkspaceChrome.jsx
+?? src/components/WorkspaceControls.jsx
+?? src/components/WorkspaceEmptyState.jsx
+?? src/components/WorkspaceSelectionBar.jsx
+?? src/components/WorkspaceViewActions.jsx
+?? src/components/WorkspaceYearRange.jsx
+?? src/components/horizontalCardRail.css
+?? src/components/movie-card/cardArtwork.js
+?? src/features/home/HomeTrailersPanel.jsx
+?? src/features/home/home.css
+?? src/features/home/homeTrailerModel.js
+?? src/features/search/SearchModeSelect.jsx
+?? src/features/tv/TVSeriesCredits.jsx
+?? src/features/tv/tvCardEnrichment.js
+?? src/hooks/useDismissiblePopover.js
+?? src/hooks/useListCatalogFilters.js
+?? src/hooks/useMovieCardScrollReturn.js
+?? src/styles/scrollbars.css
+?? src/utils/catalogFilterOptions.js
+?? src/utils/listCatalogFilters.js
+?? src/utils/scrollbarActivity.js
+?? tests/download_completion_server.py
+?? tests/e2e/card-artwork-performance.spec.js
+?? tests/e2e/following-card.spec.js
+?? tests/e2e/following-refresh.spec.js
+?? tests/e2e/home-dashboard-hybrid.spec.js
+?? tests/e2e/home-header.spec.js
+?? tests/e2e/home-loading.spec.js
+?? tests/e2e/library-search-performance.spec.js
+?? tests/e2e/lists-layout.spec.js
+?? tests/e2e/movie-follow.spec.js
+?? tests/e2e/movie-remaining-qualification.spec.js
+?? tests/e2e/movie-scroll-return.spec.js
+?? tests/e2e/scrollbar.spec.js
+?? tests/e2e/tv-card-density.spec.js
+?? tests/e2e/tv-first-load.spec.js
+?? tests/e2e/tv-follow-season-packs.spec.js
+?? tests/e2e/tv-visible-load.spec.js
+?? tests/e2e/upcoming-movies.spec.js
+?? tests/e2e/workspace-controls-empty-layout.spec.js
+?? tests/fixtures/library_search_contract.json
+?? tests/fixtures/tv_artwork.svg
+?? tests/home-trailer-model.test.mjs
+?? tests/library-search-requests.test.mjs
+?? tests/list-catalog-filters.test.mjs
+?? tests/list-catalog-performance.test.mjs
+?? tests/movie_follow_server.py
+?? tests/movie_qualification_backend.py
+?? tests/movie_retry_restart_worker.py
+?? tests/run_movie_qualification_desktop.py
+?? tests/test_library_search_performance.py
+?? tests/test_movie_follow_contract.py
+?? tests/test_movie_isolated_qualification.py
+?? tests/test_movie_publication_retries.py
+?? tests/test_movie_remaining_qualification.py
+?? tests/test_player_queue.py
+?? tests/test_player_queue_api.py
+?? tests/test_player_queue_session.py
+?? tests/test_player_unicode_runtime.py
+?? tests/test_tv_credit_portraits.py
+?? tests/test_tv_follow_season_planning.py
+?? tests/test_tv_library_read_performance.py
+?? tests/test_tv_list_filters.py
+?? tests/test_tv_source_diagnostics.py
+?? tests/test_upcoming_discover.py
+?? tests/tv_card_enrichment.test.mjs
+?? tools/movie_search_retry_capture.py
+?? tools/run_movie_isolated_qualification.py
+?? tools/tv_discover_memory.py
+?? tools/tv_readonly_profile.py
+?? tools/tv_tab_timeline.py

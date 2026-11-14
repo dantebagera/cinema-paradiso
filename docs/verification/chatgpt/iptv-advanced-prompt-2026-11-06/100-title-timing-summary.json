@@ -1,0 +1,36 @@
+{
+  "basic": {
+    "seconds_each": [
+      72.529,
+      71.646
+    ],
+    "mean_seconds": 72.0875,
+    "total_tokens_each": [
+      7074,
+      7076
+    ],
+    "mean_tokens": 7075,
+    "mean_input_tokens": 3656,
+    "mean_output_tokens": 3419
+  },
+  "advanced": {
+    "seconds_each": [
+      72.927,
+      73.333
+    ],
+    "mean_seconds": 73.13,
+    "total_tokens_each": [
+      7406,
+      7430
+    ],
+    "mean_tokens": 7418,
+    "mean_input_tokens": 3896,
+    "mean_output_tokens": 3522
+  },
+  "difference": {
+    "seconds": 1.0424999999999898,
+    "time_percent": 1.4461591815501773,
+    "tokens": 343,
+    "tokens_percent": 4.848056537102474
+  }
+}

@@ -1,0 +1,70 @@
+
+> cinema-paradiso-frontend@3.0.0-beta.2 test:e2e
+> powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/run_playwright_e2e.ps1 tests/e2e/stream-player.spec.js --grep TV
+
+CP_TEST_ROOT=C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328
+
+> cinema-paradiso-frontend@3.0.0-beta.2 build
+> vite build --outDir C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328\dist
+
+vite v6.4.3 building for production...
+
+(!) outDir C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328\dist is not inside project root and will not be emptied.
+Use --emptyOutDir to override.
+
+transforming...
+✓ 1714 modules transformed.
+rendering chunks...
+computing gzip size...
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/manifest-CWC4etjQ.webmanifest          0.55 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/logo-Dk1rN4XL.svg                      1.25 kB │ gzip:   0.55 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/index.html                                    1.86 kB │ gzip:   0.83 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/styleguide-motif-crop-B3fTh5_H.png   119.86 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/header-Cr7VYxUL.png                  402.60 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/SharedMovieCards-m9chJEm1.css          4.56 kB │ gzip:   1.31 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/HomeWorkspace-me-HIXh0.css             6.76 kB │ gzip:   1.73 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/tv-lKpofHwb.css                       10.44 kB │ gzip:   2.74 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/IPTVWorkspace-DdyZZRE2.css            39.94 kB │ gzip:   6.56 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/index-Cz-Bcnef.css                   208.93 kB │ gzip:  35.86 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/header-CbieqaTQ.js                     0.05 kB │ gzip:   0.07 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/WorkspaceEmptyState-BDDRbUY5.js        0.33 kB │ gzip:   0.23 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/moviePresentation-Di650b9v.js          0.70 kB │ gzip:   0.44 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/WorkspaceViewActions-CUwDNRWC.js       0.85 kB │ gzip:   0.44 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/Pagination-DlDPH26v.js                 0.88 kB │ gzip:   0.49 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/DiscoverResultGrid-ChmX_BLo.js         0.88 kB │ gzip:   0.40 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/useCardGridMetrics-D4zXU0Vg.js         1.66 kB │ gzip:   0.90 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/WorkspacePathBar-CVuVdu-A.js           2.50 kB │ gzip:   0.96 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/LibraryControls-BPz1_ufL.js            2.83 kB │ gzip:   0.91 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/CatalogMetadataFilters-7hNUh0vr.js     3.12 kB │ gzip:   1.36 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/DownloadsWorkspace-BGHrEnq7.js         3.81 kB │ gzip:   1.56 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/vendor-Bb8JjhAW.js                     3.85 kB │ gzip:   1.72 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/iptv-DSQI6a4J.js                       6.50 kB │ gzip:   1.38 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/MetadataCorrectionModal-DSF5r1q9.js    9.96 kB │ gzip:   3.27 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/StyleGuide-Cxf9ndAj.js                10.43 kB │ gzip:   3.01 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/CardLab-DQdIw3TW.js                   11.48 kB │ gzip:   4.12 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/useMovieCollectionCache-CdrcAzBZ.js   12.11 kB │ gzip:   4.15 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/AIControlWorkspace-BGFPcmFX.js        16.90 kB │ gzip:   5.83 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/HelpWorkspace-BlxC_JVT.js             21.47 kB │ gzip:   6.96 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/HomeWorkspace-DEB2zkeH.js             22.58 kB │ gzip:   7.09 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/WorkspaceSelectionBar-Bpd-Lesw.js     31.71 kB │ gzip:   9.97 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/vendor-icons-BwP572SE.js              33.11 kB │ gzip:   6.72 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/SharedMovieCards-C8XwhVHm.js          42.30 kB │ gzip:  13.15 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/ListsWorkspace-BvBkRF-Q.js            46.51 kB │ gzip:  14.33 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/LibraryWorkspace-DVX-PZOd.js          47.99 kB │ gzip:  14.51 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/DiscoverWorkspace-DraU7Cug.js         60.38 kB │ gzip:  18.53 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/CleanupWorkspace-B7YNc7Nr.js          63.68 kB │ gzip:  16.79 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/TVWorkspace-bechYidg.js               73.41 kB │ gzip:  21.61 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/SettingsWorkspace-BCsUQlHo.js         84.72 kB │ gzip:  21.11 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/IPTVWorkspace-CJk60zhx.js             96.28 kB │ gzip:  25.59 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/index-DtEVqtf0.js                    117.67 kB │ gzip:  35.97 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/vendor-react-CJZMWplS.js             189.82 kB │ gzip:  59.19 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4fb9d6d9bdc642e08eb641e216e2d328/dist/assets/vendor-player-Dv34CeeU.js            353.87 kB │ gzip: 110.81 kB
+✓ built in 2.33s
+
+Running 1 test using 1 worker
+
+(node:66600) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\stream-player.spec.js:81:1 › TV page load clears CP status without changing episode identity or watched state (1.3s)
+
+  1 passed (2.5s)

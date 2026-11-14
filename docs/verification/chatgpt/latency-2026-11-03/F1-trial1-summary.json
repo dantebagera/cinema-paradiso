@@ -1,0 +1,30 @@
+{
+  "feature": "F1",
+  "label": "after",
+  "state": "partial",
+  "message": "diagnostic_call_budget",
+  "model": "gpt-6.1-sol",
+  "prompt": "movies with very twisted story you wont expect the ending",
+  "elapsed_seconds": 101.578562,
+  "inference_attempts": 6,
+  "tmdb_requests": 169,
+  "accepted_count": 49,
+  "scope": "actual CP recommendation owners; separate empty session/store; backend-ready time, not rendered paint",
+  "name": "F1-trial1",
+  "evidence_root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-ai-timing-4vqyvdw3",
+  "gpt_call_seconds": [
+    7.393653,
+    52.106687,
+    8.827339,
+    8.642594,
+    4.013292,
+    4.444636
+  ],
+  "gpt_roundtrip_seconds": 85.428201,
+  "tmdb_wall_seconds": 13.808202,
+  "lease_seconds": 1.527818,
+  "other_seconds": 0.814341,
+  "first_backend_card_seconds": 62.147298,
+  "unverified_control_count": null,
+  "recommendation_source_hash": "61247fbf11ede3bf394462483396c44eef02a400dfce71fea5a017eaa52381ce"
+}

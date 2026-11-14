@@ -1,3 +1,5 @@
+import Button from './ui/Button.jsx';
+import DialogShell, { DialogHeader } from './ui/DialogShell.jsx';
 import { AlertTriangle, BookOpen, Film, Loader2, X } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
@@ -6,7 +8,7 @@ import { cx } from '../utils/appUtils.js';
 import { MovieAwards } from './MovieAwards.jsx';
 import { positiveAwards } from '../api/movieAwards.js';
 
-export function usePersonBiography() {
+export function usePersonBiography(loader) {
   const [personBio, setPersonBio] = useState(null);
   const request = useRef(null);
   useEffect(() => () => request.current?.abort(), []);
@@ -21,7 +23,9 @@ export function usePersonBiography() {
     request.current = controller;
     setPersonBio({ loading: true, error: '', person, role });
     try {
-      const data = await fetchJson(`/api/tmdb/person?person_id=${encodeURIComponent(person.id)}`, { signal: controller.signal });
+      const data = await (loader
+        ? loader(person.id, { signal: controller.signal })
+        : fetchJson(`/api/tmdb/person?person_id=${encodeURIComponent(person.id)}`, { signal: controller.signal }));
       if (!controller.signal.aborted) setPersonBio({ loading: false, error: '', person, role, data });
     } catch (error) {
       if (!controller.signal.aborted) setPersonBio({ loading: false, error: error.message, person, role });
@@ -36,7 +40,7 @@ export function usePersonBiography() {
   return { personBio, openPersonBio, closePersonBio };
 }
 
-export function PersonCreditCard({ person, role, canBrowse, onBrowse, onDiscover, onBio, awardCounts = null, onAwardDiscover = undefined }) {
+export function PersonCreditCard({ person, role, canBrowse, onBrowse, onDiscover, onBio, unavailableReason, awardCounts = null, onAwardDiscover = undefined }) {
   const isDirector = role === 'director' || role === 'creator';
   const className = cx('person-card', isDirector && 'director-person', !canBrowse && 'discover-person-static', canBrowse && 'person-credit-browse', positiveAwards(awardCounts).length && 'person-card-awards');
   const browseLabel = person.character || person.role || (isDirector ? 'Director' : 'Cast');
@@ -55,11 +59,13 @@ export function PersonCreditCard({ person, role, canBrowse, onBrowse, onDiscover
 
   return (
     <div className={className} role={canBrowse ? 'button' : undefined} tabIndex={canBrowse ? 0 : undefined}
+      title={unavailableReason} aria-label={unavailableReason ? `${person.name}: ${unavailableReason}` : undefined}
       onClick={canBrowse ? browse : undefined} onKeyDown={handleKeyDown}>
       <button type="button" className="person-bio-button" onClick={(event) => { event.stopPropagation(); onBio(role, person); }}
         aria-label={`Open biography for ${person.name}`} title="Biography"><BookOpen size={14} /></button>
-      {canDiscover && <button type="button" className="person-discover-button" onClick={(event) => { event.stopPropagation(); onDiscover(role, person); }}
-        aria-label={`Open filmography for ${person.name}`} title="Filmography"><Film size={14} /></button>}
+      {(canDiscover || unavailableReason) && <button type="button" className="person-discover-button" disabled={!canDiscover}
+        onClick={(event) => { event.stopPropagation(); onDiscover(role, person); }}
+        aria-label={unavailableReason || `Open filmography for ${person.name}`} title={unavailableReason || 'Filmography'}><Film size={14} /></button>}
       <PersonAvatar person={person} />
       <MovieAwards counts={awardCounts} person onAwardDiscover={onAwardDiscover && person?.id ? award => onAwardDiscover(role, person, award) : undefined} />
       <strong dir="auto">{person.name}</strong>
@@ -81,12 +87,12 @@ export function PersonBioModal({ state, onClose }) {
 
   const modal = (
     <div className="modal-backdrop person-bio-backdrop" role="presentation" onClick={onClose}>
-      <section className="person-bio-dialog" role="dialog" aria-modal="true" aria-label={`Biography for ${name}`}
+      <DialogShell size="biography" className="person-bio-dialog" role="dialog" aria-modal="true" aria-label={`Biography for ${name}`}
         onClick={(event) => event.stopPropagation()}>
-        <div className="dialog-header person-bio-header">
+        <DialogHeader className="person-bio-header">
           <div><p className="screen-kicker">{roleLabel} profile</p><h2>{name}</h2></div>
-          <button type="button" className="inspector-close" onClick={onClose} aria-label="Close biography"><X size={18} /></button>
-        </div>
+          <Button size="icon" type="button" className="inspector-close" onClick={onClose} aria-label="Close biography"><X size={18} /></Button>
+        </DialogHeader>
         <div className="person-bio-content">
           <div className="person-bio-photo">{profileUrl ? <img src={profileUrl} alt={`${name} portrait`} /> : <span>{initial}</span>}</div>
           <div className="person-bio-copy">
@@ -98,7 +104,7 @@ export function PersonBioModal({ state, onClose }) {
             </>}
           </div>
         </div>
-      </section>
+      </DialogShell>
     </div>
   );
   return typeof document === 'undefined' ? modal : createPortal(modal, document.body);

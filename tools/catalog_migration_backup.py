@@ -73,6 +73,9 @@ def _include_user_data_file(relative_path):
     parts = [part.lower() for part in relative_path.parts]
     if not parts:
         return False
+    if parts[:2] == ['ai', 'chatgpt']:
+        # Credentials and the OAuth host identity must never be relocated/restored.
+        return False
     if parts[0] in {"backups", "catalog-migration-backups"} or parts[0].startswith("catalog-performance-"):
         return False
     if parts[0] != "qbittorrent":

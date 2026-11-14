@@ -1,0 +1,6 @@
+test_a_publication_notification_and_ack_survive_real_process_termination (tests.test_movie_remaining_qualification.RemainingMovieQualificationTest.test_a_publication_notification_and_ack_survive_real_process_termination) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 6.762s
+
+OK

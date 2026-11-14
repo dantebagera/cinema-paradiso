@@ -1,0 +1,131 @@
+
+Running 78 tests using 1 worker
+
+(node:46212) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 tests\e2e\arabic-movie-cards.spec.js:28:48 › discover: Arabic default, English choice, cached reopening (1.8s)
+  ok  2 tests\e2e\arabic-movie-cards.spec.js:28:48 › library: Arabic default, English choice, cached reopening (858ms)
+  ok  3 tests\e2e\arabic-movie-cards.spec.js:50:1 › translation failure retains Arabic title and source plot, then retries (509ms)
+  ok  4 tests\e2e\arabic-movie-cards.spec.js:64:1 › foreign movies retain English and related Arabic titles use the same rule (489ms)
+  ok  5 tests\e2e\arabic-movie-cards.spec.js:74:1 › Home movie rails and inspector default to Arabic (418ms)
+  ok  6 tests\e2e\arabic-movie-cards.spec.js:89:1 › a late Arabic response cannot translate a different movie (2.5s)
+  ok  7 tests\e2e\arabic-movie-cards.spec.js:104:1 › Lists keeps Arabic metadata in cached cards and expands in Arabic (733ms)
+  ok  8 tests\e2e\arabic-movie-cards.spec.js:115:1 › English switches immediately while Arabic loads and survives its late response (518ms)
+  ok  9 tests\e2e\lists-layout.spec.js:11:1 › Popularity uses cached scores for owned and unowned titles while retaining canonical owned display (459ms)
+  ok 10 tests\e2e\lists-layout.spec.js:34:1 › Partial cached projections hydrate the fields needed for active list filters (509ms)
+  ok 11 tests\e2e\lists-layout.spec.js:58:1 › Add movie search renders results and submits the chosen identity without a display crash (619ms)
+  ok 12 tests\e2e\lists-layout.spec.js:83:1 › New list dialog dismisses on browser navigation without submitting or stealing focus (701ms)
+  ok 13 tests\e2e\lists-layout.spec.js:97:1 › Failed filter metadata is visibly incomplete and retry restores matches without list mutations (611ms)
+  ok 14 tests\e2e\lists-layout.spec.js:152:1 › Lists fills the workspace and shares sticky, remembered controls with catalog views (845ms)
+  ok 15 tests\e2e\lists-layout.spec.js:185:1 › List picker searches, dismisses and protects smart lists; dialogs retain failures and save custom names (1.2s)
+  ok 16 tests\e2e\lists-layout.spec.js:217:1 › Search and filter clearing are independent, and selection actions remain reachable while collapsed (653ms)
+  ok 17 tests\e2e\lists-layout.spec.js:237:1 › TV shares the list picker and controls, preserves selection across pages and opens TV Shows (1.0s)
+  x  18 tests\e2e\lists-layout.spec.js:271:1 › Uncached saved movies hydrate the regular Discover card and reuse details when expanded (15.5s)
+(node:52116) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 19 tests\e2e\lists-layout.spec.js:289:1 › Movie list refinements find uncached matches beyond the first page, sort them and preserve valid year drafts (1.6s)
+  ok 20 tests\e2e\lists-layout.spec.js:327:1 › TV list controls submit TV criteria together and clear refinements independently of search (500ms)
+  ok 21 tests\e2e\movie-relationships.spec.js:109:5 › discover cast award icons remain visible beside counts at 1600px (566ms)
+  ok 22 tests\e2e\movie-relationships.spec.js:109:5 › discover cast award icons remain visible beside counts at 1366px (551ms)
+  ok 23 tests\e2e\movie-relationships.spec.js:109:5 › library cast award icons remain visible beside counts at 1600px (488ms)
+  ok 24 tests\e2e\movie-relationships.spec.js:109:5 › library cast award icons remain visible beside counts at 1366px (484ms)
+  ok 25 tests\e2e\movie-relationships.spec.js:148:5 › discover movie artwork at 1920px › expanded movie artwork stays behind the poster and details without an outer hover effect (787ms)
+  ok 26 tests\e2e\movie-relationships.spec.js:148:5 › discover movie artwork at 1366px › expanded movie artwork stays behind the poster and details without an outer hover effect (902ms)
+  ok 27 tests\e2e\movie-relationships.spec.js:148:5 › library movie artwork at 1920px › expanded movie artwork stays behind the poster and details without an outer hover effect (782ms)
+  ok 28 tests\e2e\movie-relationships.spec.js:148:5 › library movie artwork at 1366px › expanded movie artwork stays behind the poster and details without an outer hover effect (923ms)
+  ok 29 tests\e2e\movie-relationships.spec.js:177:1 › movie details collapse from plain content while actions and dialogs remain usable (1.1s)
+  ok 30 tests\e2e\movie-relationships.spec.js:203:1 › discover expanded movie rails reveal the remaining cast and related titles with matching arrows (6.2s)
+  ok 31 tests\e2e\movie-relationships.spec.js:203:1 › library expanded movie rails reveal the remaining cast and related titles with matching arrows (6.0s)
+  ok 32 tests\e2e\movie-relationships.spec.js:281:1 › related posters reveal full title and year on hover and keyboard focus (1.3s)
+  ok 33 tests\e2e\movie-relationships.spec.js:320:1 › stable async rail, scrollable tiles, restored cast and selected related expansion (3.1s)
+  ok 34 tests\e2e\movie-relationships.spec.js:372:1 › Plex-only owned movie resolves rich cast by exact title and year (577ms)
+  ok 35 tests\e2e\movie-relationships.spec.js:395:1 › director and cast rail retains all loaded credits on short desktops (685ms)
+  ok 36 tests\e2e\movie-relationships.spec.js:423:1 › View all keeps source, page, ownership and card position through inline expansion (1.2s)
+  ok 37 tests\e2e\movie-relationships.spec.js:458:1 › bounded View all shows an exact total and stops at the final page for each source (1.7s)
+  ok 38 tests\e2e\movie-relationships.spec.js:512:1 › a failed relationship count preserves loaded cards and can be retried (2.0s)
+  ok 39 tests\e2e\movie-relationships.spec.js:544:1 › provider failure remains local and short desktop keeps all corners visible (655ms)
+  ok 40 tests\e2e\movie-relationships.spec.js:577:1 › late TMDB details recenter the finished card inside a short desktop viewport (1.3s)
+  ok 41 tests\e2e\movie-relationships.spec.js:585:1 › Short desktop keeps expanded card layout and lets lower content scroll below pinned controls (657ms)
+  ok 42 tests\e2e\movie-relationships.spec.js:600:1 › collection shares one row with mandatory lists and list chips stay bounded (740ms)
+  ok 43 tests\e2e\movie-relationships.spec.js:646:3 › library uses shared rail and returns to original expanded card and scroll (1.2s)
+  ok 44 tests\e2e\movie-relationships.spec.js:646:3 › movie-lists uses shared rail and returns to original expanded card and scroll (1.2s)
+  ok 45 tests\e2e\movie-relationships.spec.js:646:3 › ai-control uses shared rail and returns to original expanded card and scroll (1.2s)
+  ok 46 tests\e2e\movie-relationships.spec.js:646:3 › pick uses shared rail and returns to original expanded card and scroll (1.1s)
+  ok 47 tests\e2e\movie-relationships.spec.js:646:3 › browse uses shared rail and returns to original expanded card and scroll (1.1s)
+  ok 48 tests\e2e\movie-relationships.spec.js:689:1 › browser Back and breadcrumbs reverse deeper related exploration (1.2s)
+  ok 49 tests\e2e\movie-relationships.spec.js:708:1 › unowned tile keeps Discover source, streaming and watchlist actions; breadcrumb restores original expansion (946ms)
+  ok 50 tests\e2e\movie-relationships.spec.js:723:1 › Back during relationship loading ignores late results and preserves the expanded origin (2.5s)
+  ok 51 tests\e2e\movie-relationships.spec.js:738:1 › a failed Similar source does not block Recommended in Discover (935ms)
+  ok 52 tests\e2e\movie-relationships.spec.js:750:3 › dense metadata fits at desktop height 1080 (716ms)
+  ok 53 tests\e2e\movie-relationships.spec.js:750:3 › dense metadata fits at desktop height 900 (665ms)
+  ok 54 tests\e2e\movie-relationships.spec.js:750:3 › dense metadata fits at desktop height 720 (723ms)
+(node:54284) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 55 tests\e2e\home-dashboard-hybrid.spec.js:34:3 › hybrid desktop geometry and reachable follows at 1280 (1.5s)
+  ok 56 tests\e2e\home-dashboard-hybrid.spec.js:34:3 › hybrid desktop geometry and reachable follows at 1366 (653ms)
+  ok 57 tests\e2e\home-dashboard-hybrid.spec.js:34:3 › hybrid desktop geometry and reachable follows at 1440 (654ms)
+  ok 58 tests\e2e\home-dashboard-hybrid.spec.js:34:3 › hybrid desktop geometry and reachable follows at 1600 (923ms)
+  ok 59 tests\e2e\home-dashboard-hybrid.spec.js:34:3 › hybrid desktop geometry and reachable follows at 1920 (915ms)
+  ok 60 tests\e2e\home-dashboard-hybrid.spec.js:72:32 › Following keeps its three-row viewport for 0 follows and no history (427ms)
+  ok 61 tests\e2e\home-dashboard-hybrid.spec.js:72:32 › Following keeps its three-row viewport for 1 follows and no history (409ms)
+  ok 62 tests\e2e\home-dashboard-hybrid.spec.js:72:32 › Following keeps its three-row viewport for 3 follows and no history (429ms)
+  ok 63 tests\e2e\home-dashboard-hybrid.spec.js:80:41 › Following details span Home without resizing status panels at 1280 (726ms)
+  ok 64 tests\e2e\home-dashboard-hybrid.spec.js:80:41 › Following details span Home without resizing status panels at 1600 (688ms)
+  ok 65 tests\e2e\home-dashboard-hybrid.spec.js:80:41 › Following details span Home without resizing status panels at 1920 (2.0s)
+  ok 66 tests\e2e\home-dashboard-hybrid.spec.js:107:1 › Following keeps shared details actions, repeat-click close and scroll/focus recovery (796ms)
+  ok 67 tests\e2e\home-dashboard-hybrid.spec.js:131:1 › Following details stay full width while loading and after a details error (634ms)
+  ok 68 tests\e2e\home-dashboard-hybrid.spec.js:157:35 › old trailer geometry and current source grouping at 1600 (926ms)
+  ok 69 tests\e2e\home-dashboard-hybrid.spec.js:157:35 › old trailer geometry and current source grouping at 1920 (862ms)
+  ok 70 tests\e2e\home-dashboard-hybrid.spec.js:183:1 › Continue Watching paints the old native scrollbar at idle, scrolls natively and keeps other rails hidden (2.2s)
+  ok 71 tests\e2e\home-dashboard-hybrid.spec.js:216:1 › health cards retain current counts, stale recovery and truthful missing/empty states (748ms)
+  ok 72 tests\e2e\home-dashboard-hybrid.spec.js:230:1 › health loading preserves cached counts and high-count detail text stays readable (664ms)
+  ok 73 tests\e2e\home-dashboard-hybrid.spec.js:248:1 › health issue cards keep their cleanup destinations (1.5s)
+  ok 74 tests\e2e\home-dashboard-hybrid.spec.js:262:1 › trailer loading, retry, stale data and More videos retain their lifecycle (513ms)
+  ok 75 tests\e2e\home-dashboard-hybrid.spec.js:282:1 › trailer version chooser closes on channel change and navigation; a late feed cannot reopen it (1.6s)
+  ok 76 tests\e2e\home-dashboard-hybrid.spec.js:299:1 › Trending and Coming soon retain per-section inline details, repeated selection and history navigation (1.3s)
+  ok 77 tests\e2e\home-dashboard-hybrid.spec.js:322:1 › Continue Watching preserves TV resume restart remove and missing-episode presentation (734ms)
+  ok 78 tests\e2e\home-dashboard-hybrid.spec.js:346:1 › Continue Watching menus remain completely visible and clickable inside the narrow cards (796ms)
+
+
+  1) tests\e2e\lists-layout.spec.js:271:1 › Uncached saved movies hydrate the regular Discover card and reuse details when expanded 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('.discover-movie-card').filter({ has: getByRole('heading', { name: 'Saved movie 1', exact: true }) })
+    Expected substring: "1.5K votes"
+    Received string:    "Saved movie 12025AnimationActionEnglishUSNot in library7.8 - 1.5K"
+    Timeout: 15000ms
+
+    Call log:
+      - Expect "toContainText" with timeout 15000ms
+      - waiting for locator('.discover-movie-card').filter({ has: getByRole('heading', { name: 'Saved movie 1', exact: true }) })
+        33 × locator resolved to <article tabindex="0" aria-expanded="false" class="unified-movie-card unified-movie-card-ratings unified-movie-card-interactive discover-movie-card movie-awards-consumer">…</article>
+           - unexpected value "Saved movie 12025AnimationActionEnglishUSNot in library7.8 - 1.5K"
+
+
+      280 |   await expect(card).toContainText('US');
+      281 |   await expect(card).toContainText('7.8');
+    > 282 |   await expect(card).toContainText('1.5K votes');
+          |                      ^
+      283 |   await expect(card).toHaveAttribute('style', /landscape\.jpg/);
+      284 |   await card.getByRole('heading', { name: 'Saved movie 1', exact: true }).click();
+      285 |   await expect(card).toHaveClass(/unified-movie-card-expanded/);
+        at C:\Users\dante\.codex\worktrees\youtube-movie-stream\cinema paradiso\tests\e2e\lists-layout.spec.js:282:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    docs\verification\arabic-movie-cards-2026-11-14\desktop-final\lists-layout-Uncached-save-29e54-reuse-details-when-expanded\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: docs\verification\arabic-movie-cards-2026-11-14\desktop-final\lists-layout-Uncached-save-29e54-reuse-details-when-expanded\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs\verification\arabic-movie-cards-2026-11-14\desktop-final\lists-layout-Uncached-save-29e54-reuse-details-when-expanded\trace.zip
+    Usage:
+
+        npx playwright show-trace docs\verification\arabic-movie-cards-2026-11-14\desktop-final\lists-layout-Uncached-save-29e54-reuse-details-when-expanded\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    tests\e2e\lists-layout.spec.js:271:1 › Uncached saved movies hydrate the regular Discover card and reuse details when expanded 
+  77 passed (1.7m)

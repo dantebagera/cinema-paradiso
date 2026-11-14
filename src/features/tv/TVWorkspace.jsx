@@ -1,4 +1,11 @@
+import DialogShell from '../../components/ui/DialogShell.jsx';
+import { Select } from '../../components/ui/FormField.jsx';
+import Badge from '../../components/ui/Badge.jsx';
+import WorkspaceEmptyState from '../../components/WorkspaceEmptyState.jsx';
+import Button, { StreamButton } from '../../components/ui/Button.jsx';
 import Pagination from '../../components/Pagination.jsx';
+import WorkspaceChrome from '../../components/WorkspaceChrome.jsx';
+import WorkspaceViewActions from '../../components/WorkspaceViewActions.jsx';
 import TVSearchControls, { emptyTVQuery } from './TVSearchControls.jsx';
 import TVIngestion from './TVIngestion.jsx';
 import TVLibraryImport from './TVLibraryImport.jsx';
@@ -6,20 +13,22 @@ import TVBulkActionBar from './TVBulkActionBar.jsx';
 import TVPosterEditor from './TVPosterEditor.jsx';
 import TVAcquisitionReview, { TVMonitoringControls, TVSeasonSelection } from './TVAcquisitionReview.jsx';
 import TVFileView from './TVFileView.jsx';
-import { useEffect, useRef, useState } from 'react';
-import { ArrowLeft, Bookmark, Clapperboard, Film, Folder, MonitorPlay, Play, Plus, RefreshCw, Search, Tv } from 'lucide-react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { ArrowLeft, Bookmark, Film, MonitorPlay, Play, Plus, RefreshCw, Search, Tv } from 'lucide-react';
 import { fetchJson } from '../../api/client.js';
 import { ExpandedRating, UnifiedMovieCard } from '../../components/movie-card/MovieCard.jsx';
 import { MovieImdbLink, PosterEditButton, PosterStateControls } from '../../components/SharedMovieCards.jsx';
 import SelectionCheckbox from '../../components/SelectionCheckbox.jsx';
 import { MovieLanguageToggle, useTransientTVLanguage } from '../../components/MovieLanguageToggle.jsx';
 import { formatVoteCount } from '../../utils/moviePresentation.js';
-import { PersonBioModal, PersonCreditCard, usePersonBiography } from '../../components/PersonCreditCard.jsx';
+import { PersonBioModal, usePersonBiography } from '../../components/PersonCreditCard.jsx';
 import RelatedMovieRail from '../../components/RelatedMovieRail.jsx';
+import TVSeriesCredits from './TVSeriesCredits.jsx';
 import { fetchTvRelationshipPage } from '../../api/movieRelationships.js';
 import { withCriterion } from '../search/advancedSearchModel.js';
 import { buildTvStreamTemplateUrl } from '../../utils/appUtils.js';
 import useCardGridMetrics from '../../hooks/useCardGridMetrics.js';
+import { enrichTVCardBatches } from './tvCardEnrichment.js';
 import './tv.css';
 
 const TV_CARD_PAGE_TARGET = 40;
@@ -32,55 +41,60 @@ function displayLanguage(value) {
   catch { return text; }
 }
 
-export function TVSeriesCard({ series, onOpen, onPlay, onWatchlist, onWatched, onPosterEdit, onSelect, selected = false, context = 'library' }) {
+function tvStatusTone(status) {
+  if (status === 'Ended') return 'owned';
+  if (status === 'Returning Series') return 'danger';
+  return 'neutral';
+}
+
+const tvPercentage = (value) => value == null ? '—' : `${value}%`;
+
+export function TVSeriesCard({ series, onOpen, onPlay, onWatchlist, onWatched, onPosterEdit, onSelect, selected = false, context = 'library', reviewOnly = false }) {
   const action = series.primary_action;
   const total = series.coverage_complete ? series.episode_count : series.listed_episode_count;
-  const counts = series.season_count == null ? '' : `${series.season_count} ${series.season_count === 1 ? 'season' : 'seasons'}${total == null ? '' : ` · ${total} episodes${series.coverage_complete ? '' : ' estimated'}`}`;
+  const counts = [series.season_count == null ? '' : `${series.season_count} seas.`, total == null ? '' : `${total} eps.${series.coverage_complete ? '' : ' (est.)'}`].filter(Boolean).join(' · ');
+  const countsDescription = [series.season_count == null ? '' : `${series.season_count} seasons`, total == null ? '' : `${total} episodes${series.coverage_complete ? '' : ' estimated'}`].filter(Boolean).join(' · ');
   const dates = series.year_range || series.first_air_date?.slice(0, 4) || 'Dates unknown';
-  const denominator = series.coverage_complete ? series.episode_count : '—';
-  const percentage = (value) => value == null ? '—' : `${value}%`;
   const position = action?.position_ms ? ` from ${Math.floor(action.position_ms / 60000)}:${String(Math.floor(action.position_ms / 1000) % 60).padStart(2, '0')}` : '';
   const playLabel = action?.target ? `${action.label} ${series.title} ${action.target.code}${position}` : '';
   const watchedDisabledReason = series.id && (series.status !== 'Ended' || !series.coverage_complete)
     ? 'Mark watched is available after an ended show has complete episode metadata' : '';
-  return <UnifiedMovieCard title={series.title} year={<><strong>{dates}</strong>{counts && <span>· {counts}</span>}</>}
-    posterUrl={series.poster_url} rating={series.rating ? Number(series.rating).toFixed(1) : ''} voteCount={series.votes ? `${series.votes} TMDB votes` : ''}
-    chips={series.genres || []} statusLabel={series.status_label || series.status || ''}
+  return <UnifiedMovieCard title={series.title} year={<><strong>{dates}</strong>{counts && <span title={countsDescription}>· {counts}</span>}{series.available_count > 0 && <><span aria-hidden="true">·</span><span className="tv-offline-percentage">{series.offline_percent == null ? 'Offline % unknown' : `${series.offline_percent}% offline`}</span></>}</>}
+    posterUrl={series.poster_url} backdropUrl={series.backdrop_url} rating={series.rating ? Number(series.rating).toFixed(1) : ''} voteCount={series.votes ? `${series.votes} TMDB votes` : ''}
+    chips={series.genres || []} statusLabel={series.status_label || series.status || ''} statusTone={tvStatusTone(series.status)}
     mutedChips={[displayLanguage(series.original_language_name || series.original_language), ...(series.origin_country || []), ...(context === 'library' ? [series.quality_label] : [])].filter(Boolean)}
     navigation metadataLabel="TV series metadata" onToggle={() => onOpen(series)} className="tv-series-card"
-    selected={selected} showPlayOverlay={Boolean(action?.playable)} onPlay={action?.playable ? () => onPlay(action.target.episode_id) : undefined}
+    selected={selected} showPlayOverlay={!reviewOnly && Boolean(action?.playable)} onPlay={!reviewOnly && action?.playable ? () => onPlay(action.target.episode_id) : undefined}
     playLabel={playLabel} playTitle={playLabel}
     cornerControls={<><PosterStateControls title={series.title} watched={series.series_watched} watchlisted={series.watchlisted}
       onToggleWatched={series.id && !watchedDisabledReason && onWatched ? () => onWatched(series) : undefined}
       watchedDisabledReason={watchedDisabledReason} onToggleWatchlist={onWatchlist ? () => onWatchlist(series) : undefined} />
       <PosterEditButton title={series.title} onEdit={series.id && onPosterEdit ? () => onPosterEdit(series) : undefined} />
-      {onSelect && series.id && <SelectionCheckbox className="library-selection-checkbox" checked={selected} onChange={(checked) => onSelect(series, checked)} label={`Select ${series.title}`} />}</>}>
-    {series.id && <p>{series.available_count || 0} / {denominator} episodes offline ({percentage(series.offline_percent)}) · {series.completed_count || 0} / {denominator} watched ({percentage(series.watched_percent)})</p>}
+      {onSelect && (series.id || series.tmdb_id) && <SelectionCheckbox className="library-selection-checkbox" checked={selected} onChange={(checked) => onSelect(series, checked)} label={`Select ${series.title}`} />}</>}>
     {series.pending_review_count > 0 && <p>{series.pending_review_count} file{series.pending_review_count === 1 ? '' : 's'} need identity review</p>}
     {context === 'continue' && action?.target && <p>{action.target.code} · {action.target.title}</p>}
-    {action?.target && !action.playable && <button type="button" className="tv-missing-next" onClick={(event) => { event.stopPropagation(); onOpen(series); }}>Open {action.target.code}: {action.reason}</button>}
     {!action?.target && action?.reason && <p>{action.reason}</p>}
+    {action?.target && !action.playable && <button type="button" className="tv-missing-next" onClick={(event) => { event.stopPropagation(); onOpen(series); }}>Open {action.target.code}: {action.reason}</button>}
   </UnifiedMovieCard>;
 }
 
 function EpisodeVersions({ episode, onClose, onPlay }) {
   const ref = useRef(null);
   useEffect(() => { const previous = document.activeElement; ref.current?.showModal(); return () => previous?.focus(); }, []);
-  return <dialog ref={ref} className="tv-version-dialog" onCancel={onClose} aria-label={`${episode.code} versions`}>
+  return <DialogShell as="dialog" size="wide" ref={ref} className="tv-version-dialog" onCancel={onClose} aria-label={`${episode.code} versions`}>
     <h2>{episode.code} · Versions</h2>
     {episode.versions.map((version) => <div key={version.file_id} className="tv-version">
       <strong>{version.facts.quality_class || 'Unknown quality'} · {version.facts.video_codec || 'Unknown codec'}</strong>
       <p>{version.facts.audio_language || 'Unknown language'} · {Math.round(version.size / 1048576)} MB</p><code>{version.path}</code>
-      <button className="primary-button" disabled={!version.available} onClick={() => { onPlay(episode.id, version.file_id); onClose(); }}>Play this version</button>
+      <Button variant="primary"  disabled={!version.available} onClick={() => { onPlay(episode.id, version.file_id); onClose(); }}>Play this version</Button>
     </div>)}
-    <button className="secondary-button" onClick={onClose}>Close</button>
-  </dialog>;
+    <Button  onClick={onClose}>Close</Button>
+  </DialogShell>;
 }
 
 export function TVSeriesPage({ id, tmdbId, onAdded, onBack, onPlay, onStream, onTrailer, onPersonCredits, onRelatedOpen, onRelatedViewAll, initialSeason, onSeasonChange, streaming, notify }) {
   const [baseSeries, setSeries] = useState(null), [season, setSeason] = useState(initialSeason ?? null), [episodes, setEpisodes] = useState([]);
   const [page, setPage] = useState(1), [pages, setPages] = useState(1), [error, setError] = useState(''), [versions, setVersions] = useState(null), [revision, setRevision] = useState(0), [searchTarget, setSearchTarget] = useState(null);
-  const [castLimit,setCastLimit] = useState(20);
   const { personBio, openPersonBio, closePersonBio } = usePersonBiography();
   const [selected,setSelected] = useState([]), [includeOwned,setIncludeOwned] = useState(false);
   const [choosingSeasons, setChoosingSeasons] = useState(false);
@@ -99,44 +113,46 @@ export function TVSeriesPage({ id, tmdbId, onAdded, onBack, onPlay, onStream, on
   useEffect(() => { let alive = true; setSeries(null); setError(''); fetchJson(base).then((row) => { if (alive) { setSeries(row); setSeason((old) => old ?? row.default_season); } }).catch((e) => alive && setError(e.message)); return () => { alive = false; }; }, [base, revision]);
   useEffect(() => { if (season === null) return; let alive = true; setEpisodes([]); fetchJson(`${base}/seasons/${season}?page=${page}`).then((data) => { if (alive) { setEpisodes(data.items); setPages(data.total_pages); } }).catch((e) => alive && setError(e.message)); return () => { alive = false; }; }, [base, season, page, revision]);
   async function mark(episode) { try { await post(`/api/tv/episodes/${episode.id}/progress`, { completed: !episode.completed, restart: Boolean(episode.completed) }); setRevision((r) => r + 1); } catch (e) { notify(e.message, 'error'); } }
-  if (error) return <div className="empty-state" role="alert"><strong>{error}</strong><button onClick={() => setRevision((r) => r + 1)}>Retry</button><button onClick={onBack}>Back</button></div>;
+  if (error) return <WorkspaceEmptyState size="compact"  role="alert"><strong>{error}</strong><Button onClick={() => setRevision((r) => r + 1)}>Retry</Button><Button onClick={onBack}>Back</Button></WorkspaceEmptyState>;
   if (!series) return <div className="loading-state" role="status">Loading series…</div>;
   const streamUrl = streaming?.enabled && buildTvStreamTemplateUrl(streaming.tv_url_template, series.stream_target);
+  const denominator = series.coverage_complete ? series.episode_count : '—';
+  const statusLabel = series.status_label || series.status || '';
   return <section className="tv-series-page" aria-label={`${series.title} series page`}>
-    <button className="secondary-button" onClick={onBack}><ArrowLeft size={16} />Back to TV Shows</button>
     <header className="tv-series-header" style={series.backdrop_url ? { backgroundImage: `linear-gradient(90deg, #111 30%, #1119), url("${series.backdrop_url}")` } : undefined}>
       {series.poster_url ? <img src={series.poster_url} alt="" /> : <Tv size={64} />}
-      <div><div className="tv-series-heading"><div><p className="screen-kicker">TV SHOW</p><h1 dir="auto">{series.title}</h1><p>{series.year_range} · {series.status_label}</p></div>
+      <div className="tv-series-header-summary"><div className="tv-series-heading"><div><Button size="compact" type="button"  onClick={onBack}><ArrowLeft size={14} />Back to TV Shows</Button><h1 dir="auto">{series.title}</h1><p>{series.year_range}</p></div>
         <div className="unified-movie-header-meta"><ExpandedRating rating={series.rating ? Number(series.rating).toFixed(1) : ''} voteCount={formatVoteCount(series.votes)} /><MovieImdbLink imdbId={series.external_ids?.imdb_id} title={series.title} /></div>
       </div>
         <div className="tv-series-badges" aria-label="Series genres, language, and country">
-          {(series.genres || []).map(genre => <span className="unified-chip" key={`genre-${genre}`}>{genre}</span>)}
-          <span className="unified-chip unified-chip-muted">{displayLanguage(series.original_language_name || series.original_language)}</span>
-          {(series.origin_country?.length ? series.origin_country : ['Country unknown']).map(country => <span className="unified-chip unified-chip-muted" key={`country-${country}`}>{country}</span>)}
+          {(series.genres || []).map(genre => <Badge  key={`genre-${genre}`}>{genre}</Badge>)}
+          <Badge tone="neutral" muted >{displayLanguage(series.original_language_name || series.original_language)}</Badge>
+          {(series.origin_country?.length ? series.origin_country : ['Country unknown']).map(country => <Badge tone="neutral" muted  key={`country-${country}`}>{country}</Badge>)}
+          {statusLabel && <Badge kind="status" tone={tvStatusTone(series.status)} >{statusLabel}</Badge>}
           <span className="unified-chip-row-actions"><MovieLanguageToggle {...languageView.toggleProps} /></span>
         </div>
-        <p>{series.season_count} {series.season_count === 1 ? 'season' : 'seasons'} · {series.episode_count} {id ? 'released episodes' : 'episodes listed'} · {series.available_count} available</p><p dir="auto">{series.overview}</p>{series.metadata_notice && <p role="status">{series.metadata_notice}</p>}{series.runtime && <p>{series.runtime} min per episode</p>}
+        <p>{series.season_count} {series.season_count === 1 ? 'season' : 'seasons'} · {series.episode_count} {id ? 'released episodes' : 'episodes listed'} · {series.available_count} available</p>
+        {id && <p className="tv-series-progress">{series.available_count || 0} / {denominator} eps. offline ({tvPercentage(series.offline_percent)}) · {series.completed_count || 0} / {denominator} watched ({tvPercentage(series.watched_percent)})</p>}
+      </div>
+      <div className="tv-series-header-details">
+        <p dir="auto">{series.overview}</p>{series.metadata_notice && <p role="status">{series.metadata_notice}</p>}{series.runtime && <p>{series.runtime} min per episode</p>}
         <p><a href={`https://www.themoviedb.org/tv/${series.tmdb_id}`} target="_blank" rel="noreferrer">TMDB</a></p>
-        <div className="card-actions"><button type="button" className="btn btn-primary btn-green" disabled={!series.primary_action.playable} onClick={() => onPlay(series.primary_action.target.episode_id)}><Play size={15} />{series.primary_action.label}</button>
-          {streamUrl && <button type="button" className="btn btn-secondary btn-green-outline" onClick={() => onStream(series, series.stream_target)}><MonitorPlay size={15} />{streaming.label || 'Stream'}</button>}
-          <button type="button" className="btn btn-secondary" disabled={!series.trailer_url} onClick={() => onTrailer?.(series, series.trailer_url)}><Film size={15} />{series.trailer_url ? 'Trailer' : 'Trailer unavailable'}</button>
-          {!id && <button type="button" className="btn btn-primary" onClick={async () => { try { const added = await post('/api/tv/series', { tmdb_id: tmdbId }); onAdded(added.id); } catch (e) { notify(e.message, 'error'); } }}><Plus size={15} />Add to library</button>}
-          {id && <button type="button" className="btn btn-secondary" onClick={async () => { try { await post(`${base}/watchlist`, { watchlisted: !series.watchlisted }); setRevision((r) => r + 1); } catch (e) { notify(e.message, 'error'); } }}><Bookmark size={15} fill={series.watchlisted ? 'currentColor' : 'none'} />{series.watchlisted ? 'Remove from watchlist' : 'Add to watchlist'}</button>}
-          {id && <button type="button" className="btn btn-secondary" onClick={async () => { try { await post(`/api/tv/series/${id}/refresh`); setRevision((r) => r + 1); } catch (e) { notify(e.message, 'error'); } }}><RefreshCw size={15} />Refresh metadata</button>}
-        </div>{!series.primary_action.playable && <p>{series.primary_action.reason}</p>}
+        <div className="card-actions"><Button variant="play" type="button"  disabled={!series.primary_action.playable} onClick={() => onPlay(series.primary_action.target.episode_id)}><Play size={15} />{series.primary_action.label}</Button>
+          {streamUrl && <StreamButton type="button"  onClick={() => onStream(series, series.stream_target)}>{streaming.label || 'Stream'}</StreamButton>}
+          <Button type="button"  disabled={!series.trailer_url} onClick={() => onTrailer?.(series, series.trailer_url)}><Film size={15} />{series.trailer_url ? 'Trailer' : 'Trailer unavailable'}</Button>
+          {!id && <Button variant="primary" type="button"  onClick={async () => { try { const added = await post('/api/tv/series', { tmdb_id: tmdbId }); onAdded(added.id); } catch (e) { notify(e.message, 'error'); } }}><Plus size={15} />Add to library</Button>}
+          {id && <Button type="button"  onClick={async () => { try { await post(`${base}/watchlist`, { watchlisted: !series.watchlisted }); setRevision((r) => r + 1); } catch (e) { notify(e.message, 'error'); } }}><Bookmark size={15} fill={series.watchlisted ? 'currentColor' : 'none'} />{series.watchlisted ? 'Remove from watchlist' : 'Add to watchlist'}</Button>}
+          {id && <Button type="button"  onClick={async () => { try { await post(`/api/tv/series/${id}/refresh`); setRevision((r) => r + 1); } catch (e) { notify(e.message, 'error'); } }}><RefreshCw size={15} />Refresh metadata</Button>}
+        </div>{!series.primary_action.playable && series.primary_action.reason && <p>{series.primary_action.reason}</p>}
       </div>
     </header>
-    <section aria-label="Series cast" className="tv-main-cast"><h2>Cast and creators</h2>{series.cast?.length ? <><div className="movie-expanded-people-grid tv-cast">{series.cast.slice(0,castLimit).map((credit,i)=>{
-      const person = { ...credit, id: credit.tmdb_id, profile_url: credit.portrait_url, character: credit.role };
-      const role = credit.kind || 'actor';
-      return <PersonCreditCard key={`${credit.tmdb_id}-${credit.role}-${i}`} person={person} role={role} canBrowse={Boolean(credit.tmdb_id && onPersonCredits)} onBrowse={onPersonCredits} onDiscover={onPersonCredits} onBio={openPersonBio}/>;
-    })}</div>{series.cast.length>castLimit&&<button className="secondary-button tv-more-cast" onClick={()=>setCastLimit(n=>n+20)}>More cast</button>}</> : <p>{series.metadata_notice ? 'Cast could not be loaded.' : 'No cast information available.'}</p>}</section>
+    <TVSeriesCredits series={series} onPersonCredits={onPersonCredits} onBio={openPersonBio} />
     <RelatedMovieRail movie={series} mediaType="tv" onNavigate={onRelatedOpen} onViewAll={({source})=>onRelatedViewAll?.({tmdbId:series.tmdb_id,title:series.title,source})}/>
     {id && <TVMonitoringControls key={id} seriesId={id} series={series} season={season} notify={notify} />}
-    <label className="tv-season-label">Season <select aria-label="TV season" value={season ?? ''} onChange={(e) => { const nextSeason=Number(e.target.value); setSeason(nextSeason); onSeasonChange?.(nextSeason); setPage(1); setSelected([]); }}>
+    <label className="tv-season-label">Season <Select aria-label="TV season" value={season ?? ''} onChange={(e) => { const nextSeason=Number(e.target.value); setSeason(nextSeason); onSeasonChange?.(nextSeason); setPage(1); setSelected([]); }}>
       {series.seasons.map((item) => <option key={item.number} value={item.number}>{item.title} · {item.available}/{item.episodes} available · {item.completed} watched</option>)}
-    </select><button className="primary-button" disabled={season===null} onClick={()=>setSearchTarget(downloadTarget())}>Download season</button><button className="primary-button" disabled={!series.seasons.some(item => item.number > 0)} onClick={() => reviewSeasons(series.seasons.filter(item => item.number > 0).map(item => item.number))}>Download all seasons</button><button className="secondary-button" onClick={() => setChoosingSeasons(true)}>Choose seasons…</button></label>
-    <div className="tv-actions tv-episode-selection"><button onClick={()=>selectEpisodes(false)}>Select all released</button><button onClick={()=>selectEpisodes(true)}>Select missing</button><button onClick={()=>setSelected([])} disabled={!selected.length}>Clear selection</button><span>{selected.length} episodes selected</span><label><input type="checkbox" checked={includeOwned} onChange={e=>setIncludeOwned(e.target.checked)}/>Include owned episodes (upgrade)</label><button className="primary-button" disabled={!selected.length} onClick={()=>setSearchTarget(downloadTarget({episode_numbers:selected}))}>Download selected</button></div>
+    </Select><Button variant="primary"  disabled={season===null} onClick={()=>setSearchTarget(downloadTarget())}>Download season</Button><Button variant="primary"  disabled={!series.seasons.some(item => item.number > 0)} onClick={() => reviewSeasons(series.seasons.filter(item => item.number > 0).map(item => item.number))}>Download all seasons</Button><Button  onClick={() => setChoosingSeasons(true)}>Choose seasons…</Button></label>
+    <div className="tv-actions tv-episode-selection"><Button onClick={()=>selectEpisodes(false)}>Select all released</Button><Button onClick={()=>selectEpisodes(true)}>Select missing</Button><Button onClick={()=>setSelected([])} disabled={!selected.length}>Clear selection</Button><span>{selected.length} episodes selected</span><label><input type="checkbox" checked={includeOwned} onChange={e=>setIncludeOwned(e.target.checked)}/>Include owned episodes (upgrade)</label><Button variant="primary"  disabled={!selected.length} onClick={()=>setSearchTarget(downloadTarget({episode_numbers:selected}))}>Download selected</Button></div>
     <Pagination page={page} totalPages={pages} ariaLabel="Episodes page controls above results" onPageChange={setPage} summary={`Season ${season}`}/>
 
     {id && !episodes.some(e=>e.preview) && <TVIngestion seriesId={id} episodes={episodes} onChanged={() => setRevision((r) => r + 1)} />}
@@ -150,11 +166,11 @@ export function TVSeriesPage({ id, tmdbId, onAdded, onBack, onPlay, onStream, on
           {episode.guest_stars?.length > 0 && <p>Guests: {episode.guest_stars.map((person) => `${person.name} (${person.role})`).join(' · ')}</p>}
           {episode.duration_ms > 0 && <progress aria-label={`${episode.code} progress`} value={episode.position_ms || 0} max={episode.duration_ms} />}
         </div>
-        <div className="tv-actions"><button className="primary-button" disabled={!episode.released || !episode.available || Boolean(episode.reconciliation_required)} onClick={() => onPlay(episode.id)}>{episode.position_ms && !episode.completed ? 'Resume' : 'Play'}</button>
-          {stream && <button className="secondary-button" onClick={() => onStream(series, target)}>{streaming.label || 'Stream'}</button>}
-          {episode.versions.length > 0 && <button className="secondary-button" onClick={() => setVersions(episode)}>Versions ({episode.versions.length})</button>}
-          {episode.released && <button className="secondary-button" onClick={() => setSearchTarget(downloadTarget({season:episode.season_number,episode:episode.episode_number}))}>Download episode</button>}
-          <button className="secondary-button" disabled={!id || episode.preview || !episode.released} onClick={() => mark(episode)}>{episode.completed ? 'Mark unwatched' : 'Mark watched'}</button>
+        <div className="tv-actions"><Button variant="play"  disabled={!episode.released || !episode.available || Boolean(episode.reconciliation_required)} onClick={() => onPlay(episode.id)}>{episode.position_ms && !episode.completed ? 'Resume' : 'Play'}</Button>
+          {stream && <StreamButton onClick={() => onStream(series, target)}>{streaming.label || 'Stream'}</StreamButton>}
+          {episode.versions.length > 0 && <Button  onClick={() => setVersions(episode)}>Versions ({episode.versions.length})</Button>}
+          {episode.released && <Button  onClick={() => setSearchTarget(downloadTarget({season:episode.season_number,episode:episode.episode_number}))}>Download episode</Button>}
+          <Button  disabled={!id || episode.preview || !episode.released} onClick={() => mark(episode)}>{episode.completed ? 'Mark unwatched' : 'Mark watched'}</Button>
         </div>
       </article>;
     })}</div>
@@ -191,15 +207,15 @@ function TVContextListing({ listing, onBack, onOpen, onPlay, onStream, streaming
   const title = listing.kind === 'related' ? `More like ${listing.title}` : `${listing.person.name} · TV shows`;
   const pagination = (label) => <Pagination page={page} total={data?.total_results ?? data?.total} totalPages={data?.total_pages} hasNext={data?.has_next} pageStart={(page-1)*(data?.page_size||pageSize)} pageEnd={(page-1)*(data?.page_size||pageSize)+(items?.length||0)} ariaLabel={label} onPageChange={setPage}/>;
   return <section className="tv-workspace tv-context-listing" aria-label={title}>
-    <button className="secondary-button" onClick={onBack}><ArrowLeft size={16}/>Back to series</button>
+    <Button  onClick={onBack}><ArrowLeft size={16}/>Back to series</Button>
     <header><p className="screen-kicker">TV SHOWS</p><h1>{title}</h1><p>{listing.kind === 'related' ? 'Recommended and similar series from TMDB.' : 'TV credits from TMDB.'}</p></header>
-    {listing.kind === 'related' && <div className="related-source-selector" aria-label="Relationship source">{[['all','All'],['recommendations','Recommended'],['similar','Similar']].map(([value,label])=><button type="button" key={value} aria-pressed={source===value} onClick={()=>{setSource(value);setPage(1);}}>{label}</button>)}</div>}
+    {listing.kind === 'related' && <div className="related-source-selector" aria-label="Relationship source">{[['all','All'],['recommendations','Recommended'],['similar','Similar']].map(([value,label])=><Button type="button" key={value} aria-pressed={source===value} onClick={()=>{setSource(value);setPage(1);}}>{label}</Button>)}</div>}
     {(!measured || !items?.length) && <div ref={gridRef} className="tv-series-grid library-grid-metrics-probe" aria-hidden="true" />}
     {data?.notice && <p role="status">{data.notice}</p>}
-    {error ? <div className="empty-state" role="alert"><strong>{error}</strong><button onClick={()=>setRetry(n=>n+1)}>Retry</button></div> : !data ? <div className="loading-state" role="status">Loading TV shows…</div> : <>
+    {error ? <WorkspaceEmptyState size="compact"  role="alert"><strong>{error}</strong><Button onClick={()=>setRetry(n=>n+1)}>Retry</Button></WorkspaceEmptyState> : !data ? <div className="loading-state" role="status">Loading TV shows…</div> : <>
       {pagination('TV results page controls above results')}
-      {items?.length ? <div ref={gridRef} className="tv-series-grid">{items.map(series=><TVSeriesCard key={series.tmdb_id} series={series} context="discover" onOpen={onOpen} onPlay={onPlay}/>)}</div> : <div className="empty-state">No TV shows found.</div>}
-      {data.continue_scan && <button onClick={()=>setRetry(n=>n+1)}>Continue searching</button>}
+      {items?.length ? <div ref={gridRef} className="tv-series-grid">{items.map(series=><TVSeriesCard key={series.tmdb_id} series={series} context="discover" onOpen={onOpen} onPlay={onPlay}/>)}</div> : <WorkspaceEmptyState size="compact" >No TV shows found.</WorkspaceEmptyState>}
+      {data.continue_scan && <Button onClick={()=>setRetry(n=>n+1)}>Continue searching</Button>}
       {pagination('TV results pagination')}
     </>}
   </section>;
@@ -207,24 +223,35 @@ function TVContextListing({ listing, onBack, onOpen, onPlay, onStream, streaming
 
 export default function TVWorkspace({ context, streaming, onStream, onTrailer, notify, mediaNavigation, onOpenMaintenance }) {
   const [query, setQuery] = useState(() => emptyTVQuery(context)), [page, setPage] = useState(1);
-  const { gridRef, measured, pageSize } = useCardGridMetrics({ target: TV_CARD_PAGE_TARGET, max: 100, bias: 'lower' });
+  const { columns, gridRef, measured, pageSize } = useCardGridMetrics({ target: TV_CARD_PAGE_TARGET, max: 100, bias: 'lower' });
+  const gridNode = useRef(null);
+  const attachGrid = useCallback(node => { gridNode.current = node; gridRef(node); }, [gridRef]);
+  const [auxiliaryReady, setAuxiliaryReady] = useState(false);
   const [data, setData] = useState(null), [error, setError] = useState(''), [revision, setRevision] = useState(0), [seriesId, setSeriesId] = useState(context === 'library' ? initialSeries : null), [previewId, setPreviewId] = useState(() => window.history.state?.tvContext === context ? window.history.state?.tvPreview || null : null);
   const [listing, setListing] = useState(() => window.history.state?.tvContext === context ? window.history.state?.tvListing || null : null);
   const [status, setStatus] = useState('');
   const [fileView, setFileView] = useState(false);
-  const [selectedIds, setSelectedIds] = useState(() => new Set());
+  const [selectedRows, setSelectedRows] = useState(() => new Map());
+  const [selectionError, setSelectionError] = useState('');
   const [posterEditor, setPosterEditor] = useState(null);
   const origin = useRef(null);
   useEffect(() => { setPage(1); }, [pageSize]);
   useEffect(() => { const pop = () => { const state = window.history.state?.tvContext === context ? window.history.state : {}; setSeriesId(context === 'library' ? initialSeries() : null); setPreviewId(state.tvPreview || null); setListing(state.tvListing || null); }; window.addEventListener('popstate', pop); return () => window.removeEventListener('popstate', pop); }, [context]);
-  useEffect(() => { if (!measured) return undefined; let alive = true; const controller = new AbortController(); setError(''); setData(null); fetchJson('/api/tv/catalog/search', { signal: controller.signal, method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ scope: context, query, page, page_size: pageSize, extras: context === 'library' ? { status } : {} }) }).then((result) => alive && setData(result)).catch((e) => alive && e.name !== 'AbortError' && setError(e.message)); return () => { alive = false; controller.abort(); }; }, [context, query, page, pageSize, measured, status, revision]);
+  useEffect(() => { if (!measured) return undefined; let alive = true; const controller = new AbortController(); setError(''); setData(null); fetchJson('/api/tv/catalog/search', { signal: controller.signal, method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ scope: context, query, page, page_size: pageSize, extras: context === 'library' ? { status } : {} }) }).then((result) => { if(alive){setData(result);setAuxiliaryReady(true);} }).catch((e) => {if(alive && e.name !== 'AbortError'){setError(e.message);setAuxiliaryReady(true);}}); return () => { alive = false; controller.abort(); }; }, [context, query, page, pageSize, measured, status, revision]);
   useEffect(()=>{
     if(context!=='discover' || !data?.items?.length) return;
     const controller=new AbortController(); const ids=data.items.filter(r=>r.season_count==null || !r.status).map(r=>r.tmdb_id);
     if(!ids.length)return;
-    for(let start=0;start<ids.length;start+=20){
-      fetchJson('/api/tv/catalog/enrich',{method:'POST',signal:controller.signal,headers:{'Content-Type':'application/json'},body:JSON.stringify({ids:ids.slice(start,start+20)})}).then(result=>setData(current=>current?{...current,items:current.items.map(row=>{const extra=result.items.find(r=>r.tmdb_id===row.tmdb_id);return extra?{...row,...extra,id:row.id,available_count:row.available_count,completed_count:row.completed_count,watchlisted:row.watchlisted}:row;})}:current)).catch(()=>{});
-    }
+    const workspaceBounds=gridNode.current?.closest('main.workspace')?.getBoundingClientRect();
+    const top=Math.max(0,workspaceBounds?.top||0),bottom=Math.min(window.innerHeight,workspaceBounds?.bottom||window.innerHeight);
+    let priorityIds=Array.from(gridNode.current?.children||[]).flatMap((card,index)=>{
+      const rect=card.getBoundingClientRect();
+      return rect.width>0&&rect.bottom>top&&rect.top<bottom ? [data.items[index].tmdb_id] : [];
+    });
+    if(!priorityIds.length)priorityIds=data.items.slice(0,Math.max(1,columns)).map(row=>row.tmdb_id);
+    enrichTVCardBatches(ids,priorityIds,
+      batch=>fetchJson('/api/tv/catalog/enrich',{method:'POST',signal:controller.signal,headers:{'Content-Type':'application/json'},body:JSON.stringify({ids:batch})}),
+      result=>setData(current=>current?{...current,items:current.items.map(row=>{const extra=result.items.find(r=>r.tmdb_id===row.tmdb_id);return extra?{...row,...extra,id:row.id,available_count:row.available_count,completed_count:row.completed_count,watchlisted:row.watchlisted}:row;})}:current),controller.signal);
     return ()=>controller.abort();
   },[context,query,page,revision,Boolean(data)]);
   function open(series) { origin.current = document.activeElement; setListing(null); setSeriesId(series.id || null); setPreviewId(series.id ? null : series.tmdb_id); window.history.pushState({tvContext:context,tvBack:true,...(series.id ? {} : {tvPreview:series.tmdb_id})}, '', series.id ? `/tv/series/${series.id}` : `/${context}`); }
@@ -245,27 +272,43 @@ export default function TVWorkspace({ context, streaming, onStream, onTrailer, n
     } catch (e) { notify(e.message, 'error'); }
   }
   function select(series, checked) {
-    setSelectedIds((current) => { const next = new Set(current); if (checked) next.add(series.id); else next.delete(series.id); return next; });
+    setSelectedRows(current => {
+      const next = new Map(current);
+      const key = series.tmdb_id ? `tmdb:${series.tmdb_id}` : `local:${series.id}`;
+      if (checked) next.set(key, { ...series, id: series.id || current.get(key)?.id });
+      else next.delete(key);
+      return next;
+    });
+  }
+  function clearSelection(completed) {
+    setSelectionError('');
+    setSelectedRows(current => {
+      if (!completed) return new Map();
+      const next = new Map(current);
+      for (const row of completed) next.delete(row.tmdb_id ? `tmdb:${row.tmdb_id}` : `local:${row.id}`);
+      return next;
+    });
   }
   if (seriesId || previewId) return <TVSeriesPage key={seriesId ? `local-${seriesId}` : `preview-${previewId}`} id={seriesId} tmdbId={previewId} initialSeason={window.history.state?.tvSeason} onSeasonChange={next=>window.history.replaceState({...window.history.state,tvSeason:next},'')} onAdded={(id) => { setSeriesId(id); setPreviewId(null); window.history.pushState({tvContext:context,tvBack:true}, '', `/tv/series/${id}`); }} onTrailer={onTrailer} streaming={streaming} onStream={onStream} onPlay={play} notify={notify} onBack={back} onPersonCredits={(role,person)=>openListing({kind:'person',person:{id:person.id,name:person.name,role}})} onRelatedOpen={open} onRelatedViewAll={details=>openListing({kind:'related',...details})}/>;
   if (listing) return <TVContextListing listing={listing} onBack={back} onOpen={open} onPlay={play} onStream={onStream} streaming={streaming}/>;
+  const viewActions = context === 'library' && <WorkspaceViewActions fileView={fileView} label="TV library mode" onMediaView={() => setFileView(false)} onFileView={() => setFileView(true)} onRefresh={() => setRevision(value => value + 1)} refreshLabel="Refresh TV catalog"><TVLibraryImport onOpenMaintenance={onOpenMaintenance} ready={auxiliaryReady}/></WorkspaceViewActions>;
   return <section className={`tv-workspace${context === 'discover' ? ' discover-workspace tv-discover-workspace' : ' library-workspace tv-library-workspace'}`} aria-label={`${context === 'discover' ? 'Discover' : 'Library'} TV Shows`}>
-    <header className={context === 'discover' ? 'library-header discover-header' : 'library-header'}>
-      <div><p className="screen-kicker">{context === 'discover' ? 'FIND YOUR NEXT SERIES' : 'LOCAL TV LIBRARY'}</p><h2>{fileView && context === 'library' ? 'TV Files' : 'TV Shows'}</h2><p>Series, seasons, specials, and every episode.</p></div>
-      {context === 'discover' && <div className="settings-summary"><strong>{data?.items?.length ?? 0}</strong><span>loaded titles</span></div>}
-      {context === 'library' && <div className="library-header-actions"><div className="library-view-row"><div className="segmented-control library-view-switch" role="group" aria-label="TV library mode"><button type="button" className={!fileView ? 'segment-active' : ''} onClick={() => setFileView(false)}><Clapperboard size={18}/> Media View</button><button type="button" className={fileView ? 'segment-active' : ''} onClick={() => setFileView(true)}><Folder size={18}/> File View</button></div><button type="button" className="btn btn-secondary library-rescan-button" aria-label="Refresh TV catalog" onClick={() => setRevision(value => value + 1)}><RefreshCw size={19}/></button></div><TVLibraryImport onOpenMaintenance={onOpenMaintenance} /></div>}
-    </header>
-    {mediaNavigation}
-    {fileView && context === 'library' ? <TVFileView onOpenSeries={open} onPlay={play}/> : <>
-    {(!measured || !data?.items?.length) && <div ref={gridRef} className="tv-series-grid library-grid-metrics-probe" aria-hidden="true" />}
-    <TVSearchControls scope={context} query={query} status={status} onStatusChange={(next) => { setStatus(next); setPage(1); }} onRun={(next) => { setQuery(next); setPage(1); }} onClear={() => setStatus('')} onRefresh={() => setRevision((r) => r + 1)} loading={!data && !error} />
-    {data && <p className="tv-results-summary" role="status">{data.total == null ? `${data.items?.length || 0} results loaded` : `${data.total} ${data.total === 1 ? 'show' : 'shows'}`} · {query.groups.length || status ? `${query.groups.length + (status ? 1 : 0)} active ${query.groups.length + (status ? 1 : 0) === 1 ? 'filter' : 'filters'}` : 'No filters active'}</p>}
+    {fileView && context === 'library' ? <TVFileView onOpenSeries={open} onPlay={play} mediaNavigation={mediaNavigation} viewActions={viewActions}/> : <>
+    {(!measured || !data?.items?.length) && <div ref={attachGrid} className="tv-series-grid library-grid-metrics-probe" aria-hidden="true" />}
+    <WorkspaceChrome navigation={mediaNavigation}>
+    <TVSearchControls actions={viewActions} ready={context !== 'library' || auxiliaryReady} onControlsOpen={() => setAuxiliaryReady(true)} scope={context} query={query} status={status} onStatusChange={(next) => { setStatus(next); setPage(1); }} onRun={(next) => { setQuery(next); setPage(1); }} onClear={() => setStatus('')} onRefresh={() => setRevision((r) => r + 1)} loading={!data && !error} loadedCount={data?.items?.length || 0} selectedCount={selectedRows.size} selectionError={selectionError}
+      selection={<TVBulkActionBar ready={auxiliaryReady} seriesRows={[...selectedRows.values()]} onResolved={series => select(series, true)}
+        allSelected={Boolean(data?.items?.length) && data.items.every(series => selectedRows.has(series.tmdb_id ? `tmdb:${series.tmdb_id}` : `local:${series.id}`))}
+        onToggleAll={checked => data?.items?.forEach(series => select(series, checked))}
+        onSelectAll={() => data?.items?.forEach(series => select(series, true))} onClear={clearSelection}
+        onChanged={() => setRevision(value => value + 1)} onError={setSelectionError} notify={notify}/>}/>
+    </WorkspaceChrome>
     {data?.notice && <p role="status">{data.notice}</p>}
-    {error ? <div className="empty-state" role="alert"><strong>{error}</strong><button onClick={()=>setRevision(r=>r+1)}>Retry</button></div> : !data ? <div className="loading-state" role="status">Loading TV shows…</div> : <>
+    {error ? <WorkspaceEmptyState size="compact"  role="alert"><strong>{error}</strong><Button onClick={()=>setRevision(r=>r+1)}>Retry</Button></WorkspaceEmptyState> : !data ? <div className="loading-state" role="status">Loading TV shows…</div> : <>
       <Pagination total={data.total} page={page} totalPages={data.total_pages} hasNext={data.has_next} pageStart={(page-1)*(data.page_size||pageSize)} pageEnd={(page-1)*(data.page_size||pageSize)+data.items.length} ariaLabel="TV page controls above results" onPageChange={setPage}/>
-      {selectedIds.size > 0 && <TVBulkActionBar seriesIds={[...selectedIds]} onClear={() => setSelectedIds(new Set())} onChanged={() => setRevision(value => value + 1)} notify={notify} />}
-      {!data.items.length?<div className="empty-state"><strong>{data.continue_scan?'Still looking for matching series.':query.groups.length || status?'No series match your search.':'No TV series yet.'}</strong></div>:<div ref={gridRef} className="tv-series-grid">{data.items.map(series=><TVSeriesCard key={series.tmdb_id} series={series} context={context} onOpen={open} onPlay={play} onWatchlist={toggleWatchlist} onWatched={toggleWatched} onPosterEdit={setPosterEditor} onSelect={select} selected={selectedIds.has(series.id)}/>)}</div>}
-      {data.continue_scan && <button onClick={()=>setRevision(r=>r+1)}>Continue searching</button>}
+
+      {!data.items.length?<WorkspaceEmptyState size="compact" ><strong>{data.continue_scan?'Still looking for matching series.':query.groups.length || status?'No series match your search.':'No TV series yet.'}</strong></WorkspaceEmptyState>:<div ref={attachGrid} className="tv-series-grid">{data.items.map(series=><TVSeriesCard key={series.tmdb_id} series={series} context={context} onOpen={open} onPlay={play} onWatchlist={toggleWatchlist} onWatched={toggleWatched} onPosterEdit={setPosterEditor} onSelect={select} selected={selectedRows.has(series.tmdb_id ? `tmdb:${series.tmdb_id}` : `local:${series.id}`)}/>)}</div>}
+      {data.continue_scan && <Button onClick={()=>setRevision(r=>r+1)}>Continue searching</Button>}
       <Pagination total={data.total} page={page} totalPages={data.total_pages} hasNext={data.has_next} pageStart={(page-1)*(data.page_size||pageSize)} pageEnd={(page-1)*(data.page_size||pageSize)+data.items.length} ariaLabel="TV pagination" onPageChange={setPage}/>
     </>}
     {posterEditor && <TVPosterEditor series={posterEditor} onClose={() => setPosterEditor(null)} onSaved={() => setRevision(value => value + 1)} notify={notify} />}

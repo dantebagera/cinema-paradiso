@@ -1,0 +1,26 @@
+[
+  {
+    "scenario": "default",
+    "rows": 10000,
+    "before": {
+      "medianMs": 7.134199999999993,
+      "metadataReads": 10000
+    },
+    "after": {
+      "medianMs": 0.010300000000000864,
+      "metadataReads": 0
+    }
+  },
+  {
+    "scenario": "filtered-sort",
+    "rows": 10000,
+    "before": {
+      "medianMs": 126.66590000000002,
+      "metadataReads": 249720
+    },
+    "after": {
+      "medianMs": 12.19659999999999,
+      "metadataReads": 10000
+    }
+  }
+]

@@ -16,6 +16,8 @@ def normalize_curated_movie(movie):
         'imdb_id': str(movie.get('imdb_id', '') or ''),
         'plex_guid': str(movie.get('plex_guid', '') or ''),
         'title': str(movie.get('title', '') or ''),
+        'original_title': str(movie.get('original_title', '') or ''),
+        'original_language': str(movie.get('original_language', '') or ''),
         'year': str(movie.get('year', '') or ''),
         'path': str(movie.get('path', '') or ''),
         'poster_url': str(movie.get('poster_url', '') or ''),
@@ -333,6 +335,18 @@ class UserCurationStore:
     def followed_all(self):
         with self._followed_lock:
             return self._followed()['movies']
+
+    def followed_snapshot(self, result=None):
+        """Pair current Follow state and revision without stale scan snapshots."""
+        with self._followed_lock:
+            movies = self._followed()['movies']
+            payload = {**dict(result or {}), 'movies': movies,
+                       'curation_generation': self.catalog.generation('curation')}
+            if 'newly_available' in payload:
+                current = {(_movie_identity_key(movie), movie.get('followed_at')) for movie in movies}
+                payload['newly_available'] = [movie for movie in payload['newly_available']
+                    if (_movie_identity_key(movie), movie.get('followed_at')) in current]
+            return payload
 
     def follow_movie(self, movie):
         with self._followed_lock:

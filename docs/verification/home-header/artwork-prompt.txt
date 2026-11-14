@@ -1,0 +1,13 @@
+Mode: built-in imagegen, edit of approved mockup.
+Input: C:/Users/dante/.codex/generated_images/01a155a1-9fbd-7f33-93f3-fb33f25e2a31/exec-103e0489-b82e-4e69-8ccf-fe46e20d9a36.png
+Generated output: C:/Users/dante/.codex/generated_images/01a155a1-9fbd-7f33-93f3-fb33f25e2a31/exec-3a1c95d4-5238-40b2-aa0f-8178f9e400a1.png
+Project asset: src/assets/home-film-projector.png
+
+Prompt:
+Edit this approved Cinema Paradiso mockup into its CLEAN BACKGROUND ARTWORK for real app implementation. Preserve exactly the existing vintage twin-reel gold-engraved projector and long warm ray, composition, proportions, size, darkness and black background. REMOVE ALL TEXT completely: Home, cinematic archive console, headline and supporting paragraph. Restore the uninterrupted soft ray behind the removed text. REMOVE the thin rounded rectangular UI border completely. No letters, no typography, no logo, no watermarks, no border, no controls. This must be pure decorative background art.
+
+Keep the same 3:1 overall canvas proportions and the same position of the projector in the CENTRAL HORIZONTAL BAND, occupying the rightmost 13 percent, the entirety of both film reels and projector base fitted within the central third of the image height (approximately y=34% to y=66%). Keep pure black empty top and bottom thirds. This positioning is critical because the real desktop banner will crop the vertical margins to a shallow approximately 8.5:1 aspect ratio using object-fit cover, centered vertically and aligned right. Do not enlarge the projector or reposition its reels into the top black margin. Do not make a full-height illustration.
+
+Maintain the extended soft golden ray, originating at the lens on the far right, traveling LEFT continuously across nearly the entire image, reaching about 4 percent from the left edge. Keep it restrained and dimmer at the left so real HTML text can be overlaid legibly. Fine sparse golden dust, soft volumetric glow, dark matte body with precise gold engraving outlines and two open-spoked film reels. The source screenshot is the exact appearance to preserve; change only removal of text and border.
+
+Transparency: false.

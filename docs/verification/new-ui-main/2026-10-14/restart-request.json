@@ -1,0 +1,24 @@
+{
+  "response": {
+    "active_downloads": 2,
+    "plan": {
+      "action": "restart",
+      "after_download": false,
+      "close_qbittorrent": false,
+      "created_at": 1791928919.425471,
+      "detail": "Preparing to restart",
+      "plan_id": "25d217291bdc4d6fab884b2344adcc5f",
+      "state": "draining",
+      "target_status": [],
+      "targets": [],
+      "updated_at": 1791928919.425471
+    },
+    "supported": true,
+    "torrent_client": {
+      "can_close": true,
+      "mode": "embedded"
+    }
+  },
+  "beforePid": 54304,
+  "requestedCloseQbittorrent": false
+}

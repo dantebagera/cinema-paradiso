@@ -1,0 +1,19 @@
+{
+  "files_compared": 1687,
+  "changed_prior_files": [
+    "tests/test_full_row_card_grids_ui.py",
+    "tests/test_library_action_ux.py"
+  ],
+  "only_six_approved_test_method_spans_changed": {
+    "tests/test_full_row_card_grids_ui.py": true,
+    "tests/test_library_action_ux.py": true
+  },
+  "runtime_input_count": 243,
+  "runtime_input_drift": [],
+  "tracked_dirty_status_identical": true,
+  "tracked_dirty_count": 114,
+  "product_source_changes_this_pass": 0,
+  "live_requests_this_pass": 0,
+  "production_data_access_this_pass": 0,
+  "verified_utc": "2026-10-24T18:21:04.576389+00:00"
+}

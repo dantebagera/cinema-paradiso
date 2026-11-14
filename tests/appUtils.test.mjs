@@ -9,6 +9,7 @@ import {
   sectionFromPath,
   sortFollowedReleases,
   buildStreamTemplateUrl,
+  canResolveMovieStreamTemplate,
   streamTemplateTokens,
   toYouTubeEmbedUrl,
   topBarSearchEnabled,
@@ -126,6 +127,13 @@ test('topBarSearchEnabled limits search to functional page contexts', () => {
 test('streamTemplateTokens reports required movie identifiers', () => {
   assert.deepEqual(streamTemplateTokens('https://example.test/embed/{tmdb_id}'), ['tmdb_id']);
   assert.deepEqual(streamTemplateTokens('https://example.test/{imdb_id}/{tmdb_id}'), ['imdb_id', 'tmdb_id']);
+});
+
+test('movie source eligibility requires direct identities or a possible IMDb lookup', () => {
+  assert.equal(canResolveMovieStreamTemplate('https://example.test/{tmdb_id}', {}), false);
+  assert.equal(canResolveMovieStreamTemplate('https://example.test/{imdb_id}', { imdb_id: 'tt0111161' }), true);
+  assert.equal(canResolveMovieStreamTemplate('https://example.test/{imdb_id}', { tmdb_id: 550 }), true);
+  assert.equal(canResolveMovieStreamTemplate('https://example.test/{tmdb_id}', { imdb_id: 'tt0111161' }), false);
 });
 
 test('buildStreamTemplateUrl replaces configured movie identifiers', () => {

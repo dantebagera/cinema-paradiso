@@ -378,7 +378,7 @@
 
 .metadata-audit-status {
   border: 1px solid var(--border-strong);
-  border-radius: 999px;
+  border-radius: var(--radius-ui);
   color: var(--text-muted);
   padding: 3px 7px;
   font-size: 0.65rem;

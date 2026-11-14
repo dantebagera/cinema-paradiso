@@ -1,0 +1,28 @@
+{
+  "feature": "F1",
+  "label": "comparison-plain-2",
+  "model": "gpt-6.1-sol",
+  "prompt": "i need you to lit 50 movies with very twisted story you wont expect the ending\nyour responce should be a list of movies names and years , no any other details , dont seek more info , dont reply by paragarph or any way of responce  only the list",
+  "state": "completed",
+  "message": "",
+  "requested_count": "50",
+  "accepted_count": 0,
+  "inference_attempts": 1,
+  "tmdb_requests": 0,
+  "elapsed_seconds": 16.231558,
+  "timings": {
+    "gpt_seconds": 16.169793,
+    "gpt_http_seconds": 16.133276,
+    "tmdb_matching_seconds": 0,
+    "other_seconds": 0.061765,
+    "full_seconds": 16.231558,
+    "first_cards_seconds": null
+  },
+  "cards": [],
+  "job_id": "0fa33123a111415384f36f86b7ba00ca",
+  "unverified_control_count": 50,
+  "reasoning_effort": "default",
+  "output_format": "plain-list",
+  "source_hash": "2821d11f153b325b23f0dd32d19c4abdc5a5910b50561bb1eded998ade180f15",
+  "scope": "names/years-only GPT output-format control; no TMDB matching or verified-result claim"
+}

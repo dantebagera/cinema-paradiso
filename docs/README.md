@@ -22,6 +22,7 @@
 | IPTV | [Second Brain](second-brain/iptv.md) | [Atlas](atlas/iptv.md) |
 | Movie and TV Detail Features | [Second Brain](second-brain/movie-and-tv-details.md) | [Atlas](atlas/movie-and-tv-details.md) |
 | Settings and Shared Infrastructure | [Second Brain](second-brain/settings-and-infrastructure.md) | [Atlas](atlas/settings-and-infrastructure.md) |
+| Shared desktop UI and mandatory reuse | [Decision](second-brain/settings-and-infrastructure.md#desktop-ui-family-selections-2026-11-14) | [Component registry and reuse gate](atlas/shared-ui.md) |
 
 [Update log](second-brain/log.md) · [First-edition scope and verification](plans/2026-11-13-cp-knowledge-first-edition.md)
 

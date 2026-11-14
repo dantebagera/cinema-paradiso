@@ -46,6 +46,34 @@ def _dependencies(root):
 
 
 class LibraryIngestionQueueTest(unittest.TestCase):
+    def test_monitor_duplicate_of_active_path_does_not_create_pending_work(self):
+        coordinator = LibraryIngestionCoordinator(_dependencies(self.root))
+        coordinator._ensure_dispatcher_locked = lambda: None
+        path = str(self.root / 'Active.mkv')
+        coordinator._active = {'type': 'path', 'value': path}
+        result = coordinator.reconcile_paths([path], 'qbittorrent')
+        self.assertEqual(result['coalesced'], 1)
+        self.assertEqual(result['queue_depth'], 0)
+        self.assertNotIn('follow_up', coordinator._active)
+        coordinator.reconcile_paths([path], 'observer:modified')
+        self.assertTrue(coordinator._active['follow_up'])
+        self.assertEqual(len(coordinator._pending), 0)
+
+    def test_due_items_pass_earlier_long_backoff_and_ties_remain_fifo(self):
+        coordinator = LibraryIngestionCoordinator(_dependencies(self.root))
+        coordinator._ensure_dispatcher_locked = lambda: None
+        names = ['A', 'B', 'C', 'D']
+        for name in names:
+            coordinator.reconcile_paths([self.root / (name + '.mkv')], 'observer:created')
+        now = time.monotonic()
+        for index, item in enumerate(coordinator._pending.values()):
+            item['not_before'] = now + (0.1 if index == 0 else 0)
+        calls = []
+        coordinator.reconcile_paths_now = lambda paths, **kwargs: calls.append(Path(paths[0]).stem) or {'checked': 1}
+        coordinator._accepting = False
+        coordinator._dispatch()
+        self.assertEqual(calls, ['B', 'C', 'D', 'A'])
+
     def setUp(self):
         if os.environ.get("CP_TEST_MODE") != "1":
             raise RuntimeError("Gate 2 tests require CP_TEST_MODE=1")

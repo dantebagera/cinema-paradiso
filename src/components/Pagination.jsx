@@ -1,4 +1,5 @@
 import { formatCount } from '../utils/appUtils.js';
+import Button from './ui/Button.jsx';
 
 export default function Pagination({
   total,
@@ -10,22 +11,28 @@ export default function Pagination({
   hasPrevious,
   hasNext,
   ariaLabel = 'Library pagination',
-  onPageChange
+  previousLabel = 'Previous',
+  nextLabel = 'Next',
+  previousAriaLabel,
+  nextAriaLabel,
+  onPageChange,
+  showSinglePage = false,
+  className = ''
 }) {
   const knownTotal = Number.isFinite(Number(totalPages)) && totalPages != null;
   const canPrevious = hasPrevious ?? page > 1;
   const canNext = hasNext ?? (knownTotal && page < totalPages);
-  if (!canPrevious && !canNext && (!knownTotal || totalPages <= 1)) return null;
+  if (!showSinglePage && !canPrevious && !canNext && (!knownTotal || totalPages <= 1)) return null;
+  const rangeKnown = Number.isFinite(pageStart) && Number.isFinite(pageEnd);
+  const rangeLabel = rangeKnown ? `Showing ${formatCount(pageStart + 1)}-${formatCount(pageEnd)}${total == null ? '' : ` of ${formatCount(total)}`}` : '';
   return (
-    <nav className="library-pagination" aria-label={ariaLabel}>
-      <button type="button" className="btn btn-secondary" onClick={() => onPageChange(page - 1)} disabled={!canPrevious}>Previous</button>
+    <nav className={`library-pagination ${className}`} aria-label={ariaLabel}>
+      <Button type="button" aria-label={previousAriaLabel} onClick={() => onPageChange(page - 1)} disabled={!canPrevious}>{previousLabel}</Button>
       <div className="library-page-status">
         <strong>{knownTotal ? `Page ${formatCount(page)} of ${formatCount(totalPages)}` : `Page ${formatCount(page)}`}</strong>
-        <span>{summary || (total == null
-          ? `Showing ${formatCount(pageStart + 1)}-${formatCount(pageEnd)}`
-          : `Showing ${formatCount(pageStart + 1)}-${formatCount(pageEnd)} of ${formatCount(total)}`)}</span>
+        {(summary || rangeLabel) && <span>{summary || rangeLabel}</span>}
       </div>
-      <button type="button" className="btn btn-secondary" onClick={() => onPageChange(page + 1)} disabled={!canNext}>Next</button>
+      <Button type="button" aria-label={nextAriaLabel} onClick={() => onPageChange(page + 1)} disabled={!canNext}>{nextLabel}</Button>
     </nav>
   );
 }

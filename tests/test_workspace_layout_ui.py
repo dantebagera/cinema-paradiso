@@ -4,7 +4,7 @@ import unittest
 
 
 ROOT = Path(__file__).resolve().parents[1]
-APP = (ROOT / "src" / "App.jsx").read_text(encoding="utf-8")
+APP = (ROOT / "src" / "App.jsx").read_text(encoding="utf-8") + (ROOT / "src/components/Sidebar.jsx").read_text(encoding="utf-8")
 STYLES = (ROOT / "src" / "styles.css").read_text(encoding="utf-8")
 IPTV_STYLES = (ROOT / "src" / "features" / "iptv" / "iptv.css").read_text(encoding="utf-8")
 
@@ -54,7 +54,7 @@ class WorkspaceLayoutUiTest(unittest.TestCase):
 
     def test_shared_workspace_keeps_discover_outer_padding(self):
         workspace = selector_rule(STYLES, ".workspace")
-        self.assertIn("padding: 24px 33.6px 24px 16px;", workspace)
+        self.assertIn("padding: var(--workspace-padding);", workspace)
         self.assertIn("scrollbar-gutter: stable;", workspace)
 
     def test_desktop_sidebar_collapses_with_refined_workspace_gutters(self):
@@ -87,7 +87,7 @@ class WorkspaceLayoutUiTest(unittest.TestCase):
             STYLES,
         )
         self.assertIn(
-            "padding: 24px 33.6px 24px 16px;",
+            "padding: var(--workspace-padding);",
             selector_rule(STYLES, ".workspace"),
         )
 

@@ -1,0 +1,19 @@
+{
+  "observed_at": "2026-10-10T05:15:51.7240330+03:00",
+  "torrent": {
+    "name": "Louie (2010) Season 2 S02 (1080p BluRay x265 HEVC 10bit AAC 5.1 Garshasp)",
+    "state": "forcedUP",
+    "progress": 1,
+    "downloaded": 10278791570,
+    "dlspeed": 0,
+    "num_seeds": 0,
+    "num_complete": 28
+  },
+  "cp_job": {
+    "state": "validation_failed",
+    "last_error": "Torrent filenames identify a different series",
+    "acquisition_id": "ed97dcd073564197a587348a6b3ce13c",
+    "tv_lifecycle_version": 1
+  },
+  "action": "Read-only. Preserve complete payload; no pause, delete, retry or restart."
+}

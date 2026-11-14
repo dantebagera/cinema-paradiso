@@ -115,7 +115,7 @@
 
 .identity-review-group > header > span {
   min-width: 28px;
-  border-radius: 999px;
+  border-radius: var(--radius-ui);
   background: var(--surface-raised);
   padding: 4px 8px;
   color: var(--text-soft);

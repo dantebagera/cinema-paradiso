@@ -1,0 +1,16 @@
+{
+  "modules": [
+    "tests.test_windows_launcher",
+    "tests.test_movie_awards_bundle",
+    "tests.test_qbittorrent_ui",
+    "tests.test_catalog_store",
+    "tests.test_movie_awards_sources.HistoricalSeedBuildTests"
+  ],
+  "root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\fixtures\\main-retained-contracts-confirmed-f1707dc9eceb47e9a76fb8ddb97da09b",
+  "exitCode": 0,
+  "label": "main-retained-contracts-confirmed",
+  "elapsed": 11.753672,
+  "dist": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\fixtures\\main-retained-contracts-confirmed-f1707dc9eceb47e9a76fb8ddb97da09b\\dist",
+  "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\logs\\main-retained-contracts-confirmed.log",
+  "kind": "python"
+}

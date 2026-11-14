@@ -1,5 +1,9 @@
+import DialogShell, { DialogHeader } from '../../components/ui/DialogShell.jsx';
+import Button from '../../components/ui/Button.jsx';
+import { Input, Select } from '../../components/ui/FormField.jsx';
+import { movieDisplayTitle } from '../../utils/movieLanguage.js';
 import {
-  AlertTriangle, Bell, Bookmark, Check, CirclePlus, Copy, Film, Loader2, Pencil, Search, Trash2, X
+  AlertTriangle, CirclePlus, Copy, Film, Loader2, RefreshCw, Search, Trash2, X
 } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { fetchJson } from '../../api/client.js';
@@ -11,22 +15,26 @@ import ExportCopyDialog from '../../components/ExportCopyDialog.jsx';
 import ListEditorModal from '../../components/ListEditorModal.jsx';
 import MetadataCorrectionModal from '../../components/MetadataCorrectionModal.jsx';
 import Pagination from '../../components/Pagination.jsx';
-import SelectionCheckbox from '../../components/SelectionCheckbox.jsx';
+import WorkspaceEmptyState from '../../components/WorkspaceEmptyState.jsx';
+import WorkspaceChrome from '../../components/WorkspaceChrome.jsx';
+import WorkspaceControls from '../../components/WorkspaceControls.jsx';
+import WorkspaceSelectionBar from '../../components/WorkspaceSelectionBar.jsx';
+import ListsToolbar from '../../components/ListsToolbar.jsx';
+import CatalogMetadataFilters from '../../components/CatalogMetadataFilters.jsx';
+import { movieGenres } from '../../utils/catalogFilterOptions.js';
+import { filterListRows, hasListFilterMetadata, hasListFilters, needsListMetadata } from '../../utils/listCatalogFilters.js';
+import useListCatalogFilters from '../../hooks/useListCatalogFilters.js';
+import SearchField from '../search/SearchField.jsx';
 import SourceReviewDialog from '../../components/SourceReviewDialog.jsx';
 import { DiscoverMovieCard, LibraryMovieCard } from '../../components/SharedMovieCards.jsx';
 import useCardGridMetrics from '../../hooks/useCardGridMetrics.js';
 import useMovieCollectionCache from '../../hooks/useMovieCollectionCache.js';
-import { cx, formatCount, movieKey } from '../../utils/appUtils.js';
+import { formatCount, movieKey } from '../../utils/appUtils.js';
 import { discoverMoviePayload, listsForDiscoverMovie } from '../../discoverUtils.js';
 import { applySystemListState, buildMovieListViewModel, listsForItem, movieIdentityKey, moviePayload } from '../../utils/libraryUtils.js';
 
-const SYSTEM_LIST_ICONS = {
-  watched: Check,
-  watchlist: Bookmark,
-  following: Bell
-};
-
 export default function MovieListsWorkspace({
+  mediaNavigation,
   notify,
   onPlay,
   onFindTorrent,
@@ -46,13 +54,14 @@ export default function MovieListsWorkspace({
   const [selectedListId, setSelectedListId] = useState('');
   const [query, setQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
+  const { filters, effective: effectiveFilters, countries, yearDraft, changeFilter, resetFilters } = useListCatalogFilters();
+  const [projectionRevision, setProjectionRevision] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedKeys, setSelectedKeys] = useState(() => new Set());
-  const [newListName, setNewListName] = useState('');
-  const [renameValue, setRenameValue] = useState('');
   const [expandedKey, setExpandedKey] = useState('');
   const [detailsCache, setDetailsCache] = useState({});
   const [cardProjections, setCardProjections] = useState({});
+  const [projectionFailures, setProjectionFailures] = useState(() => new Set());
   const {
     clear: clearCollectionCache,
     getView: getCollectionView,
@@ -68,8 +77,11 @@ export default function MovieListsWorkspace({
   const [error, setError] = useState('');
   const [sourceReview, setSourceReview] = useState(null);
   const ownershipRequestSeq = useRef(0);
+  const ownershipResolvedList = useRef(null);
   const cardProjectionInFlightKeys = useRef(new Set());
+  const cardProjectionAttemptedKeys = useRef(new Set());
   const cardProjectionMounted = useRef(false);
+  const projectionEpoch = useRef(0);
 
   useEffect(() => {
     const clearDetailCaches = () => {
@@ -101,12 +113,19 @@ export default function MovieListsWorkspace({
     return next;
   }, [followed, lists]);
   const selectedList = displayLists.find((list) => list.id === selectedListId) || displayLists[0] || null;
-  const model = useMemo(() => buildMovieListViewModel({
+  const baseModel = useMemo(() => buildMovieListViewModel({
     libraryItems,
     list: selectedList,
     query,
     statusFilter
   }), [libraryItems, selectedList, query, statusFilter]);
+  const model = useMemo(() => ({ ...baseModel, rows: filterListRows(baseModel.rows, effectiveFilters, movieGenres, row => {
+    if (row.ownedItem) {
+      const item = row.ownedItem;
+      return { popularity: cardProjections[row.identityKey]?.popularity, ...item, genres: item.plex_genres || [], country: item.plex_country, country_flag: item.plex_country_flag, rating: item.plex_rating, ...item.canonical_metadata, ...row.ownedPayload };
+    }
+    return { ...row.movie, ...cardProjections[row.identityKey] };
+  }) }), [baseModel, effectiveFilters, cardProjections]);
   const {
     gridRef: movieListsGridRef,
     pageSize: movieListsPageSize
@@ -131,7 +150,8 @@ export default function MovieListsWorkspace({
   const selectedCopyMovies = selectedRows.map((row) => (row.ownedItem ? moviePayload(row.ownedItem) : movieListRowMovie(row)));
   const missingCardProjectionMovies = useMemo(() => {
     const seen = new Set();
-    return model.rows.filter((row) => !row.ownedItem).flatMap((row) => {
+    const candidates = needsListMetadata(effectiveFilters) ? baseModel.rows : visibleMovieListRows;
+    return candidates.filter((row) => !row.ownedItem || effectiveFilters.sort === 'popularity.desc').flatMap((row) => {
       const movie = movieListRowMovie(row);
       const key = movieIdentityKey(movie);
       if (seen.has(key)) return [];
@@ -140,9 +160,28 @@ export default function MovieListsWorkspace({
         key,
         tmdb_id: String(movie.tmdb_id || row.tmdb_id || '').trim(),
         poster_url: movie.poster_url || '',
+        metadata: movie,
+        owned: Boolean(row.ownedItem),
       }];
     });
-  }, [model.rows]);
+  }, [baseModel.rows, model.rows, effectiveFilters, movieListsPageStart, movieListsPageSize]);
+  function projectionComplete(movie, projection = cardProjections[movie.key]) {
+    if (movie.owned) return hasListFilterMetadata(projection, { sort: 'popularity.desc' });
+    return Boolean(projection) && (!needsListMetadata(effectiveFilters) || hasListFilterMetadata({ ...movie.metadata, ...projection }, effectiveFilters));
+  }
+  const metadataPending = needsListMetadata(effectiveFilters) && missingCardProjectionMovies.some(movie => movie.tmdb_id && !projectionComplete(movie) && !cardProjectionAttemptedKeys.current.has(movie.key));
+  const failedFilterMovies = needsListMetadata(effectiveFilters) ? missingCardProjectionMovies.filter(movie =>
+    !projectionComplete(movie) && (!movie.tmdb_id || projectionFailures.has(movie.key))) : [];
+  const metadataIncomplete = metadataPending || failedFilterMovies.length > 0;
+
+  function retryFilterMetadata() {
+    const retryKeys = new Set(failedFilterMovies.map(movie => movie.key));
+    retryKeys.forEach(key => cardProjectionAttemptedKeys.current.delete(key));
+    setProjectionFailures(current => new Set([...current].filter(key => !retryKeys.has(key))));
+    setProjectionRevision(value => value + 1);
+  }
+
+  function clearFilters() { resetFilters(); setStatusFilter('all'); }
 
   const loadMovieLists = useCallback(async (options = {}) => {
     const forceLists = Boolean(options?.forceLists);
@@ -172,6 +211,7 @@ export default function MovieListsWorkspace({
       setDetailsCache({});
       setCardProjections({});
       cardProjectionInFlightKeys.current.clear();
+      cardProjectionAttemptedKeys.current.clear();
       setOwnershipRefreshKey((value) => value + 1);
     };
     window.addEventListener('cp-library-changed', refreshOwnership);
@@ -186,6 +226,7 @@ export default function MovieListsWorkspace({
   useEffect(() => {
     const requestSeq = ownershipRequestSeq.current + 1;
     ownershipRequestSeq.current = requestSeq;
+    ownershipResolvedList.current = null;
     if (!selectedList) {
       setLibraryItems([]);
       setOwnershipLoading(false);
@@ -193,6 +234,7 @@ export default function MovieListsWorkspace({
     }
     const movies = selectedList.movies || [];
     if (!movies.length) {
+      ownershipResolvedList.current = selectedList;
       setLibraryItems([]);
       setOwnershipLoading(false);
       return;
@@ -205,10 +247,12 @@ export default function MovieListsWorkspace({
       body: JSON.stringify({ movies, include_items: true })
     }).then((data) => {
       if (cancelled || requestSeq !== ownershipRequestSeq.current) return;
+      ownershipResolvedList.current = selectedList;
       if (observeCatalogGeneration(data.catalog_generation)) {
         setDetailsCache({});
         setCardProjections({});
         cardProjectionInFlightKeys.current.clear();
+        cardProjectionAttemptedKeys.current.clear();
       }
       setLibraryItems((data.results || []).map((result) => result.library_item).filter(Boolean));
       setError('');
@@ -227,11 +271,7 @@ export default function MovieListsWorkspace({
     setSelectedKeys(new Set());
     setExpandedKey('');
     setCurrentPage(1);
-  }, [selectedListId, query, statusFilter]);
-
-  useEffect(() => {
-    setRenameValue(selectedList?.name || '');
-  }, [selectedList?.id, selectedList?.name]);
+  }, [selectedListId, query, statusFilter, filters]);
 
   useEffect(() => {
     cardProjectionMounted.current = true;
@@ -241,31 +281,74 @@ export default function MovieListsWorkspace({
   }, []);
 
   useEffect(() => {
+    projectionEpoch.current += 1;
+    cardProjectionInFlightKeys.current.clear();
+    cardProjectionAttemptedKeys.current.clear();
+    setProjectionFailures(new Set());
+    return () => { projectionEpoch.current += 1; };
+  }, [selectedList, ownershipRefreshKey, effectiveFilters]);
+
+  useEffect(() => {
+    // Wait for the authoritative ownership projection before enriching unowned
+    // cards. Owned cards already have SQL metadata and must not call TMDB.
+    if (ownershipLoading || ownershipResolvedList.current !== selectedList) return;
     const movies = missingCardProjectionMovies
-      .filter((movie) => !cardProjections[movie.key] && !cardProjectionInFlightKeys.current.has(movie.key))
+      .filter((movie) => movie.tmdb_id && !projectionComplete(movie) && !cardProjectionInFlightKeys.current.has(movie.key) && !cardProjectionAttemptedKeys.current.has(movie.key))
       .slice(0, 50);
     if (!movies.length) return undefined;
+    const epoch = projectionEpoch.current;
+    const active = () => cardProjectionMounted.current && projectionEpoch.current === epoch;
 
     movies.forEach((movie) => cardProjectionInFlightKeys.current.add(movie.key));
     fetchJson('/api/tmdb/card-projections', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ movies })
-    }).then((data) => {
-      if (!cardProjectionMounted.current) return;
+    }).catch(() => ({ items: {} })).then(async (data) => {
+      if (!active()) return;
       if (observeCatalogGeneration(data.catalog_generation)) {
         setDetailsCache({});
       }
       const items = data.items || {};
       if (Object.keys(items).length) {
         setCardProjections((current) => ({ ...current, ...items }));
+        setProjectionFailures(current => new Set([...current].filter(key => !movies.some(movie => movie.key === key && projectionComplete(movie, items[key])))));
       }
+      // Saved list entries contain identity and poster only. Cached projections are
+      // best-effort; hydrate uncached visible cards through the existing detail API.
+      const incomplete = movies.filter(movie => !projectionComplete(movie, items[movie.key]));
+      // Owned display remains SQL-authoritative. Popularity is supplemental:
+      // use its existing local cache, without calling a provider for owned rows.
+      const ownedMissing = incomplete.filter(movie => movie.owned);
+      ownedMissing.forEach(movie => cardProjectionAttemptedKeys.current.add(movie.key));
+      if (ownedMissing.length) setProjectionFailures(current => new Set([...current, ...ownedMissing.map(movie => movie.key)]));
+      const missing = incomplete.filter(movie => !movie.owned && movie.tmdb_id);
+      let next = 0;
+      await Promise.all(Array.from({ length: Math.min(3, missing.length) }, async () => {
+        while (active() && next < missing.length) {
+          const movie = missing[next++];
+          try {
+            const details = await fetchCanonicalMovieDetails(movie);
+            if (!active()) return;
+            if (!details) throw new Error('Movie metadata was unavailable');
+            setCardProjections(current => ({ ...current, [movie.key]: details }));
+            setDetailsCache(current => ({ ...current, [movieDetailsCacheKey(movie)]: details }));
+            if (!projectionComplete(movie, details)) throw new Error('Required filter metadata was unavailable');
+          } catch {
+            if (active()) setProjectionFailures(current => new Set([...current, movie.key]));
+          } finally {
+            if (active()) cardProjectionAttemptedKeys.current.add(movie.key);
+          }
+        }
+      }));
     }).catch(() => {
-      // The next relevant render may retry a failed best-effort enrichment.
+      // Preserve the saved list if best-effort card enrichment fails.
     }).finally(() => {
+      if (!active()) return;
       movies.forEach((movie) => cardProjectionInFlightKeys.current.delete(movie.key));
+      if (cardProjectionMounted.current) setProjectionRevision(value => value + 1);
     });
-  }, [missingCardProjectionMovies, cardProjections]);
+  }, [missingCardProjectionMovies, cardProjections, projectionRevision, ownershipLoading, selectedList, effectiveFilters]);
 
   function toggleRow(row, checked) {
     setSelectedKeys((current) => {
@@ -337,7 +420,6 @@ export default function MovieListsWorkspace({
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name })
     });
-    setNewListName('');
     setSelectedListId(created.id);
     await loadMovieLists({ forceLists: true });
     announceCurationChanged();
@@ -345,20 +427,12 @@ export default function MovieListsWorkspace({
     return created;
   }
 
-  async function createListFromRail(event) {
-    event.preventDefault();
-    const name = newListName.trim();
-    if (!name) return;
-    await createList(name);
-  }
-
-  async function renameSelectedList(event) {
-    event.preventDefault();
-    if (!selectedList || selectedListIsSystem || !renameValue.trim()) return;
+  async function renameSelectedList(name) {
+    if (!selectedList || selectedListIsSystem || !name.trim()) return;
     const renamed = await fetchCurationJson(`/api/user/lists/${encodeURIComponent(selectedList.id)}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: renameValue.trim() })
+      body: JSON.stringify({ name: name.trim() })
     });
     await loadMovieLists({ forceLists: true });
     announceCurationChanged();
@@ -489,119 +563,48 @@ export default function MovieListsWorkspace({
 
   return (
     <section className="library-workspace movie-lists-workspace">
-      <header className="library-header movie-lists-header">
-        <div>
-          <p className="screen-kicker">Mixed owned and wanted lists</p>
-          <h2>Lists</h2>
-          <p>Review full lists here. Library stays offline-only; this page shows owned, missing, and upgrade candidates together.</p>
-        </div>
-        <div className="movie-list-summary-strip" aria-label="Selected list summary">
-          <span><strong>{formatCount(model.stats.total)}</strong>Total</span>
-          <span><strong>{formatCount(model.stats.owned)}</strong>Owned</span>
-          <span><strong>{formatCount(model.stats.missing)}</strong>Missing</span>
-          <span><strong>{formatCount(model.stats.upgrades)}</strong>Upgrades</span>
-        </div>
-      </header>
-
-      <form className="library-search-panel movie-lists-search" onSubmit={(event) => event.preventDefault()}>
-        <label className="search-field library-main-search">
-          <Search size={18} />
-          <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search the selected list..." />
-        </label>
-        <button type="submit" className="btn btn-primary library-search-submit"><Search size={16} /> Search</button>
-      </form>
-
-      <div className="movie-lists-layout">
-        <aside className="movie-lists-rail" aria-label="Movie lists">
-          <form className="movie-list-create-inline" onSubmit={createListFromRail}>
-            <input value={newListName} onChange={(event) => setNewListName(event.target.value)} placeholder="New list name..." />
-            <button type="submit" className="mini-action" disabled={!newListName.trim()}>
-              <CirclePlus size={13} /> New list
-            </button>
-          </form>
-          {displayLists.length ? displayLists.map((list) => {
-            const SystemListIcon = SYSTEM_LIST_ICONS[list.system_type];
-            return (
-              <button
-                type="button"
-                key={list.id}
-                className={cx(
-                  'movie-list-rail-item',
-                  list.system_type && `movie-list-rail-item-system-${list.system_type}`,
-                  selectedList?.id === list.id && 'movie-list-rail-item-active'
-                )}
-                onClick={() => setSelectedListId(list.id)}
-              >
-                <span className="movie-list-rail-title">
-                  {SystemListIcon && <SystemListIcon className="movie-list-rail-icon" size={16} aria-hidden="true" />}
-                  <span>{list.name}</span>
-                </span>
-                <small>{formatCount((list.movies || []).length)} movies</small>
-              </button>
-            );
-          }) : (
-            <div className="empty-state"><strong>No lists yet.</strong><span>Create lists from Library or Discover.</span></div>
-          )}
-        </aside>
-
-        <div className="movie-lists-main">
-          <form className="movie-list-management-bar" onSubmit={renameSelectedList}>
-            <input
-              value={renameValue}
-              onChange={(event) => setRenameValue(event.target.value)}
-              disabled={!selectedList || selectedListIsSystem}
-              placeholder="No list selected"
-              aria-label="Selected list name"
-            />
-            <button type="submit" className="mini-action" disabled={!selectedList || selectedListIsSystem || !renameValue.trim()}>
-              <Pencil size={13} /> Rename list
-            </button>
-            <button type="button" className="mini-action" onClick={() => setTmdbAddOpen(true)} disabled={!selectedList}>
-              <Search size={13} /> Add movie
-            </button>
-            <button type="button" className="mini-action mini-action-danger" onClick={deleteSelectedList} disabled={!selectedList || selectedListIsSystem}>
-              <Trash2 size={13} /> Delete list
-            </button>
-          </form>
-
-          <div className="library-toolbar movie-lists-filterbar">
-            {[
-              ['all', 'All'],
-              ['owned', 'Owned'],
-              ['missing', 'Missing'],
-              ['upgrade', 'Upgrade candidates']
-            ].map(([value, label]) => (
-              <button type="button" key={value} className={cx('filter-chip-button', statusFilter === value && 'filter-chip-button-active')} onClick={() => setStatusFilter(value)}>
-                {label}
-              </button>
-            ))}
-          </div>
-
-          {model.rows.length > 0 && (
-            <div className="bulk-selection-bar movie-lists-bulk">
-              <SelectionCheckbox
-                className="movie-lists-select-all"
-                checked={allRowsSelected}
-                onChange={(checked) => { if (checked) selectAllVisible(); else clearSelection(); }}
-                label="Select all visible list movies"
-              />
-              <span>{selectedRows.length ? `${formatCount(selectedRows.length)} selected` : 'Select movies'}</span>
-              <button type="button" className="mini-action" onClick={clearSelection} disabled={!selectedRows.length}>Clear</button>
-              <button type="button" className="mini-action" onClick={() => setCopyMovies(selectedCopyMovies)} disabled={!selectedRows.length}>
-                <Copy size={13} /> Copy selected to...
-              </button>
-              <button type="button" className="mini-action mini-action-danger" onClick={removeSelectedFromActiveList} disabled={!selectedRows.length || !selectedList}>
-                <Trash2 size={13} /> Remove selected
-              </button>
-              <button type="button" className="mini-action mini-action-source" onClick={openSelectedSourceReview} disabled={!selectedRows.length}>
-                <Search size={13} /> Find sources
-              </button>
-            </div>
-          )}
-
+      <WorkspaceChrome navigation={mediaNavigation}>
+        <ListsToolbar
+          lists={displayLists} selectedList={selectedList} onSelect={setSelectedListId}
+          onCreate={createList} onRename={renameSelectedList} onDelete={deleteSelectedList}
+          onAdd={() => setTmdbAddOpen(true)}
+        />
+        <WorkspaceControls loadedCount={model.stats.total} countLabel="movies" selectedCount={selectedRows.length}
+          autoCollapseKey={expandedKey}
+          summary={hasListFilters(filters) ? `${formatCount(model.rows.length)} ${metadataIncomplete ? 'matches so far' : 'matches'}` : statusFilter === 'all' ? 'All' : statusFilter === 'upgrade' ? 'Upgrade candidates' : statusFilter === 'owned' ? 'Owned' : 'Missing'}
+          notice={yearDraft.error && <p role="alert" id="movie-list-year-error">{yearDraft.error}</p>}
+          search={<form className="library-search-panel workspace-search-form movie-lists-search" onSubmit={event => event.preventDefault()}>
+            <SearchField className="library-main-search" onClear={query ? () => setQuery('') : undefined}>
+              <Search size={18}/><Input aria-label="Search movie list" value={query} onChange={event => setQuery(event.target.value)} placeholder={`Search ${selectedList?.name || 'the selected list'}...`} />
+            </SearchField>
+            <Button variant="primary" type="submit" className="library-search-submit"><Search size={16}/> Search</Button>
+          </form>}
+          filters={<div className="workspace-filter-grid lists-filter-row">
+            <Select aria-label="Movie list status" value={statusFilter} onChange={event => setStatusFilter(event.target.value)}>
+              <option value="all">All movies</option><option value="owned">Owned</option><option value="missing">Missing</option><option value="upgrade">Upgrade candidates</option>
+            </Select>
+            <CatalogMetadataFilters values={filters} countries={countries} onChange={changeFilter} yearError={yearDraft.error} yearErrorId="movie-list-year-error" />
+            <span className="lists-ownership-summary">{formatCount(model.stats.owned)} owned · {formatCount(model.stats.missing)} missing · {formatCount(model.stats.upgrades)} upgrades</span>
+            <Button type="button" className="lists-filter-icon" aria-label="Clear filters" title="Clear filters" disabled={statusFilter === 'all' && !hasListFilters(filters)} onClick={clearFilters}><X size={16}/></Button>
+            <Button type="button" className="lists-filter-icon" aria-label="Refresh movie lists" title="Refresh list" disabled={loading || ownershipLoading} onClick={() => { cardProjectionAttemptedKeys.current.clear(); setProjectionFailures(new Set()); setCardProjections({}); loadMovieLists({ forceLists: true }); setOwnershipRefreshKey(value => value + 1); }}><RefreshCw size={16}/></Button>
+          </div>}
+          selection={model.rows.length > 0 && <WorkspaceSelectionBar noun="movies" selectedCount={selectedRows.length}
+            allSelected={allRowsSelected} onToggleAll={checked => checked ? selectAllVisible() : clearSelection()}
+            label="Select all visible list movies" onClear={clearSelection}/>} />
+        {selectedRows.length > 0 && <div className="bulk-selection-bar lists-active-selection" role="region" aria-label="Selected movie actions">
+          <strong>{formatCount(selectedRows.length)} selected</strong>
+          <Button size="compact" type="button"  onClick={clearSelection}>Clear</Button>
+          <Button size="compact" type="button"  onClick={() => setCopyMovies(selectedCopyMovies)}><Copy size={13}/> Copy selected to...</Button>
+          <Button variant="danger" size="compact" type="button"  onClick={removeSelectedFromActiveList} disabled={!selectedList}><Trash2 size={13}/> Remove selected</Button>
+          <Button variant="source" size="compact" type="button"  onClick={openSelectedSourceReview}><Search size={13}/> Find sources</Button>
+        </div>}
+      </WorkspaceChrome>
+      <div className="movie-lists-main">
+        {metadataPending && <p role="status">Loading list metadata to find all matches…</p>}
+        {failedFilterMovies.length > 0 && <p role="alert">Some titles could not be checked ({failedFilterMovies.length}). Filter results are incomplete. <Button size="compact" type="button"  onClick={retryFilterMetadata} disabled={!failedFilterMovies.some(movie => movie.tmdb_id)}>Retry filter metadata</Button></p>}
           {error ? <div className="library-status library-status-error"><AlertTriangle size={16} /> {error}</div> : null}
           {loading || ownershipLoading ? (
-            <div className="empty-state"><strong>{loading ? 'Loading movie lists...' : 'Checking selected list...'}</strong><span>{loading ? 'Reading saved lists.' : 'Matching this list against Library ownership.'}</span></div>
+            <WorkspaceEmptyState size="compact" ><strong>{loading ? 'Loading movie lists...' : 'Checking selected list...'}</strong><span>{loading ? 'Reading saved lists.' : 'Matching this list against Library ownership.'}</span></WorkspaceEmptyState>
           ) : selectedList ? (
             model.rows.length ? (
               <>
@@ -699,12 +702,26 @@ export default function MovieListsWorkspace({
                 <Pagination {...movieListPaginationProps} ariaLabel="Movie list page controls below results" />
               </>
             ) : (
-              <div className="empty-state"><strong>No movies match this view.</strong><span>Change the search or filter chip.</span></div>
+              !error && (model.stats.total > 0 ? (
+                <WorkspaceEmptyState title={metadataIncomplete ? metadataPending ? 'Finding matching movies…' : 'Filter results are incomplete.' : 'No movies match this list view.'} description={metadataIncomplete ? 'Some titles still need metadata before all matches can be determined.' : 'Clear the search and filters to see the full list.'}>
+                  <Button variant="primary" type="button"  onClick={() => { setQuery(''); clearFilters(); setCurrentPage(1); }}>Clear filters</Button>
+                </WorkspaceEmptyState>
+              ) : selectedListIsFollowing ? (
+                <WorkspaceEmptyState title="You're not following any movies yet." description="Follow a movie from Discover to track it here." />
+              ) : selectedList.system_type === 'watched' ? (
+                <WorkspaceEmptyState title="No watched movies yet." description="Movies you mark as watched appear here." />
+              ) : (
+                <WorkspaceEmptyState
+                  title={selectedList.system_type === 'watchlist' ? 'Your Watchlist is empty.' : 'This list is empty.'}
+                  description={selectedList.system_type === 'watchlist' ? 'Save movies you want to watch here.' : 'Add a movie to start building this list.'}
+                >
+                  <Button variant="primary" type="button"  onClick={() => setTmdbAddOpen(true)}>Add movie</Button>
+                </WorkspaceEmptyState>
+              ))
             )
           ) : (
-            <div className="empty-state"><strong>No list selected.</strong><span>Create or select a list first.</span></div>
+            !error && <WorkspaceEmptyState title="Select a list to get started." description="Choose a list above, or create a new one." />
           )}
-        </div>
       </div>
 
       {sourceReview && (
@@ -792,24 +809,24 @@ function TmdbListAddDialog({ list, onAdd, onClose }) {
 
   return (
     <div className="modal-backdrop" role="presentation" onClick={onClose}>
-      <section className="torrent-dialog tmdb-list-add-dialog" role="dialog" aria-modal="true" aria-label={`Add movie to ${list.name}`} onClick={(event) => event.stopPropagation()}>
-        <div className="dialog-header">
+      <DialogShell size="wide" className="torrent-dialog tmdb-list-add-dialog" role="dialog" aria-modal="true" aria-label={`Add movie to ${list.name}`} onClick={(event) => event.stopPropagation()}>
+        <DialogHeader >
           <div>
             <p className="screen-kicker">Add movie</p>
             <h2>{list.name}</h2>
           </div>
-          <button type="button" className="inspector-close" onClick={onClose} aria-label="Close add movie dialog">
+          <Button size="icon" type="button" className="inspector-close" onClick={onClose} aria-label="Close add movie dialog">
             <X size={18} />
-          </button>
-        </div>
+          </Button>
+        </DialogHeader>
         <form className="library-search-panel tmdb-list-add-search" onSubmit={searchTmdb}>
-          <label className="library-search library-main-search">
+          <SearchField className="library-main-search">
             <Search size={17} />
-            <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search TMDB movies..." />
-          </label>
-          <button type="submit" className="btn btn-primary" disabled={!query.trim() || loading}>
+            <Input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search TMDB movies..." />
+          </SearchField>
+          <Button variant="primary" type="submit"  disabled={!query.trim() || loading}>
             {loading ? <Loader2 size={15} className="spin" /> : <Search size={15} />} Search
-          </button>
+          </Button>
         </form>
         {error ? <p className="settings-inline-status settings-inline-error"><AlertTriangle size={15} /><span>{error}</span></p> : null}
         <div className="tmdb-list-add-results">
@@ -821,23 +838,23 @@ function TmdbListAddDialog({ list, onAdd, onClose }) {
                   {movie.poster_url ? <img src={movie.poster_url} alt="" loading="lazy" /> : <Film size={18} />}
                 </span>
                 <div>
-                  <strong>{movie.title || 'Untitled'}</strong>
+                  <strong dir="auto">{movieDisplayTitle(movie) || 'Untitled'}</strong>
                   <span>{movie.year || 'Unknown year'}</span>
                   <small>{movie.plot || 'No plot summary available.'}</small>
                 </div>
-                <button type="button" className="btn btn-secondary" onClick={() => addResult(movie)} disabled={Boolean(addingKey)}>
+                <Button type="button"  onClick={() => addResult(movie)} disabled={Boolean(addingKey)}>
                   {addingKey === key ? <Loader2 size={15} className="spin" /> : <CirclePlus size={15} />} Add to list
-                </button>
+                </Button>
               </article>
             );
           }) : (
-            <div className="empty-state">
+            <WorkspaceEmptyState size="compact" >
               <strong>Search TMDB to add a movie.</strong>
               <span>Owned movies will render as Library cards after they match your archive; missing movies stay Discover-style.</span>
-            </div>
+            </WorkspaceEmptyState>
           )}
         </div>
-      </section>
+      </DialogShell>
     </div>
   );
 }

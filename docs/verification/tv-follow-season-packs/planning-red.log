@@ -1,0 +1,79 @@
+....F..FF.EFFFF
+======================================================================
+ERROR: test_non_due_singleton_is_not_prepared_in_a_season_plan (tests.test_tv_follow_season_planning.SeasonPlanningTests.test_non_due_singleton_is_not_prepared_in_a_season_plan)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_tv_follow_season_planning.py", line 145, in test_non_due_singleton_is_not_prepared_in_a_season_plan
+    result = self.service.select_automatic_plan(review,due_episode_ids=[task['episodes'][0]['episode_id']])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TVAcquisition' object has no attribute 'select_automatic_plan'. Did you mean: 'select_automatic'?
+
+======================================================================
+FAIL: test_cancellation_during_search_prevents_reservation_and_add (tests.test_tv_follow_season_planning.SeasonPlanningTests.test_cancellation_during_search_prevents_reservation_and_add)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_tv_follow_season_planning.py", line 137, in test_cancellation_during_search_prevents_reservation_and_add
+    self.manager.client.add_magnet.assert_not_called()
+  File "C:\Program Files\Python312\Lib\unittest\mock.py", line 910, in assert_not_called
+    raise AssertionError(msg)
+AssertionError: Expected 'add_magnet' to not have been called. Called 1 times.
+Calls: [call('magnet:?xt=urn:btih:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'C:\\Users\\dante\\AppData\\Local\\Temp\\tmpxe7kslyk\\data\\qbittorrent\\incomplete', stop_after_metadata=True)].
+
+======================================================================
+FAIL: test_follow_prefers_one_pack_and_associates_every_target (tests.test_tv_follow_season_planning.SeasonPlanningTests.test_follow_prefers_one_pack_and_associates_every_target)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_tv_follow_season_planning.py", line 87, in test_follow_prefers_one_pack_and_associates_every_target
+    self.assertEqual(self.provider.search_tv.call_args.kwargs['episode'], None)
+AssertionError: 1 != None
+
+======================================================================
+FAIL: test_full_pack_can_cover_non_due_siblings_without_early_episode_queries (tests.test_tv_follow_season_planning.SeasonPlanningTests.test_full_pack_can_cover_non_due_siblings_without_early_episode_queries)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_tv_follow_season_planning.py", line 101, in test_full_pack_can_cover_non_due_siblings_without_early_episode_queries
+    self.assertEqual(self.monitor.task(task['id'])['counts']['queued'], 3)
+AssertionError: 1 != 3
+
+======================================================================
+FAIL: test_pack_submission_failure_keeps_all_associations_for_recovery (tests.test_tv_follow_season_planning.SeasonPlanningTests.test_pack_submission_failure_keeps_all_associations_for_recovery)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_tv_follow_season_planning.py", line 121, in test_pack_submission_failure_keeps_all_associations_for_recovery
+    self.assertTrue(all(row['intent_id'] for row in rows))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_manual_quality_is_review_and_still_retries_in_five_hours (tests.test_tv_source_diagnostics.SourceDiagnosticsTests.test_manual_quality_is_review_and_still_retries_in_five_hours)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_tv_source_diagnostics.py", line 33, in test_manual_quality_is_review_and_still_retries_in_five_hours
+    self.assertEqual(row['state'],'needs_review')
+AssertionError: 'retry' != 'needs_review'
+- retry
++ needs_review
+
+
+======================================================================
+FAIL: test_returned_rejections_and_partial_sources_are_separate (tests.test_tv_source_diagnostics.SourceDiagnosticsTests.test_returned_rejections_and_partial_sources_are_separate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_tv_source_diagnostics.py", line 17, in test_returned_rejections_and_partial_sources_are_separate
+    self.assertEqual(result['state'],'rejected_sources')
+AssertionError: 'provider_failed' != 'rejected_sources'
+- provider_failed
++ rejected_sources
+
+
+======================================================================
+FAIL: test_version_three_migrates_once_without_resetting_existing_data (tests.test_tv_source_diagnostics.SourceDiagnosticsTests.test_version_three_migrates_once_without_resetting_existing_data)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_tv_source_diagnostics.py", line 54, in test_version_three_migrates_once_without_resetting_existing_data
+    self.assertEqual(db.execute('PRAGMA user_version').fetchone()[0],4)
+AssertionError: 3 != 4
+
+----------------------------------------------------------------------
+Ran 15 tests in 31.079s
+
+FAILED (failures=7, errors=1)

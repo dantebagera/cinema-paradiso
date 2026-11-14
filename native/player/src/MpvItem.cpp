@@ -206,11 +206,11 @@ bool MpvItem::openTrustedLocalPath(const QString &path, const QVariantMap &prefe
 
     applyPreferences(preferences);
     const QByteArray thumbnailIdentity =
-        QFile::encodeName(media.absoluteFilePath())
+        media.absoluteFilePath().toUtf8()
         + QByteArray::number(media.size())
         + QByteArray::number(media.lastModified().toMSecsSinceEpoch());
     const QString isolatedCacheRoot =
-        QString::fromLocal8Bit(qgetenv("CP_PLAYER_CACHE_ROOT")).trimmed();
+        qEnvironmentVariable("CP_PLAYER_CACHE_ROOT").trimmed();
     const QString cacheRoot =
         QFileInfo(isolatedCacheRoot).isAbsolute()
             ? isolatedCacheRoot
@@ -232,12 +232,23 @@ bool MpvItem::openTrustedLocalPath(const QString &path, const QVariantMap &prefe
     m_requestedThumbnailBucket = -1;
     m_activeThumbnailBucket = -1;
     m_firstFrameNoted = false;
+    m_position = 0.0;
+    m_duration = 0.0;
+    m_eofNotified = false;
+    emit positionChanged();
+    emit durationChanged();
+    // Per-file loops/picture adjustments must not leak into a different episode.
+    resetPicture();
+    sendCommand({QByteArrayLiteral("set"), QByteArrayLiteral("ab-loop-a"), QByteArrayLiteral("no")});
+    sendCommand({QByteArrayLiteral("set"), QByteArrayLiteral("ab-loop-b"), QByteArrayLiteral("no")});
+    m_abRepeatStage = 0;
     ++m_loadGeneration;
     m_loadTimer.restart();
     setStatus(QStringLiteral("Loading"));
     return sendCommand({
         QByteArrayLiteral("loadfile"),
-        QFile::encodeName(media.absoluteFilePath()),
+        // libmpv requires UTF-8 filenames on Windows, not the ANSI code page.
+        media.absoluteFilePath().toUtf8(),
         QByteArrayLiteral("replace"),
     });
 }
@@ -341,7 +352,7 @@ bool MpvItem::loadExternalSubtitle(const QString &path)
     }
     const bool accepted = sendCommand({
         QByteArrayLiteral("sub-add"),
-        QFile::encodeName(subtitle.absoluteFilePath()),
+        subtitle.absoluteFilePath().toUtf8(),
         QByteArrayLiteral("select"),
     });
     if (accepted) {
@@ -429,7 +440,7 @@ QString MpvItem::captureScreenshot()
     );
     if (!sendCommandAsync({
             QByteArrayLiteral("screenshot-to-file"),
-            QFile::encodeName(path),
+            path.toUtf8(),
             QByteArrayLiteral("video"),
         })) {
         return QStringLiteral("Screenshot failed");
@@ -477,7 +488,7 @@ void MpvItem::cycleAspectRatio()
 void MpvItem::cycleCrop()
 {
     sendCommand({QByteArrayLiteral("cycle-values"), QByteArrayLiteral("video-crop"),
-                 QByteArrayLiteral("no"), QByteArrayLiteral("16:9"),
+                 QByteArrayLiteral(""), QByteArrayLiteral("16:9"),
                  QByteArrayLiteral("4:3")});
 }
 
@@ -533,6 +544,17 @@ void MpvItem::adjustAudioDelay(double seconds)
     });
 }
 
+void MpvItem::resetPicture()
+{
+    for (const QByteArray &name : {QByteArrayLiteral("video-zoom"), QByteArrayLiteral("video-pan-x"),
+                                  QByteArrayLiteral("video-pan-y"), QByteArrayLiteral("video-rotate")}) {
+        sendCommand({QByteArrayLiteral("set"), name, QByteArrayLiteral("0")});
+    }
+    sendCommand({QByteArrayLiteral("set"), QByteArrayLiteral("video-aspect-override"), QByteArrayLiteral("-1")});
+    sendCommand({QByteArrayLiteral("set"), QByteArrayLiteral("video-crop"), QByteArrayLiteral("")});
+    m_rotation = 0;
+}
+
 void MpvItem::shutdownPlayback()
 {
     destroyThumbnailMpv();
@@ -571,7 +593,15 @@ void MpvItem::processEvents()
                 continue;
             }
             const QByteArray name(property->name);
-            if (name == QByteArrayLiteral("time-pos") && property->format == MPV_FORMAT_DOUBLE) {
+            if (name == QByteArrayLiteral("eof-reached") && property->format == MPV_FORMAT_FLAG) {
+                const bool ended = *static_cast<int *>(property->data) != 0;
+                if (!ended) m_eofNotified = false;
+                if (ended && !m_eofNotified && m_fileLoadedGeneration == m_loadGeneration) {
+                    m_eofNotified = true;
+                    setStatus(QStringLiteral("Playback ended"));
+                    emit playbackEnded();
+                }
+            } else if (name == QByteArrayLiteral("time-pos") && property->format == MPV_FORMAT_DOUBLE) {
                 m_position = *static_cast<double *>(property->data);
                 emit positionChanged();
             } else if (name == QByteArrayLiteral("duration")
@@ -608,7 +638,9 @@ void MpvItem::processEvents()
                                             .arg(QString::fromUtf8(m_api->errorText(end->error)));
                 setStatus(message);
                 emit playbackError(QStringLiteral("playback_failed"), message);
-            } else {
+            } else if (end && end->reason == MPV_END_FILE_REASON_EOF
+                       && !m_eofNotified && m_fileLoadedGeneration == m_loadGeneration) {
+                m_eofNotified = true;
                 setStatus(QStringLiteral("Playback ended"));
                 emit playbackEnded();
             }
@@ -654,7 +686,7 @@ void MpvItem::processThumbnailEvents()
             m_thumbnailCaptureCommandId = m_thumbnailCommandId++;
             m_thumbnailCapturePending = sendThumbnailCommandAsync({
                 QByteArrayLiteral("screenshot-to-file"),
-                QFile::encodeName(path),
+                path.toUtf8(),
                 QByteArrayLiteral("video"),
             }, m_thumbnailCaptureCommandId);
             if (!m_thumbnailCapturePending) {
@@ -851,7 +883,7 @@ bool MpvItem::initializeThumbnailMpv()
     m_thumbnailLoading = true;
     if (!sendThumbnailCommand({
             QByteArrayLiteral("loadfile"),
-            QFile::encodeName(m_thumbnailMediaPath),
+            m_thumbnailMediaPath.toUtf8(),
             QByteArrayLiteral("replace"),
         })) {
         qWarning() << "Seek preview disabled: media load command failed";
@@ -990,6 +1022,7 @@ void MpvItem::initializeMpv()
     m_api->observeProperty(m_mpv, 1, "time-pos", MPV_FORMAT_DOUBLE);
     m_api->observeProperty(m_mpv, 2, "duration", MPV_FORMAT_DOUBLE);
     m_api->observeProperty(m_mpv, 3, "pause", MPV_FORMAT_FLAG);
+    m_api->observeProperty(m_mpv, 30, "eof-reached", MPV_FORMAT_FLAG);
     m_api->observeProperty(m_mpv, 4, "volume", MPV_FORMAT_DOUBLE);
     m_api->observeProperty(m_mpv, 5, "mute", MPV_FORMAT_FLAG);
     m_api->observeProperty(m_mpv, 6, "speed", MPV_FORMAT_DOUBLE);

@@ -11,7 +11,108 @@ from services.media_file_facts import MediaFileFacts
 
 
 class LibraryIngestionPathsTest(unittest.TestCase):
+    def test_file_replacement_during_provider_work_discards_obsolete_facts(self):
+        movie = self.movies_a / 'Replaced.During.Lookup.2008.mkv'
+        movie.write_bytes(b'old')
+        os.utime(movie, (time.time() - 30, time.time() - 30))
+        store = app.AppMetadataStore(self.data)
+        store.save_authority_state({'active_provider': 'tmdb'})
+        measured = self._probe(movie)
+        def delayed(*args, **kwargs):
+            movie.write_bytes(b'new replacement payload')
+            return app._identity_resolution('accepted', {'tmdb_id': '778901', 'title': 'Obsolete Physical Facts', 'year': '2008'}, {'outcome': 'accepted'}, source='auto_tmdb')
+        with patch('app.probe_media_file', return_value=measured), patch('app._resolve_tmdb_identity', side_effect=delayed):
+            result = app._library_ingestion_coordinator().reconcile_paths_now([movie])
+        record = store.catalog.get_record('app_metadata/files.json', store._key(movie))
+        self.assertFalse(record.get('metadata_accepted'))
+        self.assertNotEqual(record.get('movie_view_publication'), 'ready')
+        self.assertEqual(result['pending'], 1)
+        self.assertLessEqual(len(app._library_ingestion_coordinator()._pending), 1)
+
+    def test_reused_probe_facts_cannot_restore_old_unaccepted_identity(self):
+        movie = self.movies_a / 'Reusable.Facts.2007.mkv'
+        movie.write_bytes(b'fixture')
+        os.utime(movie, (time.time() - 30, time.time() - 30))
+        store = app.AppMetadataStore(self.data)
+        store.save_authority_state({'active_provider': 'tmdb'})
+        with patch('app.probe_media_file', return_value=self._probe(movie)):
+            facts = app._metadata_file_facts(str(movie))
+        store.update_file_record(str(movie), {**facts, 'ingest_status': 'stable', 'identity_status': 'unmatched', 'metadata_status': 'pending', 'metadata_accepted': False, 'tmdb_id': '', 'enrichment_status': 'incomplete', 'movie_view_publication': 'pending'})
+        metadata = {'tmdb_id': '756789', 'title': 'Reusable Facts', 'year': '2007', 'plot': 'Newly accepted metadata.', 'cast': [], 'directors': [], 'writers': [], 'keywords': [], 'certification': ''}
+        resolution = app._identity_resolution('accepted', metadata, {'outcome': 'accepted'}, source='auto_tmdb')
+        with patch('app._resolve_tmdb_identity', return_value=resolution), patch('app.probe_media_file') as probe:
+            app._library_ingestion_coordinator().reconcile_paths_now([movie], require_publication=True)
+        record = store.catalog.get_record('app_metadata/files.json', store._key(movie))
+        self.assertTrue(record['metadata_accepted'])
+        self.assertEqual(record['tmdb_id'], '756789')
+        self.assertEqual(record['identity_status'], 'accepted')
+        probe.assert_not_called()
+        payload = app.app.test_client().get('/api/library?view=cards').get_json()
+        self.assertEqual([item['canonical_metadata']['tmdb_id'] for item in payload['items']], ['756789'])
+        self.assertEqual(payload['items'][0]['canonical_metadata']['enrichment_status'], 'complete')
+
+    def test_job_hint_cannot_replace_manual_identity_during_final_card_work(self):
+        movie = self.movies_a / 'Protected.Identity.2005.mkv'
+        movie.write_bytes(b'fixture')
+        os.utime(movie, (time.time() - 30, time.time() - 30))
+        store = app.AppMetadataStore(self.data)
+        store.save_authority_state({'active_provider': 'tmdb'})
+        identity = {'tmdb_id': '712345', 'title': 'Protected Identity', 'year': '2005', 'plot': 'Protected manual metadata.'}
+        store.apply_tmdb_match(str(movie), identity)
+        with patch('app.probe_media_file', return_value=self._probe(movie)), patch('app._fetch_tmdb_metadata_by_id', return_value=identity):
+            app._library_ingestion_coordinator().reconcile_paths_now([movie], require_publication=True,
+                identity_hints={str(movie): {'tmdb_id': '798765', 'title': 'Other Film', 'year': '2011'}})
+        record = store.catalog.get_record('app_metadata/files.json', store._key(movie))
+        self.assertEqual(record['tmdb_id'], '712345')
+        self.assertTrue(record['manual_lock'])
+        self.assertEqual(store.get_manual_match(str(movie))['tmdb_id'], '712345')
+
+    def test_manual_choice_arriving_during_provider_work_discards_obsolete_result(self):
+        movie = self.movies_a / 'Delayed.Provider.2006.mkv'
+        movie.write_bytes(b'fixture')
+        os.utime(movie, (time.time() - 30, time.time() - 30))
+        store = app.AppMetadataStore(self.data)
+        store.save_authority_state({'active_provider': 'tmdb'})
+        manual = {'tmdb_id': '723456', 'title': 'New Manual Choice', 'year': '2006', 'plot': 'Manual choice arrived during external work.'}
+        def delayed(*args, **kwargs):
+            app.AppMetadataStore(self.data).apply_tmdb_match(str(movie), manual)
+            return {'outcome': 'accepted', 'metadata': {'tmdb_id': '734567', 'title': 'Obsolete Answer', 'year': '2006'}, 'decision': {}}
+        with patch('app.probe_media_file', return_value=self._probe(movie)), patch('app._resolve_tmdb_identity', side_effect=delayed):
+            result = app._library_ingestion_coordinator().reconcile_paths_now([movie])
+        record = store.catalog.get_record('app_metadata/files.json', store._key(movie))
+        self.assertEqual(record['tmdb_id'], '723456')
+        self.assertEqual(store.get_manual_match(str(movie))['tmdb_id'], '723456')
+        self.assertTrue(record['manual_lock'])
+        self.assertEqual(result['pending'], 1)
+        self.assertNotEqual(record.get('movie_view_publication'), 'ready')
+
+    def test_download_provider_failure_before_hint_retains_original_error(self):
+        movie = self.movies_a / 'Provider.Timeout.2004.mkv'
+        movie.write_bytes(b'fixture')
+        with patch('app.urllib.request.urlopen', side_effect=TimeoutError('synthetic provider timeout')):
+            with self.assertRaisesRegex(TimeoutError, 'synthetic provider timeout'):
+                app._apply_completed_download_identity({'tmdb_id': '700987', 'paths': [str(movie)]})
+
+    def test_known_path_never_reads_whole_core_documents_or_inventory(self):
+        movie = self.movies_a / 'Bounded.Library.2003.mkv'
+        movie.write_bytes(b'fixture')
+        os.utime(movie, (time.time() - 30, time.time() - 30))
+        store = app.AppMetadataStore(self.data)
+        store.save_authority_state({'active_provider': 'filename'})
+        coordinator = app._library_ingestion_coordinator()
+        original_read = app.AppMetadataStore._read_json
+        def bounded_read(owner, path, fallback):
+            if Path(path).name in {'files.json', 'tmdb_metadata.json', 'plex_metadata.json', 'library_inventory.json'}:
+                raise AssertionError('whole core document read: ' + str(path))
+            return original_read(owner, path, fallback)
+        with patch.object(app.AppMetadataStore, 'snapshot', side_effect=AssertionError('whole snapshot')), patch.object(app.AppMetadataStore, '_read_json', bounded_read), patch('app.probe_media_file', return_value=self._probe(movie)):
+            result = coordinator.reconcile_paths_now([str(movie)])
+        self.assertEqual(result['checked'], 1)
+        self.assertEqual(result['review'], 1)
+
     def setUp(self):
+        self.dispatcher_patch = patch('services.library_ingestion.LibraryIngestionCoordinator._ensure_dispatcher_locked')
+        self.dispatcher_patch.start()
         if os.environ.get("CP_TEST_MODE") != "1":
             raise RuntimeError("Gate 2 tests require CP_TEST_MODE=1")
         declared = Path(os.environ["CP_TEST_ROOT"]).resolve()
@@ -42,7 +143,7 @@ class LibraryIngestionPathsTest(unittest.TestCase):
     def tearDown(self):
         coordinator = app._library_ingestion_coordinator_instance
         if coordinator is not None:
-            coordinator.shutdown(timeout_seconds=2)
+            coordinator.checkpoint_for_shutdown(timeout_seconds=2)
         (
             app._movies_dirs,
             app._movies_dir,
@@ -51,6 +152,7 @@ class LibraryIngestionPathsTest(unittest.TestCase):
             app._library_ingestion_coordinator_instance,
         ) = self.original
         self.workspace.cleanup()
+        self.dispatcher_patch.stop()
 
     @staticmethod
     def _probe(movie):

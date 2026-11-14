@@ -1,0 +1,109 @@
+
+Running 5 tests using 1 worker
+
+
+(node:36068) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1/5] ..\pass3-specs\library-search-performance.spec.js:16:5 › rapid live typing serializes reads and renders exact identities and reachable count
+  1) ..\pass3-specs\library-search-performance.spec.js:16:5 › rapid live typing serializes reads and renders exact identities and reachable count 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\localappdata\ms-playwright\chromium_headless_shell-1228\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\pass4-browser-results\library-search-performance-b03f5-ntities-and-reachable-count\error-context.md
+
+
+
+(node:55892) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2/5] ..\pass3-specs\library-search-performance.spec.js:60:5 › stale success and failure cannot replace latest search; empty and repeat navigation recover
+  2) ..\pass3-specs\library-search-performance.spec.js:60:5 › stale success and failure cannot replace latest search; empty and repeat navigation recover 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\localappdata\ms-playwright\chromium_headless_shell-1228\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\pass4-browser-results\library-search-performance-90ac2-d-repeat-navigation-recover\error-context.md
+
+
+
+(node:28352) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[3/5] ..\pass3-specs\library-search-performance.spec.js:91:5 › foreground typing wins while an old background poster preload is outstanding
+  3) ..\pass3-specs\library-search-performance.spec.js:91:5 › foreground typing wins while an old background poster preload is outstanding 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\localappdata\ms-playwright\chromium_headless_shell-1228\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\pass4-browser-results\library-search-performance-b6a2d-ster-preload-is-outstanding\error-context.md
+
+
+
+(node:33628) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[4/5] ..\pass3-specs\library-search-performance.spec.js:122:5 › Movie to File to Movie during a read schedules a valid replacement and settles loading
+  4) ..\pass3-specs\library-search-performance.spec.js:122:5 › Movie to File to Movie during a read schedules a valid replacement and settles loading 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\localappdata\ms-playwright\chromium_headless_shell-1228\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\pass4-browser-results\library-search-performance-f2f7e-acement-and-settles-loading\error-context.md
+
+
+
+(node:41276) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[5/5] ..\pass3-specs\library-search-performance.spec.js:145:5 › pass3 quiet refresh preserves page two, query, cards, loading and notifications
+  5) ..\pass3-specs\library-search-performance.spec.js:145:5 › pass3 quiet refresh preserves page two, query, cards, loading and notifications 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\localappdata\ms-playwright\chromium_headless_shell-1228\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ..\pass4-browser-results\library-search-performance-4c23f-s-loading-and-notifications\error-context.md
+
+
+  5 failed
+    ..\pass3-specs\library-search-performance.spec.js:16:5 › rapid live typing serializes reads and renders exact identities and reachable count 
+    ..\pass3-specs\library-search-performance.spec.js:60:5 › stale success and failure cannot replace latest search; empty and repeat navigation recover 
+    ..\pass3-specs\library-search-performance.spec.js:91:5 › foreground typing wins while an old background poster preload is outstanding 
+    ..\pass3-specs\library-search-performance.spec.js:122:5 › Movie to File to Movie during a read schedules a valid replacement and settles loading 
+    ..\pass3-specs\library-search-performance.spec.js:145:5 › pass3 quiet refresh preserves page two, query, cards, loading and notifications 

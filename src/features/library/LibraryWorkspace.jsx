@@ -1,10 +1,21 @@
+import Badge from '../../components/ui/Badge.jsx';
+import DialogShell, { DialogHeader, DialogActions } from '../../components/ui/DialogShell.jsx';
+import { Input, Select } from '../../components/ui/FormField.jsx';
+import Button from '../../components/ui/Button.jsx';
+import WorkspaceYearRange from '../../components/WorkspaceYearRange.jsx';
+import WorkspaceControls from '../../components/WorkspaceControls.jsx';
+import WorkspaceChrome from '../../components/WorkspaceChrome.jsx';
+import WorkspaceViewActions from '../../components/WorkspaceViewActions.jsx';
+import WorkspaceSelectionBar from '../../components/WorkspaceSelectionBar.jsx';
 import SearchField from '../search/SearchField.jsx';
+import SearchModeSelect from '../search/SearchModeSelect.jsx';
 import {
-  AlertTriangle, ChevronDown, ChevronUp, CirclePlus, Clapperboard, Filter, Folder,
-  Loader2, Play, RefreshCcw, RefreshCw, Search, Trash2, Wand2, X
+  AlertTriangle, ChevronDown, ChevronUp, CirclePlus, Clapperboard, Filter,
+  Loader2, Play, RefreshCcw, Search, Trash2, Wand2, X
 } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { fetchJson } from '../../api/client.js';
+import { createLibrarySearchRequests } from './librarySearchRequests.js';
 import { announceLibraryChanged, CATALOG_GENERATION_CHANGED_EVENT, observeCatalogGeneration } from '../../api/library.js';
 import { CATALOG_READY_EVENT } from '../../api/catalogEvents.js';
 import { fetchCanonicalMovieDetails, markMovieDetailsCacheStale } from '../../api/movieDetails.js';
@@ -36,6 +47,7 @@ async function preloadFinalPosters(items) {
 import WorkspacePathBar from '../../components/WorkspacePathBar.jsx';
 import { LibraryMovieCard } from '../../components/SharedMovieCards.jsx';
 import Pagination from '../../components/Pagination.jsx';
+import WorkspaceEmptyState from '../../components/WorkspaceEmptyState.jsx';
 import { ConfirmDialog, LibraryRenameModal, LibraryStat } from '../../components/LibraryControls.jsx';
 import useCardGridMetrics from '../../hooks/useCardGridMetrics.js';
 import useMovieCollectionCache from '../../hooks/useMovieCollectionCache.js';
@@ -55,10 +67,10 @@ function sameLibraryPath(left, right) {
 
 function LibraryPeopleSearchResults({ people, query, onOpenFilmography }) {
   if (!query.trim()) {
-    return <div className="empty-state library-empty"><strong>Search people in your library.</strong><span>Only accepted movies and their stored actor, director, or writer metadata are used.</span></div>;
+    return <WorkspaceEmptyState size="regular" className="library-empty"><strong>Search people in your library.</strong><span>Only accepted movies and their stored actor, director, or writer metadata are used.</span></WorkspaceEmptyState>;
   }
   if (!people.length) {
-    return <div className="empty-state library-empty"><strong>No owned people match that search.</strong><span>Try a different spelling or search movie titles instead.</span></div>;
+    return <WorkspaceEmptyState size="regular" className="library-empty"><strong>No owned people match that search.</strong><span>Try a different spelling or search movie titles instead.</span></WorkspaceEmptyState>;
   }
   return (
     <div className="discover-grid person-search-grid library-person-search-grid">
@@ -82,18 +94,18 @@ function LibraryKeywordSearchResults({ result, query, loading, error, onOpenKeyw
     return <div className="discover-grid keyword-search-grid"><div className="keyword-search-card skeleton-card" /></div>;
   }
   if (error) {
-    return <div className="empty-state library-empty"><strong>Could not search stored keywords.</strong><span>{error}</span></div>;
+    return <WorkspaceEmptyState size="regular" className="library-empty"><strong>Could not search stored keywords.</strong><span>{error}</span></WorkspaceEmptyState>;
   }
   if (!query.trim()) {
-    return <div className="empty-state library-empty"><strong>Search keywords in your library.</strong><span>Only normalized keywords already attached to owned SQL movies are used.</span></div>;
+    return <WorkspaceEmptyState size="regular" className="library-empty"><strong>Search keywords in your library.</strong><span>Only normalized keywords already attached to owned SQL movies are used.</span></WorkspaceEmptyState>;
   }
   if (!keywords.length) {
     return (
-      <div className="empty-state library-empty">
+      <WorkspaceEmptyState size="regular" className="library-empty">
         <strong>No owned keyword is named “{query.trim()}”.</strong>
         <span>Keyword mode searches stored metadata terms, not movie titles.</span>
-        <button type="button" className="btn btn-secondary" onClick={onSearchMovies}>Search movies for “{query.trim()}”</button>
-      </div>
+        <Button type="button"  onClick={onSearchMovies}>Search movies for “{query.trim()}”</Button>
+      </WorkspaceEmptyState>
     );
   }
   return (
@@ -138,30 +150,12 @@ function LibraryBulkSelectionBar({
 }) {
   const noun = kind === 'file' ? 'files' : 'movies';
   return (
-    <div className="bulk-selection-bar library-bulk-selection">
-      <SelectionCheckbox
-        className="library-selection-master"
-        checked={allFilteredSelected}
-        onChange={onToggleAll}
-        label={`Select all filtered library ${noun}`}
-      />
-      <span>{selectedCount ? `${formatCount(selectedCount)} selected` : `Select ${noun}`}</span>
-      <button type="button" className="mini-action" onClick={onSelectAll}>
-        Select all filtered
-      </button>
-      <button type="button" className="mini-action" onClick={onClear} disabled={!selectedCount}>
-        Clear
-      </button>
-      <button type="button" className="mini-action" onClick={onAddToList} disabled={!selectedCount}>
-        <CirclePlus size={13} /> Add to list
-      </button>
-      <button type="button" className="mini-action mini-action-source" onClick={onFindSources} disabled={!selectedCount}>
-        <Search size={13} /> Find sources
-      </button>
-      <button type="button" className="mini-action mini-action-danger" onClick={onDelete} disabled={!selectedCount}>
-        <Trash2 size={13} /> Delete selected
-      </button>
-    </div>
+    <WorkspaceSelectionBar className="library-bulk-selection" noun={noun} selectedCount={selectedCount} allSelected={allFilteredSelected}
+      onToggleAll={onToggleAll} label={`Select all filtered library ${noun}`} onSelectAll={onSelectAll} selectAllLabel="Select all filtered" onClear={onClear}>
+      <Button size="compact" type="button"  onClick={onAddToList}><CirclePlus size={13}/> Add to list</Button>
+      <Button variant="source" size="compact" type="button"  onClick={onFindSources}><Search size={13}/> Find sources</Button>
+      <Button variant="danger" size="compact" type="button"  onClick={onDelete}><Trash2 size={13}/> Delete selected</Button>
+    </WorkspaceSelectionBar>
   );
 }
 
@@ -180,6 +174,7 @@ export default function LibraryWorkspace({
   fileDetailsRequest,
   onFileDetailsRequestConsumed,
   onInitialReady,
+  onOpenSettings,
   mediaNavigation
 }) {
   const {
@@ -210,6 +205,7 @@ export default function LibraryWorkspace({
   const [viewingStateFilter, setViewingStateFilter] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
   const [expandedPath, setExpandedPath] = useState('');
+  const [controlsExpandedByMode, setControlsExpandedByMode] = useState({});
   const [focusedFilePath, setFocusedFilePath] = useState('');
   const [focusedMovieItem, setFocusedMovieItem] = useState(null);
   const [libraryHistory, setLibraryHistory] = useState([]);
@@ -238,7 +234,6 @@ export default function LibraryWorkspace({
   const [showAdultMovies, setShowAdultMovies] = useState(true);
   const [selectedLibraryKeys, setSelectedLibraryKeys] = useState(() => new Set());
   const [selectedFilePaths, setSelectedFilePaths] = useState(() => new Set());
-  const [filtersOpen, setFiltersOpen] = useState(false);
   const [peopleLoaded, setPeopleLoaded] = useState(false);
   const [peopleItems, setPeopleItems] = useState([]);
   const [libraryKeywordResult, setLibraryKeywordResult] = useState({
@@ -256,8 +251,13 @@ export default function LibraryWorkspace({
     facets: { genres: [], sources: [], languages: [], countries: [] },
     stats: { total: 0, low: 0, matched: 0, pending: 0, unmatched: 0 }
   });
+  const [libraryResponse, setLibraryResponse] = useState(null);
+  const [libraryReadFailed, setLibraryReadFailed] = useState(false);
   const libraryRequestSeq = useRef(0);
-  const backgroundRequestSeq = useRef(0);
+  const libraryReadsRef = useRef(null);
+  const libraryIntentRef = useRef({ key: null, revision: 0 });
+  const libraryFreshnessRef = useRef(0);
+  const visibleLibraryReadRef = useRef(null);
   const backgroundRefreshRef = useRef({ running: false, pending: false });
   const initialLibraryLoadRef = useRef({ complete: false, pending: false, generation: 0, unconditional: false });
   const initialReadyNotifiedRef = useRef(false);
@@ -266,7 +266,6 @@ export default function LibraryWorkspace({
   const peopleLoadPromiseRef = useRef(null);
   const movieViewStateRef = useRef(null);
   const advancedImportedRef = useRef(false);
-  const activeLibraryQueryRef = useRef(null);
 
   useEffect(() => {
     const clearDetailCaches = () => {
@@ -326,37 +325,75 @@ export default function LibraryWorkspace({
   }, [advancedQuery, librarySearchKind]);
 
   const activeLibraryQuery = librarySearchKind === 'advanced' ? executedAdvancedQuery : simpleLibraryQuery;
-  activeLibraryQueryRef.current = activeLibraryQuery;
+  const readSurface = mode === 'movie' && ['movies', 'advanced'].includes(librarySearchKind) ? 'movie-cards' : `${mode}:${librarySearchKind}`;
+  const visibleReadKey = JSON.stringify([readSurface, querySignature(activeLibraryQuery), currentPage, pageSize]);
+  if (libraryIntentRef.current.key !== visibleReadKey) {
+    libraryIntentRef.current = { key: visibleReadKey, revision: libraryIntentRef.current.revision + 1 };
+  }
+  visibleLibraryReadRef.current = { query: activeLibraryQuery, page: currentPage, pageSize, intent: libraryIntentRef.current.revision };
+
+  useEffect(() => {
+    libraryReadsRef.current = createLibrarySearchRequests(descriptor => fetchJson('/api/library/search/advanced', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query: descriptor.query, page: descriptor.page, page_size: descriptor.pageSize })
+    }));
+    return () => {
+      libraryRequestSeq.current += 1;
+      libraryReadsRef.current?.dispose();
+      libraryReadsRef.current = null;
+    };
+  }, []);
 
   const loadLibrary = useCallback(async (forceScan = false, options = {}) => {
     const background = Boolean(options.background);
-    const requestSeq = background
-      ? backgroundRequestSeq.current + 1
-      : libraryRequestSeq.current + 1;
-    if (background) backgroundRequestSeq.current = requestSeq;
-    else libraryRequestSeq.current = requestSeq;
+    const requestSeq = ++libraryRequestSeq.current;
+    const freshness = ++libraryFreshnessRef.current;
+    let descriptor;
+    const canCommit = () => Boolean(descriptor && libraryReadsRef.current
+      && requestSeq === libraryRequestSeq.current
+      && descriptor.intent === visibleLibraryReadRef.current?.intent
+      && descriptor.freshness === libraryFreshnessRef.current);
     const quiet = Boolean(options.quiet);
     if (!background) {
+      if (forceScan) setCurrentPage(1);
       setLoading(true);
       setError('');
       setStatus(forceScan ? 'Rescanning library folders...' : 'Loading library...');
     }
     try {
-      const requestedPage = forceScan ? 1 : currentPage;
       const scanResult = forceScan
         ? await fetchJson('/api/library?view=cards&force_scan=1&page=1&page_size=1')
         : null;
-      const queryResult = await fetchJson('/api/library/search/advanced', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ query: activeLibraryQueryRef.current, page: requestedPage, page_size: pageSize })
-          });
-      const data = scanResult ? { ...queryResult, ...scanResult, items: queryResult.items, total: queryResult.total, page: queryResult.page, total_pages: queryResult.total_pages, page_start: queryResult.page_start, page_end: queryResult.page_end, facets: queryResult.facets, stats: queryResult.stats } : queryResult;
-      if (requestSeq !== (background ? backgroundRequestSeq.current : libraryRequestSeq.current)) return;
+      // A scan is a command and always finishes. Its feedback is independent of
+      // whether a later search supersedes this read.
+      if (scanResult) {
+        const discovered = Number(scanResult.new_files || 0);
+        const identified = Number(scanResult.metadata_matched || 0);
+        const pending = Number(scanResult.metadata_pending || 0);
+        const summary = [
+          discovered ? `${formatCount(discovered)} new file${discovered === 1 ? '' : 's'}` : '',
+          identified ? `${formatCount(identified)} identified` : '',
+          pending ? `${formatCount(pending)} still copying` : ''
+        ].filter(Boolean).join(' · ');
+        notify(summary || 'Library rescan complete — no changes found', discovered || identified ? 'success' : 'neutral');
+        announceLibraryChanged({ source: 'manual-rescan', library: scanResult });
+      }
+      if (!libraryReadsRef.current || requestSeq !== libraryRequestSeq.current) return;
+      descriptor = { ...visibleLibraryReadRef.current, freshness };
+      const outcome = await libraryReadsRef.current.request(descriptor);
+      if (outcome.status !== 'complete' || !canCommit()) return;
+      const requestedQuery = descriptor.query;
+      const data = outcome.data;
       if (background) await preloadFinalPosters(data.items || []);
-      if (requestSeq !== (background ? backgroundRequestSeq.current : libraryRequestSeq.current)) return;
+      if (!canCommit()) return;
       observeCatalogGeneration(data.catalog_generation);
       setItems(data.items || []);
+      setLibraryResponse({
+        signature: querySignature(requestedQuery),
+        statsAvailable: data.stats?.total != null && Number.isFinite(Number(data.stats.total))
+      });
+      setLibraryReadFailed(false);
       setLibraryResult({
         total: Number(data.total || 0),
         page: Number(data.page || 1),
@@ -367,26 +404,12 @@ export default function LibraryWorkspace({
         stats: data.stats || { total: 0, low: 0, matched: 0, pending: 0, unmatched: 0 }
       });
       setFileItemsLoaded(false);
-      if (forceScan) setCurrentPage(1);
-      if (forceScan) {
-        const discovered = Number(data.new_files || 0);
-        const identified = Number(data.metadata_matched || 0);
-        const pending = Number(data.metadata_pending || 0);
-        const summary = [
-          discovered ? `${formatCount(discovered)} new file${discovered === 1 ? '' : 's'}` : '',
-          identified ? `${formatCount(identified)} identified` : '',
-          pending ? `${formatCount(pending)} still copying` : ''
-        ].filter(Boolean).join(' · ');
-        setStatus(summary || 'Rescan complete — no changes found');
-        notify(summary || 'Library rescan complete — no changes found', discovered || identified ? 'success' : 'neutral');
-        announceLibraryChanged({ source: 'manual-rescan', library: data });
-      } else {
-        if (!background) setStatus('');
-        if (!quiet && !options.silentSuccess) notify(`${formatCount(data.count)} library files loaded`, 'success');
-      }
+      if (!background) setStatus('');
+      if (!forceScan && !background && !quiet && !options.silentSuccess) notify(`${formatCount(data.count)} library files loaded`, 'success');
       return data;
     } catch (loadError) {
-      if (requestSeq !== (background ? backgroundRequestSeq.current : libraryRequestSeq.current)) return;
+      if (descriptor ? !canCommit() : requestSeq !== libraryRequestSeq.current || !libraryReadsRef.current) return;
+      setLibraryReadFailed(true);
       if (background) setStatus(`Background library update deferred: ${loadError.message}`);
       else {
         setError(loadError.message);
@@ -394,7 +417,7 @@ export default function LibraryWorkspace({
       }
       return null;
     } finally {
-      if (!background && requestSeq === libraryRequestSeq.current) setLoading(false);
+      if (descriptor ? canCommit() : requestSeq === libraryRequestSeq.current && libraryReadsRef.current) setLoading(false);
     }
   }, [currentPage, notify, pageSize]);
 
@@ -438,14 +461,14 @@ export default function LibraryWorkspace({
     let cancelled = false;
     const previous = libraryLoadSignatureRef.current;
     // Editor mode does not change query identity or require another request.
-    if (initialLibraryLoadRef.current.complete && previous?.query === libraryQuerySignature && previous.pageSize === pageSize) return undefined;
+    if (initialLibraryLoadRef.current.complete && previous?.query === libraryQuerySignature && previous.pageSize === pageSize && previous.intent === libraryIntentRef.current.revision) return undefined;
     const pageSizeOnlyChange = Boolean(
       initialLibraryLoadRef.current.complete
       && previous
       && previous.query === libraryQuerySignature
       && previous.pageSize !== pageSize
     );
-    libraryLoadSignatureRef.current = { query: libraryQuerySignature, pageSize };
+    libraryLoadSignatureRef.current = { query: libraryQuerySignature, pageSize, intent: libraryIntentRef.current.revision };
 
     async function refresh() {
       if (pageSizeOnlyChange) {
@@ -935,6 +958,7 @@ export default function LibraryWorkspace({
       listFilter,
       currentPage,
       expandedPath,
+      controlsExpanded: Boolean(controlsExpandedByMode.movie),
       focusedMovieItem
     };
   }
@@ -960,6 +984,7 @@ export default function LibraryWorkspace({
     setListFilter(snapshot.listFilter || null);
     setCurrentPage(snapshot.currentPage || 1);
     setExpandedPath(snapshot.expandedPath || '');
+    setControlsExpandedByMode(current => ({ ...current, movie: Boolean(snapshot.controlsExpanded) }));
     setFocusedMovieItem(snapshot.focusedMovieItem || null);
     if (snapshot.items && snapshot.libraryResult) {
       setItems(snapshot.items);
@@ -1058,8 +1083,13 @@ export default function LibraryWorkspace({
     setExpandedPath('');
   }
 
-  function resetLibraryAdvanced() {
-    resetAllLibraryFilters();
+  function clearLibraryAdvancedSearch() {
+    const empty = createEmptyQuery('library');
+    advancedImportedRef.current = true;
+    setAdvancedQuery(empty);
+    setExecutedAdvancedQuery(empty);
+    setQuery('');
+    resetLibraryPage();
   }
 
   function enterLibrarySearchMode(nextSearchKind) {
@@ -1331,42 +1361,49 @@ export default function LibraryWorkspace({
     }));
   }
 
-  return (
-    <section className="library-workspace">
-      <div className="library-header">
-        <div>
-          <p className="screen-kicker">Local archive</p>
-          <h2>{mode === 'movie' ? 'Movie View' : 'File View'}</h2>
-          <p>{mode === 'movie' ? 'Choose what to watch using movie metadata, quality, rating, genre, country, and language.' : 'Manage local files with canonical identity, provider evidence, quality, rename, delete, and source search actions.'}</p>
-        </div>
-        <div className="library-header-actions">
-          <div className="library-view-row">
-            <div className="segmented-control library-view-switch" role="group" aria-label="Library mode">
-              <button type="button" className={cx(mode === 'movie' && 'segment-active')} onClick={openRememberedMovieView}>
-                <Clapperboard size={18} /> Media View
-              </button>
-              <button type="button" className={cx(mode === 'file' && 'segment-active')} onClick={() => openFileInventory()}>
-                <Folder size={18} /> File View
-              </button>
-            </div>
-            <button
-              type="button"
-              className="btn btn-secondary library-rescan-button"
-              onClick={() => loadLibrary(true)}
-              disabled={activeLoading}
-              aria-label="Rescan library files"
-              title="Rescan library files"
-            >
-              {activeLoading ? <Loader2 size={19} className="spin" /> : <RefreshCw size={19} />}
-            </button>
-          </div>
-        </div>
-      </div>
+  function renderLibraryEmptyState() {
+    if (error || (mode === 'movie' && libraryReadFailed) || activeLoading) return null;
+    if (mode === 'file' ? !fileItemsLoaded : libraryResponse?.signature !== querySignature(activeLibraryQuery)) return null;
+    const restricted = Boolean(
+      (mode === 'movie' ? activeLibraryQuery.groups.length : query.trim())
+      || identityFilter !== 'all' || sizeFilter !== 'all' || focusedFilePath
+      || (mode === 'file' && (resolutionFilter !== 'all' || sourceFilter !== 'all'))
+    );
+    const clearFilters = <Button variant="primary" type="button"  onClick={resetAllLibraryFilters}>Clear filters</Button>;
+    const sourceEmpty = mode === 'file'
+      ? fileItems.length === 0
+      : libraryResponse.statsAvailable && libraryResult.stats.total === 0;
+    if (sourceEmpty) {
+      return <WorkspaceEmptyState
+        className="library-empty"
+        title={mode === 'movie' ? 'No movies in your library yet.' : 'No movie files in your library yet.'}
+        description={mode === 'movie' ? 'Check your movie folders in Settings. Movies appear here after files are added and indexed.' : 'Check your movie folders in Settings, then add media to a configured folder.'}
+      >
+        <Button variant="primary" type="button"  onClick={onOpenSettings}>Open Settings</Button>
+        {restricted && <Button type="button"  onClick={resetAllLibraryFilters}>Clear filters</Button>}
+      </WorkspaceEmptyState>;
+    }
+    if (mode === 'movie' && libraryResult.total > 0) {
+      if (libraryResult.page <= libraryResult.total_pages) return null;
+      return <WorkspaceEmptyState title="No results on this page." description="This page is outside the available results.">
+        <Button variant="primary" type="button"  onClick={() => goToLibraryPage(libraryResult.total_pages)}>Go to page {libraryResult.total_pages}</Button>
+      </WorkspaceEmptyState>;
+    }
+    if (restricted) {
+      return <WorkspaceEmptyState className="library-empty" title={`No ${mode === 'movie' ? 'movies' : 'files'} match this view.`} description="Clear the search and filters to see more of your library.">{clearFilters}</WorkspaceEmptyState>;
+    }
+    const needsMetadata = mode === 'movie' && libraryResponse.statsAvailable && libraryResult.stats.total > 0 && libraryResult.stats.matched === 0;
+    return <WorkspaceEmptyState
+      className="library-empty"
+      title={needsMetadata ? "Your files aren't ready for Movie View." : 'No movies available in this view.'}
+      description={needsMetadata ? 'Movie View uses accepted metadata. Open File View to inspect the indexed files.' : 'Open File View to inspect your indexed files.'}
+    >
+      <Button variant="primary" type="button"  onClick={() => openFileInventory()}>Open File View</Button>
+    </WorkspaceEmptyState>;
+  }
 
-      {mediaNavigation}
-
-      <form
-        className="library-search-panel"
+  const searchControls = (<form
+        className="workspace-search-form"
         data-people-search={mode === 'movie' || undefined}
         onSubmit={(event) => {
           event.preventDefault();
@@ -1392,7 +1429,7 @@ export default function LibraryWorkspace({
             if (querySignature(executedAdvancedQuery) === querySignature(advancedQuery)) loadLibrary(false, { quiet: true, silentSuccess: true });
             else { setExecutedAdvancedQuery(advancedQuery); resetLibraryPage(); }
           }}
-          onReset={resetLibraryAdvanced}
+          onClearSearch={clearLibraryAdvancedSearch}
           loading={loading}
           error={error}
           searchIdentities={searchLibraryAdvancedIdentities}
@@ -1403,9 +1440,9 @@ export default function LibraryWorkspace({
             library_source: optionSets.sources.map((value) => ({ id: value, label: value })),
             movie_list: userLists.map((list) => ({ id: String(list.id), label: list.name }))
           }}
-        /> : <SearchField className="library-main-search">
+        /> : <SearchField className="library-main-search" clearLabel="Clear Library search" onClear={query ? () => setQuery('') : undefined}>
           <Search size={17} />
-          <input
+          <Input
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder={mode !== 'movie'
@@ -1425,7 +1462,7 @@ export default function LibraryWorkspace({
           />
         </SearchField>}
         {mode === 'movie' && (
-          <select
+          <SearchModeSelect
             value={librarySearchKind}
             onChange={(event) => enterLibrarySearchMode(event.target.value)}
             aria-label="Library search type"
@@ -1434,97 +1471,81 @@ export default function LibraryWorkspace({
             <option value="people">People</option>
             <option value="keywords">Keywords</option>
             <option value="advanced">Advanced</option>
-          </select>
+          </SearchModeSelect>
         )}
-        <button
+        <Button variant={librarySearchKind === 'advanced' ? 'ai' : 'primary'}
           type="submit"
-          className={cx('btn btn-primary library-search-submit', librarySearchKind === 'advanced' && 'advanced-search-submit')}
+          className={cx('library-search-submit', librarySearchKind === 'advanced' && 'advanced-search-submit')}
           disabled={librarySearchKind === 'advanced' && loading}
         >
           {librarySearchKind === 'advanced' && loading ? <Loader2 size={15} className="spin" /> : <Search size={15} />}
           Search
-        </button>
-      </form>
-
-      {librarySearchKind === 'movies' && <div className={cx('library-toolbar library-filter-toolbar', `library-filter-toolbar-${mode}`, !filtersOpen && 'library-filter-toolbar-collapsed')}>
-        {!filtersOpen ? (
-          <>
-            <span>Filters collapsed: resolution, source, genre, viewing state, country, year, rating, sort</span>
-            <button
-              type="button"
-              className="btn btn-secondary library-filter-icon-button"
-              onClick={() => setFiltersOpen(true)}
-              aria-label="Open filters"
-              title="Open filters"
-            >
-              <Filter size={17} />
-            </button>
-          </>
-        ) : (
-          <>
-            <select aria-label="Library resolution filter" value={resolutionFilter} onChange={(event) => { setResolutionFilter(event.target.value); resetLibraryPage(); }}>
+        </Button>
+      </form>);
+  const filterControls = <>{librarySearchKind === 'movies' && <div className={cx('workspace-filter-grid library-filter-toolbar', `library-filter-toolbar-${mode}`)}>
+            <Select aria-label="Library resolution filter" value={resolutionFilter} onChange={(event) => { setResolutionFilter(event.target.value); resetLibraryPage(); }}>
               <option value="all">All resolutions</option>
               <option value="upgrade">Upgrade candidates</option>
               <option value="4k">4K</option>
               <option value="1080p">1080p</option>
               <option value="720p">720p</option>
               <option value="below-720p">Below 720p</option>
-            </select>
-            <select value={sourceFilter} onChange={(event) => { setSourceFilter(event.target.value); resetLibraryPage(); }}>
+            </Select>
+            <Select value={sourceFilter} onChange={(event) => { setSourceFilter(event.target.value); resetLibraryPage(); }}>
               <option value="all">All sources</option>
               {optionSets.sources.map((value) => <option key={value} value={value}>{value}</option>)}
-            </select>
+            </Select>
             {mode === 'movie' ? (
               <>
-            <select value={genreFilter} onChange={(event) => { setGenreFilter(event.target.value); resetLibraryPage(); }}>
+            <Select value={genreFilter} onChange={(event) => { setGenreFilter(event.target.value); resetLibraryPage(); }}>
               <option value="all">All genres</option>
               {optionSets.genres.map((value) => <option key={value} value={value}>{value}</option>)}
-            </select>
-            <select value={viewingStateFilter} onChange={(event) => { setViewingStateFilter(event.target.value); resetLibraryPage(); }}>
+            </Select>
+            <Select value={viewingStateFilter} onChange={(event) => { setViewingStateFilter(event.target.value); resetLibraryPage(); }}>
               <option value="all">All viewing states</option>
               <option value="watched">Watched</option>
               <option value="unwatched">Unwatched</option>
               <option value="watchlist">Watchlist</option>
-            </select>
-            <select value={countryFilter} onChange={(event) => { setCountryFilter(event.target.value); resetLibraryPage(); }}>
+            </Select>
+            <Select value={countryFilter} onChange={(event) => { setCountryFilter(event.target.value); resetLibraryPage(); }}>
               <option value="all">All countries</option>
               {optionSets.countries.map((value) => <option key={value} value={value}>{value}</option>)}
-            </select>
-            <input className="library-mini-input" value={yearFrom} onChange={(event) => { setYearFrom(event.target.value); resetLibraryPage(); }} placeholder="Year from" inputMode="numeric" maxLength={4} aria-invalid={Boolean(libraryYearDraft.error)} />
-            <input className="library-mini-input" value={yearTo} onChange={(event) => { setYearTo(event.target.value); resetLibraryPage(); }} placeholder="Year to" inputMode="numeric" maxLength={4} aria-invalid={Boolean(libraryYearDraft.error)} />
-            {libraryYearDraft.error && <span className="year-draft-error" role="alert">{libraryYearDraft.error}</span>}
-            <select value={minRating} onChange={(event) => { setMinRating(event.target.value); resetLibraryPage(); }}>
+            </Select>
+            <WorkspaceYearRange><Input className="library-mini-input" value={yearFrom} onChange={(event) => { setYearFrom(event.target.value); resetLibraryPage(); }} placeholder="Year from" inputMode="numeric" maxLength={4} aria-invalid={Boolean(libraryYearDraft.error)} />
+            <Input className="library-mini-input" value={yearTo} onChange={(event) => { setYearTo(event.target.value); resetLibraryPage(); }} placeholder="Year to" inputMode="numeric" maxLength={4} aria-invalid={Boolean(libraryYearDraft.error)} /></WorkspaceYearRange>
+
+            <Select value={minRating} onChange={(event) => { setMinRating(event.target.value); resetLibraryPage(); }}>
               <option value="all">Any rating</option>
               <option value="6">6+</option>
               <option value="7">7+</option>
               <option value="8">8+</option>
-            </select>
-            <select value={sortMode} onChange={(event) => { setSortMode(event.target.value); resetLibraryPage(); }}>
+            </Select>
+            <Select value={sortMode} onChange={(event) => { setSortMode(event.target.value); resetLibraryPage(); }}>
               <option value="added">Sort by newly added</option>
               <option value="title">Sort by title</option>
               <option value="rating">Sort by rating</option>
               <option value="year-desc">Year newest</option>
               <option value="year-asc">Year oldest</option>
               <option value="quality">Sort by quality</option>
-            </select>
+            </Select>
               </>
             ) : (
               <>
-            <select value={identityFilter} onChange={(event) => { setIdentityFilter(event.target.value); resetLibraryPage(); }}>
+            <Select value={identityFilter} onChange={(event) => { setIdentityFilter(event.target.value); resetLibraryPage(); }}>
               <option value="all">All identity states</option>
               <option value="matched">Catalog matched</option>
               <option value="unmatched">Needs identity</option>
-            </select>
-            <select value={genreFilter} onChange={(event) => { setGenreFilter(event.target.value); resetLibraryPage(); }}>
+            </Select>
+            <Select value={genreFilter} onChange={(event) => { setGenreFilter(event.target.value); resetLibraryPage(); }}>
               <option value="all">All genres</option>
               {optionSets.genres.map((value) => <option key={value} value={value}>{value}</option>)}
-            </select>
-            <select value={sizeFilter} onChange={(event) => { setSizeFilter(event.target.value); resetLibraryPage(); }}>
+            </Select>
+            <Select value={sizeFilter} onChange={(event) => { setSizeFilter(event.target.value); resetLibraryPage(); }}>
               <option value="all">All sizes</option>
               <option value="small">Small files</option>
               <option value="large">Large files</option>
-            </select>
-            <select value={sortMode} onChange={(event) => { setSortMode(event.target.value); resetLibraryPage(); }}>
+            </Select>
+            <Select value={sortMode} onChange={(event) => { setSortMode(event.target.value); resetLibraryPage(); }}>
               <option value="added">Sort by newly added</option>
               <option value="filename">Sort by filename</option>
               <option value="title">Sort by movie title</option>
@@ -1532,30 +1553,38 @@ export default function LibraryWorkspace({
               <option value="size">Sort by file size</option>
               <option value="identity">Sort by identity status</option>
               <option value="source">Sort by source</option>
-            </select>
+            </Select>
               </>
             )}
-            <button
+            <Button
               type="button"
-              className="btn btn-secondary library-filter-icon-button library-hide-filters"
-              onClick={() => setFiltersOpen(false)}
-              aria-label="Hide filters"
-              title="Hide filters"
-            >
-              <ChevronUp size={18} />
-            </button>
-            <button
-              type="button"
-              className="btn btn-secondary library-filter-icon-button library-reset-filters"
+              className="library-filter-icon-button library-reset-filters"
               onClick={resetAllLibraryFilters}
               aria-label="Reset filters"
               title="Reset filters"
             >
               <RefreshCcw size={17} />
-            </button>
-          </>
-        )}
-      </div>}
+            </Button>
+      </div>}</>;
+  const selectionControls = <>{(mode === 'movie' ? libraryResult.total > 0 : filteredItems.length > 0) && librarySearchKind === 'movies' && (
+            <LibraryBulkSelectionBar
+              kind={mode}
+              selectedCount={activeSelectedPaths.size}
+              allFilteredSelected={mode === 'movie' ? allFilteredLibrarySelected : allFilteredFilesSelected}
+              onToggleAll={(checked) => { if (checked) selectAllFiltered(); else clearActiveSelection(); }}
+              onSelectAll={selectAllFiltered}
+              onClear={clearActiveSelection}
+              onAddToList={openSelectedListEditor}
+              onFindSources={openSelectedSourceReview}
+              onDelete={requestBulkDelete}
+            />
+          )}</>;
+  return (
+    <section className="library-workspace" aria-label={mode === 'file' ? 'Library Movie Files' : 'Library Movies'}>
+      <WorkspaceChrome navigation={mediaNavigation}>
+      <WorkspaceControls actions={<WorkspaceViewActions fileView={mode === 'file'} label="Library mode" onMediaView={openRememberedMovieView} onFileView={() => openFileInventory()} onRefresh={() => loadLibrary(true)} refreshLabel="Rescan library files" loading={activeLoading}/> } autoCollapseKey={mode === 'movie' ? expandedPath : ''} expanded={Boolean(controlsExpandedByMode[mode])} onExpandedChange={expanded => setControlsExpandedByMode(current => ({ ...current, [mode]: expanded }))} search={searchControls} filters={filterControls} selection={selectionControls} loadedCount={librarySearchKind === 'people' ? libraryPeopleResults.length : librarySearchKind === 'keywords' ? libraryKeywordResult.items.length : visibleItems.length} countLabel={mode === 'file' ? 'files loaded' : 'loaded'} selectedCount={activeSelectedPaths.size}
+        summary={activeLibraryQuery.groups.length ? `${activeLibraryQuery.groups.length} active filters` : undefined} notice={libraryYearDraft.error && <span className="year-draft-error" role="alert">{libraryYearDraft.error}</span>}/>
+      </WorkspaceChrome>
 
       {(activeLoading || status || error) && (
         <div className={cx('library-status', error && 'library-status-error')}>
@@ -1614,19 +1643,7 @@ export default function LibraryWorkspace({
           />
         ) : (
         <>
-          {(mode === 'movie' ? libraryResult.total > 0 : filteredItems.length > 0) && (
-            <LibraryBulkSelectionBar
-              kind={mode}
-              selectedCount={activeSelectedPaths.size}
-              allFilteredSelected={mode === 'movie' ? allFilteredLibrarySelected : allFilteredFilesSelected}
-              onToggleAll={(checked) => { if (checked) selectAllFiltered(); else clearActiveSelection(); }}
-              onSelectAll={selectAllFiltered}
-              onClear={clearActiveSelection}
-              onAddToList={openSelectedListEditor}
-              onFindSources={openSelectedSourceReview}
-              onDelete={requestBulkDelete}
-            />
-          )}
+
         <Pagination
             total={focusedMovieItem ? visibleItems.length : mode === 'movie' ? libraryResult.total : filteredItems.length}
             page={safePage}
@@ -1705,10 +1722,7 @@ export default function LibraryWorkspace({
               })}
             </div>
           ) : (
-            <div className="empty-state library-empty">
-              <strong>No {mode === 'movie' ? 'movies' : 'files'} match these filters.</strong>
-              <span>Clear search or change the active filters.</span>
-            </div>
+            renderLibraryEmptyState()
           )}
           <Pagination
             total={mode === 'movie' ? libraryResult.total : filteredItems.length}
@@ -1809,21 +1823,21 @@ function CollectionEditorModal({ collection, items, onClose, onSave }) {
 
   return (
     <div className="modal-backdrop" role="presentation" onClick={onClose}>
-      <section className="torrent-dialog curation-dialog" role="dialog" aria-modal="true" aria-label="Edit collection" onClick={(event) => event.stopPropagation()}>
-        <div className="dialog-header">
+      <DialogShell size="wide" className="torrent-dialog curation-dialog" role="dialog" aria-modal="true" aria-label="Edit collection" onClick={(event) => event.stopPropagation()}>
+        <DialogHeader >
           <div>
             <p className="screen-kicker">Edit collection</p>
             <h2>{collection.name}</h2>
           </div>
-          <button type="button" className="inspector-close" onClick={onClose} aria-label="Close collection editor">
+          <Button size="icon" type="button" className="inspector-close" onClick={onClose} aria-label="Close collection editor">
             <X size={18} />
-          </button>
-        </div>
+          </Button>
+        </DialogHeader>
         <p className="dialog-body-path">Saving changes marks this collection as made by User. Reset restores the TMDB version.</p>
-        <label className="library-search curation-search">
+        <SearchField className="curation-search">
           <Search size={17} />
-          <input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search local movies to add..." />
-        </label>
+          <Input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search local movies to add..." />
+        </SearchField>
         {candidates.length > 0 && (
           <div className="curation-candidates">
             {candidates.map((item) => {
@@ -1841,17 +1855,17 @@ function CollectionEditorModal({ collection, items, onClose, onSave }) {
           {parts.map((movie) => (
             <div className="curation-row" key={movieIdentityKey(movie)}>
               <span>{movie.title}{movie.year ? ` (${movie.year})` : ''}</span>
-              <button type="button" className="mini-action mini-action-danger" onClick={() => setParts((current) => current.filter((item) => movieIdentityKey(item) !== movieIdentityKey(movie)))}>
+              <Button variant="danger" size="compact" type="button"  onClick={() => setParts((current) => current.filter((item) => movieIdentityKey(item) !== movieIdentityKey(movie)))}>
                 <Trash2 size={13} /> Remove
-              </button>
+              </Button>
             </div>
           ))}
         </div>
-        <div className="dialog-actions">
-          <button type="button" className="btn btn-secondary" onClick={onClose}>Cancel</button>
-          <button type="button" className="btn btn-primary" onClick={() => onSave(collection, parts)}>Save collection</button>
-        </div>
-      </section>
+        <DialogActions >
+          <Button type="button"  onClick={onClose}>Cancel</Button>
+          <Button variant="primary" type="button"  onClick={() => onSave(collection, parts)}>Save collection</Button>
+        </DialogActions>
+      </DialogShell>
     </div>
   );
 }
@@ -1985,47 +1999,47 @@ function LibraryFileRow({
           <div className="file-row-path" title={item.path}>{item.path}</div>
           <div className="file-row-meta">
             <span className={cx('chip', lowQuality && 'chip-warning')}>{getQualityFactsLabel(item)}</span>
-            <span className="chip chip-muted">{item.rip_source || 'Unknown source'}</span>
-            <span className="chip chip-muted">{item.size_human || '?'}</span>
-            {item.library_root && <span className="chip chip-muted">{rootLabel(item.library_root)}</span>}
+            <Badge size="compact" tone="neutral" muted >{item.rip_source || 'Unknown source'}</Badge>
+            <Badge size="compact" tone="neutral" muted >{item.size_human || '?'}</Badge>
+            {item.library_root && <Badge size="compact" tone="neutral" muted >{rootLabel(item.library_root)}</Badge>}
             <span className={cx('chip', item.metadata_accepted ? 'status-owned' : 'status-missing')}>{item.metadata_accepted ? 'Catalog matched' : 'Needs identity'}</span>
-            {(canonical.genres?.length ? canonical.genres : item.plex_genres || []).slice(0, 2).map((genre) => <span className="chip chip-muted" key={genre}>{genre}</span>)}
-            {getLocaleTag(item) && <span className="chip chip-muted">{getLocaleTag(item)}</span>}
+            {(canonical.genres?.length ? canonical.genres : item.plex_genres || []).slice(0, 2).map((genre) => <Badge size="compact" tone="neutral" muted  key={genre}>{genre}</Badge>)}
+            {getLocaleTag(item) && <Badge size="compact" tone="neutral" muted >{getLocaleTag(item)}</Badge>}
           </div>
         </div>
       </div>
       <div className="file-row-actions" onClick={(event) => event.stopPropagation()}>
-        <button type="button" className="btn btn-primary btn-green" onClick={() => onPlay(item.path)}>
+        <Button variant="play" type="button"  onClick={() => onPlay(item.path)}>
           <Play size={15} /> Play
-        </button>
-        <button type="button" className={cx('btn', lowQuality ? 'btn-upgrade' : 'btn-secondary')} onClick={() => onFindTorrent(movieForSearch, lowQuality)}>
+        </Button>
+        <Button variant={lowQuality ? 'upgrade' : 'secondary'} type="button"  onClick={() => onFindTorrent(movieForSearch, lowQuality)}>
           <Wand2 size={15} /> {lowQuality ? 'Find upgrade' : 'Find sources'}
-        </button>
-        <button type="button" className="btn btn-secondary" onClick={onRename}>
+        </Button>
+        <Button type="button"  onClick={onRename}>
           <Clapperboard size={15} /> Rename
-        </button>
-        <button
+        </Button>
+        <Button
           type="button"
-          className="btn btn-secondary"
+
           onClick={onOpenMovieView}
           disabled={!item.metadata_accepted && !canonical.accepted}
           title={!item.metadata_accepted && !canonical.accepted ? 'This file has no accepted Movie View identity yet.' : 'Open this movie in Movie View'}
         >
           <Clapperboard size={15} /> Movie View
-        </button>
-        <button type="button" className="btn btn-danger" onClick={onDelete}>
+        </Button>
+        <Button variant="danger" type="button"  onClick={onDelete}>
           <Trash2 size={15} /> Delete
-        </button>
-        <button
+        </Button>
+        <Button
           type="button"
-          className="btn btn-secondary file-row-expand"
+          className="file-row-expand"
           onClick={onToggle}
           aria-label={expanded ? `Collapse file details for ${item.filename}` : `Expand file details for ${item.filename}`}
           aria-expanded={expanded}
           title={expanded ? 'Collapse file details' : 'Expand file details'}
         >
           <ChevronDown size={17} />
-        </button>
+        </Button>
       </div>
       {expanded && (
         <div className="file-expanded-panel" onClick={(event) => event.stopPropagation()}>

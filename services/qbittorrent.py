@@ -27,6 +27,7 @@ PAYLOAD_COLLISION_RULE_VERSION = 3
 MISSING_TORRENT_GRACE_SECONDS = 10
 MISSING_TORRENT_MIN_CHECKS = 3
 TORRENT_METADATA_MAX_WAIT_SECONDS = 15 * 60
+TORRENT_METADATA_TIMEOUT_ERROR = "qBittorrent could not resolve the magnet metadata within 15 minutes"
 TORRENT_SIZE_TOLERANCE_RATIO = 0.10
 TORRENT_SIZE_TOLERANCE_BYTES = 64 * 1024 * 1024
 TORRENT_MINIMUM_VIDEO_SHARE = 0.80
@@ -1079,6 +1080,22 @@ class QBittorrentManager:
     def _expected_info_hash(metadata, magnet=""):
         return normalize_torrent_info_hash((metadata or {}).get("expected_info_hash")) or magnet_hash(magnet)
 
+    def torrents_by_info_hash(self):
+        primary = {}
+        aliases = {}
+        for torrent in self.client.torrents():
+            client_hash = str(torrent.get("hash") or "").lower()
+            if not client_hash:
+                continue
+            primary[client_hash] = torrent
+            for alias in _torrent_manifest_hashes(torrent) - {client_hash}:
+                if alias.strip("0"):
+                    aliases.setdefault(alias, {})[client_hash] = torrent
+        return {
+            **{alias: next(iter(rows.values())) for alias, rows in aliases.items() if len(rows) == 1},
+            **primary,
+        }
+
     def _validate_domain_manifest(self, metadata, files):
         media_type = (metadata or {}).get('media_type', 'movie')
         if media_type == 'movie':
@@ -1097,11 +1114,11 @@ class QBittorrentManager:
             raise QBittorrentError("Magnet does not contain a usable torrent identity")
         now = time.time()
         recover_tv_add = (metadata or {}).get('media_type') == 'tv' and (metadata or {}).get('submission_retry')
-        present = recover_tv_add and any(str(item.get('hash', '')).lower() == torrent_hash for item in self.client.torrents())
-        if present:
+        torrent = self.torrents_by_info_hash().get(torrent_hash) if recover_tv_add else None
+        if torrent:
             # A durable TV intent predates this retry. Keep the recovered transfer
             # stopped until the ordinary manifest owner verifies its file scope.
-            self.client.pause(torrent_hash)
+            self.client.pause(torrent["hash"])
         else:
             self.client.add_magnet(magnet, str(self.staging_dir), stop_after_metadata=True)
         queued = self._submission_patch(metadata, "magnet", now, resubmitted=bool(existing))
@@ -1115,16 +1132,16 @@ class QBittorrentManager:
         })
         return self.jobs.upsert(torrent_hash, queued)
 
-    def _process_pending_magnet_validation(self, torrent_hash, job, torrent):
+    def _process_pending_magnet_validation(self, torrent_hash, job, torrent, *, recovering=False):
         now = time.time()
         started_at = float(job.get("validation_started_at") or now)
         attempts = int(job.get("validation_attempts") or 0) + 1
-        if now - started_at >= TORRENT_METADATA_MAX_WAIT_SECONDS:
+        if not recovering and now - started_at >= TORRENT_METADATA_MAX_WAIT_SECONDS:
             return self.jobs.upsert(torrent_hash, {
                 "state": "validation_failed",
                 "validation_last_checked_at": now,
                 "validation_attempts": attempts,
-                "last_error": "qBittorrent could not resolve the magnet metadata within 15 minutes",
+                "last_error": TORRENT_METADATA_TIMEOUT_ERROR,
             })
         if not torrent:
             return self.jobs.upsert(torrent_hash, {
@@ -1132,8 +1149,9 @@ class QBittorrentManager:
                 "validation_attempts": attempts,
                 "last_error": "Waiting for qBittorrent to add the magnet",
             })
+        client_hash = torrent["hash"]
         try:
-            files = self.client.files(torrent_hash)
+            files = self.client.files(client_hash)
             if not files:
                 return self.jobs.upsert(torrent_hash, {
                     "validation_last_checked_at": now,
@@ -1141,12 +1159,12 @@ class QBittorrentManager:
                     "last_error": "Waiting for qBittorrent to resolve the magnet metadata",
                 })
             manifest = validate_torrent_manifest({
-                "hash": torrent_hash,
+                **torrent,
                 "info": {
                     "name": str(torrent.get("name") or ""),
                     "files": [{"path": item.get("name"), "length": item.get("size")} for item in files],
                 },
-            }, job.get("expected_size"), torrent_hash)
+            }, job.get("expected_size"), job.get("expected_info_hash") or torrent_hash)
             domain = self._validate_domain_manifest(job, files)
             if domain is not None:
                 manifest['domain'] = domain
@@ -1154,18 +1172,20 @@ class QBittorrentManager:
                 if wanted_names and len(wanted_names) < len(files):
                     wanted = [f.get('index', i) for i, f in enumerate(files) if f.get('name') in wanted_names]
                     skipped = [f.get('index', i) for i, f in enumerate(files) if f.get('name') not in wanted_names]
-                    self.client.file_priority(torrent_hash, skipped, 0)
-                    self.client.file_priority(torrent_hash, wanted, 1)
-                    checked = self.client.files(torrent_hash)
+                    self.client.file_priority(client_hash, skipped, 0)
+                    self.client.file_priority(client_hash, wanted, 1)
+                    checked = self.client.files(client_hash)
                     if len(checked) != len(files) or any((int(f.get('priority', -1)) > 0) != (f.get('name') in wanted_names) or int(f.get('priority', -1)) < 0 for f in checked):
                         raise TorrentValidationError('qBittorrent did not confirm the selected episode files')
         except TorrentValidationError as error:
             cleanup_error = ""
             try:
-                if job.get('media_type') == 'tv':
-                    self.client.pause(torrent_hash)
+                if isinstance(error, TorrentIdentityMismatch):
+                    pass
+                elif job.get('media_type') == 'tv':
+                    self.client.pause(client_hash)
                 else:
-                    self.client.remove_without_files(torrent_hash)
+                    self.client.remove_without_files(client_hash)
             except (QBittorrentError, OSError) as cleanup:
                 cleanup_error = f" qBittorrent cleanup failed: {cleanup}"
             return self.jobs.upsert(torrent_hash, {
@@ -1181,7 +1201,8 @@ class QBittorrentManager:
                 "last_error": f"Waiting for qBittorrent to resolve the magnet metadata: {error}",
             })
         try:
-            self.client.resume(torrent_hash)
+            if float(torrent.get("progress") or 0) < 1:
+                self.client.resume(client_hash)
             return self.jobs.upsert(torrent_hash, {
                 **self._submission_patch(
                     {**job, "validated_manifest": {**manifest, "checked_at": now}},
@@ -1217,11 +1238,7 @@ class QBittorrentManager:
         if not self.ensure_running():
             raise QBittorrentError("Embedded qBittorrent is not installed")
         if existing and torrent_hash:
-            active_hashes = {
-                str(item.get("hash", "")).lower()
-                for item in self.client.torrents()
-            }
-            if torrent_hash in active_hashes:
+            if torrent_hash in self.torrents_by_info_hash():
                 return {**existing, "already_exists": True}
             recoverable_paths = [
                 *existing.get("payload_paths", []),
@@ -1251,15 +1268,15 @@ class QBittorrentManager:
         domain = self._validate_domain_manifest(metadata, _normalized_torrent_manifest(raw_manifest)[2])
         if domain is not None:
             manifest['domain'] = domain
-        before = {item.get("hash") for item in self.client.torrents()}
-        expected = (metadata or {}).get('expected_info_hash') if (metadata or {}).get('media_type') == 'tv' else None
+        before = self.torrents_by_info_hash()
+        expected = normalize_torrent_info_hash((metadata or {}).get('expected_info_hash')) if (metadata or {}).get('media_type') == 'tv' else None
         torrent_hash = ""
         if expected and expected in before:
             if not (metadata or {}).get('submission_retry'):
                 raise TorrentValidationError('Torrent already exists in the client outside this acquisition')
             # The durable intent predates this retry. Recover an acknowledged-
             # late add without another transfer or payload resume.
-            self.client.pause(expected)
+            self.client.pause(before[expected]["hash"])
             torrent_hash = expected
         elif (metadata or {}).get('media_type') == 'tv':
             self.client.add_torrent(content, filename, str(self.staging_dir), stopped=True)
@@ -1269,11 +1286,15 @@ class QBittorrentManager:
             if torrent_hash:
                 break
             time.sleep(0.2)
-            after = self.client.torrents()
-            added = [item for item in after if item.get("hash") not in before and (not expected or str(item.get('hash')).lower() == expected)]
-            if added:
-                torrent_hash = str(added[0].get("hash", ""))
-                break
+            if expected:
+                torrent = self.torrents_by_info_hash().get(expected)
+                if torrent and torrent["hash"].lower() not in before:
+                    torrent_hash = expected
+            else:
+                torrent_hash = next((
+                    item["hash"] for item in self.client.torrents()
+                    if item.get("hash") and item["hash"].lower() not in before
+                ), "")
         if not torrent_hash:
             raise QBittorrentError("qBittorrent accepted the torrent but its hash could not be identified")
         submitted_at = time.time()
@@ -1306,10 +1327,10 @@ class QBittorrentManager:
             for item in collisions
         )
 
-    def _finish_completed_import(self, torrent_hash, torrent_present):
-        if torrent_present:
+    def _finish_completed_import(self, torrent_hash, client_hash):
+        if client_hash:
             try:
-                self.client.remove_without_files(torrent_hash)
+                self.client.remove_without_files(client_hash)
             except Exception as error:
                 return self.jobs.upsert(torrent_hash, {
                     "state": "cleanup_failed",
@@ -1394,12 +1415,22 @@ class QBittorrentManager:
         if not self.ensure_running():
             return []
         jobs = self.jobs.all()
-        torrents = {str(item.get("hash", "")).lower(): item for item in self.client.torrents()}
+        torrents = self.torrents_by_info_hash()
         results = []
         for torrent_hash, job in jobs.items():
             torrent = torrents.get(torrent_hash)
+            client_hash = torrent["hash"] if torrent else None
             if job.get("state") == "validating":
                 results.append(self._process_pending_magnet_validation(torrent_hash, job, torrent))
+                continue
+            if job.get("state") == "validation_failed" and job.get("media_type") != "tv":
+                # Recover jobs that timed out before the monitor could see a completed alias.
+                if (torrent and client_hash.lower() != torrent_hash
+                        and job.get("source_type") == "magnet"
+                        and job.get("validation_mode") == "stopped_after_metadata"
+                        and job.get("last_error") == TORRENT_METADATA_TIMEOUT_ERROR
+                        and float(torrent.get("progress") or 0) >= 1):
+                    results.append(self._process_pending_magnet_validation(torrent_hash, job, torrent, recovering=True))
                 continue
             if job.get('media_type') == 'tv':
                 handler = self.domain_handlers.get('tv')
@@ -1416,7 +1447,7 @@ class QBittorrentManager:
                 if torrent and float(torrent.get('progress') or 0) >= 1:
                     try:
                         from services.verified_import import import_verified_files
-                        files = self.client.files(torrent_hash)
+                        files = self.client.files(client_hash)
                         validate_torrent_manifest({'hash': torrent_hash, 'info': {'files': [{'path': item['name'], 'length': item['size']} for item in files]}}, job.get('expected_size'), torrent_hash)
                         sources = [Path(torrent.get('save_path') or self.staging_dir) / item['name'] for item in files if Path(item['name']).suffix.lower() in MOVIE_VIDEO_EXTENSIONS]
                         import_verified_files(self.jobs, torrent_hash, sources, self.staging_dir, job['destination'], mode=job['import_mode'])
@@ -1439,7 +1470,7 @@ class QBittorrentManager:
                     "missing_checks": 0,
                 })
             if job.get("state") in {"payload_imported", "cleanup_failed"}:
-                results.append(self._finish_completed_import(torrent_hash, bool(torrent)))
+                results.append(self._finish_completed_import(torrent_hash, client_hash))
                 continue
             if job.get("state") == "destination_conflict" and self._collision_is_unchanged(job):
                 results.append(job)
@@ -1450,7 +1481,7 @@ class QBittorrentManager:
                 try:
                     result = self.jobs.move_completed_payload(torrent_hash, self.staging_dir)
                     if result.get("state") == "payload_imported":
-                        result = self._finish_completed_import(torrent_hash, False)
+                        result = self._finish_completed_import(torrent_hash, None)
                     results.append(result)
                 except Exception as error:
                     results.append(self.jobs.upsert(torrent_hash, {"state": "move_failed", "last_error": str(error)}))
@@ -1463,13 +1494,13 @@ class QBittorrentManager:
             if float(torrent.get("progress", 0)) < 1:
                 continue
             try:
-                files = self.client.files(torrent_hash)
+                files = self.client.files(client_hash)
                 payload_paths = self._payload_paths(torrent, files)
                 self.jobs.upsert(torrent_hash, {"state": "finalizing", "payload_paths": payload_paths})
-                self.client.pause(torrent_hash)
+                self.client.pause(client_hash)
                 result = self.jobs.move_completed_payload(torrent_hash, self.staging_dir)
                 if result.get("state") == "payload_imported":
-                    result = self._finish_completed_import(torrent_hash, True)
+                    result = self._finish_completed_import(torrent_hash, client_hash)
                 results.append(result)
             except Exception as error:
                 results.append(self.jobs.upsert(torrent_hash, {"state": "move_failed", "last_error": str(error)}))

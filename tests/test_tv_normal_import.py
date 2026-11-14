@@ -33,6 +33,20 @@ class TVNormalImportTests(unittest.TestCase):
         self.assertEqual(submitted['job']['seeding_policy']['seeding_mode'], 'none')
         self.assertEqual(self.store.profile('safe-hd')['seeding_mode'], 'forever')
 
+    def test_hybrid_torrent_import_preserves_the_tv_acquisition_key(self):
+        submitted = self.submit()
+        primary = 'b' * 40
+        self.torrent.update(hash=primary, infohash_v1=self.hash, infohash_v2=primary + 'b' * 24)
+
+        completed = self.complete()
+
+        self.assertEqual(completed['state'], 'imported', completed.get('last_error'))
+        self.assertEqual(completed['hash'], submitted['job']['hash'])
+        self.assertEqual(list(self.manager.jobs.all()), [self.hash])
+        self.assertTrue(self.tv.episodes(self.series, 1)[0]['versions'])
+        self.manager.client.resume.assert_called_once_with(primary)
+        self.manager.client.remove_without_files.assert_called_once_with(primary)
+
     def test_missing_home_blocks_submission_without_intent_claim_or_transfer(self):
         with self.tv.store.transaction() as db:
             db.execute('DELETE FROM tv_import_homes')

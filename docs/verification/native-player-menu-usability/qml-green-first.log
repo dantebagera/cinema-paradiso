@@ -1,0 +1,13 @@
+Internal ctest changing into directory: C:/Users/dante/AppData/Local/Temp/cp-player-menu-usability-20261024/ui-build
+Test project C:/Users/dante/AppData/Local/Temp/cp-player-menu-usability-20261024/ui-build
+    Start 1: player-ui
+1/1 Test #1: player-ui ........................***Failed    4.17 sec
+
+
+0% tests passed, 1 tests failed out of 1
+
+Total Test time (real) =   4.18 sec
+
+The following tests FAILED:
+	  1 - player-ui (Failed)
+Errors while running CTest

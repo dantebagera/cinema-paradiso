@@ -1,0 +1,13 @@
+{
+  "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\logs\\schema-and-streaming-green.log",
+  "kind": "python",
+  "label": "schema-and-streaming-green",
+  "root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\fixtures\\schema-and-streaming-green-b2e7b4e2e38548efb88173c8557030f7",
+  "exitCode": 1,
+  "dist": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\fixtures\\schema-and-streaming-green-b2e7b4e2e38548efb88173c8557030f7\\dist",
+  "elapsed": 82.3688007,
+  "modules": [
+    "tests.test_iptv_movie_gates_0_5",
+    "tests.test_qbittorrent_ui"
+  ]
+}

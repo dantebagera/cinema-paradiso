@@ -1,4 +1,13 @@
 import { expect, test } from '@playwright/test';
+import fs from 'node:fs';
+import path from 'node:path';
+
+async function openControls(page) {
+  const toggle = page.getByRole('button', { name: 'Search, filters & selection', exact: true });
+  await expect(toggle).toBeVisible();
+  if (await toggle.getAttribute('aria-expanded') === 'false') await toggle.click();
+  await expect(toggle).toHaveAttribute('aria-expanded', 'true');
+}
 
 test.use({ viewport: { width: 1920, height: 1080 }, reducedMotion: 'reduce' });
 const movie = (id, title = `Related Movie ${id}`) => ({
@@ -40,15 +49,33 @@ async function fixtures(page, { delay = 0, detailsDelay = 0, fail = false, lists
   return requests;
 }
 const expanded = (page) => page.locator('.unified-movie-card-expanded:visible');
-async function expandSeed(page) {
-  await page.goto('/discover');
+async function expandSeed(page, scope = 'discover') {
+  if (scope === 'library') {
+    await page.route('**/api/tv/capabilities', route => route.fulfill({ json: { enabled: true } }));
+    const item = { ...owned, canonical_metadata: { ...seed, ...credits, accepted: true, rating: '7.8' } };
+    await page.route('**/api/library/search/advanced', route => route.fulfill({ json: {
+      items: [item], total: 1, page: 1, total_pages: 1, page_start: 0, page_end: 1,
+      catalog_generation: 1, facets: { genres: [], countries: [], languages: [], sources: [] },
+      stats: { total: 1, matched: 1, pending: 0, unmatched: 0, low: 0 }
+    } }));
+    await page.route('**/api/library/details**', route => route.fulfill({ json: { item, catalog_generation: 1 } }));
+  }
+  await page.goto(`/${scope}`);
   await page.getByRole('heading', { name: seed.title, exact: true }).click();
   await expect(expanded(page)).toBeVisible();
 }
-async function fullCard(page) {
+async function fullCard(page, checkInitialPosition = true) {
   await expect.poll(async () => {
     const box = await expanded(page).boundingBox();
-    return box && box.y >= 0 && box.y + box.height <= page.viewportSize().height && box.x >= 0 && box.x + box.width <= page.viewportSize().width;
+    const visibleChrome = page.locator('.workspace-chrome:visible');
+    const chrome = await visibleChrome.count() ? await visibleChrome.boundingBox() : null;
+    const remainingHeight = page.viewportSize().height - (chrome?.height || 0);
+    // Dante approved scrolling the lower content when sticky controls leave
+    // insufficient room. Cards that fit must still be fully visible.
+    return box && (!checkInitialPosition || (box.y >= (chrome ? chrome.y + chrome.height - 1 : 0)
+      && box.y < page.viewportSize().height
+      && (box.height > remainingHeight || box.y + box.height <= page.viewportSize().height)))
+      && box.x >= 0 && box.x + box.width <= page.viewportSize().width;
   }).toBe(true);
   const overflow = await expanded(page).evaluate((card) => {
     const border = card.getBoundingClientRect();
@@ -77,7 +104,225 @@ async function settledWorkspaceScroll(page) {
   }));
 }
 
-test('stable async rail, sixteen narrow tiles, restored cast and selected related expansion', async ({ page }) => {
+for (const scope of ['discover', 'library']) {
+  for (const width of [1600, 1366]) {
+    test(`${scope} cast award icons remain visible beside counts at ${width}px`, async ({ page }) => {
+      await page.setViewportSize({ width, height: 900 });
+      await fixtures(page);
+      await page.route('**/api/movie-awards/snapshot', route => route.fulfill({ json: {
+        schema_version: 1, snapshot_owner: 'cast-award-layout', awards_generation: 1, ready: true, movies: {},
+        people: {
+          'tmdb:90': { director: { oscar: 12, golden_globe: 99 } },
+          'tmdb:100': { actor: { oscar: 2, golden_globe: 3 } }
+        }
+      } }));
+      await expandSeed(page, scope);
+      const badges = expanded(page).locator('.person-card .movie-award-pair');
+      await expect(badges).toHaveCount(4);
+      await expect.poll(() => badges.locator('img').evaluateAll(images => images.every(image => image.complete && image.naturalWidth > 0))).toBe(true);
+      const geometry = await badges.evaluateAll(nodes => nodes.map(node => {
+        const icon = node.querySelector('img').getBoundingClientRect();
+        const count = node.querySelector('strong').getBoundingClientRect();
+        const badge = node.getBoundingClientRect();
+        const portrait = node.closest('.person-card').querySelector('.person-avatar').getBoundingClientRect();
+        return { iconWidth: icon.width, iconHeight: icon.height,
+          separate: count.right <= icon.left,
+          contained: count.left >= badge.left - 1 && icon.right <= badge.right + 1,
+          besidePortrait: badge.left >= portrait.right };
+      }));
+      for (const badge of geometry) {
+        expect(badge.iconWidth).toBeGreaterThan(0);
+        expect(badge.iconHeight).toBeGreaterThan(0);
+        expect(badge.separate).toBe(true);
+        expect(badge.contained).toBe(true);
+        expect(badge.besidePortrait).toBe(true);
+      }
+    });
+  }
+}
+
+for (const scope of ['discover', 'library']) {
+for (const viewport of [{ width: 1920, height: 1080 }, { width: 1366, height: 768 }, { width: 390, height: 844 }]) {
+  test.describe(`${scope} movie artwork at ${viewport.width}px`, () => {
+    test.use({ viewport });
+    test('expanded movie artwork stays behind the poster and details without an outer hover effect', async ({ page }) => {
+      await fixtures(page);
+      await expandSeed(page, scope);
+      const card = expanded(page);
+      await expect.poll(() => card.evaluate(element => getComputedStyle(element).boxShadow)).toBe('none');
+      const layout = await card.evaluate(element => {
+        const main = element.querySelector('.unified-movie-main');
+        const bounds = main.getBoundingClientRect();
+        const footer = element.querySelector('.unified-movie-expanded-row').getBoundingClientRect();
+        return { artwork: getComputedStyle(main).backgroundImage, outerArtwork: getComputedStyle(element).backgroundImage,
+          childrenInside: [...main.querySelectorAll('.unified-movie-poster, .unified-movie-body')].every(child => {
+            const box = child.getBoundingClientRect();
+            return box.left >= bounds.left && box.right <= bounds.right + 1 && box.bottom <= bounds.bottom + 1;
+          }), footerBelow: footer.top >= bounds.bottom, border: getComputedStyle(element).borderTopColor,
+          shadow: getComputedStyle(element).boxShadow };
+      });
+      expect(layout.artwork).toContain('url(');
+      // The outer surface may have a theme gradient; artwork belongs to main only.
+      expect(layout.outerArtwork).not.toContain('url(');
+      expect(layout.childrenInside).toBe(true);
+      expect(layout.footerBelow).toBe(true);
+      await card.locator('.unified-movie-header').hover();
+      await expect.poll(() => card.evaluate(element => ({ border: getComputedStyle(element).borderTopColor, shadow: getComputedStyle(element).boxShadow })))
+        .toEqual({ border: layout.border, shadow: layout.shadow });
+    });
+  });
+}
+}
+
+test('movie details collapse from plain content while actions and dialogs remain usable', async ({ page }) => {
+  await fixtures(page);
+  await page.route('**/api/tmdb/discover**', route => route.fulfill({ json: { results: [{ ...seed, summary: seed.summary.repeat(3) }], page: 1, total_pages: 1, total_results: 1 } }));
+  await page.route('**/api/tmdb/details**', route => route.fulfill({ json: { ...seed, ...credits, summary: seed.summary.repeat(3) } }));
+  await expandSeed(page);
+  for (const selector of ['.movie-card-plot', '.movie-expanded-runtime', '.lists-panel .mini-label', '.unified-movie-poster img']) {
+    await expanded(page).locator(selector).click();
+    await expect(expanded(page)).toHaveCount(0);
+    await page.getByRole('heading', { name: seed.title, exact: true }).click();
+    await expect(expanded(page)).toBeVisible();
+  }
+  await expanded(page).locator('.selection-checkbox').click();
+  await expect(expanded(page).getByRole('checkbox', { name: `Select ${seed.title}` })).toBeChecked();
+  await expect(expanded(page)).toBeVisible();
+  await expanded(page).getByRole('button', { name: 'Read full plot', exact: true }).click();
+  const dialog = page.getByRole('dialog', { name: `Plot of ${seed.title}` });
+  await expect(dialog).toHaveClass(/cp-dialog/);
+  const keyword = expanded(page).locator('.movie-keyword-chip').first();
+  await expect(keyword).toHaveClass(/cp-badge-compact/);
+  expect(await keyword.evaluate(el => ({ weight: getComputedStyle(el).fontWeight, background: getComputedStyle(el).backgroundColor })))
+    .toEqual({ weight: '700', background: 'rgb(26, 28, 32)' });
+  await dialog.locator('p').click();
+  await expect(dialog).toBeVisible();
+  await expect(expanded(page)).toBeVisible();
+  await dialog.getByRole('button', { name: 'Close', exact: true }).click();
+  await expanded(page).focus();
+  await page.keyboard.press('Enter');
+  await expect(expanded(page)).toHaveCount(0);
+});
+
+for (const scope of ['discover', 'library']) {
+test(`${scope} expanded movie rails reveal the remaining cast and related titles with matching arrows`, async ({ page }) => {
+  await fixtures(page);
+  await expandSeed(page, scope);
+  const card = expanded(page);
+  await expect(card.getByRole('button', { name: 'Open Ready or Not in Discover' })).toBeVisible();
+  if (scope === 'library' && process.env.CP_LAYOUT_EVIDENCE_DIR) {
+    fs.mkdirSync(process.env.CP_LAYOUT_EVIDENCE_DIR, { recursive: true });
+    await page.screenshot({ path: path.join(process.env.CP_LAYOUT_EVIDENCE_DIR, 'library-expanded-parity.png') });
+  }
+  for (const label of ['cast', 'related titles']) {
+    const track = card.getByRole('group', { name: `${label} cards`, exact: true });
+    const left = card.getByRole('button', { name: `Scroll ${label} left`, exact: true });
+    const right = card.getByRole('button', { name: `Scroll ${label} right`, exact: true });
+    await expect(left).toBeDisabled();
+    await expect(right).toBeEnabled();
+    {
+      const row = await track.boundingBox();
+      const leftBox = await left.boundingBox();
+      const rightBox = await right.boundingBox();
+      expect(Math.abs(leftBox.y + leftBox.height / 2 - row.y - row.height / 2)).toBeLessThan(1);
+      expect(Math.abs(rightBox.y + rightBox.height / 2 - row.y - row.height / 2)).toBeLessThan(1);
+      const firstCard = await track.locator(':scope > *').first().boundingBox();
+      expect(Math.abs(leftBox.x - row.x)).toBeLessThan(1);
+      expect(Math.abs(rightBox.x + rightBox.width - row.x - row.width)).toBeLessThan(1);
+      expect(rightBox.x).toBeLessThan(row.x + row.width);
+      expect(Math.abs(leftBox.height - firstCard.height)).toBeLessThan(1);
+      expect(Math.abs(rightBox.height - firstCard.height)).toBeLessThan(1);
+      expect(await right.evaluate(element => getComputedStyle(element).borderTopWidth)).toBe('0px');
+      expect(await right.evaluate(element => getComputedStyle(element.parentElement, '::after').backgroundImage)).toContain('linear-gradient');
+      expect(await right.evaluate(element => getComputedStyle(element.parentElement, '::after').backgroundImage)).toContain('rgb(18, 19, 22) 44px');
+      expect(await right.locator('svg').evaluate(element => element.parentElement.getBoundingClientRect().right - element.getBoundingClientRect().right)).toBeLessThanOrEqual(8.1);
+      await card.getByRole('heading', { name: seed.title, exact: true }).hover();
+      await expect.poll(() => right.evaluate(element => getComputedStyle(element).opacity)).toBe('0');
+      await right.hover();
+      await expect.poll(() => right.evaluate(element => getComputedStyle(element).opacity)).toBe('1');
+      expect(await right.evaluate(element => getComputedStyle(element.parentElement, '::after').opacity)).toBe('1');
+      await card.getByRole('heading', { name: seed.title, exact: true }).hover();
+      await expect.poll(() => right.evaluate(element => getComputedStyle(element).opacity)).toBe('0');
+      await page.keyboard.press('Tab');
+      await right.focus();
+      await expect.poll(() => right.evaluate(element => getComputedStyle(element).opacity)).toBe('1');
+      if (label === 'related titles') {
+        const viewAll = await card.getByRole('button', { name: 'View all', exact: true }).boundingBox();
+        expect(viewAll.y + viewAll.height).toBeLessThan(row.y);
+        const visible = await track.evaluate(element => [...element.children].filter(child => {
+          const item = child.getBoundingClientRect();
+          const rail = element.getBoundingClientRect();
+          return item.left >= rail.left - 1 && item.right <= rail.right + 1;
+        }).length);
+        expect(visible).toBeGreaterThan(10);
+      }
+    }
+    const last = track.locator(':scope > *').last();
+    const lastVisible = () => last.evaluate(element => {
+      const item = element.getBoundingClientRect();
+      const rail = element.parentElement.getBoundingClientRect();
+      return item.left >= rail.left - 1 && item.right <= rail.right + 1;
+    });
+    expect(await lastVisible()).toBe(false);
+    await right.click();
+    await expect.poll(lastVisible).toBe(true);
+    await expect(right).toBeDisabled();
+    await expect(left).toBeEnabled();
+    await left.click();
+    await expect(left).toBeDisabled();
+    await expect(right).toBeEnabled();
+    expect(await track.evaluate(element => getComputedStyle(element).scrollbarWidth)).toBe('none');
+  }
+  const person = card.locator('.person-card').first();
+  const portraitBox = await person.locator('.person-avatar').boundingBox();
+  const bioBox = await person.getByRole('button', { name: /Open biography/ }).boundingBox();
+  expect(bioBox.x).toBeGreaterThanOrEqual(portraitBox.x + portraitBox.width + 4);
+  await card.getByRole('button', { name: 'Similar', exact: true }).click();
+  await expect(card.getByRole('button', { name: 'Scroll related titles left', exact: true })).toBeDisabled();
+  await expect(card.getByRole('button', { name: 'Open Related Movie 12 in Discover' })).toBeVisible();
+});
+}
+
+test('related posters reveal full title and year on hover and keyboard focus', async ({ page }) => {
+  await fixtures(page);
+  await expandSeed(page);
+  const tile = expanded(page).getByRole('button', { name: 'Open Ready or Not in Discover' });
+  await expect(tile).toBeVisible();
+  await expect(tile.locator('strong, small')).toHaveCount(0);
+  const poster = tile.locator('.related-poster');
+  const posterBox = await poster.boundingBox();
+  const tileBox = await tile.boundingBox();
+  expect(tileBox.height - posterBox.height).toBeLessThanOrEqual(4.1);
+  expect(posterBox.height).toBeLessThanOrEqual(136);
+  expect(Math.abs(tileBox.height / tileBox.width - 1.5)).toBeLessThan(.03);
+  expect(await poster.locator('img').evaluate(element => getComputedStyle(element).objectFit)).toBe('contain');
+  await tile.hover();
+  const tooltip = page.getByRole('tooltip');
+  await expect(tooltip).toContainText('Ready or Not');
+  await expect(tooltip).toContainText('2024');
+  await expect(tile).toHaveAttribute('aria-describedby', await tooltip.getAttribute('id'));
+  await tooltip.hover();
+  await expect(tooltip).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(tooltip).toBeHidden();
+  await expanded(page).getByRole('heading', { name: 'The Hunt' }).hover();
+  await tile.focus();
+  await expect(tooltip).toContainText('Ready or Not');
+  await page.locator('main.workspace').evaluate(element => element.scrollBy({ top: 40, behavior: 'instant' }));
+  await expect(tooltip).toBeVisible();
+  await expanded(page).getByRole('button', { name: 'Recommended', exact: true }).focus();
+  await expect(tooltip).toBeHidden();
+  await tile.focus();
+  await expect(tooltip).toBeVisible();
+  await tile.press('Escape');
+  await expect(tooltip).toBeHidden();
+  // A tooltip must not obstruct the tile's existing navigation behavior.
+  await tile.click();
+  await expect(expanded(page).getByRole('heading', { name: 'Ready or Not' })).toBeVisible();
+  await expect(page.getByLabel('Discovery path')).toContainText('Related to The Hunt');
+});
+
+test('stable async rail, scrollable tiles, restored cast and selected related expansion', async ({ page }) => {
   const requests = await fixtures(page, { delay: 600 });
   await expandSeed(page);
   await fullCard(page);
@@ -85,13 +330,16 @@ test('stable async rail, sixteen narrow tiles, restored cast and selected relate
   await expect(expanded(page).getByRole('button', { name: 'Open Ready or Not in Discover' })).toBeVisible();
   const after = await expanded(page).boundingBox();
   expect(Math.abs(before.height - after.height)).toBeLessThan(1);
-  await expect(expanded(page).locator('.related-tile')).toHaveCount(16);
+  await expect(expanded(page).locator('.related-tile')).toHaveCount(20);
   await expect(expanded(page).locator('.lists-panel')).toBeVisible();
   await expect(expanded(page).getByRole('button', { name: 'Add to list', exact: true })).toBeVisible();
   await expect(expanded(page).locator('.collection-panel')).toHaveCount(0);
   const relatedPoster = await expanded(page).locator('.related-poster img').first().boundingBox();
-  expect(relatedPoster.width).toBeLessThan(115);
-  expect(Math.abs(relatedPoster.height / relatedPoster.width - 1.5)).toBeLessThan(.03);
+  expect(relatedPoster.width).toBeLessThan(100);
+  const relatedCard = await expanded(page).locator('.related-tile').first().boundingBox();
+  expect(Math.abs(relatedCard.height / relatedCard.width - 1.5)).toBeLessThan(.03);
+  expect(relatedPoster.height).toBeLessThanOrEqual(136);
+  expect(await expanded(page).locator('.related-poster img').first().evaluate(element => getComputedStyle(element).objectFit)).toBe('contain');
   const castAvatar = await expanded(page).locator('.person-avatar').first().boundingBox();
   expect(Math.round(castAvatar.width)).toBe(106);
   expect(Math.round(castAvatar.height)).toBe(132);
@@ -106,6 +354,9 @@ test('stable async rail, sixteen narrow tiles, restored cast and selected relate
   await expect(expanded(page).getByRole('button', { name: 'Open Related Movie 12 in Discover' })).toBeVisible();
   await expanded(page).getByRole('button', { name: 'Recommended', exact: true }).click();
   await expanded(page).getByRole('button', { name: 'Open Ready or Not in Discover' }).click();
+  await expect(expanded(page).getByRole('heading', { name: 'Ready or Not' })).toBeVisible();
+  await expect(page.getByLabel('Discovery path')).toContainText('Related to The Hunt');
+  await openControls(page);
   await expect(page.getByLabel('Related movie sources')).toBeVisible();
   await expect(page.locator('.discover-grid > .unified-movie-card')).toHaveCount(20);
   await expect(expanded(page).getByRole('heading', { name: 'Ready or Not' })).toBeVisible();
@@ -120,7 +371,7 @@ test('stable async rail, sixteen narrow tiles, restored cast and selected relate
   await expect(expanded(page).getByText('Cast Member 9', { exact: true })).toBeVisible();
   await expect(expanded(page).locator('button.person-discover-button[aria-label="Open filmography for Cast Member 9"]')).toBeVisible();
   await expect(expanded(page).locator('.person-avatar img')).toHaveCount(10);
-  await page.screenshot({ path: 'test-results/related-desktop-1920.png' });
+  await page.screenshot({ path: test.info().outputPath('related-desktop-1920.png') });
 });
 
 test('Plex-only owned movie resolves rich cast by exact title and year', async ({ page }) => {
@@ -146,7 +397,7 @@ test('Plex-only owned movie resolves rich cast by exact title and year', async (
   await expect(expanded(page).getByRole('button', { name: 'View all', exact: true })).toBeEnabled();
 });
 
-test('director and cast row never exceeds ten people', async ({ page }) => {
+test('director and cast rail retains all loaded credits on short desktops', async ({ page }) => {
   await page.setViewportSize({ width: 1920, height: 720 });
   await fixtures(page);
   const fourDirectors = Array.from({ length: 4 }, (_, i) => ({
@@ -159,16 +410,19 @@ test('director and cast row never exceeds ten people', async ({ page }) => {
   }));
   await expandSeed(page);
   const people = expanded(page).getByLabel('Director and top cast').locator('.person-card');
-  await expect(people).toHaveCount(10);
+  await expect(people).toHaveCount(13);
   await expect(expanded(page).getByText('Director 4', { exact: true })).toBeVisible();
   await expect(expanded(page).getByText('Cast Member 6', { exact: true })).toBeVisible();
-  await expect(expanded(page).getByText('Cast Member 7', { exact: true })).toHaveCount(0);
+  await expanded(page).getByRole('button', { name: 'Scroll cast right', exact: true }).click();
+  await expect(expanded(page).getByText('Cast Member 9', { exact: true })).toBeVisible();
   await expect.poll(async () => {
     const castPanel = await expanded(page).getByLabel('Director and top cast').boundingBox();
     const relationshipTabs = await expanded(page).getByLabel('Relationship source').boundingBox();
     return relationshipTabs.y - (castPanel.y + castPanel.height);
   }).toBeGreaterThanOrEqual(10);
-  await fullCard(page);
+  // Clicking a lower rail arrow may scroll the locator into view; check the
+  // preserved card geometry without mistaking that for expansion positioning.
+  await fullCard(page, false);
 });
 
 test('View all keeps source, page, ownership and card position through inline expansion', async ({ page }) => {
@@ -176,6 +430,7 @@ test('View all keeps source, page, ownership and card position through inline ex
   await expandSeed(page);
   await expanded(page).getByRole('button', { name: 'View all', exact: true }).click();
   const sources = page.getByLabel('Related movie sources');
+  await openControls(page);
   await expect(sources.getByRole('button', { name: 'All', exact: true })).toHaveAttribute('aria-pressed', 'true');
   await expect(page.getByRole('navigation', { name: 'TMDB relationship pagination', exact: true })).toContainText('40');
   await sources.getByRole('button', { name: 'Similar', exact: true }).click();
@@ -235,6 +490,7 @@ test('bounded View all shows an exact total and stops at the final page for each
   try {
     await expandSeed(page);
     await expanded(page).getByRole('button', { name: 'View all', exact: true }).click();
+    await openControls(page);
     const pager = page.getByRole('navigation', { name: 'TMDB relationship pagination', exact: true }).first();
     await expect(page.getByRole('heading', { name: 'Related Movie 1000', exact: true })).toBeVisible();
     await expect(page.getByText('Counting total…', { exact: false })).toBeVisible();
@@ -249,6 +505,7 @@ test('bounded View all shows an exact total and stops at the final page for each
     }
     await expect(page.locator('.discover-grid > .unified-movie-card')).toHaveCount(200 - (lastPage - 1) * pageSize);
     await expect(pager.getByRole('button', { name: 'Next', exact: true })).toBeDisabled();
+    await openControls(page);
     await page.getByLabel('Related movie sources').getByRole('button', { name: 'Similar', exact: true }).click();
     await expect(pager).toContainText('of 100');
     await expect(page.getByRole('heading', { name: 'Related Movie 2000', exact: true })).toBeVisible();
@@ -277,6 +534,7 @@ test('a failed relationship count preserves loaded cards and can be retried', as
   });
   await expandSeed(page);
   await expanded(page).getByRole('button', { name: 'View all', exact: true }).click();
+  await openControls(page);
   await expect(page.getByRole('heading', { name: 'Ready or Not', exact: true })).toBeVisible();
   await expect(page.getByText('Exact count unavailable.', { exact: false })).toBeVisible();
   const pager = page.getByRole('navigation', { name: 'TMDB relationship pagination', exact: true }).first();
@@ -292,11 +550,12 @@ test('provider failure remains local and short desktop keeps all corners visible
   await page.setViewportSize({ width: 1280, height: 720 });
   await fixtures(page, { fail: true });
   await expandSeed(page);
-  await expect(expanded(page).locator('.related-compact-status')).toContainText('Relationship provider unavailable');
+  await expect(expanded(page).getByRole('status')).toContainText('Relationship provider unavailable');
+  await expect(expanded(page).getByRole('button', { name: 'Retry', exact: true })).toBeVisible();
   await expect(expanded(page).getByLabel('Director and top cast')).toBeVisible();
   await expect(expanded(page).locator('.movie-expanded-curation')).toBeVisible();
   await expect(expanded(page).getByRole('button', { name: 'Add to list', exact: true })).toBeVisible();
-  await expect(expanded(page).locator('.related-movie-tiles')).toBeHidden();
+  await expect(expanded(page).locator('.related-tile')).toHaveCount(0);
   const compactGeometry = await expanded(page).evaluate((card) => {
     const facts = card.querySelector('.movie-expanded-facts').getBoundingClientRect();
     const curation = card.querySelector('.movie-expanded-curation').getBoundingClientRect();
@@ -326,6 +585,21 @@ test('late TMDB details recenter the finished card inside a short desktop viewpo
   await expandSeed(page);
   await expect(expanded(page).getByRole('button', { name: 'Open biography for Thomas Vinterberg', exact: true })).toBeVisible();
   await fullCard(page);
+});
+
+test('Short desktop keeps expanded card layout and lets lower content scroll below pinned controls', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 720 });
+  await fixtures(page);
+  await expandSeed(page);
+  await expect(expanded(page).getByRole('button', { name: 'Open biography for Thomas Vinterberg', exact: true })).toBeVisible();
+  await fullCard(page);
+  const initial = await expanded(page).boundingBox();
+  await page.locator('main.workspace').evaluate(element => element.scrollTo({ top: element.scrollTop + 500, behavior: 'instant' }));
+  await expect(expanded(page).getByRole('button', { name: 'View all', exact: true })).toBeInViewport();
+  const after = await expanded(page).boundingBox();
+  expect(after.height).toBeCloseTo(initial.height, 0);
+  await expect(page.getByRole('button', { name: 'Search, filters & selection', exact: true })).toBeInViewport();
+  await expect(page.locator('.workspace-chrome:visible')).toHaveCSS('background-color', 'rgb(0, 0, 0)');
 });
 
 test('collection shares one row with mandatory lists and list chips stay bounded', async ({ page }) => {
@@ -363,11 +637,13 @@ test('collection shares one row with mandatory lists and list chips stay bounded
   expect(alignment.panelTopDelta).toBeLessThanOrEqual(1);
   expect(alignment.panelBottomDelta).toBeLessThanOrEqual(1);
   expect(alignment.curationGap).toBeLessThanOrEqual(12);
-  await expect.poll(() => expanded(page).evaluate((card) => {
+  const posterGeometry = await expanded(page).evaluate((card) => {
     const poster = card.querySelector('.unified-movie-poster').getBoundingClientRect();
-    const curation = card.querySelector('.movie-expanded-curation').getBoundingClientRect();
-    return Math.abs(poster.bottom - curation.bottom);
-  })).toBeLessThanOrEqual(1);
+    const main = card.querySelector('.unified-movie-main').getBoundingClientRect();
+    return { ratio: poster.height / poster.width, fits: poster.top >= main.top && poster.bottom <= main.bottom };
+  });
+  expect(posterGeometry.ratio).toBeCloseTo(1.5, 1);
+  expect(posterGeometry.fits).toBe(true);
   await fullCard(page);
 });
 
@@ -390,11 +666,13 @@ for (const surface of ['library', 'movie-lists', 'ai-control', 'pick', 'browse']
     }
     if (surface === 'pick') {
       await page.getByRole('button', { name: 'Pick My Movie', exact: true }).click();
+      await page.getByRole('button', { name: 'Search, filters & selection', exact: true }).click();
       await page.getByPlaceholder('Something funny but a little sad, maybe an indie movie with a warm ending...').fill('A thriller');
       await page.getByRole('button', { name: 'Ask AI', exact: true }).click();
     }
     if (surface === 'browse') {
       await page.getByRole('button', { name: 'Browse Indexers', exact: true }).click();
+      await page.getByRole('button', { name: 'Search, filters & selection', exact: true }).click();
       await page.getByRole('button', { name: 'Load latest', exact: true }).click();
     }
     await page.getByRole('heading', { name: selected.title, exact: true }).click();
@@ -402,9 +680,12 @@ for (const surface of ['library', 'movie-lists', 'ai-control', 'pick', 'browse']
     await fullCard(page);
     const prior = await settledWorkspaceScroll(page);
     await expanded(page).getByRole('button', { name: 'View all', exact: true }).click();
+    await openControls(page);
     await expect(page.getByLabel('Related movie sources')).toBeVisible();
     await page.getByLabel('Discovery path').getByRole('button', { name: 'Back', exact: true }).click();
     await expect(expanded(page).getByRole('heading', { name: selected.title, exact: true })).toBeVisible();
+    // Returning to an expanded movie keeps controls temporarily collapsed.
+    if (['pick', 'browse'].includes(surface)) await expect(page.getByRole('button', { name: 'Search, filters & selection', exact: true })).toHaveAttribute('aria-expanded', 'false');
     await expect.poll(() => page.locator('.workspace').evaluate((element) => element.scrollTop)).toBe(prior);
     await fullCard(page);
   });
@@ -454,6 +735,7 @@ test('Back during relationship loading ignores late results and preserves the ex
   await expect(expanded(page).getByRole('heading', { name: 'The Hunt', exact: true })).toBeVisible();
   await expect(page.getByLabel('Related movie sources')).toHaveCount(0);
   await expanded(page).getByRole('button', { name: 'View all', exact: true }).click();
+  await openControls(page);
   await expect(page.getByLabel('Related movie sources')).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Ready or Not', exact: true })).toBeVisible();
 });
@@ -462,6 +744,7 @@ test('a failed Similar source does not block Recommended in Discover', async ({ 
   await fixtures(page, { fail: 'similar' });
   await expandSeed(page);
   await expanded(page).getByRole('button', { name: 'View all', exact: true }).click();
+  await openControls(page);
   await page.getByLabel('Related movie sources').getByRole('button', { name: 'Similar', exact: true }).click();
   await expect(page.getByText('Relationship provider unavailable', { exact: true })).toBeVisible();
   await page.getByLabel('Related movie sources').getByRole('button', { name: 'Recommended', exact: true }).click();

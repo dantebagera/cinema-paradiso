@@ -1,0 +1,12 @@
+{
+  "label": "corrected-streaming-wiring",
+  "root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\fixtures\\corrected-streaming-wiring-7b59384fe2244c35abeaee274a25f88e",
+  "modules": [
+    "tests.test_qbittorrent_ui"
+  ],
+  "kind": "python",
+  "dist": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\fixtures\\corrected-streaming-wiring-7b59384fe2244c35abeaee274a25f88e\\dist",
+  "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\logs\\corrected-streaming-wiring.log",
+  "elapsed": 0.2370235,
+  "exitCode": 1
+}

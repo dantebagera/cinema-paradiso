@@ -1,0 +1,205 @@
+**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.14.42
+** Copyright (c) 2025 Microsoft Corporation
+**********************************************************************
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Configuring done (1.0s)
+-- Generating done (0.3s)
+-- Build files have been written to: C:/Users/dante/AppData/Local/Temp/cp-player-menu-usability-20261024/build-complete-sdk
+[1/25] Copying cp-player qml sources into build dir
+[2/25] Running qmlimportscanner for cp-player
+[3/25] Automatic MOC and UIC for target cp-player
+[4/24] Running AUTOMOC file extraction for target cp-player
+[5/24] Running rcc for resource cp-player_raw_qml_0
+[6/24] Running moc --collect-json for target cp-player
+[7/14] Generating .rcc/qmlcache/cp-player_qml/CpMenuPopup_qml.cpp, .rcc/qmlcache/cp-player_qml/CpMenuPopup_qml.cpp.aotstats
+[8/14] Generating .rcc/qmlcache/cp-player_qml/CpPlaylistContent_qml.cpp, .rcc/qmlcache/cp-player_qml/CpPlaylistContent_qml.cpp.aotstats
+[9/14] Generating .rcc/qmlcache/cp-player_qml/Main_qml.cpp, .rcc/qmlcache/cp-player_qml/Main_qml.cpp.aotstats
+[10/14] Building CXX object CMakeFiles\cp-player.dir\.qt\rcc\qrc_cp-player_raw_qml_0.cpp.obj
+[11/14] Building CXX object CMakeFiles\cp-player.dir\.rcc\qmlcache\cp-player_qml\CpMenuPopup_qml.cpp.obj
+[12/14] Building CXX object CMakeFiles\cp-player.dir\.rcc\qmlcache\cp-player_qml\CpPlaylistContent_qml.cpp.obj
+[13/14] Building CXX object CMakeFiles\cp-player.dir\.rcc\qmlcache\cp-player_qml\Main_qml.cpp.obj
+[14/14] Linking CXX executable cp-player.exe
+
+    Directory: C:\Users\dante\AppData\Local\Temp\cp-player-menu-usability-20261024\build-complete-sdk
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           24-Oct-26 10:26 PM        1477632 cp-player.exe
+Warning: Translations will not be available due to the following error.
+Cannot open C:/Users/dante/AppData/Local/Temp/cp-player-menu-usability-20261024/qt/6.10.3/msvc2022_64/translations/catalogs.json
+Adding local dependencyC:/Users/dante/AppData/Local/Temp/cp-player-menu-usability-20261024/stage/icuuc.dll
+C:\Users\dante\AppData\Local\Temp\cp-player-menu-usability-20261024\stage\cp-player.exe 64 bit, release executable [QML]
+Scanning C:\Users\dante\Desktop\cinema paradiso\native\player\qml:
+QML imports:
+  'QtQuick' C:\Users\dante\AppData\Local\Temp\cp-player-menu-usability-20261024\qt\6.10.3\msvc2022_64\qml\QtQuick
+  'QtQml' C:\Users\dante\AppData\Local\Temp\cp-player-menu-usability-20261024\qt\6.10.3\msvc2022_64\qml\QtQml
+  'QML' C:\Users\dante\AppData\Local\Temp\cp-player-menu-usability-20261024\qt\6.10.3\msvc2022_64\qml\QML
+  'QtQml.Models' C:\Users\dante\AppData\Local\Temp\cp-player-menu-usability-20261024\qt\6.10.3\msvc2022_64\qml\QtQml\Models
+  'QtQml.WorkerScript' C:\Users\dante\AppData\Local\Temp\cp-player-menu-usability-20261024\qt\6.10.3\msvc2022_64\qml\QtQml\WorkerScript
+Warning: Cannot find any version of the dxcompiler.dll and dxil.dll.
+  'QtQuick.Controls.Basic' C:\Users\dante\AppData\Local\Temp\cp-player-menu-usability-20261024\qt\6.10.3\msvc2022_64\qml\QtQuick\Controls\Basic
+  'QtQuick.Templates' C:\Users\dante\AppData\Local\Temp\cp-player-menu-usability-20261024\qt\6.10.3\msvc2022_64\qml\QtQuick\Templates
+  'QtQuick.Controls.impl' C:\Users\dante\AppData\Local\Temp\cp-player-menu-usability-20261024\qt\6.10.3\msvc2022_64\qml\QtQuick\Controls\impl
+  'QtQuick.Controls.Basic.impl' C:\Users\dante\AppData\Local\Temp\cp-player-menu-usability-20261024\qt\6.10.3\msvc2022_64\qml\QtQuick\Controls\Basic\impl
+  'QtQuick.Shapes' C:\Users\dante\AppData\Local\Temp\cp-player-menu-usability-20261024\qt\6.10.3\msvc2022_64\qml\QtQuick\Shapes
+  'QtQuick.Layouts' C:\Users\dante\AppData\Local\Temp\cp-player-menu-usability-20261024\qt\6.10.3\msvc2022_64\qml\QtQuick\Layouts
+Adding in plugin type generic for module: Qt6Gui
+Adding in plugin type imageformats for module: Qt6Gui
+Adding in plugin type networkinformation for module: Qt6Network
+Adding in plugin type platforms for module: Qt6Gui
+Adding in plugin type qmltooling for module: Qt6Qml
+Adding in plugin type tls for module: Qt6Network
+Skipping plugin qopensslbackend.dll. Use -force-openssl or specify -openssl-root if you want to use it.
+Direct dependencies: Qt6Core Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
+All dependencies   : Qt6Core Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick Qt6QuickControls2 Qt6QuickControls2Basic Qt6QuickControls2BasicStyleImpl Qt6QuickControls2Impl Qt6QuickLayouts Qt6QuickShapes Qt6QuickTemplates2
+To be deployed     : Qt6Core Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick Qt6QuickControls2 Qt6QuickControls2Basic Qt6QuickControls2BasicStyleImpl Qt6QuickControls2Impl Qt6QuickLayouts Qt6QuickShapes Qt6QuickTemplates2
+Warning: Cannot find Visual Studio installation directory, VCINSTALLDIR is not set.
+icuuc.dll is up to date.
+Qt6Core.dll is up to date.
+Qt6Gui.dll is up to date.
+Qt6Network.dll is up to date.
+Qt6OpenGL.dll is up to date.
+Qt6Qml.dll is up to date.
+Qt6QmlMeta.dll is up to date.
+Qt6QmlModels.dll is up to date.
+Qt6QmlWorkerScript.dll is up to date.
+Qt6Quick.dll is up to date.
+Qt6QuickControls2.dll is up to date.
+Qt6QuickControls2Basic.dll is up to date.
+Qt6QuickControls2BasicStyleImpl.dll is up to date.
+Qt6QuickControls2Impl.dll is up to date.
+Qt6QuickLayouts.dll is up to date.
+Qt6QuickShapes.dll is up to date.
+Qt6QuickTemplates2.dll is up to date.
+D3Dcompiler_47.dll is up to date.
+qtuiotouchplugin.dll is up to date.
+qgif.dll is up to date.
+qico.dll is up to date.
+qjpeg.dll is up to date.
+qnetworklistmanager.dll is up to date.
+qwindows.dll is up to date.
+qmldbg_debugger.dll is up to date.
+qmldbg_inspector.dll is up to date.
+qmldbg_local.dll is up to date.
+qmldbg_messages.dll is up to date.
+qmldbg_native.dll is up to date.
+qmldbg_nativedebugger.dll is up to date.
+qmldbg_preview.dll is up to date.
+qmldbg_profiler.dll is up to date.
+qmldbg_quickprofiler.dll is up to date.
+qmldbg_server.dll is up to date.
+qmldbg_tcp.dll is up to date.
+qcertonlybackend.dll is up to date.
+qschannelbackend.dll is up to date.
+qtquick2plugin.dll is up to date.
+plugins.qmltypes is up to date.
+qmldir is up to date.
+Skipping C:\Users\dante\AppData\Local\Temp\cp-player-menu-usability-20261024\qt\6.10.3\msvc2022_64\qml\QtQuick\Controls\designer.
+qmlplugin.dll is up to date.
+plugins.qmltypes is up to date.
+qmldir is up to date.
+plugins.qmltypes is up to date.
+qmldir is up to date.
+modelsplugin.dll is up to date.
+plugins.qmltypes is up to date.
+qmldir is up to date.
+workerscriptplugin.dll is up to date.
+plugins.qmltypes is up to date.
+qmldir is up to date.
+qtquickcontrols2basicstyleplugin.dll is up to date.
+AbstractButton.qml is up to date.
+Action.qml is up to date.
+ActionGroup.qml is up to date.
+ApplicationWindow.qml is up to date.
+BusyIndicator.qml is up to date.
+Button.qml is up to date.
+ButtonGroup.qml is up to date.
+Calendar.qml is up to date.
+CalendarModel.qml is up to date.
+CheckBox.qml is up to date.
+CheckDelegate.qml is up to date.
+ComboBox.qml is up to date.
+Container.qml is up to date.
+Control.qml is up to date.
+DayOfWeekRow.qml is up to date.
+DelayButton.qml is up to date.
+Dial.qml is up to date.
+Dialog.qml is up to date.
+DialogButtonBox.qml is up to date.
+Drawer.qml is up to date.
+Frame.qml is up to date.
+GroupBox.qml is up to date.
+HorizontalHeaderView.qml is up to date.
+HorizontalHeaderViewDelegate.qml is up to date.
+ItemDelegate.qml is up to date.
+Label.qml is up to date.
+Menu.qml is up to date.
+MenuBar.qml is up to date.
+MenuBarItem.qml is up to date.
+MenuItem.qml is up to date.
+MenuSeparator.qml is up to date.
+MonthGrid.qml is up to date.
+Page.qml is up to date.
+PageIndicator.qml is up to date.
+Pane.qml is up to date.
+plugins.qmltypes is up to date.
+Popup.qml is up to date.
+ProgressBar.qml is up to date.
+qmldir is up to date.
+RadioButton.qml is up to date.
+RadioDelegate.qml is up to date.
+RangeSlider.qml is up to date.
+RoundButton.qml is up to date.
+ScrollBar.qml is up to date.
+ScrollIndicator.qml is up to date.
+ScrollView.qml is up to date.
+SearchField.qml is up to date.
+SelectionRectangle.qml is up to date.
+Slider.qml is up to date.
+SpinBox.qml is up to date.
+SplitView.qml is up to date.
+StackView.qml is up to date.
+SwipeDelegate.qml is up to date.
+SwipeView.qml is up to date.
+Switch.qml is up to date.
+SwitchDelegate.qml is up to date.
+TabBar.qml is up to date.
+TabButton.qml is up to date.
+TableViewDelegate.qml is up to date.
+TextArea.qml is up to date.
+TextField.qml is up to date.
+ToolBar.qml is up to date.
+ToolButton.qml is up to date.
+ToolSeparator.qml is up to date.
+ToolTip.qml is up to date.
+TreeViewDelegate.qml is up to date.
+Tumbler.qml is up to date.
+VerticalHeaderView.qml is up to date.
+VerticalHeaderViewDelegate.qml is up to date.
+WeekNumberColumn.qml is up to date.
+qtquicktemplates2plugin.dll is up to date.
+plugins.qmltypes is up to date.
+qmldir is up to date.
+qtquickcontrols2implplugin.dll is up to date.
+plugins.qmltypes is up to date.
+qmldir is up to date.
+qtquickcontrols2basicstyleimplplugin.dll is up to date.
+plugins.qmltypes is up to date.
+qmldir is up to date.
+qmlshapesplugin.dll is up to date.
+plugins.qmltypes is up to date.
+qmldir is up to date.
+qquicklayoutsplugin.dll is up to date.
+plugins.qmltypes is up to date.
+qmldir is up to date.
+Warning: Could not find any translations in C:\Users\dante\AppData\Local\Temp\cp-player-menu-usability-20261024\qt\6.10.3\msvc2022_64\translations (developer build?)
+.
+
+    Directory: C:\Users\dante\AppData\Local\Temp\cp-player-menu-usability-20261024
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           24-Oct-26 10:26 PM                stage
+

@@ -48,6 +48,7 @@ PORTABLE_ROOT_DIRECTORIES = {
     "src",
     "static",
     "tools",
+    "resources",
 }
 PORTABLE_NATIVE_DIRECTORIES = {
     "player",
@@ -273,6 +274,11 @@ def build_release_zip(project_root, qbt_source=None, ffmpeg_source=None, output_
 def friend_test_config(original):
     """Keep service credentials/preferences, replace machine-specific storage."""
     config = copy.deepcopy(original)
+    if 'chatgpt' in config:
+        # Recipient authentication and cloud-evidence consent belong to that person.
+        config['chatgpt'] = {'active_account_id': None, 'model': '', 'recommendation_count':
+            config['chatgpt'].get('recommendation_count', '15'),
+            'allow_movie_identity_hints': False, 'allow_iptv_titles': False}
     config.update(movies_dir="library/movies", movies_dirs=["library/movies"],
                   tv_roots=["library/tv"], user_data_dir="data", tmdb_cache_dir="cache",
                   prowlarr_url="http://127.0.0.1:19696", ollama_url="http://127.0.0.1:11434",

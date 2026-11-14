@@ -1,0 +1,29 @@
+✔ cx joins only truthy class names in order (1.0987ms)
+✔ formatCount preserves current numeric display fallback (9.1695ms)
+✔ movieKey preserves lowercase title and year identity (0.1177ms)
+✔ sortFollowedReleases preserves status and recency ordering without mutating input (0.4733ms)
+✔ getUniqueOptions flattens arrays, removes empty values, and sorts labels (0.6386ms)
+✔ torrentSizeBytes preserves size_bytes before size fallback (0.0814ms)
+✔ torrentPrimaryAction never treats a Prowlarr download URL as a browser link (0.1836ms)
+✔ sectionFromPath resolves known sections and falls back home (0.1454ms)
+✔ sectionFromPath resolves help and search is disabled on help (0.0967ms)
+✔ topBarSearchEnabled limits search to functional page contexts (0.106ms)
+✔ streamTemplateTokens reports required movie identifiers (0.0974ms)
+✔ movie source eligibility requires direct identities or a possible IMDb lookup (0.1102ms)
+✔ buildStreamTemplateUrl replaces configured movie identifiers (0.0933ms)
+✔ buildStreamTemplateUrl rejects missing ids and non-http templates (0.2598ms)
+✔ toYouTubeEmbedUrl converts common YouTube trailer links to embeddable player URLs (0.1626ms)
+✔ toYouTubeEmbedUrl rejects non-player and invalid trailer URLs (0.049ms)
+✔ youtubeTrailerSearchUrl builds an external YouTube fallback search (0.0688ms)
+✔ choosing web in a different surface stops the active IPTV owner (0.8655ms)
+✔ closing during a pending start disposes its late token (0.1531ms)
+✔ switching owners stops the old exact provider session and preserves history identity (0.6306ms)
+✔ a transient cleanup failure retries the same token before allowing the next source (0.178ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 110.6046

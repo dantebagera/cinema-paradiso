@@ -1,0 +1,22 @@
+{
+  "backup": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-arabic-baseline-r04nax9w",
+  "files": [
+    "app.py",
+    "services/canonical_catalog.py",
+    "services/curation_store.py",
+    "services/playback_history.py",
+    "src/api/movieDetails.js",
+    "src/components/MovieLanguageToggle.jsx",
+    "src/components/SharedMovieCards.jsx",
+    "src/features/home/HomeWorkspace.jsx",
+    "src/features/discover/DiscoverWorkspace.jsx",
+    "src/features/movie-lists/MovieListsWorkspace.jsx",
+    "src/discoverUtils.js",
+    "src/components/RelatedMovieRail.jsx",
+    "docs/atlas/movie-and-tv-details.md",
+    "docs/second-brain/movie-and-tv-details.md"
+  ],
+  "head": "117526b",
+  "runtime_pid": 24204,
+  "runtime_bundle": "index-BIL_deZ4.js"
+}

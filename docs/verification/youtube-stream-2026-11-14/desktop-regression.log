@@ -1,0 +1,24 @@
+
+Running 15 tests using 1 worker
+
+(node:19852) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 tests\e2e\movie-stream-sources.spec.js:21:1 › movie opens choices immediately and loads only the selected web provider (1.4s)
+Movie chooser opened while catalog held: 6.1ms
+  ok  2 tests\e2e\movie-stream-sources.spec.js:36:1 › web selection stays usable while each IPTV catalog is still checking (434ms)
+  ok  3 tests\e2e\movie-stream-sources.spec.js:52:1 › IPTV choice uses real saved versions and starts the explicitly selected source (1.9s)
+  ok  4 tests\e2e\movie-stream-sources.spec.js:72:1 › disabled web streaming still offers IPTV and keyboard focus stays in the chooser (552ms)
+  ok  5 tests\e2e\stream-player.spec.js:27:1 › movie page load removes CP status immediately and leaves provider controls accessible (724ms)
+  ok  6 tests\e2e\stream-player.spec.js:47:1 › delayed page keeps a truthful loading status, then removes it on load and resets on reopen (678ms)
+  ok  7 tests\e2e\stream-player.spec.js:76:1 › a provider 404 page stays visible without a misleading CP preparation status (547ms)
+  -   8 tests\e2e\stream-player.spec.js:86:1 › TV page load clears CP status without changing episode identity or watched state
+  -   9 tests\e2e\streaming-providers.spec.js:23:1 › settings selection persists and routes both movies and episodes through the selected provider
+  -  10 tests\e2e\streaming-providers.spec.js:89:1 › custom templates remain editable and invalid saves preserve the active provider
+  -  11 tests\e2e\streaming-providers.spec.js:113:1 › disabled streaming retains the provider and hides movie and episode actions
+  ok 12 tests\e2e\youtube-movie-stream.spec.js:24:1 › YouTube searches only when selected, paginates without GPT, plays and keeps results (704ms)
+  ok 13 tests\e2e\youtube-movie-stream.spec.js:50:1 › empty, error and exhausted searches keep both discovery controls visible (578ms)
+  ok 14 tests\e2e\youtube-movie-stream.spec.js:66:1 › GPT is explicit and completed results are rendered through the existing job flow (575ms)
+  ok 15 tests\e2e\youtube-movie-stream.spec.js:86:1 › switching source while search is pending discards late results (514ms)
+
+  4 skipped
+  11 passed (10.0s)

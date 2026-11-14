@@ -1,3 +1,4 @@
+import Button from '../../components/ui/Button.jsx';
 import { useEffect, useState } from 'react';
 import { fetchJson } from '../../api/client.js';
 import './tv.css';
@@ -23,9 +24,9 @@ export default function TVDownloads() {
         {job?.state==='retry_wait'&&<p role="status">Retry {job.retry_attempts} scheduled after a transient import failure.</p>}
         {job?.last_error&&<p role="status">{job.last_error}</p>}
         <div className="tv-actions">
-          {['needs_review','validation_failed','cleanup_failed'].includes(job?.state)&&<button onClick={()=>manage(row,'retry')}>{job.state==='cleanup_failed'?'Retry cleanup':'Retry validation / import'}</button>}
-          {rollback&&<button onClick={()=>manage(row,'rollback')}>Roll back imported files</button>}
-          {!hasPlan&&!['cancelled','ready'].includes(row.state)&&<><button onClick={()=>manage(row,'cancel')}>Cancel and retain files</button><button onClick={()=>manage(row,'block')}>Block release</button></>}
+          {['needs_review','validation_failed','cleanup_failed'].includes(job?.state)&&<Button onClick={()=>manage(row,'retry')}>{job.state==='cleanup_failed'?'Retry cleanup':'Retry validation / import'}</Button>}
+          {rollback&&<Button onClick={()=>manage(row,'rollback')}>Roll back imported files</Button>}
+          {!hasPlan&&!['cancelled','ready'].includes(row.state)&&<><Button onClick={()=>manage(row,'cancel')}>Cancel and retain files</Button><Button onClick={()=>manage(row,'block')}>Block release</Button></>}
         </div>
         <details><summary>History</summary>{row.history.map((event,index)=><p key={index}>{event.event} · {event.payload}</p>)}</details>
       </div></article>;

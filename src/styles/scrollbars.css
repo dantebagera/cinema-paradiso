@@ -1,0 +1,70 @@
+/* Shared native scrollbar paint. Containers retain ownership of overflow and layout.
+   Explicitly hidden card-rail scrollbars keep their more specific display:none rule. */
+@supports selector(::-webkit-scrollbar) {
+  /* Put interaction state on the element: Chromium does not reliably repaint
+     ancestor scrollbar pseudo-elements when a descendant gains hover. */
+  * {
+    --cp-scrollbar-thumb: transparent;
+  }
+
+  *:hover,
+  *:focus-within,
+  *[data-cp-scrolling] {
+    --cp-scrollbar-thumb: color-mix(in srgb, var(--projector-gold) 72%, transparent);
+  }
+
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  *::-webkit-scrollbar-track,
+  *::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    /* 8px native drag area minus two 3px borders leaves a 2px visible line. */
+    border: 3px solid transparent;
+    border-radius: 999px;
+    background-color: var(--cp-scrollbar-thumb);
+    background-clip: padding-box;
+    transition: background-color 120ms ease-out;
+  }
+
+  *::-webkit-scrollbar-thumb:hover,
+  *::-webkit-scrollbar-thumb:active {
+    background-color: var(--projector-gold);
+  }
+}
+
+/* Native browsers without WebKit paint support determine their own thin width. */
+@supports not selector(::-webkit-scrollbar) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+  }
+
+  *:hover,
+  *:focus-within,
+  *[data-cp-scrolling] {
+    scrollbar-color: var(--projector-gold) transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *::-webkit-scrollbar-thumb {
+    transition: none;
+  }
+}
+
+/* Explicit old native-rail appearance: visible even while idle. Native thin
+   color painting takes precedence over the generic WebKit Reveal line. */
+.horizontal-card-rail-track-native-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #d4af3766 transparent;
+}

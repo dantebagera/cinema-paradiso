@@ -1,0 +1,488 @@
+{
+  "scope": "synthetic lease-only temp database; no GPT/account/live data",
+  "runs": [
+    {
+      "acquire_seconds": 0.03151770000113174,
+      "release_seconds": 0.009886900006677024
+    },
+    {
+      "acquire_seconds": 0.009875499992631376,
+      "release_seconds": 0.009486200011451729
+    },
+    {
+      "acquire_seconds": 0.009673300010035746,
+      "release_seconds": 0.009945099998731166
+    },
+    {
+      "acquire_seconds": 0.009761599998455495,
+      "release_seconds": 0.01012980000814423
+    },
+    {
+      "acquire_seconds": 0.010093800010508858,
+      "release_seconds": 0.009687300000223331
+    },
+    {
+      "acquire_seconds": 0.009714900006656535,
+      "release_seconds": 0.009989400001359172
+    }
+  ],
+  "slowest_events": [
+    {
+      "phase": "commit",
+      "seconds": 0.0060908000014023855
+    },
+    {
+      "phase": "commit",
+      "seconds": 0.006014999991748482
+    },
+    {
+      "phase": "commit",
+      "seconds": 0.006007800009683706
+    },
+    {
+      "phase": "commit",
+      "seconds": 0.005828499997733161
+    },
+    {
+      "phase": "commit",
+      "seconds": 0.005786800000350922
+    },
+    {
+      "phase": "commit",
+      "seconds": 0.005782899999758229
+    },
+    {
+      "phase": "commit",
+      "seconds": 0.00577530000009574
+    },
+    {
+      "phase": "commit",
+      "seconds": 0.00576339999679476
+    },
+    {
+      "phase": "commit",
+      "seconds": 0.0057514999934937805
+    },
+    {
+      "phase": "commit",
+      "seconds": 0.005725099996197969
+    },
+    {
+      "phase": "commit",
+      "seconds": 0.005689199999324046
+    },
+    {
+      "phase": "commit",
+      "seconds": 0.0056075000029522926
+    }
+  ],
+  "events": [
+    {
+      "phase": "connect",
+      "seconds": 0.00026879999495577067
+    },
+    {
+      "phase": "execute",
+      "sql": "PRAGMA",
+      "seconds": 0.00013179999950807542
+    },
+    {
+      "phase": "execute",
+      "sql": "SELECT",
+      "seconds": 0.00020619999850168824
+    },
+    {
+      "phase": "execute",
+      "sql": "PRAGMA",
+      "seconds": 0.000304899993352592
+    },
+    {
+      "phase": "close",
+      "seconds": 0.0033493999944766983
+    },
+    {
+      "phase": "connect",
+      "seconds": 0.00021969999943394214
+    },
+    {
+      "phase": "execute",
+      "sql": "PRAGMA",
+      "seconds": 1.4399993233382702e-05
+    },
+    {
+      "phase": "execute",
+      "sql": "BEGIN",
+      "seconds": 0.0005341999931260943
+    },
+    {
+      "phase": "execute",
+      "sql": "SELECT",
+      "seconds": 9.390000195708126e-05
+    },
+    {
+      "phase": "execute",
+      "sql": "SELECT",
+      "seconds": 1.4699995517730713e-05
+    },
+    {
+      "phase": "execute",
+      "sql": "INSERT",
+      "seconds": 1.1200012522749603e-05
+    },
+    {
+      "phase": "commit",
+      "seconds": 0.0060908000014023855
+    },
+    {
+      "phase": "close",
+      "seconds": 0.0031580999930156395
+    },
+    {
+      "phase": "connect",
+      "seconds": 0.00021610000112559646
+    },
+    {
+      "phase": "execute",
+      "sql": "PRAGMA",
+      "seconds": 1.4699995517730713e-05
+    },
+    {
+      "phase": "execute",
+      "sql": "BEGIN",
+      "seconds": 0.0005375000037020072
+    },
+    {
+      "phase": "execute",
+      "sql": "DELETE",
+      "seconds": 0.00010010000551119447
+    },
+    {
+      "phase": "commit",
+      "seconds": 0.00577530000009574
+    },
+    {
+      "phase": "close",
+      "seconds": 0.0032128000020748004
+    },
+    {
+      "phase": "connect",
+      "seconds": 0.00020209999638609588
+    },
+    {
+      "phase": "execute",
+      "sql": "PRAGMA",
+      "seconds": 1.1399999493733048e-05
+    },
+    {
+      "phase": "execute",
+      "sql": "BEGIN",
+      "seconds": 0.0005277000018395483
+    },
+    {
+      "phase": "execute",
+      "sql": "SELECT",
+      "seconds": 8.81000014487654e-05
+    },
+    {
+      "phase": "execute",
+      "sql": "SELECT",
+      "seconds": 1.060000795405358e-05
+    },
+    {
+      "phase": "execute",
+      "sql": "INSERT",
+      "seconds": 1.0499992640689015e-05
+    },
+    {
+      "phase": "commit",
+      "seconds": 0.005725099996197969
+    },
+    {
+      "phase": "close",
+      "seconds": 0.003250199995818548
+    },
+    {
+      "phase": "connect",
+      "seconds": 0.00019890000112354755
+    },
+    {
+      "phase": "execute",
+      "sql": "PRAGMA",
+      "seconds": 1.3800003216601908e-05
+    },
+    {
+      "phase": "execute",
+      "sql": "BEGIN",
+      "seconds": 0.0005657000001519918
+    },
+    {
+      "phase": "execute",
+      "sql": "DELETE",
+      "seconds": 9.73999995039776e-05
+    },
+    {
+      "phase": "commit",
+      "seconds": 0.0056075000029522926
+    },
+    {
+      "phase": "close",
+      "seconds": 0.0029716999997617677
+    },
+    {
+      "phase": "connect",
+      "seconds": 0.0002162000018870458
+    },
+    {
+      "phase": "execute",
+      "sql": "PRAGMA",
+      "seconds": 1.5400000847876072e-05
+    },
+    {
+      "phase": "execute",
+      "sql": "BEGIN",
+      "seconds": 0.0005489000031957403
+    },
+    {
+      "phase": "execute",
+      "sql": "SELECT",
+      "seconds": 9.129999671131372e-05
+    },
+    {
+      "phase": "execute",
+      "sql": "SELECT",
+      "seconds": 1.1399999493733048e-05
+    },
+    {
+      "phase": "execute",
+      "sql": "INSERT",
+      "seconds": 1.1399999493733048e-05
+    },
+    {
+      "phase": "commit",
+      "seconds": 0.0057514999934937805
+    },
+    {
+      "phase": "close",
+      "seconds": 0.0029778000025544316
+    },
+    {
+      "phase": "connect",
+      "seconds": 0.00019190000602975488
+    },
+    {
+      "phase": "execute",
+      "sql": "PRAGMA",
+      "seconds": 1.2599994079209864e-05
+    },
+    {
+      "phase": "execute",
+      "sql": "BEGIN",
+      "seconds": 0.0005416999920271337
+    },
+    {
+      "phase": "execute",
+      "sql": "DELETE",
+      "seconds": 9.810000483412296e-05
+    },
+    {
+      "phase": "commit",
+      "seconds": 0.006014999991748482
+    },
+    {
+      "phase": "close",
+      "seconds": 0.003053000007639639
+    },
+    {
+      "phase": "connect",
+      "seconds": 0.0002091999922413379
+    },
+    {
+      "phase": "execute",
+      "sql": "PRAGMA",
+      "seconds": 1.5600002370774746e-05
+    },
+    {
+      "phase": "execute",
+      "sql": "BEGIN",
+      "seconds": 0.0005495000077644363
+    },
+    {
+      "phase": "execute",
+      "sql": "SELECT",
+      "seconds": 9.159999899566174e-05
+    },
+    {
+      "phase": "execute",
+      "sql": "SELECT",
+      "seconds": 1.0100004146806896e-05
+    },
+    {
+      "phase": "execute",
+      "sql": "INSERT",
+      "seconds": 1.0799994925037026e-05
+    },
+    {
+      "phase": "commit",
+      "seconds": 0.005689199999324046
+    },
+    {
+      "phase": "close",
+      "seconds": 0.003132099998765625
+    },
+    {
+      "phase": "connect",
+      "seconds": 0.0002173000102629885
+    },
+    {
+      "phase": "execute",
+      "sql": "PRAGMA",
+      "seconds": 1.6999998479150236e-05
+    },
+    {
+      "phase": "execute",
+      "sql": "BEGIN",
+      "seconds": 0.000647599998046644
+    },
+    {
+      "phase": "execute",
+      "sql": "DELETE",
+      "seconds": 0.00014390000433195382
+    },
+    {
+      "phase": "commit",
+      "seconds": 0.005828499997733161
+    },
+    {
+      "phase": "close",
+      "seconds": 0.003236000004108064
+    },
+    {
+      "phase": "connect",
+      "seconds": 0.00020729999232571572
+    },
+    {
+      "phase": "execute",
+      "sql": "PRAGMA",
+      "seconds": 1.5600002370774746e-05
+    },
+    {
+      "phase": "execute",
+      "sql": "BEGIN",
+      "seconds": 0.0005567000043811277
+    },
+    {
+      "phase": "execute",
+      "sql": "SELECT",
+      "seconds": 8.949999755714089e-05
+    },
+    {
+      "phase": "execute",
+      "sql": "SELECT",
+      "seconds": 1.0799994925037026e-05
+    },
+    {
+      "phase": "execute",
+      "sql": "INSERT",
+      "seconds": 1.200000406242907e-05
+    },
+    {
+      "phase": "commit",
+      "seconds": 0.005786800000350922
+    },
+    {
+      "phase": "close",
+      "seconds": 0.003353899999638088
+    },
+    {
+      "phase": "connect",
+      "seconds": 0.00021529999503400177
+    },
+    {
+      "phase": "execute",
+      "sql": "PRAGMA",
+      "seconds": 1.5900004655122757e-05
+    },
+    {
+      "phase": "execute",
+      "sql": "BEGIN",
+      "seconds": 0.0005424999981187284
+    },
+    {
+      "phase": "execute",
+      "sql": "DELETE",
+      "seconds": 9.880001016426831e-05
+    },
+    {
+      "phase": "commit",
+      "seconds": 0.00576339999679476
+    },
+    {
+      "phase": "close",
+      "seconds": 0.0030205000075511634
+    },
+    {
+      "phase": "connect",
+      "seconds": 0.000192299994523637
+    },
+    {
+      "phase": "execute",
+      "sql": "PRAGMA",
+      "seconds": 1.2500007869675756e-05
+    },
+    {
+      "phase": "execute",
+      "sql": "BEGIN",
+      "seconds": 0.000552500001504086
+    },
+    {
+      "phase": "execute",
+      "sql": "SELECT",
+      "seconds": 8.909999451134354e-05
+    },
+    {
+      "phase": "execute",
+      "sql": "SELECT",
+      "seconds": 1.0499992640689015e-05
+    },
+    {
+      "phase": "execute",
+      "sql": "INSERT",
+      "seconds": 1.0599993402138352e-05
+    },
+    {
+      "phase": "commit",
+      "seconds": 0.005782899999758229
+    },
+    {
+      "phase": "close",
+      "seconds": 0.0030131999956211075
+    },
+    {
+      "phase": "connect",
+      "seconds": 0.0002043999993475154
+    },
+    {
+      "phase": "execute",
+      "sql": "PRAGMA",
+      "seconds": 1.6299993149004877e-05
+    },
+    {
+      "phase": "execute",
+      "sql": "BEGIN",
+      "seconds": 0.000562999994144775
+    },
+    {
+      "phase": "execute",
+      "sql": "DELETE",
+      "seconds": 0.00010560000373516232
+    },
+    {
+      "phase": "commit",
+      "seconds": 0.006007800009683706
+    },
+    {
+      "phase": "close",
+      "seconds": 0.0030526000045938417
+    }
+  ]
+}

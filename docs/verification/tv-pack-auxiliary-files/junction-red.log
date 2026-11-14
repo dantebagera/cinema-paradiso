@@ -1,0 +1,24 @@
+FF
+======================================================================
+FAIL: test_auxiliary_directory_alias_cannot_delete_another_staging_file (tests.test_verified_tv_acquisition.TVAcquisitionTests.test_auxiliary_directory_alias_cannot_delete_another_staging_file)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_verified_tv_acquisition.py", line 296, in test_auxiliary_directory_alias_cannot_delete_another_staging_file
+    self.assertEqual(result['state'], 'needs_review', result.get('last_error'))
+AssertionError: 'imported' != 'needs_review'
+- imported
++ needs_review
+ : 
+
+======================================================================
+FAIL: test_auxiliary_directory_alias_after_snapshot_prevents_cleanup (tests.test_verified_tv_acquisition.TVAcquisitionTests.test_auxiliary_directory_alias_after_snapshot_prevents_cleanup)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_verified_tv_acquisition.py", line 314, in test_auxiliary_directory_alias_after_snapshot_prevents_cleanup
+    self.assertIn('link', result['last_error'].lower())
+AssertionError: 'link' not found in 'auxiliary cleanup does not match the validated skipped manifest'
+
+----------------------------------------------------------------------
+Ran 2 tests in 3.912s
+
+FAILED (failures=2)

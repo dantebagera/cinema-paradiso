@@ -1,0 +1,40 @@
+{
+  "backup": "C:\\Users\\dante\\.codex\\backups\\cp-player-playlists-20261020-041140",
+  "version": "0.1.35-qt6.10.3-mpv20260610-lgpl-cp2.8.5",
+  "files": [
+    "app.py",
+    "services/player_queue.py",
+    "services/player_manager.py",
+    "services/player_protocol.py",
+    "services/player_config.py",
+    "services/player_catalog.py",
+    "services/playback_history.py",
+    "services/tv_playback.py",
+    "native/player/src/PlayerBridge.h",
+    "native/player/src/PlayerBridge.cpp",
+    "native/player/src/MpvItem.h",
+    "native/player/src/MpvItem.cpp",
+    "native/player/qml/Main.qml",
+    "native/player/CMakeLists.txt",
+    "native/player/runtime-metadata.json",
+    "native/player/tools/smoke_queue.py",
+    "native/player/resources/icons/previous-file.svg",
+    "native/player/resources/icons/next-file.svg",
+    "native/player/resources/icons/playlist.svg",
+    "native/player/resources/icons/settings.svg",
+    "tests/test_player_queue.py",
+    "tests/test_player_queue_session.py",
+    "tests/test_player_queue_api.py",
+    "tests/test_player_manager.py",
+    "tests/test_native_player.py",
+    "tests/test_playback_history.py",
+    "tests/test_tv_vertical_slice.py",
+    "docs/plans/2026-10-20-native-player-playlists-and-settings.md"
+  ],
+  "deleted": [
+    "native/player/resources/icons/rewind-10.svg",
+    "native/player/resources/icons/forward-10.svg"
+  ],
+  "runtime_target": "C:\\Users\\dante\\Desktop\\cinema paradiso\\runtime\\player\\versions\\0.1.35-qt6.10.3-mpv20260610-lgpl-cp2.8.5",
+  "source_only_until_next_launch": true
+}

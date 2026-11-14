@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "rejected": [
+    "production-write",
+    "production-read",
+    "media-stat",
+    "live-socket",
+    "external-socket",
+    "production-sqlite",
+    "sqlite-attach",
+    "subprocess"
+  ]
+}

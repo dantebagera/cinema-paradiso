@@ -35,7 +35,7 @@ class LibraryExpandedDetailsUiTest(unittest.TestCase):
         root = Path(__file__).resolve().parents[1] / 'src' / 'features'
         movie_lists = (root / 'movie-lists' / 'MovieListsWorkspace.jsx').read_text(encoding='utf-8')
         discover = (root / 'discover' / 'DiscoverWorkspace.jsx').read_text(encoding='utf-8')
-        ai_control = (root / 'ai-control' / 'AIControlWorkspace.jsx').read_text(encoding='utf-8')
+        ai_control = (root / 'ai-control' / 'AIControlResult.jsx').read_text(encoding='utf-8')
 
         self.assertIn('if (nextKey) loadMovieListDetails(row);', movie_lists)
         self.assertIn('fetchCanonicalMovieDetails(movie, owned)', movie_lists)
@@ -51,7 +51,7 @@ class LibraryExpandedDetailsUiTest(unittest.TestCase):
             root / 'src' / 'features' / 'library' / 'LibraryWorkspace.jsx',
             root / 'src' / 'features' / 'discover' / 'DiscoverWorkspace.jsx',
             root / 'src' / 'features' / 'movie-lists' / 'MovieListsWorkspace.jsx',
-            root / 'src' / 'features' / 'ai-control' / 'AIControlWorkspace.jsx',
+            root / 'src' / 'features' / 'ai-control' / 'AIControlResult.jsx',
         ]
         for source_path in sources:
             with self.subTest(source=source_path.name):

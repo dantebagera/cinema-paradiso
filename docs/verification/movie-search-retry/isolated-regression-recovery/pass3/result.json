@@ -1,0 +1,228 @@
+{
+  "status": "Remaining scoped isolated verification gaps closed; reviewed and ledger closed",
+  "preservation": {
+    "files_compared": 1722,
+    "changed_or_missing": [],
+    "runtime_inputs_matched": 243,
+    "compiled_bundle_files_matched": 35,
+    "tracked_dirty_status_identical": true,
+    "tracked_dirty_count": 114,
+    "source_or_existing_test_changes_this_pass": 0,
+    "verified_utc": "2026-10-24T21:31:22.814882+03:00",
+    "production_boundary_evidence": "Reviewed action record and installed guard; no live HTTP/process control or production data reads/writes performed. Not independently measured hardware access counters.",
+    "final_authorized_documentation_updates": [
+      "docs/plans/2026-10-24-isolated-regression-and-recovery.md",
+      "docs/verification/movie-search-retry/isolated-regression-recovery/README.md"
+    ],
+    "changed_files_in_original_seal": [
+      "docs/verification/movie-search-retry/isolated-regression-recovery/README.md"
+    ],
+    "final_non_documentation_drift": [],
+    "owned_test_processes_at_close": []
+  },
+  "unit_runs": [
+    {
+      "kind": "tv-module",
+      "root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\tmp\\pass3-tv-module-a86a152b1125476a81072cd0e03812b4",
+      "tests": [
+        "tests.test_tv_library_read_performance"
+      ],
+      "exit_code": 0
+    },
+    {
+      "kind": "evidence-repeat",
+      "root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\tmp\\pass3-evidence-repeat-2e38e0cb6e1d4e6999cb35fa6d901c47",
+      "tests": [
+        "tests.test_tv_library_read_performance.TVLibraryProbeContractTests.test_invalid_observation_preserves_evidence"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "tv_module_tests_passed": 20,
+  "repeat_evidence_case_passed": 1,
+  "desktop": {
+    "library": {
+      "startTime": "2026-10-24T18:28:37.32Z",
+      "duration": 23042.742,
+      "expected": 5,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "home-following": {
+      "startTime": "2026-10-24T18:29:38.196Z",
+      "duration": 9749.625,
+      "expected": 8,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "post_recovery_stores": {
+    "databases": [
+      {
+        "path": ".catalog-test.sqlite",
+        "mode": "ro; query_only=ON",
+        "quick_check": [
+          [
+            "ok"
+          ]
+        ],
+        "foreign_key_errors": 0,
+        "counts": {
+          "media_files": 3957,
+          "tmdb_movies": 5208
+        }
+      },
+      {
+        "path": "acquisition.sqlite",
+        "mode": "ro; query_only=ON",
+        "quick_check": [
+          [
+            "ok"
+          ]
+        ],
+        "foreign_key_errors": 0,
+        "counts": {}
+      },
+      {
+        "path": "tv-catalog.sqlite",
+        "mode": "ro; query_only=ON",
+        "quick_check": [
+          [
+            "ok"
+          ]
+        ],
+        "foreign_key_errors": 0,
+        "counts": {}
+      },
+      {
+        "path": "awards\\awards.sqlite",
+        "mode": "ro; query_only=ON",
+        "quick_check": [
+          [
+            "ok"
+          ]
+        ],
+        "foreign_key_errors": 0,
+        "counts": {}
+      },
+      {
+        "path": "iptv\\providers\\2d44d898e1284947b8eb1a64df18af28\\iptv.sqlite",
+        "mode": "ro; query_only=ON",
+        "quick_check": [
+          [
+            "ok"
+          ]
+        ],
+        "foreign_key_errors": 0,
+        "counts": {}
+      },
+      {
+        "path": "iptv\\providers\\2d44d898e1284947b8eb1a64df18af28\\movies.sqlite",
+        "mode": "ro; query_only=ON",
+        "quick_check": [
+          [
+            "ok"
+          ]
+        ],
+        "foreign_key_errors": 0,
+        "counts": {}
+      },
+      {
+        "path": "iptv\\providers\\55219f5721c44255aeff300451a404b4\\iptv.sqlite",
+        "mode": "ro; query_only=ON",
+        "quick_check": [
+          [
+            "ok"
+          ]
+        ],
+        "foreign_key_errors": 0,
+        "counts": {}
+      },
+      {
+        "path": "iptv\\providers\\55219f5721c44255aeff300451a404b4\\movies.sqlite",
+        "mode": "ro; query_only=ON",
+        "quick_check": [
+          [
+            "ok"
+          ]
+        ],
+        "foreign_key_errors": 0,
+        "counts": {}
+      }
+    ],
+    "all_ok": true,
+    "movie_rows_preserved": true,
+    "after_completed_second_recovery_boot": true
+  },
+  "ownership": {
+    "library": {
+      "group": "library",
+      "child_pid": 35188,
+      "root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\tmp\\pass3-ui-library-9af3c3da33a2455b93dd34172bb34601",
+      "baseURL": "http://127.0.0.1:55242",
+      "identity_verified_before_browser": true
+    },
+    "home-following": {
+      "group": "home-following",
+      "child_pid": 34644,
+      "root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\tmp\\pass3-ui-home-following-d56eaf891c2c41a382818fe10ff8010d",
+      "baseURL": "http://127.0.0.1:52067",
+      "identity_verified_before_browser": true
+    }
+  },
+  "historical_evidence_not_rerun": {
+    "movie_owner_passed": 451,
+    "node_passed": 140,
+    "cross_domain": {
+      "run": 462,
+      "passed": 461,
+      "errors": 1,
+      "error_fixed_and_affected_module_passed_in_pass3": true
+    },
+    "normal_recovery_boots_passed": 2
+  },
+  "limits": {
+    "active_seconds": 600,
+    "per_batch_seconds": 240,
+    "process_write_bytes": 8589934592,
+    "temporary_footprint_bytes": 4294967296
+  },
+  "out_of_scope": [
+    "real provider connectivity",
+    "real torrent/download operation",
+    "native playback",
+    "physical media rollback",
+    "new live verification"
+  ],
+  "initial_harness_failure": "Optional base-interpreter user-site discovery was denied by the guard before readiness; PYTHONNOUSERSITE and redirected APPDATA/USERPROFILE fixed the environment without relaxing the boundary.",
+  "review": {
+    "critical": 0,
+    "important": 0,
+    "verdict": "remaining scoped verification gaps closed",
+    "deferred_minor": "Library exit guard audit unavailable after owned-tree termination; boundary was installed before app import. Home/Following guard report is complete with no violations.",
+    "reporting_closeout_minor": "resolved"
+  },
+  "guard_audit": {
+    "library": {
+      "report_complete": false,
+      "reason": "owned child force-stopped before atexit report flush",
+      "boundary_installed_before_app_import": true
+    },
+    "home-following": {
+      "report_complete": true,
+      "violations": []
+    }
+  },
+  "resources": {
+    "batches": 14,
+    "active_seconds": 70.859,
+    "process_tree_cpu_seconds": 48.28125,
+    "process_tree_write_bytes": 220317335.0,
+    "peak_temporary_footprint_bytes": 2710192040.0,
+    "maximum_batch_seconds": 25.902,
+    "limits_satisfied": true
+  },
+  "allowance_closed": true
+}

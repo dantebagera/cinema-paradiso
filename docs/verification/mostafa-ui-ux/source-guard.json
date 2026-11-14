@@ -1,0 +1,32 @@
+{
+  "original_source_changes_since_snapshot": [],
+  "integrated_backend_changes": [
+    "services/tv_metadata.py",
+    "services/tv_read_model.py",
+    "services/tv_routes.py"
+  ],
+  "unexpected_source_changes_outside_PR_inventory": [],
+  "protected_overlay": {
+    "services/acquisition_store.py": true,
+    "services/tv_acquisition.py": true,
+    "services/tv_filename_parser.py": true,
+    "services/tv_monitoring.py": true,
+    "services/verified_import.py": true,
+    "src/features/tv/TVAcquisitionReview.jsx": true,
+    "tests/native_tv_server.py": true,
+    "tests/test_verified_tv_acquisition.py": true,
+    "tests/test_tv_follow_season_planning.py": true,
+    "tests/test_tv_source_diagnostics.py": true
+  },
+  "source_comparison": "Normalized CRLF/LF for text sources; overlay protection uses literal original SHA256.",
+  "original_HEAD": "be511f98846a67a182e5b371ad087938e9344362",
+  "worktree_HEAD": "be511f98846a67a182e5b371ad087938e9344362",
+  "approved_review_corrections_outside_PR_inventory": [],
+  "original_overlay_changes": [
+    "docs/plans/2026-10-11-mostafa-ui-ux-integration-plan.md"
+  ],
+  "approved_original_document_changes": [
+    "docs/plans/2026-10-11-mostafa-ui-ux-integration-plan.md"
+  ],
+  "original_document_note": "The original plan changed from Draft to Approved after Dante said go; all application sources and protected operational files match the frozen snapshot."
+}

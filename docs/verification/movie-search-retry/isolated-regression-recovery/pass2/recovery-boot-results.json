@@ -1,0 +1,168 @@
+[
+  {
+    "boot": 1,
+    "status": {
+      "catalog": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\tmp\\recovered\\data\\.catalog-test.sqlite",
+      "data": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\tmp\\recovered\\data",
+      "metadata": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\localappdata\\Cinema Paradiso\\Metadata",
+      "movies": [
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\tmp\\recovered\\offline-movies\\0"
+      ],
+      "normal_startup": true,
+      "pid": 54724,
+      "test_mode": false,
+      "tv": [
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\tmp\\recovered\\offline-tv\\0"
+      ]
+    },
+    "bundle_sha256": "695e94fc071215559545e280c896f3eddd17016c23b6d64dadce22f1651146fa",
+    "queries": [
+      {
+        "query": "christmas",
+        "total": 75,
+        "page_count": 40,
+        "same_ordered_paths_and_movie_keys": true,
+        "generation": 10178
+      },
+      {
+        "query": "m",
+        "total": 3955,
+        "page_count": 40,
+        "same_ordered_paths_and_movie_keys": true,
+        "generation": 10178
+      },
+      {
+        "query": "no-match",
+        "total": 0,
+        "page_count": 0,
+        "same_ordered_paths_and_movie_keys": true,
+        "generation": 10178
+      }
+    ],
+    "tv_response_keys": [
+      "complete",
+      "items",
+      "page",
+      "page_size",
+      "total",
+      "total_pages"
+    ],
+    "iptv_provider_checks": [
+      {
+        "id": "2d44d898e1284947b8eb1a64df18af28",
+        "keys": [
+          "generation",
+          "items",
+          "page",
+          "page_size",
+          "projection",
+          "query",
+          "total",
+          "view"
+        ],
+        "returned": 3
+      },
+      {
+        "id": "55219f5721c44255aeff300451a404b4",
+        "keys": [
+          "generation",
+          "items",
+          "page",
+          "page_size",
+          "projection",
+          "total"
+        ],
+        "returned": 0
+      }
+    ],
+    "checkpoint": {
+      "checkpoint": true,
+      "owned_background_stopped": true
+    },
+    "exit_code": 0,
+    "seconds": 15.859
+  },
+  {
+    "boot": 2,
+    "status": {
+      "catalog": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\tmp\\recovered\\data\\.catalog-test.sqlite",
+      "data": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\tmp\\recovered\\data",
+      "metadata": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\localappdata\\Cinema Paradiso\\Metadata",
+      "movies": [
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\tmp\\recovered\\offline-movies\\0"
+      ],
+      "normal_startup": true,
+      "pid": 26244,
+      "test_mode": false,
+      "tv": [
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\tmp\\recovered\\offline-tv\\0"
+      ]
+    },
+    "bundle_sha256": "695e94fc071215559545e280c896f3eddd17016c23b6d64dadce22f1651146fa",
+    "queries": [
+      {
+        "query": "christmas",
+        "total": 75,
+        "page_count": 40,
+        "same_ordered_paths_and_movie_keys": true,
+        "generation": 10178
+      },
+      {
+        "query": "m",
+        "total": 3955,
+        "page_count": 40,
+        "same_ordered_paths_and_movie_keys": true,
+        "generation": 10178
+      },
+      {
+        "query": "no-match",
+        "total": 0,
+        "page_count": 0,
+        "same_ordered_paths_and_movie_keys": true,
+        "generation": 10178
+      }
+    ],
+    "tv_response_keys": [
+      "complete",
+      "items",
+      "page",
+      "page_size",
+      "total",
+      "total_pages"
+    ],
+    "iptv_provider_checks": [
+      {
+        "id": "2d44d898e1284947b8eb1a64df18af28",
+        "keys": [
+          "generation",
+          "items",
+          "page",
+          "page_size",
+          "projection",
+          "query",
+          "total",
+          "view"
+        ],
+        "returned": 3
+      },
+      {
+        "id": "55219f5721c44255aeff300451a404b4",
+        "keys": [
+          "generation",
+          "items",
+          "page",
+          "page_size",
+          "projection",
+          "total"
+        ],
+        "returned": 0
+      }
+    ],
+    "checkpoint": {
+      "checkpoint": true,
+      "owned_background_stopped": true
+    },
+    "exit_code": 0,
+    "seconds": 7.016
+  }
+]

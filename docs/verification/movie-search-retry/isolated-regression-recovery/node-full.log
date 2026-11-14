@@ -1,0 +1,851 @@
+TAP version 13
+# Subtest: normalization produces a stable reordered signature and removes exact duplicates
+ok 1 - normalization produces a stable reordered signature and removes exact duplicates
+  ---
+  duration_ms: 6.8908
+  type: 'test'
+  ...
+# Subtest: different person roles remain distinct and same-type join is explicit
+ok 2 - different person roles remain distinct and same-type join is explicit
+  ---
+  duration_ms: 0.6225
+  type: 'test'
+  ...
+# Subtest: Genre values cycle through AND, OR, and individual NOT exclusions
+ok 3 - Genre values cycle through AND, OR, and individual NOT exclusions
+  ---
+  duration_ms: 0.2447
+  type: 'test'
+  ...
+# Subtest: simple Library state compiles to the shared model
+ok 4 - simple Library state compiles to the shared model
+  ---
+  duration_ms: 0.3434
+  type: 'test'
+  ...
+# Subtest: simple Discover state keeps its feed and bounded criteria
+ok 5 - simple Discover state keeps its feed and bounded criteria
+  ---
+  duration_ms: 0.1943
+  type: 'test'
+  ...
+# Subtest: year drafts stay out of strict query execution until they are complete and valid
+ok 6 - year drafts stay out of strict query execution until they are complete and valid
+  ---
+  duration_ms: 0.4136
+  type: 'test'
+  ...
+# Subtest: malformed, unsupported, excessive, and reversed requests fail
+ok 7 - malformed, unsupported, excessive, and reversed requests fail
+  ---
+  duration_ms: 0.1683
+  type: 'test'
+  ...
+# Subtest: registry omits unprovable first-release roles and Library vote count
+ok 8 - registry omits unprovable first-release roles and Library vote count
+  ---
+  duration_ms: 0.0777
+  type: 'test'
+  ...
+# Subtest: execution identity ignores editor mode and presentation labels
+ok 9 - execution identity ignores editor mode and presentation labels
+  ---
+  duration_ms: 0.125
+  type: 'test'
+  ...
+# Subtest: shared logical page size is capped at 100
+ok 10 - shared logical page size is capped at 100
+  ---
+  duration_ms: 0.098
+  type: 'test'
+  ...
+# Subtest: cx joins only truthy class names in order
+ok 11 - cx joins only truthy class names in order
+  ---
+  duration_ms: 1.0161
+  type: 'test'
+  ...
+# Subtest: formatCount preserves current numeric display fallback
+ok 12 - formatCount preserves current numeric display fallback
+  ---
+  duration_ms: 9.0921
+  type: 'test'
+  ...
+# Subtest: movieKey preserves lowercase title and year identity
+ok 13 - movieKey preserves lowercase title and year identity
+  ---
+  duration_ms: 0.1075
+  type: 'test'
+  ...
+# Subtest: sortFollowedReleases preserves status and recency ordering without mutating input
+ok 14 - sortFollowedReleases preserves status and recency ordering without mutating input
+  ---
+  duration_ms: 0.4551
+  type: 'test'
+  ...
+# Subtest: getUniqueOptions flattens arrays, removes empty values, and sorts labels
+ok 15 - getUniqueOptions flattens arrays, removes empty values, and sorts labels
+  ---
+  duration_ms: 0.6317
+  type: 'test'
+  ...
+# Subtest: torrentSizeBytes preserves size_bytes before size fallback
+ok 16 - torrentSizeBytes preserves size_bytes before size fallback
+  ---
+  duration_ms: 0.0772
+  type: 'test'
+  ...
+# Subtest: torrentPrimaryAction never treats a Prowlarr download URL as a browser link
+ok 17 - torrentPrimaryAction never treats a Prowlarr download URL as a browser link
+  ---
+  duration_ms: 0.177
+  type: 'test'
+  ...
+# Subtest: sectionFromPath resolves known sections and falls back home
+ok 18 - sectionFromPath resolves known sections and falls back home
+  ---
+  duration_ms: 0.1439
+  type: 'test'
+  ...
+# Subtest: sectionFromPath resolves help and search is disabled on help
+ok 19 - sectionFromPath resolves help and search is disabled on help
+  ---
+  duration_ms: 0.0785
+  type: 'test'
+  ...
+# Subtest: topBarSearchEnabled limits search to functional page contexts
+ok 20 - topBarSearchEnabled limits search to functional page contexts
+  ---
+  duration_ms: 0.099
+  type: 'test'
+  ...
+# Subtest: streamTemplateTokens reports required movie identifiers
+ok 21 - streamTemplateTokens reports required movie identifiers
+  ---
+  duration_ms: 0.0883
+  type: 'test'
+  ...
+# Subtest: buildStreamTemplateUrl replaces configured movie identifiers
+ok 22 - buildStreamTemplateUrl replaces configured movie identifiers
+  ---
+  duration_ms: 0.1077
+  type: 'test'
+  ...
+# Subtest: buildStreamTemplateUrl rejects missing ids and non-http templates
+ok 23 - buildStreamTemplateUrl rejects missing ids and non-http templates
+  ---
+  duration_ms: 0.2592
+  type: 'test'
+  ...
+# Subtest: toYouTubeEmbedUrl converts common YouTube trailer links to embeddable player URLs
+ok 24 - toYouTubeEmbedUrl converts common YouTube trailer links to embeddable player URLs
+  ---
+  duration_ms: 0.1684
+  type: 'test'
+  ...
+# Subtest: toYouTubeEmbedUrl rejects non-player and invalid trailer URLs
+ok 25 - toYouTubeEmbedUrl rejects non-player and invalid trailer URLs
+  ---
+  duration_ms: 0.0411
+  type: 'test'
+  ...
+# Subtest: youtubeTrailerSearchUrl builds an external YouTube fallback search
+ok 26 - youtubeTrailerSearchUrl builds an external YouTube fallback search
+  ---
+  duration_ms: 0.0586
+  type: 'test'
+  ...
+# Subtest: curation generation changes invalidate cached lists and broadcast browser invalidation
+ok 27 - curation generation changes invalidate cached lists and broadcast browser invalidation
+  ---
+  duration_ms: 13.725
+  type: 'test'
+  ...
+# Subtest: the request observing a new generation settles while listeners share one refresh
+ok 28 - the request observing a new generation settles while listeners share one refresh
+  ---
+  duration_ms: 0.3896
+  type: 'test'
+  ...
+# Subtest: catalog generation changes invalidate cached ownership checks
+ok 29 - catalog generation changes invalidate cached ownership checks
+  ---
+  duration_ms: 13.3812
+  type: 'test'
+  ...
+# Subtest: catalog generation changes broadcast detail-cache invalidation
+ok 30 - catalog generation changes broadcast detail-cache invalidation
+  ---
+  duration_ms: 0.4387
+  type: 'test'
+  ...
+# Subtest: fullRowPageSize chooses the closest complete row
+ok 31 - fullRowPageSize chooses the closest complete row
+  ---
+  duration_ms: 0.4427
+  type: 'test'
+  ...
+# Subtest: fullRowPageSize honors tie bias and API limits
+ok 32 - fullRowPageSize honors tie bias and API limits
+  ---
+  duration_ms: 0.0765
+  type: 'test'
+  ...
+# Subtest: countGridTemplateColumns reads resolved and fixed-repeat tracks
+ok 33 - countGridTemplateColumns reads resolved and fixed-repeat tracks
+  ---
+  duration_ms: 0.1991
+  type: 'test'
+  ...
+# Subtest: card lab route is hidden from primary navigation
+ok 34 - card lab route is hidden from primary navigation
+  ---
+  duration_ms: 0.4768
+  type: 'test'
+  ...
+# Subtest: card lab uses isolated static prototype data and class namespace
+ok 35 - card lab uses isolated static prototype data and class namespace
+  ---
+  duration_ms: 0.1235
+  type: 'test'
+  ...
+# Subtest: one catalog EventSource ignores duplicate generations and emits authoritative refresh signals
+ok 36 - one catalog EventSource ignores duplicate generations and emits authoritative refresh signals
+  ---
+  duration_ms: 0.4999
+  type: 'test'
+  ...
+# Subtest: filterIdentityReviewItems searches identities and filters classifications
+ok 37 - filterIdentityReviewItems searches identities and filters classifications
+  ---
+  duration_ms: 0.844
+  type: 'test'
+  ...
+# Subtest: renameModalItem preserves suggested title and year precedence
+ok 38 - renameModalItem preserves suggested title and year precedence
+  ---
+  duration_ms: 0.6267
+  type: 'test'
+  ...
+# Subtest: metadata status display helpers preserve current labels and chip classes
+ok 39 - metadata status display helpers preserve current labels and chip classes
+  ---
+  duration_ms: 0.1278
+  type: 'test'
+  ...
+# Subtest: deletion preview explains complete folders and included sidecars
+ok 40 - deletion preview explains complete folders and included sidecars
+  ---
+  duration_ms: 0.4809
+  type: 'test'
+  ...
+# Subtest: deletion preview explains why an individual file keeps its folder
+ok 41 - deletion preview explains why an individual file keeps its folder
+  ---
+  duration_ms: 0.0911
+  type: 'test'
+  ...
+# Subtest: canonicalOwnedMovie makes the owned SQL card authoritative on every surface
+ok 42 - canonicalOwnedMovie makes the owned SQL card authoritative on every surface
+  ---
+  duration_ms: 1.3651
+  type: 'test'
+  ...
+# Subtest: buildOwnershipMap keeps only found movies with local paths
+ok 43 - buildOwnershipMap keeps only found movies with local paths
+  ---
+  duration_ms: 0.2254
+  type: 'test'
+  ...
+# Subtest: buildOwnershipMap matches title variants through tmdb id
+ok 44 - buildOwnershipMap matches title variants through tmdb id
+  ---
+  duration_ms: 0.0753
+  type: 'test'
+  ...
+# Subtest: ownership never falls back from a conflicting strong id or a yearless title
+ok 45 - ownership never falls back from a conflicting strong id or a yearless title
+  ---
+  duration_ms: 0.1442
+  type: 'test'
+  ...
+# Subtest: filterEnrichedIndexerResults keeps browse rows without TMDB metadata
+ok 46 - filterEnrichedIndexerResults keeps browse rows without TMDB metadata
+  ---
+  duration_ms: 0.1349
+  type: 'test'
+  ...
+# Subtest: sortTorrentVariants prioritizes quality then seeders
+ok 47 - sortTorrentVariants prioritizes quality then seeders
+  ---
+  duration_ms: 0.1208
+  type: 'test'
+  ...
+# Subtest: discoverMoviePayload supports online movies and owned paths
+ok 48 - discoverMoviePayload supports online movies and owned paths
+  ---
+  duration_ms: 0.1099
+  type: 'test'
+  ...
+# Subtest: listsForDiscoverMovie matches online movies by tmdb id without a file path
+ok 49 - listsForDiscoverMovie matches online movies by tmdb id without a file path
+  ---
+  duration_ms: 0.122
+  type: 'test'
+  ...
+# Subtest: replaceOwnershipScope removes every stale alias when a movie becomes unowned
+ok 50 - replaceOwnershipScope removes every stale alias when a movie becomes unowned
+  ---
+  duration_ms: 0.1642
+  type: 'test'
+  ...
+# Subtest: owned list membership uses the canonical CP movie key after legacy projection
+ok 51 - owned list membership uses the canonical CP movie key after legacy projection
+  ---
+  duration_ms: 0.148
+  type: 'test'
+  ...
+# Subtest: groups alternate trailer versions without losing their original playback identity
+ok 52 - groups alternate trailer versions without losing their original playback identity
+  ---
+  duration_ms: 1.4502
+  type: 'test'
+  ...
+# Subtest: labels videos from their supplied title without claiming unofficial teasers are official
+ok 53 - labels videos from their supplied title without claiming unofficial teasers are official
+  ---
+  duration_ms: 0.1284
+  type: 'test'
+  ...
+# Subtest: backend upcoming results exclude duplicate and Trending titles then sort by release date
+ok 54 - backend upcoming results exclude duplicate and Trending titles then sort by release date
+  ---
+  duration_ms: 6.2746
+  type: 'test'
+  ...
+# Subtest: unique Home movies prefer the first authoritative projection
+ok 55 - unique Home movies prefer the first authoritative projection
+  ---
+  duration_ms: 0.128
+  type: 'test'
+  ...
+# Subtest: Upcoming selects twenty survivors in provider order before sorting, retaining raw replacements
+ok 56 - Upcoming selects twenty survivors in provider order before sorting, retaining raw replacements
+  ---
+  duration_ms: 0.188
+  type: 'test'
+  ...
+# Subtest: parseHomeTrailerTitle removes Rotten Tomatoes marketing suffixes
+ok 57 - parseHomeTrailerTitle removes Rotten Tomatoes marketing suffixes
+  ---
+  duration_ms: 1.5084
+  type: 'test'
+  ...
+# Subtest: selectConfidentTrailerMovie accepts exact identities and rejects risky collisions
+ok 58 - selectConfidentTrailerMovie accepts exact identities and rejects risky collisions
+  ---
+  duration_ms: 0.458
+  type: 'test'
+  ...
+# Subtest: mergeTrailerMovieCandidates preserves provider order and removes duplicate ids
+ok 59 - mergeTrailerMovieCandidates preserves provider order and removes duplicate ids
+  ---
+  duration_ms: 0.5132
+  type: 'test'
+  ...
+# Subtest: IPTV movie filters keep playlists, user lists, and temporary filters separate
+ok 60 - IPTV movie filters keep playlists, user lists, and temporary filters separate
+  ---
+  duration_ms: 0.3946
+  type: 'test'
+  ...
+# Subtest: IPTV movie query is bounded and serializes source claims explicitly
+ok 61 - IPTV movie query is bounded and serializes source claims explicitly
+  ---
+  duration_ms: 0.1939
+  type: 'test'
+  ...
+# Subtest: manual metadata identity separates spaced title year and technical claims
+ok 62 - manual metadata identity separates spaced title year and technical claims
+  ---
+  duration_ms: 0.6471
+  type: 'test'
+  ...
+# Subtest: requests a sync when no provider catalog has been saved
+ok 63 - requests a sync when no provider catalog has been saved
+  ---
+  duration_ms: 0.4393
+  type: 'test'
+  ...
+# Subtest: requests a sync when the provider catalog is at least 24 hours old
+ok 64 - requests a sync when the provider catalog is at least 24 hours old
+  ---
+  duration_ms: 0.0854
+  type: 'test'
+  ...
+# Subtest: keeps a recent provider catalog without starting another sync
+ok 65 - keeps a recent provider catalog without starting another sync
+  ---
+  duration_ms: 0.0638
+  type: 'test'
+  ...
+# Subtest: does not sync an unconfigured provider or duplicate a running sync
+ok 66 - does not sync an unconfigured provider or duplicate a running sync
+  ---
+  duration_ms: 0.0629
+  type: 'test'
+  ...
+# Subtest: nine intents dispatch first and latest only; superseded callers settle
+ok 67 - nine intents dispatch first and latest only; superseded callers settle
+  ---
+  duration_ms: 0.8261
+  type: 'test'
+  ...
+# Subtest: freshness requires another read; errors release the queue
+ok 68 - freshness requires another read; errors release the queue
+  ---
+  duration_ms: 0.3456
+  type: 'test'
+  ...
+# Subtest: dispose settles pending and prevents late completion
+ok 69 - dispose settles pending and prevents late completion
+  ---
+  duration_ms: 0.6242
+  type: 'test'
+  ...
+# Subtest: movie list view model keeps owned and missing movies together with upgrade flags
+ok 70 - movie list view model keeps owned and missing movies together with upgrade flags
+  ---
+  duration_ms: 1.2981
+  type: 'test'
+  ...
+# Subtest: compact movie-view quality keeps only the class and source
+ok 71 - compact movie-view quality keeps only the class and source
+  ---
+  duration_ms: 0.1402
+  type: 'test'
+  ...
+# Subtest: ownership fallback requires a year and never crosses conflicting Plex identities
+ok 72 - ownership fallback requires a year and never crosses conflicting Plex identities
+  ---
+  duration_ms: 0.1177
+  type: 'test'
+  ...
+# Subtest: poster updates reach duplicate copies but not conflicting strong identities
+ok 73 - poster updates reach duplicate copies but not conflicting strong identities
+  ---
+  duration_ms: 0.1546
+  type: 'test'
+  ...
+# Subtest: splitLibraryTitle separates trailing release year only
+ok 74 - splitLibraryTitle separates trailing release year only
+  ---
+  duration_ms: 0.1347
+  type: 'test'
+  ...
+# Subtest: resolution helpers preserve current library bucket behavior
+ok 75 - resolution helpers preserve current library bucket behavior
+  ---
+  duration_ms: 0.1082
+  type: 'test'
+  ...
+# Subtest: getMovieIdentity prefers accepted canonical metadata before Plex and file fallback
+ok 76 - getMovieIdentity prefers accepted canonical metadata before Plex and file fallback
+  ---
+  duration_ms: 0.1042
+  type: 'test'
+  ...
+# Subtest: getTmdbCacheKey preserves canonical id, item id, then identity fallback precedence
+ok 77 - getTmdbCacheKey preserves canonical id, item id, then identity fallback precedence
+  ---
+  duration_ms: 0.0815
+  type: 'test'
+  ...
+# Subtest: display labels preserve current quality and root fallbacks
+ok 78 - display labels preserve current quality and root fallbacks
+  ---
+  duration_ms: 0.5825
+  type: 'test'
+  ...
+# Subtest: getLocaleTag preserves canonical and Plex country/language abbreviations
+ok 79 - getLocaleTag preserves canonical and Plex country/language abbreviations
+  ---
+  duration_ms: 0.2008
+  type: 'test'
+  ...
+# Subtest: person helpers preserve current role matching and merge behavior
+ok 80 - person helpers preserve current role matching and merge behavior
+  ---
+  duration_ms: 0.1934
+  type: 'test'
+  ...
+# Subtest: getRolePeople and itemMatchesRoleFilter preserve canonical, Plex, and TMDB fallbacks
+ok 81 - getRolePeople and itemMatchesRoleFilter preserve canonical, Plex, and TMDB fallbacks
+  ---
+  duration_ms: 0.2601
+  type: 'test'
+  ...
+# Subtest: library people index stays local to accepted movies and can enforce a local role filter
+ok 82 - library people index stays local to accepted movies and can enforce a local role filter
+  ---
+  duration_ms: 5.9159
+  type: 'test'
+  ...
+# Subtest: collection normalization preserves current title cleanup behavior
+ok 83 - collection normalization preserves current title cleanup behavior
+  ---
+  duration_ms: 0.1512
+  type: 'test'
+  ...
+# Subtest: movie payload and identity keys preserve canonical and path precedence
+ok 84 - movie payload and identity keys preserve canonical and path precedence
+  ---
+  duration_ms: 0.1073
+  type: 'test'
+  ...
+# Subtest: system list state updates immediately through the canonical movie key
+ok 85 - system list state updates immediately through the canonical movie key
+  ---
+  duration_ms: 0.1312
+  type: 'test'
+  ...
+# Subtest: collection and list filters preserve TMDB id and title-year matching
+ok 86 - collection and list filters preserve TMDB id and title-year matching
+  ---
+  duration_ms: 0.2152
+  type: 'test'
+  ...
+# Subtest: resolved collection filters use backend-owned paths only
+ok 87 - resolved collection filters use backend-owned paths only
+  ---
+  duration_ms: 0.0474
+  type: 'test'
+  ...
+# Subtest: listsForItem matches saved list movies by path when TMDB ids are missing from library rows
+ok 88 - listsForItem matches saved list movies by path when TMDB ids are missing from library rows
+  ---
+  duration_ms: 0.0774
+  type: 'test'
+  ...
+# Subtest: listLibraryCoverage reports list movies missing from the current library
+ok 89 - listLibraryCoverage reports list movies missing from the current library
+  ---
+  duration_ms: 0.1253
+  type: 'test'
+  ...
+# Subtest: movieHasSystemState shares provider identity across duplicate paths
+ok 90 - movieHasSystemState shares provider identity across duplicate paths
+  ---
+  duration_ms: 0.071
+  type: 'test'
+  ...
+# Subtest: buildLibraryViewModel filters watched unwatched and watchlist states
+ok 91 - buildLibraryViewModel filters watched unwatched and watchlist states
+  ---
+  duration_ms: 0.3307
+  type: 'test'
+  ...
+# Subtest: buildLibraryViewModel preserves Library filtering sorting pagination and stats behavior
+ok 92 - buildLibraryViewModel preserves Library filtering sorting pagination and stats behavior
+  ---
+  duration_ms: 0.2311
+  type: 'test'
+  ...
+# Subtest: an upper year bound excludes unknown years and requests enrichment for missing saved metadata
+ok 93 - an upper year bound excludes unknown years and requests enrichment for missing saved metadata
+  ---
+  duration_ms: 0.9931
+  type: 'test'
+  ...
+# Subtest: list metadata filters intersect genre, country, years, votes and ratings using provider or canonical facts
+ok 94 - list metadata filters intersect genre, country, years, votes and ratings using provider or canonical facts
+  ---
+  duration_ms: 0.3332
+  type: 'test'
+  ...
+# Subtest: sorts preserve original list order by default and never mutate membership
+ok 95 - sorts preserve original list order by default and never mutate membership
+  ---
+  duration_ms: 5.6999
+  type: 'test'
+  ...
+# Subtest: TV list criteria retain TV genre identity and use first-air years, with all common filters
+ok 96 - TV list criteria retain TV genre identity and use first-air years, with all common filters
+  ---
+  duration_ms: 0.2128
+  type: 'test'
+  ...
+# Subtest: default filters preserve all 4000 members without reading metadata
+ok 97 - default filters preserve all 4000 members without reading metadata
+  ---
+  duration_ms: 1.2948
+  type: 'test'
+  ...
+# Subtest: filtering and sorting 4000 members reads each canonical metadata object once
+ok 98 - filtering and sorting 4000 members reads each canonical metadata object once
+  ---
+  duration_ms: 7.0646
+  type: 'test'
+  ...
+# Subtest: default filters preserve all 10000 members without reading metadata
+ok 99 - default filters preserve all 10000 members without reading metadata
+  ---
+  duration_ms: 0.7178
+  type: 'test'
+  ...
+# Subtest: filtering and sorting 10000 members reads each canonical metadata object once
+ok 100 - filtering and sorting 10000 members reads each canonical metadata object once
+  ---
+  duration_ms: 12.6829
+  type: 'test'
+  ...
+# Subtest: sort-only paths resolve canonical facts once and keep equal keys in list order
+ok 101 - sort-only paths resolve canonical facts once and keep equal keys in list order
+  ---
+  duration_ms: 6.1043
+  type: 'test'
+  ...
+# Subtest: genre-only filtering does not inspect unused ratings, votes or countries
+ok 102 - genre-only filtering does not inspect unused ratings, votes or countries
+  ---
+  duration_ms: 0.1449
+  type: 'test'
+  ...
+# Subtest: incomplete year drafts and unknown genre choices preserve membership without metadata reads
+ok 103 - incomplete year drafts and unknown genre choices preserve membership without metadata reads
+  ---
+  duration_ms: 0.1032
+  type: 'test'
+  ...
+# Subtest: winning-film context carries exact person role and award without filmography or narrowed filters
+ok 104 - winning-film context carries exact person role and award without filmography or narrowed filters
+  ---
+  duration_ms: 0.5614
+  type: 'test'
+  ...
+# Subtest: canonical ID disagreement stays unavailable even when counts happen to match
+ok 105 - canonical ID disagreement stays unavailable even when counts happen to match
+  ---
+  duration_ms: 0.5063
+  type: 'test'
+  ...
+# Subtest: explicit role and opt-in isolate actor/director and excluded creator cards
+ok 106 - explicit role and opt-in isolate actor/director and excluded creator cards
+  ---
+  duration_ms: 0.6568
+  type: 'test'
+  ...
+# Subtest: one concurrent snapshot request and ETag 304 preserve object identity
+ok 107 - one concurrent snapshot request and ETag 304 preserve object identity
+  ---
+  duration_ms: 0.2885
+  type: 'test'
+  ...
+# Subtest: older generation and failed reads retain last good counts
+ok 108 - older generation and failed reads retain last good counts
+  ---
+  duration_ms: 0.1457
+  type: 'test'
+  ...
+# Subtest: a different userdata owner replaces cached counts even with a lower generation
+ok 109 - a different userdata owner replaces cached counts even with a lower generation
+  ---
+  duration_ms: 0.1198
+  type: 'test'
+  ...
+# Subtest: disabled and hidden consumers make no request; focus minimum is sixty seconds
+ok 110 - disabled and hidden consumers make no request; focus minimum is sixty seconds
+  ---
+  duration_ms: 0.1629
+  type: 'test'
+  ...
+# Subtest: catalog changes retain visible movie details while marking them for refresh
+ok 111 - catalog changes retain visible movie details while marking them for refresh
+  ---
+  duration_ms: 0.8618
+  type: 'test'
+  ...
+# Subtest: owned detail merges preserve valid card summaries when deferred fields are empty
+ok 112 - owned detail merges preserve valid card summaries when deferred fields are empty
+  ---
+  duration_ms: 0.1518
+  type: 'test'
+  ...
+# Subtest: owned details replace shallow stored credits with richer TMDB people
+ok 113 - owned details replace shallow stored credits with richer TMDB people
+  ---
+  duration_ms: 0.2059
+  type: 'test'
+  ...
+# Subtest: transient language overlay replaces display fields without mutating canonical data
+ok 114 - transient language overlay replaces display fields without mutating canonical data
+  ---
+  duration_ms: 0.1261
+  type: 'test'
+  ...
+# Subtest: sparse movie cards display the loaded detail summary without changing their identity
+ok 115 - sparse movie cards display the loaded detail summary without changing their identity
+  ---
+  duration_ms: 0.0828
+  type: 'test'
+  ...
+# Subtest: sparse movie cards display the loaded detail plot without changing their identity
+ok 116 - sparse movie cards display the loaded detail plot without changing their identity
+  ---
+  duration_ms: 0.0493
+  type: 'test'
+  ...
+# Subtest: blank initial descriptions use the available detail plot
+ok 117 - blank initial descriptions use the available detail plot
+  ---
+  duration_ms: 0.0594
+  type: 'test'
+  ...
+# Subtest: a blank summary does not hide an existing movie plot
+ok 118 - a blank summary does not hide an existing movie plot
+  ---
+  duration_ms: 0.073
+  type: 'test'
+  ...
+# Subtest: an existing accepted movie summary keeps priority over the provider description
+ok 119 - an existing accepted movie summary keeps priority over the provider description
+  ---
+  duration_ms: 0.0736
+  type: 'test'
+  ...
+# Subtest: an existing accepted movie plot keeps priority over the provider description
+ok 120 - an existing accepted movie plot keeps priority over the provider description
+  ---
+  duration_ms: 0.0805
+  type: 'test'
+  ...
+# Subtest: Arabic switching restores a detail-only English plot and leaves canonical inputs unchanged
+ok 121 - Arabic switching restores a detail-only English plot and leaves canonical inputs unchanged
+  ---
+  duration_ms: 0.0734
+  type: 'test'
+  ...
+# Subtest: a missing Arabic description falls back to the resolved English detail plot
+ok 122 - a missing Arabic description falls back to the resolved English detail plot
+  ---
+  duration_ms: 0.0567
+  type: 'test'
+  ...
+# Subtest: missing, loading, failed, and empty details preserve the original description state
+ok 123 - missing, loading, failed, and empty details preserve the original description state
+  ---
+  duration_ms: 0.1176
+  type: 'test'
+  ...
+# Subtest: collection caches keep Library and TMDB payloads separate for the same collection
+ok 124 - collection caches keep Library and TMDB payloads separate for the same collection
+  ---
+  duration_ms: 0.0724
+  type: 'test'
+  ...
+# Subtest: partial collection identity remains loading-capable instead of becoming a false zero
+ok 125 - partial collection identity remains loading-capable instead of becoming a false zero
+  ---
+  duration_ms: 0.0859
+  type: 'test'
+  ...
+# Subtest: All preserves provider order and deduplicates TMDB identity, not titles
+ok 126 - All preserves provider order and deduplicates TMDB identity, not titles
+  ---
+  duration_ms: 0.7651
+  type: 'test'
+  ...
+# Subtest: workspace centering accounts for current scroll and viewport offset
+ok 127 - workspace centering accounts for current scroll and viewport offset
+  ---
+  duration_ms: 0.1199
+  type: 'test'
+  ...
+# Subtest: expanded cards center below sticky controls and align at their bottom when taller than the available space
+ok 128 - expanded cards center below sticky controls and align at their bottom when taller than the available space
+  ---
+  duration_ms: 0.1229
+  type: 'test'
+  ...
+# Subtest: page requests deduplicate and retry failures
+ok 129 - page requests deduplicate and retry failures
+  ---
+  duration_ms: 1.0132
+  type: 'test'
+  ...
+# Subtest: TV and movie IDs use separate relationship endpoints and cache entries
+ok 130 - TV and movie IDs use separate relationship endpoints and cache entries
+  ---
+  duration_ms: 0.4617
+  type: 'test'
+  ...
+# Subtest: Ollama model groups preserve cloud metadata, local models, and unknown current models
+ok 131 - Ollama model groups preserve cloud metadata, local models, and unknown current models
+  ---
+  duration_ms: 0.8093
+  type: 'test'
+  ...
+# Subtest: Ollama model groups show only accessible cloud models after a scan
+ok 132 - Ollama model groups show only accessible cloud models after a scan
+  ---
+  duration_ms: 0.1427
+  type: 'test'
+  ...
+# Subtest: Ollama model groups keep the saved model available while another choice is unsaved
+ok 133 - Ollama model groups keep the saved model available while another choice is unsaved
+  ---
+  duration_ms: 0.0832
+  type: 'test'
+  ...
+# Subtest: Ollama model groups expose a verified exact model before it is saved
+ok 134 - Ollama model groups expose a verified exact model before it is saved
+  ---
+  duration_ms: 0.0725
+  type: 'test'
+  ...
+# Subtest: visible identities complete before held offscreen work without increasing page concurrency
+ok 135 - visible identities complete before held offscreen work without increasing page concurrency
+  ---
+  duration_ms: 0.9395
+  type: 'test'
+  ...
+# Subtest: a short page keeps one request lane and failed details do not block remaining identities
+ok 136 - a short page keeps one request lane and failed details do not block remaining identities
+  ---
+  duration_ms: 0.1625
+  type: 'test'
+  ...
+# Subtest: abort stops queued work and ignores a late successful response
+ok 137 - abort stops queued work and ignores a late successful response
+  ---
+  duration_ms: 0.6379
+  type: 'test'
+  ...
+# Subtest: TV creator criteria survive edits while movie validation stays unchanged
+ok 138 - TV creator criteria survive edits while movie validation stays unchanged
+  ---
+  duration_ms: 0.8489
+  type: 'test'
+  ...
+# Subtest: TMDB series status is available only to TV Discover queries
+ok 139 - TMDB series status is available only to TV Discover queries
+  ---
+  duration_ms: 0.569
+  type: 'test'
+  ...
+# Subtest: TV stream targets the series and episode, refuses unaired or incomplete targets
+ok 140 - TV stream targets the series and episode, refuses unaired or incomplete targets
+  ---
+  duration_ms: 0.3768
+  type: 'test'
+  ...
+1..140
+# tests 140
+# suites 0
+# pass 140
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2398.675
+

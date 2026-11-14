@@ -1,0 +1,259 @@
+{
+  "status": "Historical diagnostic evidence from this chat, not tests of a future implementation",
+  "date": "2026-10-23",
+  "diagnostic_source": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-live-search-49e47e4023f2479d9bdcf9f032157b2d",
+  "captures": {
+    "live-overlap-per-thread-cpu.json": {
+      "natural_background_trigger": "Thread-3 (run_forever)",
+      "wait_for_trigger_seconds": 4.922174800012726,
+      "wall_seconds": 4.3140044000028865,
+      "server_ms": "4138.7",
+      "status": 200,
+      "total": 75,
+      "backend_process_cpu_seconds": 4.203125,
+      "measurement_window_seconds": 4.314233600001899,
+      "threads": [
+        {
+          "id": 2816,
+          "name": "Thread-746 (process_request_thread)",
+          "cpu_seconds": 2.5,
+          "is_search_request": true
+        },
+        {
+          "id": 42588,
+          "name": "Thread-3 (run_forever)",
+          "cpu_seconds": 0.90625,
+          "is_search_request": false
+        },
+        {
+          "id": 24964,
+          "name": "cinema-library-ingestion",
+          "cpu_seconds": 0.796875,
+          "is_search_request": false
+        },
+        {
+          "id": 11908,
+          "name": "Thread-27 (process_request_thread)",
+          "cpu_seconds": 0.0,
+          "is_search_request": false
+        },
+        {
+          "id": 29884,
+          "name": "cp-tv-monitor",
+          "cpu_seconds": 0.0,
+          "is_search_request": false
+        },
+        {
+          "id": 31584,
+          "name": "cp-tv-library-scan",
+          "cpu_seconds": 0.0,
+          "is_search_request": false
+        },
+        {
+          "id": 42864,
+          "name": "Thread-1",
+          "cpu_seconds": 0.0,
+          "is_search_request": false
+        },
+        {
+          "id": 21600,
+          "name": "Thread-2",
+          "cpu_seconds": 0.0,
+          "is_search_request": false
+        },
+        {
+          "id": 1264,
+          "name": "cp-movie-awards",
+          "cpu_seconds": 0.0,
+          "is_search_request": false
+        },
+        {
+          "id": 4724,
+          "name": "MainThread",
+          "cpu_seconds": 0.0,
+          "is_search_request": false
+        }
+      ]
+    },
+    "live-per-thread-cpu.json": {
+      "start": 97717.4713115,
+      "wall_seconds": 2.5663625999877695,
+      "server_ms": "2489.2",
+      "status": 200,
+      "total": 75,
+      "backend_process_cpu_seconds": 2.421875,
+      "measurement_window_seconds": 2.566628500004299,
+      "threads": [
+        {
+          "id": 24964,
+          "name": "cinema-library-ingestion",
+          "cpu_seconds": 0.171875,
+          "is_search_request": false
+        },
+        {
+          "id": 11908,
+          "name": "Thread-27 (process_request_thread)",
+          "cpu_seconds": 0.0,
+          "is_search_request": false
+        },
+        {
+          "id": 29884,
+          "name": "cp-tv-monitor",
+          "cpu_seconds": 0.0,
+          "is_search_request": false
+        },
+        {
+          "id": 31584,
+          "name": "cp-tv-library-scan",
+          "cpu_seconds": 0.0,
+          "is_search_request": false
+        },
+        {
+          "id": 42588,
+          "name": "Thread-3 (run_forever)",
+          "cpu_seconds": 0.0,
+          "is_search_request": false
+        },
+        {
+          "id": 42864,
+          "name": "Thread-1",
+          "cpu_seconds": 0.0,
+          "is_search_request": false
+        },
+        {
+          "id": 21600,
+          "name": "Thread-2",
+          "cpu_seconds": 0.0,
+          "is_search_request": false
+        },
+        {
+          "id": 1264,
+          "name": "cp-movie-awards",
+          "cpu_seconds": 0.0,
+          "is_search_request": false
+        },
+        {
+          "id": 4724,
+          "name": "MainThread",
+          "cpu_seconds": 0.0,
+          "is_search_request": false
+        }
+      ]
+    },
+    "core-type-control.json": {
+      "runs": [
+        {
+          "phase": "performance_core",
+          "core": 8,
+          "actual_core": 8,
+          "wall": 1.0044548000005307,
+          "thread_cpu": 0.984375,
+          "count": 75,
+          "rows": 40
+        },
+        {
+          "phase": "efficiency_core",
+          "core": 24,
+          "actual_core": 24,
+          "wall": 2.329079399991315,
+          "thread_cpu": 2.03125,
+          "count": 75,
+          "rows": 40
+        },
+        {
+          "phase": "performance_core_repeat",
+          "core": 8,
+          "actual_core": 8,
+          "wall": 1.0169830999948317,
+          "thread_cpu": 0.984375,
+          "count": 75,
+          "rows": 40
+        }
+      ],
+      "same_results": true,
+      "scope": "Affinity changed only in this temporary diagnostic process and restored; live backend untouched."
+    },
+    "fixed-core-copy-control.json": {
+      "runs": [
+        {
+          "phase": "quiet_before_on_core24",
+          "wall": 2.3988187000068137,
+          "search_thread_cpu": 2.0625,
+          "cpu_core": 24,
+          "total": 75
+        },
+        {
+          "phase": "with_four_background_snapshot_copies_on_core24",
+          "wall": 3.802483099992969,
+          "search_thread_cpu": 2.203125,
+          "cpu_core": 24,
+          "total": 75
+        },
+        {
+          "phase": "quiet_after_on_core24",
+          "wall": 2.50230819999706,
+          "search_thread_cpu": 2.1875,
+          "cpu_core": 24,
+          "total": 75
+        }
+      ],
+      "background": {
+        "rounds": 4,
+        "wall": 1.4579763999936404,
+        "thread_cpu": 1.28125,
+        "core": 23
+      },
+      "same_results": true,
+      "scope": "Temporary diagnostic process only; live process unchanged."
+    },
+    "source-baseline.json": {
+      "head": "be511f98846a67a182e5b371ad087938e9344362",
+      "branch": "master",
+      "files": {
+        "app.py": "87552e91b9edbb59a71996d32ef13ae111fa022f5c5d434a0e4b1acace3af9e3",
+        "services/catalog_store.py": "b71169064020ab42f3eb460f3bf504d06918cf61e832da2592261e61e311a262",
+        "services/catalog_repository.py": "df2773768183ab5dc315c96f38d3ed7f95c0c8b118ce5dbe9d079d27951c47e7",
+        "services/library_ingestion.py": "c06f3f2a6d62470129fb195cc6c4154b98daf9e05a17da64ec20e072c6892d1e",
+        "services/download_monitor.py": "995fd946c239d15b86a1bd3014a036660ec81ce26cbcbfc7f85ddd0d610f0a31"
+      }
+    }
+  },
+  "planning_baseline": {
+    "head": "be511f98846a67a182e5b371ad087938e9344362",
+    "branch": "master",
+    "tracked_dirty_entries": 106,
+    "untracked_entries": 531,
+    "user_data_dir": "C:\\Users\\dante\\Desktop\\cinema paradiso\\data",
+    "tmdb_cache_dir": "C:\\Users\\dante\\Desktop\\cinema paradiso\\cache",
+    "served_index_http_status": 200,
+    "served_index_matches_dist": true,
+    "served_index_sha256": "5670d875c3b70b760e7e785637905872e374bed4751e830b6b0c181727362614",
+    "served_assets": [
+      "/assets/index-Cj8tkNX2.js",
+      "/assets/vendor-Bb8JjhAW.js",
+      "/assets/vendor-react-CJZMWplS.js",
+      "/assets/vendor-icons-C8OlgL8L.js",
+      "/assets/index-3_nuXu-W.css"
+    ]
+  },
+  "implementation_2026_10_23": {
+    "status": "seven approved functional gaps verified in isolation; live activation not performed",
+    "results": "../../verification/movie-search-retry/results.json",
+    "report": "../../verification/movie-search-retry/README.md",
+    "activation": "not authorized; not performed",
+    "corrective_build_authorization": "Approve one isolated rebuild; named focused desktop checks included in the permission request",
+    "corrective_desktop": {
+      "search_passed": 4,
+      "completion_reconnect_passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "additional_bounded_pass": {
+      "summary": "../../verification/movie-search-retry/bounded-final.json",
+      "functional_gaps_closed": 7,
+      "real_crash_boundaries_passed": 9,
+      "desktop_passed": 2,
+      "live_activation": false
+    }
+  }
+}

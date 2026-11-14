@@ -1,0 +1,16 @@
+F
+======================================================================
+FAIL: test_pack_transfer_recovery_failure_is_review_with_intent_preserved (tests.test_tv_follow_season_planning.SeasonPlanningTests.test_pack_transfer_recovery_failure_is_review_with_intent_preserved)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_tv_follow_season_planning.py", line 259, in test_pack_transfer_recovery_failure_is_review_with_intent_preserved
+    self.assertEqual({row['state'] for row in rows},{'needs_review'})
+AssertionError: Items in the first set but not the second:
+'queued'
+Items in the second set but not the first:
+'needs_review'
+
+----------------------------------------------------------------------
+Ran 1 test in 3.399s
+
+FAILED (failures=1)

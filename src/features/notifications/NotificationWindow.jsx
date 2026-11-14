@@ -1,9 +1,18 @@
-import { useEffect, useState } from 'react';
-import { Bell } from 'lucide-react';
+import WorkspaceEmptyState from '../../components/WorkspaceEmptyState.jsx';
+import Pagination from '../../components/Pagination.jsx';
+import { ActionLink } from '../../components/ui/Button.jsx';
+import Button from '../../components/ui/Button.jsx';
+import { Input } from '../../components/ui/FormField.jsx';
+import { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
+import { Bell, Search } from 'lucide-react';
 import { fetchJson } from '../../api/client.js';
+import useDismissiblePopover from '../../hooks/useDismissiblePopover.js';
 
-export default function NotificationWindow({ collapsed = false }) {
-  const [open, setOpen] = useState(false);
+export default function NotificationWindow({ collapsed = false, open = false, onToggle, onDismiss, portalTarget, onMouseEnter, onMouseLeave, onFocus, onBlur }) {
+  const triggerRef = useRef(null);
+  const panelRef = useRef(null);
+  useDismissiblePopover(open, onDismiss, triggerRef, panelRef);
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(1);
   const [data, setData] = useState({ items: [], unread: 0, total: 0, total_pages: 1 });
@@ -30,17 +39,17 @@ export default function NotificationWindow({ collapsed = false }) {
     return index;
   }, {}));
   return <div className="notification-window">
-    <button type="button" className="notification-bell" aria-label={`Notifications, ${data.unread} unread`} aria-expanded={open} onClick={() => setOpen(value => !value)}><Bell size={20}/>{!collapsed && <span>Notifications</span>}{data.unread > 0 && <strong>{data.unread}</strong>}</button>
-    {open && <section className="notification-panel" aria-label="Notifications"><header><h2>Notifications</h2><button type="button" onClick={() => setOpen(false)}>Close</button></header>
-      <label>Search history <input value={query} onChange={event => { setQuery(event.target.value); setPage(1); }} placeholder="Task, show or episode" /></label>
-      {error && <p role="alert">{error}</p>}
-      <p>{data.total} events · {data.unread} unread</p>
+    <button ref={triggerRef} type="button" className="nav-item notification-bell" aria-label={`Notifications, ${data.unread} unread`} aria-expanded={open} aria-controls="notification-panel" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onFocus={onFocus} onBlur={onBlur} onClick={onToggle}><span className="nav-icon-wrap"><Bell size={22}/></span><span className="nav-label">Notifications</span>{data.unread > 0 && <strong className="notification-count">{data.unread}</strong>}</button>
+    {open && createPortal(<section ref={panelRef} id="notification-panel" className={`notification-panel${collapsed ? ' notification-panel-collapsed' : ''}`} aria-label="Notifications"><header><h2><Bell size={18}/> Notifications</h2><span>{data.unread} unread</span></header>
+      <label className="notification-search">Search history <span><Search size={16} aria-hidden="true"/><Input value={query} onChange={event => { setQuery(event.target.value); setPage(1); }} placeholder="Task, show or episode" /></span></label>
+      {error && <p className="notification-error" role="alert">{error}</p>}
+      <p className="notification-summary">{data.total} events</p>
       <div className="notification-events">{groups.map(group => <section key={group.key} aria-label={group.label}><h3>{group.label}</h3>{group.items.map(item => <article key={item.id} className={item.read_at ? '' : 'notification-unread'}>
         <span>{item.severity} · {new Date(item.created_at * 1000).toLocaleString()}</span>
         <strong>{item.title}</strong><p>{item.body}</p>
-        <div><a href={item.link}>Open</a>{!item.read_at && <button type="button" onClick={() => markRead([item.id])}>Mark read</button>}</div>
-      </article>)}</section>)}{!data.items.length && <p>No notifications found.</p>}</div>
-      <footer><button type="button" disabled={page <= 1} onClick={() => setPage(value => value - 1)}>Previous</button><span>Page {page} of {data.total_pages}</span><button type="button" disabled={page >= data.total_pages} onClick={() => setPage(value => value + 1)}>Next</button></footer>
-    </section>}
+        <div><ActionLink size="compact"  href={item.link} onClick={onDismiss}>Open</ActionLink>{!item.read_at && <Button size="compact" type="button" onClick={() => markRead([item.id])}>Mark read</Button>}</div>
+      </article>)}</section>)}{!data.items.length && <WorkspaceEmptyState size="compact" className="notification-empty"><Bell size={24} aria-hidden="true"/><strong>{query ? 'No matching notifications' : 'No notifications yet'}</strong><p>{query ? 'Try a different task, show or episode.' : 'Updates from your tasks and downloads will appear here.'}</p></WorkspaceEmptyState>}</div>
+      <footer><Pagination page={page} totalPages={Math.max(1, data.total_pages)} showSinglePage onPageChange={setPage} ariaLabel="Notifications pagination" /></footer>
+    </section>, portalTarget || document.body)}
   </div>;
 }

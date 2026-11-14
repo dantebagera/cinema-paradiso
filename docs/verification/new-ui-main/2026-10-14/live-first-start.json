@@ -1,0 +1,64 @@
+{
+  "pid": 54304,
+  "commandLine": "\"C:\\Program Files\\Python312\\python.exe\" app.py",
+  "executable": "C:\\Program Files\\Python312\\python.exe",
+  "servedIndexMatchesMain": true,
+  "assets": [
+    "/assets/logo-Dk1rN4XL.svg",
+    "/assets/manifest-BSGbUmFO.webmanifest",
+    "/assets/index-BOxSXlU5.js",
+    "/assets/vendor-Bb8JjhAW.js",
+    "/assets/vendor-react-CJZMWplS.js",
+    "/assets/vendor-icons-BwP572SE.js",
+    "/assets/index-Cz-Bcnef.css"
+  ],
+  "backgroundQueueStarted": true,
+  "startupMetrics": {
+    "api_ready_ms": 280.806,
+    "background_queue_started": true,
+    "database_open_ms": 24.188,
+    "first_library_query_ms": 0.0,
+    "generation_check_ms": 2.832,
+    "migration_check_ms": 3.2,
+    "process_started_at": 1791928715.081228,
+    "reconcile": {
+      "_matched_paths": [
+        "E:\\Movies\\The Loved Ones (2009) [BluRay] [1080p] [YTS.AM]\\The.Loved.Ones.2009.1080p.BluRay.x264-[YTS.AM].mp4"
+      ],
+      "catalog_generation": 9989,
+      "checked": 1,
+      "detail_backfill": {
+        "completed": 0,
+        "contract_version": 4,
+        "failed": 0,
+        "remaining": 0,
+        "status": "idle",
+        "total": 0
+      },
+      "facts_refreshed": 0,
+      "failed": 0,
+      "file_facts_backfill": {},
+      "matched": 1,
+      "pending": 0,
+      "provider": "tmdb",
+      "removed": 0,
+      "review": 0,
+      "status": "completed",
+      "updated_at": 1791928731.987526
+    },
+    "reconcile_decision": "run",
+    "reconcile_decision_ms": 102.413,
+    "reconcile_reason": "library_root_changed"
+  },
+  "window": {
+    "schema_version": 2,
+    "window_handle": 10685270,
+    "browser_pid": 22964,
+    "window_title": "Cinema Paradiso",
+    "url": "http://localhost:5000/",
+    "launch_mode": "installed_web_app",
+    "edge_app_id": "mleldakmoebeolhcnjndafbokokbkgcn",
+    "profile_directory": "Default",
+    "started_at": 1791928717
+  }
+}

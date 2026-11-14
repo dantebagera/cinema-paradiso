@@ -1,0 +1,74 @@
+{
+  "batches": [
+    {
+      "name": "pass2-preflight",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass2_preflight.py"
+      ],
+      "exit_code": 0,
+      "active_seconds": 9.527,
+      "process_tree_cpu_seconds": 0.296875,
+      "process_tree_write_bytes": 2356,
+      "processes": 7,
+      "temporary_footprint_bytes": 2675862794,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass2-preflight.log",
+      "expected_exit_code": 0
+    },
+    {
+      "name": "pass2-recovery",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\recovery_pass.py"
+      ],
+      "exit_code": 0,
+      "active_seconds": 104.484,
+      "process_tree_cpu_seconds": 97.5,
+      "process_tree_write_bytes": 816719763,
+      "processes": 14,
+      "temporary_footprint_bytes": 2695800961,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass2-recovery.log",
+      "expected_exit_code": 0
+    },
+    {
+      "name": "pass2-six-assertions",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\dispatch.py",
+        "assertions"
+      ],
+      "exit_code": 0,
+      "active_seconds": 9.437,
+      "process_tree_cpu_seconds": 0.21875,
+      "process_tree_write_bytes": 1614,
+      "processes": 5,
+      "temporary_footprint_bytes": 2695804141,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass2-six-assertions.log",
+      "expected_exit_code": 0
+    },
+    {
+      "name": "pass2-cross-domain",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\dispatch.py",
+        "cross"
+      ],
+      "exit_code": 1,
+      "active_seconds": 248.771,
+      "process_tree_cpu_seconds": 88.015625,
+      "process_tree_write_bytes": 313644766,
+      "processes": 5,
+      "temporary_footprint_bytes": 2695822301,
+      "stop_reason": "active time limit",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass2-cross-domain.log",
+      "expected_exit_code": 0
+    }
+  ],
+  "halted": true,
+  "product_failure": true,
+  "closed": true,
+  "closure_reason": "Per-batch active limit reached; whole pass stopped as required. No ledger reset or additional tests."
+}

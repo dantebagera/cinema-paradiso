@@ -20,10 +20,11 @@ export function formatReleaseDateLabel(value) {
   return `${RELEASE_MONTHS[monthIndex]} ${dayNumber}, ${year}`;
 }
 
-export function formatVoteCount(value) {
+export function formatVoteCount(value, { includeLabel = true } = {}) {
   const votes = Number(value || 0);
   if (!votes) return '';
-  if (votes >= 1000000) return `${(votes / 1000000).toFixed(votes >= 10000000 ? 0 : 1)}M votes`;
-  if (votes >= 1000) return `${(votes / 1000).toFixed(votes >= 10000 ? 0 : 1)}K votes`;
-  return `${votes} votes`;
+  const label = includeLabel ? ' votes' : '';
+  if (votes >= 1000000) return `${(votes / 1000000).toFixed(votes >= 10000000 ? 0 : 1)}M${label}`;
+  if (votes >= 1000) return `${(votes / 1000).toFixed(votes >= 10000 ? 0 : 1)}K${label}`;
+  return `${votes}${label}`;
 }

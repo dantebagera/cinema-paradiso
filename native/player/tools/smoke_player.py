@@ -524,6 +524,7 @@ def main():
     parser.add_argument("--exercise-window-chrome", action="store_true")
     parser.add_argument("--exercise-subtitle-provider-flow", action="store_true")
     parser.add_argument("--external-subtitle", type=Path)
+    parser.add_argument("--cache-directory-name", default="Cache")
     parser.add_argument("--exercise-resume", action="store_true")
     parser.add_argument("--resume-position-ms", type=int, default=4000)
     parser.add_argument("--restore-audio-fingerprint", default="")
@@ -575,7 +576,7 @@ def main():
             "CP_PLAYER_SESSION_ID": session_id,
             "CP_PLAYER_SESSION_TOKEN": token,
             "CP_PLAYER_PROTOCOL": str(PLAYER_PROTOCOL_VERSION),
-            "CP_PLAYER_CACHE_ROOT": str(isolated_local / "Cache"),
+            "CP_PLAYER_CACHE_ROOT": str(isolated_local / args.cache_directory_name),
         }
     )
 
@@ -709,6 +710,23 @@ def main():
                         f"Native helper error {event.get('code')}: {event.get('message')}"
                     )
 
+            if args.external_subtitle and not args.exercise_subtitle_provider_flow:
+                backend_sequence += 1
+                transport.send(message(
+                    session_id, backend_sequence, "subtitle.loaded",
+                    path=str(args.external_subtitle.resolve()),
+                    provider="fixture-provider", language="ar",
+                    release_name="Unicode fixture", result_id="unicode-fixture",
+                ))
+                receive_until(
+                    transport, process, events,
+                    lambda event: event["type"] == "tracks.changed" and any(
+                        track.get("selected") and track.get("external")
+                        and track.get("type") == "sub"
+                        for track in event.get("tracks", [])
+                    ), 5,
+                )
+
             exercise_ui = (
                 args.exercise_controls
                 or args.exercise_media_play_pause
@@ -716,6 +734,11 @@ def main():
                 or args.exercise_speed_control
                 or args.exercise_window_chrome
             )
+            if args.screenshot and not exercise_ui:
+                window = find_visible_window(process.pid)
+                if not window:
+                    raise RuntimeError("The production player window was not visible.")
+                capture_window(window, args.screenshot)
             if exercise_ui:
                 window = find_visible_window(process.pid)
                 if not window:
@@ -769,6 +792,9 @@ def main():
                     and event.get("state") == "playing",
                     3,
                 )
+                # These are separate single-click checks. Inside Windows' double
+                # click interval the second click intentionally toggles fullscreen.
+                time.sleep(ctypes.windll.user32.GetDoubleClickTime() / 1000.0 + 0.05)
                 click_window_fraction(window, 0.50, 0.50)
                 receive_until(
                     transport,
@@ -1023,7 +1049,7 @@ def main():
                     preview_files = []
                     while time.monotonic() < preview_deadline:
                         preview_files = list(
-                            isolated_local.rglob("seek-thumbnails/**/*.jpg")
+                            Path(environment["CP_PLAYER_CACHE_ROOT"]).rglob("seek-thumbnails/**/*.jpg")
                         )
                         if preview_files:
                             break

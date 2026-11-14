@@ -3,7 +3,7 @@
 .movie-award-pair strong { font-size: 16px; font-weight: 900; }
 .movie-award-pair img { width: auto; height: 24px; object-fit: contain; }
 .movie-award-pair:focus-visible { outline: 2px solid var(--projector-gold); outline-offset: 3px; }
-.unified-rating-row:has(.movie-awards) { flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.unified-rating-row:has(.movie-awards) { flex-wrap: wrap; align-items: center; gap: 8px var(--movie-rating-column-gap, 12px); }
 .unified-rating-row > .movie-awards { margin-left: auto; }
 .unified-movie-header-meta > .movie-awards { margin-right: 4px; align-self: flex-start; }
 .movie-awards-person { position: absolute; inset: 0; display: block; pointer-events: none; }
@@ -18,4 +18,5 @@
   /* Fit the selected control area; portrait and grid sizing remain owned by movieRelationships.css. */
   .unified-movie-card-expanded .movie-awards-person { --person-award-row-height: clamp(12px, calc((min(106px, 100cqw) * 132 / 106 - 74px) / 2), 28px); }
   .unified-movie-card-expanded .unified-movie-header-meta { flex-wrap: wrap; max-width: 270px; }
+  .unified-movie-card-expanded.unified-movie-card-ratings .unified-movie-header-meta { flex-wrap: nowrap; max-width: none; }
 }

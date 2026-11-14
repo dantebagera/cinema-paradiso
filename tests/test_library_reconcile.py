@@ -793,7 +793,7 @@ class LibraryReconcileTest(unittest.TestCase):
                 response = app.app.test_client().get("/api/library?force_scan=1")
 
         self.assertEqual(response.status_code, 200)
-        reconcile.assert_called_once_with(force_unresolved=True)
+        reconcile.assert_called_once_with(force_unresolved=True, retry_blocked=True)
         self.assertEqual(response.get_json()["metadata_matched"], 1)
 
 

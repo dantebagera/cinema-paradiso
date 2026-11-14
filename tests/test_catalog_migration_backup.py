@@ -19,6 +19,11 @@ from tools.build_shadow_catalog import build_shadow_catalog
 
 
 class CatalogMigrationBackupTest(unittest.TestCase):
+    def test_chatgpt_credentials_and_host_identity_cannot_enter_transferable_backups(self):
+        from tools.catalog_migration_backup import _include_user_data_file
+        for path in ('ai/chatgpt/host.json', 'ai/chatgpt/profiles/account.bin', 'AI/ChatGPT/host.json'):
+            self.assertFalse(_include_user_data_file(path))
+        self.assertTrue(_include_user_data_file('ai/ai.sqlite'))
     def _project(self, root, external_user_data=True):
         project = Path(root) / "project"
         project.mkdir()

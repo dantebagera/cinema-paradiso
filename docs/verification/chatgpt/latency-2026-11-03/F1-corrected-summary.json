@@ -1,0 +1,26 @@
+{
+  "feature": "F1",
+  "label": "feedback-corrected",
+  "state": "completed",
+  "message": "Requested verified target reached.",
+  "model": "gpt-6.1-sol",
+  "prompt": "movies with very twisted story you wont expect the ending",
+  "elapsed_seconds": 72.653894,
+  "inference_attempts": 2,
+  "tmdb_requests": 155,
+  "accepted_count": 50,
+  "scope": "actual CP recommendation owners; separate empty session/store; backend-ready time, not rendered paint",
+  "name": "F1-corrected",
+  "evidence_root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-ai-timing-6jalpsg5",
+  "gpt_call_seconds": [
+    45.479834,
+    10.06071
+  ],
+  "gpt_roundtrip_seconds": 55.540544,
+  "tmdb_wall_seconds": 9.694763,
+  "lease_seconds": 6.502789,
+  "other_seconds": 0.915798,
+  "first_backend_card_seconds": 47.734829,
+  "unverified_control_count": null,
+  "recommendation_source_hash": "026fc8e1c498401b67ded18b5f6dcb044eeaabf00e6ea1212da678ca7cca754f"
+}

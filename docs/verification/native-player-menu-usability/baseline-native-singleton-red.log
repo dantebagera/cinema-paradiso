@@ -1,0 +1,7 @@
+PID 44856
+[('Group', '', True, '(L320, T120, R3520, B1920)'), ('Button', 'Minimize', True, '(L3280, T135, R3385, B240)'), ('Button', 'Close', True, '(L3395, T135, R3500, B240)'), ('Slider', '', True, '(L390, T1675, R3450, B1745)'), ('Button', 'Previous file', True, '(L390, T1765, R495, B1870)'), ('Button', 'Pause', True, '(L520, T1765, R625, B1870)'), ('Button', 'Next file', True, '(L650, T1765, R755, B1870)'), ('Button', 'Mute', True, '(L780, T1765, R885, B1870)'), ('Slider', '', True, '(L910, T1777, R1205, B1857)'), ('Button', 'Playback speed 1.00', True, '(L2825, T1765, R2930, B1870)'), ('Button', 'Subtitles', True, '(L2955, T1765, R3060, B1870)'), ('Button', 'Playlist', True, '(L3085, T1765, R3190, B1870)'), ('Button', 'Settings', True, '(L3215, T1765, R3320, B1870)'), ('Button', 'Enter fullscreen', True, '(L3345, T1765, R3450, B1870)')]
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp/cp-player-menu-usability-20261024/probe-uia.py", line 21, in <module>
+    assert not any(e.window_text() == 'Playlist' and e.is_visible() for e in win.descendants()), 'Singleton playlist toolbar button must be hidden'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Singleton playlist toolbar button must be hidden

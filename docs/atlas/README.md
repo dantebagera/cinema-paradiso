@@ -18,5 +18,6 @@ Start from the screen or action under review. Follow the owners through data, sh
 | IPTV | [IPTV](iptv.md) | Provider routing, playback, channel and title catalogs, and metadata review. |
 | Details | [Movie and TV Detail Features](movie-and-tv-details.md) | Expanded details, collections, related titles, credits, awards, and artwork. |
 | Infrastructure | [Settings and Shared Infrastructure](settings-and-infrastructure.md) | Settings, databases, startup, background owners, power actions, and packaging. |
+| Shared UI | [Reusable desktop components](shared-ui.md) | Mandatory production owners, allowed semantic compositions and automated reuse gate. |
 
 [Knowledge index](../README.md) · [Second Brain](../second-brain/README.md) · [Maintenance workflow](../knowledge-workflow.md)

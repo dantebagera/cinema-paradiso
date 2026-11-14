@@ -1,0 +1,27 @@
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass3_ui_server.py", line 31, in <module>
+    runpy.run_module('tests.download_completion_server',run_name='__main__')
+  File "<frozen runpy>", line 229, in run_module
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\checkout\tests\download_completion_server.py", line 18, in <module>
+    import app
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\checkout\app.py", line 111, in <module>
+    from services.media_assets import MediaAssetError, MediaAssetService
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\checkout\services\media_assets.py", line 17, in <module>
+    from PIL import Image, UnidentifiedImageError
+  File "C:\Users\dante\Desktop\cinema paradiso\.venv\Lib\site-packages\PIL\Image.py", line 62, in <module>
+    from defusedxml import ElementTree
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1132, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1190, in get_data
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\guard.py", line 51, in audit
+    check(p,write)
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\guard.py", line 41, in check
+    elif p not in TOOL_READ and not any(inside(p,r) for r in READ):deny('read',p)
+                                                                   ^^^^^^^^^^^^^^
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\guard.py", line 34, in deny
+    raise BoundaryViolation('ISOLATION BLOCKED '+event+': '+str(value)[:180])
+guard.BoundaryViolation: ISOLATION BLOCKED read: c:\users\dante\appdata\roaming\python\python312\site-packages\defusedxml\__init__.py

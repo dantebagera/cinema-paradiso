@@ -1,8 +1,12 @@
 import json
 import sqlite3
+import subprocess
+import sys
 import tempfile
+import threading
 import unittest
 import urllib.error
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from unittest.mock import patch
 
@@ -69,6 +73,68 @@ class IPTVMetadataSettingsTests(unittest.TestCase):
 
 
 class IPTVMovieStoreTests(unittest.TestCase):
+    def test_leftover_selection_excludes_pending_classification_and_accepted_matches(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            store = IPTVMovieStore(Path(temporary) / PROVIDER_A, PROVIDER_A)
+            store.project_sources([{"item_id": str(i), "name": f"Fixture {i}"} for i in range(1, 5)], 1)
+            pending, review, ambiguous, accepted = [source_key(str(i)) for i in range(1, 5)]
+            store.apply_classification([review], "unclassified", method="fixture", confidence=0)
+            store.apply_classification([ambiguous, accepted], "film", method="fixture", confidence=1)
+            store.set_match_state([ambiguous], "ambiguous")
+            store.set_match_state([accepted], "matched-auto", tmdb_id=550, matcher_version=1)
+            store.mark_stale_automatic_results()
+            filters = {"review_scope": "leftovers", "review_view": "classification-review"}
+            displayed = store.review_queue("classification-review", filters=filters)
+            self.assertEqual([row["source_key"] for row in displayed["items"]], [review])
+            for bulk in (False, True):
+                selected = store.resolve_selection(mode="all-filtered", filters=filters, bulk=bulk)
+                self.assertEqual(selected["source_keys"], [review])
+            with self.assertRaisesRegex(ValueError, "no longer in the review queue"):
+                store.resolve_selection(mode="explicit", selected_keys=[pending], filters=filters, bulk=True)
+            uncertain = store.review_queue("needs-review", filters=filters)
+            self.assertEqual([row["source_key"] for row in uncertain["items"]], [ambiguous])
+            self.assertEqual(store.review_queue("classification-review")["total"], 2)
+
+    def test_maintenance_unmatched_displays_and_selects_all_settled_leftovers(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            store = IPTVMovieStore(Path(temporary) / PROVIDER_A, PROVIDER_A)
+            store.project_sources([{"item_id": str(i), "name": f"Fixture {i}"} for i in range(1, 8)], 1)
+            unmatched, uncertain, unknown, pending, failed, locked, matched = [source_key(str(i)) for i in range(1, 8)]
+            store.apply_classification([unmatched, uncertain, failed, locked, matched], "film", method="fixture", confidence=1)
+            store.apply_classification([unknown], "unclassified", method="fixture", confidence=0)
+            store.set_match_state([unmatched], "unmatched")
+            store.set_match_state([uncertain], "ambiguous")
+            store.set_match_state([failed], "error-terminal")
+            store.set_match_state([locked], "unmatched", manual_lock=True)
+            store.set_match_state([matched], "matched-auto", tmdb_id=550)
+            expected = {unmatched, uncertain, unknown}
+            filters = {"review_scope": "leftovers", "review_view": "unmatched"}
+            review = store.review_queue("unmatched", filters=filters)
+            self.assertEqual(review["total"], 3)
+            self.assertEqual({row["source_key"] for row in review["items"]}, expected)
+            for bulk in (False, True):
+                resolved = store.resolve_selection(mode="all-filtered", filters=filters, bulk=bulk)
+                self.assertEqual(set(resolved["source_keys"]), expected)
+                resolved = store.resolve_selection(mode="explicit", selected_keys=list(expected), filters=filters, bulk=bulk)
+                self.assertEqual(set(resolved["source_keys"]), expected)
+            for key in (pending, failed, locked, matched):
+                with self.subTest(key=key), self.assertRaisesRegex(ValueError, "no longer in the review queue"):
+                    store.resolve_selection(mode="explicit", selected_keys=[key], filters=filters, bulk=True)
+            self.assertEqual(store.review_queue("unmatched")["total"], 2)
+
+    def test_maintenance_explicit_selection_rejects_a_disappeared_source(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            store = IPTVMovieStore(Path(temporary) / PROVIDER_A, PROVIDER_A)
+            row = {"item_id": "1", "name": "Fixture 1"}
+            store.project_sources([row, {"item_id": "2", "name": "Fixture 2"}], 1)
+            kept, gone = source_key("1"), source_key("2")
+            store.set_match_state([kept, gone], "unmatched")
+            store.project_sources([row], 2)
+            filters = {"review_scope": "leftovers", "review_view": "unmatched"}
+            for bulk in (False, True):
+                with self.subTest(bulk=bulk), self.assertRaisesRegex(ValueError, "no longer in the review queue"):
+                    store.resolve_selection(mode="explicit", selected_keys=[f"source:{kept}", gone], filters=filters, bulk=bulk)
+
     def test_movie_store_is_lazy_and_live_or_series_access_never_creates_it(self):
         with tempfile.TemporaryDirectory() as temporary:
             raw = create_raw_service(temporary, PROVIDER_A)
@@ -123,6 +189,41 @@ class IPTVMovieStoreTests(unittest.TestCase):
             store.project_sources([{"item_id": "1", "name": "ssss ( 2026 )"}], 1)
             card = store.list_movies()["items"][0]
             self.assertEqual(card["provider_year"], 2026)
+
+    def test_projection_reopens_changed_unresolved_evidence_only(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            store = IPTVMovieStore(Path(temporary) / PROVIDER_A, PROVIDER_A)
+            rows = [{"item_id": str(i), "name": f"Fixture Film {i}", "year": 2024,
+                     "playlist_name": "Films"} for i in range(1, 5)]
+            rows[0].update(tmdb_id=123, raw={"tmdb": "123"})
+            keys = [source_key(str(i)) for i in range(1, 5)]
+            store.project_sources(rows, 1)
+            store.apply_classification(keys, "film", method="fixture", confidence=1)
+            token = store.prepare_enrichment(consent=True)
+            while claimed := store.claim_next(token):
+                store.finish_job(claimed)
+            store.set_match_state(keys[:2], "unmatched")
+            store.set_match_state([keys[2]], "matched-auto", tmdb_id=550)
+            store.set_match_state([keys[3]], "unmatched", manual_lock=True)
+            store.update_provider_detail(keys[0], {"name": "Old cached detail", "year": 2024, "tmdb_id": 991})
+
+            # A different provider generation and artwork alone carry the same matching evidence.
+            store.project_sources([{**row, "image_url": "https://fixture.invalid/poster.jpg"} for row in rows], 2)
+            self.assertEqual(store.stage_enrichment_batch(), 0)
+            self.assertEqual(store.source(keys[0])["detail_title"], "Old cached detail")
+
+            store.project_sources([{**row, "name": row["name"] + " corrected"} if i != 1 else row
+                                   for i, row in enumerate(rows)], 3)
+            self.assertEqual(store.source(keys[0])["classification_status"], "pending")
+            self.assertEqual(store.source(keys[0])["detail_title"], "")
+            self.assertEqual(store.source(keys[0])["provider_tmdb_id"], 123)
+            store.apply_classification([keys[0]], "film", method="fixture", confidence=1)
+            self.assertEqual(store.stage_enrichment_batch(), 1)
+            with store.connection() as connection:
+                matches = [tuple(row) for row in connection.execute(
+                    "SELECT state,tmdb_id,manual_lock FROM source_matches ORDER BY rowid")]
+            self.assertEqual(matches, [("unprocessed", None, 0), ("unmatched", None, 0),
+                                       ("matched-auto", 550, 0), ("unmatched", None, 1)])
 
     def test_provider_path_confinement_and_independent_same_tmdb_identity(self):
         with tempfile.TemporaryDirectory() as temporary:
@@ -267,6 +368,97 @@ class IPTVMovieStoreTests(unittest.TestCase):
 
 
 class IPTVMatchEngineTests(unittest.TestCase):
+    def test_missing_provider_id_lookup_falls_back_to_title_year(self):
+        candidate = tmdb_payload(550, "Fixture Movie", 2024)
+        for search_results, expected in (([candidate], "matched-auto"), ([], "unmatched")):
+            with self.subTest(expected=expected), tempfile.TemporaryDirectory() as temporary:
+                raw = create_raw_service(temporary, PROVIDER_A)
+                service = IPTVMovieService(raw.root, PROVIDER_A, raw, IPTVMetadataSettings(temporary))
+                client = FakeTMDBClient({550: candidate}, search_results=search_results)
+                fetch = client.movie
+
+                def movie(tmdb_id, *args, **kwargs):
+                    if tmdb_id == 999:
+                        raise IPTVTMDBError("Missing movie", status=404)
+                    return fetch(tmdb_id, *args, **kwargs)
+
+                try:
+                    service.ensure_projected()
+                    key = source_key("10")
+                    service.store.apply_classification([key], "film", method="fixture", confidence=1)
+                    with patch.object(raw, "enrichment_movie_detail", return_value={"tmdb_id": 999}), \
+                            patch.object(client, "movie", side_effect=movie):
+                        self.assertEqual(service.enrich_source(key, tmdb_client=client), expected)
+                    with service.store.connection() as connection:
+                        row = connection.execute("SELECT state,method,evidence_json FROM source_matches WHERE source_key=?", (key,)).fetchone()
+                    self.assertEqual((row["state"], row["method"]), (expected, "strict-title-year"))
+                    self.assertEqual(json.loads(row["evidence_json"])["provider_id_validation"]["lookup"], "not-found")
+                finally:
+                    raw.close()
+
+    def test_title_candidate_details_distinguish_404_from_technical_errors(self):
+        candidate = tmdb_payload(550, "Fixture Movie", 2024)
+        for status in (404, 503):
+            with self.subTest(status=status), tempfile.TemporaryDirectory() as temporary:
+                raw = create_raw_service(temporary, PROVIDER_A)
+                service = IPTVMovieService(raw.root, PROVIDER_A, raw, IPTVMetadataSettings(temporary))
+                client = FakeTMDBClient({550: candidate}, search_results=[candidate])
+                try:
+                    service.ensure_projected()
+                    key = source_key("10")
+                    service.store.apply_classification([key], "film", method="fixture", confidence=1)
+                    with patch.object(raw, "enrichment_movie_detail", return_value={}), \
+                            patch.object(client, "normalized_movie", side_effect=IPTVTMDBError("Fixture error", status=status)):
+                        if status == 404:
+                            self.assertEqual(service.enrich_source(key, tmdb_client=client), "unmatched")
+                        else:
+                            with self.assertRaises(IPTVTMDBError) as failure:
+                                service.enrich_source(key, tmdb_client=client)
+                            self.assertEqual(failure.exception.status, 503)
+                finally:
+                    raw.close()
+
+    def test_disappeared_search_result_does_not_block_valid_title_match(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            raw = create_raw_service(temporary, PROVIDER_A)
+            service = IPTVMovieService(raw.root, PROVIDER_A, raw, IPTVMetadataSettings(temporary))
+            valid, missing = tmdb_payload(550, "Fixture Movie", 2024), tmdb_payload(999, "Fixture Movie", 2024)
+            client = FakeTMDBClient({550: valid}, search_results=[missing, valid])
+
+            def movie(tmdb_id, **_options):
+                if tmdb_id == 999:
+                    raise IPTVTMDBError("Missing search result", status=404)
+                return valid
+
+            try:
+                service.ensure_projected()
+                key = source_key("10")
+                service.store.apply_classification([key], "film", method="fixture", confidence=1)
+                with patch.object(raw, "enrichment_movie_detail", return_value={}), patch.object(client, "movie", side_effect=movie):
+                    self.assertEqual(service.enrich_source(key, tmdb_client=client), "matched-auto")
+                self.assertEqual(service.list_movies({"view": "cp"})["items"][0]["movie_key"], "tmdb:550")
+            finally:
+                raw.close()
+
+    def test_blank_detail_id_uses_current_listing_id_instead_of_old_detail(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            raw = create_raw_service(temporary, PROVIDER_A, movie_rows=[
+                {"stream_id": "10", "name": "Fixture Movie (2024)", "category_id": "movies-a", "tmdb": "550"},
+            ])
+            service = IPTVMovieService(raw.root, PROVIDER_A, raw, IPTVMetadataSettings(temporary))
+            client = FakeTMDBClient({550: tmdb_payload(550, "Fixture Movie", 2024)}, search_results=[])
+            try:
+                service.ensure_projected()
+                key = source_key("10")
+                service.store.apply_classification([key], "film", method="fixture", confidence=1)
+                service.store.update_provider_detail(key, {"tmdb_id": 999})
+                with patch.object(raw, "client") as provider, patch.object(client, "movie", wraps=client.movie) as lookup:
+                    provider.return_value.movie_info.return_value = {"info": {"tmdb_id": " ", "tmdb": "0"}}
+                    self.assertEqual(service.enrich_source(key, tmdb_client=client), "matched-auto")
+                    lookup.assert_called_once_with(550)
+            finally:
+                raw.close()
+
     def test_provider_id_validation_strict_matching_and_credible_rival_rejection(self):
         candidate = tmdb_payload(550, "The Exact Movie", 2024)
         valid, score = provider_id_matches("The Exact Movie (2024)", 2024, candidate)
@@ -366,10 +558,11 @@ class IPTVMatchEngineTests(unittest.TestCase):
             settings = IPTVMetadataSettings(temporary)
             settings.save("fixture-token", "bearer")
             candidate = tmdb_payload(550, "Fixture Movie", 2024)
+            candidate["genres"] *= 2
             client = FakeTMDBClient(search_results=[candidate])
             service = IPTVMovieService(raw.root, PROVIDER_A, raw, settings)
             detail = raw.store.get_item("movie", "10", provider_key=raw.provider_key())
-            detail.update({"name": "Fixture Movie", "year": "2024-02-03", "tmdb_id": ""})
+            detail.update({"name": "Fixture Movie", "year": "2024-02-03", "tmdb_id": " "})
             try:
                 service.ensure_projected()
                 service.store.apply_classification(
@@ -381,6 +574,7 @@ class IPTVMatchEngineTests(unittest.TestCase):
                         "matched-auto",
                     )
                 with service.store.connection() as connection:
+                    self.assertEqual(connection.execute("SELECT COUNT(*) FROM movie_genres").fetchone()[0], 1)
                     evidence = json.loads(
                         connection.execute("SELECT evidence_json FROM source_matches").fetchone()[0]
                     )
@@ -432,6 +626,199 @@ class IPTVTMDBClientTests(unittest.TestCase):
 
 
 class IPTVWorkerTests(unittest.TestCase):
+    def test_continue_reclaims_scheduler_capacity_from_an_exited_worker(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            raw = create_raw_service(temporary, PROVIDER_A)
+            service = IPTVMovieService(raw.root, PROVIDER_A, raw, IPTVMetadataSettings(temporary))
+            try:
+                with subprocess.Popen([sys.executable, "-B", "-c", "pass"],
+                                      creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0)) as process:
+                    process.wait(timeout=5)
+                    service._scheduler_path.write_text(json.dumps({
+                        "provider_id": PROVIDER_A, "pid": process.pid, "token": "old",
+                    }), encoding="utf-8")
+                    self.assertTrue(service._claim_global_capacity("new"))
+                    self.assertEqual(json.loads(service._scheduler_path.read_text(encoding="utf-8"))["token"], "new")
+            finally:
+                service.close()
+                raw.close()
+
+    def test_enrichment_status_keeps_projection_and_counts_on_one_snapshot(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            raw = create_raw_service(temporary, PROVIDER_A)
+            service = IPTVMovieService(raw.root, PROVIDER_A, raw, IPTVMetadataSettings(temporary))
+            try:
+                service.ensure_projected()
+                store = service.store
+                generation = store.source_generation()
+                status_payload = store._worker_status_payload
+
+                def publish(*args, **kwargs):
+                    store.project_sources([{"item_id": "11", "name": "New Movie"},
+                                           {"item_id": "12", "name": "Other Movie"}], generation + 1)
+                    return status_payload(*args, **kwargs)
+
+                with patch.object(store, "_worker_status_payload", side_effect=publish):
+                    status = service.enrichment_status()
+                self.assertEqual(status["sources"], 1)
+                self.assertEqual(status["projection"]["published"], 1)
+                self.assertEqual(status["projection"]["source_generation"], generation)
+                self.assertEqual(service.enrichment_status()["automatic_remaining"], 2)
+            finally:
+                service.close()
+                raw.close()
+
+    def test_continue_waits_for_provider_sync_and_projection(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            raw = create_raw_service(temporary, PROVIDER_A)
+            service = IPTVMovieService(raw.root, PROVIDER_A, raw, IPTVMetadataSettings(temporary))
+            try:
+                service.ensure_projected()
+                store = service.store
+                token = store.prepare_enrichment(consent=True)
+                store.worker_finished("complete", token=token)
+                with patch.dict(raw._sync_state, state="running"):
+                    with self.assertRaisesRegex(RuntimeError, "Finish preparing provider movies"):
+                        service.resume_enrichment()
+                store.begin_projection(store.source_generation() + 1, total=2)
+                with self.assertRaisesRegex(RuntimeError, "Finish preparing provider movies"):
+                    service.resume_enrichment()
+                self.assertEqual(store.current_worker_token(), token)
+            finally:
+                service.close()
+                raw.close()
+
+    def test_a_second_store_cannot_replace_a_live_worker_lease(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary) / PROVIDER_A
+            first = IPTVMovieStore(root, PROVIDER_A)
+            second = IPTVMovieStore(root, PROVIDER_A)
+            token = first.schedule_enrichment(consent=True)
+            with self.assertRaisesRegex(RuntimeError, "worker already owns this provider"):
+                second.resume_worker()
+            with self.assertRaisesRegex(RuntimeError, "worker already owns this provider"):
+                second.schedule_enrichment(consent=True)
+            self.assertEqual(first.current_worker_token(), token)
+
+    def test_concurrent_continue_requests_share_one_worker_lease(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            raw = create_raw_service(temporary, PROVIDER_A)
+            settings = IPTVMetadataSettings(temporary)
+            settings.save("fixture-token", "bearer")
+            service = IPTVMovieService(raw.root, PROVIDER_A, raw, settings)
+            started = threading.Event()
+            second_requested = threading.Event()
+            release = threading.Event()
+            duplicate_spawn = threading.Event()
+            launches = []
+            process = type("RunningWorker", (), {"poll": lambda self: None})()
+
+            def spawn(token, **_options):
+                launches.append(token)
+                if len(launches) == 1:
+                    started.set()
+                    self.assertTrue(release.wait(5))
+                else:
+                    duplicate_spawn.set()
+                service._processes[PROVIDER_A] = process
+
+            def request_again():
+                second_requested.set()
+                return service.resume_enrichment()
+
+            try:
+                service.ensure_projected()
+                token = service.store.prepare_enrichment(consent=True)
+                service.store.worker_finished("complete", token=token)
+                with patch.object(service, "_spawn_worker", side_effect=spawn), ThreadPoolExecutor(2) as executor:
+                    first = executor.submit(service.resume_enrichment)
+                    try:
+                        self.assertTrue(started.wait(5))
+                        second = executor.submit(request_again)
+                        self.assertTrue(second_requested.wait(5))
+                        self.assertFalse(duplicate_spawn.wait(.2))
+                    finally:
+                        release.set()
+                    self.assertEqual(first.result(timeout=5)["state"], "starting")
+                    self.assertEqual(second.result(timeout=5)["state"], "starting")
+                self.assertEqual(launches, [service.store.current_worker_token()])
+            finally:
+                with service._process_lock:
+                    service._processes.pop(PROVIDER_A, None)
+                service.close()
+                raw.close()
+
+    def test_continue_records_a_launch_failure_and_remains_retryable(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            raw = create_raw_service(temporary, PROVIDER_A)
+            settings = IPTVMetadataSettings(temporary)
+            settings.save("fixture-token", "bearer")
+            service = IPTVMovieService(raw.root, PROVIDER_A, raw, settings)
+            try:
+                service.ensure_projected()
+                store = service.store
+                token = store.prepare_enrichment(consent=True)
+                store.worker_finished("complete", token=token)
+                for method in ("process_factory", "_claim_global_capacity"):
+                    with self.subTest(method=method), patch.object(service, method, side_effect=OSError("fixture launch failed")):
+                        with self.assertRaisesRegex(RuntimeError, "fixture launch failed"):
+                            service.resume_enrichment()
+                    status = service.enrichment_status()
+                    self.assertEqual(status["state"], "crashed")
+                    self.assertIn("fixture launch failed", status["worker_error"])
+                    self.assertEqual(status["automatic_remaining"], 1)
+            finally:
+                service.close()
+                raw.close()
+
+    def test_continue_reports_a_worker_that_exits_before_starting(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            raw = create_raw_service(temporary, PROVIDER_A)
+            service = IPTVMovieService(raw.root, PROVIDER_A, raw, IPTVMetadataSettings(temporary))
+            try:
+                service.ensure_projected()
+                token = service.store.prepare_enrichment(consent=True)
+                process = type("ExitedWorker", (), {"wait": lambda self: 7, "poll": lambda self: 7})()
+                service._monitor_worker(process, token)
+                status = service.enrichment_status()
+                self.assertEqual(status["state"], "crashed")
+                self.assertIn("exit code 7", status["worker_error"])
+            finally:
+                service.close()
+                raw.close()
+
+    def test_continue_after_projection_reopens_a_full_pass(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            raw = create_raw_service(temporary, PROVIDER_A)
+            service = IPTVMovieService(raw.root, PROVIDER_A, raw, IPTVMetadataSettings(temporary),
+                                       tmdb_client_factory=lambda: FakeTMDBClient(search_results=[]))
+            try:
+                service.ensure_projected()
+                store = service.store
+                old_key = source_key("10")
+                store.apply_classification([old_key], "film", method="fixture", confidence=1)
+                store.set_match_state([old_key], "unmatched")
+                token = store.prepare_enrichment(consent=True, diagnostic_limit=1)
+                store.worker_finished("complete", token=token)
+                store.project_sources([
+                    {"item_id": "10", "name": "Fixture Movie (2024) 1080p", "playlist_id": "movies-a",
+                     "playlist_name": "Exact Provider Playlist", "year": 2024},
+                    {"item_id": "11", "name": "New Movie (2024)", "playlist_name": "Films"},
+                    {"item_id": "12", "name": "Other Movie (2024)", "playlist_name": "Films"},
+                ], store.source_generation() + 1)
+                self.assertEqual(store.worker_control_status()["automatic_remaining"], 2)
+                token = store.resume_worker()
+                limit = store.worker_control_status()["diagnostic_limit"]
+                self.assertEqual(limit, 0)
+                with patch.object(raw, "enrichment_movie_detail", return_value={}) as detail:
+                    self.assertEqual(run_worker(service, max_jobs=limit, lease_token=token), "complete")
+                self.assertEqual([call.args[0] for call in detail.call_args_list], ["11", "12"])
+                self.assertEqual(store.worker_control_status()["automatic_remaining"], 0)
+                self.assertEqual(store.worker_control_status()["matches"]["unmatched"], 3)
+            finally:
+                service.close()
+                raw.close()
+
     def test_repeated_start_cannot_replace_a_live_or_exiting_worker_lease(self):
         class ProcessFixture:
             return_code = None
@@ -500,6 +887,63 @@ class IPTVWorkerTests(unittest.TestCase):
                         connection.execute("SELECT COUNT(*) FROM enrichment_queue").fetchone()[0],
                         0,
                     )
+            finally:
+                raw.close()
+
+    def test_provider_refresh_supersedes_an_in_flight_enrichment_result(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            raw = create_raw_service(temporary, PROVIDER_A)
+            settings = IPTVMetadataSettings(temporary)
+            service = IPTVMovieService(raw.root, PROVIDER_A, raw, settings,
+                                       tmdb_client_factory=lambda: FakeTMDBClient(search_results=[]))
+            try:
+                service.ensure_projected()
+                store = service.store
+                key = source_key("10")
+                store.apply_classification([key], "film", method="test-fixture", confidence=1)
+                store.prepare_enrichment(consent=True)
+
+                def refresh_during_detail(_source_id):
+                    store.project_sources([{"item_id": "10", "name": "Corrected Movie (2024)",
+                                            "playlist_name": "Films"}], store.source_generation() + 1)
+                    return {"name": "Outdated Movie (2024)", "year": 2024}
+
+                with patch.object(raw, "enrichment_movie_detail", side_effect=refresh_during_detail):
+                    self.assertEqual(run_worker(service, max_jobs=1), "paused")
+                source = store.source(key)
+                self.assertEqual(source["provider_title"], "Corrected Movie (2024)")
+                self.assertEqual(source["detail_title"], "")
+                self.assertEqual(source["classification_status"], "pending")
+                with store.connection() as connection:
+                    self.assertEqual(connection.execute("SELECT state FROM source_matches").fetchone()[0], "unprocessed")
+                    self.assertEqual(connection.execute("SELECT status FROM enrichment_queue").fetchone()[0], "cancelled")
+
+                store.apply_classification([key], "film", method="test-fixture", confidence=1)
+                store.worker_command("run")
+                with patch.object(raw, "enrichment_movie_detail", return_value={}):
+                    self.assertEqual(run_worker(service), "complete")
+                with store.connection() as connection:
+                    self.assertEqual(connection.execute("SELECT state FROM source_matches").fetchone()[0], "unmatched")
+                    self.assertEqual(connection.execute("SELECT attempts FROM enrichment_queue").fetchone()[0], 1)
+            finally:
+                raw.close()
+
+    def test_provider_refresh_preserves_new_classification_work(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            raw = create_raw_service(temporary, PROVIDER_A)
+            service = IPTVMovieService(raw.root, PROVIDER_A, raw, IPTVMetadataSettings(temporary))
+            try:
+                service.ensure_projected()
+                store = service.store
+
+                def refresh_during_classification(*_args, **_kwargs):
+                    store.project_sources([{"item_id": "10", "name": "Corrected Movie (2024)",
+                                            "playlist_name": "Films"}], store.source_generation() + 1)
+                    return {"category": "sports", "confidence": 1}
+
+                with patch("services.iptv_movie_service.classify_source", side_effect=refresh_during_classification):
+                    service.classify_catalog_batch()
+                self.assertEqual(store.source(source_key("10"))["classification_status"], "pending")
             finally:
                 raw.close()
 

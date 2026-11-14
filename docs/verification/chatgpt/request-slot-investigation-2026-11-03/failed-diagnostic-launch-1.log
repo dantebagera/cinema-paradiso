@@ -1,0 +1,17 @@
+EVIDENCE_ROOT=C:\Users\dante\AppData\Local\Temp\cp-ai-timing-b1o45pe9
+{"sequence": 3, "event": "capture_started", "at_seconds": 0.378858, "feature": "F1", "label": "slot-diagnosed-1", "prompt": "i need you to lit 50 movies with very twisted story you wont expect the ending\nyour responce should be a list of movies names and years , no any other details , dont seek more info , dont reply by paragarph or any way of responce  only the list", "model": "gpt-6.1-sol", "count": "50", "maximum_calls": 3, "maximum_seconds": 180, "reasoning_effort": "default", "output_format": "JSON/tools", "cache_state": "fresh diagnostic process; no production TMDB memory cache"}
+Traceback (most recent call last):
+  File "C:\Users\dante\Desktop\cinema paradiso\tools\profile_ai_features.py", line 466, in <module>
+    main()
+  File "C:\Users\dante\Desktop\cinema paradiso\tools\profile_ai_features.py", line 402, in main
+    with trace.span('feature_total'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\dante\Desktop\cinema paradiso\tools\profile_ai_features.py", line 55, in span
+    self.emit('span_start', phase=phase, **values)
+  File "C:\Users\dante\Desktop\cinema paradiso\tools\ai_slot_diagnostics.py", line 85, in emit
+    return self._call('trace_emit', self._emit, event, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SlotDiagnostics._call() got multiple values for argument 'phase'

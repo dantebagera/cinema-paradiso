@@ -1,0 +1,98 @@
+{
+  "listeners": [
+    {
+      "LocalPort": 9696,
+      "OwningProcess": 7768
+    },
+    {
+      "LocalPort": 18686,
+      "OwningProcess": 71004
+    },
+    {
+      "LocalPort": 15000,
+      "OwningProcess": 52692
+    },
+    {
+      "LocalPort": 11434,
+      "OwningProcess": 1608
+    },
+    {
+      "LocalPort": 8686,
+      "OwningProcess": 9236
+    },
+    {
+      "LocalPort": 8191,
+      "OwningProcess": 57224
+    },
+    {
+      "LocalPort": 5000,
+      "OwningProcess": 100356
+    }
+  ],
+  "http": 200,
+  "matches_dist": true,
+  "processes": [
+    {
+      "ProcessId": 7768,
+      "ParentProcessId": 2460,
+      "ExecutablePath": null,
+      "CommandLine": null
+    },
+    {
+      "ProcessId": 57224,
+      "ParentProcessId": 16024,
+      "ExecutablePath": "C:\\ProgramData\\FlareSolverr\\flaresolverr.exe",
+      "CommandLine": "\"C:\\ProgramData\\FlareSolverr\\flaresolverr.exe\"  "
+    },
+    {
+      "ProcessId": 9236,
+      "ParentProcessId": 19016,
+      "ExecutablePath": "C:\\Users\\dante\\Desktop\\cinema paradiso\\data\\qbittorrent\\versions\\5.2.4\\qbittorrent.exe",
+      "CommandLine": "\"C:\\Users\\dante\\Desktop\\cinema paradiso\\data\\qbittorrent\\versions\\5.2.4\\qbittorrent.exe\" \"--profile=C:\\Users\\dante\\Desktop\\cinema paradiso\\data\\qbittorrent\\profile\" --webui-port=8686 --no-splash"
+    },
+    {
+      "ProcessId": 1608,
+      "ParentProcessId": 54984,
+      "ExecutablePath": "C:\\Users\\dante\\AppData\\Local\\Programs\\Ollama\\ollama.exe",
+      "CommandLine": "C:\\Users\\dante\\AppData\\Local\\Programs\\Ollama\\ollama.exe serve"
+    },
+    {
+      "ProcessId": 100356,
+      "ParentProcessId": 94368,
+      "ExecutablePath": "C:\\Program Files\\Python312\\python.exe",
+      "CommandLine": "\"C:\\Program Files\\Python312\\python.exe\" app.py"
+    },
+    {
+      "ProcessId": 12148,
+      "ParentProcessId": 7144,
+      "ExecutablePath": "C:\\Program Files\\Python312\\python.exe",
+      "CommandLine": "\"C:\\Program Files\\Python312\\python.exe\" \"C:\\Users\\dante\\.codex\\worktrees\\mostafa-ui-ux\\cinema paradiso\\tools\\ui_preview_launcher.py\" --no-browser"
+    },
+    {
+      "ProcessId": 71004,
+      "ParentProcessId": 12148,
+      "ExecutablePath": "C:\\Users\\dante\\.codex\\worktrees\\mostafa-ui-ux\\cinema paradiso\\data\\qbittorrent\\versions\\5.2.4\\qbittorrent.exe",
+      "CommandLine": "\"C:\\Users\\dante\\.codex\\worktrees\\mostafa-ui-ux\\cinema paradiso\\data\\qbittorrent\\versions\\5.2.4\\qbittorrent.exe\" \"--profile=C:\\Users\\dante\\.codex\\worktrees\\mostafa-ui-ux\\cinema paradiso\\data\\qbittorrent\\profile\" --webui-port=18686 --no-splash"
+    },
+    {
+      "ProcessId": 91812,
+      "ParentProcessId": 12148,
+      "ExecutablePath": "C:\\Users\\dante\\.codex\\worktrees\\mostafa-ui-ux\\cinema paradiso\\.venv\\Scripts\\python.exe",
+      "CommandLine": "\"C:\\Users\\dante\\.codex\\worktrees\\mostafa-ui-ux\\cinema paradiso\\.venv\\Scripts\\python.exe\" -m flask --app \"C:\\Users\\dante\\.codex\\worktrees\\mostafa-ui-ux\\cinema paradiso\\app.py\" run --host 127.0.0.1 --port 15000 --no-reload"
+    },
+    {
+      "ProcessId": 52692,
+      "ParentProcessId": 91812,
+      "ExecutablePath": "C:\\Program Files\\Python312\\python.exe",
+      "CommandLine": "\"C:\\Program Files\\Python312\\python.exe\" -m flask --app \"C:\\Users\\dante\\.codex\\worktrees\\mostafa-ui-ux\\cinema paradiso\\app.py\" run --host 127.0.0.1 --port 15000 --no-reload"
+    }
+  ],
+  "owner": {
+    "root": "C:\\Users\\dante\\.codex\\worktrees\\mostafa-ui-ux\\cinema paradiso",
+    "supervisor_pid": 12148,
+    "cp_pid": 91812,
+    "qbt_pid": 71004,
+    "port": 15000
+  },
+  "dist_sha256": "B4563154186A74173DB5D395105BE50BFEFB6AEDDDA30AB90C9C422398B5D4C5"
+}

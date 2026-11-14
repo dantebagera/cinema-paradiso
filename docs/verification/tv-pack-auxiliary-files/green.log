@@ -1,0 +1,16 @@
+...F...
+======================================================================
+FAIL: test_pack_bonus_is_unselected_before_resume_and_never_imported (tests.test_verified_tv_acquisition.TVAcquisitionTests.test_pack_bonus_is_unselected_before_resume_and_never_imported)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_verified_tv_acquisition.py", line 267, in test_pack_bonus_is_unselected_before_resume_and_never_imported
+    self.assertEqual(completed['state'], 'imported', completed.get('last_error'))
+AssertionError: 'cleanup_failed' != 'imported'
+- cleanup_failed
++ imported
+ : Unknown staging contents; cleanup requires review
+
+----------------------------------------------------------------------
+Ran 7 tests in 1.611s
+
+FAILED (failures=1)

@@ -1,3 +1,5 @@
+import Badge from '../../components/ui/Badge.jsx';
+import Button from '../../components/ui/Button.jsx';
 import {
   Bookmark,
   Clapperboard,
@@ -27,7 +29,7 @@ export default function CardLab() {
         </div>
         <div className="card-lab-legend" aria-label="Card anatomy">
           {['Poster', 'Title', 'Metadata chips', 'Plot', 'People', 'Actions'].map((item) => (
-            <span key={item}>{item}</span>
+            <Badge muted key={item}>{item}</Badge>
           ))}
         </div>
       </section>
@@ -89,12 +91,12 @@ function CardLabMovieCard({ movie, expanded = false }) {
               <span><Star size={15} /> {movie.rating}</span>
             </div>
           </div>
-          <span className="card-lab-status">{movie.status}</span>
+          <Badge kind="status" tone={movie.statusTone === 'owned' ? 'owned' : movie.statusTone === 'warning' ? 'warning' : 'neutral'}>{movie.status}</Badge>
         </header>
 
         <div className="card-lab-chip-row" aria-label="Movie metadata">
           {movie.metadata.map((item) => (
-            <span key={item}>{item}</span>
+            <Badge muted key={item}>{item}</Badge>
           ))}
         </div>
 
@@ -146,10 +148,10 @@ function CardLabMovieCard({ movie, expanded = false }) {
           {movie.actions.map((action) => {
             const Icon = actionIcons[action] || Info;
             return (
-              <button type="button" key={action} className={cx('card-lab-action', action === 'Upgrade' && 'card-lab-action-warning', action === 'Play' && 'card-lab-action-primary')}>
+              <Button type="button" key={action} variant={action === 'Play' ? 'play' : action === 'Upgrade' ? 'upgrade' : 'secondary'}>
                 <Icon size={16} />
                 <span>{action}</span>
-              </button>
+              </Button>
             );
           })}
         </div>

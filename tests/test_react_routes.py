@@ -36,7 +36,24 @@ class ReactRouteTest(unittest.TestCase):
         self.assertIn(b"qBittorrent WebUI", response.data)
         self.assertNotIn(b"cp-qbt-sidebar", response.data)
         self.assertEqual(nested.status_code, 200)
-        self.assertIn("api/v2/sync/maindata", manager.paths)
+        self.assertIn("api/v2/sync/maindata?rid=0", manager.paths)
+
+    def test_qbittorrent_proxy_preserves_torrent_details_query(self):
+        client = app.app.test_client()
+        queries = (
+            "torrents/files?hash=1234abcd",
+            "sync/torrentPeers?hash=1234abcd&rid=7",
+            "torrents/info?tag=one%2Btwo+three&tag=four%26five&category=",
+        )
+        with patch.object(app, "_get_qbittorrent_manager") as get_manager:
+            proxy = get_manager.return_value.proxy
+            proxy.return_value = 200, {"Content-Type": "application/json"}, b"[]"
+            for prefix in ("/qbittorrent", ""):
+                for query in queries:
+                    with self.subTest(prefix=prefix, query=query):
+                        response = client.get(f"{prefix}/api/v2/{query}")
+                        self.assertEqual(response.status_code, 200)
+                        self.assertEqual(proxy.call_args.args[0], f"api/v2/{query}")
 
     def test_root_does_not_fall_back_to_legacy_template_when_frontend_missing(self):
         client = app.app.test_client()

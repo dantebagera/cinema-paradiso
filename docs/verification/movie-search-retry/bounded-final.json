@@ -1,0 +1,361 @@
+{
+  "status": "seven approved functional gaps verified in isolation; live activation not performed",
+  "active_seconds": 132.116,
+  "process_tree_cpu_seconds": 156.78125,
+  "process_tree_write_bytes": 1063981573,
+  "write_cap_bytes": 1073741824,
+  "temporary_footprint_bytes": 129520288,
+  "unique_python_methods_with_successful_runs": 46,
+  "successful_python_methods": [
+    "tests.test_canonical_catalog.CanonicalCatalogTest.test_detail_contract_backfill_query_only_returns_stale_selected_tmdb_snapshots",
+    "tests.test_canonical_catalog.CanonicalCatalogTest.test_named_card_and_details_contracts_make_deferred_fields_explicit",
+    "tests.test_canonical_catalog.CanonicalCatalogTest.test_schema_v8_normalizes_movie_people_credits_keywords_collections_and_overrides",
+    "tests.test_canonical_catalog.CanonicalCatalogTest.test_tmdb_backfill_replaces_fallback_and_completes_people_contract",
+    "tests.test_canonical_catalog.CanonicalCatalogTest.test_tmdb_selected_movie_with_only_plex_fallback_is_incomplete",
+    "tests.test_canonical_catalog.CanonicalCatalogTest.test_writer_and_keyword_details_are_relational_not_decoded_from_source_json",
+    "tests.test_catalog_repository.CatalogRepositoryTest.test_full_export_is_a_verified_rollback_snapshot",
+    "tests.test_catalog_repository.CatalogRepositoryTest.test_operational_timestamp_and_revision_refresh_is_not_a_card_generation",
+    "tests.test_catalog_repository.CatalogRepositoryTest.test_path_migration_updates_owned_records_in_one_generation",
+    "tests.test_catalog_store.CatalogStoreTest.test_import_is_idempotent",
+    "tests.test_catalog_store.CatalogStoreTest.test_import_preserves_identity_provider_and_user_state",
+    "tests.test_catalog_store.CatalogStoreTest.test_movie_view_hides_new_pending_publications_but_preserves_legacy_rows",
+    "tests.test_library_ingestion_queue.LibraryIngestionQueueTest.test_capacity_rejects_only_excess_and_marks_affected_root_dirty",
+    "tests.test_library_ingestion_queue.LibraryIngestionQueueTest.test_due_items_pass_earlier_long_backoff_and_ties_remain_fifo",
+    "tests.test_library_ingestion_queue.LibraryIngestionQueueTest.test_duplicate_path_hints_coalesce_before_dispatch",
+    "tests.test_library_ingestion_queue.LibraryIngestionQueueTest.test_final_commit_completes_before_catalog_event_is_published",
+    "tests.test_library_ingestion_queue.LibraryIngestionQueueTest.test_monitor_duplicate_of_active_path_does_not_create_pending_work",
+    "tests.test_library_ingestion_queue.LibraryIngestionQueueTest.test_one_asset_failure_does_not_block_other_final_card_publications",
+    "tests.test_library_ingestion_queue.LibraryIngestionQueueTest.test_one_dispatcher_serializes_path_mutation_and_shutdown_joins_it",
+    "tests.test_library_ingestion_queue.LibraryIngestionQueueTest.test_parent_directory_hint_collapses_pending_children",
+    "tests.test_library_ingestion_queue.LibraryIngestionQueueTest.test_pending_parent_absorbs_child_hint_without_new_work",
+    "tests.test_library_ingestion_queue.LibraryIngestionQueueTest.test_pending_path_retries_with_bounded_backoff_until_ready",
+    "tests.test_library_ingestion_queue.LibraryIngestionQueueTest.test_poster_failure_retries_boundedly_and_never_commits_or_notifies",
+    "tests.test_library_ingestion_queue.LibraryIngestionQueueTest.test_power_checkpoint_drops_only_memory_queue_and_can_resume_after_failure",
+    "tests.test_library_ingestion_queue.LibraryIngestionQueueTest.test_startup_reconcile_finalizes_matched_paths_before_marking_complete",
+    "tests.test_movie_isolated_qualification.MovieIsolatedQualificationTest.test_a_real_termination_keeps_durable_stage_reservations_and_handoff",
+    "tests.test_movie_isolated_qualification.MovieIsolatedQualificationTest.test_b_simultaneous_inventory_writers_preserve_each_other_and_generation",
+    "tests.test_movie_isolated_qualification.MovieIsolatedQualificationTest.test_c_admission_sequence_is_atomic_operational_and_survives_json_restore",
+    "tests.test_movie_isolated_qualification.MovieIsolatedQualificationTest.test_d_durable_path_order_does_not_reorder_mixed_in_memory_work",
+    "tests.test_movie_isolated_qualification.MovieIsolatedQualificationTest.test_e_equal_durable_deadlines_dispatch_fifo_despite_conversion_jitter",
+    "tests.test_movie_isolated_qualification.MovieIsolatedQualificationTest.test_z_equal_due_retry_admission_order_survives_real_process_restart",
+    "tests.test_movie_publication_retries.RetryRepositoryTest.test_asset_budget_survives_each_restart_and_own_failure_writes",
+    "tests.test_movie_publication_retries.RetryRepositoryTest.test_blocked_rows_do_not_consume_restart_recovery_capacity",
+    "tests.test_movie_publication_retries.RetryRepositoryTest.test_bounded_rows_are_independent_and_unknown_is_empty",
+    "tests.test_movie_publication_retries.RetryRepositoryTest.test_conditional_ledger_patch_is_operational_and_survives_stale_writers",
+    "tests.test_movie_publication_retries.RetryRepositoryTest.test_crash_after_last_reservation_does_not_grant_fifth_asset_attempt",
+    "tests.test_movie_publication_retries.RetryRepositoryTest.test_crash_after_own_identity_write_keeps_reserved_provider_attempt",
+    "tests.test_movie_publication_retries.RetryRepositoryTest.test_inventory_patch_preserves_sibling_fields_and_generation",
+    "tests.test_movie_publication_retries.RetryRepositoryTest.test_live_provider_reservation_is_not_treated_as_crashed_by_another_caller",
+    "tests.test_movie_publication_retries.RetryRepositoryTest.test_persisted_deferred_handoff_readmits_unrecorded_sibling_after_restart",
+    "tests.test_movie_publication_retries.RetryRepositoryTest.test_provider_failure_reserves_before_side_effect_and_poll_restart_cannot_reset",
+    "tests.test_movie_publication_retries.RetryRepositoryTest.test_publication_status_cannot_publish_or_accept_legacy_visibility",
+    "tests.test_movie_publication_retries.RetryRepositoryTest.test_revision_conflict_rereads_and_schedules_one_bounded_retry",
+    "tests.test_movie_remaining_qualification.RemainingMovieQualificationTest.test_a_publication_notification_and_ack_survive_real_process_termination",
+    "tests.test_movie_remaining_qualification.RemainingMovieQualificationTest.test_b_four_snapshot_branches_empty_selected_data_and_competing_overrides",
+    "tests.test_movie_remaining_qualification.RemainingMovieQualificationTest.test_c_named_file_reads_remain_bounded_among_four_thousand_movies"
+  ],
+  "desktop": {
+    "startTime": "2026-10-23T19:42:34.296Z",
+    "duration": 72201.536,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "desktop_evidence": {
+    "4000-search-evidence": {
+      "latestRenderMs": 452,
+      "dispatched": [
+        "s",
+        "searchfix"
+      ],
+      "maximumActive": 1,
+      "catalogueSize": 4000,
+      "exactUniqueRendered": 4000,
+      "pages": 100
+    },
+    "poster-retry-evidence": {
+      "failed": {
+        "events": 0,
+        "followed_count": 1,
+        "generation": 14,
+        "job": {
+          "cast": [],
+          "certification": "",
+          "directors": [],
+          "genres": [
+            "Drama"
+          ],
+          "hash": "qualification-import",
+          "identity_handoff": {
+            "paths": [
+              "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-exoayinc\\bounded\\media\\Qualification.Import.2026.1080p.mkv"
+            ],
+            "state": "queued",
+            "tmdb_id": "810001"
+          },
+          "imported_paths": [
+            "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-exoayinc\\bounded\\media\\Qualification.Import.2026.1080p.mkv"
+          ],
+          "keywords": [],
+          "library_scan_pending": true,
+          "plot": "Persistent isolated poster retry and publication fixture.",
+          "poster_url": "https://fixture.invalid/poster.png",
+          "state": "imported",
+          "title": "Qualification Import",
+          "tmdb_id": "810001",
+          "writers": [],
+          "year": "2026"
+        },
+        "ledger": {
+          "admission_order": 4,
+          "attempts": {
+            "assets": 1,
+            "facts": 1,
+            "provider": 1
+          },
+          "correlation_id": "qbt:qualification-import",
+          "evidence_signature": "b23f383ba6f80ecc4e9ddccab22c94023346e521b9b46d41bcef7f9218f62b73",
+          "first_observed_at": 1792784553.3485284,
+          "handoff": {
+            "paths": [
+              "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-exoayinc\\bounded\\media\\Qualification.Import.2026.1080p.mkv"
+            ],
+            "state": "ready",
+            "tmdb_id": "810001"
+          },
+          "last_error": "MediaAssetError: controlled first poster transport failure",
+          "next_due_at": 1792784555.3485284,
+          "reason": "qbittorrent",
+          "require_publication": true,
+          "reservation_guard": "ef87259045336496f10a31ef15b2e6b714a552903f8cd104f93fbf1b7983f813",
+          "revision": 6,
+          "source_identity": {
+            "imdb_id": "",
+            "paths": [
+              "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-exoayinc\\bounded\\media\\Qualification.Import.2026.1080p.mkv"
+            ],
+            "title": "Qualification Import",
+            "tmdb_id": "810001",
+            "year": "2026"
+          },
+          "stage": "assets",
+          "state": "waiting",
+          "version": 1
+        },
+        "pid": 54400,
+        "poster_calls": 1,
+        "publication": {
+          "blockers": {
+            "assets": "assets_not_ready"
+          },
+          "eligible_to_publish": false,
+          "legacy_visible": false,
+          "movie_key": "tmdb:810001",
+          "path": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-exoayinc\\bounded\\media\\Qualification.Import.2026.1080p.mkv",
+          "publication_committed": false,
+          "recoverable_prepared": false,
+          "required_stages": [
+            "assets"
+          ]
+        }
+      },
+      "early": {
+        "events": 0,
+        "followed_count": 1,
+        "generation": 14,
+        "job": {
+          "cast": [],
+          "certification": "",
+          "directors": [],
+          "genres": [
+            "Drama"
+          ],
+          "hash": "qualification-import",
+          "identity_handoff": {
+            "paths": [
+              "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-exoayinc\\bounded\\media\\Qualification.Import.2026.1080p.mkv"
+            ],
+            "state": "queued",
+            "tmdb_id": "810001"
+          },
+          "imported_paths": [
+            "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-exoayinc\\bounded\\media\\Qualification.Import.2026.1080p.mkv"
+          ],
+          "keywords": [],
+          "library_scan_pending": true,
+          "plot": "Persistent isolated poster retry and publication fixture.",
+          "poster_url": "https://fixture.invalid/poster.png",
+          "state": "imported",
+          "title": "Qualification Import",
+          "tmdb_id": "810001",
+          "writers": [],
+          "year": "2026"
+        },
+        "ledger": {
+          "admission_order": 4,
+          "attempts": {
+            "assets": 1,
+            "facts": 1,
+            "provider": 1
+          },
+          "correlation_id": "qbt:qualification-import",
+          "evidence_signature": "b23f383ba6f80ecc4e9ddccab22c94023346e521b9b46d41bcef7f9218f62b73",
+          "first_observed_at": 1792784553.3485284,
+          "handoff": {
+            "paths": [
+              "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-exoayinc\\bounded\\media\\Qualification.Import.2026.1080p.mkv"
+            ],
+            "state": "ready",
+            "tmdb_id": "810001"
+          },
+          "last_error": "MediaAssetError: controlled first poster transport failure",
+          "next_due_at": 1792784555.3485284,
+          "reason": "qbittorrent",
+          "require_publication": true,
+          "reservation_guard": "ef87259045336496f10a31ef15b2e6b714a552903f8cd104f93fbf1b7983f813",
+          "revision": 6,
+          "source_identity": {
+            "imdb_id": "",
+            "paths": [
+              "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-exoayinc\\bounded\\media\\Qualification.Import.2026.1080p.mkv"
+            ],
+            "title": "Qualification Import",
+            "tmdb_id": "810001",
+            "year": "2026"
+          },
+          "stage": "assets",
+          "state": "waiting",
+          "version": 1
+        },
+        "pid": 54400,
+        "poster_calls": 1,
+        "publication": {
+          "blockers": {
+            "assets": "assets_not_ready"
+          },
+          "eligible_to_publish": false,
+          "legacy_visible": false,
+          "movie_key": "tmdb:810001",
+          "path": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-exoayinc\\bounded\\media\\Qualification.Import.2026.1080p.mkv",
+          "publication_committed": false,
+          "recoverable_prepared": false,
+          "required_stages": [
+            "assets"
+          ]
+        }
+      },
+      "completed": {
+        "events": 1,
+        "followed_count": 1,
+        "generation": 15,
+        "job": {
+          "cast": [],
+          "certification": "",
+          "directors": [],
+          "genres": [
+            "Drama"
+          ],
+          "hash": "qualification-import",
+          "identity_handoff": {
+            "paths": [
+              "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-exoayinc\\bounded\\media\\Qualification.Import.2026.1080p.mkv"
+            ],
+            "state": "applied",
+            "tmdb_id": "810001"
+          },
+          "imported_paths": [
+            "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-exoayinc\\bounded\\media\\Qualification.Import.2026.1080p.mkv"
+          ],
+          "keywords": [],
+          "library_scan_pending": false,
+          "plot": "Persistent isolated poster retry and publication fixture.",
+          "poster_url": "https://fixture.invalid/poster.png",
+          "state": "imported",
+          "title": "Qualification Import",
+          "tmdb_id": "810001",
+          "writers": [],
+          "year": "2026"
+        },
+        "ledger": {
+          "admission_order": 4,
+          "attempts": {
+            "assets": 2,
+            "facts": 1,
+            "provider": 1
+          },
+          "correlation_id": "qbt:qualification-import",
+          "evidence_signature": "b23f383ba6f80ecc4e9ddccab22c94023346e521b9b46d41bcef7f9218f62b73",
+          "first_observed_at": 1792784553.3485284,
+          "handoff": {
+            "paths": [
+              "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-exoayinc\\bounded\\media\\Qualification.Import.2026.1080p.mkv"
+            ],
+            "state": "ready",
+            "tmdb_id": "810001"
+          },
+          "last_error": "",
+          "next_due_at": 0,
+          "reason": "qbittorrent",
+          "require_publication": true,
+          "reservation_guard": "ef87259045336496f10a31ef15b2e6b714a552903f8cd104f93fbf1b7983f813",
+          "revision": 8,
+          "source_identity": {
+            "imdb_id": "",
+            "paths": [
+              "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-exoayinc\\bounded\\media\\Qualification.Import.2026.1080p.mkv"
+            ],
+            "title": "Qualification Import",
+            "tmdb_id": "810001",
+            "year": "2026"
+          },
+          "stage": "assets",
+          "state": "complete",
+          "version": 1
+        },
+        "pid": 54400,
+        "poster_calls": 2,
+        "publication": {
+          "blockers": {},
+          "eligible_to_publish": true,
+          "legacy_visible": false,
+          "movie_key": "tmdb:810001",
+          "path": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-exoayinc\\bounded\\media\\Qualification.Import.2026.1080p.mkv",
+          "publication_committed": true,
+          "recoverable_prepared": true,
+          "required_stages": []
+        }
+      },
+      "forceScans": []
+    }
+  },
+  "real_process_crash_boundaries_passed": 9,
+  "source_hashes": {
+    "app.py": "270d0dc519b2c09f3dea4508ed3a5ae5849c33afde7271e41cd974f8e62fb925",
+    "services/catalog_repository.py": "ee0a2dfa6134f1756608f92c139d86d09bf34db1f58a3d6f31f8ead6926f18c2",
+    "services/catalog_store.py": "c79086cf39b6b92fbc8124a6837cc133fe9ffdeab0d299e98049d82aa4866b16",
+    "services/library_ingestion.py": "995fa23397fe8f6819dca3dacf061841b608f9fcae7a58cb545d29152bace8c9",
+    "src/features/library/LibraryWorkspace.jsx": "15c0c6c3c98cb6015f166842014fe0612360d0f631617f3f7a894805231bcada",
+    "src/features/library/librarySearchRequests.js": "97bc846a8545a4c98695c2313221f42f6048ea5d61d9c1261cbd3257ba7cd7cd"
+  },
+  "remaining_scoped_functional_gaps": [],
+  "historical_limits": [
+    "Untouched broader baseline never captured.",
+    "Earlier diagnostic process write bytes were not captured.",
+    "CPU scheduling equivalence was not established for a controlled speedup ratio."
+  ],
+  "full_451_owner_suite_rerun_after_bounded_fix": false,
+  "post_fix_coverage": "Focused queue/retry, atomic admission/JSON restore, mixed work, real restart dispatch, concurrent override snapshot reads, selected storage/canonical/rollback, process restart/API/ownership/reconnect, and existing compiled desktop fixture. Logs identify exact source timing; desktop preceded only the final dispatch clock comparison repair, whose dispatcher regressions subsequently passed.",
+  "failed_runs_retained": [
+    "Original durable FIFO failure",
+    "Restore harness used ordinary writer instead of JSON import",
+    "Selection harness expected internal normalized keys instead of public case-preserving paths",
+    "First jitter regression import failed due to a test indentation error",
+    "Deliberate valid jitter RED reproduced B/A before dispatch repair"
+  ],
+  "product_contract_changes": false,
+  "additional_frontend_builds": 0,
+  "owned_test_processes_remaining": 0,
+  "production_dist_unchanged": true,
+  "live_port_5000_pid": 56296
+}

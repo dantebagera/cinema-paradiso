@@ -1,0 +1,13 @@
+{
+  "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\logs\\red-main-fixes.log",
+  "label": "red-main-fixes",
+  "exitCode": 1,
+  "root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\fixtures\\red-main-fixes-e3b4ef54b0f844a2b8249cd4b5165701",
+  "elapsed": 4.2054162,
+  "dist": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\fixtures\\red-main-fixes-e3b4ef54b0f844a2b8249cd4b5165701\\dist",
+  "kind": "python",
+  "modules": [
+    "tests.test_upcoming_discover",
+    "tests.test_movie_follow_contract"
+  ]
+}

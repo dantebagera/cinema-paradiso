@@ -11,30 +11,36 @@ class FullRowCardGridUiTests(unittest.TestCase):
         cls.app = (ROOT / "src" / "App.jsx").read_text(encoding="utf-8")
         cls.home = (ROOT / "src" / "features" / "home" / "HomeWorkspace.jsx").read_text(encoding="utf-8")
         cls.library = (ROOT / "src" / "features" / "library" / "LibraryWorkspace.jsx").read_text(encoding="utf-8")
-        cls.ai_control = (ROOT / "src" / "features" / "ai-control" / "AIControlWorkspace.jsx").read_text(encoding="utf-8")
+        cls.ai_control = (ROOT / "src" / "features" / "ai-control" / "AIControlResult.jsx").read_text(encoding="utf-8")
         cls.movie_lists = (ROOT / "src" / "features" / "movie-lists" / "MovieListsWorkspace.jsx").read_text(encoding="utf-8")
         cls.iptv = (ROOT / "src" / "features" / "iptv" / "IPTVWorkspace.jsx").read_text(encoding="utf-8")
         cls.discover = (ROOT / "src" / "features" / "discover" / "DiscoverWorkspace.jsx").read_text(encoding="utf-8")
         cls.grid = (ROOT / "src" / "components" / "DiscoverResultGrid.jsx").read_text(encoding="utf-8")
 
-    def test_home_preview_uses_six_cards_for_three_rows(self):
-        self.assertIn("movies.slice(0, 6)", self.home)
-        self.assertNotIn("movies.slice(0, 8)", self.home)
-        self.assertNotIn("movies.slice(0, 5)", self.home)
+    def test_home_poster_rails_keep_all_loaded_titles(self):
+        self.assertIn('visibleCount={7}', self.home)
+        self.assertIn('movies.map(movie =>', self.home)
+        self.assertNotIn('movies.slice(0,', self.home)
 
-    def test_home_new_previews_measure_and_render_only_complete_rows(self):
-        self.assertIn("useCardGridMetrics({ target: 5, max: 5, bias: 'lower' })", self.home)
-        self.assertIn("useCardGridMetrics({ target: 6, min: 6, max: 6 })", self.home)
-        self.assertIn("/api/tmdb/discover?list=upcoming&page=1&page_size=100", self.app)
-        self.assertIn("items.slice(safePage * pageSize, safePage * pageSize + pageSize)", self.home)
-        self.assertIn("(movies || []).slice(0, pageSize)", self.home)
-        self.assertIn('className="home-trailer-grid" ref={gridRef}', self.home)
-        self.assertIn('className="coming-soon-grid" ref={gridRef}', self.home)
+    def test_home_scrolling_rails_share_layout_and_group_trailers(self):
+        # The later Home-loading contract fills twenty logical cards across bounded provider pages.
+        self.assertIn('/api/tmdb/discover?list=upcoming&page=1&page_size=${HOME_UPCOMING_PREVIEW_SIZE}', self.app)
+        home_model = (ROOT / 'src/utils/homeMovies.js').read_text(encoding='utf-8')
+        self.assertIn('export const HOME_UPCOMING_PREVIEW_SIZE = 20', home_model)
+        self.assertIn('buildUpcomingHomeMovies(cycle.raw, home.trending)', self.app)
+        self.assertIn('<HorizontalCardRail label="Upcoming movies"', self.home)
+        self.assertIn('trackClassName="coming-soon-grid"', self.home)
+        self.assertIn('(movies || []).map(movie =>', self.home)
+        trailers = (ROOT / 'src/features/home/HomeTrailersPanel.jsx').read_text(encoding='utf-8')
+        self.assertIn('groupHomeTrailers(feed?.items, source)', trailers)
+        self.assertIn('<HorizontalCardRail label="New trailers"', trailers)
+        self.assertIn('trackClassName="home-trailer-grid"', trailers)
 
     def test_library_uses_measured_full_row_page_size(self):
         self.assertIn("useCardGridMetrics({ target: 40, max: 100, bias: 'lower' })", self.library)
         self.assertIn("ref={mode === 'movie' ? libraryMovieGridRef : undefined}", self.library)
-        self.assertIn("activeLibraryQueryRef.current = activeLibraryQuery", self.library)
+        self.assertIn("visibleLibraryReadRef.current = { query: activeLibraryQuery, page: currentPage, pageSize, intent:", self.library)
+        self.assertIn("body: JSON.stringify({ query: descriptor.query, page: descriptor.page, page_size: descriptor.pageSize })", self.library)
         self.assertIn("[currentPage, notify, pageSize]", self.library)
 
     def test_ai_control_uses_measured_client_page_size(self):

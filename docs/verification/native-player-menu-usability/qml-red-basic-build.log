@@ -1,0 +1,14 @@
+**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.14.42
+** Copyright (c) 2025 Microsoft Corporation
+**********************************************************************
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Configuring done (1.1s)
+-- Generating done (0.3s)
+-- Build files have been written to: C:/Users/dante/AppData/Local/Temp/cp-player-menu-usability-20261024/ui-build
+[1/5] Running qmlimportscanner for cp-player-ui-tests
+[2/5] Automatic MOC and UIC for target cp-player-ui-tests
+[3/5] Building CXX object CMakeFiles\cp-player-ui-tests.dir\cp-player-ui-tests_autogen\mocs_compilation.cpp.obj
+[4/5] Building CXX object CMakeFiles\cp-player-ui-tests.dir\tests\ui_main.cpp.obj
+[5/5] Linking CXX executable cp-player-ui-tests.exe

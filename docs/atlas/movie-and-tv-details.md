@@ -4,6 +4,12 @@
 
 **Source checked** · 2026-11-13 on `master` at `be511f9` with local changes in the app, card and workspace components, TV services, and tests. **Live status unverified.**
 
+## 2026-11-13 IPTV integration candidate
+
+`PersonCreditCard.usePersonBiography` now accepts an optional loader; Movie and TV retain the original `/api/tmdb/person` default. IPTV supplies its provider `/people/<person_id>` loader, and both backend routes share `services/tmdb_people.py::normalize_tmdb_person_details`. `IPTVPeopleCredits` reuses the shared rail, portrait and small controls, including the avatar fallback and missing-ID explanation. `IPTVPeopleNavigationContext` carries separate `onBrowse` and `onDiscover` callbacks: `IPTVWorkspace.browseIPTVPerson` owns portrait browsing; `App.openPersonInDiscover` owns the small full-filmography action and selects Movie media even when Discover last showed TV. Tests: `test_iptv_people.py`, `e2e/iptv-people.spec.js`, existing Movie relationships and TV expanded parity.
+
+Authority: [approved plan](../plans/2026-11-13-iptv-cast-discover-streaming.md). Evidence: [2026-11-13 isolated verification](../verification/iptv-cast-discover-streaming-2026-11-13/report.md). Candidate is in the managed `iptv-discover-streaming` worktree at baseline `117526b` plus the preserved dirty desktop source. **Historical integration verification; see the correction and activation record below for current status.**
+
 ## Expanded details and credits
 
 | Surface | Execution path |
@@ -32,3 +38,23 @@
 | Award icon is hidden or opens the wrong role's films | Check the accepted Movie ID, the snapshot generation, award coverage, and person role. See `test_snapshot_etag_conditional_read_and_role_namespaces` and the desktop generation-conflict and Home opt-in cases. [Awards API](../../tests/test_movie_awards_api.py) · [Awards desktop](../../tests/e2e/movie-awards.spec.js) |
 | A TV person loses a portrait or Back loses the selected season | See `test_aggregate_director_creator_and_writer_portraits_survive_catalog_storage` and “saved series keeps its selected season through creator TV filmography and Back”. [TV portrait tests](../../tests/test_tv_credit_portraits.py) · [TV desktop](../../tests/e2e/tv-expanded-parity.spec.js) |
 | Poster changes fail to appear, or artwork loads while a card is hidden | Separate persisted override and projected URL from browser visibility. See `test_owned_home_and_discover_movies_get_editor_but_unowned_movies_do_not` and “An expanded card has its artwork immediately even before its visibility notification”. [Editor checks](../../tests/test_poster_editor_ui.py) · [Artwork desktop](../../tests/e2e/card-artwork-performance.spec.js) |
+
+## Filmography destination correction, 2026-11-13
+
+Dante clarified the small button must open Discover like Movies, and approved applying, testing and activating it with "yes go". The old provider-only button assertion was incorrect and was replaced; portrait browsing retains its local assertion. [Correction plan](../plans/2026-11-13-iptv-filmography-discover-correction.md) · [Verification and activation](../verification/iptv-filmography-discover-2026-11-13/report.md).
+
+Correction activated in the desktop main app: tested bundle `index-rEoonoEd.js` served on port5000 after normal restart; compiled desktop tests 47/47. Live desktop clicking verified: Brad Pitt's small button opened Movie Discover with 115 credits and the IPTV breadcrumb.
+
+
+## RT main-folder application — 2026-11-14
+
+Dante approved the4px exception for crowded collapsed cards without TMDB/awards, and applying the feature to main. He then instructed not to test; he will handle testing. Applied21feature files while preserving current main changes and rebuilt main dist successfully. No tests, runtime restart or live verification were performed. Collapsed RT shares the bottom row with TMDB; votes label is omitted there, numeric count retained. Expanded RT sits between awards and TMDB; long titles wrap. Optional-Plex persistence and lazy-loading behavior are unchanged. [Application record](../verification/plex-rotten-tomatoes-2026-11-14/report.md).
+
+
+## Arabic Movie card defaults — 2026-11-14
+
+Dante approved Arabic movie cards defaulting to Arabic across CP, with English available. `src/utils/movieLanguage.js` selects display titles from original-language metadata. `useTransientMovieLanguage` applies the default to shared Movie cards and Home inspector; Home tiles and related Movie rails reuse the title helper. TV retains its existing hook and IPTV retains its provider-owned Arabic display.
+
+Provider summaries, compact SQL Library cards, curated entries and Continue Watching retain original_title/original_language. Saved original metadata is read from the matching TMDB snapshot even when Plex supplies artwork. No identity, file path, catalog language migration or playback-target change. Arabic detail requests occur on expansion, share a bounded session cache, and retain source text on missing translations. The English choice stays local to the mounted card; a different card starts with the default again. Owned/custom artwork and collection membership stay authoritative; existing localized artwork on unowned cards remains supported.
+
+[Approved plan](../plans/2026-11-14-arabic-movie-card-defaults.md) · [Verification and installation boundary](../verification/arabic-movie-cards-2026-11-14/report.md). Worktree implementation; live installation is not implied by tests.

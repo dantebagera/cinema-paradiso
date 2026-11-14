@@ -110,12 +110,13 @@ class QBittorrentUiTests(unittest.TestCase):
     def test_streaming_modal_shows_loading_feedback_until_iframe_loads(self):
         modal_source = self.source.split("function StreamPlayerModal(", 1)[1].split("function ", 1)[0]
         self.assertIn("streamStatusVisible", modal_source)
-        self.assertIn("streamLoaded", modal_source)
         self.assertIn("streamSlow", modal_source)
-        self.assertIn("onLoad={() => setStreamLoaded(true)}", modal_source)
+        # CP clears its loading status when the external iframe page loads;
+        # that event does not claim that video playback has started.
+        self.assertIn("onLoad={() => setStreamStatusVisible(false)}", modal_source)
         self.assertIn("Loading stream", modal_source)
-        self.assertIn("Preparing stream", modal_source)
-        self.assertIn("This stream is taking longer than usual", modal_source)
+        self.assertIn("The streaming page can take a moment to load", modal_source)
+        self.assertIn("The streaming page is taking longer than usual", modal_source)
 
     def test_readme_and_changelog_match_package_release_version(self):
         root = Path(__file__).resolve().parents[1]

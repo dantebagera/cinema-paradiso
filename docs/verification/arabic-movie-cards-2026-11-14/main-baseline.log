@@ -1,0 +1,49 @@
+
+Running 1 test using 1 worker
+
+(node:46544) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tests\e2e\lists-layout.spec.js:271:1 › Uncached saved movies hydrate the regular Discover card and reuse details when expanded (16.5s)
+
+
+  1) tests\e2e\lists-layout.spec.js:271:1 › Uncached saved movies hydrate the regular Discover card and reuse details when expanded 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('.discover-movie-card').filter({ has: getByRole('heading', { name: 'Saved movie 1', exact: true }) })
+    Expected substring: "1.5K votes"
+    Received string:    "Saved movie 12025AnimationActionEnglishUSNot in library7.8 - 1.5K"
+    Timeout: 15000ms
+
+    Call log:
+      - Expect "toContainText" with timeout 15000ms
+      - waiting for locator('.discover-movie-card').filter({ has: getByRole('heading', { name: 'Saved movie 1', exact: true }) })
+        33 × locator resolved to <article tabindex="0" aria-expanded="false" class="unified-movie-card unified-movie-card-ratings unified-movie-card-interactive discover-movie-card movie-awards-consumer">…</article>
+           - unexpected value "Saved movie 12025AnimationActionEnglishUSNot in library7.8 - 1.5K"
+
+
+      280 |   await expect(card).toContainText('US');
+      281 |   await expect(card).toContainText('7.8');
+    > 282 |   await expect(card).toContainText('1.5K votes');
+          |                      ^
+      283 |   await expect(card).toHaveAttribute('style', /landscape\.jpg/);
+      284 |   await card.getByRole('heading', { name: 'Saved movie 1', exact: true }).click();
+      285 |   await expect(card).toHaveClass(/unified-movie-card-expanded/);
+        at C:\Users\dante\.codex\worktrees\youtube-movie-stream\cinema paradiso\tests\e2e\lists-layout.spec.js:282:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    docs\verification\arabic-movie-cards-2026-11-14\main-baseline\lists-layout-Uncached-save-29e54-reuse-details-when-expanded\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: docs\verification\arabic-movie-cards-2026-11-14\main-baseline\lists-layout-Uncached-save-29e54-reuse-details-when-expanded\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs\verification\arabic-movie-cards-2026-11-14\main-baseline\lists-layout-Uncached-save-29e54-reuse-details-when-expanded\trace.zip
+    Usage:
+
+        npx playwright show-trace docs\verification\arabic-movie-cards-2026-11-14\main-baseline\lists-layout-Uncached-save-29e54-reuse-details-when-expanded\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    tests\e2e\lists-layout.spec.js:271:1 › Uncached saved movies hydrate the regular Discover card and reuse details when expanded 

@@ -1,0 +1,22 @@
+{
+  "src/features/settings/ollamaModels.js": {
+    "unchanged": true,
+    "sha256": "88ef1ae79185a0ebe5e97ce2f25611151952f384e52a243b15068aaf372ffafa"
+  },
+  "config.json": {
+    "unchanged": true,
+    "sha256": "9f4d37123f85f0737661fe0734605da5c75c6ba5da60875e7e4dc9055daa40c9"
+  },
+  "dist/index.html": {
+    "unchanged": true,
+    "sha256": "500077304ef1825e6cc1c15aea1ce25047047b13e3b4f75afed6c2b8ec77352f"
+  },
+  "dist\\assets\\index-C39d7Svm.css": {
+    "unchanged": true,
+    "sha256": "c253cf7b9ffff03e90084d6a10247d2141ee32122255b6958a3f953e1596ec23"
+  },
+  "dist\\assets\\index-vo7WLtKX.js": {
+    "unchanged": true,
+    "sha256": "a1df5c5c94f0ff13bb4b15574a9fb0d4ad24b226c8a4414b713180443bba0bd3"
+  }
+}

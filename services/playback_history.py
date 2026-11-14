@@ -294,6 +294,14 @@ class PlaybackHistoryService:
             "subtitle_delay_ms": row.get("subtitle_delay_ms", 0),
         }
 
+    def flush_session(self, session):
+        """Save the departing file before a same-window playlist replacement."""
+        context = getattr(session, 'playback_context', None)
+        if context and not context.get('resume_choice_pending'):
+            result = self._persist(context)
+            if not result['accepted']:
+                raise PlaybackHistoryError('Playback progress changed; reopen the file before switching')
+
     def handle_event(self, session, message):
         context = getattr(session, "playback_context", None)
         if not context:
@@ -461,6 +469,9 @@ class PlaybackHistoryService:
                 "tmdb_id": movie["tmdb_id"],
                 "imdb_id": movie["imdb_id"],
                 "title": movie["title"][:512],
+                "original_title": canonical.get("original_title", ""),
+                "original_language": canonical.get("original_language", ""),
+                "language": canonical.get("language", ""),
                 "year": movie["year"][:16],
                 "poster_url": movie["poster_url"],
                 "position_ms": position,

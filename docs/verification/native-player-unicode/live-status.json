@@ -1,0 +1,62 @@
+{
+  "architecture": "x86_64",
+  "bundle_version": "0.1.36-qt6.10.3-mpv20260610-lgpl-cp2.8.5",
+  "detail": "The built-in player runtime is ready.",
+  "ipc_protocol_version": 1,
+  "mpv_version": "git-48e6c35c0e05",
+  "notices": [
+    {
+      "component": "Qt",
+      "source": "https://www.qt.io/development/open-source-lgpl-obligations",
+      "spdx": "LGPL-3.0-only"
+    },
+    {
+      "component": "mpv",
+      "source": "https://github.com/mpv-player/mpv",
+      "spdx": "LGPL-2.1-or-later"
+    },
+    {
+      "component": "FFmpeg",
+      "source": "https://ffmpeg.org/legal.html",
+      "spdx": "LGPL-3.0-or-later"
+    },
+    {
+      "component": "Cinema Paradiso Player relinking instructions",
+      "source": "native/player/runtime/licenses/RELINKING.md",
+      "spdx": "LicenseRef-Relinking-Instructions"
+    },
+    {
+      "component": "Cinema Paradiso Player third-party notices",
+      "source": "native/player/runtime/licenses/THIRD-PARTY-NOTICES.md",
+      "spdx": "LicenseRef-Third-Party-Notices"
+    },
+    {
+      "component": "Cinema Paradiso Player source information",
+      "source": "native/player/runtime/licenses/SOURCE-OFFER.md",
+      "spdx": "LicenseRef-Source-Information"
+    }
+  ],
+  "os_fallback_available": true,
+  "player_version": "0.1.36",
+  "qt_version": "6.10.3",
+  "ready": true,
+  "state": "ready",
+  "subtitles": {
+    "opensubtitles": {
+      "configured": true,
+      "last_error": "",
+      "last_latency_ms": 0,
+      "last_result_count": 0,
+      "rate_limited_until": 0,
+      "state": "disabled"
+    },
+    "subdl": {
+      "configured": false,
+      "last_error": "",
+      "last_latency_ms": 0,
+      "last_result_count": 0,
+      "rate_limited_until": 0,
+      "state": "disabled"
+    }
+  }
+}

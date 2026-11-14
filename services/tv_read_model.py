@@ -22,14 +22,17 @@ class TVReadModel:
     def __init__(self, repository):
         self.repository = repository
 
-    def coverage(self, series, rows):
+    def coverage(self, series, rows, *, read_context=None):
         """The only TV episode-count policy used by cards, detail and search."""
+        if read_context is not None and series['id'] in read_context.coverage_results:
+            return read_context.coverage_results[series['id']]
         regular = [row for row in rows if row['season_number'] > 0]
         released_regular = [row for row in regular if row['released']]
         specials = [row for row in rows if row['season_number'] == 0]
         future = [row for row in regular if row['air_date'] and not row['released']]
         unknown = [row for row in regular if not row['air_date']]
-        hydration = self.repository.hydration(series['id'])
+        facts = self.repository.coverage_facts(series['id'], read_context=read_context)
+        hydration = facts['hydration']
         listed = {int(season['season_number']): int(season.get('episode_count') or 0)
                   for season in series.get('seasons', []) if int(season['season_number']) > 0}
         loaded = {number: sum(row['season_number'] == number for row in regular) for number in listed}
@@ -40,12 +43,10 @@ class TVReadModel:
         offline = sum(row['available'] for row in released_regular)
         watched = sum(bool(row['completed']) for row in released_regular)
         total = len(released_regular)
-        with self.repository.store.connection() as db:
-            pending = db.execute("SELECT COUNT(*) FROM ingestion_candidates WHERE state='needs_review' "
-                                 "AND CAST(json_extract(payload,'$.series_id') AS INTEGER)=?", (series['id'],)).fetchone()[0]
-            show_action = db.execute('SELECT 1 FROM series_watched_actions WHERE series_id=?', (series['id'],)).fetchone() is not None
+        pending = facts['pending_review_count']
+        show_action = facts['series_watched_action_active']
         percent = lambda count: min(100, max(0, int(100 * count / total + 0.5))) if complete and total else None
-        return {'episode_count': total, 'available_count': offline, 'completed_count': watched,
+        result = {'episode_count': total, 'available_count': offline, 'completed_count': watched,
                 'offline_percent': percent(offline), 'watched_percent': percent(watched),
                 'coverage_complete': complete, 'hydration_status': hydration['status'],
                 'hydration_error': hydration.get('error', ''), 'pending_review_count': pending,
@@ -55,6 +56,9 @@ class TVReadModel:
                 'series_watched': bool(complete and total and watched == total
                                        and str(series.get('status') or '').casefold() == 'ended'),
                 'series_watched_action_active': show_action}
+        if read_context is not None:
+            read_context.coverage_results[series['id']] = result
+        return result
 
     def maintenance(self, *, query='', page=1, page_size=50):
         """Paginated TV-only review and exclusion projection for Maintenance."""
@@ -93,7 +97,7 @@ class TVReadModel:
                 'total': total, 'page': page, 'page_size': page_size,
                 'total_pages': max(1, (total+page_size-1)//page_size)}
 
-    def tv_lists(self, *, list_id=None, query='', page=1, page_size=40, status='all'):
+    def tv_lists(self, *, list_id=None, query='', page=1, page_size=40, status='all', criteria=None):
         custom = self.repository.tv_lists()
         with self.repository.store.connection() as db:
             watchlisted = {row[0] for row in db.execute('SELECT series_id FROM series_curation WHERE watchlisted=1')}
@@ -128,6 +132,11 @@ class TVReadModel:
         elif status == 'watched':
             items = [item for item in items if item['series_watched']]
         items.sort(key=lambda row: row['title'].casefold())
+        if criteria is not None:
+            from services.tv_search import TVSearch, matches, sort_rows
+            normalized = TVSearch.normalize(criteria, 'discover')
+            items = [item for item in items if matches(item, normalized)]
+            items = sort_rows(items, normalized['sort']['key'], normalized['sort']['direction'])
         page = max(1, int(page))
         page_size = min(100, max(1, int(page_size)))
         total = len(items)
@@ -172,14 +181,16 @@ class TVReadModel:
         return {'items': items, 'total': total, 'page': page, 'page_size': page_size,
                 'total_pages': max(1, (total + page_size - 1) // page_size)}
 
-    def detail(self, series_id):
-        series = self.repository.series(series_id)
-        rows = self.repository.episodes(series_id)
-        coverage = self.coverage(series, rows)
+    def detail(self, series_id, *, read_context=None):
+        arguments = {'read_context': read_context} if read_context is not None else {}
+        series = self.repository.series(series_id, **arguments)
+        rows = (self.repository.library_episode_rows(series_id, read_context=read_context)
+                if read_context is not None else self.repository.episodes(series_id))
+        coverage = self.coverage(series, rows, **arguments)
         regular = [row for row in rows if row['season_number'] > 0]
         released_regular = [row for row in regular if row['released']]
         available = [row for row in rows if row['available'] and row['released']]
-        cursor = self.repository.viewing_cursor(series_id)
+        cursor = self.repository.viewing_cursor(series_id, **arguments)
         played = next((row for row in regular if cursor and row['id'] == cursor['episode_id']), None)
         if played and not played['completed']:
             current, label = played, 'Resume'

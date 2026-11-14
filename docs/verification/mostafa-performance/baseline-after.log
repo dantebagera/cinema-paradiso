@@ -1,0 +1,217 @@
+{
+  "databases": {
+    "main": [
+      {
+        "path": "C:\\Users\\dante\\Desktop\\cinema paradiso\\data\\acquisition.sqlite",
+        "integrity": "ok"
+      },
+      {
+        "path": "C:\\Users\\dante\\Desktop\\cinema paradiso\\data\\tv-catalog.sqlite",
+        "integrity": "ok"
+      },
+      {
+        "path": "C:\\Users\\dante\\Desktop\\cinema paradiso\\data\\awards\\awards.sqlite",
+        "integrity": "ok"
+      },
+      {
+        "path": "C:\\Users\\dante\\AppData\\Local\\Cinema Paradiso\\Catalog\\catalog-read-cb30c1d963c88463.sqlite",
+        "integrity": "ok"
+      }
+    ],
+    "worktree": [
+      {
+        "path": "C:\\Users\\dante\\.codex\\worktrees\\mostafa-ui-ux\\cinema paradiso\\data\\acquisition.sqlite",
+        "integrity": "ok"
+      },
+      {
+        "path": "C:\\Users\\dante\\.codex\\worktrees\\mostafa-ui-ux\\cinema paradiso\\data\\catalog.sqlite",
+        "integrity": "ok"
+      },
+      {
+        "path": "C:\\Users\\dante\\.codex\\worktrees\\mostafa-ui-ux\\cinema paradiso\\data\\tv-catalog.sqlite",
+        "integrity": "ok"
+      },
+      {
+        "path": "C:\\Users\\dante\\.codex\\worktrees\\mostafa-ui-ux\\cinema paradiso\\data\\awards\\awards.sqlite",
+        "integrity": "ok"
+      }
+    ]
+  },
+  "http": {
+    "5000/api/user/lists": {
+      "status": 200,
+      "sha256": "6ce516a85bd563749ed6c49f90b1eb0f61d937032ef03142acf8dd530bd2ff08",
+      "lists": [
+        {
+          "id": "watched",
+          "name": "Watched",
+          "count": 167
+        },
+        {
+          "id": "watchlist",
+          "name": "Watchlist",
+          "count": 69
+        },
+        {
+          "id": "80s-sf",
+          "name": "80s SF",
+          "count": 45
+        },
+        {
+          "id": "alan-rickman-movies",
+          "name": "Alan Rickman movies",
+          "count": 25
+        },
+        {
+          "id": "rw",
+          "name": "rw",
+          "count": 55
+        },
+        {
+          "id": "top-rated-sci-fi-from-2010",
+          "name": "top rated sci-fi from 2010",
+          "count": 20
+        },
+        {
+          "id": "adam",
+          "name": "adam",
+          "count": 4
+        },
+        {
+          "id": "ed",
+          "name": "ED",
+          "count": 25
+        },
+        {
+          "id": "redownload",
+          "name": "redownload",
+          "count": 1
+        },
+        {
+          "id": "td",
+          "name": "td",
+          "count": 7
+        },
+        {
+          "id": "academy-best-pic",
+          "name": "Academy best pic",
+          "count": 99
+        },
+        {
+          "id": "slow-horror",
+          "name": "slow horror",
+          "count": 30
+        },
+        {
+          "id": "mama-terry",
+          "name": "mama terry",
+          "count": 2
+        },
+        {
+          "id": "predator",
+          "name": "Predator",
+          "count": 9
+        },
+        {
+          "id": "kids",
+          "name": "kids",
+          "count": 2
+        }
+      ]
+    },
+    "5000/library": {
+      "status": 200,
+      "sha256": "d9d51b9174ae48cf421979d2ebb6c0e16de147e1d716ffc873038a1084ceaba9"
+    },
+    "15000/api/user/lists": {
+      "status": 200,
+      "sha256": "9e26a65b9c2b8de747dd56f52c2e36f97940fdf1d28b35c460624d00cfe76aed",
+      "lists": [
+        {
+          "id": "watched",
+          "name": "Watched",
+          "count": 166
+        },
+        {
+          "id": "watchlist",
+          "name": "Watchlist",
+          "count": 69
+        },
+        {
+          "id": "80s-sf",
+          "name": "80s SF",
+          "count": 45
+        },
+        {
+          "id": "alan-rickman-movies",
+          "name": "Alan Rickman movies",
+          "count": 25
+        },
+        {
+          "id": "rw",
+          "name": "rw",
+          "count": 55
+        },
+        {
+          "id": "top-rated-sci-fi-from-2010",
+          "name": "top rated sci-fi from 2010",
+          "count": 20
+        },
+        {
+          "id": "adam",
+          "name": "adam",
+          "count": 4
+        },
+        {
+          "id": "ed",
+          "name": "ED",
+          "count": 25
+        },
+        {
+          "id": "redownload",
+          "name": "redownload",
+          "count": 1
+        },
+        {
+          "id": "td",
+          "name": "td",
+          "count": 7
+        },
+        {
+          "id": "academy-best-pic",
+          "name": "Academy best pic",
+          "count": 99
+        },
+        {
+          "id": "slow-horror",
+          "name": "slow horror",
+          "count": 30
+        },
+        {
+          "id": "mama-terry",
+          "name": "mama terry",
+          "count": 2
+        },
+        {
+          "id": "predator",
+          "name": "Predator",
+          "count": 9
+        },
+        {
+          "id": "kids",
+          "name": "kids",
+          "count": 2
+        }
+      ]
+    },
+    "15000/library": {
+      "status": 200,
+      "sha256": "b4563154186a74173db5d395105be50bfefb6aeddda30ab90c9c422398b5d4c5"
+    }
+  },
+  "backend_differences": [
+    "services\\tv_metadata.py",
+    "services\\tv_read_model.py",
+    "services\\tv_routes.py"
+  ]
+}

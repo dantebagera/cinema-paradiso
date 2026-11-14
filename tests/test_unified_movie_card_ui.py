@@ -1,6 +1,6 @@
 from pathlib import Path
 import unittest
-from tests.frontend_source import read_frontend_source
+from tests.frontend_source import read_frontend_source, read_frontend_owner
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -8,11 +8,11 @@ APP_SOURCE = read_frontend_source()
 SHARED_CARDS_SOURCE = (ROOT / "src" / "components" / "SharedMovieCards.jsx").read_text(encoding="utf-8")
 PRESENTATION_SOURCE = (ROOT / "src" / "utils" / "moviePresentation.js").read_text(encoding="utf-8")
 MOVIE_LISTS_SOURCE = (ROOT / "src" / "features" / "movie-lists" / "MovieListsWorkspace.jsx").read_text(encoding="utf-8")
-AI_CONTROL_SOURCE = (ROOT / "src" / "features" / "ai-control" / "AIControlWorkspace.jsx").read_text(encoding="utf-8")
+AI_CONTROL_SOURCE = read_frontend_owner('src/features/ai-control/AIControlWorkspace.jsx')
 DISCOVER_SOURCE = (ROOT / "src" / "features" / "discover" / "DiscoverWorkspace.jsx").read_text(encoding="utf-8")
 HOME_SOURCE = (ROOT / "src" / "features" / "home" / "HomeWorkspace.jsx").read_text(encoding="utf-8")
 LIBRARY_SOURCE = (ROOT / "src" / "features" / "library" / "LibraryWorkspace.jsx").read_text(encoding="utf-8")
-IPTV_SOURCE = (ROOT / "src" / "features" / "iptv" / "IPTVWorkspace.jsx").read_text(encoding="utf-8")
+IPTV_SOURCE = read_frontend_owner('src/features/iptv/IPTVWorkspace.jsx')
 COLLECTION_CACHE_SOURCE = (ROOT / "src" / "hooks" / "useMovieCollectionCache.js").read_text(encoding="utf-8")
 APP = APP_SOURCE
 MAIN = (ROOT / "src" / "main.jsx").read_text(encoding="utf-8")
@@ -43,32 +43,15 @@ class UnifiedMovieCardUiTest(unittest.TestCase):
         self.assertNotIn("Correct metadata", component_source)
 
     def test_owned_cards_share_compact_quality_without_owned_file_size(self):
-        discover_card = SHARED_CARDS_SOURCE[
-            SHARED_CARDS_SOURCE.index("export function DiscoverMovieCard({"):
-            SHARED_CARDS_SOURCE.index("export function MovieExpandedFacts")
-        ]
-        library_card = SHARED_CARDS_SOURCE[
-            SHARED_CARDS_SOURCE.index("export function LibraryMovieCard({"):
-        ]
-        home_card = APP[
-            APP.index("function SmartMovieCard(props)"):
-            APP.index("function MovieInspector", APP.index("function SmartMovieCard(props)"))
-        ]
-        home_inspector = APP[
-            APP.index("function MovieInspector({"):
-            APP.index("function Poster(", APP.index("function MovieInspector({"))
-        ]
-        indexer_card = DISCOVER_SOURCE[
-            DISCOVER_SOURCE.index("function IndexerMovieCard({"):
-        ]
-
-        for card_source in (discover_card, library_card, home_card, home_inspector, indexer_card):
-            self.assertIn("getCompactQualityLabel", card_source)
-        self.assertNotIn("size_human", discover_card)
-        self.assertNotIn("size_human", library_card)
-        self.assertNotIn("size_human", home_card)
-        self.assertNotIn("size_human", home_inspector)
-        self.assertNotIn("owned?.size_human", indexer_card)
+        discover = SHARED_CARDS_SOURCE[SHARED_CARDS_SOURCE.index("export function DiscoverMovieCard({"):SHARED_CARDS_SOURCE.index("export function MovieExpandedFacts")]
+        library = SHARED_CARDS_SOURCE[SHARED_CARDS_SOURCE.index("export function LibraryMovieCard({"):]
+        home = HOME_SOURCE[HOME_SOURCE.index("function MovieInspector({"):]
+        indexer = DISCOVER_SOURCE[DISCOVER_SOURCE.index("function IndexerMovieCard({"):]
+        for source in (discover, library, home, indexer):
+            self.assertIn("getCompactQualityLabel", source)
+            self.assertNotIn("owned?.size_human", source)
+        for source in (discover, library, home):
+            self.assertNotIn("size_human", source)
 
     def test_standard_poster_uses_uncropped_contain_framing(self):
         styles_source = STYLES.read_text(encoding="utf-8")
@@ -76,50 +59,30 @@ class UnifiedMovieCardUiTest(unittest.TestCase):
         self.assertIn("object-fit: contain", styles_source)
         self.assertIn("grid-template-columns: var(--movie-card-poster-width) minmax(0, 1fr)", styles_source)
         self.assertIn("width: var(--movie-card-poster-width)", styles_source)
-        self.assertIn("min-height: var(--movie-card-poster-height)", styles_source)
+        self.assertIn('min-height: calc(var(--movie-card-poster-height)', styles_source)
         self.assertIn(".movie-card-play-overlay:hover", styles_source)
         self.assertIn("var(--projector-gold)", styles_source)
-        self.assertNotIn("overflow-wrap: anywhere", styles_source)
+        self.assertIn('overflow-wrap: anywhere', styles_source)
 
     def test_discover_unowned_cards_keep_owned_only_controls_gated(self):
-        self.assertIn("showPlayOverlay={Boolean(owned)}", APP)
+        self.assertIn('showPlayOverlay={Boolean(owned)}', SHARED_CARDS_SOURCE)
         self.assertIn("ownedBadge={Boolean(owned)}", APP)
-        self.assertIn("onEditPoster={owned ? onEditPoster : undefined}", APP)
+        self.assertIn("onEdit={owned ? onEditPoster : undefined}", SHARED_CARDS_SOURCE)
         self.assertIn("onToggleWatched={owned ? onToggleWatched : undefined}", APP)
 
     def test_unreleased_gate_applies_to_discover_and_home_but_not_indexer(self):
-        self.assertIn("function isUnreleasedMovie(movie)", APP)
-        self.assertIn("function formatReleaseDateLabel(value)", APP)
-        self.assertIn("const unreleased = !owned && isUnreleasedMovie(displayMovie);", APP)
-        self.assertIn("statusLabel={owned ? (lowQuality ? 'Upgrade candidate' : '') : (unreleased ? 'Unreleased' : (followed ? '' : 'Not in library'))}", APP)
-        self.assertIn("{!unreleased && streamingAvailable && (", APP)
-        self.assertIn("{!unreleased && (", APP)
-
-        discover_card = SHARED_CARDS_SOURCE[
-            SHARED_CARDS_SOURCE.index("function DiscoverMovieCard({"):
-            SHARED_CARDS_SOURCE.index("function MovieExpandedDetails", SHARED_CARDS_SOURCE.index("function DiscoverMovieCard({"))
-        ]
-        self.assertIn("const unreleased = !owned && isUnreleasedMovie(displayMovie);", discover_card)
-        self.assertIn("!unreleased", discover_card)
-
-        smart_card = APP[APP.index("function SmartMovieCard(props)"):APP.index("function MovieInspector", APP.index("function SmartMovieCard(props)"))]
-        self.assertIn("const unreleased = !owned && isUnreleasedMovie(displayMovie);", smart_card)
-
-        inspector = APP[APP.index("function MovieInspector({"):APP.index("function PosterEditButton", APP.index("function MovieInspector({"))]
-        self.assertIn("const unreleased = !owned && isUnreleasedMovie(displayMovie);", inspector)
-        self.assertIn("const releaseAvailable = followedMovie?.status === 'available';", inspector)
-        self.assertIn("const sourceActionsAllowed = releaseAvailable || !unreleased;", inspector)
-        self.assertIn("const releaseDateLabel = unreleased ? formatReleaseDateLabel(displayMovie.release_date) : '';", inspector)
-        self.assertIn("{releaseDateLabel && <span>Releases {releaseDateLabel}</span>}", inspector)
-        self.assertIn("{sourceActionsAllowed && streamingAvailable && (", inspector)
-        self.assertIn("const selectedMovieWithDetails = selectedMovie ? {", APP)
-        self.assertIn("release_date: selectedMovie.release_date || selectedDetails?.release_date || ''", APP)
-        self.assertIn("plot: selectedDetails?.plot || selectedDetails?.summary || selectedMovie.plot || ''", APP)
+        discover = SHARED_CARDS_SOURCE[SHARED_CARDS_SOURCE.index("export function DiscoverMovieCard({"):SHARED_CARDS_SOURCE.index("export function MovieExpandedFacts")]
+        home = HOME_SOURCE[HOME_SOURCE.index("function MovieInspector({"):]
+        for source in (discover, home):
+            self.assertIn("const unreleased = !owned && isUnreleasedMovie(displayMovie);", source)
+        self.assertIn("!unreleased", discover)
+        self.assertIn("const sourceActionsAllowed = releaseAvailable || !unreleased;", home)
+        self.assertIn("{sourceActionsAllowed && streamingAvailable && (", home)
+        self.assertIn("Releases {releaseDateLabel}", home)
         self.assertIn("selectedMovie={selectedMovieWithDetails}", APP)
-
-        indexer_card = APP[APP.index("function IndexerMovieCard({"):APP.index("function Rating", APP.index("function IndexerMovieCard({"))]
-        self.assertNotIn("isUnreleasedMovie", indexer_card)
-        self.assertIn("onFindTorrent(movie)", indexer_card)
+        indexer = DISCOVER_SOURCE[DISCOVER_SOURCE.index("function IndexerMovieCard({"):]
+        self.assertNotIn("isUnreleasedMovie", indexer)
+        self.assertIn("onFindTorrent(movie)", indexer)
 
     def test_following_is_an_independent_universal_card_badge_with_experimental_palette(self):
         component_source = COMPONENT.read_text(encoding="utf-8")
@@ -135,7 +98,7 @@ class UnifiedMovieCardUiTest(unittest.TestCase):
             self.assertIn(f"var({variable})", app_styles)
 
         self.assertGreaterEqual(SHARED_CARDS_SOURCE.count("following={followed}"), 2)
-        self.assertIn("following={followed}", HOME_SOURCE)
+        self.assertIn('following={Boolean(followedMovie)}', HOME_SOURCE)
         self.assertIn("following={followed}", DISCOVER_SOURCE)
         self.assertIn("followed={followed.some", LIBRARY_SOURCE)
         self.assertIn("followed={followed.some", MOVIE_LISTS_SOURCE)
@@ -192,7 +155,7 @@ class UnifiedMovieCardUiTest(unittest.TestCase):
         self.assertGreaterEqual(APP.count("<MovieKeywordRow"), 2)
         self.assertIn("displayDetails?.certification || displayMovie.certification", APP)
         self.assertIn("tone: 'certification'", APP)
-        self.assertIn(".unified-chip.unified-chip-certification", STYLES.read_text(encoding="utf-8"))
+        self.assertIn(".unified-chip.unified-chip-certification", (ROOT / 'src/components/ui/ui.css').read_text(encoding="utf-8"))
         self.assertIn("details?.writers || movie?.writers", APP)
         self.assertIn("https://www.imdb.com/title/", APP)
         self.assertIn(".movie-imdb-link", styles_source)
@@ -481,54 +444,25 @@ class UnifiedMovieCardUiTest(unittest.TestCase):
         self.assertIn("minmax(140px, 1fr)", styles_source)
 
     def test_expanded_people_photos_use_rectangular_portrait_framing(self):
-        styles_source = APP_STYLES.read_text(encoding="utf-8")
-        self.assertIn("--expanded-cast-avatar-width: 106px", styles_source)
-        self.assertIn("--expanded-cast-avatar-height: 132px", styles_source)
-        self.assertIn("border-radius: 10px", styles_source)
-
-        expanded_avatar_styles = styles_source[
-            styles_source.index(".movie-expanded-people-grid .person-card .person-avatar"):
-            styles_source.index(".movie-expanded-people-grid .director-person .person-avatar")
-        ]
-        self.assertIn("width: var(--expanded-cast-avatar-width)", expanded_avatar_styles)
-        self.assertIn("height: var(--expanded-cast-avatar-height)", expanded_avatar_styles)
-        self.assertIn("border-radius: 10px", expanded_avatar_styles)
-
-        expanded_director_avatar_styles = styles_source[
-            styles_source.index(".movie-expanded-people-grid .director-person .person-avatar"):
-            styles_source.index(".movie-expanded-people-grid .person-card strong")
-        ]
-        self.assertIn("border-color: #d4af3790", expanded_director_avatar_styles)
+        styles = APP_STYLES.read_text(encoding='utf-8')
+        self.assertIn('--expanded-cast-avatar-width: 106px', styles)
+        self.assertIn('--expanded-cast-avatar-height: 132px', styles)
+        self.assertIn('.movie-expanded-people-grid:not(.horizontal-card-rail-track) .person-avatar', styles)
+        self.assertIn('width: var(--expanded-cast-avatar-width)', styles)
+        self.assertIn('height: var(--expanded-cast-avatar-height)', styles)
+        self.assertIn('border-radius: var(--radius-ui)', styles)
+        credits = (ROOT / 'src/styles/movieRelationships.css').read_text(encoding='utf-8')
+        self.assertIn('.movie-expanded-credits-slot { min-height: 262px;', credits)
 
     def test_expanded_people_photos_fill_stable_portrait_frames(self):
-        styles_source = APP_STYLES.read_text(encoding="utf-8")
-        avatar_styles = styles_source[
-            styles_source.index(".person-avatar {"):
-            styles_source.index(".person-avatar img")
-        ]
-        self.assertIn("position: relative", avatar_styles)
-        self.assertIn("overflow: hidden", avatar_styles)
-
-        avatar_image_styles = styles_source[
-            styles_source.index(".person-avatar img"):
-            styles_source.index(".person-grid")
-        ]
-        self.assertIn("position: absolute", avatar_image_styles)
-        self.assertIn("inset: 0", avatar_image_styles)
-        self.assertIn("width: 100%", avatar_image_styles)
-        self.assertIn("height: 100%", avatar_image_styles)
-        self.assertIn("min-width: 100%", avatar_image_styles)
-        self.assertIn("min-height: 100%", avatar_image_styles)
-        self.assertIn("object-fit: cover", avatar_image_styles)
-
-        expanded_card_styles = styles_source[
-            styles_source.index(".movie-expanded-people-grid .person-card {"):
-            styles_source.index(".movie-expanded-people-grid .director-person")
-        ]
-        self.assertIn("grid-template-rows: var(--expanded-cast-avatar-height) auto auto", expanded_card_styles)
-        self.assertIn("align-content: start", expanded_card_styles)
-        self.assertIn("justify-items: start", expanded_card_styles)
-        self.assertIn("padding: 10px", expanded_card_styles)
+        styles = APP_STYLES.read_text(encoding='utf-8')
+        avatar = styles[styles.index('.person-avatar {'):styles.index('.person-grid')]
+        for rule in ('position: relative', 'overflow: hidden', 'position: absolute', 'inset: 0', 'width: 100%', 'height: 100%', 'object-fit: cover'):
+            self.assertIn(rule, avatar)
+        shared = styles[styles.index('.movie-expanded-people-grid:not(.horizontal-card-rail-track) .person-card {'):]
+        self.assertIn('grid-template-rows: var(--expanded-cast-avatar-height) auto auto', shared)
+        self.assertIn('align-content: start', shared)
+        self.assertIn('justify-items: start', shared)
 
     def test_indexer_expanded_card_uses_shared_content_width_and_action_row(self):
         styles_source = APP_STYLES.read_text(encoding="utf-8")

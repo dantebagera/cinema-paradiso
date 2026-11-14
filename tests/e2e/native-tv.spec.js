@@ -10,17 +10,19 @@ test('TV library uses CP cards, preserves movie state and opens a dedicated seri
   await page.goto('/library');
   const switcher = page.getByRole('tablist', { name: 'Library media' });
   await switcher.getByRole('button', { name: 'TV Shows', exact: true }).click();
-  await expect(page.getByRole('link', { name: 'Open Harbor Signals' })).toContainText('2 seasons · 4 episodes');
+  await expect(page.getByRole('link', { name: 'Open Harbor Signals' })).toContainText('2 seas. · 4 eps.');
   await expect(page.getByRole('link', { name: 'Open Harbor Signals' })).toContainText('Mixed quality');
+  await page.getByRole('button', { name: 'Search, filters & selection', exact: true }).click();
   await page.getByRole('textbox', { name: 'Search TV shows', exact: true }).fill('Harbor');
   await page.getByRole('button', { name: 'Search TV', exact: true }).click();
   await switcher.getByRole('button', { name: 'Movies', exact: true }).click();
-  await expect(page.getByText('Movie View', { exact: true }).first()).toBeVisible();
+  await expect(page.getByRole('region', { name: 'Library Movies', exact: true })).toBeVisible();
   await switcher.getByRole('button', { name: 'TV Shows', exact: true }).click();
   await expect(page.getByRole('textbox', { name: 'Search TV shows', exact: true })).toHaveValue('Harbor');
   await page.screenshot({ path: 'docs/verification/tv-normal-import/parity/library.png', fullPage: true });
   await page.getByRole('link', { name: 'Open Harbor Signals' }).click();
   await expect(page).toHaveURL(/\/tv\/series\/1$/);
+  await expect(page.locator('main.workspace')).toHaveCSS('padding-top', '16px');
   await expect(page.getByRole('heading', { name: 'Harbor Signals', exact: true })).toBeVisible();
   await expect(page.getByRole('article', { name: 'S01E02 The Signal' })).toContainText('Missing locally');
   await page.screenshot({ path: 'docs/verification/tv-normal-import/parity/series.png', fullPage: true });
@@ -33,6 +35,7 @@ test('TV selection previews exact local deletion and one-shot download without e
   await page.goto('/library');
   await page.getByRole('tablist', { name: 'Library media' }).getByRole('button', { name: 'TV Shows', exact: true }).click();
   await page.getByRole('checkbox', { name: 'Select Harbor Signals' }).locator('..').click();
+  await page.getByRole('button', { name: 'Search, filters & selection', exact: true }).click();
   await page.getByRole('button', { name: 'Delete local files' }).click();
   const deletion = page.getByRole('dialog', { name: 'Review TV file deletion' });
   await expect(deletion).toContainText('Recycle Bin');
@@ -64,6 +67,7 @@ test('episode streaming targets exact released episode without marking watched',
   await page.route('https://example.invalid/**', (route) => route.fulfill({ body: '<p>Fixture stream</p>', contentType: 'text/html' }));
   await page.goto('/tv/series/1');
   const row = page.getByRole('article', { name: 'S01E02 The Signal' });
+  expect(await row.getByRole('button', { name: 'Stream', exact: true }).evaluate(el => getComputedStyle(el).color)).toBe('rgb(34, 197, 94)');
   await row.getByRole('button', { name: 'Stream', exact: true }).click();
   await expect(page.locator('iframe[src="https://example.invalid/tv/900001/1/2"]')).toBeVisible();
   const season = await (await request.get('/api/tv/series/1/seasons/1')).json();

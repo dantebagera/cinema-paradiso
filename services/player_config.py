@@ -62,6 +62,7 @@ def default_player_config():
         "prefer_forced_subtitles": False,
         "prefer_hearing_impaired_subtitles": False,
         "resume_enabled": True,
+        "autoplay": True,
         "minimum_resume_seconds": 30,
         "completion_threshold": 0.92,
         "auto_mark_completed_watched": True,
@@ -220,6 +221,7 @@ class PlayerConfig:
             "prefer_forced_subtitles",
             "prefer_hearing_impaired_subtitles",
             "resume_enabled",
+            "autoplay",
             "auto_mark_completed_watched",
             "auto_subtitle_search",
         }

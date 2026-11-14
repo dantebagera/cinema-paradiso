@@ -126,5 +126,6 @@ def resolve_library_media(
         "tmdb_id": str(canonical.get("tmdb_id") or candidate.get("tmdb_id") or "")[:64],
         "imdb_id": str(canonical.get("imdb_id") or candidate.get("imdb_id") or "")[:64],
         "release_date": str(canonical.get("release_date") or "")[:32],
+        "collection_id": str((canonical.get("collection") or {}).get("id") or ""),
         "poster_reference": poster_reference,
     }

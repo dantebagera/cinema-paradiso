@@ -1,3 +1,6 @@
+import { Select } from './ui/FormField.jsx';
+import Button from './ui/Button.jsx';
+import DialogShell, { DialogHeader, DialogActions } from './ui/DialogShell.jsx';
 import AcquisitionDecisionDetails from './AcquisitionDecisionDetails.jsx';
 import { AlertTriangle, Download, Loader2, X } from 'lucide-react';
 import { submitSourceReview } from '../api/sourceReview.js';
@@ -60,16 +63,16 @@ export default function SourceReviewDialog({ state, setState, onClose, notify, o
 
   return (
     <div className="modal-backdrop" role="presentation" onClick={onClose}>
-      <section className="torrent-dialog source-review-dialog" role="dialog" aria-modal="true" aria-label={state.title || 'Source review'} onClick={(event) => event.stopPropagation()}>
-        <div className="dialog-header">
+      <DialogShell size="wide" className="torrent-dialog source-review-dialog" role="dialog" aria-modal="true" aria-label={state.title || 'Source review'} onClick={(event) => event.stopPropagation()}>
+        <DialogHeader >
           <div>
             <p className="screen-kicker">Trusted source review</p>
             <h2>{state.title || 'Find sources'}</h2>
           </div>
-          <button type="button" className="inspector-close" onClick={onClose} aria-label="Close source review">
+          <Button size="icon" type="button" className="inspector-close" onClick={onClose} aria-label="Close source review">
             <X size={18} />
-          </button>
-        </div>
+          </Button>
+        </DialogHeader>
 
         {state.loading ? (
           <div className="source-loading-panel"><Loader2 size={20} className="spin" /><strong>Finding trusted sources...</strong><span>This may take some time depending on selected indexers.</span></div>
@@ -77,10 +80,10 @@ export default function SourceReviewDialog({ state, setState, onClose, notify, o
           <>
             <div className="bulk-selection-bar source-review-actions">
               <span>{formatCount(selectedCount)} selected for download</span>
-              <button type="button" className="mini-action" onClick={() => setAllRows(true)}>Select all</button>
-              <button type="button" className="mini-action" onClick={() => setAllRows(false)}>Select none</button>
-              <button type="button" className="mini-action" onClick={() => setSelectedQuality('1080p')}>Set selected to 1080p</button>
-              <button type="button" className="mini-action" onClick={() => setSelectedQuality('4K')}>Set selected to 4K</button>
+              <Button size="compact" type="button"  onClick={() => setAllRows(true)}>Select all</Button>
+              <Button size="compact" type="button"  onClick={() => setAllRows(false)}>Select none</Button>
+              <Button size="compact" type="button"  onClick={() => setSelectedQuality('1080p')}>Set selected to 1080p</Button>
+              <Button size="compact" type="button"  onClick={() => setSelectedQuality('4K')}>Set selected to 4K</Button>
             </div>
             {state.error ? <div className="library-status library-status-error"><AlertTriangle size={16} /> {state.error}</div> : null}
             <div className="source-review-table">
@@ -102,7 +105,7 @@ export default function SourceReviewDialog({ state, setState, onClose, notify, o
                   <span><strong>{row.title}</strong><small>{row.year || 'Unknown year'}</small></span>
                   <span title={row.variant?.title || row.reason || ''}>{row.variant?.title || row.reason || 'No release'}<AcquisitionDecisionDetails review={row.acquisition_review} /></span>
                   <span>{row.variant?.indexer || '-'}</span>
-                  <select
+                  <Select
                     value={row.quality || state.defaults?.quality || '1080p'}
                     disabled={!Object.values(row.variants_by_quality || {}).some(Boolean)}
                     onChange={(event) => updateRows((rows) => rows.map((item, itemIndex) => (
@@ -111,7 +114,7 @@ export default function SourceReviewDialog({ state, setState, onClose, notify, o
                   >
                     <option value="1080p">1080p</option>
                     <option value="4K">4K</option>
-                  </select>
+                  </Select>
                   <span>{row.status === 'ready' ? [row.upgrade ? 'Upgrade' : '', row.variant?.size_human, row.variant?.seeders ? `${row.variant.seeders} seeders` : ''].filter(Boolean).join(' - ') || 'Ready' : row.reason || row.status}</span>
                 </div>
               ))}
@@ -126,13 +129,13 @@ export default function SourceReviewDialog({ state, setState, onClose, notify, o
           </>
         )}
 
-        <div className="dialog-actions">
-          <button type="button" className="btn btn-secondary" onClick={onClose}>Cancel</button>
-          <button type="button" className="btn btn-primary" onClick={submitSelected} disabled={state.loading || state.submitting || !selectedCount}>
+        <DialogActions >
+          <Button type="button"  onClick={onClose}>Cancel</Button>
+          <Button variant="primary" type="button"  onClick={submitSelected} disabled={state.loading || state.submitting || !selectedCount}>
             {state.submitting ? <Loader2 size={15} className="spin" /> : <Download size={15} />} {onReviewComplete ? 'Apply selected sources' : 'Submit selected to qBittorrent'}
-          </button>
-        </div>
-      </section>
+          </Button>
+        </DialogActions>
+      </DialogShell>
     </div>
   );
 }

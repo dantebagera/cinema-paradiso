@@ -1,0 +1,62 @@
+--- before/native/player/src/MpvItem.cpp
++++ after/native/player/src/MpvItem.cpp
+@@ -206,11 +206,11 @@
+ 
+     applyPreferences(preferences);
+     const QByteArray thumbnailIdentity =
+-        QFile::encodeName(media.absoluteFilePath())
++        media.absoluteFilePath().toUtf8()
+         + QByteArray::number(media.size())
+         + QByteArray::number(media.lastModified().toMSecsSinceEpoch());
+     const QString isolatedCacheRoot =
+-        QString::fromLocal8Bit(qgetenv("CP_PLAYER_CACHE_ROOT")).trimmed();
++        qEnvironmentVariable("CP_PLAYER_CACHE_ROOT").trimmed();
+     const QString cacheRoot =
+         QFileInfo(isolatedCacheRoot).isAbsolute()
+             ? isolatedCacheRoot
+@@ -247,7 +247,8 @@
+     setStatus(QStringLiteral("Loading"));
+     return sendCommand({
+         QByteArrayLiteral("loadfile"),
+-        QFile::encodeName(media.absoluteFilePath()),
++        // libmpv requires UTF-8 filenames on Windows, not the ANSI code page.
++        media.absoluteFilePath().toUtf8(),
+         QByteArrayLiteral("replace"),
+     });
+ }
+@@ -351,7 +352,7 @@
+     }
+     const bool accepted = sendCommand({
+         QByteArrayLiteral("sub-add"),
+-        QFile::encodeName(subtitle.absoluteFilePath()),
++        subtitle.absoluteFilePath().toUtf8(),
+         QByteArrayLiteral("select"),
+     });
+     if (accepted) {
+@@ -439,7 +440,7 @@
+     );
+     if (!sendCommandAsync({
+             QByteArrayLiteral("screenshot-to-file"),
+-            QFile::encodeName(path),
++            path.toUtf8(),
+             QByteArrayLiteral("video"),
+         })) {
+         return QStringLiteral("Screenshot failed");
+@@ -685,7 +686,7 @@
+             m_thumbnailCaptureCommandId = m_thumbnailCommandId++;
+             m_thumbnailCapturePending = sendThumbnailCommandAsync({
+                 QByteArrayLiteral("screenshot-to-file"),
+-                QFile::encodeName(path),
++                path.toUtf8(),
+                 QByteArrayLiteral("video"),
+             }, m_thumbnailCaptureCommandId);
+             if (!m_thumbnailCapturePending) {
+@@ -882,7 +883,7 @@
+     m_thumbnailLoading = true;
+     if (!sendThumbnailCommand({
+             QByteArrayLiteral("loadfile"),
+-            QFile::encodeName(m_thumbnailMediaPath),
++            m_thumbnailMediaPath.toUtf8(),
+             QByteArrayLiteral("replace"),
+         })) {
+         qWarning() << "Seek preview disabled: media load command failed";

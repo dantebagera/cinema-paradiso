@@ -21,7 +21,8 @@ test('review renders the backend season destination and normal lifecycle in exis
 
 test('unsafe canonical show name retains source browsing while destination review blocks download', async ({ page }) => {
   await page.goto('/discover');
-  await page.getByRole('tablist', { name: 'Discover tools' }).getByRole('button', { name: 'Explore Shows' }).click();
+  await page.getByRole('tablist', { name: 'Discover tools' }).getByRole('button', { name: 'TV Shows' }).click();
+  await page.getByRole('button', { name: 'Search, filters & selection', exact: true }).click();
   await page.getByRole('textbox', { name: 'Search TV shows', exact: true }).fill('Daredevil: Born Again');
   await page.getByRole('button', { name: 'Search TV', exact: true }).click();
   await page.getByRole('link', { name: 'Open Daredevil: Born Again', exact: true }).click();

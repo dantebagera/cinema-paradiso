@@ -1,0 +1,58 @@
+**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.14.42
+** Copyright (c) 2025 Microsoft Corporation
+**********************************************************************
+-- The CXX compiler identification is MSVC 19.44.35229.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - not found
+-- Found Threads: TRUE
+-- Performing Test HAVE_STDATOMIC
+-- Performing Test HAVE_STDATOMIC - Success
+-- Found WrapAtomic: TRUE
+CMake Error at C:/Users/dante/AppData/Local/Temp/cp-player-unicode-20261022/qt/6.10.3/msvc2022_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake:388 (message):
+  The imported target "Qt6::syncqt" references the file
+
+     "C:/Users/dante/AppData/Local/Temp/cp-player-unicode-20261022/qt/6.10.3/msvc2022_64/bin/syncqt.exe"
+
+  but this file does not exist.  Possible reasons include:
+
+  * The file was deleted, renamed, or moved to another location.
+
+  * An install or uninstall procedure did not complete successfully.
+
+  * The installation package was faulty and contained
+
+     "C:/Users/dante/AppData/Local/Temp/cp-player-unicode-20261022/qt/6.10.3/msvc2022_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake"
+
+  but not all the files it references.
+
+Call Stack (most recent call first):
+  C:/Users/dante/AppData/Local/Temp/cp-player-unicode-20261022/qt/6.10.3/msvc2022_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfig.cmake:46 (include)
+  C:/Users/dante/AppData/Local/Temp/cp-player-unicode-20261022/qt/6.10.3/msvc2022_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:100 (find_package)
+  C:/Users/dante/AppData/Local/Temp/cp-player-unicode-20261022/qt/6.10.3/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake:43 (_qt_internal_find_tool_dependencies)
+  C:/Users/dante/AppData/Local/Temp/cp-player-unicode-20261022/qt/6.10.3/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake:42 (include)
+  C:/Users/dante/AppData/Local/Temp/cp-player-unicode-20261022/qt/6.10.3/msvc2022_64/lib/cmake/Qt6/Qt6Config.cmake:244 (find_package)
+  CMakeLists.txt:9 (find_package)
+
+
+CMake Warning at C:/Users/dante/AppData/Local/Temp/cp-player-unicode-20261022/qt/6.10.3/msvc2022_64/lib/cmake/Qt6/Qt6Config.cmake:244 (find_package):
+  Found package configuration file:
+
+    C:/Users/dante/AppData/Local/Temp/cp-player-unicode-20261022/qt/6.10.3/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake
+
+  but it set Qt6Core_FOUND to FALSE so package "Qt6Core" is considered to be
+  NOT FOUND.
+Call Stack (most recent call first):
+  CMakeLists.txt:9 (find_package)
+
+
+-- Configuring incomplete, errors occurred!

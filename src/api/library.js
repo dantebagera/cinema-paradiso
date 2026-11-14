@@ -80,6 +80,11 @@ export async function fetchOwnershipChecks(movies = []) {
       storeOwnershipCheck(missing[index] || result, result, freshTime);
       results.push(result);
     });
+    // The first ownership answer need not change catalog generation. Optional
+    // per-movie displays still need to recheck their permission after it arrives.
+    if (typeof window !== 'undefined') window.dispatchEvent(new CustomEvent('cp-ownership-resolved', {
+      detail: { identities: missing }
+    }));
   }
   return results;
 }

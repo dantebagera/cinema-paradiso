@@ -1,6 +1,19 @@
 import { expect, test } from '@playwright/test';
+
+async function openControls(page) {
+  const toggle = page.getByRole('button', { name: 'Search, filters & selection', exact: true });
+  await expect(toggle).toBeVisible();
+  if (await toggle.getAttribute('aria-expanded') === 'false') await toggle.click();
+}
 import fs from 'node:fs';
 import path from 'node:path';
+
+async function captureDesktopEvidence(page, name) {
+  if (!process.env.CP_INTEGRATION_EVIDENCE_DIR) return;
+  fs.mkdirSync(process.env.CP_INTEGRATION_EVIDENCE_DIR, { recursive: true });
+  await page.evaluate(async () => { await document.fonts.ready; await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))); });
+  await page.screenshot({ path: path.join(process.env.CP_INTEGRATION_EVIDENCE_DIR, `${name}.png`) });
+}
 
 const ingestionEvidenceDir = path.resolve(
   'docs/verification/online-library-ingestion/after'
@@ -178,11 +191,11 @@ async function mockCardParityApis(page, options = {}) {
 }
 
 const workspaces = [
-  ['/', 'heading', 'Home'],
-  ['/library', 'heading', 'Movie View'],
-  ['/movie-lists', 'heading', 'Lists'],
+  ['/', 'heading', 'Your movie archive, under command.'],
+  ['/library', 'region', 'Library Movies'],
+  ['/movie-lists', 'region', 'Search, filters and selection'],
   ['/cleanup', 'heading', /^Library Maintenance/],
-  ['/discover', 'heading', 'Discover'],
+  ['/discover', 'region', 'Search, filters and selection'],
   ['/ai-control', 'heading', /^AI Control/],
   ['/iptv', 'heading', 'IPTV'],
   ['/downloads', 'region', 'Downloads powered by qBittorrent'],
@@ -204,8 +217,62 @@ for (const [path, role, name] of workspaces) {
   });
 }
 
-test('release watcher keeps a three-row preview while View all and Following expose the complete set', async ({ page }) => {
-  await page.setViewportSize({ width: 1280, height: 720 });
+test('Home without playback history and shared desktop workspaces retain their layout', async ({ page }) => {
+  await mockCardParityApis(page);
+  await page.route('**/api/player/continue-watching**', route => route.fulfill({ json: { items: [] } }));
+  await page.route('**/api/tv/continue-watching**', route => route.fulfill({ json: { items: [] } }));
+  const errors = [];
+  page.on('pageerror', error => errors.push(error.message));
+  await page.goto('/');
+  await expect(page.locator('.home-status-grid')).toBeVisible();
+  await expect(page.locator('.continue-watching-panel')).toHaveCount(0);
+  for (const size of [{ width: 1280, height: 720 }, { width: 1920, height: 1080 }]) {
+    await page.setViewportSize(size);
+    await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    await captureDesktopEvidence(page, `home-no-history-${size.width}`);
+  }
+  for (const name of ['Library', 'Discover', 'Lists']) {
+    await page.locator('.sidebar').getByRole('button', { name, exact: true }).click();
+    await expect(page.getByRole('button', { name: 'Search, filters & selection', exact: true })).toBeVisible();
+    await captureDesktopEvidence(page, `${name.toLowerCase()}-desktop`);
+  }
+  expect(errors).toEqual([]);
+});
+
+test('Home expanded details keep canonical rating and vote counts above stale feed summaries', async ({ page }) => {
+  await mockCardParityApis(page);
+  const movie = { ...parityMovie, tmdb_id: '9910', imdb_id: 'ttfixture9910', tmdb_rating: 3, tmdb_vote_count: 5 };
+  await page.route('**/api/library/check', route => route.fulfill({ json: { results: [], catalog_generation: 1 } }));
+  await page.route('**/api/tmdb/discover**', route => route.fulfill({ json: { results: [movie], page: 1, total_pages: 1, total_results: 1 } }));
+  await page.route('**/api/tmdb/details**', route => route.fulfill({ json: { ...movie, rating: 9, tmdb_rating: 9, tmdb_vote_count: 4500, cast: [], directors: [], writers: [], genres: [] } }));
+  await page.goto('/');
+  await page.locator('.home-trending-track').getByRole('button', { name: new RegExp(movie.title) }).click();
+  const details = page.locator('.home-inline-details');
+  await expect(details).toContainText('4.5K votes');
+  await expect(details.locator('.unified-expanded-rating strong')).toHaveText('9');
+});
+
+test('Available followed movies keep individual torrent review through inline details', async ({ page }) => {
+  await mockCardParityApis(page);
+  await page.route('**/api/library/check', route => route.fulfill({ json: { results: [], catalog_generation: 1 } }));
+  await page.route('**/api/user/followed-releases**', route => route.fulfill({ json: {
+    movies: [{ ...parityMovie, status: 'available' }], newly_available: [], removed_owned: [], curation_generation: 1
+  } }));
+  await page.goto('/');
+  await page.locator('.release-panel .release-item').first().click();
+  await page.locator('.home-inline-details').getByRole('button', { name: 'Find torrent', exact: true }).click();
+  const sources = page.getByRole('dialog', { name: 'Torrent results', exact: true });
+  await expect(sources).toBeVisible();
+  await sources.getByRole('button', { name: 'Close torrent results' }).click();
+  await expect(sources).toBeHidden();
+});
+
+test('release watcher keeps three visible rows while card filters and Following expose the complete set', async ({ page }) => {
+  await page.setViewportSize({ width: 1920, height: 1080 });
+  await page.route('**/api/player/continue-watching**', route => route.fulfill({ json: { items: [{
+    path_key: 'fixture-resume', title: 'Resume fixture', progress: 0.3, remaining_seconds: 3600, poster_url: ''
+  }] } }));
+  await page.route('**/api/tv/continue-watching**', route => route.fulfill({ json: { items: [] } }));
   const followedMovies = Array.from({ length: 12 }, (_, index) => ({
     tmdb_id: String(9100 + index),
     title: `Followed Movie ${index + 1}`,
@@ -258,14 +325,42 @@ test('release watcher keeps a three-row preview while View all and Following exp
 
   await page.goto('/', { waitUntil: 'domcontentloaded' });
   const releasePanel = page.locator('.release-panel');
-  await expect(releasePanel.locator('.release-item')).toHaveCount(3);
+  await expect(releasePanel.locator('.release-item')).toHaveCount(12);
+  const resumePanel = page.locator('.continue-watching-panel');
+  await expect(resumePanel).toBeVisible();
+  const assertAligned = async () => {
+    const resume = await resumePanel.boundingBox();
+    const releases = await releasePanel.boundingBox();
+    expect(resume.y).toBeGreaterThan(releases.y + releases.height);
+    expect(Math.abs(releases.height - 287.2)).toBeLessThan(1);
+    const visibleRows = await releasePanel.locator('.release-list').evaluate(list => {
+      const bounds = list.getBoundingClientRect();
+      return [...list.children].filter(row => {
+        const rect = row.getBoundingClientRect();
+        return rect.top >= bounds.top - 1 && rect.bottom <= bounds.bottom + 1;
+      }).length;
+    });
+    expect(visibleRows).toBe(3);
+  };
+  await assertAligned();
+  await captureDesktopEvidence(page, 'followed-releases-fill-height');
+  await releasePanel.locator('.release-item').last().scrollIntoViewIfNeeded();
+  await expect(releasePanel.locator('.release-item').last()).toBeInViewport();
+  await releasePanel.locator('.release-item').first().scrollIntoViewIfNeeded();
   await expect.poll(() => fullScanRequests).toBe(1);
 
-  await releasePanel.locator('.release-item').filter({ hasText: 'Followed Movie 1' }).click();
-  const inspector = page.locator('.inspector');
+  await releasePanel.locator('.release-item').filter({ has: page.getByText('Followed Movie 1', { exact: true }) }).click();
+  const inspector = page.locator('.home-inline-details');
   await expect(inspector.getByRole('heading', { name: 'Followed Movie 1' })).toBeVisible();
   await expect(inspector.getByRole('button', { name: 'Find torrent' })).toBeVisible();
   await expect(inspector.getByRole('button', { name: 'Stream' })).toBeVisible();
+  const [followedBounds, detailsBounds, trailersBounds] = await page.evaluate(() =>
+    ['.home-followed-section', '.home-inline-details', '.home-trailers-panel'].map(selector => {
+      const { y, height } = document.querySelector(selector).getBoundingClientRect();
+      return { y, height };
+    }));
+  expect(detailsBounds.y).toBeGreaterThanOrEqual(followedBounds.y + followedBounds.height);
+  expect(trailersBounds.y).toBeGreaterThanOrEqual(detailsBounds.y + detailsBounds.height);
   await page.route('**/api/tmdb/imdb_id?**', (route) => route.fulfill({ json: { imdb_id: 'tt0091000' } }));
   await page.route('https://stream.example.test/**', (route) => route.fulfill({ contentType: 'text/html', body: '<p>Movie streaming fixture</p>' }));
   await inspector.getByRole('button', { name: 'Stream' }).click();
@@ -279,35 +374,34 @@ test('release watcher keeps a three-row preview while View all and Following exp
   await expect(inspector.getByRole('button', { name: 'Find torrent' })).toHaveCount(0);
   await expect(inspector.getByRole('button', { name: 'Stream' })).toHaveCount(0);
 
-  await releasePanel.getByRole('button', { name: 'View all' }).click();
-  const drawer = page.getByRole('dialog', { name: 'Followed releases' });
-  await expect(drawer.locator('.followed-row')).toHaveCount(12);
-  await expect(drawer.getByRole('button', { name: 'All (12)' })).toBeVisible();
-  await expect(drawer.getByRole('button', { name: 'Available (2)' })).toBeVisible();
-  await expect(drawer.getByRole('button', { name: 'Watching (10)' })).toBeVisible();
-  const lastFollowed = drawer.locator('[data-followed-title="Followed Movie 12"]');
-  await lastFollowed.scrollIntoViewIfNeeded();
-  await expect(lastFollowed).toBeInViewport();
-  await drawer.getByRole('button', { name: 'Close followed releases' }).click();
+  const releaseFilter = releasePanel.getByRole('combobox', { name: 'Filter followed movies' });
+  await releaseFilter.selectOption('available');
+  await expect(releasePanel.locator('.release-item')).toHaveCount(2);
+  await releaseFilter.selectOption('awaiting');
+  await expect(releasePanel.locator('.release-item')).toHaveCount(10);
+  await releaseFilter.selectOption('monitoring');
+  await expect(releasePanel.locator('.release-item')).toHaveCount(0);
+  await releaseFilter.selectOption('all');
+  await expect(releasePanel.locator('.release-item')).toHaveCount(12);
 
   await expect(releasePanel.getByRole('button', { name: 'Scanning followed releases' })).toBeDisabled();
   await page.evaluate(() => window.dispatchEvent(new CustomEvent('cp-catalog-ready', {
     detail: { type: 'catalog-ready', generation: 2 }
   })));
-  expect(ownershipReconcileRequests).toBe(0);
+  await expect.poll(() => ownershipReconcileRequests).toBeGreaterThanOrEqual(1);
+  await expect(releasePanel.getByRole('button', { name: 'Scanning followed releases' })).toBeDisabled();
   releaseInitialScan();
-  await expect.poll(() => ownershipReconcileRequests).toBe(1);
   await expect(releasePanel.getByRole('button', { name: 'Scan followed releases' })).toBeEnabled();
   await releasePanel.getByRole('button', { name: 'Scan followed releases' }).click();
   await expect.poll(() => fullScanRequests).toBe(2);
 
   await page.getByRole('button', { name: 'Lists', exact: true }).click();
+  await page.getByRole('button', { name: /^Choose movies list:/ }).click();
   const followingList = page.getByRole('button', { name: 'Following 12 movies' });
   await expect(followingList).toBeVisible();
   await followingList.click();
-  await expect(page.getByLabel('Selected list name')).toHaveValue('Following');
-  await expect(page.getByLabel('Selected list name')).toBeDisabled();
-  await expect(page.getByRole('button', { name: 'Delete list' })).toBeDisabled();
+  await expect(page.getByRole('button', { name: 'Choose movies list: Following' })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'List actions', exact: true })).toBeDisabled();
   await expect(page.locator('.movie-lists-card-grid .discover-movie-card')).toHaveCount(12);
   await expect(page.locator('.movie-lists-card-grid .unified-status-following')).toHaveCount(12);
   await expect(page.locator('.movie-lists-card-grid .unified-status-following').first()).toBeVisible();
@@ -317,7 +411,8 @@ test('desktop sidebar collapses persistently while workspace margins stay fixed'
   await page.setViewportSize({ width: 1920, height: 1000 });
   await page.emulateMedia({ reducedMotion: 'no-preference' });
   await page.goto('/library', { waitUntil: 'domcontentloaded' });
-  await expect(page.getByRole('heading', { name: 'Movie View' })).toBeVisible();
+  await openControls(page);
+  await expect(page.getByRole('region', { name: 'Library Movies', exact: true })).toBeVisible();
 
   const sidebar = page.getByRole('complementary', { name: 'Primary navigation' });
   const appShell = page.locator('.app-shell');
@@ -357,9 +452,7 @@ test('desktop sidebar collapses persistently while workspace margins stay fixed'
   expect(navScale.labelFontSize).toBeCloseTo(17.25, 2);
   expect(navScale.iconWidth).toBeCloseTo(25.3, 1);
   expect(navScale.iconHeight).toBeCloseTo(25.3, 1);
-  await expect(aiControlBadge.locator('.experimental-badge-label')).toBeHidden();
-  await expect(aiControlBadge.locator('.experimental-badge-short')).toBeVisible();
-  await expect(aiControlBadge.locator('.experimental-badge-short')).toHaveText('X');
+  await expect(aiControlBadge).toHaveCount(0);
   await expect(libraryNavItem).toHaveCSS('background-color', 'rgba(0, 0, 0, 0)');
   await expect(libraryNavItem).toHaveCSS('background-image', 'none');
   await expect(libraryNavIcon).toHaveCSS('background-color', 'rgba(0, 0, 0, 0)');
@@ -377,7 +470,7 @@ test('desktop sidebar collapses persistently while workspace margins stay fixed'
     const style = getComputedStyle(element);
     return [style.paddingLeft, style.paddingRight];
   });
-  expect(expandedPadding).toEqual(['16px', '33.6px']);
+  expect(expandedPadding).toEqual(['16px', '16px']);
 
   await collapseButton.click();
   await expect(sidebar).toHaveCSS('width', '64px');
@@ -443,7 +536,7 @@ test('desktop sidebar collapses persistently while workspace margins stay fixed'
   expect(collapsedWorkspaceWidth - expandedWorkspaceWidth).toBeLessThanOrEqual(157);
   expect(collapsedContentWidth - expandedContentWidth).toBeGreaterThanOrEqual(155);
   expect(collapsedContentWidth - expandedContentWidth).toBeLessThanOrEqual(157);
-  expect(collapsedPadding).toEqual(['16px', '33.6px']);
+  expect(collapsedPadding).toEqual(['16px', '16px']);
   await expect.poll(() => page.evaluate(() => localStorage.getItem('cp.sidebarCollapsed'))).toBe('true');
 
   await page.reload({ waitUntil: 'domcontentloaded' });
@@ -464,6 +557,8 @@ test('desktop sidebar collapses persistently while workspace margins stay fixed'
   await expect(reloadedLibraryNavItem.locator('.nav-label')).toBeVisible();
   await expect(page.getByRole('button', { name: 'Collapse sidebar' })).toBeVisible();
 });
+
+
 
 test('power menu separates frontend reset, CP restart, optional torrent close, and device shutdown', async ({ page }) => {
   const requests = [];
@@ -518,6 +613,59 @@ test('power menu separates frontend reset, CP restart, optional torrent close, a
   ]);
 });
 
+test('sidebar popups switch exclusively and dismiss outside or with Escape', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.route('**/api/notifications?**', route => route.fulfill({ json: {
+    items: [{ id: 'sidebar-event', media_type: 'movie', source: 'download', severity: 'info',
+      created_at: 1700000000, title: 'Download completed', body: 'Your movie is ready in Library.',
+      link: '/library', read_at: 1700000001 }], unread: 0, total: 1, total_pages: 1
+  } }));
+  await page.route('**/api/power/status', route => route.fulfill({ json: { active_downloads: 0, plan: {} } }));
+  await page.goto('/help', { waitUntil: 'domcontentloaded' });
+  const sidebar = page.getByRole('complementary', { name: 'Primary navigation' });
+  await expect(sidebar.locator('.nav-label')).toHaveText([
+    'Home', 'Library', 'Discover', 'Lists', 'IPTV', 'Downloads', 'AI Control', 'Maintenance',
+    'Notifications', 'Settings', 'Help', 'Power'
+  ]);
+  const notifications = sidebar.getByRole('button', { name: /Notifications,/ });
+  const panel = page.getByRole('region', { name: 'Notifications', exact: true });
+  const power = sidebar.getByRole('button', { name: 'Power options', exact: true });
+  const menu = page.getByRole('menu', { name: 'Power options' });
+  await notifications.click();
+  await expect(panel.getByText('Download completed', { exact: true })).toBeVisible();
+  await expect(panel.getByRole('button', { name: 'Close', exact: true })).toHaveCount(0);
+  await panel.getByRole('textbox', { name: 'Search history' }).fill('movie');
+  await expect(panel).toBeVisible();
+  await power.click();
+  await expect(menu).toBeVisible();
+  await expect(panel).toBeHidden();
+  await notifications.click();
+  await expect(panel).toBeVisible();
+  await expect(menu).toBeHidden();
+  await page.locator('main').click({ position: { x: 20, y: 20 } });
+  await expect(panel).toBeHidden();
+  await notifications.click();
+  await expect(panel.getByRole('textbox', { name: 'Search history' })).toHaveValue('movie');
+  await panel.getByRole('textbox', { name: 'Search history' }).press('Escape');
+  await expect(panel).toBeHidden();
+  await expect(notifications).toBeFocused();
+  await power.click();
+  await page.locator('main').click({ position: { x: 20, y: 20 } });
+  await expect(menu).toBeHidden();
+  await power.click();
+  await power.press('Escape');
+  await expect(menu).toBeHidden();
+  await expect(power).toBeFocused();
+  await sidebar.getByRole('button', { name: 'Collapse sidebar' }).click();
+  await notifications.click();
+  await expect(panel).toBeVisible();
+  await power.click();
+  await expect(menu).toBeVisible();
+  await expect(panel).toBeHidden();
+  await power.press('Escape');
+
+});
+
 test('Continue Watching uses compact uncropped posters and centralized resume restart remove actions', async ({ page }) => {
   await page.setViewportSize({ width: 1920, height: 1000 });
   const poster = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(
@@ -559,16 +707,17 @@ test('Continue Watching uses compact uncropped posters and centralized resume re
   await expect(rail.locator('.continue-movie-card')).toHaveCount(10);
   const posterImage = rail.locator('.continue-movie-poster img').first();
   await expect(posterImage).toHaveCSS('object-fit', 'contain');
-  await expect(rail.locator('.continue-movie-card').first()).toHaveCSS('width', '156px');
-  await expect(rail.locator('.continue-movie-poster').first()).toHaveCSS('height', '234px');
+  const posterBounds = await rail.locator('.continue-movie-poster').first().boundingBox();
+  expect(posterBounds.width / posterBounds.height).toBeCloseTo(2 / 3, 2);
+  expect(posterBounds.width).toBe(156);
+  expect(posterBounds.height).toBe(234);
 
   const expandedComplete = await rail.evaluate((viewport) => {
     const right = viewport.getBoundingClientRect().right;
     return [...viewport.querySelectorAll('.continue-movie-card')]
       .filter((card) => card.getBoundingClientRect().right <= right + 0.5).length;
   });
-  expect(expandedComplete).toBeGreaterThanOrEqual(5);
-  expect(expandedComplete).toBeLessThanOrEqual(6);
+  expect(expandedComplete).toBe(9);
   if (process.env.CP_E2E_EVIDENCE_PATH) {
     await page.screenshot({
       path: process.env.CP_E2E_EVIDENCE_PATH,
@@ -820,9 +969,10 @@ test('Advanced Search shares normalized Library and Discover execution without l
   await page.route('**/api/user/lists', (route) => route.fulfill({ json: { lists: [], curation_generation: 1 } }));
 
   await page.goto('/library', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   await expect(page.getByRole('heading', { name: parityMovie.title, exact: true })).toBeVisible();
-  const simpleLibrarySearchHeight = await page.locator('.library-search-panel').evaluate((element) => element.getBoundingClientRect().height);
-  await page.getByRole('button', { name: 'Open filters' }).click();
+  const simpleLibrarySearchHeight = await page.locator('.workspace-search-form:visible').evaluate((element) => element.getBoundingClientRect().height);
+  await openControls(page);
   await page.locator('.library-filter-toolbar select').filter({ has: page.locator('option', { hasText: 'All genres' }) }).selectOption('Drama');
   await expect.poll(() => libraryQueries.at(-1)?.groups?.some((group) => group.type === 'genre')).toBe(true);
   const libraryRequestsBeforeEquivalentModeSwitch = libraryQueries.length;
@@ -832,7 +982,7 @@ test('Advanced Search shares normalized Library and Discover execution without l
   await expect(page.getByRole('button', { name: 'Search', exact: true })).toBeVisible();
   await expect(page.locator('.library-filter-toolbar')).toHaveCount(0);
   await expect(page.getByRole('heading', { name: parityMovie.title, exact: true })).toBeVisible();
-  const advancedLibrarySearchHeight = await page.locator('.library-search-panel').evaluate((element) => element.getBoundingClientRect().height);
+  const advancedLibrarySearchHeight = await page.locator('.workspace-search-form:visible').evaluate((element) => element.getBoundingClientRect().height);
   expect(advancedLibrarySearchHeight).toBeLessThanOrEqual(simpleLibrarySearchHeight + 4);
   await expect(page.locator('.advanced-value-chip').filter({ hasText: 'Drama' })).toHaveCount(1);
   await page.waitForTimeout(450);
@@ -847,6 +997,7 @@ test('Advanced Search shares normalized Library and Discover execution without l
   await expect.poll(() => libraryQueries.at(-1)?.groups?.some((group) => group.type === 'resolution')).toBe(true);
 
   failLibrary = true;
+  await page.getByRole('button', { name: 'Add advanced search criterion' }).click();
   await page.getByLabel('Criterion to add').selectOption('viewing_status');
   await page.getByLabel('Viewing status value').selectOption('watched');
   await page.getByRole('button', { name: 'Add criterion' }).click();
@@ -868,6 +1019,7 @@ test('Advanced Search shares normalized Library and Discover execution without l
     } });
   });
   await page.goto('/discover', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   await expect(page.getByRole('heading', { name: parityMovie.title, exact: true })).toBeVisible();
   const discoverRequestsBeforeEquivalentModeSwitch = discoverQueries.length;
   await page.getByLabel('TMDB search type').selectOption('advanced');
@@ -902,6 +1054,7 @@ test('Advanced Search shares normalized Library and Discover execution without l
       { id: '35', label: 'Comedy', exclude: true }
     ]
   });
+  await page.getByRole('button', { name: 'Add advanced search criterion' }).click();
   await page.getByLabel('Criterion to add').selectOption('person');
   await page.getByLabel('Find person').fill('Advanced');
   await expect(page.getByRole('option', { name: 'Advanced Performer' })).toBeVisible();
@@ -922,6 +1075,7 @@ test('Advanced Search shares normalized Library and Discover execution without l
   expect(discoverQueries.at(-1).groups.find((group) => group.type === 'runtime').values[0]).toEqual({ preset: 'custom', from: 75, to: 135 });
   expect(discoverQueries.at(-1).groups.find((group) => group.type === 'minimum_votes').values[0].value).toBe(1234);
   await expect(page.getByText(/matches collected from TMDB/)).toBeVisible();
+  await page.getByRole('button', { name: 'Add advanced search criterion' }).click();
   for (const criterion of ['genre', 'year', 'rating', 'language']) {
     await page.getByLabel('Criterion to add').selectOption(criterion);
     await page.getByRole('button', { name: 'Add criterion' }).click();
@@ -949,28 +1103,32 @@ test('year filter drafts stay editable without taking down Discover, Library, or
   page.on('pageerror', (error) => pageErrors.push(error.message));
 
   await page.goto('/discover', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
+  await openControls(page);
   const discoverYearFrom = page.getByPlaceholder('Year from');
   await discoverYearFrom.fill('1');
-  await expect(page.getByRole('heading', { name: 'Discover', exact: true })).toBeVisible();
+  await expect(page.getByRole('region', { name: 'Search, filters and selection', exact: true })).toBeVisible();
   await expect(page.getByText('Cinema Paradiso hit a display error.')).toHaveCount(0);
   await discoverYearFrom.fill('1800');
   await expect(page.getByText('Year must be between 1888 and 2100')).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Discover', exact: true })).toBeVisible();
+  await expect(page.getByRole('region', { name: 'Search, filters and selection', exact: true })).toBeVisible();
 
   await page.goto('/library', { waitUntil: 'domcontentloaded' });
-  await page.getByRole('button', { name: 'Open filters' }).click();
+  await openControls(page);
+  await openControls(page);
   const libraryYearFrom = page.getByPlaceholder('Year from');
   await libraryYearFrom.fill('2');
-  await expect(page.getByRole('heading', { name: 'Movie View', exact: true })).toBeVisible();
+  await expect(page.getByRole('region', { name: 'Library Movies', exact: true })).toBeVisible();
   await expect(page.getByText('Cinema Paradiso hit a display error.')).toHaveCount(0);
 
   await page.goto('/discover', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   await page.getByLabel('TMDB search type').selectOption('advanced');
   await page.getByRole('button', { name: 'Add advanced search criterion' }).click();
   await page.getByLabel('Criterion to add').selectOption('year');
   await page.getByRole('button', { name: 'Add criterion' }).click();
   await page.getByLabel('year from').fill('1');
-  await expect(page.getByRole('heading', { name: 'Discover', exact: true })).toBeVisible();
+  await expect(page.getByRole('region', { name: 'Search, filters and selection', exact: true })).toBeVisible();
   await expect(page.getByText('Cinema Paradiso hit a display error.')).toHaveCount(0);
   await page.getByLabel('year from').fill('1800');
   await expect(page.getByText('Year must be between 1888 and 2100')).toBeVisible();
@@ -996,7 +1154,8 @@ test('Library switches between canonical movie and raw file views', async ({ pag
     await route.fulfill({ json: { items: [parityLibraryItem], count: 1, catalog_generation: 1 } });
   });
   await page.goto('/library', { waitUntil: 'domcontentloaded' });
-  await expect(page.getByRole('heading', { name: 'Movie View' })).toBeVisible();
+  await openControls(page);
+  await expect(page.getByRole('region', { name: 'Library Movies', exact: true })).toBeVisible();
   const libraryFollowingBadge = page.locator('.library-movie-card .unified-status-following');
   await expect(libraryFollowingBadge).toHaveText('Following');
   await expect(libraryFollowingBadge).toHaveCSS('color', 'rgb(205, 189, 255)');
@@ -1004,7 +1163,8 @@ test('Library switches between canonical movie and raw file views', async ({ pag
   await expect(libraryFollowingBadge).toHaveCSS('background-color', 'rgba(139, 92, 246, 0.1)');
 
   await page.getByRole('button', { name: 'File View' }).click();
-  await expect(page.getByRole('heading', { name: 'File View' })).toBeVisible();
+  await expect(page.getByRole('region', { name: 'Library Movie Files', exact: true })).toBeVisible();
+  await openControls(page);
   const fileRow = page.locator('.library-file-row').filter({ hasText: parityLibraryItem.filename });
   const fileSelectionBar = page.locator('.library-bulk-selection');
   const fileCheckbox = fileRow.getByLabel(`Select ${parityLibraryItem.filename}`);
@@ -1043,7 +1203,7 @@ test('Library switches between canonical movie and raw file views', async ({ pag
   await expect(fileFacts.getByText('Conflict: filename claims 720p; measured 1800 × 960 classify as 1080p.', { exact: true })).toBeVisible();
 
   await fileRow.getByRole('button', { name: 'Movie View' }).click();
-  await expect(page.getByRole('heading', { name: 'Movie View' })).toBeVisible();
+  await expect(page.getByRole('region', { name: 'Library Movies', exact: true })).toBeVisible();
   await expect(page.getByLabel('Library path')).toContainText(`${parityMovie.title} (${parityMovie.year})`);
   const focusedCard = page.locator('.library-movie-card').filter({ hasText: parityMovie.title });
   await expect(focusedCard).toHaveClass(/library-movie-card-expanded/);
@@ -1051,7 +1211,7 @@ test('Library switches between canonical movie and raw file views', async ({ pag
   await expect(page.getByLabel('Library path')).toHaveCount(0);
   await focusedCard.click();
   await focusedCard.getByRole('button', { name: 'File details' }).click();
-  await expect(page.getByRole('heading', { name: 'File View' })).toBeVisible();
+  await expect(page.getByRole('region', { name: 'Library Movie Files', exact: true })).toBeVisible();
   await expect(page.locator('.library-file-row-expanded')).toContainText(parityLibraryItem.path);
 });
 
@@ -1077,6 +1237,7 @@ test('local Library playback uses the centralized player route without changing 
   });
 
   await page.goto('/library', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   const movieCard = page.locator('.library-movie-card').filter({ hasText: parityMovie.title });
   await movieCard.click();
   const expandedPlay = movieCard.locator('.movie-play-action');
@@ -1136,6 +1297,7 @@ test('Library people search renders stored actors and writers from canonical met
   });
 
   await page.goto('/library', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   await page.getByLabel('Library search type').selectOption('people');
   await page.getByPlaceholder('Search people in your library...').fill('Tom Hanks');
 
@@ -1222,6 +1384,7 @@ test('existing actor and director People search remains available in Library and
   });
 
   await page.goto('/library', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   await page.getByLabel('Library search type').selectOption('people');
   await page.getByPlaceholder('Search people in your library...').fill(person.name);
   const libraryPerson = page.locator('.person-search-card').filter({ hasText: person.name });
@@ -1230,6 +1393,7 @@ test('existing actor and director People search remains available in Library and
   await expect(libraryPerson.getByRole('button', { name: 'Written films' })).toBeVisible();
 
   await page.goto('/discover', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   await page.getByLabel('TMDB search type').selectOption('people');
   await page.getByLabel('Search TMDB people').fill(person.name);
   await page.getByRole('button', { name: 'Search', exact: true }).click();
@@ -1296,6 +1460,7 @@ test('Library Keywords resolves a stored identity and filters owned SQL movies',
   });
 
   await page.goto('/library', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   await page.getByLabel('Library search type').selectOption('keywords');
   await page.getByPlaceholder('Search keywords in your library...').fill('space');
 
@@ -1339,6 +1504,7 @@ test('Library Keywords offers the same query in Movies when no stored keyword ex
   });
 
   await page.goto('/library', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   await page.getByLabel('Library search type').selectOption('keywords');
   await page.getByLabel('Search keywords in your library').fill('man of steel');
 
@@ -1352,6 +1518,7 @@ test('Library Keywords offers the same query in Movies when no stored keyword ex
 
 test('static CP surfaces hide the browser caret while text controls keep it', async ({ page }) => {
   await page.goto('/library', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
 
   await expect.poll(() => page.locator('body').evaluate(
     (element) => getComputedStyle(element).caretColor
@@ -1404,6 +1571,7 @@ test('Library keyword pagination replaces bounded pages and reaches every identi
   });
 
   await page.goto('/library', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   await page.getByLabel('Library search type').selectOption('keywords');
   await page.getByLabel('Search keywords in your library').fill('paged');
 
@@ -1476,6 +1644,7 @@ test('Library Keywords ignores an older in-flight SQL suggestion response', asyn
   });
 
   await page.goto('/library', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   await page.getByLabel('Library search type').selectOption('keywords');
   const keywordInput = page.getByLabel('Search keywords in your library');
   await keywordInput.fill('slow');
@@ -1559,6 +1728,7 @@ test('Discover Keywords keeps TMDB identity, ownership attachment, and back navi
   } }));
 
   await page.goto('/discover', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   await page.getByLabel('TMDB search type').selectOption('keywords');
   await page.getByLabel('Search TMDB keywords').fill('space');
   await page.getByRole('button', { name: 'Search', exact: true }).click();
@@ -1623,6 +1793,7 @@ test('Discover Keywords ignores a stale TMDB keyword response', async ({ page })
   });
 
   await page.goto('/discover', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   await page.getByLabel('TMDB search type').selectOption('keywords');
   const keywordInput = page.getByLabel('Search TMDB keywords');
   await keywordInput.fill('slow');
@@ -1630,7 +1801,7 @@ test('Discover Keywords ignores a stale TMDB keyword response', async ({ page })
   await expect.poll(() => slowSearchStarted).toBe(true);
 
   await keywordInput.fill('current');
-  await page.locator('form.discover-search-panel').evaluate((form) => form.requestSubmit());
+  await page.locator('form.workspace-search-form:visible').evaluate((form) => form.requestSubmit());
   await expect(page.locator('.keyword-search-card').filter({ hasText: 'current keyword' })).toBeVisible();
   releaseSlowSearch();
   await expect(page.locator('.keyword-search-card').filter({ hasText: 'slow keyword' })).toHaveCount(0);
@@ -1715,6 +1886,7 @@ test('Discover relationship paging rejects stale pages and follows shrinking pro
   }));
 
   await page.goto('/discover', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   await page.getByLabel('TMDB search type').selectOption('keywords');
   await page.getByLabel('Search TMDB keywords').fill('time');
   await page.getByRole('button', { name: 'Search', exact: true }).click();
@@ -1724,7 +1896,7 @@ test('Discover relationship paging rejects stale pages and follows shrinking pro
   await expect(page.getByText('Original page 1', { exact: true })).toBeVisible();
   await pager.getByRole('button', { name: 'Next' }).click();
   await expect.poll(() => slowPageStarted).toBe(true);
-  await page.locator('.discover-toolbar select').nth(2).selectOption('28');
+  await page.locator('.workspace-filter-grid select').nth(2).selectOption('28');
   await expect(page.getByText('Filtered page 1', { exact: true })).toBeVisible();
   await expect(pager.getByText('Page 1 of 3')).toBeVisible();
 
@@ -1826,6 +1998,7 @@ test('Discover collection navigation wins over an older in-flight list request',
   });
 
   await page.goto('/discover', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   const rootCard = page.locator('.discover-movie-card').filter({ hasText: rootMovie.title });
   await expect(rootCard).toBeVisible();
   await rootCard.getByRole('heading', { name: rootMovie.title }).click();
@@ -1856,6 +2029,7 @@ test('Library collection never shows a false zero and opens the full collection 
   }));
 
   await page.goto('/library', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   const libraryCard = page.locator('.library-movie-card').filter({ hasText: parityMovie.title });
   await libraryCard.getByRole('heading', { name: parityMovie.title }).click();
 
@@ -1864,7 +2038,7 @@ test('Library collection never shows a false zero and opens the full collection 
   await expect(libraryCard.getByText('0 movies', { exact: false })).toHaveCount(0);
 
   await collectionButton.click();
-  await expect(page.getByRole('heading', { name: 'Discover', exact: true })).toBeVisible();
+  await expect(page.getByRole('region', { name: 'Search, filters and selection', exact: true })).toBeVisible();
   await expect(page.getByLabel('Discovery path').getByText(`${parityMovie.title} > SQL Collection`, { exact: true })).toBeVisible();
   for (const movie of parityCollectionParts) {
     await expect(page.getByRole('heading', { name: movie.title, exact: true })).toBeVisible();
@@ -1888,6 +2062,7 @@ test('Discover collection ignores a prior movie search and distinguishes filtere
   }));
 
   await page.goto('/discover', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   const search = page.getByRole('textbox', { name: 'Search TMDB movies' });
   await search.fill(parityMovie.title);
   await page.getByRole('button', { name: 'Search', exact: true }).click();
@@ -1910,6 +2085,7 @@ test('Discover collection ignores a prior movie search and distinguishes filtere
   await expect(page.locator('.discover-movie-card')).toHaveCount(3);
 
   await page.getByRole('button', { name: 'Back', exact: true }).click();
+  await openControls(page);
   await expect(search).toHaveValue(parityMovie.title);
   await expect(page.locator('.discover-movie-card')).toHaveCount(1);
 
@@ -1932,6 +2108,7 @@ test('Keyword modes surface their authoritative SQL and TMDB errors', async ({ p
   }));
 
   await page.goto('/library', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   await page.getByLabel('Library search type').selectOption('keywords');
   await expect(page.getByText('Search keywords in your library.')).toBeVisible();
   await page.getByLabel('Search keywords in your library').fill('broken');
@@ -1939,6 +2116,7 @@ test('Keyword modes surface their authoritative SQL and TMDB errors', async ({ p
   await expect(page.getByText('Stored keyword lookup failed.')).toBeVisible();
 
   await page.goto('/discover', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   await page.getByLabel('TMDB search type').selectOption('keywords');
   await expect(page.getByText('Search TMDB keywords by name.')).toBeVisible();
   await page.getByLabel('Search TMDB keywords').fill('broken');
@@ -1976,6 +2154,7 @@ test('Discover People search ignores a stale response and clears its loading sta
   });
 
   await page.goto('/discover', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   await page.getByLabel('TMDB search type').selectOption('people');
   const searchInput = page.getByLabel('Search TMDB people');
   await searchInput.fill('Slow Person');
@@ -1983,7 +2162,7 @@ test('Discover People search ignores a stale response and clears its loading sta
   await expect.poll(() => slowSearchStarted).toBe(true);
 
   await searchInput.fill('Current Person');
-  await page.locator('form.discover-search-panel').evaluate((form) => form.requestSubmit());
+  await page.locator('form.workspace-search-form:visible').evaluate((form) => form.requestSubmit());
   await expect(page.locator('.person-search-card').filter({ hasText: 'Current Person' })).toBeVisible();
 
   releaseSlowSearch();
@@ -2065,6 +2244,7 @@ test('Discover People and Actor Director Writer relationships replace pages beyo
   }));
 
   await page.goto('/discover', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   await page.getByLabel('TMDB search type').selectOption('people');
   await page.getByLabel('Search TMDB people').fill('Page Person');
   await page.getByRole('button', { name: 'Search', exact: true }).click();
@@ -2100,7 +2280,7 @@ test('Discover People and Actor Director Writer relationships replace pages beyo
 
   await page.getByLabel('Library ownership').selectOption('all');
   await expect(page.getByText('actor page 1', { exact: true })).toBeVisible();
-  await page.locator('.discover-toolbar select').nth(2).selectOption('28');
+  await page.locator('.workspace-filter-grid select').nth(2).selectOption('28');
   await expect(page.getByText('actor page 1 genre 28', { exact: true })).toBeVisible();
   await expect(relationshipPager.getByText('Page 1 of 12')).toBeVisible();
   expect(requestedRelationships.at(-1)).toEqual({ owner: 'advanced', page: 1, role: 'actor', genre: '28' });
@@ -2169,7 +2349,9 @@ test('Pick relationship browsing uses shared Previous and Next replacement pages
   }));
 
   await page.goto('/discover', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   await page.getByRole('button', { name: 'Pick My Movie', exact: true }).click();
+  await openControls(page);
   await page.getByPlaceholder('Something funny but a little sad, maybe an indie movie with a warm ending...').fill('A thoughtful drama');
   await page.getByRole('button', { name: 'Ask AI' }).click();
 
@@ -2246,7 +2428,9 @@ test('movie credit Filmography opens all credits while the card keeps Discover r
   await page.route('**/api/library/check', (route) => route.fulfill({ json: { results: [], catalog_generation: 1 } }));
 
   await page.goto('/discover', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   await page.getByLabel('Genre', { exact: true }).selectOption('27');
+  await openControls(page);
   await page.getByLabel('Production country').selectOption('FR');
   const rootCard = page.locator('.discover-movie-card').filter({ hasText: rootMovie.title });
   await expect(rootCard).toBeVisible();
@@ -2297,14 +2481,16 @@ test('Library Filmography opens full credits even when Discover has active filte
   });
 
   await page.goto('/discover', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   await page.getByLabel('Genre', { exact: true }).selectOption('27');
+  await openControls(page);
   await page.getByLabel('Production country').selectOption('FR');
   await page.getByRole('button', { name: 'Library', exact: true }).click();
   const libraryCard = page.locator('.library-movie-card').filter({ hasText: parityMovie.title });
   await libraryCard.getByRole('heading', { name: parityMovie.title }).click();
   await libraryCard.getByRole('button', { name: 'Open filmography for SQL Cast Member', exact: true }).click();
 
-  await expect(page.getByRole('heading', { name: 'Discover', exact: true })).toBeVisible();
+  await expect(page.getByRole('region', { name: 'Search, filters and selection', exact: true })).toBeVisible();
   await expect(page.getByText(parityCollectionParts[1].title, { exact: true })).toBeVisible();
   await expect(page.getByLabel('Genre', { exact: true })).toHaveValue('');
   await expect(page.getByLabel('Production country')).toHaveValue('');
@@ -2350,6 +2536,7 @@ test('Library credit clicks load the people projection before filtering owned wo
   } }));
 
   await page.goto('/library', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   const awakenings = page.locator('.library-movie-card').filter({ hasText: 'Awakenings' });
   await awakenings.click();
   await expect(awakenings).toHaveClass(/library-movie-card-expanded/);
@@ -2365,7 +2552,7 @@ test('Library credit clicks load the people projection before filtering owned wo
 
   await expect(page).toHaveURL(/\/library$/);
   await expect(page.getByText('Actor: Robert De Niro', { exact: true })).toHaveCount(0);
-  await page.getByRole('button', { name: 'Open filters' }).click();
+  await openControls(page);
   await expect(page.getByLabel('Library resolution filter')).toHaveValue('upgrade');
 });
 
@@ -2401,6 +2588,7 @@ test('Library server paging, filtered selection, and navigation preserve exact r
   });
 
   await page.goto('/library', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   await expect(page.getByText('Page 1 of 3', { exact: true }).first()).toBeVisible();
   await page.getByRole('button', { name: 'Select all filtered', exact: true }).click();
   await expect(page.getByText('81 selected', { exact: true })).toBeVisible();
@@ -2465,6 +2653,7 @@ test('owned Library posters render from immutable local assets without detail pr
   });
   const assetResponse = page.waitForResponse((response) => response.url().endsWith(localPosterUrl));
   await page.goto('/library', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   const response = await assetResponse;
   const poster = page.locator('.library-movie-card img[src^="/api/assets/"]').first();
   await expect(poster).toBeVisible();
@@ -2512,6 +2701,7 @@ test('Discover unowned cards keep remote actions and do not acquire an ownership
   } }));
 
   await page.goto('/discover', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   const card = page.locator('.discover-movie-card').filter({ hasText: remoteMovie.title });
   await expect(card.getByText('Owned', { exact: true })).toHaveCount(0);
   await expect(card).toContainText('Not in library');
@@ -2648,6 +2838,7 @@ test('bulk Find sources keeps owned movies as upgrades and switches the actual q
   });
 
   await page.goto('/discover', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   const ownedCheckbox = page.getByRole('checkbox', { name: `Select ${ownedMovie.title}` });
   const missingCheckbox = page.getByRole('checkbox', { name: `Select ${missingMovie.title}` });
   const lowerOnlyCheckbox = page.getByRole('checkbox', { name: `Select ${lowerOnlyMovie.title}` });
@@ -3015,17 +3206,17 @@ test('Maintenance explains quality, content, and frame-rate evidence without usi
   await expect(dvdRow).toContainText('Framing Δ 0.21%');
 });
 
-test('Library unifies resolution filtering and right-aligns its compact filter actions in both views', async ({ page }) => {
+test('Library unifies resolution filtering within the shared controls in both views', async ({ page }) => {
   await mockCardParityApis(page);
   await page.goto('/library', { waitUntil: 'domcontentloaded' });
 
-  const openFilters = page.getByRole('button', { name: 'Open filters', exact: true });
-  await expect(openFilters).toBeVisible();
-  await expect(openFilters).toHaveCSS('width', '38px');
-  await expect(openFilters).toHaveCSS('height', '38px');
-  await expect(openFilters.locator('svg.lucide-filter')).toHaveCount(1);
-  expect(await openFilters.evaluate((button) => button.textContent.trim())).toBe('');
-  await openFilters.click();
+  const controls = page.getByRole('button', { name: 'Search, filters & selection', exact: true });
+  await expect(controls).toBeVisible();
+  await expect(controls).toHaveAttribute('aria-expanded', 'false');
+  await expect(page.getByLabel('Library resolution filter')).toBeHidden();
+  await controls.click();
+  await expect(controls).toHaveAttribute('aria-expanded', 'true');
+  await expect(page.getByRole('button', { name: /Open filters|Hide filters/ })).toHaveCount(0);
 
   const resolutionFilter = page.getByLabel('Library resolution filter');
   await expect(resolutionFilter).toBeVisible();
@@ -3039,7 +3230,7 @@ test('Library unifies resolution filtering and right-aligns its compact filter a
   ]);
   await expect(page.getByLabel('Library quality filter')).toHaveCount(0);
 
-  for (const label of ['Reset filters', 'Hide filters']) {
+  for (const label of ['Reset filters']) {
     const button = page.getByRole('button', { name: label, exact: true });
     await expect(button).toHaveCSS('width', '38px');
     await expect(button).toHaveCSS('height', '38px');
@@ -3047,31 +3238,38 @@ test('Library unifies resolution filtering and right-aligns its compact filter a
   }
   const movieLayout = await page.locator('.library-filter-toolbar').evaluate((toolbar) => {
     const selects = [...toolbar.querySelectorAll('select')];
-    const hide = toolbar.querySelector('.library-hide-filters').getBoundingClientRect();
     const reset = toolbar.querySelector('.library-reset-filters').getBoundingClientRect();
     return {
       display: getComputedStyle(toolbar).display,
       filterRows: new Set(selects.map((select) => Math.round(select.getBoundingClientRect().top))).size,
-      iconsShareRow: Math.round(hide.top) === Math.round(reset.top),
+      resetInsideToolbar: reset.right <= toolbar.getBoundingClientRect().right,
       noOverflow: toolbar.scrollWidth <= toolbar.clientWidth,
       languageHidden: ![...toolbar.querySelectorAll('option')].some((option) => option.textContent === 'All languages'),
     };
   });
   expect(movieLayout.display).toBe('flex');
   expect(movieLayout.filterRows).toBeLessThanOrEqual(2);
-  expect(movieLayout.iconsShareRow).toBe(true);
+  expect(movieLayout.resetInsideToolbar).toBe(true);
   expect(movieLayout.noOverflow).toBe(true);
   expect(movieLayout.languageHidden).toBe(true);
 
   await page.getByRole('button', { name: 'File View', exact: true }).click();
-  await expect(page.getByRole('heading', { name: 'File View', exact: true })).toBeVisible();
+  await expect(page.getByRole('region', { name: 'Library Movie Files', exact: true })).toBeVisible();
+  await expect(controls).toHaveAttribute('aria-expanded', 'false');
+  await openControls(page);
   await expect(page.getByLabel('Library resolution filter')).toBeVisible();
   await expect(page.getByLabel('Library quality filter')).toHaveCount(0);
   const fileLayout = await page.locator('.library-filter-toolbar').evaluate((toolbar) => ({
-    columnCount: getComputedStyle(toolbar).gridTemplateColumns.split(' ').length,
+    display: getComputedStyle(toolbar).display,
+    noOverflow: toolbar.scrollWidth <= toolbar.clientWidth,
     filterRows: new Set([...toolbar.querySelectorAll('select')].map((select) => Math.round(select.getBoundingClientRect().top))).size,
   }));
-  expect(fileLayout).toEqual({ columnCount: 4, filterRows: 2 });
+  expect(fileLayout.display).toBe('flex');
+  expect(fileLayout.noOverflow).toBe(true);
+  expect(fileLayout.filterRows).toBeLessThanOrEqual(2);
+  await page.getByRole('button', { name: 'Search, filters & selection', exact: true }).click();
+  await expect(controls).toHaveAttribute('aria-expanded', 'false');
+  await expect(page.getByLabel('Library resolution filter')).toBeHidden();
 });
 
 test('Maintenance upgrade summary opens the authoritative Library filter', async ({ page }) => {
@@ -3112,16 +3310,16 @@ test('Maintenance upgrade summary opens the authoritative Library filter', async
   await page.getByRole('button', { name: /Upgrade candidates/ }).click();
 
   await expect(page).toHaveURL(/\/library$/);
-  await expect(page.getByRole('heading', { name: 'Movie View' })).toBeVisible();
-  await page.getByRole('button', { name: 'Open filters' }).click();
+  await expect(page.getByRole('region', { name: 'Library Movies', exact: true })).toBeVisible();
+  await openControls(page);
   await expect(page.getByLabel('Library resolution filter')).toHaveValue('upgrade');
   await expect(page.getByText('Upgrade candidate', { exact: true }).first()).toBeVisible();
 
   await page.getByLabel('Library resolution filter').selectOption('all');
   await page.getByRole('button', { name: 'Discover', exact: true }).click();
-  await expect(page.getByRole('heading', { name: 'Discover', exact: true })).toBeVisible();
+  await expect(page.getByRole('region', { name: 'Search, filters and selection', exact: true })).toBeVisible();
   await page.getByRole('button', { name: 'Library', exact: true }).click();
-  await expect(page.getByRole('heading', { name: 'Movie View', exact: true })).toBeVisible();
+  await expect(page.getByRole('region', { name: 'Library Movies', exact: true })).toBeVisible();
   await expect(page.getByLabel('Library resolution filter')).toHaveValue('all');
 });
 
@@ -3158,14 +3356,17 @@ test('every stateful workspace preserves its page state after sidebar navigation
   const openSection = (name) => page.getByRole('button', { name: name === 'AI Control' ? /AI Control/ : name, exact: name !== 'AI Control' }).click();
 
   await page.goto('/library', { waitUntil: 'domcontentloaded' });
-  await page.getByRole('button', { name: 'Open filters' }).click();
+  await openControls(page);
+  await openControls(page);
   await page.getByLabel('Library resolution filter').selectOption('upgrade');
 
   await openSection('Discover');
+  await openControls(page);
   await page.getByLabel('Library ownership').selectOption('owned');
 
   await openSection('Lists');
-  await page.getByPlaceholder('Search the selected list...').fill('parity list state');
+  await openControls(page);
+  await page.getByRole('textbox', { name: 'Search movie list', exact: true }).fill('parity list state');
 
   await openSection('Maintenance');
   await page.getByRole('tab', { name: 'Identity', exact: true }).click();
@@ -3196,7 +3397,7 @@ test('every stateful workspace preserves its page state after sidebar navigation
   await openSection('Discover');
   await expect(page.getByLabel('Library ownership')).toHaveValue('owned');
   await openSection('Lists');
-  await expect(page.getByPlaceholder('Search the selected list...')).toHaveValue('parity list state');
+  await expect(page.getByRole('textbox', { name: 'Search movie list', exact: true })).toHaveValue('parity list state');
   await openSection('Maintenance');
   await expect(page.getByRole('tab', { name: 'Identity', exact: true })).toHaveAttribute('aria-selected', 'true');
   await expect(page.getByPlaceholder('Search files, paths, or catalog titles...')).toHaveValue('identity state');
@@ -3310,11 +3511,15 @@ test('IPTV Movies keeps provider playlists, My list, grouped sources, unmatched 
 
   await page.getByRole('button', { name: /^Metadata/ }).click();
   await expect(page.getByRole('heading', { name: 'Provider One' })).toBeVisible();
+  await expect(page.getByRole('navigation', { name: 'Metadata sections' })).toBeVisible();
+  await expect(page.getByRole('button', { name: "Improve this provider's Movies" })).toHaveCount(0);
+  await page.getByRole('button', { name: 'Maintenance', exact: true }).click();
+  await page.getByRole('tab', { name: 'IPTV', exact: true }).click();
   await expect(page.getByText('Local projection', { exact: true })).toBeVisible();
   await expect(page.getByRole('button', { name: "Improve this provider's Movies" })).toBeDisabled();
-  await expect(page.getByRole('navigation', { name: 'Metadata review queues' })).toBeVisible();
   await page.getByText('Diagnostics', { exact: true }).click();
   await expect(page.getByRole('button', { name: 'Run next 100' })).toBeVisible();
+  await page.getByRole('button', { name: 'Set up IPTV TMDB in Settings' }).click();
   await expect(page.getByText('IPTV TMDB not configured', { exact: true })).toBeVisible();
   await expect(page.getByPlaceholder('Enter credential')).toHaveValue('');
 });
@@ -3424,6 +3629,7 @@ test('Library, Discover-owned, and Movie List cards render one canonical movie c
   });
 
   await page.goto('/library', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   const libraryCard = page.locator('.library-movie-card').first();
   await expect(libraryCard.getByRole('heading', { name: parityMovie.title })).toBeVisible();
   await expect(libraryCard).toContainText(parityMovie.year);
@@ -3463,6 +3669,7 @@ test('Library, Discover-owned, and Movie List cards render one canonical movie c
   expect(tmdbDetailsRequests).toBe(libraryRequestsBeforeExpand);
 
   await page.goto('/discover', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   const discoverCard = page.locator('.discover-movie-card').filter({ hasText: parityMovie.title });
   await expect(discoverCard.getByRole('heading', { name: parityMovie.title })).toBeVisible();
   await expect(discoverCard).toContainText(parityMovie.year);
@@ -3500,15 +3707,18 @@ test('Library, Discover-owned, and Movie List cards render one canonical movie c
   expect(tmdbDetailsRequests).toBe(listRequestsBeforeExpand);
 
   await page.goto('/', { waitUntil: 'domcontentloaded' });
-  await expect(page.locator('.inspector')).toContainText(parityMovie.plot);
-  await expect(page.locator('.inspector')).toContainText('SQL Cast Member');
-  await expect(page.locator('.inspector')).toContainText('1080 · Blu-ray');
-  await expect(page.locator('.inspector')).not.toContainText('100 B');
-  await expect(page.locator('.inspector')).not.toContainText('1080-class - 1800 x 960');
-  const homeOwnedCard = page.locator('.home-smart-movie-card').filter({ hasText: parityMovie.title });
-  await expect(homeOwnedCard).toContainText('1080 · Blu-ray');
+  await expect(page.locator('.home-inline-details')).toHaveCount(0);
+  const homeOwnedCard = page.locator('.home-trending-track .upcoming-movie-card').filter({ hasText: parityMovie.title });
+  await expect(homeOwnedCard).toContainText(parityMovie.year);
   await expect(homeOwnedCard).not.toContainText('100 B');
-  await expect(page.locator('.inspector').getByRole('button', { name: 'File details', exact: true })).toBeVisible();
+  await homeOwnedCard.click();
+  const homeDetails = page.locator('.home-inline-details');
+  await expect(homeDetails).toContainText(parityMovie.plot);
+  await expect(homeDetails).toContainText('SQL Cast Member');
+  await expect(homeDetails).toContainText('1080 · Blu-ray');
+  await expect(homeDetails).not.toContainText('100 B');
+  await expect(homeDetails).not.toContainText('1080-class - 1800 x 960');
+  await expect(homeDetails.getByRole('button', { name: 'File details', exact: true })).toBeVisible();
 
   await page.route('**/api/ai-control/preview', async (route) => {
     await route.fulfill({ json: {
@@ -3537,14 +3747,14 @@ test('Library, Discover-owned, and Movie List cards render one canonical movie c
   await expect(aiCard.locator('.person-credit-browse').filter({ hasText: 'SQL Cast Member' })).toHaveAttribute('role', 'button');
 
   await aiCard.getByRole('button', { name: /SQL Collection/ }).click();
-  await expect(page.getByRole('heading', { name: 'Discover', exact: true })).toBeVisible();
+  await expect(page.getByRole('region', { name: 'Search, filters and selection', exact: true })).toBeVisible();
   await expect(page.getByLabel('Discovery path').getByText(`${parityMovie.title} > SQL Collection`, { exact: true })).toBeVisible();
   await expect(page.getByRole('heading', { name: parityCollectionParts[1].title, exact: true })).toBeVisible();
 
   await page.getByRole('complementary', { name: 'Primary navigation' }).getByRole('button', { name: /AI Control/ }).click();
   const restoredAiCard = page.locator('.workspace-panel:visible .discover-movie-card').filter({ hasText: parityMovie.title });
   await restoredAiCard.locator('.person-credit-browse').filter({ hasText: 'SQL Cast Member' }).click();
-  await expect(page.getByRole('heading', { name: 'Discover', exact: true })).toBeVisible();
+  await expect(page.getByRole('region', { name: 'Search, filters and selection', exact: true })).toBeVisible();
   await expect(page.getByLabel('Discovery path').getByText(/Actor: SQL Cast Member/, { exact: false })).toBeVisible();
   await expect(page.getByRole('heading', { name: parityCollectionParts[1].title, exact: true })).toBeVisible();
 
@@ -3669,6 +3879,7 @@ test('Library metadata correction searches TMDB and Plex while keeping display e
   });
 
   await page.goto('/library', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   const libraryCard = page.locator('.library-movie-card').filter({ hasText: parityMovie.title });
   await libraryCard.click();
   await libraryCard.getByRole('button', { name: 'Correct metadata' }).click();
@@ -3711,6 +3922,7 @@ test('curation generation refresh keeps an expanded Discover card open', async (
   } }));
 
   await page.goto('/discover', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   const card = page.locator('.discover-movie-card').filter({ hasText: parityMovie.title });
   await card.click();
   await expect(card).toContainText('SQL Director');
@@ -3749,6 +3961,7 @@ test('adaptive Discover paging fills the measured desktop card rows', async ({ p
   });
 
   await page.goto('/discover', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   const grid = page.locator('.discover-panel .discover-grid');
   await expect(grid.locator(':scope > article')).toHaveCount(39);
   const metrics = await grid.evaluate((element) => ({
@@ -3761,7 +3974,7 @@ test('adaptive Discover paging fills the measured desktop card rows', async ({ p
   expect(requestedPageSizes).toContain(39);
 });
 
-test('Home uses a five-card trailer row and aligns Continue, Discover, inspector, and upcoming', async ({ page }) => {
+test('Home uses ordered full-width poster rails, status panels and inline movie details', async ({ page }) => {
   await page.setViewportSize({ width: 1920, height: 1080 });
   await mockCardParityApis(page);
   let followedTrailerMovies = [];
@@ -3792,7 +4005,7 @@ test('Home uses a five-card trailer row and aligns Continue, Discover, inspector
     progress: 0.4,
     remaining_seconds: 1200
   }));
-  const upcoming = Array.from({ length: 6 }, (_, index) => ({
+  const upcoming = Array.from({ length: 12 }, (_, index) => ({
     tmdb_id: String(8100 + index),
     title: `Upcoming Feature ${index + 1}`,
     year: '2027',
@@ -3802,7 +4015,7 @@ test('Home uses a five-card trailer row and aligns Continue, Discover, inspector
     genres: ['Drama'],
     popularity: 100 - index
   }));
-  const trending = Array.from({ length: 8 }, (_, index) => index === 0 ? parityMovie : ({
+  const trending = Array.from({ length: 12 }, (_, index) => index === 0 ? parityMovie : ({
     ...parityMovie,
     tmdb_id: String(8200 + index),
     imdb_id: `tt-home-${index}`,
@@ -3899,6 +4112,8 @@ test('Home uses a five-card trailer row and aligns Continue, Discover, inspector
     }
   ];
 
+  videos.push({ ...videos[0], video_id:'video-one-alt', title:'Hot Movie Official Trailer (2027)', source_id:'movie-trailers-source', source_name:'Movie Trailers Source' });
+
   await page.route('**/api/player/continue-watching**', (route) => route.fulfill({
     json: { items: continueItems }
   }));
@@ -3909,8 +4124,8 @@ test('Home uses a five-card trailer row and aligns Continue, Discover, inspector
       { id: 'movie-trailers-source', name: 'Movie Trailers Source', source_url: 'https://youtube.test/mts' }
     ],
     items: videos,
-    next_cursor: '',
-    has_more: false,
+    next_cursor: 'next-trailers',
+    has_more: true,
     stale: false,
     fallback: false
   } }));
@@ -3971,59 +4186,59 @@ test('Home uses a five-card trailer row and aligns Continue, Discover, inspector
   await page.goto('/', { waitUntil: 'domcontentloaded' });
   await expect(page.getByRole('heading', { name: 'Continue Watching' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'New Trailers' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Upcoming movies' })).toBeVisible();
-  await expect(page.locator('.movie-list > .home-smart-movie-card')).toHaveCount(6);
-  await page.locator('.inspector').evaluate(
-    (element) => Promise.all(element.getAnimations().map((animation) => animation.finished))
-  );
-
+  await expect(page.getByRole('heading', { name: 'Coming soon' })).toBeVisible();
+  await expect(page.locator('.home-trending-track .upcoming-movie-card')).toHaveCount(12);
+  await expect(page.locator('.coming-soon-grid .upcoming-movie-card')).toHaveCount(12);
+  await expect(page.locator('.home-inline-details')).toHaveCount(0);
+  await expect(page.locator('.home-trailers-heading').getByRole('button', { name: 'More videos', exact: true })).toBeVisible();
   const geometry = await page.evaluate(() => {
-    const rect = (selector) => {
-      const bounds = document.querySelector(selector).getBoundingClientRect();
-      return { left: bounds.left, right: bounds.right, top: bounds.top, bottom: bounds.bottom, width: bounds.width };
-    };
-    return {
-      continuePanel: rect('.continue-watching-panel'),
-      trailers: rect('.home-trailers-panel'),
-      discover: rect('.movie-rail'),
-      inspector: rect('.inspector'),
-      upcoming: rect('.coming-soon-panel')
-    };
+    const rect = selector => { const b = document.querySelector(selector).getBoundingClientRect(); return {left:b.left, right:b.right, top:b.top, bottom:b.bottom, width:b.width}; };
+    return { resume:rect('.continue-watching-panel'), followed:rect('.home-followed-section'), trailers:rect('.home-trailers-panel'), health:rect('.health-panel'), trending:rect('.movie-rail'), upcoming:rect('.coming-soon-panel') };
   });
-  expect(Math.abs(geometry.continuePanel.left - geometry.discover.left)).toBeLessThan(1);
-  expect(Math.abs(geometry.continuePanel.width - geometry.discover.width)).toBeLessThan(1);
-  expect(Math.abs(geometry.trailers.left - geometry.discover.left)).toBeLessThan(1);
-  expect(Math.abs(geometry.trailers.right - geometry.inspector.right)).toBeLessThan(1);
-  expect(geometry.trailers.width).toBeGreaterThan(geometry.discover.width + 300);
-  expect(geometry.discover.top).toBeGreaterThanOrEqual(geometry.continuePanel.bottom + 17);
-  expect(Math.abs(geometry.upcoming.left - geometry.inspector.left)).toBeLessThan(1);
-  expect(geometry.upcoming.top).toBeGreaterThanOrEqual(geometry.inspector.bottom + 17);
-
-  const rowMetrics = await page.evaluate(() => {
-    const metrics = (selector) => {
-      const grid = document.querySelector(selector);
-      return {
-        cards: grid.children.length,
-        columns: getComputedStyle(grid).gridTemplateColumns.split(' ').filter(Boolean).length
-      };
-    };
-    return {
-      trailers: metrics('.home-trailer-grid'),
-      upcoming: metrics('.coming-soon-grid')
-    };
+  expect(Math.abs(geometry.followed.top - geometry.health.top)).toBeLessThan(1);
+  expect(geometry.trailers.top).toBeGreaterThan(geometry.followed.bottom);
+  expect(geometry.resume.top).toBeGreaterThan(geometry.trailers.bottom);
+  expect(Math.abs(geometry.resume.width - geometry.trailers.width)).toBeLessThan(1);
+  const trailerControls = await page.evaluate(() => {
+    const panel = document.querySelector('.home-trailers-panel');
+    const button = panel.querySelector('.home-load-trailers').getBoundingClientRect();
+    const filter = panel.querySelector('.horizontal-card-rail-arrows').getBoundingClientRect();
+    const rail = panel.querySelector('.horizontal-card-rail').getBoundingClientRect();
+    return { buttonTop: button.top, filterTop: filter.top, buttonRight: button.right, filterLeft: filter.left,
+      footerSpace: panel.getBoundingClientRect().bottom - rail.bottom,
+      padding: parseFloat(getComputedStyle(panel).paddingBottom) };
   });
-  expect(rowMetrics.trailers.cards % rowMetrics.trailers.columns).toBe(0);
-  expect(rowMetrics.trailers).toEqual({ cards: 5, columns: 5 });
-  expect(rowMetrics.upcoming.cards % rowMetrics.upcoming.columns).toBe(0);
-  expect(rowMetrics.upcoming).toEqual({ cards: 6, columns: 3 });
+  expect(Math.abs(trailerControls.buttonTop - trailerControls.filterTop)).toBeLessThan(1);
+  expect(trailerControls.buttonRight).toBeLessThan(trailerControls.filterLeft);
+  expect(trailerControls.footerSpace).toBeLessThanOrEqual(trailerControls.padding + 2);
+  expect(geometry.trending.top).toBeGreaterThan(geometry.resume.bottom);
+  expect(Math.abs(geometry.upcoming.width - geometry.trending.width)).toBeLessThan(1);
+  for (const size of [{ width: 1280, height: 720 }, { width: 1920, height: 1080 }]) {
+    await page.setViewportSize(size);
+    await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    await captureDesktopEvidence(page, `home-populated-${size.width}`);
+  }
+  for (const label of ['Trending movies', 'Upcoming movies']) {
+    const track = page.getByRole('group', { name: `${label} cards`, exact: true });
+    await page.getByRole('button', {name:`Scroll ${label} right`, exact:true}).click();
+    await expect.poll(() => track.evaluate(e=>e.scrollLeft)).toBeGreaterThan(100);
+    await track.locator('.upcoming-movie-card').last().focus();
+    const visible = await track.locator('.upcoming-movie-card').last().evaluate(e => { const card=e.getBoundingClientRect(), rail=e.parentElement.getBoundingClientRect(); return card.right <= rail.right + 1; });
+    expect(visible).toBe(true);
+  }
+  await page.setViewportSize({width:1920,height:1080});
 
-  await page.setViewportSize({ width: 1280, height: 900 });
-  await expect.poll(() => page.evaluate(() => ({
-    cards: document.querySelector('.home-trailer-grid').children.length,
-    columns: getComputedStyle(document.querySelector('.home-trailer-grid')).gridTemplateColumns.split(' ').filter(Boolean).length
-  }))).toEqual({ cards: 4, columns: 4 });
-  await page.setViewportSize({ width: 1920, height: 1080 });
-  await expect.poll(() => page.locator('.home-trailer-grid .home-video-card').count()).toBe(5);
+  const versionsTrigger = page.getByRole('button',{name:'Choose from 2 videos for Hot Movie',exact:true});
+  await versionsTrigger.click();
+  const versions = page.getByRole('dialog',{name:'Hot Movie',exact:true});
+  await expect(versions).toContainText('Hot Movie Official Trailer (2027)');
+  await page.keyboard.press('Escape');
+  await expect(versions).toHaveCount(0);
+  await expect(versionsTrigger).toBeFocused();
+  await page.getByRole('group',{name:'Trailer channel',exact:true}).getByRole('button',{name:'Movie Trailers Source',exact:true}).click();
+  await expect(page.locator('.home-trailer-grid .home-video-card')).toHaveCount(3);
+  await page.getByRole('group',{name:'Trailer channel',exact:true}).getByRole('button',{name:'All',exact:true}).click();
+  await expect(page.locator('.home-trailer-grid .home-video-card')).toHaveCount(5);
 
   await page.getByRole('button', { name: 'Play Hot Movie Trailer (2027)' }).click();
   const videoDialog = page.getByRole('dialog', { name: 'Rotten Tomatoes Trailers: Hot Movie Trailer (2027)' });
@@ -4045,24 +4260,59 @@ test('Home uses a five-card trailer row and aligns Continue, Discover, inspector
   await manualVideoDialog.getByRole('button', { name: 'Match trailer to Your Name. 2016' }).click();
   await expect(manualVideoDialog.getByText('Manually matched movie', { exact: true })).toBeVisible();
   await manualVideoDialog.getByRole('button', { name: 'View details' }).click();
-  await expect(page.getByRole('heading', { name: 'Discover', exact: true })).toBeVisible();
+  await expect(page.getByRole('region', { name: 'Search, filters and selection', exact: true })).toBeVisible();
   await expect(page.locator('.discover-card-expanded')).toContainText('Your Name.');
   await expect(page.locator('.workspace-path-bar')).toContainText('Rotten Tomatoes Trailers: Your Name.');
 
   await page.getByRole('button', { name: 'Home', exact: true }).click();
 
-  await page.getByRole('button', { name: /Inspect Upcoming Feature 1/ }).click();
-  await expect(page.locator('.inspector')).toContainText('Upcoming Feature 1');
-  await expect(page.locator('.inspector')).toContainText('Upcoming Cast');
-  await expect(page.locator('.inspector').getByRole('button', { name: 'Follow release' })).toBeVisible();
-  await page.locator('.inspector').getByRole('button', { name: 'Play trailer' }).click();
+  await expect(page.locator('.release-panel .release-list')).toContainText('Hot Movie');
+  await expect(page.locator('.release-panel').getByRole('button', {name:'View all',exact:true})).toHaveCount(0);
+  const upcomingTrigger = page.getByRole('button',{name:/Inspect Upcoming Feature 1,/});
+  await upcomingTrigger.evaluate(element=>element.addEventListener('click',()=>{window.__homeDetailOrigin=element.closest('.workspace').scrollTop;},{capture:true,once:true}));
+  await upcomingTrigger.click();
+  await expect(page.locator('.home-inline-details')).toContainText('Upcoming Feature 1');
+  await expect(page.locator('.home-inline-details')).toContainText('Upcoming Cast');
+  await expect(page.locator('.home-inline-details').getByRole('button', { name: 'Follow release' })).toBeVisible();
+  await page.locator('.home-inline-details').getByRole('button', { name: 'Play trailer' }).click();
   const fallbackDialog = page.getByRole('dialog', { name: 'Trailer for Upcoming Feature 1 2027' });
   await expect(fallbackDialog.locator('iframe')).toHaveAttribute('src', 'https://www.youtube.com/embed/youtube-fallback?autoplay=1&rel=0&enablejsapi=1');
   await fallbackDialog.getByRole('button', { name: 'Stop trailer' }).click();
 
-  await page.getByRole('button', { name: 'View all' }).click();
-  await expect(page.getByRole('heading', { name: 'Discover', exact: true })).toBeVisible();
-  await expect(page.locator('.discover-toolbar select').first()).toHaveValue('upcoming');
+  await page.getByRole('button',{name:'Close movie details',exact:true}).click();
+  await expect(page.locator('.home-inline-details')).toHaveCount(0);
+  await expect.poll(()=>page.evaluate(()=>Math.abs(document.querySelector('.workspace').scrollTop-window.__homeDetailOrigin))).toBeLessThan(2);
+
+  await page.locator('.coming-soon-panel').getByRole('button', { name: 'View all' }).click();
+  await expect(page.getByRole('region', { name: 'Search, filters and selection', exact: true })).toBeVisible();
+  await expect(page.locator('.workspace-filter-grid select').first()).toHaveValue('upcoming');
+});
+
+test('Home library health distinguishes unavailable, stale and empty status', async ({ page }) => {
+  await mockCardParityApis(page);
+  let statsMode = 'error';
+  await page.route('**/api/stats', route => statsMode === 'error'
+    ? route.fulfill({status:503,json:{error:'Fixture status unavailable'}})
+    : route.fulfill({json:statsMode === 'empty'
+      ? {total_files:0,unique_titles:0}
+      : {total_files:1284,unique_titles:1016,low_quality_count:12,duplicate_groups:3,unmatched_count:8,identity_review_count:2}}));
+  await page.goto('/');
+  const health = page.getByRole('region',{name:'Library health',exact:true});
+  await expect(health.getByText('Library status is unavailable',{exact:true})).toBeVisible();
+  await expect(health.getByText('Your local library is empty',{exact:true})).toHaveCount(0);
+  statsMode = 'populated';
+  await health.getByRole('button',{name:'Retry',exact:true}).click();
+  await expect(health.locator('.health-card').first()).toContainText('1,284Files');
+  await expect(health).toContainText('12Low quality');
+  statsMode = 'error';
+  await page.getByRole('button',{name:'Library',exact:true}).click();
+  await page.getByRole('button',{name:'Home',exact:true}).click();
+  await expect(health).toContainText('Showing last-known library status.');
+  await expect(health.locator('.health-card').first()).toContainText('1,284Files');
+  statsMode = 'empty';
+  await health.getByRole('button',{name:'Retry',exact:true}).click();
+  await expect(health.getByText('Your local library is empty',{exact:true})).toBeVisible();
+  await expect(health.getByRole('button',{name:'Add folders',exact:true})).toBeVisible();
 });
 
 test('bootstrap paints before the frontend entry bundle executes', async ({ page }) => {
@@ -4096,7 +4346,7 @@ test('bootstrap paints before the frontend entry bundle executes', async ({ page
   });
 
   releaseEntry();
-  await expect(page.getByRole('heading', { name: 'Movie View' })).toBeVisible();
+  await expect(page.getByRole('region', { name: 'Library Movies', exact: true })).toBeVisible();
   await expect(bootstrap).toHaveCount(0);
 });
 
@@ -4161,6 +4411,7 @@ test('cold Library navigation measures the grid once and defers unrelated startu
   });
 
   await page.goto('/library', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   await expect.poll(() => libraryRequests.length).toBe(1);
   await expect.poll(() => page.evaluate(() => window.__cpInitialSyncEmitted)).toBe(true);
   await page.waitForTimeout(75);
@@ -4228,6 +4479,7 @@ test('committed catalog event quietly adds a final Library card without unmounti
   }));
 
   await page.goto('/library', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   const firstCard = page.locator('.library-movie-card').filter({ hasText: parityMovie.title });
   await expect(firstCard).toBeVisible();
   await firstCard.getByRole('heading', { name: parityMovie.title }).click();
@@ -4235,6 +4487,7 @@ test('committed catalog event quietly adds a final Library card without unmounti
   await firstCard.locator('.library-selection-checkbox').click();
   await expect(firstCard.getByRole('checkbox')).toBeChecked();
   const search = page.getByLabel('Search your offline library');
+  await openControls(page);
   await search.focus();
   const grid = page.locator('.library-results');
   await grid.evaluate((element) => { element.dataset.quietMountProof = 'same-grid'; });

@@ -264,6 +264,144 @@ def fixture_new_reset():
     flat = media / 'Flat fixture' / 'Louie.Fixture.S01E01.mkv'
     flat.unlink(missing_ok=True)
     return {'reset':True}
+# Season-pack acceptance uses a separate synthetic show and real storage/transfer owners.
+pack_cases = {}
+pack_provider, pack_metadata, pack_resolver = owner.prowlarr, metadata.request, owner.resolve_candidate
+def season_pack_provider():
+    original = pack_provider()
+    def report(**kwargs):
+        case = pack_cases.get(str(kwargs.get('tmdb_tv_id')))
+        if not case: return {'items':original.search_tv(**kwargs)}
+        case['queries'].append({'season':kwargs.get('season'),'episode':kwargs.get('episode')})
+        prefix = case['title'].replace(' ','.')
+        common = {'indexerId':7,'indexer':'Fixture TV','size':300000,'seeders':20}
+        items = [
+            {**common,'title':f"{case['title']} (2010) Season 2 S02 (1080p BluRay x265 HEVC 10bit AAC 5.1 Garshasp)", 'infoHash':case['hash'],'magnetUrl':'magnet:?xt=urn:btih:'+case['hash']},
+            {**common,'title':f'{prefix}.S02.1080p.BluRay.x264-FGT [CK] [S02 Two Complete]','infoHash':case['review_hash'],'magnetUrl':'http://fixture.invalid/7/download'},
+            {**common,'title':f'{prefix}.2010.S01.1080p.BluRay.x265','infoHash':case['wrong_hash'],'magnetUrl':'magnet:?xt=urn:btih:'+case['wrong_hash']}]
+        if case['mode']=='review': items = items[1:]
+        return {'items':items,'partial':True,'sources':[{'id':7,'name':'Fixture TV','state':'complete','count':len(items)}, {'id':9,'name':'Fixture timeout','state':'timeout','count':0}]}
+    return SimpleNamespace(base_url='http://fixture.invalid',search_tv_report=report,search_tv=lambda **kwargs:report(**kwargs)['items'])
+def season_pack_metadata(path, **kwargs):
+    parts = path.split('/')
+    case = pack_cases.get(parts[2]) if len(parts)>2 and parts[1]=='tv' else None
+    if case:
+        episodes = [{'id':case['tmdb_id']*10+n,'season_number':2,'episode_number':n,'name':f'Episode {n}','air_date':'2011-06-23'} for n in (1,2,3)]
+        if 'season' in parts: return {'episodes':episodes}
+        return {**raw_series,'id':case['tmdb_id'],'name':case['title'],'original_name':case['title'], 'first_air_date':'2010-06-29',
+                'seasons':[{'season_number':2,'episode_count':3}],'external_ids':{}}
+    if path=='/search/tv':
+        case = next((case for case in pack_cases.values() if case['title']==kwargs.get('query')),None)
+        if case: return {'results':[{'id':case['tmdb_id'],'name':case['title'],'first_air_date':'2010-06-29'}, {'id':999999,'name':case['title'],'first_air_date':'2006-01-01'}]}
+    return pack_metadata(path,**kwargs)
+def season_pack_resolver(candidate):
+    if candidate.get('download_url')=='http://fixture.invalid/7/download' and candidate.get('info_hash'):
+        digest = candidate['info_hash']
+        return {'info_hash':digest,'magnet_url':'magnet:?xt=urn:btih:'+digest,'download_url':'','transport_verified':True}
+    return pack_resolver(candidate)
+owner.prowlarr, metadata.request, owner.resolve_candidate = season_pack_provider, season_pack_metadata, season_pack_resolver
+
+@app.app.post('/__tv_fixture/season-pack/begin')
+def fixture_pack_begin():
+    mode = app.request.get_json().get('mode','pack')
+    number = len(pack_cases)+1
+    tmdb_id = 920000+number
+    title = f'Louie Pack Fixture {number}'
+    digest = hashlib.sha1(f'pack-{number}'.encode()).hexdigest()
+    case = {'tmdb_id':tmdb_id,'title':title,'hash':digest,'review_hash':hashlib.sha1(f'review-{number}'.encode()).hexdigest(),
+            'wrong_hash':hashlib.sha1(f'wrong-{number}'.encode()).hexdigest(),'mode':mode,'queries':[]}
+    identity = repository.refresh({'tmdb_id':tmdb_id,'title':title,'first_air_date':'2010-06-29','status':'Ended','seasons':[{'season_number':2,'episode_count':3}]},
+        [{'provider_id':str(tmdb_id*10+n),'season_number':2,'episode_number':n,'title':f'Episode {n}','air_date':'2011-06-23'} for n in (1,2,3)])
+    folder = media / f'{title} (2010)'
+    (folder / 'Season 02').mkdir(parents=True,exist_ok=True)
+    repository.approve_path(folder,'folder',identity)
+    repository.set_import_home(identity,folder,[media])
+    case['series_id'] = identity
+    pack_cases[str(tmdb_id)] = case
+    return case
+
+@app.app.post('/__tv_fixture/season-pack/run/<int:identity>')
+def fixture_pack_run(identity):
+    monitoring = app._tv_monitoring()
+    monitoring.run_once(limit=5,submit=True)
+    case = next(case for case in pack_cases.values() if case['series_id']==identity)
+    return {'tasks':monitoring.list_tasks(identity)['items'],'queries':case['queries']}
+
+@app.app.post('/__tv_fixture/season-pack/complete/<int:identity>')
+def fixture_pack_complete(identity):
+    case = next(case for case in pack_cases.values() if case['series_id']==identity)
+    digest = case['hash'] if manager.jobs.get(case['hash']) else case['review_hash']
+    job = manager.jobs.get(digest)
+    if not job: raise ValueError('Queue the pack first')
+    files, paths = [],[]
+    for n in (1,2,3):
+        path = manager.staging_dir / f"{case['title'].replace(' ','.')}.2010.S02E{n:02d}.1080p.BluRay.mkv"
+        path.write_bytes(b'x'*100000)
+        paths.append(path)
+        files.append({'index':n-1,'name':path.name,'size':path.stat().st_size})
+    torrent = {'hash':digest,'progress':1,'save_path':str(manager.staging_dir)}
+    original_probe, original_files = owner.probe, manager.client.files.side_effect
+    owner.probe = lambda _: {'probe_status':'ok','quality_class':'1080p','video_codec':'HEVC'}
+    manager.client.files.side_effect = lambda _: files
+    try:
+        with manager._completion_lock:
+            validated = manager._process_pending_magnet_validation(digest,job,torrent)
+            result = owner.process_completed(manager,digest,validated,torrent)
+        monitoring = app._tv_monitoring()
+        # The fixture supplies the next worker tick after synthetic completion.
+        # Production polling keeps its ordinary schedule.
+        with monitoring.store.transaction() as db:
+            db.execute('UPDATE tv_tasks SET next_due=0 WHERE series_id=?', (identity,))
+        monitoring.run_once(submit=True)
+        return {'job':result,'source_exists':any(path.exists() for path in paths),'episodes':repository.episodes(identity,2)}
+    finally: owner.probe, manager.client.files.side_effect = original_probe, original_files
+
 # Use the real metadata refresh owner against fixture transport, including scoped preview persistence.
+performance_fixture = {}
+
+def prohibit_player_launch(*args, **kwargs):
+    raise AssertionError('A real player launch is prohibited in this fixture')
+
+app._player_manager.os_opener = prohibit_player_launch
+app._player_manager.process_launcher = prohibit_player_launch
+
+@app.app.post('/__tv_fixture/library-performance/begin')
+def performance_begin():
+    if performance_fixture:
+        raise ValueError('Performance fixture already active')
+    repository.store.backup(root/'library-performance-before.sqlite')
+    episode = repository.episodes(series_id,1)[0]
+    path = season_home/'Harbor.Signals.S01E01.720p.alternate.mkv'
+    path.write_bytes(b'SYNTHETIC SECOND VERSION')
+    identity = repository.bind_file(path,[episode['id']],{'quality_class':'720p','audio_language':'English'},[media])
+    repository.save_progress(episode['id'],restart=True)
+    original_play, original_roots = app._player_manager.play, services['playback'].roots
+    performance_fixture.update(original_play=original_play,original_roots=original_roots,path=path,keys=[])
+    services['playback'].roots = lambda: [media]
+    def record_play(path_key, *, restart=False):
+        resolved = services['playback'].resolve(path_key)
+        services['history'].begin_session(resolved,restart=restart)
+        performance_fixture['keys'].append(path_key)
+        return {'ok':True,'mode':'built_in','fallback':False}
+    app._player_manager.play = record_play
+    return {'episode_id':episode['id'],'file_id':identity,'expected_key':f'tv:episode:{episode["id"]}:file:{identity}'}
+
+@app.app.get('/__tv_fixture/library-performance/state')
+def performance_state():
+    return {'keys':performance_fixture.get('keys',[])}
+
+@app.app.post('/__tv_fixture/library-performance/end')
+def performance_end():
+    if performance_fixture:
+        app._player_manager.play = performance_fixture['original_play']
+        services['playback'].roots = performance_fixture['original_roots']
+        repository.store.restore(root/'library-performance-before.sqlite')
+        path = performance_fixture['path'].resolve()
+        if media.resolve() not in path.parents:
+            raise ValueError('Fixture cleanup escaped temporary media')
+        path.unlink(missing_ok=True)
+        performance_fixture.clear()
+    return {'restored':True}
+
 print(f'TV fixture series_id={series_id}, root={root}', flush=True)
 app.app.run(host='127.0.0.1', port=port, use_reloader=False, debug=False)

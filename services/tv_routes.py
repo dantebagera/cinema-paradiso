@@ -1,5 +1,6 @@
 """Native-TV HTTP composition; domain decisions stay in TV services."""
 import json
+from urllib.error import URLError
 from flask import Response, jsonify, request
 
 from services.player_catalog import PlayerMediaError
@@ -156,9 +157,16 @@ def register_tv_routes(app, services, enabled, player_manager, acquisition=None,
 
     @app.get('/api/tv/lists')
     def tv_lists():
-        return action(lambda: services()['read'].tv_lists(list_id=request.args.get('list_id'),
-            query=request.args.get('query', ''), page=request.args.get('page', 1), page_size=request.args.get('page_size', 40),
-            status=request.args.get('status', 'all')))
+        def read():
+            criteria = None
+            if 'criteria' in request.args:
+                criteria = json.loads(request.args['criteria'])
+                if not isinstance(criteria, dict):
+                    raise ValueError('TV list criteria must be a query object')
+            return services()['read'].tv_lists(list_id=request.args.get('list_id'),
+                query=request.args.get('query', ''), page=request.args.get('page', 1), page_size=request.args.get('page_size', 40),
+                status=request.args.get('status', 'all'), criteria=criteria)
+        return action(read)
 
     @app.post('/api/tv/lists')
     def tv_create_list():
@@ -423,6 +431,10 @@ def register_tv_routes(app, services, enabled, player_manager, acquisition=None,
     def tv_tasks():
         return action(lambda: monitoring().list_tasks(request.args.get('series_id'),
             history=request.args.get('history') == 'true', page=request.args.get('page', 1)))
+
+    @app.get('/api/tv/tasks/<task_id>')
+    def tv_task_detail(task_id):
+        return action(lambda: monitoring().task(task_id))
 
     @app.post('/api/tv/series/<int:series_id>/tasks/preview')
     def tv_task_preview(series_id):

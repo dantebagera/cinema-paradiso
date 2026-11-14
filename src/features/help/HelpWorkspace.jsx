@@ -1,6 +1,25 @@
+import { ActionLink } from '../../components/ui/Button.jsx';
 import { ExternalLink } from 'lucide-react';
 
 const manualSections = [
+  {
+    key: 'chatgpt', title: 'ChatGPT provider',
+    summary: 'Select ChatGPT or Ollama in Settings. A failure stays visible until you choose what to do.',
+    details: [
+      { title: 'Connect and choose a model', items: [
+        'Choose ChatGPT in AI Provider & ChatGPT, then Continue with ChatGPT. Sign-in and consent open in your system browser; check behind CP if it is hidden.',
+        'Select the connected account, load its available models, choose one, save, then use Test ChatGPT connection.',
+        'Local Movie basename/title hints and IPTV title samples have separate opt-ins, both initially off. Full paths, stream addresses and credentials stay local.'
+      ] },
+      { title: 'Results and reviewed actions', items: [
+        'Set any positive whole-number recommendation target. Requests keep their selected account and model, save verified batches, and pause after 24 AI requests per run. Continue explicitly starts the next run.',
+        'Follow-up requests keep conversation context. New conversation clears that context for the next request; refreshing only restores saved progress.',
+        'Exhaustive studio film requests use AI Control: released films at least 60 minutes long include documentaries. Ask explicitly for shorts, upcoming films or a different documentary scope. Unknown runtime stays unresolved.',
+        'AI Control prepares Movie, TV and IPTV actions through their existing owners. Review the actual targets and confirm each action. Smart Match and IPTV AI previews require a separate Apply.',
+        'Disconnect affects only that account. A different PC or data folder needs its own sign-in; credentials and host identity are excluded from transferable backups and packages.'
+      ] }
+    ]
+  },
   {
     key: 'quick-start',
     title: 'Quick Start',
@@ -546,7 +565,7 @@ export default function HelpWorkspace() {
                 <span className="help-status-pill">{section.status}</span>
                 <h3>{section.title}</h3>
               </div>
-              <a className="btn btn-secondary help-settings-link" href={`/settings#settings-${section.settingsHash}`}>Open Settings</a>
+              <ActionLink className="help-settings-link" href={`/settings#settings-${section.settingsHash}`}>Open Settings</ActionLink>
             </header>
             <p>{section.summary}</p>
             <ol className="help-step-list">

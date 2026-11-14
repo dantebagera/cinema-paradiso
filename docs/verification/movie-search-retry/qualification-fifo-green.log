@@ -1,0 +1,16 @@
+test_a_real_termination_keeps_durable_stage_reservations_and_handoff (tests.test_movie_isolated_qualification.MovieIsolatedQualificationTest.test_a_real_termination_keeps_durable_stage_reservations_and_handoff) ... ok
+test_b_simultaneous_inventory_writers_preserve_each_other_and_generation (tests.test_movie_isolated_qualification.MovieIsolatedQualificationTest.test_b_simultaneous_inventory_writers_preserve_each_other_and_generation) ... ok
+test_c_admission_sequence_is_atomic_operational_and_survives_json_restore (tests.test_movie_isolated_qualification.MovieIsolatedQualificationTest.test_c_admission_sequence_is_atomic_operational_and_survives_json_restore) ... FAIL
+
+======================================================================
+FAIL: test_c_admission_sequence_is_atomic_operational_and_survives_json_restore (tests.test_movie_isolated_qualification.MovieIsolatedQualificationTest.test_c_admission_sequence_is_atomic_operational_and_survives_json_restore)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\Desktop\cinema paradiso\tests\test_movie_isolated_qualification.py", line 139, in test_c_admission_sequence_is_atomic_operational_and_survives_json_restore
+    self.assertEqual(repository.next_retry_admission_order(), 51)
+AssertionError: 11 != 51
+
+----------------------------------------------------------------------
+Ran 3 tests in 4.459s
+
+FAILED (failures=1)

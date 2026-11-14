@@ -1,0 +1,99 @@
+[
+  {
+    "id": 12149,
+    "title": "Frailty",
+    "release_date": "2002-04-12",
+    "requested_year": "2001",
+    "provider_release_years": [
+      "2002",
+      "2003",
+      "2004",
+      "2001",
+      "2025"
+    ],
+    "runtime": 100
+  },
+  {
+    "id": 220289,
+    "title": "Coherence",
+    "release_date": "2014-04-06",
+    "requested_year": "2013",
+    "provider_release_years": [
+      "2014",
+      "2013",
+      "2017",
+      "2015",
+      "2025"
+    ],
+    "runtime": 89
+  },
+  {
+    "id": 411088,
+    "title": "The Invisible Guest",
+    "release_date": "2017-01-06",
+    "requested_year": "2016",
+    "provider_release_years": [
+      "2017",
+      "2018",
+      "2024",
+      "2019",
+      "2016"
+    ],
+    "runtime": 107
+  },
+  {
+    "id": 10494,
+    "title": "Perfect Blue",
+    "release_date": "1998-02-28",
+    "requested_year": "1997",
+    "provider_release_years": [
+      "1998",
+      "2025",
+      "2001",
+      "2008",
+      "2002",
+      "2016",
+      "1997",
+      "2003",
+      "2022",
+      "2024",
+      "2005",
+      "2000",
+      "2026",
+      "2018",
+      "2009",
+      "2017",
+      "1999",
+      "2020",
+      "2019",
+      "2015",
+      "2013",
+      "2021",
+      "2023",
+      "2004",
+      "2010",
+      "2007"
+    ],
+    "runtime": 81
+  },
+  {
+    "id": 11075,
+    "title": "Audition",
+    "release_date": "2000-03-03",
+    "requested_year": "1999",
+    "provider_release_years": [
+      "2000",
+      "1999",
+      "2001",
+      "2023",
+      "2002",
+      "2026",
+      "2021",
+      "2004",
+      "2016",
+      "2025",
+      "2005"
+    ],
+    "runtime": 115
+  }
+]

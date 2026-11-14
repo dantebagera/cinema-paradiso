@@ -9,10 +9,20 @@ def title_key(value):
     return ''.join(c for c in unicodedata.normalize('NFKD', str(value or '')).casefold() if c.isalnum())
 
 
+def _season_declarations(text):
+    """Use the same explicit season evidence for numbering and identity."""
+    return list(re.finditer(r'(?i)(?<![a-z0-9])(?:season[. _-]*(\d{1,3})(?!\d)|S(\d{1,3})(?=E\d|$|[. _(\[\]-])|(\d{1,3})(?=x\d{1,4}(?!\d)))', text))
+
+
+def _declared_season(match):
+    return int(next(value for value in match.groups() if value is not None))
+
+
 def series_identity(release, series, *, ambiguous=False):
     """Identity evidence is separate from episode coverage and torrent identity."""
     text = str(release.get('title') or '')
-    prefix = re.split(r'(?i)(?:^|[. _-])(?:S\d{1,3}(?=E\d|$|[. _-])|\d{1,3}x\d+|20\d{2}[. -]\d{2}[. -]\d{2})', text, maxsplit=1)[0].strip(' ._-()[]')
+    declarations = _season_declarations(text)
+    prefix = (text[:declarations[0].start()] if declarations else re.split(r'(?i)(?:^|[. _-])(?:\d{1,3}x\d+|20\d{2}[. -]\d{2}[. -]\d{2})', text, maxsplit=1)[0]).strip(' ._-()[]')
     aliases = [series.get('title'), series.get('original_title'), *(series.get('alternative_titles') or [])]
     alias_keys = {title_key(x) for x in aliases if x}
     suffix = re.search(r'(?:[. _(-])((?:19|20)\d{2})[)\]]*$', prefix)
@@ -31,7 +41,8 @@ def series_identity(release, series, *, ambiguous=False):
     ids = [(release.get('tmdbId'), series.get('tmdb_id')), (release.get('tvdbId'), series.get('external_ids', {}).get('tvdb_id'))]
     conflicts = any(actual and expected and str(actual) != str(expected) for actual, expected in ids)
     matched_id = any(actual and expected and str(actual) == str(expected) for actual, expected in ids)
-    if conflicts or (year and expected_year and year != expected_year) or (not title_match):
+    contradictory = len({_declared_season(m) for m in declarations}) > 1
+    if contradictory or conflicts or (year and expected_year and year != expected_year) or (not title_match):
         return {**evidence, 'state': 'conflict', 'reason': 'Release title, year or provider identity does not match this series'}
     if matched_id:
         return {**evidence, 'state': 'matched', 'method': 'provider_id', 'reason': 'Provider identity matches'}
@@ -44,16 +55,23 @@ VIDEO_EXTENSIONS = {'.mkv', '.mp4', '.avi', '.m4v', '.mov', '.ts', '.webm'}
 
 
 def parse_episode_name(name):
-    text = Path(str(name)).name
+    parts = re.split(r'[/\\]', str(name))
+    text = parts[-1]
     stem = Path(text).stem
     marker = r'(?:sample|trailer|extras?|featurette)'
-    ignored = bool(re.search(rf'(?i)(?:^|[._-]){marker}(?:[._-]|$)', stem))
-    result = {'name': text, 'ignored': ignored, 'series_title': '', 'season_number': None, 'episode_numbers': [], 'absolute_number': None, 'air_date': None, 'scope': 'unknown'}
+    # The first directory is the torrent package root, which may itself be
+    # named Extras. Only exact auxiliary directories below it mark a video.
+    ignored_directory = any(re.fullmatch(r'(?i)(?:samples?|trailers?|extras?|featurettes?)', part) for part in parts[1:-1])
+    ignored = ignored_directory or bool(re.search(rf'(?i)(?:^|[._-]){marker}(?:[._-]|$)', stem))
+    result = {'name': text, 'ignored': ignored, 'series_title': '', 'season_number': None, 'episode_numbers': [], 'absolute_number': None, 'air_date': None, 'scope': 'unknown', 'contradictory': False}
+    declarations = _season_declarations(text)
+    if len({_declared_season(m) for m in declarations}) > 1:
+        return {**result, 'contradictory': True}
     match = re.search(r'(?i)(?<![a-z0-9])S(\d{1,3})E(\d{1,4})((?:(?:-?E|-)(\d{1,4}))*)', text)
     if match:
         result['series_title'] = stem[:match.start()].strip(' ._-()[]')
         tail = stem[match.end():].strip(' ._-()[]')
-        result['ignored'] = bool(re.search(rf'(?i)(?:^|[._-]){marker}(?:[._-]|$)', result['series_title'])) or bool(
+        result['ignored'] = ignored_directory or bool(re.search(rf'(?i)(?:^|[._-]){marker}(?:[._-]|$)', result['series_title'])) or bool(
             re.match(r'(?i)^(?:sample|featurette|extras?)(?:[. _-]|$)|^trailer(?:[. _-]|$)', tail))
         numbers = [int(match[2])]
         suffix = match[3]
@@ -69,7 +87,7 @@ def parse_episode_name(name):
     if match:
         result['series_title'] = stem[:match.start()].strip(' ._-()[]')
         tail = stem[match.end():].strip(' ._-()[]')
-        result['ignored'] = bool(re.search(rf'(?i)(?:^|[._-]){marker}(?:[._-]|$)', result['series_title'])) or bool(
+        result['ignored'] = ignored_directory or bool(re.search(rf'(?i)(?:^|[._-]){marker}(?:[._-]|$)', result['series_title'])) or bool(
             re.match(r'(?i)^(?:sample|featurette|extras?|trailer)(?:[. _-]|$)', tail))
         result.update(season_number=int(match[1]), episode_numbers=[int(match[2])], scope='episode')
         return result
@@ -87,6 +105,10 @@ def parse_episode_name(name):
     if match:
         result.update(series_title=match['title'].strip(' ._-()[]'), season_number=int(match['season']), episode_numbers=[int(match['episode'])], scope='episode')
         return result
+    if declarations:
+        declaration = declarations[0]
+        result.update(series_title=text[:declaration.start()].strip(' ._-'), season_number=_declared_season(declaration), scope='season')
+        return result
     match = re.search(r'(?i)(?<!\d)(?P<number>\d{1,3})of(?P<total>\d{1,3})(?!\d)', clean_stem)
     if match:
         result.update(series_title=clean_stem[:match.start()].strip(' ._-()[]'), absolute_number=int(match['number']), absolute_total=int(match['total']), scope='absolute')
@@ -99,13 +121,12 @@ def parse_episode_name(name):
     if match:
         result.update(series_title=match['title'].strip(' ._-()[]'), absolute_number=int(match['number']), scope='absolute')
         return result
-    match = re.search(r'(?i)(?:^|[. _-])S(\d{1,3})(?![0-9e])', text)
-    if match:
-        result.update(season_number=int(match[1]), scope='season')
     return result
 
 
 def resolve_episode_claim(claim, episodes, *, provider_episode_id=None, season_hint=None):
+    if claim.get('contradictory'):
+        return {'state': 'needs_review', 'episode_ids': [], 'reason': 'Explicit season declarations conflict'}
     if claim['ignored']:
         return {'state': 'ignored', 'episode_ids': [], 'reason': 'Sample or extra'}
     if provider_episode_id:

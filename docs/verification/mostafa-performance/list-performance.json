@@ -1,0 +1,28 @@
+{
+  "scope": "Movie list filter/sort helper only; synthetic in-process Node measurements, not live browser timings",
+  "checkout": "C:/Users/dante/.codex/worktrees/mostafa-ui-ux/cinema paradiso",
+  "head": "be511f98846a67a182e5b371ad087938e9344362",
+  "cause": "The helper merged metadata and built genre tokens for every row even with default filters; sort comparators merged metadata twice per comparison.",
+  "fix": "Default filters return a membership copy without metadata reads. Active predicates inspect only their fields. Filter/sort reads metadata once per member and calculates sort keys once before the stable sort.",
+  "fixture": {
+    "sizes": [4000, 10000],
+    "rows": "Owned rows with 30 extra canonical fields; metadata callback uses the same item, canonical_metadata and ownedPayload spread order as MovieListsWorkspace",
+    "popularity": "(rowIndex * 7919) % rowCount",
+    "filteredCriteria": { "genre": "16", "country": "US", "minVotes": "1000", "minRating": "7", "yearFrom": "2020", "yearTo": "2023", "sort": "popularity.desc" },
+    "sampling": "One warm-up then median of five runs; all rows pass the active predicates; metadata read counts recorded per run"
+  },
+  "measurements": [
+    { "rows": 4000, "scenario": "defaults", "beforeMedianMs": 4.182, "afterMedianMs": 0.0091, "beforeMetadataReads": 4000, "afterMetadataReads": 0, "resultCount": 4000 },
+    { "rows": 4000, "scenario": "filtered-popularity", "beforeMedianMs": 43.0489, "afterMedianMs": 7.1432, "beforeMetadataReads": 80774, "afterMetadataReads": 4000, "resultCount": 4000 },
+    { "rows": 10000, "scenario": "defaults", "beforeMedianMs": 7.3071, "afterMedianMs": 0.006, "beforeMetadataReads": 10000, "afterMetadataReads": 0, "resultCount": 10000 },
+    { "rows": 10000, "scenario": "filtered-popularity", "beforeMedianMs": 134.1637, "afterMedianMs": 13.0423, "beforeMetadataReads": 249720, "afterMetadataReads": 10000, "resultCount": 10000 }
+  ],
+  "verification": {
+    "baseline": "node --test tests/list-catalog-filters.test.mjs: 4 passed",
+    "red": "node --test tests/list-catalog-performance.test.mjs: all 7 new tests failed before production edit on excessive reads or unused field evaluation",
+    "focused": "node --test tests/list-catalog-filters.test.mjs tests/list-catalog-performance.test.mjs: 11 passed",
+    "broader": "$taskTests = @(rg --files tests -g '*.test.mjs'); node --test @taskTests: 133 passed, 0 failed",
+    "coverage": ["4000 and 10000 member default paths", "full membership before pagination", "once per row canonical metadata merges", "all five sort options", "stable ties", "input membership preservation", "unused field avoidance", "invalid/incomplete year drafts", "unknown genre choices"]
+  },
+  "limits": "Timings depend on host load and synthetic field shape. This does not measure metadata HTTP enrichment, list model construction, React rendering or browser interaction. No runtime restart, configuration/data change, commit, push or main-checkout edit occurred. Root agent handles compiled UI and live-browser gates."
+}

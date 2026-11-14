@@ -7,15 +7,15 @@ test('shared TV criteria filter the real catalog and reset restores results', as
   await page.getByRole('tablist', { name: 'Library media' }).getByRole('button', { name: 'TV Shows', exact: true }).click();
   const tv = page.getByRole('region', { name: 'Library TV Shows', exact: true });
   await expect(tv.getByRole('link', { name: 'Open Harbor Signals' })).toBeVisible();
+  await page.getByRole('button', { name: 'Search, filters & selection', exact: true }).click();
   await tv.getByLabel('TV search type').selectOption('advanced');
   await tv.getByRole('button', { name: 'Add advanced search criterion', exact: true }).click();
-  await tv.getByLabel('Criterion to add').selectOption('year');
-  await tv.getByRole('button', { name: 'Add criterion', exact: true }).last().click();
+  await page.getByLabel('Criterion to add').selectOption('year');
+  await page.getByRole('button', { name: 'Add criterion', exact: true }).last().click();
   await tv.getByLabel('year from', {exact:true}).fill('2025');
   await tv.getByRole('button', { name: 'Search TV', exact: true }).click();
   await expect(tv.getByText('No series match your search.', { exact: true })).toBeVisible();
-  await tv.getByRole('button', { name: 'Close criterion picker' }).click();
-  await tv.getByRole('button', { name: 'Open filters' }).click();
+  await expect(page.getByRole('button', { name: 'Close criterion picker' })).toHaveCount(0);
   await tv.getByRole('button', { name: 'Reset filters' }).click();
   await expect(tv.getByRole('link', { name: 'Open Harbor Signals' })).toBeVisible();
   await page.screenshot({ path: 'docs/verification/tv-normal-import/parity/library-filters.png', fullPage: true });
@@ -29,7 +29,7 @@ test('TV status and in-progress viewing state filter from the main Library bar',
   await page.goto('/library');
   await page.getByRole('tablist', { name: 'Library media' }).getByRole('button', { name: 'TV Shows', exact: true }).click();
   const tv = page.getByRole('region', { name: 'Library TV Shows', exact: true });
-  await tv.getByRole('button', { name: 'Open filters' }).click();
+  await page.getByRole('button', { name: 'Search, filters & selection', exact: true }).click();
   await tv.getByLabel('TV Status').selectOption('Continuing');
   await expect(tv.getByRole('link', { name: 'Open Harbor Signals' })).toHaveCount(0);
   await expect.poll(() => searches.some(body => body.scope === 'library' && body.extras?.status === 'Continuing')).toBe(true);
@@ -52,7 +52,7 @@ test('discover preview is read-only and trailers use the shared player without m
   });
   await page.route('https://www.youtube.com/**', (route) => route.fulfill({ contentType: 'text/html', body: '<p>Trailer fixture</p>' }));
   await page.goto('/discover');
-  await page.getByRole('tablist', { name: 'Discover tools' }).getByRole('button', { name: 'Explore Shows', exact: true }).click();
+  await page.getByRole('tablist', { name: 'Discover tools' }).getByRole('button', { name: 'TV Shows', exact: true }).click();
   await page.getByRole('link', { name: 'Open Open Water' }).click();
   await expect(page.getByRole('heading', { name: 'Open Water', exact: true })).toBeVisible();
   const previewActions = page.locator('.tv-series-header .card-actions');

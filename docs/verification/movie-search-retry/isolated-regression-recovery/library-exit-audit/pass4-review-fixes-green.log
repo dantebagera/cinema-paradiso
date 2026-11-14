@@ -1,0 +1,26 @@
+test_browser_report_utf8_with_non_ascii_error (__main__.AuditTests.test_browser_report_utf8_with_non_ascii_error) ... ok
+test_empty_report (__main__.AuditTests.test_empty_report) ... ok
+test_incomplete_workload_counts (__main__.AuditTests.test_incomplete_workload_counts) ... ok
+test_invalid_identity_and_shape (__main__.AuditTests.test_invalid_identity_and_shape) ... ok
+test_malformed_report (__main__.AuditTests.test_malformed_report) ... ok
+test_missing_report (__main__.AuditTests.test_missing_report) ... ok
+test_redirected_profile_uses_existing_browser_cache (__main__.AuditTests.test_redirected_profile_uses_existing_browser_cache) ... ok
+test_valid_normalized_report (__main__.AuditTests.test_valid_normalized_report) ... ok
+test_accounting_query_failure_is_charged_and_halts (__main__.BudgetFailureTests.test_accounting_query_failure_is_charged_and_halts) ... ok
+test_final_footprint_exception_is_charged_and_halts (__main__.BudgetFailureTests.test_final_footprint_exception_is_charged_and_halts) ... ok
+test_launch_exception_is_charged_and_halts (__main__.BudgetFailureTests.test_launch_exception_is_charged_and_halts) ... ok
+test_browser_stats_and_errors_fail (__main__.CompletionTests.test_browser_stats_and_errors_fail) ... ok
+test_forced_cleanup_cannot_qualify (__main__.CompletionTests.test_forced_cleanup_cannot_qualify) ... ok
+test_missing_audit_is_failure_after_passing_browser (__main__.CompletionTests.test_missing_audit_is_failure_after_passing_browser) ... ok
+test_nonzero_exit_is_failure (__main__.CompletionTests.test_nonzero_exit_is_failure) ... ok
+test_shutdown_timeout_is_failure (__main__.CompletionTests.test_shutdown_timeout_is_failure) ... ok
+test_success_requires_normal_exit_and_audit (__main__.CompletionTests.test_success_requires_normal_exit_and_audit) ... ok
+test_violation_is_failure_after_passing_browser (__main__.CompletionTests.test_violation_is_failure_after_passing_browser) ... ok
+test_wrong_stop_pid_is_failure (__main__.CompletionTests.test_wrong_stop_pid_is_failure) ... ok
+test_outcome_write_failure_preserves_shutdown_timeout (__main__.ReportingFailureTests.test_outcome_write_failure_preserves_shutdown_timeout) ... ok
+test_outcome_write_failure_rejects_otherwise_successful_run (__main__.ReportingFailureTests.test_outcome_write_failure_rejects_otherwise_successful_run) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.068s
+
+OK

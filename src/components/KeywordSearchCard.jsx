@@ -1,3 +1,4 @@
+import Button from './ui/Button.jsx';
 import { ArrowRight, Tags } from 'lucide-react';
 
 export default function KeywordSearchCard({ keyword, scope, meta, onOpen }) {
@@ -13,9 +14,9 @@ export default function KeywordSearchCard({ keyword, scope, meta, onOpen }) {
         <h3>{keyword.name}</h3>
         <span>{meta || (isLibrary ? 'Stored keyword' : 'TMDB keyword')}</span>
       </div>
-      <button type="button" className="btn btn-secondary" onClick={() => onOpen(keyword)}>
+      <Button type="button"  onClick={() => onOpen(keyword)}>
         {actionLabel} <ArrowRight size={15} />
-      </button>
+      </Button>
     </article>
   );
 }

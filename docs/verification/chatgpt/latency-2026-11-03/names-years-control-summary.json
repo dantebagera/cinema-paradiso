@@ -1,0 +1,27 @@
+{
+  "feature": "F1",
+  "label": "names-years-control",
+  "state": "completed",
+  "message": "",
+  "model": "gpt-6.1-sol",
+  "prompt": "movies with very twisted story you wont expect the ending",
+  "elapsed_seconds": 27.319256,
+  "inference_attempts": 1,
+  "tmdb_requests": 0,
+  "accepted_count": 0,
+  "scope": "names/years-only GPT output-format control; no TMDB matching or verified-result claim",
+  "name": "names-years-control",
+  "evidence_root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-ai-timing-_lupkasw",
+  "gpt_call_seconds": [
+    27.22594
+  ],
+  "gpt_roundtrip_seconds": 27.22594,
+  "tmdb_wall_seconds": 0,
+  "lease_seconds": 0.02301,
+  "other_seconds": 0.070306,
+  "first_backend_card_seconds": null,
+  "unverified_control_count": 50,
+  "native_proposal_count": null,
+  "native_processed_count": null,
+  "recommendation_source_hash": "026fc8e1c498401b67ded18b5f6dcb044eeaabf00e6ea1212da678ca7cca754f"
+}

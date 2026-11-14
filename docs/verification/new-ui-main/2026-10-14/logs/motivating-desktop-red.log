@@ -1,0 +1,99 @@
+
+Running 2 tests using 1 worker
+
+(node:49952) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tests\e2e\upcoming-movies.spec.js:34:1 › Home View all uses the backend Upcoming selection and preserves full pages and navigation (16.6s)
+(node:49308) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  2 tests\e2e\upcoming-movies.spec.js:88:1 › direct Upcoming selection and extra ownership and Advanced criteria keep the backend rule (45.2s)
+
+
+  1) tests\e2e\upcoming-movies.spec.js:34:1 › Home View all uses the backend Upcoming selection and preserves full pages and navigation 
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('.coming-soon-panel').locator('.upcoming-movie-card')
+    Expected: 6
+    Received: 81
+    Timeout:  15000ms
+
+    Call log:
+      - Expect "toHaveCount" with timeout 15000ms
+      - waiting for locator('.coming-soon-panel').locator('.upcoming-movie-card')
+        5 × locator resolved to 7 elements
+          - unexpected value "7"
+        28 × locator resolved to 81 elements
+           - unexpected value "81"
+
+
+      39 |   expect(homePayload.results).toHaveLength(81);
+      40 |   const upcoming = page.locator('.coming-soon-panel');
+    > 41 |   await expect(upcoming.locator('.upcoming-movie-card')).toHaveCount(6);
+         |                                                          ^
+      42 |   await expect(upcoming.locator('.upcoming-movie-copy strong')).toHaveText(
+      43 |     homePayload.results.slice(0, 6).map(movie => movie.title));
+      44 |   await upcoming.scrollIntoViewIfNeeded();
+        at C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\upcoming-movies.spec.js:41:58
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\..\..\AppData\Local\Temp\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\fixtures\motivating-desktop-red-6f975f5df64245f6af646196a475b910\playwright\upcoming-movies-Home-View--24a34-s-full-pages-and-navigation\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\..\..\AppData\Local\Temp\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\fixtures\motivating-desktop-red-6f975f5df64245f6af646196a475b910\playwright\upcoming-movies-Home-View--24a34-s-full-pages-and-navigation\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\..\..\..\AppData\Local\Temp\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\fixtures\motivating-desktop-red-6f975f5df64245f6af646196a475b910\playwright\upcoming-movies-Home-View--24a34-s-full-pages-and-navigation\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\..\..\..\AppData\Local\Temp\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\fixtures\motivating-desktop-red-6f975f5df64245f6af646196a475b910\playwright\upcoming-movies-Home-View--24a34-s-full-pages-and-navigation\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) tests\e2e\upcoming-movies.spec.js:88:1 › direct Upcoming selection and extra ownership and Advanced criteria keep the backend rule 
+
+    Test timeout of 45000ms exceeded.
+
+    Error: page.waitForResponse: Test timeout of 45000ms exceeded.
+
+       6 |
+       7 | function upcomingResponse(page, predicate = () => true) {
+    >  8 |   return page.waitForResponse(response => response.url().endsWith('/api/tmdb/discover/advanced')
+         |               ^
+       9 |     && response.request().method() === 'POST'
+      10 |     && response.request().postDataJSON()?.query?.feed === 'upcoming'
+      11 |     && predicate(response.request().postDataJSON()));
+        at upcomingResponse (C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\upcoming-movies.spec.js:8:15)
+        at C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\upcoming-movies.spec.js:92:26
+
+    Error: locator.selectOption: Test timeout of 45000ms exceeded.
+    Call log:
+      - waiting for getByRole('combobox', { name: 'Discover feed', exact: true })
+
+
+      91 |   await expect(page.locator('.discover-panel .discover-grid > article')).toHaveCount(39);
+      92 |   const directResponse = upcomingResponse(page);
+    > 93 |   await page.getByRole('combobox', { name: 'Discover feed', exact: true }).selectOption('upcoming');
+         |                                                                            ^
+      94 |   await assertUpcomingGrid(page, await directResponse, 39);
+      95 |
+      96 |   const ownershipResponse = upcomingResponse(page, body => body.query.groups.some(group => group.type === 'availability'));
+        at C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\upcoming-movies.spec.js:93:76
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\..\..\AppData\Local\Temp\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\fixtures\motivating-desktop-red-6f975f5df64245f6af646196a475b910\playwright\upcoming-movies-direct-Upc-2a898-teria-keep-the-backend-rule\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\..\..\AppData\Local\Temp\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\fixtures\motivating-desktop-red-6f975f5df64245f6af646196a475b910\playwright\upcoming-movies-direct-Upc-2a898-teria-keep-the-backend-rule\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\..\..\..\AppData\Local\Temp\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\fixtures\motivating-desktop-red-6f975f5df64245f6af646196a475b910\playwright\upcoming-movies-direct-Upc-2a898-teria-keep-the-backend-rule\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\..\..\..\AppData\Local\Temp\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\fixtures\motivating-desktop-red-6f975f5df64245f6af646196a475b910\playwright\upcoming-movies-direct-Upc-2a898-teria-keep-the-backend-rule\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    tests\e2e\upcoming-movies.spec.js:34:1 › Home View all uses the backend Upcoming selection and preserves full pages and navigation 
+    tests\e2e\upcoming-movies.spec.js:88:1 › direct Upcoming selection and extra ownership and Advanced criteria keep the backend rule 

@@ -1,0 +1,30 @@
+********* Start testing of cp_player_ui *********
+Config: Using QtTest library 6.10.3, Qt 6.10.3 (x86_64-little_endian-llp64 shared (dynamic) release build; by MSVC 2022), windows 11
+PASS   : cp_player_ui::MenuDismissal::initTestCase()
+PASS   : cp_player_ui::MenuDismissal::test_dragBegunInsideDoesNotDismiss()
+PASS   : cp_player_ui::MenuDismissal::test_escapeExplicitCloseAndReopen()
+FAIL!  : cp_player_ui::MenuDismissal::test_insideActionAndBlankSpace() 'Inside actions must not arm the outside-dismiss guard' returned FALSE. ()
+C:\Users\dante\Desktop\cinema paradiso\native\player\tests\qml\tst_MenuDismissal.qml(41) : failure location
+PASS   : cp_player_ui::MenuDismissal::test_outsideDoubleClickDoesNotActivateBackground()
+PASS   : cp_player_ui::MenuDismissal::test_outsideGestureConsumed()
+PASS   : cp_player_ui::MenuDismissal::test_replacementDoesNotLeaveBlocker()
+PASS   : cp_player_ui::MenuDismissal::cleanupTestCase()
+PASS   : cp_player_ui::PlayerScrolling::initTestCase()
+PASS   : cp_player_ui::PlayerScrolling::test_dragWidthAndPaint()
+PASS   : cp_player_ui::PlayerScrolling::test_keyboardFocusReveals()
+PASS   : cp_player_ui::PlayerScrolling::test_noOverflowNoBar()
+PASS   : cp_player_ui::PlayerScrolling::test_revealOnHover()
+PASS   : cp_player_ui::PlayerScrolling::test_scrollActivitySurvives900ms()
+PASS   : cp_player_ui::PlayerScrolling::test_wheelAndDragReachLongContent()
+PASS   : cp_player_ui::PlayerScrolling::cleanupTestCase()
+PASS   : cp_player_ui::PlaylistContent::initTestCase()
+PASS   : cp_player_ui::PlaylistContent::test_currentSeasonOnOpen()
+PASS   : cp_player_ui::PlaylistContent::test_moviesRemainFlat()
+PASS   : cp_player_ui::PlaylistContent::test_oneSeasonAtATime()
+PASS   : cp_player_ui::PlaylistContent::test_originalQueueIndexForS06E20()
+PASS   : cp_player_ui::PlaylistContent::test_playingEpisodeActuallyInsideViewport()
+PASS   : cp_player_ui::PlaylistContent::test_reopenRestoresPlayingSeason()
+PASS   : cp_player_ui::PlaylistContent::test_unavailableAndMalformedPreserveIndexes()
+PASS   : cp_player_ui::PlaylistContent::cleanupTestCase()
+Totals: 24 passed, 1 failed, 0 skipped, 0 blacklisted, 10077ms
+********* Finished testing of cp_player_ui *********

@@ -1,0 +1,341 @@
+{
+  "model": "gpt-6.1-sol",
+  "prompt": "i need you to lit 50 movies with very twisted story you wont expect the ending\nyour responce should be a list of movies names and years , no any other details , dont seek more info , dont reply by paragarph or any way of responce  only the list",
+  "order": [
+    "plain-1",
+    "cp-1",
+    "plain-2",
+    "cp-2",
+    "plain-3",
+    "cp-3"
+  ],
+  "captures": [
+    {
+      "label": "plain-1",
+      "initial_http_seconds": 15.517039,
+      "initial_gpt_stage_seconds": 18.455601,
+      "initial_local_handling_seconds": 2.938562,
+      "first_text_seconds": 6.19796,
+      "remaining_output_seconds": 9.319079,
+      "first_response_suggestions": 50,
+      "gpt_http_calls": 1,
+      "replacement_http_seconds": 0,
+      "replacement_gpt_stage_seconds": 0,
+      "matching_seconds": 0,
+      "other_seconds": 0.055745,
+      "full_seconds": 18.511346,
+      "first_card_seconds": null,
+      "scope_context_seconds": 0,
+      "account_access_seconds": [
+        2.891258
+      ],
+      "lease_acquire_seconds": [
+        0.009384
+      ],
+      "lease_release_seconds": [
+        0.019233
+      ],
+      "tmdb_requests": 0,
+      "input_tokens": 63,
+      "output_tokens": 493,
+      "cached_tokens": 0,
+      "reasoning_tokens": 45,
+      "input_utf8_bytes": 278,
+      "instructions_utf8_bytes": 0,
+      "tools_utf8_bytes": 2,
+      "payload_utf8_bytes": 365
+    },
+    {
+      "label": "cp-1",
+      "initial_http_seconds": 10.915577,
+      "initial_gpt_stage_seconds": 10.956504,
+      "initial_local_handling_seconds": 0.040927,
+      "first_text_seconds": 2.951389,
+      "remaining_output_seconds": 7.964188,
+      "first_response_suggestions": 50,
+      "gpt_http_calls": 2,
+      "replacement_http_seconds": 6.804628,
+      "replacement_gpt_stage_seconds": 6.842531,
+      "matching_seconds": 14.658775,
+      "other_seconds": 0.791442,
+      "full_seconds": 33.249252,
+      "first_card_seconds": 12.286565,
+      "scope_context_seconds": 0.697208,
+      "account_access_seconds": [
+        0.001019,
+        0.000923
+      ],
+      "lease_acquire_seconds": [
+        0.012764,
+        0.009661
+      ],
+      "lease_release_seconds": [
+        0.01095,
+        0.012236
+      ],
+      "tmdb_requests": 144,
+      "input_tokens": 7137,
+      "output_tokens": 773,
+      "cached_tokens": 0,
+      "reasoning_tokens": 18,
+      "input_utf8_bytes": 21225,
+      "instructions_utf8_bytes": 2502,
+      "tools_utf8_bytes": 1406,
+      "payload_utf8_bytes": 25299
+    },
+    {
+      "label": "plain-2",
+      "initial_http_seconds": 16.133276,
+      "initial_gpt_stage_seconds": 16.169793,
+      "initial_local_handling_seconds": 0.036517,
+      "first_text_seconds": 12.284486,
+      "remaining_output_seconds": 3.84879,
+      "first_response_suggestions": 50,
+      "gpt_http_calls": 1,
+      "replacement_http_seconds": 0,
+      "replacement_gpt_stage_seconds": 0,
+      "matching_seconds": 0,
+      "other_seconds": 0.061765,
+      "full_seconds": 16.231558,
+      "first_card_seconds": null,
+      "scope_context_seconds": 0,
+      "account_access_seconds": [
+        0.001073
+      ],
+      "lease_acquire_seconds": [
+        0.011192
+      ],
+      "lease_release_seconds": [
+        0.010632
+      ],
+      "tmdb_requests": 0,
+      "input_tokens": 63,
+      "output_tokens": 689,
+      "cached_tokens": 0,
+      "reasoning_tokens": 250,
+      "input_utf8_bytes": 278,
+      "instructions_utf8_bytes": 0,
+      "tools_utf8_bytes": 2,
+      "payload_utf8_bytes": 365
+    },
+    {
+      "label": "cp-2",
+      "initial_http_seconds": 17.048007,
+      "initial_gpt_stage_seconds": 17.09274,
+      "initial_local_handling_seconds": 0.044733,
+      "first_text_seconds": 10.496337,
+      "remaining_output_seconds": 6.55167,
+      "first_response_suggestions": 50,
+      "gpt_http_calls": 2,
+      "replacement_http_seconds": 6.813915,
+      "replacement_gpt_stage_seconds": 6.845788,
+      "matching_seconds": 9.847462,
+      "other_seconds": 0.674217,
+      "full_seconds": 34.460207,
+      "first_card_seconds": 18.087412,
+      "scope_context_seconds": 0.586794,
+      "account_access_seconds": [
+        0.001045,
+        0.000983
+      ],
+      "lease_acquire_seconds": [
+        0.010159,
+        0.009665
+      ],
+      "lease_release_seconds": [
+        0.019386,
+        0.009777
+      ],
+      "tmdb_requests": 159,
+      "input_tokens": 7137,
+      "output_tokens": 969,
+      "cached_tokens": 0,
+      "reasoning_tokens": 227,
+      "input_utf8_bytes": 21225,
+      "instructions_utf8_bytes": 2502,
+      "tools_utf8_bytes": 1406,
+      "payload_utf8_bytes": 25299
+    },
+    {
+      "label": "plain-3",
+      "initial_http_seconds": 14.136991,
+      "initial_gpt_stage_seconds": 14.170151,
+      "initial_local_handling_seconds": 0.03316,
+      "first_text_seconds": 4.22823,
+      "remaining_output_seconds": 9.908761,
+      "first_response_suggestions": 50,
+      "gpt_http_calls": 1,
+      "replacement_http_seconds": 0,
+      "replacement_gpt_stage_seconds": 0,
+      "matching_seconds": 0,
+      "other_seconds": 0.056746,
+      "full_seconds": 14.226897,
+      "first_card_seconds": null,
+      "scope_context_seconds": 0,
+      "account_access_seconds": [
+        0.000983
+      ],
+      "lease_acquire_seconds": [
+        0.009768
+      ],
+      "lease_release_seconds": [
+        0.010665
+      ],
+      "tmdb_requests": 0,
+      "input_tokens": 63,
+      "output_tokens": 471,
+      "cached_tokens": 0,
+      "reasoning_tokens": 34,
+      "input_utf8_bytes": 278,
+      "instructions_utf8_bytes": 0,
+      "tools_utf8_bytes": 2,
+      "payload_utf8_bytes": 365
+    },
+    {
+      "label": "cp-3",
+      "initial_http_seconds": 14.605366,
+      "initial_gpt_stage_seconds": 14.639229,
+      "initial_local_handling_seconds": 0.033863,
+      "first_text_seconds": 4.017392,
+      "remaining_output_seconds": 10.587974,
+      "first_response_suggestions": 50,
+      "gpt_http_calls": 2,
+      "replacement_http_seconds": 4.140614,
+      "replacement_gpt_stage_seconds": 4.174003,
+      "matching_seconds": 8.334477,
+      "other_seconds": 0.694123,
+      "full_seconds": 27.841832,
+      "first_card_seconds": 15.636004,
+      "scope_context_seconds": 0.605833,
+      "account_access_seconds": [
+        0.000961,
+        0.000958
+      ],
+      "lease_acquire_seconds": [
+        0.009653,
+        0.009459
+      ],
+      "lease_release_seconds": [
+        0.01143,
+        0.012033
+      ],
+      "tmdb_requests": 144,
+      "input_tokens": 7137,
+      "output_tokens": 623,
+      "cached_tokens": 0,
+      "reasoning_tokens": 18,
+      "input_utf8_bytes": 21225,
+      "instructions_utf8_bytes": 2502,
+      "tools_utf8_bytes": 1406,
+      "payload_utf8_bytes": 25299
+    }
+  ],
+  "statistics": {
+    "plain": {
+      "initial_http_seconds": {
+        "mean": 15.262435333333332,
+        "median": 15.517039,
+        "minimum": 14.136991,
+        "maximum": 16.133276
+      },
+      "initial_gpt_stage_seconds": {
+        "mean": 16.265181666666667,
+        "median": 16.169793,
+        "minimum": 14.170151,
+        "maximum": 18.455601
+      },
+      "initial_local_handling_seconds": {
+        "mean": 1.0027463333333333,
+        "median": 0.036517,
+        "minimum": 0.03316,
+        "maximum": 2.938562
+      },
+      "first_text_seconds": {
+        "mean": 7.570225333333333,
+        "median": 6.19796,
+        "minimum": 4.22823,
+        "maximum": 12.284486
+      },
+      "replacement_gpt_stage_seconds": {
+        "mean": 0,
+        "median": 0,
+        "minimum": 0,
+        "maximum": 0
+      },
+      "matching_seconds": {
+        "mean": 0,
+        "median": 0,
+        "minimum": 0,
+        "maximum": 0
+      },
+      "other_seconds": {
+        "mean": 0.058085333333333336,
+        "median": 0.056746,
+        "minimum": 0.055745,
+        "maximum": 0.061765
+      },
+      "full_seconds": {
+        "mean": 16.323267,
+        "median": 16.231558,
+        "minimum": 14.226897,
+        "maximum": 18.511346
+      }
+    },
+    "cp": {
+      "initial_http_seconds": {
+        "mean": 14.18965,
+        "median": 14.605366,
+        "minimum": 10.915577,
+        "maximum": 17.048007
+      },
+      "initial_gpt_stage_seconds": {
+        "mean": 14.229491,
+        "median": 14.639229,
+        "minimum": 10.956504,
+        "maximum": 17.09274
+      },
+      "initial_local_handling_seconds": {
+        "mean": 0.039841,
+        "median": 0.040927,
+        "minimum": 0.033863,
+        "maximum": 0.044733
+      },
+      "first_text_seconds": {
+        "mean": 5.821706,
+        "median": 4.017392,
+        "minimum": 2.951389,
+        "maximum": 10.496337
+      },
+      "replacement_gpt_stage_seconds": {
+        "mean": 5.954107333333333,
+        "median": 6.842531,
+        "minimum": 4.174003,
+        "maximum": 6.845788
+      },
+      "matching_seconds": {
+        "mean": 10.946904666666667,
+        "median": 9.847462,
+        "minimum": 8.334477,
+        "maximum": 14.658775
+      },
+      "other_seconds": {
+        "mean": 0.7199273333333334,
+        "median": 0.694123,
+        "minimum": 0.674217,
+        "maximum": 0.791442
+      },
+      "full_seconds": {
+        "mean": 31.850430333333332,
+        "median": 33.249252,
+        "minimum": 27.841832,
+        "maximum": 34.460207
+      }
+    }
+  },
+  "initial_http_paired_cp_minus_plain_seconds": [
+    -4.601462,
+    0.914731,
+    0.468375
+  ],
+  "total_actual_gpt_http_calls": 9
+}

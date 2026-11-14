@@ -1,0 +1,27 @@
+test_a_publication_notification_and_ack_survive_real_process_termination (tests.test_movie_remaining_qualification.RemainingMovieQualificationTest.test_a_publication_notification_and_ack_survive_real_process_termination) ... ok
+test_b_four_snapshot_branches_empty_selected_data_and_competing_overrides (tests.test_movie_remaining_qualification.RemainingMovieQualificationTest.test_b_four_snapshot_branches_empty_selected_data_and_competing_overrides) ... 
+  test_b_four_snapshot_branches_empty_selected_data_and_competing_overrides (tests.test_movie_remaining_qualification.RemainingMovieQualificationTest.test_b_four_snapshot_branches_empty_selected_data_and_competing_overrides) (selected='plex', absent='') ... FAIL
+
+======================================================================
+FAIL: test_b_four_snapshot_branches_empty_selected_data_and_competing_overrides (tests.test_movie_remaining_qualification.RemainingMovieQualificationTest.test_b_four_snapshot_branches_empty_selected_data_and_competing_overrides) (selected='plex', absent='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\Desktop\cinema paradiso\tests\test_movie_remaining_qualification.py", line 95, in test_b_four_snapshot_branches_empty_selected_data_and_competing_overrides
+    self.assertEqual(store.library_selection_paths({'query': token}), [key])
+AssertionError: Lists differ: ["E:/Movies/000 - Movie's Test.mkv"] != ["e:/movies/000 - movie's test.mkv"]
+
+First differing element 0:
+"E:/Movies/000 - Movie's Test.mkv"
+"e:/movies/000 - movie's test.mkv"
+
+- ["E:/Movies/000 - Movie's Test.mkv"]
+?   ^  ^            ^       ^
+
++ ["e:/movies/000 - movie's test.mkv"]
+?   ^  ^            ^       ^
+
+
+----------------------------------------------------------------------
+Ran 2 tests in 5.491s
+
+FAILED (failures=1)

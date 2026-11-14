@@ -1,0 +1,144 @@
+{
+  "status": "activated; focused isolated and live checks passed",
+  "authorization": "Dante: the whole current checkout. preserve all existing changes, prepare and verify the backup and rollback first, then activate it.",
+  "recovery_root": "C:\\Users\\dante\\Desktop\\CP-Recovery\\whole-checkout-2026-10-24-153619-e50288",
+  "backup_bytes": 6276193649,
+  "backup_files": 45833,
+  "backup_seconds": 193.375,
+  "restore_seconds": 123.93799999999464,
+  "restored_sqlite_databases_ok": 48,
+  "snapshot_and_rehearsal_payload_copy_bytes": 12552387298,
+  "source_preservation": {
+    "runtime_inputs": 243,
+    "runtime_input_drift": [],
+    "existing_tracked_dirty_entries_preserved": true,
+    "tracked_dirty_count": 114,
+    "config_sha256": "9f4d37123f85f0737661fe0734605da5c75c6ba5da60875e7e4dc9055daa40c9",
+    "verified_utc": "2026-10-24T15:45:14Z"
+  },
+  "index_sha256": "695e94fc071215559545e280c896f3eddd17016c23b6d64dadce22f1651146fa",
+  "bundle_files": 35,
+  "runtime": {
+    "backend_pid": 55244,
+    "launcher_pid": 32668,
+    "data": {
+      "tmdb_cache_dir": "C:\\Users\\dante\\Desktop\\cinema paradiso\\cache",
+      "user_data_dir": "C:\\Users\\dante\\Desktop\\cinema paradiso\\data"
+    },
+    "movie_roots": {
+      "directories": [
+        "E:\\Movies"
+      ],
+      "directory": "E:\\Movies",
+      "show_adult_movies": true
+    },
+    "ready_seconds": 1.953
+  },
+  "isolated": {
+    "build_exit_code": 0,
+    "desktop_passed": 4,
+    "active_seconds": 22.498,
+    "process_tree_cpu_seconds": 17.71875,
+    "process_tree_write_bytes": 129269562,
+    "allowance_closed": true,
+    "build_runner_note": "Build subprocess exited 0 and complete output verified. Summary printing then hit cp1252 UnicodeEncodeError; no rebuild was repeated. UTF-8 was set for later harness commands."
+  },
+  "live": {
+    "api_queries": [
+      {
+        "query": "christmas",
+        "total": 75,
+        "returned": 40,
+        "milliseconds": 2695.33,
+        "catalog_generation": 10178
+      },
+      {
+        "query": "m",
+        "total": 3955,
+        "returned": 40,
+        "milliseconds": 207.24,
+        "catalog_generation": 10178
+      },
+      {
+        "query": "cp-no-match-20261024-a36b1b19",
+        "total": 0,
+        "returned": 0,
+        "milliseconds": 421.72,
+        "catalog_generation": 10178
+      }
+    ],
+    "desktop": {
+      "passed": true,
+      "desktop": {
+        "width": 1600,
+        "height": 1000
+      },
+      "searches": [
+        {
+          "total": 75,
+          "page_count": 40,
+          "catalog_generation": 10178
+        }
+      ],
+      "titles": [
+        "Christmas Bloody Christmas",
+        "Christmas Vacation",
+        "FX's A Christmas Carol",
+        "A Merry Friggin' Christmas",
+        "A Christmas Carol",
+        "The Christmas Chronicles: Part Two",
+        "The Christmas Chronicles",
+        "Jingle Jangle: A Christmas Journey",
+        "A Boy Called Christmas",
+        "Rare Exports: A Christmas Tale",
+        "Black Christmas",
+        "The Muppet Christmas Carol",
+        "The Best Christmas Pageant Ever",
+        "Mariah Carey: Merry Christmas to All!",
+        "Mickey Saves Christmas",
+        "A Christmas Story",
+        "The Man Who Invented Christmas",
+        "Mariah's Christmas: The Magic Continues",
+        "8-Bit Christmas",
+        "The Christmas Note",
+        "The Nightmare Before Christmas",
+        "How the Grinch Stole Christmas",
+        "How the Grinch Stole Christmas!",
+        "Mickey's Twice Upon a Christmas",
+        "Love Actually",
+        "Scent of a Woman",
+        "Silent Night, Deadly Night",
+        "The Family Plan 2",
+        "Home Alone",
+        "Die Hard 2",
+        "The Advent Calendar",
+        "Anna and the Apocalypse",
+        "Terrifier 3",
+        "Krampus",
+        "It's a Wonderful Life",
+        "Red One",
+        "The Holdovers",
+        "The Shepherd",
+        "Look Who's Talking Now",
+        "Silent Night"
+      ],
+      "rendered_cards": 40,
+      "navigation": "Movie -> File -> Movie settled with same rendered titles",
+      "errors": [],
+      "failures": []
+    },
+    "passive_seconds": 30.875,
+    "catalog_generation": 10178,
+    "catalog_events_retained": 0,
+    "coordinator_error": ""
+  },
+  "limitations": [
+    "An external run.bat start activated source/bundle before this pass could back it up; recovery is exact subsequent stopped state, not earlier loaded runtime.",
+    "Rollback restored all bytes and checked copied SQLite; restored production app was not run against real media. Dependencies/release/history/media payload exclusions are explicit in recovery inventory and remain in place.",
+    "The complete dirty checkout was activated; this is focused qualification, not a fresh exhaustive regression suite across all unrelated changes.",
+    "The original pre-change live baseline and controlled CPU scheduling comparison are unavailable; no production speedup ratio is claimed.",
+    "No natural completion event occurred during passive observation; live completion refresh remains unobserved, with prior isolated end-to-end evidence retained.",
+    "Normal startup and reopened app can resume pending transfers/imports and write production state. Old SQL/jobs cannot be restored blindly if physical media/payload state diverges."
+  ],
+  "verified_utc": "2026-10-24T15:46:13Z"
+}

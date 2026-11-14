@@ -1,3 +1,4 @@
+import Button from './ui/Button.jsx';
 import {
   AlertTriangle,
   CheckCircle2,
@@ -181,9 +182,9 @@ export default function MetadataAuthorityPanel({
             Changing authority rebuilds saved display metadata and movie identity links. Existing metadata remains visible until each movie is processed.
             <strong> Local movie files are never changed.</strong>
           </p>
-          <button type="button" className="btn btn-secondary" onClick={previewMigration} disabled={Boolean(busy)}>
+          <Button type="button"  onClick={previewMigration} disabled={Boolean(busy)}>
             {busy === 'preview' ? <Loader2 size={15} className="spin" /> : <RefreshCcw size={15} />} Preview change
-          </button>
+          </Button>
         </div>
       )}
 
@@ -194,9 +195,9 @@ export default function MetadataAuthorityPanel({
             <strong>{formatNumber(preview.total)} local files will be checked</strong>
             <span>High-confidence matches are saved automatically. Uncertain files move to Unmatched Metadata for manual review.</span>
           </div>
-          <button type="button" className="btn btn-primary" onClick={startMigration} disabled={Boolean(busy)}>
+          <Button variant="primary" type="button"  onClick={startMigration} disabled={Boolean(busy)}>
             {busy === 'start' ? <Loader2 size={15} className="spin" /> : <Play size={15} />} Start migration
-          </button>
+          </Button>
         </div>
       )}
 
@@ -221,27 +222,27 @@ export default function MetadataAuthorityPanel({
           {migration.current_path && <p className="metadata-current-path" title={migration.current_path}>{migration.current_path}</p>}
           <div className="metadata-migration-controls">
             {migration.status === 'running' && (
-              <button type="button" className="btn btn-secondary" onClick={() => controlMigration('pause')} disabled={Boolean(busy)}>
+              <Button type="button"  onClick={() => controlMigration('pause')} disabled={Boolean(busy)}>
                 <Pause size={15} /> Pause
-              </button>
+              </Button>
             )}
             {migration.status === 'paused' && (
-              <button type="button" className="btn btn-primary" onClick={() => controlMigration('resume')} disabled={Boolean(busy)}>
+              <Button variant="primary" type="button"  onClick={() => controlMigration('resume')} disabled={Boolean(busy)}>
                 <Play size={15} /> Resume
-              </button>
+              </Button>
             )}
             {migrationActive && (
-              <button type="button" className="btn btn-secondary" onClick={() => controlMigration('cancel')} disabled={Boolean(busy)}>
+              <Button type="button"  onClick={() => controlMigration('cancel')} disabled={Boolean(busy)}>
                 <Square size={15} /> Cancel
-              </button>
+              </Button>
             )}
             {migration.failed > 0 && migration.status !== 'running' && (
-              <button type="button" className="btn btn-secondary" onClick={() => controlMigration('retry')} disabled={Boolean(busy)}>
+              <Button type="button"  onClick={() => controlMigration('retry')} disabled={Boolean(busy)}>
                 <RotateCcw size={15} /> Retry failures
-              </button>
+              </Button>
             )}
             {migration.review > 0 && (
-              <button type="button" className="btn btn-violet" onClick={onReviewUnmatched}>Review uncertain matches</button>
+              <Button variant="ai" type="button"  onClick={onReviewUnmatched}>Review uncertain matches</Button>
             )}
           </div>
         </div>
@@ -252,9 +253,9 @@ export default function MetadataAuthorityPanel({
           <strong>Matched identities are checked after migration</strong>
           <span>Possible wrong-movie corrections belong in Cleanup, separate from files that have no accepted match.</span>
         </div>
-        <button type="button" className="btn btn-secondary" onClick={onReviewIdentities}>
+        <Button type="button"  onClick={onReviewIdentities}>
           Review identity corrections
-        </button>
+        </Button>
       </div>
 
       {error && (

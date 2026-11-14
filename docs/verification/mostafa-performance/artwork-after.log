@@ -1,0 +1,23 @@
+Recorded console evidence excerpts from the tool execution transcript.
+Original Playwright stdout was displayed by the tool, not redirected to a file.
+Compiled isolated frontend; CP_TEST_MODE=1; port 5129.
+
+AFTER shared visibility owner and registration guards:
+Command: playwright test tests/e2e/card-artwork-performance.spec.js
+Library initial backdrop requests: 6/40
+Home initial backdrop requests: 5/60
+Related initial backdrop requests: 13/20
+7 passed (8.5s)
+Artifacts: C:\Users\dante\AppData\Local\Temp\cp-artwork-005356c1cd2b491c8b0f4c6dfafefb4d\final-artwork-results
+
+STALE NOTIFICATION GREEN with additional valid-notification assertions:
+Command: playwright test tests/e2e/card-artwork-performance.spec.js --grep='stale artwork'
+1 pending card: hidden replacement remains background-image none; valid new notification activates replacement.svg.
+2 pending cards: hidden replacement remains background-image none; valid new notification activates replacement.svg.
+2 passed (3.0s)
+Artifacts: C:\Users\dante\AppData\Local\Temp\cp-artwork-005356c1cd2b491c8b0f4c6dfafefb4d\stale-green-results
+
+Other focused verification:
+node --test tests/movie_relationships.test.mjs: 5 passed, 0 failed.
+npm run build -- --outDir C:\Users\dante\AppData\Local\Temp\cp-artwork-005356c1cd2b491c8b0f4c6dfafefb4d\dist: exit 0; built in 2.42s.
+git diff --check on modified tracked caller files: clean.

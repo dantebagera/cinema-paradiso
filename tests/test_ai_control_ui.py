@@ -10,11 +10,12 @@ STYLES_SOURCE = (ROOT / "src" / "styles.css").read_text(encoding="utf-8")
 
 
 class AiControlUiTest(unittest.TestCase):
-    def test_sidebar_and_workspace_show_experimental_badge(self):
+    def test_sidebar_keeps_ai_navigation_and_workspace_shows_experimental_badge(self):
         self.assertIn("id: 'ai-control'", APP_SOURCE)
         self.assertIn("AI Control", APP_SOURCE)
         self.assertIn("ExperimentalBadge", APP_SOURCE)
-        self.assertIn("ai-control-nav-badge", APP_SOURCE)
+        workspace = (ROOT / 'src/features/ai-control/AIControlWorkspace.jsx').read_text(encoding='utf-8')
+        self.assertIn('AI Control <ExperimentalBadge />', workspace)
 
     def test_prompting_guide_renders_under_command_box(self):
         for text in [
@@ -82,7 +83,7 @@ class AiControlUiTest(unittest.TestCase):
             "AIControlCardResults",
             "selectedAiControlKeys",
             "reviewedDownloads",
-            "onConfirm={confirmAction}",
+            "onConfirm={readOnly ? undefined : confirmAction}",
             "onFindSources={openSourceReview}",
         ]:
             self.assertIn(text, APP_SOURCE)

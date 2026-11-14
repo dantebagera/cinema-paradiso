@@ -28,6 +28,18 @@ Start with the [CP knowledge index](docs/README.md) when reviewing or changing a
 
 ## 4. Follow the whole CP design and reuse its components
 
+### Mandatory reuse gate for every new feature and UI change
+
+- **Reuse is a hard requirement, not a preference.** Every new feature, amendment, prototype intended for production, and refactor must use CP's existing shared UI owners. Different feature functionality is not permission to duplicate its visual elements.
+- Before writing UI, read the [shared UI component registry](docs/atlas/shared-ui.md), inspect the actual owner and existing callers, and name the components that will be reused in the plan or implementation notes.
+- Buttons, icon buttons, badges, chips, fields, search controls, pagination, selection bars, empty states, dialog shells, tabs, cards, rails, and tooltips must be composed from their shared owners. Do not copy their JSX/CSS, create a page-local lookalike, or override their appearance in a feature stylesheet.
+- If an existing owner lacks a necessary visual variant, extend that owner and verify its existing callers. If no owner exists, create one reusable owner in the shared UI layer before using it. Keep feature-specific data, permissions, actions, validation, and navigation in their current feature owners.
+- Specialised compositions may have their own component when their semantics differ, but must still reuse common primitives. Document the distinction in the registry; do not use a generic "custom" escape hatch to bypass standardisation.
+- The Style Guide must render the production shared components. It must never maintain independent copies of their designs.
+- Completion requires the shared-UI reuse check to pass, meaningful rendered-state checks for affected owners/callers, and an audit of any new component or style. Record the owner reused, variants added, obsolete copies removed, and exceptions explicitly approved by Dante. Do not claim completion while knowingly introducing duplicate UI ownership.
+- Run `npm run check:ui-reuse`; development and production builds also run it automatically. Never edit `tools/ui-specialized-owners.json` just to silence a failure. Its bounded entries identify existing semantic owners, not permission to copy them.
+- An exception requires Dante's explicit approval for that specific exception. Deadlines, a small change, a new page, a different backend, or an AI-generated feature do not waive this rule. Only Dante may change or waive it.
+
 - Every frontend amendment must follow the existing CP design in layout, grid, spacing, sizing, typography, color, controls, states, navigation, and interaction. Matching fonts or colors alone is insufficient.
 - Before adding UI, identify the existing screen and component that performs the same job. Reuse it when semantics match. If it needs to serve another surface, extend or refactor the shared owner and verify every surface that uses it. Do not clone JSX/CSS to imitate a component or introduce a second visual implementation for the same behavior.
 - Where semantics truly differ, document the difference and use a separate component only for that difference. Remove obsolete duplicate markup or styles when the shared owner replaces them.

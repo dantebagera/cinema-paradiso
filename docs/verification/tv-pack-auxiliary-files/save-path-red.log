@@ -1,0 +1,16 @@
+F.
+======================================================================
+FAIL: test_aliased_save_path_cannot_delete_foreign_auxiliary_source (tests.test_verified_tv_acquisition.TVAcquisitionTests.test_aliased_save_path_cannot_delete_foreign_auxiliary_source)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_verified_tv_acquisition.py", line 305, in test_aliased_save_path_cannot_delete_foreign_auxiliary_source
+    self.assertEqual(result['state'], 'needs_review', result.get('last_error'))
+AssertionError: 'imported' != 'needs_review'
+- imported
++ needs_review
+ : 
+
+----------------------------------------------------------------------
+Ran 2 tests in 3.598s
+
+FAILED (failures=1)

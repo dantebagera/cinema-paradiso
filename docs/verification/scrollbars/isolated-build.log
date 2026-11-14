@@ -1,0 +1,57 @@
+
+> cinema-paradiso-frontend@3.0.0-beta.2 build
+> vite build --outDir C:\Users\dante\AppData\Local\Temp\cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8\dist
+
+vite v6.4.3 building for production...
+
+(!) outDir C:\Users\dante\AppData\Local\Temp\cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8\dist is not inside project root and will not be emptied.
+Use --emptyOutDir to override.
+
+transforming...
+✓ 1716 modules transformed.
+rendering chunks...
+computing gzip size...
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/manifest-BSGbUmFO.webmanifest          0.55 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/logo-Dk1rN4XL.svg                      1.25 kB │ gzip:   0.55 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/index.html                                    1.86 kB │ gzip:   0.84 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/styleguide-motif-crop-B3fTh5_H.png   119.86 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/header-Cr7VYxUL.png                  402.60 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/SharedMovieCards-m9chJEm1.css          4.56 kB │ gzip:   1.31 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/HomeWorkspace-DTyWMsVt.css             7.31 kB │ gzip:   1.83 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/tv-lKpofHwb.css                       10.44 kB │ gzip:   2.74 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/IPTVWorkspace-DRuulTon.css            39.89 kB │ gzip:   6.54 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/index-DjI4tCgC.css                   209.81 kB │ gzip:  36.06 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/header-CbieqaTQ.js                     0.05 kB │ gzip:   0.07 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/WorkspaceEmptyState-BDDRbUY5.js        0.33 kB │ gzip:   0.23 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/moviePresentation-Di650b9v.js          0.70 kB │ gzip:   0.44 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/WorkspaceViewActions-CUwDNRWC.js       0.85 kB │ gzip:   0.44 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/Pagination-Cvlf9Uhb.js                 0.88 kB │ gzip:   0.49 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/DiscoverResultGrid-C-Hca6-K.js         0.88 kB │ gzip:   0.41 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/useCardGridMetrics-D4zXU0Vg.js         1.66 kB │ gzip:   0.90 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/WorkspacePathBar-CVuVdu-A.js           2.50 kB │ gzip:   0.96 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/LibraryControls-Y0Tsg_Dp.js            2.83 kB │ gzip:   0.91 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/CatalogMetadataFilters-DR0-YXnB.js     3.12 kB │ gzip:   1.36 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/DownloadsWorkspace-DPZXCO9F.js         3.81 kB │ gzip:   1.56 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/vendor-Bb8JjhAW.js                     3.85 kB │ gzip:   1.72 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/iptv-KJzfQaL0.js                       6.50 kB │ gzip:   1.38 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/MetadataCorrectionModal-D_C0j533.js    9.96 kB │ gzip:   3.27 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/StyleGuide-Cs16rXV_.js                10.43 kB │ gzip:   3.01 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/CardLab-ST9hWrWq.js                   11.48 kB │ gzip:   4.12 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/useMovieCollectionCache-B3T43ShL.js   12.11 kB │ gzip:   4.16 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/AIControlWorkspace-BSkxxMwp.js        16.90 kB │ gzip:   5.84 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/HelpWorkspace-BlxC_JVT.js             21.47 kB │ gzip:   6.96 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/HomeWorkspace-BfWV7FG8.js             22.63 kB │ gzip:   7.10 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/WorkspaceSelectionBar-Cij3Mt2d.js     31.71 kB │ gzip:   9.97 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/vendor-icons-BwP572SE.js              33.11 kB │ gzip:   6.72 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/SharedMovieCards-BS3_YzVY.js          42.30 kB │ gzip:  13.15 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/ListsWorkspace-B0vLK5oE.js            46.51 kB │ gzip:  14.33 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/LibraryWorkspace-90o3hPzP.js          47.99 kB │ gzip:  14.51 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/DiscoverWorkspace-6qMxr9Dx.js         60.38 kB │ gzip:  18.54 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/CleanupWorkspace-Djw6xuhU.js          63.68 kB │ gzip:  16.79 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/TVWorkspace-BGaegPM6.js               73.41 kB │ gzip:  21.62 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/SettingsWorkspace-BVTbpOow.js         84.72 kB │ gzip:  21.11 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/IPTVWorkspace-pDlvRQKm.js             96.28 kB │ gzip:  25.59 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/index-CK8mlgj2.js                    117.94 kB │ gzip:  36.07 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/vendor-react-CJZMWplS.js             189.82 kB │ gzip:  59.19 kB
+../../AppData/Local/Temp/cp-scrollbar-e3361f5642d74c2d93aa9e947f7c6ea8/dist/assets/vendor-player-Dv34CeeU.js            353.87 kB │ gzip: 110.81 kB
+✓ built in 2.30s

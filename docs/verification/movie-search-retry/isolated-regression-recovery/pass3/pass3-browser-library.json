@@ -1,0 +1,268 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\dante\\Desktop\\cinema paradiso\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "library-search-performance.spec.js",
+      "--config",
+      "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass3-playwright.config.cjs",
+      "--grep",
+      "rapid live typing|stale success|foreground typing|Movie to File|pass3 quiet"
+    ],
+    "configFile": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass3-playwright.config.cjs",
+    "rootDir": "C:/Users/dante/AppData/Local/Temp/cp-regression-recovery-30b40a41d572/pass3-specs",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/dante/AppData/Local/Temp/cp-regression-recovery-30b40a41d572/pass3-browser-results/library",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "C:/Users/dante/AppData/Local/Temp/cp-regression-recovery-30b40a41d572/pass3-specs",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json",
+        {
+          "outputFile": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass3-browser-library.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.61.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "library-search-performance.spec.js",
+      "file": "library-search-performance.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "rapid live typing serializes reads and renders exact identities and reachable count",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 19478,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T18:28:37.738Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "search-request-timing",
+                      "contentType": "application/json",
+                      "body": "eyJsYXRlc3RSZW5kZXJNcyI6MTE4LCJkaXNwYXRjaGVkIjpbInMiLCJzZWFyY2hmaXgiXSwibWF4aW11bUFjdGl2ZSI6MX0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a92e9a0101ba918f1522-82620207b25d9864bce2",
+          "file": "library-search-performance.spec.js",
+          "line": 16,
+          "column": 5
+        },
+        {
+          "title": "stale success and failure cannot replace latest search; empty and repeat navigation recover",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 902,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T18:28:57.390Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a92e9a0101ba918f1522-4076db1bd215208b8341",
+          "file": "library-search-performance.spec.js",
+          "line": 60,
+          "column": 5
+        },
+        {
+          "title": "foreground typing wins while an old background poster preload is outstanding",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 502,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T18:28:58.304Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a92e9a0101ba918f1522-79fbae45160d2e8f0cfc",
+          "file": "library-search-performance.spec.js",
+          "line": 91,
+          "column": 5
+        },
+        {
+          "title": "Movie to File to Movie during a read schedules a valid replacement and settles loading",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 575,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T18:28:58.813Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a92e9a0101ba918f1522-b3c226095218c2ec6e75",
+          "file": "library-search-performance.spec.js",
+          "line": 122,
+          "column": 5
+        },
+        {
+          "title": "pass3 quiet refresh preserves page two, query, cards, loading and notifications",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 902,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T18:28:59.395Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "quiet-refresh-current-page",
+                      "contentType": "application/json",
+                      "body": "eyJwYWdlIjoyLCJwYWdlU2l6ZSI6NDAsInRpdGxlcyI6WyJTZWFyY2ggRml4dHVyZSAwNDAiLCJTZWFyY2ggRml4dHVyZSAwNDEiLCJTZWFyY2ggRml4dHVyZSAwNDIiLCJTZWFyY2ggRml4dHVyZSAwNDMiLCJTZWFyY2ggRml4dHVyZSAwNDQiLCJTZWFyY2ggRml4dHVyZSAwNDUiLCJTZWFyY2ggRml4dHVyZSAwNDYiLCJTZWFyY2ggRml4dHVyZSAwNDciLCJTZWFyY2ggRml4dHVyZSAwNDgiLCJTZWFyY2ggRml4dHVyZSAwNDkiLCJTZWFyY2ggRml4dHVyZSAwNTAiLCJTZWFyY2ggRml4dHVyZSAwNTEiLCJTZWFyY2ggRml4dHVyZSAwNTIiLCJTZWFyY2ggRml4dHVyZSAwNTMiLCJTZWFyY2ggRml4dHVyZSAwNTQiLCJTZWFyY2ggRml4dHVyZSAwNTUiLCJTZWFyY2ggRml4dHVyZSAwNTYiLCJTZWFyY2ggRml4dHVyZSAwNTciLCJTZWFyY2ggRml4dHVyZSAwNTgiLCJTZWFyY2ggRml4dHVyZSAwNTkiLCJTZWFyY2ggRml4dHVyZSAwNjAiLCJTZWFyY2ggRml4dHVyZSAwNjEiLCJTZWFyY2ggRml4dHVyZSAwNjIiLCJTZWFyY2ggRml4dHVyZSAwNjMiLCJTZWFyY2ggRml4dHVyZSAwNjQiLCJTZWFyY2ggRml4dHVyZSAwNjUiLCJTZWFyY2ggRml4dHVyZSAwNjYiLCJTZWFyY2ggRml4dHVyZSAwNjciLCJTZWFyY2ggRml4dHVyZSAwNjgiLCJTZWFyY2ggRml4dHVyZSAwNjkiLCJTZWFyY2ggRml4dHVyZSAwNzAiLCJTZWFyY2ggRml4dHVyZSAwNzEiLCJTZWFyY2ggRml4dHVyZSAwNzIiLCJTZWFyY2ggRml4dHVyZSAwNzMiLCJTZWFyY2ggRml4dHVyZSAwNzQiLCJTZWFyY2ggRml4dHVyZSAwNzUiLCJTZWFyY2ggRml4dHVyZSAwNzYiLCJTZWFyY2ggRml4dHVyZSAwNzciLCJTZWFyY2ggRml4dHVyZSAwNzgiLCJTZWFyY2ggRml4dHVyZSAwNzkiXSwiZXZlbnRzIjoyfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a92e9a0101ba918f1522-d89df64e443eb826a277",
+          "file": "library-search-performance.spec.js",
+          "line": 145,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-24T18:28:37.320Z",
+    "duration": 23042.742,
+    "expected": 5,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

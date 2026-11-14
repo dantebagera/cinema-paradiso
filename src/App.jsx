@@ -1,36 +1,30 @@
+import { ActionLink } from './components/ui/Button.jsx';
+import SearchField from './features/search/SearchField.jsx';
+import WorkspaceEmptyState from './components/WorkspaceEmptyState.jsx';
+import { Input, Select } from './components/ui/FormField.jsx';
+import DialogShell, { DialogHeader } from './components/ui/DialogShell.jsx';
+import Button from './components/ui/Button.jsx';
+import StreamPlayerModal from './components/StreamPlayerModal.jsx';
+import usePlayerDialog from './hooks/usePlayerDialog.js';
+import Sidebar, { navItems } from './components/Sidebar.jsx';
 import MediaWorkspace from './features/tv/MediaWorkspace.jsx';
-import NotificationWindow from './features/notifications/NotificationWindow.jsx';
 import { buildTvStreamTemplateUrl } from './utils/appUtils.js';
 import {
   AlertTriangle,
   Bell,
-  Bookmark,
-  Bot,
   Compass,
   Database,
-  Download,
   ExternalLink,
   Film,
-  Home,
-  Info,
-  Library,
   Loader2,
-  PanelLeftClose,
-  PanelLeftOpen,
-  Power,
   RefreshCw,
-  RotateCcw,
   Search,
-  Settings,
-  ShieldCheck,
-  MonitorOff,
-  Tv,
   X
 } from 'lucide-react';
 import { lazy, Suspense, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { fetchJson } from './api/client.js';
 import { cancelPowerAction, fetchPowerStatus, requestPowerAction, resumePowerAction } from './api/power.js';
-import { announceLibraryReconciled, CATALOG_GENERATION_CHANGED_EVENT, fetchOwnershipChecks, observeCatalogGeneration } from './api/library.js';
+import { announceLibraryReconciled, CATALOG_GENERATION_CHANGED_EVENT, clearOwnershipCheckCache, fetchOwnershipChecks, observeCatalogGeneration } from './api/library.js';
 import { CATALOG_READY_EVENT, startCatalogEvents } from './api/catalogEvents.js';
 import { fetchCanonicalMovieDetails, markMovieDetailsCacheStale, movieDetailsCacheKey } from './api/movieDetails.js';
 import {
@@ -43,10 +37,10 @@ import {
   fetchCurationJson,
   fetchUserListsCached
 } from './api/curation.js';
-import logoUrl from './assets/logo.svg';
 import { MovieRelationshipNavigation } from './components/MovieRelationshipNavigation.jsx';
+import { CardPosterPriority, createCardPosterPriority } from './components/movie-card/cardArtwork.js';
+import { MovieRatingsProvider } from './contexts/MovieRatingsContext.jsx';
 import { restoreWorkspaceScroll } from './components/movie-card/expandedCardViewport.js';
-import ExperimentalBadge from './components/ExperimentalBadge.jsx';
 import PosterEditorModal from './components/PosterEditorModal.jsx';
 import TorrentActions from './components/TorrentActions.jsx';
 import {
@@ -56,15 +50,12 @@ import {
   movieKey,
   sectionFromPath,
   sortFollowedReleases,
-  buildStreamTemplateUrl,
-  streamTemplateTokens,
   toYouTubeEmbedUrl,
   topBarSearchEnabled,
   torrentSizeBytes,
   youtubeTrailerSearchUrl
 } from './utils/appUtils.js';
 import {
-  buildOwnershipMap,
   discoverMoviePayload,
   listsForDiscoverMovie,
   ownedMovieFor,
@@ -72,7 +63,7 @@ import {
   replaceOwnershipScope
 } from './discoverUtils.js';
 import { applySystemListState, resolutionRank } from './utils/libraryUtils.js';
-import { buildUpcomingHomeMovies, uniqueHomeMovies } from './utils/homeMovies.js';
+import { buildUpcomingHomeMovies, HOME_UPCOMING_PREVIEW_SIZE, uniqueHomeMovies } from './utils/homeMovies.js';
 
 const HelpWorkspace = lazy(() => import('./features/help/HelpWorkspace.jsx'));
 const LibraryWorkspace = lazy(() => import('./features/library/LibraryWorkspace.jsx'));
@@ -87,71 +78,6 @@ const SettingsWorkspace = lazy(() => import('./features/settings/SettingsWorkspa
 const CardLab = lazy(() => import('./features/card-lab/CardLab.jsx'));
 const StyleGuide = lazy(() => import('./features/styleguide/StyleGuide.jsx'));
 
-const navItems = [
-  {
-    id: 'home',
-    label: 'Home',
-    icon: Home,
-    accent: 'gold'
-  },
-  {
-    id: 'library',
-    label: 'Library',
-    icon: Library,
-    accent: 'blue'
-  },
-  {
-    id: 'movie-lists',
-    label: 'Lists',
-    icon: Bookmark,
-    accent: 'gold'
-  },
-  {
-    id: 'cleanup',
-    label: 'Maintenance',
-    icon: ShieldCheck,
-    accent: 'amber'
-  },
-  {
-    id: 'discover',
-    label: 'Discover',
-    icon: Compass,
-    accent: 'violet'
-  },
-  {
-    id: 'ai-control',
-    label: 'AI Control',
-    icon: Bot,
-    accent: 'violet',
-    experimental: true
-  },
-  {
-    id: 'iptv',
-    label: 'IPTV',
-    icon: Tv,
-    accent: 'gold'
-  },
-  {
-    id: 'downloads',
-    label: 'Downloads',
-    icon: Download,
-    accent: 'gold'
-  },
-  {
-    id: 'help',
-    label: 'Help',
-    icon: Info,
-    accent: 'gold'
-  },
-  {
-    id: 'settings',
-    label: 'Settings',
-    icon: Settings,
-    accent: 'cyan'
-  }
-];
-
-const APP_VERSION = `v${import.meta.env.VITE_APP_VERSION || '0.0.0'}`;
 const SIDEBAR_COLLAPSED_STORAGE_KEY = 'cp.sidebarCollapsed';
 let youtubeIframeApiPromise = null;
 
@@ -237,6 +163,10 @@ const fallbackMovies = [
   }
 ];
 
+function followedAvailabilityKey(movie) {
+  return JSON.stringify([movieKey(movie), movie.followed_at ?? null]);
+}
+
 function playReleaseAlertSound() {
   try {
     const AudioCtx = window.AudioContext || window.webkitAudioContext;
@@ -300,7 +230,13 @@ function ArchiveApp() {
   useEffect(() => startCatalogEvents(), []);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(storedSidebarCollapsed);
   const [mountedSections, setMountedSections] = useState(() => new Set([activeSection]));
+  const [cardPosterPriority] = useState(createCardPosterPriority);
   const [stats, setStats] = useState(null);
+  const [statsError, setStatsError] = useState('');
+  const [statsUpdatedAt, setStatsUpdatedAt] = useState(null);
+  const statsRequestRef = useRef(0);
+  const [moviesFallback, setMoviesFallback] = useState(false);
+  const [homeMoviesRefresh, setHomeMoviesRefresh] = useState(0);
   const [movies, setMovies] = useState([]);
   const [upcomingMovies, setUpcomingMovies] = useState([]);
   const [upcomingError, setUpcomingError] = useState('');
@@ -345,7 +281,9 @@ function ArchiveApp() {
   const [discoverRelationshipRequest, setDiscoverRelationshipRequest] = useState(null);
   const [discoverListRequest, setDiscoverListRequest] = useState(null);
   const [discoverMovieRequest, setDiscoverMovieRequest] = useState(null);
+  const [discoverMediaRequest, setDiscoverMediaRequest] = useState(null);
   const [cleanupInitialTab, setCleanupInitialTab] = useState('storage');
+  const [iptvSettingsRequest, setIPTVSettingsRequest] = useState(0);
   const [libraryFilterRequest, setLibraryFilterRequest] = useState(null);
   const [libraryFileRequest, setLibraryFileRequest] = useState(null);
   const [homeLists, setHomeLists] = useState([]);
@@ -357,10 +295,49 @@ function ArchiveApp() {
   const sectionScrollPositionsRef = useRef({});
   const sourceSearchTokenRef = useRef(0);
   const libraryReconcileSignatureRef = useRef('');
-  const homeTrailersRequestRef = useRef(0);
-  const followedOperationRef = useRef(null);
+  const homeLifecycleRef = useRef({ mounted: false, epoch: 0, ownershipRevision: 0,
+    trending: [], preview: [], resolved: { trending: false, upcoming: false, trailers: false },
+    trendingOperation: null, upcomingOperation: null, trailerOperation: null, upcomingCycle: null });
+  const followedOperationRef = useRef({ full: null, ownership: null });
   const followedOwnershipQueuedRef = useRef(false);
-  const followedOwnershipRetryDelayRef = useRef(0);
+  const followedGenerationRef = useRef(-1);
+  const followedAvailableKeysRef = useRef(new Set());
+  const followedAvailabilityAlertsRef = useRef(new Set());
+
+  useEffect(() => {
+    const home = homeLifecycleRef.current;
+    home.mounted = true;
+    home.epoch += 1;
+    const invalidate = (event) => {
+      home.ownershipRevision += 1;
+      clearOwnershipCheckCache();
+      setOwnership(current => removeOwnershipPaths(current, event?.detail?.deleted_paths));
+    };
+    window.addEventListener('cp-library-changed', invalidate);
+    window.addEventListener(CATALOG_GENERATION_CHANGED_EVENT, invalidate);
+    return () => {
+      home.mounted = false;
+      home.epoch += 1;
+      home.trendingOperation = home.upcomingOperation = home.trailerOperation = null;
+      window.removeEventListener('cp-library-changed', invalidate);
+      window.removeEventListener(CATALOG_GENERATION_CHANGED_EVENT, invalidate);
+    };
+  }, []);
+
+  // A catalog event can overtake an in-flight ownership response. Re-read through
+  // the existing cache owner before publishing; never apply that older response.
+  const currentHomeOwnership = useCallback(async (scope, epoch) => {
+    const home = homeLifecycleRef.current;
+    while (home.mounted && home.epoch === epoch) {
+      const revision = home.ownershipRevision;
+      let results;
+      try { results = await fetchOwnershipChecks(scope); } catch { results = []; }
+      if (!home.mounted || home.epoch !== epoch) return null;
+      if (revision === home.ownershipRevision) return results;
+      clearOwnershipCheckCache();
+    }
+    return null;
+  }, []);
 
   useEffect(() => {
     setMountedSections((sections) => (
@@ -412,10 +389,20 @@ function ArchiveApp() {
   }, []);
 
   const refreshHealthStats = useCallback(async () => {
+    const request = ++statsRequestRef.current;
+    setLoading(state => ({ ...state, stats: true }));
     try {
-      setStats(await fetchJson('/api/stats'));
+      const data = await fetchJson('/api/stats');
+      if (request !== statsRequestRef.current) return;
+      setStats(data);
+      setStatsError('');
+      setStatsUpdatedAt(Date.now());
     } catch (error) {
+      if (request !== statsRequestRef.current) return;
+      setStatsError(error.message);
       notify(`Stats unavailable: ${error.message}`, 'error');
+    } finally {
+      if (request === statsRequestRef.current) setLoading(state => ({ ...state, stats: false }));
     }
   }, [notify]);
 
@@ -423,19 +410,20 @@ function ArchiveApp() {
     if (activeSection !== 'home') return undefined;
     const refreshHomeLibraryState = async (event) => {
       refreshHealthStats();
-      const scope = uniqueHomeMovies(movies, upcomingMovies);
+      const home = homeLifecycleRef.current;
+      const scope = uniqueHomeMovies(home.trending, home.preview);
       setOwnership((state) => removeOwnershipPaths(state, event?.detail?.deleted_paths));
       if (!scope.length) return;
       try {
-        const ownershipResults = await fetchOwnershipChecks(scope);
-        setOwnership((state) => replaceOwnershipScope(state, scope, ownershipResults));
+        const ownershipResults = await currentHomeOwnership(scope, home.epoch);
+        if (ownershipResults) setOwnership((state) => replaceOwnershipScope(state, scope, ownershipResults));
       } catch {
         // Home remains usable while best-effort ownership refresh is unavailable.
       }
     };
     window.addEventListener('cp-library-changed', refreshHomeLibraryState);
     return () => window.removeEventListener('cp-library-changed', refreshHomeLibraryState);
-  }, [activeSection, movies, refreshHealthStats, upcomingMovies]);
+  }, [activeSection, currentHomeOwnership, refreshHealthStats]);
 
   const loadHomeLists = useCallback(async (options = {}) => {
     try {
@@ -527,7 +515,7 @@ function ArchiveApp() {
     return () => window.clearInterval(timer);
   }, [activeSection, loadContinueWatching]);
 
-  async function toggleHomeSystemList(systemType, movie, owned) {
+  const toggleHomeSystemList = useCallback(async (systemType, movie, owned) => {
     const payload = discoverMoviePayload(movie, owned);
     const active = listsForDiscoverMovie(movie, homeLists, owned).some((list) => (
       list.system_type === systemType || list.id === systemType
@@ -546,7 +534,7 @@ function ArchiveApp() {
       return;
     }
     notify(`${movie.title} ${active ? 'removed from' : 'added to'} ${systemType === 'watched' ? 'Watched' : 'Watchlist'}`);
-  }
+  }, [homeLists, notify]);
 
   useEffect(() => {
     let cancelled = false;
@@ -582,81 +570,126 @@ function ArchiveApp() {
 
   useEffect(() => {
     if (activeSection !== 'home') return undefined;
-    let cancelled = false;
-    async function loadStats() {
-      setLoading((state) => ({ ...state, stats: true }));
+    refreshHealthStats();
+    return () => { statsRequestRef.current += 1; };
+  }, [activeSection, refreshHealthStats]);
+
+  const loadHomeUpcoming = useCallback(({ resume = false } = {}) => {
+    const home = homeLifecycleRef.current;
+    if (home.upcomingOperation) return home.upcomingOperation;
+    const epoch = home.epoch;
+    const valid = () => home.mounted && home.epoch === epoch;
+    const cycle = resume && home.upcomingCycle ? home.upcomingCycle : { raw: [], page: 1, exhausted: false, moreKnown: true, failed: false };
+    home.upcomingCycle = cycle;
+    setLoading(state => ({ ...state, upcoming: !home.resolved.upcoming }));
+    setUpcomingError('');
+    const operation = (async () => {
       try {
-        const data = await fetchJson('/api/stats');
-        if (!cancelled) setStats(data);
+        // Start page one before awaiting Trending. Only publication/filling has
+        // the one-way dependency on effective Trending (including its fallback).
+        let firstPage = !resume ? fetchJson(`/api/tmdb/discover?list=upcoming&page=1&page_size=${HOME_UPCOMING_PREVIEW_SIZE}`) : null;
+        // Attach rejection handling immediately while Trending may still be held.
+        if (firstPage) firstPage = firstPage.then(data => ({ data }), error => ({ error }));
+        await home.trendingOperation;
+        while (valid()) {
+          let preview = buildUpcomingHomeMovies(cycle.raw, home.trending);
+          if (firstPage || (preview.length < HOME_UPCOMING_PREVIEW_SIZE && !cycle.exhausted)) {
+            if (!firstPage && !cycle.moreKnown) throw new Error('Upcoming pagination is incomplete. Retry to finish loading.');
+            const response = firstPage ? await firstPage : { data: await fetchJson(`/api/tmdb/discover?list=upcoming&page=${cycle.page}&page_size=${HOME_UPCOMING_PREVIEW_SIZE}`) };
+            firstPage = null;
+            if (response.error) throw response.error;
+            const data = response.data;
+            if (!valid()) return;
+            if (data.retryable || data.budget_exhausted) throw new Error('Upcoming results are incomplete. Retry to finish loading.');
+            cycle.raw.push(...(data.results || []));
+            cycle.page += 1;
+            // Provider traversal may be exhausted while cached logical pages
+            // remain. has_next describes this API page and takes precedence.
+            cycle.exhausted = data.has_next === false || (data.has_next == null && (data.provider_exhausted === true
+              || (Number(data.total_pages) > 0 && Number(data.page || cycle.page - 1) >= Number(data.total_pages))));
+            cycle.moreKnown = data.has_next === true || Number(data.total_pages) >= cycle.page;
+            continue;
+          }
+          const trendingSnapshot = home.trending;
+          const ownershipResults = await currentHomeOwnership(preview, epoch);
+          if (!valid() || !ownershipResults) return;
+          if (trendingSnapshot !== home.trending) continue;
+          home.preview = preview;
+          home.resolved.upcoming = true;
+          setOwnership(state => replaceOwnershipScope(state, preview, ownershipResults));
+          setUpcomingMovies(preview);
+          break;
+        }
       } catch (error) {
-        if (!cancelled) notify(`Stats unavailable: ${error.message}`, 'error');
+        if (valid()) {
+          cycle.failed = true;
+          home.preview = [];
+          setUpcomingMovies([]);
+          setUpcomingError(error.message);
+        }
       } finally {
-        if (!cancelled) setLoading((state) => ({ ...state, stats: false }));
-      }
-    }
-    loadStats();
-    return () => {
-      cancelled = true;
-    };
-  }, [activeSection, notify]);
-
-  useEffect(() => {
-    if (activeSection !== 'home') return undefined;
-    let cancelled = false;
-    async function loadHomeMovies() {
-      setLoading((state) => ({ ...state, movies: true, upcoming: true }));
-      setUpcomingError('');
-      const [trendingResult, upcomingResult] = await Promise.allSettled([
-        fetchJson('/api/tmdb/discover?list=trending_week&page=1&page_size=20'),
-        fetchJson('/api/tmdb/discover?list=upcoming&page=1&page_size=100')
-      ]);
-      if (cancelled) return;
-
-      const trendingMovies = trendingResult.status === 'fulfilled' && trendingResult.value.results?.length
-        ? trendingResult.value.results.slice(0, 8)
-        : fallbackMovies;
-      if (trendingResult.status === 'rejected') {
-        notify(`Discover feed unavailable: ${trendingResult.reason.message}`, 'error');
-      }
-
-      const upcoming = upcomingResult.status === 'fulfilled'
-        ? buildUpcomingHomeMovies(upcomingResult.value.results || [], trendingMovies)
-        : [];
-      if (upcomingResult.status === 'rejected') {
-        setUpcomingError(upcomingResult.reason.message);
-      }
-
-      setMovies(trendingMovies);
-      setUpcomingMovies(upcoming);
-      setSelectedMovie((current) => current || trendingMovies[0] || upcoming[0] || null);
-
-      try {
-        const ownershipResults = await fetchOwnershipChecks(
-          uniqueHomeMovies(trendingMovies, upcoming)
-        );
-        if (!cancelled) setOwnership(buildOwnershipMap(ownershipResults));
-      } catch {
-        if (!cancelled) setOwnership({});
-      } finally {
-        if (!cancelled) {
-          setLoading((state) => ({ ...state, movies: false, upcoming: false }));
+        if (valid()) {
+          home.upcomingOperation = null;
+          setLoading(state => ({ ...state, upcoming: false }));
         }
       }
-    }
-    loadHomeMovies();
-    return () => {
-      cancelled = true;
-    };
-  }, [activeSection, notify]);
+    })();
+    home.upcomingOperation = operation;
+    return operation;
+  }, [currentHomeOwnership]);
 
-  const loadHomeTrailers = useCallback(async ({ cursor = '', append = false } = {}) => {
-    const requestId = homeTrailersRequestRef.current + 1;
-    homeTrailersRequestRef.current = requestId;
-    setLoading((state) => ({ ...state, trailers: !append, trailersMore: append }));
+  const loadHomeTrending = useCallback(() => {
+    const home = homeLifecycleRef.current;
+    if (home.trendingOperation) return home.trendingOperation;
+    const epoch = home.epoch;
+    const valid = () => home.mounted && home.epoch === epoch;
+    setLoading(state => ({ ...state, movies: !home.resolved.trending }));
+    const operation = (async () => {
+      let next = fallbackMovies;
+      let fallback = true;
+      try {
+        const data = await fetchJson('/api/tmdb/discover?list=trending_week&page=1&page_size=20');
+        if (data.results?.length) { next = data.results; fallback = false; }
+      } catch (error) {
+        if (valid()) notify(`Discover feed unavailable: ${error.message}`, 'error');
+      }
+      const ownershipResults = await currentHomeOwnership(next, epoch);
+      if (!valid() || !ownershipResults) return;
+      home.trending = next;
+      home.resolved.trending = true;
+      // Remove overlaps in the same React publication as Trending. Newly eligible
+      // raw candidates get their own ownership attempt in Upcoming, independently.
+      home.preview = buildUpcomingHomeMovies(home.preview, next);
+      setMovies(next);
+      setMoviesFallback(fallback);
+      setUpcomingMovies(home.preview);
+      setOwnership(state => replaceOwnershipScope(state, next, ownershipResults));
+      setLoading(state => ({ ...state, movies: false }));
+      home.trendingOperation = null;
+      if (!home.upcomingOperation && home.upcomingCycle && !home.upcomingCycle.failed) loadHomeUpcoming({ resume: true });
+    })();
+    home.trendingOperation = operation;
+    return operation;
+  }, [currentHomeOwnership, loadHomeUpcoming, notify]);
+
+  useEffect(() => {
+    if (activeSection !== 'home') return;
+    loadHomeTrending();
+    loadHomeUpcoming();
+  }, [activeSection, homeMoviesRefresh, loadHomeTrending, loadHomeUpcoming]);
+
+  const loadHomeTrailers = useCallback(({ cursor = '', append = false } = {}) => {
+    const home = homeLifecycleRef.current;
+    if (home.trailerOperation) return home.trailerOperation;
+    const epoch = home.epoch;
+    const valid = () => home.mounted && home.epoch === epoch;
+    setLoading((state) => ({ ...state, trailers: !home.resolved.trailers, trailersMore: append, trailersRefreshing: !append }));
     setHomeTrailersError('');
+    const operation = (async () => {
     try {
       const data = await fetchHomeTrailers({ cursor });
-      if (homeTrailersRequestRef.current !== requestId) return;
+      if (!valid()) return;
+      home.resolved.trailers = true;
       setHomeTrailers((current) => {
         const incoming = data.items || [];
         const items = append
@@ -675,28 +708,44 @@ function ArchiveApp() {
         };
       });
     } catch (error) {
-      if (homeTrailersRequestRef.current === requestId) {
+      if (valid()) {
         setHomeTrailersError(error.message);
       }
     } finally {
-      if (homeTrailersRequestRef.current === requestId) {
-        setLoading((state) => ({ ...state, trailers: false, trailersMore: false }));
+      if (valid()) {
+        home.trailerOperation = null;
+        setLoading((state) => ({ ...state, trailers: false, trailersMore: false, trailersRefreshing: false }));
       }
     }
+    })();
+    home.trailerOperation = operation;
+    return operation;
   }, []);
 
   useEffect(() => {
     if (activeSection !== 'home') return undefined;
     loadHomeTrailers();
-    return () => {
-      homeTrailersRequestRef.current += 1;
-    };
   }, [activeSection, loadHomeTrailers]);
 
+  const applyFollowedResult = useCallback((result) => {
+    const generation = Number(result.curation_generation);
+    if (Number.isFinite(generation)) {
+      if (generation < followedGenerationRef.current) return false;
+      followedGenerationRef.current = generation;
+    }
+    const availableKeys = new Set((result.movies || [])
+      .filter(movie => movie.status === 'available').map(followedAvailabilityKey));
+    followedAvailableKeysRef.current = availableKeys;
+    followedAvailabilityAlertsRef.current = new Set([...followedAvailabilityAlertsRef.current]
+      .filter(key => availableKeys.has(key)));
+    setFollowed(sortFollowedReleases(result.movies || []));
+    return true;
+  }, []);
+
   const executeFollowedOperation = useCallback((mode = 'full', options = {}) => {
-    if (followedOperationRef.current) {
+    if (followedOperationRef.current[mode]) {
       if (mode === 'ownership') followedOwnershipQueuedRef.current = true;
-      return followedOperationRef.current;
+      return followedOperationRef.current[mode];
     }
     const operation = (async () => {
       setFollowedChecking(true);
@@ -705,25 +754,29 @@ function ArchiveApp() {
           ? '/api/user/followed-releases/reconcile-owned'
           : '/api/user/followed-releases/check';
         const result = await fetchCurationJson(endpoint, { method: 'POST' });
-        setFollowed(sortFollowedReleases(result.movies || []));
+        const accepted = applyFollowedResult(result);
         if (result.scan_in_progress) {
-          if (mode === 'ownership') {
-            followedOwnershipQueuedRef.current = true;
-            followedOwnershipRetryDelayRef.current = 2000;
-          } else if (options.announceCompletion) {
+          if (options.announceCompletion) {
             notify('A Following scan is already running', 'neutral');
           }
           return result;
         }
-        const newlyAvailable = result.newly_available || [];
+        // An older scan cannot replace newer rows, but its first availability
+        // alert still belongs to any unchanged, currently available follow.
+        const newlyAvailable = (result.newly_available || []).filter(movie => {
+          const key = followedAvailabilityKey(movie);
+          if (!followedAvailableKeysRef.current.has(key) || followedAvailabilityAlertsRef.current.has(key)) return false;
+          followedAvailabilityAlertsRef.current.add(key);
+          return true;
+        });
         const removedOwned = result.removed_owned || [];
         if (newlyAvailable.length) {
           notify(`${formatCount(newlyAvailable.length)} followed release${newlyAvailable.length === 1 ? '' : 's'} now available`, 'success');
           playReleaseAlertSound();
         }
-        if (removedOwned.length) {
+        if (accepted && removedOwned.length) {
           notify(`${formatCount(removedOwned.length)} followed release${removedOwned.length === 1 ? '' : 's'} already in library`, 'neutral');
-        } else if (options.announceCompletion) {
+        } else if (accepted && options.announceCompletion) {
           notify(`Following scan complete - ${formatCount((result.movies || []).length)} still followed`, 'success');
         }
         return result;
@@ -731,19 +784,17 @@ function ArchiveApp() {
         notify(`Release watchlist ${mode === 'ownership' ? 'reconciliation' : 'scan'} failed: ${error.message}`, 'error');
         return null;
       } finally {
-        followedOperationRef.current = null;
-        setFollowedChecking(false);
-        if (followedOwnershipQueuedRef.current) {
+        followedOperationRef.current[mode] = null;
+        setFollowedChecking(Boolean(followedOperationRef.current.full || followedOperationRef.current.ownership));
+        if (mode === 'ownership' && followedOwnershipQueuedRef.current) {
           followedOwnershipQueuedRef.current = false;
-          const retryDelay = followedOwnershipRetryDelayRef.current;
-          followedOwnershipRetryDelayRef.current = 0;
-          window.setTimeout(() => executeFollowedOperation('ownership'), retryDelay);
+          executeFollowedOperation('ownership');
         }
       }
     })();
-    followedOperationRef.current = operation;
+    followedOperationRef.current[mode] = operation;
     return operation;
-  }, [notify]);
+  }, [applyFollowedResult, notify]);
 
   useEffect(() => {
     if (!startupWorkAllowed) return undefined;
@@ -752,7 +803,7 @@ function ArchiveApp() {
       try {
         const initial = await fetchCurationJson('/api/user/followed-releases');
         let serverMovies = initial.movies || [];
-        if (!cancelled) setFollowed(sortFollowedReleases(serverMovies));
+        if (!cancelled) applyFollowedResult(initial);
         let legacy = [];
         try {
           legacy = JSON.parse(localStorage.getItem('cp.followedMovies') || '[]');
@@ -767,9 +818,9 @@ function ArchiveApp() {
               body: JSON.stringify({ movie })
             });
             serverMovies = migrated.movies || serverMovies;
+            if (!cancelled) applyFollowedResult(migrated);
           }
           localStorage.removeItem('cp.followedMovies');
-          if (!cancelled) setFollowed(sortFollowedReleases(serverMovies));
         }
         if (!cancelled) executeFollowedOperation('full');
       } catch (error) {
@@ -778,28 +829,31 @@ function ArchiveApp() {
     }
     loadFollowedReleases();
     return () => { cancelled = true; };
-  }, [executeFollowedOperation, notify, startupWorkAllowed]);
+  }, [applyFollowedResult, executeFollowedOperation, notify, startupWorkAllowed]);
 
   useEffect(() => {
     const reconcileCommittedMovie = (event) => {
-      if (event?.detail?.type !== 'catalog-ready') return;
+      if (!['catalog-ready', 'catalog-sync'].includes(event?.detail?.type)) return;
+      // Cold Library defers unrelated startup work. Its later startup scan
+      // begins with catalog ownership reconciliation before provider searches.
+      if (!startupWorkAllowed) return;
       executeFollowedOperation('ownership');
     };
     window.addEventListener(CATALOG_READY_EVENT, reconcileCommittedMovie);
     return () => window.removeEventListener(CATALOG_READY_EVENT, reconcileCommittedMovie);
-  }, [executeFollowedOperation]);
+  }, [executeFollowedOperation, startupWorkAllowed]);
 
   const selectedOwnership = selectedMovie ? ownedMovieFor(selectedMovie, ownership) : null;
   const selectedDetailsKey = movieDetailsCacheKey(selectedMovie, selectedOwnership);
   const selectedDetails = selectedDetailsKey ? details[selectedDetailsKey] : null;
-  const selectedMovieWithDetails = selectedMovie ? {
+  const selectedMovieWithDetails = useMemo(() => selectedMovie ? {
     ...selectedMovie,
     plot: selectedDetails?.plot || selectedDetails?.summary || selectedMovie.plot || '',
     genres: selectedDetails?.genres?.length ? selectedDetails.genres : selectedMovie.genres,
     release_date: selectedMovie.release_date || selectedDetails?.release_date || '',
     tmdb_rating: selectedDetails?.rating || selectedMovie.tmdb_rating,
     tmdb_vote_count: selectedDetails?.tmdb_vote_count ?? selectedMovie.tmdb_vote_count
-  } : null;
+  } : null, [selectedMovie, selectedDetails]);
 
   useEffect(() => {
     if (activeSection !== 'home' || loading.movies || !selectedDetailsKey || (details[selectedDetailsKey] && !details[selectedDetailsKey].stale)) return;
@@ -819,20 +873,18 @@ function ArchiveApp() {
       cancelled = true;
     };
   }, [activeSection, details, loading.movies, selectedDetailsKey, selectedMovie, selectedOwnership]);
-  const streamingAvailable = Boolean(streamingConfig.enabled && String(streamingConfig.url_template || '').trim());
-  const streamingLabel = String(streamingConfig.label || '').trim() || 'Stream';
+  const streamingAvailable = Boolean(streamingConfig.iptv_configured || (streamingConfig.enabled && String(streamingConfig.url_template || '').trim()));
+  const streamingLabel = 'Stream';
 
   useEffect(() => {
     if (!startupWorkAllowed) return undefined;
     let cancelled = false;
-    fetchJson('/api/streaming/config')
-      .then((config) => {
-        if (!cancelled) setStreamingConfig(config);
-      })
-      .catch(() => {});
-    return () => {
-      cancelled = true;
-    };
+    const refresh = () => fetchJson('/api/streaming/config').then(config => {
+      if (!cancelled) setStreamingConfig(config);
+    }).catch(() => {});
+    refresh();
+    window.addEventListener('cp-iptv-catalog-changed', refresh);
+    return () => { cancelled = true; window.removeEventListener('cp-iptv-catalog-changed', refresh); };
   }, [startupWorkAllowed]);
 
   useEffect(() => {
@@ -843,31 +895,7 @@ function ArchiveApp() {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
-  function selectSection(id) {
-    if (typeof window === 'undefined') return;
-    activateSection(id);
-    const path = id === 'home' ? '/' : `/${id}`;
-    if (window.location.pathname !== path) {
-      window.history.pushState({}, '', path);
-    }
-  }
-
-  function reviewUnmatchedMetadata() {
-    setCleanupInitialTab('identity');
-    selectSection('cleanup');
-  }
-
-  function openCleanupTab(tab) {
-    if (tab === 'low' || tab === 'upgrades') {
-      setLibraryFilterRequest({ id: Date.now(), resolution: 'upgrade' });
-      selectSection('library');
-      return;
-    }
-    setCleanupInitialTab(tab);
-    selectSection('cleanup');
-  }
-
-  function activateSection(id) {
+  const activateSection = useCallback((id) => {
     const currentSection = activeSectionRef.current;
     const workspace = workspaceRef.current;
     if (workspace && currentSection) {
@@ -876,19 +904,52 @@ function ArchiveApp() {
     activeSectionRef.current = id;
     setMountedSections((sections) => sections.has(id) ? sections : new Set([...sections, id]));
     setActiveSection(id);
+  }, []);
+
+  const selectSection = useCallback((id) => {
+    if (typeof window === 'undefined') return;
+    activateSection(id);
+    const path = id === 'home' ? '/' : `/${id}`;
+    if (window.location.pathname !== path) {
+      window.history.pushState({}, '', path);
+    }
+  }, [activateSection]);
+
+  function openIPTVSettings() {
+    setIPTVSettingsRequest(value => value + 1);
+    selectSection('settings');
   }
+
+  function reviewUnmatchedMetadata() {
+    setCleanupInitialTab('identity');
+    selectSection('cleanup');
+  }
+
+  const openCleanupTab = useCallback((tab) => {
+    if (tab === 'low' || tab === 'upgrades') {
+      setLibraryFilterRequest({ id: Date.now(), resolution: 'upgrade' });
+      selectSection('library');
+      return;
+    }
+    setCleanupInitialTab(tab);
+    selectSection('cleanup');
+  }, [selectSection]);
+
+
 
   function openPersonInDiscover(movie, role, person, { fullFilmography = false, award = null } = {}) {
     if (!person?.id) return;
     if (award && (!['actor','director'].includes(role) || !['oscar','golden_globe'].includes(award))) return;
+    const originSection = activeSectionRef.current;
     setDiscoverActiveTab('explore');
+    setDiscoverMediaRequest({ media: 'movie', requestId: Date.now() });
     setDiscoverRelationshipRequest((current) => ({
       requestId: Number(current?.requestId || 0) + 1,
       type: award ? 'person-awards' : 'person',
-      source: 'Library',
+      source: originSection === 'iptv' ? 'IPTV' : 'Library',
       fullFilmography,
       award,
-      ...(award ? {origin:{section:activeSectionRef.current,label:movie?.title || 'Movies'}} : {}),
+      ...(award ? {origin:{section:originSection,label:movie?.title || 'Movies'}} : {}),
       movie: {
         title: movie?.title || 'Movie',
         year: movie?.year || ''
@@ -902,12 +963,12 @@ function ArchiveApp() {
     selectSection('discover');
   }
 
-  function openOwnedFileDetails(owned) {
+  const openOwnedFileDetails = useCallback((owned) => {
     const item = owned?.canonical_card || owned?.library_item || owned;
     if (!item?.path) return;
     setLibraryFileRequest({ id: Date.now(), path: item.path, item });
     selectSection('library');
-  }
+  }, [selectSection]);
 
   function openCollectionInDiscover(movie, collection) {
     if (!collection?.id) return;
@@ -928,16 +989,16 @@ function ArchiveApp() {
     selectSection('discover');
   }
 
-  function openDiscoverList(list) {
+  const openDiscoverList = useCallback((list) => {
     setDiscoverActiveTab('explore');
     setDiscoverListRequest((current) => ({
       requestId: Number(current?.requestId || 0) + 1,
       list
     }));
     selectSection('discover');
-  }
+  }, [selectSection]);
 
-  function openMovieInDiscover(movie, source = 'Rotten Tomatoes') {
+  const openMovieInDiscover = useCallback((movie, source = 'Rotten Tomatoes') => {
     if (!movie?.tmdb_id) return;
     setDiscoverActiveTab('explore');
     setDiscoverMovieRequest((current) => ({
@@ -947,9 +1008,9 @@ function ArchiveApp() {
     }));
     sectionScrollPositionsRef.current.discover = 0;
     selectSection('discover');
-  }
+  }, [selectSection]);
 
-  function openRelatedInDiscover(movie, selectedMovie, relationship = {}) {
+  const openRelatedInDiscover = useCallback((movie, selectedMovie, relationship = {}) => {
     if (!movie?.tmdb_id) return;
     const origin = activeSectionRef.current;
     setDiscoverActiveTab('explore');
@@ -961,9 +1022,9 @@ function ArchiveApp() {
       origin: origin !== 'discover' ? { section: origin, label: navItems.find((item) => item.id === origin)?.label || origin } : null
     }));
     selectSection('discover');
-  }
+  }, [discoverActiveTab, selectSection]);
 
-  async function toggleFollow(movie) {
+  const toggleFollow = useCallback(async (movie) => {
     const key = movieKey(movie);
     const existing = followed.find((item) => movieKey(item) === key);
     const payload = { title: movie.title, year: movie.year, tmdb_id: movie.tmdb_id, imdb_id: movie.imdb_id || '', poster_url: movie.poster_url, release_date: movie.release_date || '' };
@@ -973,14 +1034,14 @@ function ArchiveApp() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ movie: existing || payload })
       });
-      setFollowed(sortFollowedReleases(data.movies || []));
+      applyFollowedResult(data);
       notify(existing ? `${movie.title} removed from release watchlist` : `${movie.title} added to release watchlist`, existing ? 'neutral' : 'success');
     } catch (error) {
       notify(`Release watchlist update failed: ${error.message}`, 'error');
     }
-  }
+  }, [followed, applyFollowedResult, notify]);
 
-  async function playLocal(path, options = {}) {
+  const playLocal = useCallback(async (path, options = {}) => {
     try {
       const result = await fetchJson('/api/player/play', {
         method: 'POST',
@@ -1001,9 +1062,9 @@ function ArchiveApp() {
       notify(`Could not play file: ${error.message}`, 'error');
       return null;
     }
-  }
+  }, [loadContinueWatching, notify]);
 
-  async function playWatching(item, restart = false) {
+  const playWatching = useCallback(async (item, restart = false) => {
     if (item.media_type !== 'tv') return playLocal(item.path_key, { restart });
     if (!item.primary_action.playable) {
       window.history.pushState({}, '', `/tv/series/${item.id}`);
@@ -1014,9 +1075,9 @@ function ArchiveApp() {
       await fetchJson(`/api/tv/episodes/${item.primary_action.target.episode_id}/play`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ restart }) });
       await loadContinueWatching();
     } catch (error) { notify(error.message, 'error'); }
-  }
+  }, [playLocal, loadContinueWatching, notify]);
 
-  async function removeContinueWatching(item) {
+  const removeContinueWatching = useCallback(async (item) => {
     try {
       await fetchJson(item.media_type === 'tv' ? `/api/tv/series/${item.id}/hide-progress` : '/api/player/progress/clear', {
         method: 'POST',
@@ -1028,46 +1089,27 @@ function ArchiveApp() {
     } catch (error) {
       notify(`Could not remove progress: ${error.message}`, 'error');
     }
-  }
+  }, [notify]);
 
-  function viewContinueWatchingCard(item) {
+  const viewContinueWatchingCard = useCallback((item) => {
     if (!item.tmdb_id) {
       notify(`Cannot open ${item.title}: no saved TMDB identity. Match the movie in Library first.`, 'neutral');
       return;
     }
     openMovieInDiscover({ ...item, path: item.path_key }, 'Continue Watching');
-  }
+  }, [openMovieInDiscover, notify]);
 
   function streamEpisode(series, target) {
     const embedUrl = streamingConfig.enabled && buildTvStreamTemplateUrl(streamingConfig.tv_url_template, target);
     if (embedUrl) setStreamModal({ title: `${series.title} · ${target.code || ''} ${target.title || ''}`, year: '', embedUrl });
   }
 
-  async function streamMovie(movie) {
-    const template = String(streamingConfig.url_template || '').trim();
-    if (!streamingConfig.enabled || !template) return;
-    try {
-      const ids = {
-        tmdb_id: movie?.tmdb_id,
-        imdb_id: movie?.imdb_id
-      };
-      if (streamTemplateTokens(template).includes('imdb_id') && !ids.imdb_id) {
-        if (!ids.tmdb_id) throw new Error('Missing TMDB ID for IMDB lookup');
-        const data = await fetchJson(`/api/tmdb/imdb_id?tmdb_id=${encodeURIComponent(ids.tmdb_id)}`);
-        ids.imdb_id = data.imdb_id;
-      }
-      const embedUrl = buildStreamTemplateUrl(template, ids);
-      setStreamModal({
-        title: movie?.title || streamingLabel,
-        year: movie?.year || '',
-        embedUrl
-      });
-    } catch (error) {
-      notify(`Stream unavailable: ${error.message}`, 'error');
-    }
-  }
+  const streamMovie = useCallback((movie, highlightedProviderId = '') => {
+    setStreamModal({ title: movie?.title || 'Stream', year: movie?.year || '', movie,
+      highlightedProviderId, requestId: Date.now() });
+  }, []);
 
-  function openYouTubeVideo({
+  const openYouTubeVideo = useCallback(({
     title,
     year = '',
     sourceUrl = '',
@@ -1077,7 +1119,7 @@ function ArchiveApp() {
     playlistItems = [],
     homeTrailerSession = false,
     movie = null
-  }) {
+  }) => {
     setTrailerModal({
       title,
       year,
@@ -1090,9 +1132,9 @@ function ArchiveApp() {
       homeTrailerSession,
       movie
     });
-  }
+  }, []);
 
-  function openTrailerModal(movie, trailerUrl = '') {
+  const openTrailerModal = useCallback((movie, trailerUrl = '') => {
     const title = movie?.title || 'Trailer';
     const year = movie?.year || '';
     openYouTubeVideo({
@@ -1102,9 +1144,9 @@ function ArchiveApp() {
       searchUrl: youtubeTrailerSearchUrl(title, year),
       movie: { ...movie, title, year }
     });
-  }
+  }, [openYouTubeVideo]);
 
-  function openHomeTrailerVideo(video) {
+  const openHomeTrailerVideo = useCallback((video) => {
     openYouTubeVideo({
       title: video?.title || 'YouTube video',
       sourceUrl: video?.url || '',
@@ -1113,9 +1155,9 @@ function ArchiveApp() {
       playlistItems: homeTrailers?.items || [],
       homeTrailerSession: true
     });
-  }
+  }, [openYouTubeVideo, homeTrailers.items]);
 
-  async function findTorrent(movie, upgrade = false) {
+  const findTorrent = useCallback(async (movie, upgrade = false) => {
     const title = movie?.title || '';
     const year = movie?.year || '';
     if (!title) return;
@@ -1162,7 +1204,7 @@ function ArchiveApp() {
       if (sourceSearchTokenRef.current !== searchToken) return;
       setTorrentModal({ title, year, upgrade, loading: false, error: error.message, variants: [] });
     }
-  }
+  }, []);
 
   async function searchTorrents(query) {
     const q = String(query || '').trim();
@@ -1191,8 +1233,18 @@ function ArchiveApp() {
     ));
   }
 
+  const retryHomeMovies = useCallback(() => setHomeMoviesRefresh(value => value + 1), []);
+  const scanHomeFollowed = useCallback(() => executeFollowedOperation('full', { announceCompletion: true }), [executeFollowedOperation]);
+  const retryHomeTrailers = useCallback(() => loadHomeTrailers(), [loadHomeTrailers]);
+  const loadMoreHomeTrailers = useCallback(() => loadHomeTrailers({ cursor: homeTrailers.next_cursor, append: true }), [homeTrailers.next_cursor, loadHomeTrailers]);
+  const editHomePoster = useCallback((owned, movie) => setPosterEditor({ path: owned.path, title: movie.title }), []);
+  const resumeHomeWatching = useCallback(item => playWatching(item), [playWatching]);
+  const restartHomeWatching = useCallback(item => playWatching(item, true), [playWatching]);
+
   return (
     <MovieRelationshipNavigation.Provider value={openRelatedInDiscover}>
+    <CardPosterPriority.Provider value={cardPosterPriority}>
+    <MovieRatingsProvider>
     <div className={cx('app-shell', sidebarCollapsed && 'app-shell-sidebar-collapsed')}>
       <Sidebar
         activeSection={activeSection}
@@ -1228,8 +1280,13 @@ function ArchiveApp() {
             <Suspense fallback={<div className="loading-state"><Loader2 className="spin" size={20} /></div>}>
               <HomeWorkspace
                 stats={stats}
+                statsError={statsError}
+                statsUpdatedAt={statsUpdatedAt}
+                onRetryStats={refreshHealthStats}
                 loading={loading}
                 movies={movies}
+                moviesFallback={moviesFallback}
+                onRetryHomeMovies={retryHomeMovies}
                 upcomingMovies={upcomingMovies}
                 upcomingError={upcomingError}
                 homeTrailers={homeTrailers}
@@ -1237,7 +1294,7 @@ function ArchiveApp() {
                 ownership={ownership}
                 followed={followed}
                 followedChecking={followedChecking}
-                onScanFollowed={() => executeFollowedOperation('full', { announceCompletion: true })}
+                onScanFollowed={scanHomeFollowed}
                 selectedMovie={selectedMovieWithDetails}
                 selectedOwnership={selectedOwnership}
                 selectedDetails={selectedDetails}
@@ -1246,8 +1303,8 @@ function ArchiveApp() {
                 onOpenCleanup={openCleanupTab}
                 onSelectMovie={setSelectedMovie}
                 onOpenHomeTrailer={openHomeTrailerVideo}
-                onRetryHomeTrailers={() => loadHomeTrailers()}
-                onLoadMoreHomeTrailers={() => loadHomeTrailers({ cursor: homeTrailers.next_cursor, append: true })}
+                onRetryHomeTrailers={retryHomeTrailers}
+                onLoadMoreHomeTrailers={loadMoreHomeTrailers}
                 onPlay={playLocal}
                 onStream={streamMovie}
                 streamingAvailable={streamingAvailable}
@@ -1257,13 +1314,14 @@ function ArchiveApp() {
                 onFollow={toggleFollow}
                 userLists={homeLists}
                 onToggleSystemList={toggleHomeSystemList}
-                onEditPoster={(owned, movie) => setPosterEditor({ path: owned.path, title: movie.title })}
+                onEditPoster={editHomePoster}
                 onOpenFileDetails={openOwnedFileDetails}
                 continueWatching={continueWatching}
-                onResumeWatching={(item) => playWatching(item)}
-                onRestartWatching={(item) => playWatching(item, true)}
+                onResumeWatching={resumeHomeWatching}
+                onRestartWatching={restartHomeWatching}
                 onRemoveWatching={removeContinueWatching}
                 onViewWatchingCard={viewContinueWatchingCard}
+                notify={notify}
               />
             </Suspense>
           </div>
@@ -1273,6 +1331,7 @@ function ArchiveApp() {
             <Suspense fallback={<div className="loading-state"><Loader2 className="spin" size={20} /></div>}>
               <MediaWorkspace enabled={tvEnabled} context="library" streaming={streamingConfig} onStream={streamEpisode} onTrailer={(series, url) => openYouTubeVideo({ title: series.title, year: series.first_air_date?.slice(0, 4) || '', sourceUrl: url, kicker: 'TV Trailer' })} notify={notify} onOpenMaintenance={() => openCleanupTab('tv')}>
               <LibraryWorkspace
+                onOpenSettings={() => selectSection('settings')}
                 onPlay={playLocal}
                 onFindTorrent={findTorrent}
                 onOpenTrailer={openTrailerModal}
@@ -1297,6 +1356,7 @@ function ArchiveApp() {
             <Suspense fallback={<div className="loading-state"><Loader2 className="spin" size={20} /></div>}>
               <MovieListsWorkspace
                 tvEnabled={tvEnabled}
+                onBrowseTV={() => { setDiscoverMediaRequest({ media: 'tv', requestId: Date.now() }); selectSection('discover'); }}
                 notify={notify}
                 onPlay={playLocal}
                 onFindTorrent={findTorrent}
@@ -1317,8 +1377,9 @@ function ArchiveApp() {
         {mountedSections.has('discover') && (
           <div className="workspace-panel" hidden={activeSection !== 'discover'}>
             <Suspense fallback={<div className="loading-state"><Loader2 className="spin" size={20} /></div>}>
-              <MediaWorkspace enabled={tvEnabled} context="discover" discoverTab={discoverActiveTab} onDiscoverTabChange={setDiscoverActiveTab} movieRequestId={discoverMovieRequest?.requestId} streaming={streamingConfig} onStream={streamEpisode} onTrailer={(series, url) => openYouTubeVideo({ title: series.title, year: series.first_air_date?.slice(0, 4) || '', sourceUrl: url, kicker: 'TV Trailer' })} notify={notify}>
+              <MediaWorkspace enabled={tvEnabled} context="discover" discoverTab={discoverActiveTab} onDiscoverTabChange={setDiscoverActiveTab} movieRequestId={discoverMovieRequest?.requestId} mediaRequest={discoverMediaRequest} streaming={streamingConfig} onStream={streamEpisode} onTrailer={(series, url) => openYouTubeVideo({ title: series.title, year: series.first_air_date?.slice(0, 4) || '', sourceUrl: url, kicker: 'TV Trailer' })} notify={notify}>
               <DiscoverWorkspace
+                active={activeSection === 'discover'}
                 followed={followed}
                 notify={notify}
                 onPlay={playLocal}
@@ -1377,7 +1438,8 @@ function ArchiveApp() {
         {mountedSections.has('iptv') && (
           <div className="workspace-panel" hidden={activeSection !== 'iptv'}>
             <Suspense fallback={<div className="loading-state"><Loader2 className="spin" size={20} /></div>}>
-              <IPTVWorkspace notify={notify} followed={followed} />
+              <IPTVWorkspace notify={notify} followed={followed} active={activeSection === 'iptv'}
+                onOpenSettings={openIPTVSettings} onOpenDiscoverPerson={openPersonInDiscover} />
             </Suspense>
           </div>
         )}
@@ -1396,6 +1458,8 @@ function ArchiveApp() {
                 onPlay={playLocal}
                 onFindTorrent={findTorrent}
                 initialTab={cleanupInitialTab}
+                active={activeSection === 'cleanup'}
+                onOpenIPTVSettings={openIPTVSettings}
                 onHealthChanged={refreshHealthStats}
                 onOpenLibraryUpgrades={() => openCleanupTab('upgrades')}
               />
@@ -1407,6 +1471,8 @@ function ArchiveApp() {
             <Suspense fallback={<div className="loading-state"><Loader2 className="spin" size={20} /></div>}>
               <SettingsWorkspace
                 notify={notify}
+                active={activeSection === 'settings'}
+                iptvSettingsRequest={iptvSettingsRequest}
                 onReviewUnmatched={reviewUnmatchedMetadata}
                 onReviewIdentities={() => openCleanupTab('identity')}
                 onStreamingConfigChanged={setStreamingConfig}
@@ -1441,6 +1507,8 @@ function ArchiveApp() {
       )}
       {streamModal && (
         <StreamPlayerModal
+          key={streamModal.requestId || streamModal.embedUrl}
+          config={streamingConfig}
           state={streamModal}
           onClose={() => setStreamModal(null)}
         />
@@ -1454,229 +1522,12 @@ function ArchiveApp() {
         />
       )}
     </div>
+    </MovieRatingsProvider>
+    </CardPosterPriority.Provider>
     </MovieRelationshipNavigation.Provider>
   );
 }
 
-function Sidebar({
-  activeSection,
-  collapsed,
-  onSelect,
-  onToggleCollapsed,
-  powerStatus,
-  onFrontendReset,
-  onPowerAction,
-  onPowerCancel,
-  onPowerResume
-}) {
-  const [navTooltip, setNavTooltip] = useState(null);
-  const [powerMenuOpen, setPowerMenuOpen] = useState(false);
-  const [afterDownload, setAfterDownload] = useState(false);
-  const [closeQbittorrent, setCloseQbittorrent] = useState(false);
-  const plan = powerStatus?.plan || {};
-  const planActive = ['armed', 'draining', 'paused', 'failed', 'dispatch_claimed', 'dispatch_failed', 'dispatch_unknown'].includes(plan.state);
-  const cancellable = ['armed', 'paused', 'failed', 'dispatch_failed', 'dispatch_unknown'].includes(plan.state);
-  const checkpointed = (plan.target_status || []).filter((target) => target.checkpointed).length;
-  const canCloseQbittorrent = powerStatus?.torrent_client?.can_close === true;
-  const planLabel = plan.action === 'device'
-    ? 'SHUT DOWN DEVICE'
-    : plan.action === 'restart' ? 'RESTART' : 'TURN OFF';
-
-  useEffect(() => {
-    if (!canCloseQbittorrent) setCloseQbittorrent(false);
-  }, [canCloseQbittorrent]);
-
-  const showNavTooltip = useCallback((label, event) => {
-    if (!collapsed) return;
-    const anchor = event.currentTarget.getBoundingClientRect();
-    setNavTooltip({
-      label,
-      top: anchor.top + anchor.height / 2
-    });
-  }, [collapsed]);
-
-  const hideNavTooltip = useCallback(() => {
-    setNavTooltip((current) => (
-      current ? { ...current, label: '' } : null
-    ));
-  }, []);
-
-  const selectNavItem = useCallback((section) => {
-    hideNavTooltip();
-    onSelect(section);
-  }, [hideNavTooltip, onSelect]);
-
-  const toggleCollapsed = useCallback(() => {
-    setNavTooltip(null);
-    onToggleCollapsed();
-  }, [onToggleCollapsed]);
-
-  useEffect(() => {
-    if (!collapsed) setNavTooltip(null);
-  }, [collapsed]);
-
-  return (
-    <>
-      <aside className={cx('sidebar', collapsed && 'sidebar-collapsed')} aria-label="Primary navigation">
-      <div className="brand-lockup">
-        <img src={logoUrl} alt="" className="brand-mark" />
-        <div>
-          <div className="brand-title">Cinema</div>
-          <div className="brand-title brand-title-accent">Paradiso</div>
-        </div>
-        <button
-          type="button"
-          className="sidebar-toggle"
-          onClick={toggleCollapsed}
-          aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
-          aria-expanded={!collapsed}
-          title={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
-        >
-          {collapsed ? <PanelLeftOpen size={18} /> : <PanelLeftClose size={18} />}
-        </button>
-      </div>
-      <nav className="nav-stack" onScroll={hideNavTooltip}>
-        {navItems.map((item) => {
-          const Icon = item.icon;
-          const active = activeSection === item.id;
-          return (
-            <div key={item.id} className="nav-group">
-              <button
-                className={cx('nav-item', active && 'nav-item-active', `accent-${item.accent}`)}
-                onClick={() => selectNavItem(item.id)}
-                onMouseEnter={(event) => showNavTooltip(item.label, event)}
-                onMouseLeave={hideNavTooltip}
-                onFocus={(event) => showNavTooltip(item.label, event)}
-                onBlur={hideNavTooltip}
-                type="button"
-                aria-label={collapsed ? item.label : undefined}
-              >
-                <span className="nav-icon-wrap"><Icon size={22} /></span>
-                <span className="nav-label">
-                  {item.label}
-                  {item.experimental && <ExperimentalBadge className="ai-control-nav-badge" />}
-                </span>
-              </button>
-            </div>
-          );
-        })}
-      </nav>
-      <div className={cx('sidebar-power-zone', planActive && 'sidebar-power-zone-active')}>
-        <NotificationWindow collapsed={collapsed} />
-        <button
-          type="button"
-          className="sidebar-power-button"
-          aria-label="Power options"
-          aria-expanded={powerMenuOpen}
-          title="Power options"
-          onClick={() => setPowerMenuOpen((open) => !open)}
-        >
-          <Power size={21} />
-          <span>{planActive ? 'Power action active' : 'Power'}</span>
-        </button>
-        <div
-          className="sidebar-footer"
-          title={collapsed ? APP_VERSION : undefined}
-        >
-          <span className="sidebar-version">{APP_VERSION}</span>
-        </div>
-        {powerMenuOpen && (
-          <div className={cx('sidebar-power-menu', collapsed && 'sidebar-power-menu-collapsed')} role="menu" aria-label="Power options">
-            <div className="sidebar-power-menu-heading">
-              <strong>Power</strong>
-              {planActive && <span>{plan.state.replace('_', ' ')}</span>}
-            </div>
-            {planActive ? (
-              <div className="sidebar-power-plan">
-                <strong>{planLabel}</strong>
-                <span>{plan.detail}</span>
-                {plan.action === 'cp' && plan.close_qbittorrent && <small>qBittorrent will also close</small>}
-                {!!plan.target_status?.length && (
-                  <small>{checkpointed} of {plan.target_status.length} downloads checkpointed</small>
-                )}
-                {plan.state === 'paused' && (
-                  <button type="button" className="sidebar-power-action" onClick={onPowerResume}>Resume scheduled action</button>
-                )}
-                {cancellable && (
-                  <button type="button" className="sidebar-power-action sidebar-power-cancel" onClick={onPowerCancel}>Cancel scheduled action</button>
-                )}
-              </div>
-            ) : (
-              <>
-                <div className="sidebar-power-runtime-actions">
-                  <button type="button" className="sidebar-power-action" role="menuitem" onClick={onFrontendReset}>
-                    <RefreshCw size={18} /> <span>RESET</span>
-                  </button>
-                  <button type="button" className="sidebar-power-action" role="menuitem" onClick={() => onPowerAction('restart', false, false)}>
-                    <RotateCcw size={18} /> <span>RESTART</span>
-                  </button>
-                </div>
-                <label className="sidebar-power-after">
-                  <input
-                    type="checkbox"
-                    checked={afterDownload}
-                    disabled={!powerStatus?.active_downloads}
-                    onChange={(event) => setAfterDownload(event.target.checked)}
-                  />
-                  <span>After current downloads finish</span>
-                </label>
-                {!powerStatus?.active_downloads && <small className="sidebar-power-note">No active CP downloads</small>}
-                <label className="sidebar-power-after sidebar-power-torrent-option">
-                  <input
-                    type="checkbox"
-                    checked={closeQbittorrent}
-                    disabled={!canCloseQbittorrent}
-                    onChange={(event) => setCloseQbittorrent(event.target.checked)}
-                  />
-                  <span>Close qBittorrent too</span>
-                </label>
-                {!canCloseQbittorrent && <small className="sidebar-power-note">System qBittorrent is not owned by CP</small>}
-                <button type="button" className="sidebar-power-action" role="menuitem" onClick={() => onPowerAction('cp', afterDownload, closeQbittorrent)}>
-                  <Power size={18} /> <span>TURN OFF</span>
-                </button>
-                <button type="button" className="sidebar-power-action" role="menuitem" onClick={() => onPowerAction('device', afterDownload, false)}>
-                  <MonitorOff size={18} /> <span>SHUT DOWN DEVICE</span>
-                </button>
-              </>
-            )}
-          </div>
-        )}
-      </div>
-      </aside>
-      {collapsed && (
-        <div
-          className={cx('sidebar-tooltip', navTooltip?.label && 'sidebar-tooltip-visible')}
-          role="tooltip"
-          aria-hidden={!navTooltip?.label}
-          style={{ top: `${navTooltip?.top ?? 0}px` }}
-        >
-          {navTooltip?.label || ''}
-        </div>
-      )}
-    </>
-  );
-}
-
-
-
-function usePlayerDialog(onClose) {
-  const dialogRef = useRef(null);
-  useEffect(() => {
-    const previous = document.activeElement;
-    dialogRef.current?.querySelector('button')?.focus();
-    const handleKey = (event) => {
-      if (event.key === 'Escape') { event.preventDefault(); onClose(); return; }
-      if (event.key !== 'Tab') return;
-      const controls = [...(dialogRef.current?.querySelectorAll('button, iframe, a[href], [tabindex="0"]') || [])];
-      if (!controls.length) return;
-      if (event.shiftKey && document.activeElement === controls[0]) { event.preventDefault(); controls.at(-1).focus(); }
-      else if (!event.shiftKey && document.activeElement === controls.at(-1)) { event.preventDefault(); controls[0].focus(); }
-    };
-    document.addEventListener('keydown', handleKey);
-    return () => { document.removeEventListener('keydown', handleKey); previous?.focus(); };
-  }, []);
-  return dialogRef;
-}
 
 function TrailerModal({ state, followed = [], onFollow, onViewDetails, onClose }) {
   const dialogRef = usePlayerDialog(onClose);
@@ -1719,6 +1570,7 @@ function TrailerModal({ state, followed = [], onFollow, onViewDetails, onClose }
   const isHomeTrailerSession = Boolean(homeTrailerSession && activeVideo?.video_id);
   const activeKicker = isHomeTrailerSession ? (activeVideo?.source_name || 'New Trailers') : kicker;
   const matchedMovie = movieResolution.movie;
+  const matchedMovieGenres = matchedMovie?.genres?.slice(0, 2).join(' · ');
   const matchedMovieFollowed = Boolean(matchedMovie && followed.some((movie) => (
     (matchedMovie.tmdb_id && String(movie?.tmdb_id || '') === String(matchedMovie.tmdb_id))
     || movieKey(movie) === movieKey(matchedMovie)
@@ -1895,9 +1747,9 @@ function TrailerModal({ state, followed = [], onFollow, onViewDetails, onClose }
         {playerError ? <strong>{playerError}</strong> : <span>Having trouble with this trailer?</span>}
         <small>Cinema Paradiso only keeps this choice for this open trailer session.</small>
       </div>
-      <button type="button" className="btn btn-secondary" onClick={requestTrailerAlternatives} disabled={trailerSearch.status === 'loading'}>
+      <Button type="button"  onClick={requestTrailerAlternatives} disabled={trailerSearch.status === 'loading'}>
         {trailerSearch.status === 'loading' ? <Loader2 className="spin" size={15} /> : <RefreshCw size={15} />} Try another trailer
-      </button>
+      </Button>
       {trailerSearch.status === 'choose' && trailerSearch.candidates.length ? (
         <div className="trailer-fallback-candidates">
           {trailerSearch.candidates.map((video) => (
@@ -1966,15 +1818,15 @@ function TrailerModal({ state, followed = [], onFollow, onViewDetails, onClose }
         aria-label={isMovieTrailer ? `Trailer for ${titleLabel}` : `${activeKicker}: ${titleLabel}`}
         onClick={(event) => event.stopPropagation()}
       >
-        <div className="dialog-header trailer-dialog-header">
+        <DialogHeader className="trailer-dialog-header">
           <div>
             <p className="screen-kicker">{activeKicker}</p>
             <h2>{titleLabel}</h2>
           </div>
-          <button type="button" className="inspector-close" onClick={onClose} aria-label={isMovieTrailer ? 'Stop trailer' : 'Stop video'}>
+          <Button size="icon" type="button" className="inspector-close" onClick={onClose} aria-label={isMovieTrailer ? 'Stop trailer' : 'Stop video'}>
             <X size={18} />
-          </button>
-        </div>
+          </Button>
+        </DialogHeader>
         {activeEmbedUrl ? (
           <>
           <div className="trailer-player-shell">
@@ -2008,18 +1860,18 @@ function TrailerModal({ state, followed = [], onFollow, onViewDetails, onClose }
                   <div className="trailer-movie-identity">
                     {matchedMovie.poster_url ? <img src={matchedMovie.poster_url} alt="" /> : <span><Film size={20} /></span>}
                     <div>
-                      <small>{movieResolution.reason === 'manual' ? 'Manually matched movie' : 'Matched TMDB movie'}</small>
                       <strong>{matchedMovie.title}</strong>
                       <span>{matchedMovie.year || matchedMovie.release_date || 'Release date unavailable'}</span>
+                      {matchedMovieGenres && <small>{matchedMovieGenres}</small>}
                     </div>
                   </div>
                   <div className="trailer-movie-actions">
-                    <button type="button" className="btn btn-primary" onClick={() => onFollow?.(matchedMovie)}>
+                    <Button variant="primary" type="button"  onClick={() => onFollow?.(matchedMovie)}>
                       <Bell size={15} /> {matchedMovieFollowed ? 'Following' : 'Follow'}
-                    </button>
-                    <button type="button" className="btn btn-secondary" onClick={() => onViewDetails?.(matchedMovie, activeVideo?.source_name || 'Home Trailers')}>
+                    </Button>
+                    <Button type="button"  onClick={() => onViewDetails?.(matchedMovie, activeVideo?.source_name || 'Home Trailers')}>
                       <Compass size={15} /> View details
-                    </button>
+                    </Button>
                     <button type="button" className="ghost-link ghost-link-small" onClick={openManualMatch}>Change match</button>
                   </div>
                 </>
@@ -2032,7 +1884,7 @@ function TrailerModal({ state, followed = [], onFollow, onViewDetails, onClose }
                       <small>{movieResolution.error || 'Choose the movie manually before following it or opening its card.'}</small>
                     </div>
                   </div>
-                  <button type="button" className="btn btn-secondary" onClick={openManualMatch}>Manual match</button>
+                  <Button type="button"  onClick={openManualMatch}>Manual match</Button>
                 </>
               )}
             </section>
@@ -2041,14 +1893,14 @@ function TrailerModal({ state, followed = [], onFollow, onViewDetails, onClose }
             <section className="trailer-manual-match" aria-label="Manually match this trailer">
               <div className="trailer-manual-match-heading">
                 <div><p className="screen-kicker">TMDB movie match</p><strong>Choose the movie represented by this trailer</strong></div>
-                <button type="button" className="inspector-close" onClick={() => setManualMatchOpen(false)} aria-label="Close manual match"><X size={16} /></button>
+                <Button size="icon" type="button" className="inspector-close" onClick={() => setManualMatchOpen(false)} aria-label="Close manual match"><X size={16} /></Button>
               </div>
               <form onSubmit={runManualSearch} className="trailer-manual-search">
-                <input value={manualTitle} onChange={(event) => setManualTitle(event.target.value)} aria-label="Movie title" placeholder="Movie title" />
-                <input value={manualYear} onChange={(event) => setManualYear(event.target.value)} aria-label="Release year" placeholder="Year" inputMode="numeric" />
-                <button type="submit" className="btn btn-secondary" disabled={manualLoading || !manualTitle.trim()}>
+                <Input value={manualTitle} onChange={(event) => setManualTitle(event.target.value)} aria-label="Movie title" placeholder="Movie title" />
+                <Input value={manualYear} onChange={(event) => setManualYear(event.target.value)} aria-label="Release year" placeholder="Year" inputMode="numeric" />
+                <Button type="submit"  disabled={manualLoading || !manualTitle.trim()}>
                   {manualLoading ? <Loader2 className="spin" size={15} /> : <Search size={15} />} Search TMDB
-                </button>
+                </Button>
               </form>
               {manualError && <small className="trailer-manual-error">{manualError}</small>}
               {manualCandidates.length > 0 && (
@@ -2103,9 +1955,9 @@ function TrailerModal({ state, followed = [], onFollow, onViewDetails, onClose }
                 <Film size={32} />
                 <h3>No embeddable video found</h3>
                 <p>{trailerSearch.error || 'Cinema Paradiso could not identify a safe automatic match.'}</p>
-                <a className="btn btn-secondary" href={searchUrl} target="_blank" rel="noreferrer">
+                <ActionLink  href={searchUrl} target="_blank" rel="noreferrer">
                   <ExternalLink size={15} /> Open YouTube
-                </a>
+                </ActionLink>
               </>
             )}
           </div>
@@ -2136,63 +1988,6 @@ function TrailerRecommendationGrid({ className, title, videos, onSelect }) {
   );
 }
 
-function StreamPlayerModal({ state, onClose }) {
-  const dialogRef = usePlayerDialog(onClose);
-  const { title, year, embedUrl } = state;
-  const titleLabel = [title, year].filter(Boolean).join(' ');
-  const [streamStatusVisible, setStreamStatusVisible] = useState(true);
-  const [streamSlow, setStreamSlow] = useState(false);
-
-  useEffect(() => {
-    setStreamStatusVisible(true);
-    setStreamSlow(false);
-    const slowTimer = window.setTimeout(() => setStreamSlow(true), 12000);
-    const hideTimer = window.setTimeout(() => setStreamStatusVisible(false), 30000);
-    return () => {
-      window.clearTimeout(slowTimer);
-      window.clearTimeout(hideTimer);
-    };
-  }, [embedUrl]);
-
-  const statusDetail = streamSlow
-    ? 'The streaming page is taking longer than usual. You can keep waiting or close the player.'
-    : 'The streaming page can take a moment to load.';
-
-  return (
-    <div className="modal-backdrop trailer-backdrop" role="presentation" onClick={onClose}>
-      <section ref={dialogRef} className="trailer-dialog stream-dialog" role="dialog" aria-modal="true" aria-label={`Stream ${titleLabel}`} onClick={(event) => event.stopPropagation()}>
-        <div className="dialog-header trailer-dialog-header">
-          <div>
-            <p className="screen-kicker">Streaming</p>
-            <h2>{titleLabel}</h2>
-          </div>
-          <button type="button" className="inspector-close" onClick={onClose} aria-label="Close stream">
-            <X size={18} />
-          </button>
-        </div>
-        <div className="trailer-player-shell stream-player-shell">
-          {streamStatusVisible && (
-            <div className="stream-loading-overlay" role="status" aria-live="polite">
-              <Loader2 size={28} className="spin" />
-              <strong>Loading stream page...</strong>
-              <span className="stream-loading-bar" aria-hidden="true"><span /></span>
-              <small>{statusDetail}</small>
-            </div>
-          )}
-          <iframe
-            key={embedUrl}
-            title={`${titleLabel} stream`}
-            src={embedUrl}
-            allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
-            // Page load does not report video playback inside the external player.
-            onLoad={() => setStreamStatusVisible(false)}
-            allowFullScreen
-          />
-        </div>
-      </section>
-    </div>
-  );
-}
 
 function TorrentModal({ state, onClose, notify }) {
   const initialQuery = `${state.title || ''} ${state.year || ''}`.trim();
@@ -2320,26 +2115,26 @@ function TorrentModal({ state, onClose, notify }) {
 
   return (
     <div className="modal-backdrop" role="presentation" onClick={onClose}>
-      <section className="torrent-dialog" role="dialog" aria-modal="true" aria-label="Torrent results" onClick={(event) => event.stopPropagation()}>
-        <div className="dialog-header">
+      <DialogShell size="wide" className="torrent-dialog" role="dialog" aria-modal="true" aria-label="Torrent results" onClick={(event) => event.stopPropagation()}>
+        <DialogHeader >
           <div>
             <p className="screen-kicker">{state.upgrade ? 'Upgrade search' : 'Source search'}</p>
             <h2>{state.upgrade ? 'Upgrade sources' : 'Sources'}: {state.title}{state.year ? ` (${state.year})` : ''}</h2>
           </div>
           <span className="torrent-count">{formatCount(filteredVariants.length)} results</span>
-          <button type="button" className="inspector-close" onClick={onClose} aria-label="Close torrent results">
+          <Button size="icon" type="button" className="inspector-close" onClick={onClose} aria-label="Close torrent results">
             <X size={18} />
-          </button>
-        </div>
+          </Button>
+        </DialogHeader>
 
         <form className="torrent-search-row" onSubmit={runManualSearch}>
-          <label className="library-search">
+          <SearchField className="">
             <Search size={17} />
-            <input value={manualQuery} onChange={(event) => setManualQuery(event.target.value)} placeholder="Manual torrent search..." />
-          </label>
-          <button type="submit" className="btn btn-primary" disabled={loading}>
+            <Input value={manualQuery} onChange={(event) => setManualQuery(event.target.value)} placeholder="Manual torrent search..." />
+          </SearchField>
+          <Button variant="primary" type="submit"  disabled={loading}>
             {loading ? <Loader2 size={15} className="spin" /> : <Search size={15} />} Search
-          </button>
+          </Button>
         </form>
 
         {!identity.tmdb_id && !identity.imdb_id ? (
@@ -2352,10 +2147,10 @@ function TorrentModal({ state, onClose, notify }) {
             {identityCandidates.length ? (
               <div className="torrent-action-group">
                 {identityCandidates.map((candidate) => (
-                  <button
+                  <Button size="compact"
                     key={candidate.tmdb_id}
                     type="button"
-                    className="mini-action"
+
                     onClick={() => setIdentity({
                       tmdb_id: String(candidate.tmdb_id || ''),
                       imdb_id: String(candidate.imdb_id || ''),
@@ -2364,7 +2159,7 @@ function TorrentModal({ state, onClose, notify }) {
                     })}
                   >
                     <Film size={14} /> {candidate.title || 'Untitled'}{candidate.year ? ` (${candidate.year})` : ''}
-                  </button>
+                  </Button>
                 ))}
               </div>
             ) : null}
@@ -2372,26 +2167,26 @@ function TorrentModal({ state, onClose, notify }) {
         ) : null}
 
         <div className="torrent-filter-row">
-          <label className="library-search">
+          <SearchField className="">
             <Search size={17} />
-            <input value={titleFilter} onChange={(event) => setTitleFilter(event.target.value)} placeholder="Filter by title..." />
-          </label>
-          <select value={resolutionFilter} onChange={(event) => setResolutionFilter(event.target.value)}>
+            <Input value={titleFilter} onChange={(event) => setTitleFilter(event.target.value)} placeholder="Filter by title..." />
+          </SearchField>
+          <Select value={resolutionFilter} onChange={(event) => setResolutionFilter(event.target.value)}>
             <option value="all">All resolutions</option>
             {resolutions.map((value) => <option key={value} value={value}>{value}</option>)}
-          </select>
-          <select value={indexerFilter} onChange={(event) => setIndexerFilter(event.target.value)}>
+          </Select>
+          <Select value={indexerFilter} onChange={(event) => setIndexerFilter(event.target.value)}>
             <option value="all">All indexers</option>
             {indexers.map((value) => <option key={value} value={value}>{value}</option>)}
-          </select>
-          <select value={sortMode} onChange={(event) => setSortMode(event.target.value)}>
+          </Select>
+          <Select value={sortMode} onChange={(event) => setSortMode(event.target.value)}>
             <option value="size-desc">Size largest</option>
             <option value="size-asc">Size smallest</option>
             <option value="seeders-desc">Seeders most</option>
             <option value="seeders-asc">Seeders least</option>
             <option value="resolution-desc">Resolution best</option>
             <option value="title-asc">Title A-Z</option>
-          </select>
+          </Select>
         </div>
 
         {stillSearching && filteredVariants.length ? (
@@ -2456,12 +2251,12 @@ function TorrentModal({ state, onClose, notify }) {
             })}
           </div>
         ) : (
-          <div className="empty-state">
+          <WorkspaceEmptyState size="compact" >
             <strong>No sources found.</strong>
             <span>Prowlarr returned no usable movie releases for this title.</span>
-          </div>
+          </WorkspaceEmptyState>
         )}
-      </section>
+      </DialogShell>
     </div>
   );
 }
@@ -2522,7 +2317,7 @@ function TopBar({
           }}
         >
           <Search size={17} />
-          <input
+          <Input
             aria-label={isLibrary ? 'Search offline library' : isBrowseSearch ? 'Search movie indexers' : isExploreSearch ? 'Search TMDB discovery' : 'Command search'}
             value={searchValue}
             onChange={(event) => {

@@ -1,0 +1,66 @@
+{
+  "modules": [
+    {
+      "module": "services",
+      "path": "services\\__init__.py",
+      "matches_pristine_baseline": true
+    },
+    {
+      "module": "services.iptv_enrichment_worker",
+      "path": "services\\iptv_enrichment_worker.py",
+      "matches_pristine_baseline": true
+    },
+    {
+      "module": "services.iptv_metadata_settings",
+      "path": "services\\iptv_metadata_settings.py",
+      "matches_pristine_baseline": true
+    },
+    {
+      "module": "services.iptv_movie_classifier",
+      "path": "services\\iptv_movie_classifier.py",
+      "matches_pristine_baseline": true
+    },
+    {
+      "module": "services.iptv_movie_service",
+      "path": "services\\iptv_movie_service.py",
+      "matches_pristine_baseline": true
+    },
+    {
+      "module": "services.iptv_movie_store",
+      "path": "services\\iptv_movie_store.py",
+      "matches_pristine_baseline": true
+    },
+    {
+      "module": "services.iptv_service",
+      "path": "services\\iptv_service.py",
+      "matches_pristine_baseline": true
+    },
+    {
+      "module": "services.iptv_store",
+      "path": "services\\iptv_store.py",
+      "matches_pristine_baseline": true
+    },
+    {
+      "module": "services.iptv_tmdb",
+      "path": "services\\iptv_tmdb.py",
+      "matches_pristine_baseline": true
+    },
+    {
+      "module": "services.iptv_xtream",
+      "path": "services\\iptv_xtream.py",
+      "matches_pristine_baseline": true
+    },
+    {
+      "module": "tests.iptv_movie_fixtures",
+      "path": "tests\\iptv_movie_fixtures.py",
+      "matches_pristine_baseline": true
+    },
+    {
+      "module": "tests.test_iptv_movie_gates_0_5",
+      "path": "tests\\test_iptv_movie_gates_0_5.py",
+      "matches_pristine_baseline": true
+    }
+  ],
+  "all_project_dependencies_match_baseline": true,
+  "changed_tv_modules_loaded": []
+}

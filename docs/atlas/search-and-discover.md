@@ -4,6 +4,18 @@
 
 **Source checked** · 2026-11-13 on `master` at `be511f9` with local changes in the frontend, app, search services, and tests. **Live status unverified.**
 
+## Discover card artwork
+
+`ArchiveApp` provides one poster-priority scheduler to all CP workspaces. `UnifiedMoviePoster` and the related-title rail report visible poster loading. The scheduler releases distinct card backdrops after the visible posters finish or fail, applying the existing near-viewport rule. Expanded artwork retains its immediate path. [Workspace scope](../../src/App.jsx) · [Artwork owner](../../src/components/movie-card/cardArtwork.js) · [Desktop and live verification](../plans/2026-11-14-app-wide-poster-priority.md#verification-and-rollout)
+
+## 2026-11-13 IPTV integration candidate
+
+`DiscoverWorkspace` passes its active logical-page movie IDs to `useIPTVMovieAvailability` after rendering. `MediaWorkspace` disables the Movie subscription while TV is selected. `iptvAvailability.js` batches 100 IDs, coalesces requests, caches at most 500 IDs for 15 seconds, and invalidates on successful relevant mutations/data-root changes even with no screen mounted. Hidden/inactive screens do not poll. Cancellation detaches the subscriber without aborting shared work.
+
+`IPTVAvailabilityBadge` occupies a reserved 30px `UnifiedMovieCard` slot supplied by `DiscoverMovieCard` and `IndexerMovieCard`. It shows two provider labels and +N overflow, with no negative badge or loading spinner. Backend state comes from the IPTV read-only owner described in the [IPTV map](iptv.md). Tests: `iptv_availability.test.mjs`, `e2e/iptv-discover-availability.spec.js`, plus existing paging/artwork/relationships suites.
+
+Authority: [approved plan](../plans/2026-11-13-iptv-cast-discover-streaming.md). Evidence: [2026-11-13 isolated verification](../verification/iptv-cast-discover-streaming-2026-11-13/report.md). Candidate is in the managed `iptv-discover-streaming` worktree at baseline `117526b` plus the preserved dirty desktop source. **Isolated-tested; not activated in the running app.**
+
 ## Entry points and owners
 
 | Surface | Execution path |

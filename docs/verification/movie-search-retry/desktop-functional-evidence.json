@@ -1,0 +1,267 @@
+{
+  "4000-search-evidence": {
+    "latestRenderMs": 452,
+    "dispatched": [
+      "s",
+      "searchfix"
+    ],
+    "maximumActive": 1,
+    "catalogueSize": 4000,
+    "exactUniqueRendered": 4000,
+    "pages": 100
+  },
+  "poster-retry-evidence": {
+    "failed": {
+      "events": 0,
+      "followed_count": 1,
+      "generation": 14,
+      "job": {
+        "cast": [],
+        "certification": "",
+        "directors": [],
+        "genres": [
+          "Drama"
+        ],
+        "hash": "qualification-import",
+        "identity_handoff": {
+          "paths": [
+            "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-exoayinc\\bounded\\media\\Qualification.Import.2026.1080p.mkv"
+          ],
+          "state": "queued",
+          "tmdb_id": "810001"
+        },
+        "imported_paths": [
+          "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-exoayinc\\bounded\\media\\Qualification.Import.2026.1080p.mkv"
+        ],
+        "keywords": [],
+        "library_scan_pending": true,
+        "plot": "Persistent isolated poster retry and publication fixture.",
+        "poster_url": "https://fixture.invalid/poster.png",
+        "state": "imported",
+        "title": "Qualification Import",
+        "tmdb_id": "810001",
+        "writers": [],
+        "year": "2026"
+      },
+      "ledger": {
+        "admission_order": 4,
+        "attempts": {
+          "assets": 1,
+          "facts": 1,
+          "provider": 1
+        },
+        "correlation_id": "qbt:qualification-import",
+        "evidence_signature": "b23f383ba6f80ecc4e9ddccab22c94023346e521b9b46d41bcef7f9218f62b73",
+        "first_observed_at": 1792784553.3485284,
+        "handoff": {
+          "paths": [
+            "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-exoayinc\\bounded\\media\\Qualification.Import.2026.1080p.mkv"
+          ],
+          "state": "ready",
+          "tmdb_id": "810001"
+        },
+        "last_error": "MediaAssetError: controlled first poster transport failure",
+        "next_due_at": 1792784555.3485284,
+        "reason": "qbittorrent",
+        "require_publication": true,
+        "reservation_guard": "ef87259045336496f10a31ef15b2e6b714a552903f8cd104f93fbf1b7983f813",
+        "revision": 6,
+        "source_identity": {
+          "imdb_id": "",
+          "paths": [
+            "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-exoayinc\\bounded\\media\\Qualification.Import.2026.1080p.mkv"
+          ],
+          "title": "Qualification Import",
+          "tmdb_id": "810001",
+          "year": "2026"
+        },
+        "stage": "assets",
+        "state": "waiting",
+        "version": 1
+      },
+      "pid": 54400,
+      "poster_calls": 1,
+      "publication": {
+        "blockers": {
+          "assets": "assets_not_ready"
+        },
+        "eligible_to_publish": false,
+        "legacy_visible": false,
+        "movie_key": "tmdb:810001",
+        "path": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-exoayinc\\bounded\\media\\Qualification.Import.2026.1080p.mkv",
+        "publication_committed": false,
+        "recoverable_prepared": false,
+        "required_stages": [
+          "assets"
+        ]
+      }
+    },
+    "early": {
+      "events": 0,
+      "followed_count": 1,
+      "generation": 14,
+      "job": {
+        "cast": [],
+        "certification": "",
+        "directors": [],
+        "genres": [
+          "Drama"
+        ],
+        "hash": "qualification-import",
+        "identity_handoff": {
+          "paths": [
+            "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-exoayinc\\bounded\\media\\Qualification.Import.2026.1080p.mkv"
+          ],
+          "state": "queued",
+          "tmdb_id": "810001"
+        },
+        "imported_paths": [
+          "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-exoayinc\\bounded\\media\\Qualification.Import.2026.1080p.mkv"
+        ],
+        "keywords": [],
+        "library_scan_pending": true,
+        "plot": "Persistent isolated poster retry and publication fixture.",
+        "poster_url": "https://fixture.invalid/poster.png",
+        "state": "imported",
+        "title": "Qualification Import",
+        "tmdb_id": "810001",
+        "writers": [],
+        "year": "2026"
+      },
+      "ledger": {
+        "admission_order": 4,
+        "attempts": {
+          "assets": 1,
+          "facts": 1,
+          "provider": 1
+        },
+        "correlation_id": "qbt:qualification-import",
+        "evidence_signature": "b23f383ba6f80ecc4e9ddccab22c94023346e521b9b46d41bcef7f9218f62b73",
+        "first_observed_at": 1792784553.3485284,
+        "handoff": {
+          "paths": [
+            "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-exoayinc\\bounded\\media\\Qualification.Import.2026.1080p.mkv"
+          ],
+          "state": "ready",
+          "tmdb_id": "810001"
+        },
+        "last_error": "MediaAssetError: controlled first poster transport failure",
+        "next_due_at": 1792784555.3485284,
+        "reason": "qbittorrent",
+        "require_publication": true,
+        "reservation_guard": "ef87259045336496f10a31ef15b2e6b714a552903f8cd104f93fbf1b7983f813",
+        "revision": 6,
+        "source_identity": {
+          "imdb_id": "",
+          "paths": [
+            "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-exoayinc\\bounded\\media\\Qualification.Import.2026.1080p.mkv"
+          ],
+          "title": "Qualification Import",
+          "tmdb_id": "810001",
+          "year": "2026"
+        },
+        "stage": "assets",
+        "state": "waiting",
+        "version": 1
+      },
+      "pid": 54400,
+      "poster_calls": 1,
+      "publication": {
+        "blockers": {
+          "assets": "assets_not_ready"
+        },
+        "eligible_to_publish": false,
+        "legacy_visible": false,
+        "movie_key": "tmdb:810001",
+        "path": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-exoayinc\\bounded\\media\\Qualification.Import.2026.1080p.mkv",
+        "publication_committed": false,
+        "recoverable_prepared": false,
+        "required_stages": [
+          "assets"
+        ]
+      }
+    },
+    "completed": {
+      "events": 1,
+      "followed_count": 1,
+      "generation": 15,
+      "job": {
+        "cast": [],
+        "certification": "",
+        "directors": [],
+        "genres": [
+          "Drama"
+        ],
+        "hash": "qualification-import",
+        "identity_handoff": {
+          "paths": [
+            "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-exoayinc\\bounded\\media\\Qualification.Import.2026.1080p.mkv"
+          ],
+          "state": "applied",
+          "tmdb_id": "810001"
+        },
+        "imported_paths": [
+          "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-exoayinc\\bounded\\media\\Qualification.Import.2026.1080p.mkv"
+        ],
+        "keywords": [],
+        "library_scan_pending": false,
+        "plot": "Persistent isolated poster retry and publication fixture.",
+        "poster_url": "https://fixture.invalid/poster.png",
+        "state": "imported",
+        "title": "Qualification Import",
+        "tmdb_id": "810001",
+        "writers": [],
+        "year": "2026"
+      },
+      "ledger": {
+        "admission_order": 4,
+        "attempts": {
+          "assets": 2,
+          "facts": 1,
+          "provider": 1
+        },
+        "correlation_id": "qbt:qualification-import",
+        "evidence_signature": "b23f383ba6f80ecc4e9ddccab22c94023346e521b9b46d41bcef7f9218f62b73",
+        "first_observed_at": 1792784553.3485284,
+        "handoff": {
+          "paths": [
+            "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-exoayinc\\bounded\\media\\Qualification.Import.2026.1080p.mkv"
+          ],
+          "state": "ready",
+          "tmdb_id": "810001"
+        },
+        "last_error": "",
+        "next_due_at": 0,
+        "reason": "qbittorrent",
+        "require_publication": true,
+        "reservation_guard": "ef87259045336496f10a31ef15b2e6b714a552903f8cd104f93fbf1b7983f813",
+        "revision": 8,
+        "source_identity": {
+          "imdb_id": "",
+          "paths": [
+            "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-exoayinc\\bounded\\media\\Qualification.Import.2026.1080p.mkv"
+          ],
+          "title": "Qualification Import",
+          "tmdb_id": "810001",
+          "year": "2026"
+        },
+        "stage": "assets",
+        "state": "complete",
+        "version": 1
+      },
+      "pid": 54400,
+      "poster_calls": 2,
+      "publication": {
+        "blockers": {},
+        "eligible_to_publish": true,
+        "legacy_visible": false,
+        "movie_key": "tmdb:810001",
+        "path": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-exoayinc\\bounded\\media\\Qualification.Import.2026.1080p.mkv",
+        "publication_committed": true,
+        "recoverable_prepared": true,
+        "required_stages": []
+      }
+    },
+    "forceScans": []
+  }
+}

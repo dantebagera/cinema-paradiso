@@ -1,0 +1,604 @@
+{"sequence": 1, "event": "span_start", "at_seconds": 0.03023, "phase": "isolated_app_import"}
+{"sequence": 2, "event": "span_end", "at_seconds": 0.37285, "phase": "isolated_app_import", "seconds": 0.342615, "state": "completed"}
+{"sequence": 3, "event": "capture_started", "at_seconds": 0.433039, "feature": "F1", "label": "slot-deep-baseline", "prompt": "i need you to lit 50 movies with very twisted story you wont expect the ending\nyour responce should be a list of movies names and years , no any other details , dont seek more info , dont reply by paragarph or any way of responce  only the list", "model": "gpt-6.1-sol", "count": "50", "maximum_calls": 3, "maximum_seconds": 180, "reasoning_effort": "default", "output_format": "JSON/tools", "cache_state": "fresh diagnostic process; no production TMDB memory cache"}
+{"sequence": 4, "event": "workflow_started", "at_seconds": 0.433497}
+{"sequence": 5, "event": "span_start", "at_seconds": 0.465963, "phase": "feature_total"}
+{"sequence": 6, "event": "span_start", "at_seconds": 0.488844, "phase": "scope_context"}
+{"sequence": 7, "event": "span_start", "at_seconds": 0.489293, "phase": "tmdb_http", "request": 1, "endpoint": "/3/genre/movie/list", "title": "", "year": ""}
+{"sequence": 8, "event": "span_end", "at_seconds": 0.795624, "phase": "tmdb_http", "seconds": 0.306321, "state": "completed", "request": 1, "endpoint": "/3/genre/movie/list", "title": "", "year": ""}
+{"sequence": 9, "event": "span_start", "at_seconds": 0.796111, "phase": "tmdb_http", "request": 2, "endpoint": "/3/configuration/languages", "title": "", "year": ""}
+{"sequence": 10, "event": "span_end", "at_seconds": 0.961518, "phase": "tmdb_http", "seconds": 0.165397, "state": "completed", "request": 2, "endpoint": "/3/configuration/languages", "title": "", "year": ""}
+{"sequence": 11, "event": "span_start", "at_seconds": 0.962051, "phase": "tmdb_http", "request": 3, "endpoint": "/3/configuration/countries", "title": "", "year": ""}
+{"sequence": 12, "event": "span_end", "at_seconds": 1.108898, "phase": "tmdb_http", "seconds": 0.146835, "state": "completed", "request": 3, "endpoint": "/3/configuration/countries", "title": "", "year": ""}
+{"sequence": 13, "event": "span_end", "at_seconds": 1.109578, "phase": "scope_context", "seconds": 0.620732, "state": "completed"}
+{"sequence": 14, "event": "span_start", "at_seconds": 1.112333, "phase": "gpt_run", "input_bytes": 21233, "instructions_bytes": 2502, "tools_bytes": 1406}
+{"sequence": 15, "event": "span_start", "at_seconds": 1.113502, "phase": "lease_acquire"}
+{"sequence": 16, "event": "span_end", "at_seconds": 1.127615, "phase": "lease_acquire", "seconds": 0.014104, "state": "completed"}
+{"sequence": 17, "event": "span_start", "at_seconds": 1.127893, "phase": "account_access"}
+{"sequence": 18, "event": "span_end", "at_seconds": 4.301459, "phase": "account_access", "seconds": 3.173559, "state": "completed"}
+{"sequence": 19, "event": "gpt_start", "at_seconds": 4.311728, "attempt": 1}
+{"sequence": 20, "event": "gpt_request_shape", "at_seconds": 4.312215, "attempt": 1, "input_utf8_bytes": 21225, "instructions_utf8_bytes": 2502, "tools_utf8_bytes": 1406, "payload_utf8_bytes": 25299}
+{"sequence": 21, "event": "span_start", "at_seconds": 4.312542, "phase": "gpt_http", "attempt": 1}
+{"sequence": 22, "event": "gpt_first_bytes", "at_seconds": 6.918314, "attempt": 1, "seconds": 2.60627}
+{"sequence": 23, "event": "gpt_stream_event", "at_seconds": 8.172787, "attempt": 1, "type": "response.output_item.added", "item_type": "message", "seconds": 3.860745, "usage": null}
+{"sequence": 24, "event": "gpt_first_text", "at_seconds": 8.173185, "attempt": 1, "seconds": 3.861148}
+{"sequence": 25, "event": "span_start", "at_seconds": 8.518545, "phase": "match_candidate", "title": "The Prestige", "year": "2006"}
+{"sequence": 26, "event": "span_start", "at_seconds": 8.519077, "phase": "tmdb_http", "request": 4, "endpoint": "/3/search/movie", "title": "The Prestige", "year": "2006"}
+{"sequence": 27, "event": "span_start", "at_seconds": 8.648588, "phase": "match_candidate", "title": "Oldboy", "year": "2003"}
+{"sequence": 28, "event": "span_start", "at_seconds": 8.649062, "phase": "tmdb_http", "request": 5, "endpoint": "/3/search/movie", "title": "Oldboy", "year": "2003"}
+{"sequence": 29, "event": "span_end", "at_seconds": 8.671768, "phase": "tmdb_http", "seconds": 0.152683, "state": "completed", "request": 4, "endpoint": "/3/search/movie", "title": "The Prestige", "year": "2006"}
+{"sequence": 30, "event": "span_start", "at_seconds": 8.672638, "phase": "tmdb_http", "request": 6, "endpoint": "/3/movie/1124", "title": "", "year": ""}
+{"sequence": 31, "event": "span_start", "at_seconds": 8.781429, "phase": "match_candidate", "title": "The Sixth Sense", "year": "1999"}
+{"sequence": 32, "event": "span_start", "at_seconds": 8.78179, "phase": "tmdb_http", "request": 7, "endpoint": "/3/search/movie", "title": "The Sixth Sense", "year": "1999"}
+{"sequence": 33, "event": "span_end", "at_seconds": 8.796115, "phase": "tmdb_http", "seconds": 0.147046, "state": "completed", "request": 5, "endpoint": "/3/search/movie", "title": "Oldboy", "year": "2003"}
+{"sequence": 34, "event": "span_start", "at_seconds": 8.796729, "phase": "tmdb_http", "request": 8, "endpoint": "/3/movie/670", "title": "", "year": ""}
+{"sequence": 35, "event": "span_end", "at_seconds": 8.818025, "phase": "tmdb_http", "seconds": 0.14538, "state": "completed", "request": 6, "endpoint": "/3/movie/1124", "title": "", "year": ""}
+{"sequence": 36, "event": "span_end", "at_seconds": 8.818441, "phase": "match_candidate", "seconds": 0.299894, "state": "completed", "title": "The Prestige", "year": "2006"}
+{"sequence": 37, "event": "candidate_result", "at_seconds": 8.818673, "title": "The Prestige", "accepted_identity": true, "resolved_id": "1124"}
+{"sequence": 38, "event": "span_start", "at_seconds": 8.918618, "phase": "match_candidate", "title": "Fight Club", "year": "1999"}
+{"sequence": 39, "event": "span_start", "at_seconds": 8.919065, "phase": "tmdb_http", "request": 9, "endpoint": "/3/search/movie", "title": "Fight Club", "year": "1999"}
+{"sequence": 40, "event": "span_end", "at_seconds": 8.934208, "phase": "tmdb_http", "seconds": 0.15241, "state": "completed", "request": 7, "endpoint": "/3/search/movie", "title": "The Sixth Sense", "year": "1999"}
+{"sequence": 41, "event": "span_start", "at_seconds": 8.934764, "phase": "tmdb_http", "request": 10, "endpoint": "/3/movie/745", "title": "", "year": ""}
+{"sequence": 42, "event": "span_end", "at_seconds": 8.942147, "phase": "tmdb_http", "seconds": 0.145412, "state": "completed", "request": 8, "endpoint": "/3/movie/670", "title": "", "year": ""}
+{"sequence": 43, "event": "span_end", "at_seconds": 8.942549, "phase": "match_candidate", "seconds": 0.294032, "state": "completed", "title": "Oldboy", "year": "2003"}
+{"sequence": 44, "event": "candidate_result", "at_seconds": 8.942775, "title": "Oldboy", "accepted_identity": true, "resolved_id": "670"}
+{"sequence": 45, "event": "span_start", "at_seconds": 9.050917, "phase": "match_candidate", "title": "The Usual Suspects", "year": "1995"}
+{"sequence": 46, "event": "span_start", "at_seconds": 9.051439, "phase": "tmdb_http", "request": 11, "endpoint": "/3/search/movie", "title": "The Usual Suspects", "year": "1995"}
+{"sequence": 47, "event": "span_end", "at_seconds": 9.066476, "phase": "tmdb_http", "seconds": 0.147403, "state": "completed", "request": 9, "endpoint": "/3/search/movie", "title": "Fight Club", "year": "1999"}
+{"sequence": 48, "event": "span_start", "at_seconds": 9.067063, "phase": "tmdb_http", "request": 12, "endpoint": "/3/movie/550", "title": "", "year": ""}
+{"sequence": 49, "event": "span_start", "at_seconds": 9.184341, "phase": "match_candidate", "title": "Shutter Island", "year": "2010"}
+{"sequence": 50, "event": "span_start", "at_seconds": 9.185005, "phase": "tmdb_http", "request": 13, "endpoint": "/3/search/movie", "title": "Shutter Island", "year": "2010"}
+{"sequence": 51, "event": "span_end", "at_seconds": 9.195378, "phase": "tmdb_http", "seconds": 0.143934, "state": "completed", "request": 11, "endpoint": "/3/search/movie", "title": "The Usual Suspects", "year": "1995"}
+{"sequence": 52, "event": "span_start", "at_seconds": 9.19594, "phase": "tmdb_http", "request": 14, "endpoint": "/3/movie/629", "title": "", "year": ""}
+{"sequence": 53, "event": "span_end", "at_seconds": 9.20079, "phase": "tmdb_http", "seconds": 0.266021, "state": "completed", "request": 10, "endpoint": "/3/movie/745", "title": "", "year": ""}
+{"sequence": 54, "event": "span_end", "at_seconds": 9.201112, "phase": "match_candidate", "seconds": 0.419681, "state": "completed", "title": "The Sixth Sense", "year": "1999"}
+{"sequence": 55, "event": "candidate_result", "at_seconds": 9.201348, "title": "The Sixth Sense", "accepted_identity": true, "resolved_id": "745"}
+{"sequence": 56, "event": "span_start", "at_seconds": 9.201552, "phase": "match_candidate", "title": "Memento", "year": "2000"}
+{"sequence": 57, "event": "span_start", "at_seconds": 9.20183, "phase": "tmdb_http", "request": 15, "endpoint": "/3/search/movie", "title": "Memento", "year": "2000"}
+{"sequence": 58, "event": "span_end", "at_seconds": 9.250483, "phase": "tmdb_http", "seconds": 0.183415, "state": "completed", "request": 12, "endpoint": "/3/movie/550", "title": "", "year": ""}
+{"sequence": 59, "event": "span_end", "at_seconds": 9.258123, "phase": "match_candidate", "seconds": 0.3395, "state": "completed", "title": "Fight Club", "year": "1999"}
+{"sequence": 60, "event": "candidate_result", "at_seconds": 9.258468, "title": "Fight Club", "accepted_identity": true, "resolved_id": "550"}
+{"sequence": 61, "event": "span_end", "at_seconds": 9.33315, "phase": "tmdb_http", "seconds": 0.148137, "state": "completed", "request": 13, "endpoint": "/3/search/movie", "title": "Shutter Island", "year": "2010"}
+{"sequence": 62, "event": "span_start", "at_seconds": 9.333807, "phase": "tmdb_http", "request": 16, "endpoint": "/3/movie/11324", "title": "", "year": ""}
+{"sequence": 63, "event": "span_end", "at_seconds": 9.343107, "phase": "tmdb_http", "seconds": 0.147159, "state": "completed", "request": 14, "endpoint": "/3/movie/629", "title": "", "year": ""}
+{"sequence": 64, "event": "span_end", "at_seconds": 9.343486, "phase": "match_candidate", "seconds": 0.292569, "state": "completed", "title": "The Usual Suspects", "year": "1995"}
+{"sequence": 65, "event": "candidate_result", "at_seconds": 9.343715, "title": "The Usual Suspects", "accepted_identity": true, "resolved_id": "629"}
+{"sequence": 66, "event": "span_end", "at_seconds": 9.414098, "phase": "tmdb_http", "seconds": 0.21226, "state": "completed", "request": 15, "endpoint": "/3/search/movie", "title": "Memento", "year": "2000"}
+{"sequence": 67, "event": "span_start", "at_seconds": 9.414648, "phase": "tmdb_http", "request": 17, "endpoint": "/3/movie/77", "title": "", "year": ""}
+{"sequence": 68, "event": "span_start", "at_seconds": 9.450847, "phase": "match_candidate", "title": "Se7en", "year": "1995"}
+{"sequence": 69, "event": "span_start", "at_seconds": 9.451258, "phase": "tmdb_http", "request": 18, "endpoint": "/3/search/movie", "title": "Se7en", "year": "1995"}
+{"sequence": 70, "event": "span_end", "at_seconds": 9.499651, "phase": "tmdb_http", "seconds": 0.165836, "state": "completed", "request": 16, "endpoint": "/3/movie/11324", "title": "", "year": ""}
+{"sequence": 71, "event": "span_end", "at_seconds": 9.500026, "phase": "match_candidate", "seconds": 0.315686, "state": "completed", "title": "Shutter Island", "year": "2010"}
+{"sequence": 72, "event": "candidate_result", "at_seconds": 9.500275, "title": "Shutter Island", "accepted_identity": true, "resolved_id": "11324"}
+{"sequence": 73, "event": "span_end", "at_seconds": 9.56198, "phase": "tmdb_http", "seconds": 0.147323, "state": "completed", "request": 17, "endpoint": "/3/movie/77", "title": "", "year": ""}
+{"sequence": 74, "event": "span_end", "at_seconds": 9.562371, "phase": "match_candidate", "seconds": 0.360816, "state": "completed", "title": "Memento", "year": "2000"}
+{"sequence": 75, "event": "candidate_result", "at_seconds": 9.562595, "title": "Memento", "accepted_identity": true, "resolved_id": "77"}
+{"sequence": 76, "event": "span_start", "at_seconds": 9.576125, "phase": "match_candidate", "title": "The Others", "year": "2001"}
+{"sequence": 77, "event": "span_start", "at_seconds": 9.57649, "phase": "match_candidate", "title": "The Game", "year": "1997"}
+{"sequence": 78, "event": "span_start", "at_seconds": 9.576817, "phase": "tmdb_http", "request": 19, "endpoint": "/3/search/movie", "title": "The Others", "year": "2001"}
+{"sequence": 79, "event": "span_start", "at_seconds": 9.577138, "phase": "tmdb_http", "request": 20, "endpoint": "/3/search/movie", "title": "The Game", "year": "1997"}
+{"sequence": 80, "event": "span_end", "at_seconds": 9.597071, "phase": "tmdb_http", "seconds": 0.145802, "state": "completed", "request": 18, "endpoint": "/3/search/movie", "title": "Se7en", "year": "1995"}
+{"sequence": 81, "event": "span_start", "at_seconds": 9.597627, "phase": "tmdb_http", "request": 21, "endpoint": "/3/movie/807", "title": "", "year": ""}
+{"sequence": 82, "event": "span_end", "at_seconds": 9.718919, "phase": "tmdb_http", "seconds": 0.142426, "state": "completed", "request": 19, "endpoint": "/3/search/movie", "title": "The Others", "year": "2001"}
+{"sequence": 83, "event": "span_start", "at_seconds": 9.719737, "phase": "tmdb_http", "request": 22, "endpoint": "/3/movie/1933", "title": "", "year": ""}
+{"sequence": 84, "event": "span_end", "at_seconds": 9.720328, "phase": "tmdb_http", "seconds": 0.143513, "state": "completed", "request": 20, "endpoint": "/3/search/movie", "title": "The Game", "year": "1997"}
+{"sequence": 85, "event": "span_start", "at_seconds": 9.721539, "phase": "tmdb_http", "request": 23, "endpoint": "/3/movie/2649", "title": "", "year": ""}
+{"sequence": 86, "event": "span_start", "at_seconds": 9.853627, "phase": "match_candidate", "title": "Primal Fear", "year": "1996"}
+{"sequence": 87, "event": "span_start", "at_seconds": 9.854024, "phase": "tmdb_http", "request": 24, "endpoint": "/3/search/movie", "title": "Primal Fear", "year": "1996"}
+{"sequence": 88, "event": "span_end", "at_seconds": 9.862086, "phase": "tmdb_http", "seconds": 0.14234, "state": "completed", "request": 22, "endpoint": "/3/movie/1933", "title": "", "year": ""}
+{"sequence": 89, "event": "span_end", "at_seconds": 9.862524, "phase": "match_candidate", "seconds": 0.286396, "state": "completed", "title": "The Others", "year": "2001"}
+{"sequence": 90, "event": "candidate_result", "at_seconds": 9.862775, "title": "The Others", "accepted_identity": true, "resolved_id": "1933"}
+{"sequence": 91, "event": "span_end", "at_seconds": 9.865523, "phase": "tmdb_http", "seconds": 0.267888, "state": "completed", "request": 21, "endpoint": "/3/movie/807", "title": "", "year": ""}
+{"sequence": 92, "event": "span_end", "at_seconds": 9.865892, "phase": "match_candidate", "seconds": 0.415044, "state": "completed", "title": "Se7en", "year": "1995"}
+{"sequence": 93, "event": "candidate_result", "at_seconds": 9.866136, "title": "Se7en", "accepted_identity": true, "resolved_id": "807"}
+{"sequence": 94, "event": "span_end", "at_seconds": 9.989182, "phase": "tmdb_http", "seconds": 0.267636, "state": "completed", "request": 23, "endpoint": "/3/movie/2649", "title": "", "year": ""}
+{"sequence": 95, "event": "span_end", "at_seconds": 9.989564, "phase": "match_candidate", "seconds": 0.413303, "state": "completed", "title": "The Game", "year": "1997"}
+{"sequence": 96, "event": "candidate_result", "at_seconds": 9.989805, "title": "The Game", "accepted_identity": true, "resolved_id": "2649"}
+{"sequence": 97, "event": "span_start", "at_seconds": 9.99246, "phase": "match_candidate", "title": "Predestination", "year": "2014"}
+{"sequence": 98, "event": "span_start", "at_seconds": 9.992808, "phase": "tmdb_http", "request": 25, "endpoint": "/3/search/movie", "title": "Predestination", "year": "2014"}
+{"sequence": 99, "event": "span_end", "at_seconds": 10.119099, "phase": "tmdb_http", "seconds": 0.265068, "state": "completed", "request": 24, "endpoint": "/3/search/movie", "title": "Primal Fear", "year": "1996"}
+{"sequence": 100, "event": "span_start", "at_seconds": 10.119703, "phase": "tmdb_http", "request": 26, "endpoint": "/3/movie/1592", "title": "", "year": ""}
+{"sequence": 101, "event": "span_start", "at_seconds": 10.147855, "phase": "match_candidate", "title": "Incendies", "year": "2010"}
+{"sequence": 102, "event": "span_start", "at_seconds": 10.148276, "phase": "tmdb_http", "request": 27, "endpoint": "/3/search/movie", "title": "Incendies", "year": "2010"}
+{"sequence": 103, "event": "span_end", "at_seconds": 10.155136, "phase": "tmdb_http", "seconds": 0.162319, "state": "completed", "request": 25, "endpoint": "/3/search/movie", "title": "Predestination", "year": "2014"}
+{"sequence": 104, "event": "span_start", "at_seconds": 10.155808, "phase": "tmdb_http", "request": 28, "endpoint": "/3/movie/206487", "title": "", "year": ""}
+{"sequence": 105, "event": "span_end", "at_seconds": 10.281547, "phase": "tmdb_http", "seconds": 0.161837, "state": "completed", "request": 26, "endpoint": "/3/movie/1592", "title": "", "year": ""}
+{"sequence": 106, "event": "span_end", "at_seconds": 10.281931, "phase": "match_candidate", "seconds": 0.428304, "state": "completed", "title": "Primal Fear", "year": "1996"}
+{"sequence": 107, "event": "candidate_result", "at_seconds": 10.282187, "title": "Primal Fear", "accepted_identity": true, "resolved_id": "1592"}
+{"sequence": 108, "event": "span_start", "at_seconds": 10.291351, "phase": "match_candidate", "title": "The Invisible Guest", "year": "2016"}
+{"sequence": 109, "event": "span_start", "at_seconds": 10.291789, "phase": "tmdb_http", "request": 29, "endpoint": "/3/search/movie", "title": "The Invisible Guest", "year": "2016"}
+{"sequence": 110, "event": "span_end", "at_seconds": 10.296364, "phase": "tmdb_http", "seconds": 0.14055, "state": "completed", "request": 28, "endpoint": "/3/movie/206487", "title": "", "year": ""}
+{"sequence": 111, "event": "span_end", "at_seconds": 10.296698, "phase": "match_candidate", "seconds": 0.304238, "state": "completed", "title": "Predestination", "year": "2014"}
+{"sequence": 112, "event": "candidate_result", "at_seconds": 10.296916, "title": "Predestination", "accepted_identity": true, "resolved_id": "206487"}
+{"sequence": 113, "event": "span_start", "at_seconds": 10.396965, "phase": "match_candidate", "title": "The Body", "year": "2012"}
+{"sequence": 114, "event": "span_start", "at_seconds": 10.39736, "phase": "match_candidate", "title": "Identity", "year": "2003"}
+{"sequence": 115, "event": "span_start", "at_seconds": 10.397697, "phase": "tmdb_http", "request": 30, "endpoint": "/3/search/movie", "title": "The Body", "year": "2012"}
+{"sequence": 116, "event": "span_start", "at_seconds": 10.398008, "phase": "tmdb_http", "request": 31, "endpoint": "/3/search/movie", "title": "Identity", "year": "2003"}
+{"sequence": 117, "event": "span_end", "at_seconds": 10.405992, "phase": "tmdb_http", "seconds": 0.257708, "state": "completed", "request": 27, "endpoint": "/3/search/movie", "title": "Incendies", "year": "2010"}
+{"sequence": 118, "event": "span_start", "at_seconds": 10.406735, "phase": "tmdb_http", "request": 32, "endpoint": "/3/movie/46738", "title": "", "year": ""}
+{"sequence": 119, "event": "span_end", "at_seconds": 10.454274, "phase": "tmdb_http", "seconds": 0.162478, "state": "completed", "request": 29, "endpoint": "/3/search/movie", "title": "The Invisible Guest", "year": "2016"}
+{"sequence": 120, "event": "span_start", "at_seconds": 10.454894, "phase": "tmdb_http", "request": 33, "endpoint": "/3/movie/411088", "title": "", "year": ""}
+{"sequence": 121, "event": "span_end", "at_seconds": 10.542872, "phase": "tmdb_http", "seconds": 0.145503, "state": "completed", "request": 30, "endpoint": "/3/search/movie", "title": "The Body", "year": "2012"}
+{"sequence": 122, "event": "span_start", "at_seconds": 10.544987, "phase": "tmdb_http", "request": 34, "endpoint": "/3/movie/111083", "title": "", "year": ""}
+{"sequence": 123, "event": "span_end", "at_seconds": 10.546078, "phase": "tmdb_http", "seconds": 0.148382, "state": "completed", "request": 31, "endpoint": "/3/search/movie", "title": "Identity", "year": "2003"}
+{"sequence": 124, "event": "span_start", "at_seconds": 10.546869, "phase": "tmdb_http", "request": 35, "endpoint": "/3/movie/2832", "title": "", "year": ""}
+{"sequence": 125, "event": "span_end", "at_seconds": 10.551695, "phase": "tmdb_http", "seconds": 0.144944, "state": "completed", "request": 32, "endpoint": "/3/movie/46738", "title": "", "year": ""}
+{"sequence": 126, "event": "span_end", "at_seconds": 10.551999, "phase": "match_candidate", "seconds": 0.404145, "state": "completed", "title": "Incendies", "year": "2010"}
+{"sequence": 127, "event": "candidate_result", "at_seconds": 10.55222, "title": "Incendies", "accepted_identity": true, "resolved_id": "46738"}
+{"sequence": 128, "event": "span_start", "at_seconds": 10.552489, "phase": "match_candidate", "title": "Saw", "year": "2004"}
+{"sequence": 129, "event": "span_start", "at_seconds": 10.552748, "phase": "tmdb_http", "request": 36, "endpoint": "/3/search/movie", "title": "Saw", "year": "2004"}
+{"sequence": 130, "event": "span_end", "at_seconds": 10.625697, "phase": "tmdb_http", "seconds": 0.170793, "state": "completed", "request": 33, "endpoint": "/3/movie/411088", "title": "", "year": ""}
+{"sequence": 131, "event": "span_end", "at_seconds": 10.62628, "phase": "match_candidate", "seconds": 0.334928, "state": "completed", "title": "The Invisible Guest", "year": "2016"}
+{"sequence": 132, "event": "candidate_result", "at_seconds": 10.626527, "title": "The Invisible Guest", "accepted_identity": true, "resolved_id": "411088"}
+{"sequence": 133, "event": "span_end", "at_seconds": 10.692795, "phase": "tmdb_http", "seconds": 0.147801, "state": "completed", "request": 34, "endpoint": "/3/movie/111083", "title": "", "year": ""}
+{"sequence": 134, "event": "span_end", "at_seconds": 10.693233, "phase": "match_candidate", "seconds": 0.296267, "state": "completed", "title": "The Body", "year": "2012"}
+{"sequence": 135, "event": "candidate_result", "at_seconds": 10.693545, "title": "The Body", "accepted_identity": true, "resolved_id": "111083"}
+{"sequence": 136, "event": "span_end", "at_seconds": 10.694756, "phase": "tmdb_http", "seconds": 0.142003, "state": "completed", "request": 36, "endpoint": "/3/search/movie", "title": "Saw", "year": "2004"}
+{"sequence": 137, "event": "span_end", "at_seconds": 10.696137, "phase": "tmdb_http", "seconds": 0.148207, "state": "completed", "request": 35, "endpoint": "/3/movie/2832", "title": "", "year": ""}
+{"sequence": 138, "event": "span_start", "at_seconds": 10.696447, "phase": "tmdb_http", "request": 37, "endpoint": "/3/movie/176", "title": "", "year": ""}
+{"sequence": 139, "event": "span_end", "at_seconds": 10.696747, "phase": "match_candidate", "seconds": 0.299439, "state": "completed", "title": "Identity", "year": "2003"}
+{"sequence": 140, "event": "candidate_result", "at_seconds": 10.697018, "title": "Identity", "accepted_identity": true, "resolved_id": "2832"}
+{"sequence": 141, "event": "span_start", "at_seconds": 10.78106, "phase": "match_candidate", "title": "The Machinist", "year": "2004"}
+{"sequence": 142, "event": "span_start", "at_seconds": 10.781738, "phase": "tmdb_http", "request": 38, "endpoint": "/3/search/movie", "title": "The Machinist", "year": "2004"}
+{"sequence": 143, "event": "span_end", "at_seconds": 10.836885, "phase": "tmdb_http", "seconds": 0.140747, "state": "completed", "request": 37, "endpoint": "/3/movie/176", "title": "", "year": ""}
+{"sequence": 144, "event": "span_end", "at_seconds": 10.837303, "phase": "match_candidate", "seconds": 0.284811, "state": "completed", "title": "Saw", "year": "2004"}
+{"sequence": 145, "event": "candidate_result", "at_seconds": 10.837529, "title": "Saw", "accepted_identity": true, "resolved_id": "176"}
+{"sequence": 146, "event": "span_end", "at_seconds": 10.928948, "phase": "tmdb_http", "seconds": 0.147196, "state": "completed", "request": 38, "endpoint": "/3/search/movie", "title": "The Machinist", "year": "2004"}
+{"sequence": 147, "event": "span_start", "at_seconds": 10.929693, "phase": "tmdb_http", "request": 39, "endpoint": "/3/movie/4553", "title": "", "year": ""}
+{"sequence": 148, "event": "span_start", "at_seconds": 10.939092, "phase": "match_candidate", "title": "Triangle", "year": "2009"}
+{"sequence": 149, "event": "span_start", "at_seconds": 10.939525, "phase": "match_candidate", "title": "Coherence", "year": "2013"}
+{"sequence": 150, "event": "span_start", "at_seconds": 10.939837, "phase": "tmdb_http", "request": 40, "endpoint": "/3/search/movie", "title": "Triangle", "year": "2009"}
+{"sequence": 151, "event": "span_start", "at_seconds": 10.940161, "phase": "tmdb_http", "request": 41, "endpoint": "/3/search/movie", "title": "Coherence", "year": "2013"}
+{"sequence": 152, "event": "span_end", "at_seconds": 11.077863, "phase": "tmdb_http", "seconds": 0.148162, "state": "completed", "request": 39, "endpoint": "/3/movie/4553", "title": "", "year": ""}
+{"sequence": 153, "event": "span_end", "at_seconds": 11.078246, "phase": "match_candidate", "seconds": 0.297187, "state": "completed", "title": "The Machinist", "year": "2004"}
+{"sequence": 154, "event": "candidate_result", "at_seconds": 11.078478, "title": "The Machinist", "accepted_identity": true, "resolved_id": "4553"}
+{"sequence": 155, "event": "span_end", "at_seconds": 11.08151, "phase": "tmdb_http", "seconds": 0.141987, "state": "completed", "request": 40, "endpoint": "/3/search/movie", "title": "Triangle", "year": "2009"}
+{"sequence": 156, "event": "span_start", "at_seconds": 11.082261, "phase": "tmdb_http", "request": 42, "endpoint": "/3/search/movie", "title": "Triangle", "year": ""}
+{"sequence": 157, "event": "span_end", "at_seconds": 11.105373, "phase": "tmdb_http", "seconds": 0.165533, "state": "completed", "request": 41, "endpoint": "/3/search/movie", "title": "Coherence", "year": "2013"}
+{"sequence": 158, "event": "span_start", "at_seconds": 11.105945, "phase": "tmdb_http", "request": 43, "endpoint": "/3/movie/220289", "title": "", "year": ""}
+{"sequence": 159, "event": "span_start", "at_seconds": 11.186535, "phase": "match_candidate", "title": "Timecrimes", "year": "2007"}
+{"sequence": 160, "event": "span_start", "at_seconds": 11.187052, "phase": "tmdb_http", "request": 44, "endpoint": "/3/search/movie", "title": "Timecrimes", "year": "2007"}
+{"sequence": 161, "event": "span_end", "at_seconds": 11.226867, "phase": "tmdb_http", "seconds": 0.144599, "state": "completed", "request": 42, "endpoint": "/3/search/movie", "title": "Triangle", "year": ""}
+{"sequence": 162, "event": "span_start", "at_seconds": 11.227335, "phase": "tmdb_http", "request": 45, "endpoint": "/3/movie/26466/alternative_titles", "title": "", "year": ""}
+{"sequence": 163, "event": "span_end", "at_seconds": 11.248091, "phase": "tmdb_http", "seconds": 0.142136, "state": "completed", "request": 43, "endpoint": "/3/movie/220289", "title": "", "year": ""}
+{"sequence": 164, "event": "span_end", "at_seconds": 11.248574, "phase": "match_candidate", "seconds": 0.309273, "state": "completed", "title": "Coherence", "year": "2013"}
+{"sequence": 165, "event": "candidate_result", "at_seconds": 11.248802, "title": "Coherence", "accepted_identity": true, "resolved_id": "220289"}
+{"sequence": 166, "event": "span_end", "at_seconds": 11.334499, "phase": "tmdb_http", "seconds": 0.147436, "state": "completed", "request": 44, "endpoint": "/3/search/movie", "title": "Timecrimes", "year": "2007"}
+{"sequence": 167, "event": "span_start", "at_seconds": 11.335282, "phase": "tmdb_http", "request": 46, "endpoint": "/3/movie/14139", "title": "", "year": ""}
+{"sequence": 168, "event": "span_end", "at_seconds": 11.392403, "phase": "tmdb_http", "seconds": 0.165058, "state": "completed", "request": 45, "endpoint": "/3/movie/26466/alternative_titles", "title": "", "year": ""}
+{"sequence": 169, "event": "span_start", "at_seconds": 11.392858, "phase": "tmdb_http", "request": 47, "endpoint": "/3/movie/497828/alternative_titles", "title": "", "year": ""}
+{"sequence": 170, "event": "span_end", "at_seconds": 11.493181, "phase": "tmdb_http", "seconds": 0.157892, "state": "completed", "request": 46, "endpoint": "/3/movie/14139", "title": "", "year": ""}
+{"sequence": 171, "event": "span_end", "at_seconds": 11.493603, "phase": "match_candidate", "seconds": 0.307069, "state": "completed", "title": "Timecrimes", "year": "2007"}
+{"sequence": 172, "event": "candidate_result", "at_seconds": 11.493854, "title": "Timecrimes", "accepted_identity": true, "resolved_id": "14139"}
+{"sequence": 173, "event": "span_start", "at_seconds": 11.494604, "phase": "match_candidate", "title": "Jacob's Ladder", "year": "1990"}
+{"sequence": 174, "event": "span_start", "at_seconds": 11.49493, "phase": "tmdb_http", "request": 48, "endpoint": "/3/search/movie", "title": "Jacob's Ladder", "year": "1990"}
+{"sequence": 175, "event": "span_end", "at_seconds": 11.534271, "phase": "tmdb_http", "seconds": 0.141401, "state": "completed", "request": 47, "endpoint": "/3/movie/497828/alternative_titles", "title": "", "year": ""}
+{"sequence": 176, "event": "span_start", "at_seconds": 11.534717, "phase": "tmdb_http", "request": 49, "endpoint": "/3/movie/71147/alternative_titles", "title": "", "year": ""}
+{"sequence": 177, "event": "span_end", "at_seconds": 11.651293, "phase": "tmdb_http", "seconds": 0.156354, "state": "completed", "request": 48, "endpoint": "/3/search/movie", "title": "Jacob's Ladder", "year": "1990"}
+{"sequence": 178, "event": "span_start", "at_seconds": 11.651972, "phase": "tmdb_http", "request": 50, "endpoint": "/3/movie/2291", "title": "", "year": ""}
+{"sequence": 179, "event": "span_start", "at_seconds": 11.695, "phase": "match_candidate", "title": "Angel Heart", "year": "1987"}
+{"sequence": 180, "event": "span_start", "at_seconds": 11.695372, "phase": "tmdb_http", "request": 51, "endpoint": "/3/search/movie", "title": "Angel Heart", "year": "1987"}
+{"sequence": 181, "event": "span_end", "at_seconds": 11.796491, "phase": "tmdb_http", "seconds": 0.261766, "state": "completed", "request": 49, "endpoint": "/3/movie/71147/alternative_titles", "title": "", "year": ""}
+{"sequence": 182, "event": "span_start", "at_seconds": 11.798239, "phase": "tmdb_http", "request": 52, "endpoint": "/3/movie/26466", "title": "", "year": ""}
+{"sequence": 183, "event": "span_end", "at_seconds": 11.798835, "phase": "tmdb_http", "seconds": 0.146859, "state": "completed", "request": 50, "endpoint": "/3/movie/2291", "title": "", "year": ""}
+{"sequence": 184, "event": "span_end", "at_seconds": 11.799123, "phase": "match_candidate", "seconds": 0.304517, "state": "completed", "title": "Jacob's Ladder", "year": "1990"}
+{"sequence": 185, "event": "candidate_result", "at_seconds": 11.799339, "title": "Jacob's Ladder", "accepted_identity": true, "resolved_id": "2291"}
+{"sequence": 186, "event": "span_end", "at_seconds": 11.860378, "phase": "tmdb_http", "seconds": 0.164997, "state": "completed", "request": 51, "endpoint": "/3/search/movie", "title": "Angel Heart", "year": "1987"}
+{"sequence": 187, "event": "span_start", "at_seconds": 11.860962, "phase": "tmdb_http", "request": 53, "endpoint": "/3/movie/635", "title": "", "year": ""}
+{"sequence": 188, "event": "span_start", "at_seconds": 11.874942, "phase": "match_candidate", "title": "Frailty", "year": "2001"}
+{"sequence": 189, "event": "span_start", "at_seconds": 11.87532, "phase": "tmdb_http", "request": 54, "endpoint": "/3/search/movie", "title": "Frailty", "year": "2001"}
+{"sequence": 190, "event": "span_end", "at_seconds": 11.94541, "phase": "tmdb_http", "seconds": 0.147163, "state": "completed", "request": 52, "endpoint": "/3/movie/26466", "title": "", "year": ""}
+{"sequence": 191, "event": "span_end", "at_seconds": 11.945832, "phase": "match_candidate", "seconds": 1.006739, "state": "completed", "title": "Triangle", "year": "2009"}
+{"sequence": 192, "event": "candidate_result", "at_seconds": 11.946065, "title": "Triangle", "accepted_identity": true, "resolved_id": "26466"}
+{"sequence": 193, "event": "span_start", "at_seconds": 11.983684, "phase": "match_candidate", "title": "The Skeleton Key", "year": "2005"}
+{"sequence": 194, "event": "span_start", "at_seconds": 11.984063, "phase": "tmdb_http", "request": 55, "endpoint": "/3/search/movie", "title": "The Skeleton Key", "year": "2005"}
+{"sequence": 195, "event": "span_end", "at_seconds": 12.010726, "phase": "tmdb_http", "seconds": 0.149757, "state": "completed", "request": 53, "endpoint": "/3/movie/635", "title": "", "year": ""}
+{"sequence": 196, "event": "span_end", "at_seconds": 12.011148, "phase": "match_candidate", "seconds": 0.316147, "state": "completed", "title": "Angel Heart", "year": "1987"}
+{"sequence": 197, "event": "candidate_result", "at_seconds": 12.011423, "title": "Angel Heart", "accepted_identity": true, "resolved_id": "635"}
+{"sequence": 198, "event": "span_end", "at_seconds": 12.039913, "phase": "tmdb_http", "seconds": 0.164585, "state": "completed", "request": 54, "endpoint": "/3/search/movie", "title": "Frailty", "year": "2001"}
+{"sequence": 199, "event": "span_start", "at_seconds": 12.040467, "phase": "tmdb_http", "request": 56, "endpoint": "/3/movie/12149", "title": "", "year": ""}
+{"sequence": 200, "event": "span_end", "at_seconds": 12.148356, "phase": "tmdb_http", "seconds": 0.164286, "state": "completed", "request": 55, "endpoint": "/3/search/movie", "title": "The Skeleton Key", "year": "2005"}
+{"sequence": 201, "event": "span_start", "at_seconds": 12.148888, "phase": "tmdb_http", "request": 57, "endpoint": "/3/movie/9913", "title": "", "year": ""}
+{"sequence": 202, "event": "span_end", "at_seconds": 12.188419, "phase": "tmdb_http", "seconds": 0.14794, "state": "completed", "request": 56, "endpoint": "/3/movie/12149", "title": "", "year": ""}
+{"sequence": 203, "event": "span_end", "at_seconds": 12.1891, "phase": "match_candidate", "seconds": 0.314154, "state": "completed", "title": "Frailty", "year": "2001"}
+{"sequence": 204, "event": "candidate_result", "at_seconds": 12.189381, "title": "Frailty", "accepted_identity": true, "resolved_id": "12149"}
+{"sequence": 205, "event": "span_start", "at_seconds": 12.236446, "phase": "match_candidate", "title": "The Mist", "year": "2007"}
+{"sequence": 206, "event": "span_start", "at_seconds": 12.2369, "phase": "tmdb_http", "request": 58, "endpoint": "/3/search/movie", "title": "The Mist", "year": "2007"}
+{"sequence": 207, "event": "span_end", "at_seconds": 12.289246, "phase": "tmdb_http", "seconds": 0.14035, "state": "completed", "request": 57, "endpoint": "/3/movie/9913", "title": "", "year": ""}
+{"sequence": 208, "event": "span_end", "at_seconds": 12.289675, "phase": "match_candidate", "seconds": 0.305991, "state": "completed", "title": "The Skeleton Key", "year": "2005"}
+{"sequence": 209, "event": "candidate_result", "at_seconds": 12.289941, "title": "The Skeleton Key", "accepted_identity": true, "resolved_id": "9913"}
+{"sequence": 210, "event": "span_end", "at_seconds": 12.384982, "phase": "tmdb_http", "seconds": 0.148073, "state": "completed", "request": 58, "endpoint": "/3/search/movie", "title": "The Mist", "year": "2007"}
+{"sequence": 211, "event": "span_start", "at_seconds": 12.386246, "phase": "tmdb_http", "request": 59, "endpoint": "/3/movie/5876", "title": "", "year": ""}
+{"sequence": 212, "event": "span_start", "at_seconds": 12.500059, "phase": "match_candidate", "title": "Arlington Road", "year": "1999"}
+{"sequence": 213, "event": "span_start", "at_seconds": 12.500436, "phase": "tmdb_http", "request": 60, "endpoint": "/3/search/movie", "title": "Arlington Road", "year": "1999"}
+{"sequence": 214, "event": "span_end", "at_seconds": 12.531696, "phase": "tmdb_http", "seconds": 0.145442, "state": "completed", "request": 59, "endpoint": "/3/movie/5876", "title": "", "year": ""}
+{"sequence": 215, "event": "span_end", "at_seconds": 12.532076, "phase": "match_candidate", "seconds": 0.29563, "state": "completed", "title": "The Mist", "year": "2007"}
+{"sequence": 216, "event": "candidate_result", "at_seconds": 12.532311, "title": "The Mist", "accepted_identity": true, "resolved_id": "5876"}
+{"sequence": 217, "event": "span_start", "at_seconds": 12.641103, "phase": "match_candidate", "title": "Gone Girl", "year": "2014"}
+{"sequence": 218, "event": "span_start", "at_seconds": 12.641547, "phase": "tmdb_http", "request": 61, "endpoint": "/3/search/movie", "title": "Gone Girl", "year": "2014"}
+{"sequence": 219, "event": "span_end", "at_seconds": 12.658739, "phase": "tmdb_http", "seconds": 0.158296, "state": "completed", "request": 60, "endpoint": "/3/search/movie", "title": "Arlington Road", "year": "1999"}
+{"sequence": 220, "event": "span_start", "at_seconds": 12.659569, "phase": "tmdb_http", "request": 62, "endpoint": "/3/movie/1073", "title": "", "year": ""}
+{"sequence": 221, "event": "span_start", "at_seconds": 12.756652, "phase": "match_candidate", "title": "Mulholland Drive", "year": "2001"}
+{"sequence": 222, "event": "span_start", "at_seconds": 12.757037, "phase": "tmdb_http", "request": 63, "endpoint": "/3/search/movie", "title": "Mulholland Drive", "year": "2001"}
+{"sequence": 223, "event": "span_end", "at_seconds": 12.790774, "phase": "tmdb_http", "seconds": 0.149216, "state": "completed", "request": 61, "endpoint": "/3/search/movie", "title": "Gone Girl", "year": "2014"}
+{"sequence": 224, "event": "span_start", "at_seconds": 12.791433, "phase": "tmdb_http", "request": 64, "endpoint": "/3/movie/210577", "title": "", "year": ""}
+{"sequence": 225, "event": "span_end", "at_seconds": 12.805754, "phase": "tmdb_http", "seconds": 0.146179, "state": "completed", "request": 62, "endpoint": "/3/movie/1073", "title": "", "year": ""}
+{"sequence": 226, "event": "span_end", "at_seconds": 12.806098, "phase": "match_candidate", "seconds": 0.306038, "state": "completed", "title": "Arlington Road", "year": "1999"}
+{"sequence": 227, "event": "candidate_result", "at_seconds": 12.806321, "title": "Arlington Road", "accepted_identity": true, "resolved_id": "1073"}
+{"sequence": 228, "event": "span_end", "at_seconds": 12.89891, "phase": "tmdb_http", "seconds": 0.141865, "state": "completed", "request": 63, "endpoint": "/3/search/movie", "title": "Mulholland Drive", "year": "2001"}
+{"sequence": 229, "event": "span_start", "at_seconds": 12.899479, "phase": "tmdb_http", "request": 65, "endpoint": "/3/movie/1018", "title": "", "year": ""}
+{"sequence": 230, "event": "span_end", "at_seconds": 12.940417, "phase": "tmdb_http", "seconds": 0.148973, "state": "completed", "request": 64, "endpoint": "/3/movie/210577", "title": "", "year": ""}
+{"sequence": 231, "event": "span_end", "at_seconds": 12.940819, "phase": "match_candidate", "seconds": 0.299716, "state": "completed", "title": "Gone Girl", "year": "2014"}
+{"sequence": 232, "event": "candidate_result", "at_seconds": 12.941041, "title": "Gone Girl", "accepted_identity": true, "resolved_id": "210577"}
+{"sequence": 233, "event": "span_start", "at_seconds": 13.106932, "phase": "match_candidate", "title": "The Handmaiden", "year": "2016"}
+{"sequence": 234, "event": "span_start", "at_seconds": 13.10731, "phase": "tmdb_http", "request": 66, "endpoint": "/3/search/movie", "title": "The Handmaiden", "year": "2016"}
+{"sequence": 235, "event": "span_end", "at_seconds": 13.166276, "phase": "tmdb_http", "seconds": 0.266789, "state": "completed", "request": 65, "endpoint": "/3/movie/1018", "title": "", "year": ""}
+{"sequence": 236, "event": "span_end", "at_seconds": 13.166707, "phase": "match_candidate", "seconds": 0.410055, "state": "completed", "title": "Mulholland Drive", "year": "2001"}
+{"sequence": 237, "event": "candidate_result", "at_seconds": 13.166937, "title": "Mulholland Drive", "accepted_identity": true, "resolved_id": "1018"}
+{"sequence": 238, "event": "span_start", "at_seconds": 13.256791, "phase": "match_candidate", "title": "A Tale of Two Sisters", "year": "2003"}
+{"sequence": 239, "event": "span_start", "at_seconds": 13.257322, "phase": "match_candidate", "title": "Forgotten", "year": "2017"}
+{"sequence": 240, "event": "span_start", "at_seconds": 13.257816, "phase": "tmdb_http", "request": 67, "endpoint": "/3/search/movie", "title": "A Tale of Two Sisters", "year": "2003"}
+{"sequence": 241, "event": "span_start", "at_seconds": 13.258225, "phase": "tmdb_http", "request": 68, "endpoint": "/3/search/movie", "title": "Forgotten", "year": "2017"}
+{"sequence": 242, "event": "span_end", "at_seconds": 13.37862, "phase": "tmdb_http", "seconds": 0.271303, "state": "completed", "request": 66, "endpoint": "/3/search/movie", "title": "The Handmaiden", "year": "2016"}
+{"sequence": 243, "event": "span_start", "at_seconds": 13.379166, "phase": "tmdb_http", "request": 69, "endpoint": "/3/movie/290098", "title": "", "year": ""}
+{"sequence": 244, "event": "span_end", "at_seconds": 13.434808, "phase": "tmdb_http", "seconds": 0.176991, "state": "completed", "request": 68, "endpoint": "/3/search/movie", "title": "Forgotten", "year": "2017"}
+{"sequence": 245, "event": "span_start", "at_seconds": 13.435692, "phase": "tmdb_http", "request": 70, "endpoint": "/3/search/movie", "title": "Forgotten", "year": ""}
+{"sequence": 246, "event": "span_start", "at_seconds": 13.520764, "phase": "match_candidate", "title": "Mother", "year": "2009"}
+{"sequence": 247, "event": "span_start", "at_seconds": 13.52135, "phase": "tmdb_http", "request": 71, "endpoint": "/3/search/movie", "title": "Mother", "year": "2009"}
+{"sequence": 248, "event": "span_end", "at_seconds": 13.523339, "phase": "tmdb_http", "seconds": 0.144169, "state": "completed", "request": 69, "endpoint": "/3/movie/290098", "title": "", "year": ""}
+{"sequence": 249, "event": "span_end", "at_seconds": 13.523676, "phase": "match_candidate", "seconds": 0.416744, "state": "completed", "title": "The Handmaiden", "year": "2016"}
+{"sequence": 250, "event": "candidate_result", "at_seconds": 13.523967, "title": "The Handmaiden", "accepted_identity": true, "resolved_id": "290098"}
+{"sequence": 251, "event": "span_end", "at_seconds": 13.526374, "phase": "tmdb_http", "seconds": 0.269056, "state": "completed", "request": 67, "endpoint": "/3/search/movie", "title": "A Tale of Two Sisters", "year": "2003"}
+{"sequence": 252, "event": "span_start", "at_seconds": 13.52687, "phase": "tmdb_http", "request": 72, "endpoint": "/3/movie/4552", "title": "", "year": ""}
+{"sequence": 253, "event": "span_end", "at_seconds": 13.58417, "phase": "tmdb_http", "seconds": 0.148479, "state": "completed", "request": 70, "endpoint": "/3/search/movie", "title": "Forgotten", "year": ""}
+{"sequence": 254, "event": "span_start", "at_seconds": 13.584762, "phase": "tmdb_http", "request": 73, "endpoint": "/3/movie/488623/alternative_titles", "title": "", "year": ""}
+{"sequence": 255, "event": "span_end", "at_seconds": 13.672855, "phase": "tmdb_http", "seconds": 0.145976, "state": "completed", "request": 72, "endpoint": "/3/movie/4552", "title": "", "year": ""}
+{"sequence": 256, "event": "span_end", "at_seconds": 13.673311, "phase": "match_candidate", "seconds": 0.416519, "state": "completed", "title": "A Tale of Two Sisters", "year": "2003"}
+{"sequence": 257, "event": "candidate_result", "at_seconds": 13.673568, "title": "A Tale of Two Sisters", "accepted_identity": true, "resolved_id": "4552"}
+{"sequence": 258, "event": "span_end", "at_seconds": 13.731437, "phase": "tmdb_http", "seconds": 0.210077, "state": "completed", "request": 71, "endpoint": "/3/search/movie", "title": "Mother", "year": "2009"}
+{"sequence": 259, "event": "span_start", "at_seconds": 13.73263, "phase": "tmdb_http", "request": 74, "endpoint": "/3/search/movie", "title": "Mother", "year": ""}
+{"sequence": 260, "event": "span_start", "at_seconds": 13.789069, "phase": "match_candidate", "title": "The Secret in Their Eyes", "year": "2009"}
+{"sequence": 261, "event": "span_start", "at_seconds": 13.789521, "phase": "tmdb_http", "request": 75, "endpoint": "/3/search/movie", "title": "The Secret in Their Eyes", "year": "2009"}
+{"sequence": 262, "event": "span_end", "at_seconds": 13.845686, "phase": "tmdb_http", "seconds": 0.260917, "state": "completed", "request": 73, "endpoint": "/3/movie/488623/alternative_titles", "title": "", "year": ""}
+{"sequence": 263, "event": "span_start", "at_seconds": 13.850875, "phase": "tmdb_http", "request": 76, "endpoint": "/3/movie/1465063/alternative_titles", "title": "", "year": ""}
+{"sequence": 264, "event": "span_end", "at_seconds": 13.878739, "phase": "tmdb_http", "seconds": 0.146099, "state": "completed", "request": 74, "endpoint": "/3/search/movie", "title": "Mother", "year": ""}
+{"sequence": 265, "event": "span_start", "at_seconds": 13.879276, "phase": "tmdb_http", "request": 77, "endpoint": "/3/movie/30018/alternative_titles", "title": "", "year": ""}
+{"sequence": 266, "event": "span_start", "at_seconds": 13.922148, "phase": "match_candidate", "title": "Tell No One", "year": "2006"}
+{"sequence": 267, "event": "span_start", "at_seconds": 13.922529, "phase": "tmdb_http", "request": 78, "endpoint": "/3/search/movie", "title": "Tell No One", "year": "2006"}
+{"sequence": 268, "event": "span_end", "at_seconds": 13.935095, "phase": "tmdb_http", "seconds": 0.145569, "state": "completed", "request": 75, "endpoint": "/3/search/movie", "title": "The Secret in Their Eyes", "year": "2009"}
+{"sequence": 269, "event": "span_start", "at_seconds": 13.935671, "phase": "tmdb_http", "request": 79, "endpoint": "/3/movie/25376", "title": "", "year": ""}
+{"sequence": 270, "event": "span_end", "at_seconds": 14.015916, "phase": "tmdb_http", "seconds": 0.165034, "state": "completed", "request": 76, "endpoint": "/3/movie/1465063/alternative_titles", "title": "", "year": ""}
+{"sequence": 271, "event": "span_start", "at_seconds": 14.016368, "phase": "tmdb_http", "request": 80, "endpoint": "/3/movie/443319/alternative_titles", "title": "", "year": ""}
+{"sequence": 272, "event": "span_end", "at_seconds": 14.017971, "phase": "tmdb_http", "seconds": 0.138691, "state": "completed", "request": 77, "endpoint": "/3/movie/30018/alternative_titles", "title": "", "year": ""}
+{"sequence": 273, "event": "span_start", "at_seconds": 14.018315, "phase": "tmdb_http", "request": 81, "endpoint": "/3/movie/1437396/alternative_titles", "title": "", "year": ""}
+{"sequence": 274, "event": "span_end", "at_seconds": 14.093817, "phase": "tmdb_http", "seconds": 0.17128, "state": "completed", "request": 78, "endpoint": "/3/search/movie", "title": "Tell No One", "year": "2006"}
+{"sequence": 275, "event": "span_start", "at_seconds": 14.094403, "phase": "tmdb_http", "request": 82, "endpoint": "/3/movie/10795", "title": "", "year": ""}
+{"sequence": 276, "event": "span_end", "at_seconds": 14.152432, "phase": "tmdb_http", "seconds": 0.216752, "state": "completed", "request": 79, "endpoint": "/3/movie/25376", "title": "", "year": ""}
+{"sequence": 277, "event": "span_end", "at_seconds": 14.152842, "phase": "match_candidate", "seconds": 0.363774, "state": "completed", "title": "The Secret in Their Eyes", "year": "2009"}
+{"sequence": 278, "event": "candidate_result", "at_seconds": 14.15313, "title": "The Secret in Their Eyes", "accepted_identity": true, "resolved_id": "25376"}
+{"sequence": 279, "event": "span_start", "at_seconds": 14.153377, "phase": "match_candidate", "title": "The Vanishing", "year": "1988"}
+{"sequence": 280, "event": "span_start", "at_seconds": 14.153687, "phase": "tmdb_http", "request": 83, "endpoint": "/3/search/movie", "title": "The Vanishing", "year": "1988"}
+{"sequence": 281, "event": "span_end", "at_seconds": 14.16026, "phase": "tmdb_http", "seconds": 0.14194, "state": "completed", "request": 81, "endpoint": "/3/movie/1437396/alternative_titles", "title": "", "year": ""}
+{"sequence": 282, "event": "span_start", "at_seconds": 14.160619, "phase": "tmdb_http", "request": 84, "endpoint": "/3/movie/37080/alternative_titles", "title": "", "year": ""}
+{"sequence": 283, "event": "span_end", "at_seconds": 14.188372, "phase": "tmdb_http", "seconds": 0.171996, "state": "completed", "request": 80, "endpoint": "/3/movie/443319/alternative_titles", "title": "", "year": ""}
+{"sequence": 284, "event": "span_start", "at_seconds": 14.189959, "phase": "tmdb_http", "request": 85, "endpoint": "/3/movie/488623", "title": "", "year": ""}
+{"sequence": 285, "event": "span_end", "at_seconds": 14.23478, "phase": "tmdb_http", "seconds": 0.140368, "state": "completed", "request": 82, "endpoint": "/3/movie/10795", "title": "", "year": ""}
+{"sequence": 286, "event": "span_end", "at_seconds": 14.235183, "phase": "match_candidate", "seconds": 0.313034, "state": "completed", "title": "Tell No One", "year": "2006"}
+{"sequence": 287, "event": "candidate_result", "at_seconds": 14.235435, "title": "Tell No One", "accepted_identity": true, "resolved_id": "10795"}
+{"sequence": 288, "event": "span_end", "at_seconds": 14.311648, "phase": "tmdb_http", "seconds": 0.157953, "state": "completed", "request": 83, "endpoint": "/3/search/movie", "title": "The Vanishing", "year": "1988"}
+{"sequence": 289, "event": "span_start", "at_seconds": 14.318169, "phase": "tmdb_http", "request": 86, "endpoint": "/3/movie/8740", "title": "", "year": ""}
+{"sequence": 290, "event": "span_end", "at_seconds": 14.424429, "phase": "tmdb_http", "seconds": 0.2638, "state": "completed", "request": 84, "endpoint": "/3/movie/37080/alternative_titles", "title": "", "year": ""}
+{"sequence": 291, "event": "span_start", "at_seconds": 14.42569, "phase": "tmdb_http", "request": 87, "endpoint": "/3/movie/30018", "title": "", "year": ""}
+{"sequence": 292, "event": "span_end", "at_seconds": 14.449071, "phase": "tmdb_http", "seconds": 0.259105, "state": "completed", "request": 85, "endpoint": "/3/movie/488623", "title": "", "year": ""}
+{"sequence": 293, "event": "span_end", "at_seconds": 14.449487, "phase": "match_candidate", "seconds": 1.192646, "state": "completed", "title": "Forgotten", "year": "2017"}
+{"sequence": 294, "event": "candidate_result", "at_seconds": 14.449754, "title": "Forgotten", "accepted_identity": true, "resolved_id": "488623"}
+{"sequence": 295, "event": "span_start", "at_seconds": 14.450819, "phase": "match_candidate", "title": "Diabolique", "year": "1955"}
+{"sequence": 296, "event": "span_start", "at_seconds": 14.451135, "phase": "tmdb_http", "request": 88, "endpoint": "/3/search/movie", "title": "Diabolique", "year": "1955"}
+{"sequence": 297, "event": "span_end", "at_seconds": 14.463937, "phase": "tmdb_http", "seconds": 0.145766, "state": "completed", "request": 86, "endpoint": "/3/movie/8740", "title": "", "year": ""}
+{"sequence": 298, "event": "span_end", "at_seconds": 14.46428, "phase": "match_candidate", "seconds": 0.310901, "state": "completed", "title": "The Vanishing", "year": "1988"}
+{"sequence": 299, "event": "candidate_result", "at_seconds": 14.464502, "title": "The Vanishing", "accepted_identity": true, "resolved_id": "8740"}
+{"sequence": 300, "event": "span_start", "at_seconds": 14.581206, "phase": "match_candidate", "title": "Psycho", "year": "1960"}
+{"sequence": 301, "event": "span_start", "at_seconds": 14.581711, "phase": "tmdb_http", "request": 89, "endpoint": "/3/search/movie", "title": "Psycho", "year": "1960"}
+{"sequence": 302, "event": "span_end", "at_seconds": 14.592928, "phase": "tmdb_http", "seconds": 0.141787, "state": "completed", "request": 88, "endpoint": "/3/search/movie", "title": "Diabolique", "year": "1955"}
+{"sequence": 303, "event": "span_start", "at_seconds": 14.593646, "phase": "tmdb_http", "request": 90, "endpoint": "/3/movie/827", "title": "", "year": ""}
+{"sequence": 304, "event": "span_start", "at_seconds": 14.710747, "phase": "match_candidate", "title": "Witness for the Prosecution", "year": "1957"}
+{"sequence": 305, "event": "span_start", "at_seconds": 14.711158, "phase": "tmdb_http", "request": 91, "endpoint": "/3/search/movie", "title": "Witness for the Prosecution", "year": "1957"}
+{"sequence": 306, "event": "span_end", "at_seconds": 14.718128, "phase": "tmdb_http", "seconds": 0.292433, "state": "completed", "request": 87, "endpoint": "/3/movie/30018", "title": "", "year": ""}
+{"sequence": 307, "event": "span_end", "at_seconds": 14.718469, "phase": "match_candidate", "seconds": 1.197706, "state": "completed", "title": "Mother", "year": "2009"}
+{"sequence": 308, "event": "candidate_result", "at_seconds": 14.718691, "title": "Mother", "accepted_identity": true, "resolved_id": "30018"}
+{"sequence": 309, "event": "span_end", "at_seconds": 14.744699, "phase": "tmdb_http", "seconds": 0.16298, "state": "completed", "request": 89, "endpoint": "/3/search/movie", "title": "Psycho", "year": "1960"}
+{"sequence": 310, "event": "span_start", "at_seconds": 14.745277, "phase": "tmdb_http", "request": 92, "endpoint": "/3/movie/539", "title": "", "year": ""}
+{"sequence": 311, "event": "span_end", "at_seconds": 14.762106, "phase": "tmdb_http", "seconds": 0.168452, "state": "completed", "request": 90, "endpoint": "/3/movie/827", "title": "", "year": ""}
+{"sequence": 312, "event": "span_end", "at_seconds": 14.762481, "phase": "match_candidate", "seconds": 0.311661, "state": "completed", "title": "Diabolique", "year": "1955"}
+{"sequence": 313, "event": "candidate_result", "at_seconds": 14.762702, "title": "Diabolique", "accepted_identity": true, "resolved_id": "827"}
+{"sequence": 314, "event": "span_end", "at_seconds": 14.855117, "phase": "tmdb_http", "seconds": 0.143952, "state": "completed", "request": 91, "endpoint": "/3/search/movie", "title": "Witness for the Prosecution", "year": "1957"}
+{"sequence": 315, "event": "span_start", "at_seconds": 14.855698, "phase": "tmdb_http", "request": 93, "endpoint": "/3/movie/37257", "title": "", "year": ""}
+{"sequence": 316, "event": "span_end", "at_seconds": 14.887764, "phase": "tmdb_http", "seconds": 0.142477, "state": "completed", "request": 92, "endpoint": "/3/movie/539", "title": "", "year": ""}
+{"sequence": 317, "event": "span_end", "at_seconds": 14.888157, "phase": "match_candidate", "seconds": 0.30695, "state": "completed", "title": "Psycho", "year": "1960"}
+{"sequence": 318, "event": "candidate_result", "at_seconds": 14.888392, "title": "Psycho", "accepted_identity": true, "resolved_id": "539"}
+{"sequence": 319, "event": "span_start", "at_seconds": 14.982625, "phase": "match_candidate", "title": "The Skin I Live In", "year": "2011"}
+{"sequence": 320, "event": "span_start", "at_seconds": 14.983004, "phase": "tmdb_http", "request": 94, "endpoint": "/3/search/movie", "title": "The Skin I Live In", "year": "2011"}
+{"sequence": 321, "event": "span_end", "at_seconds": 15.000097, "phase": "tmdb_http", "seconds": 0.144391, "state": "completed", "request": 93, "endpoint": "/3/movie/37257", "title": "", "year": ""}
+{"sequence": 322, "event": "span_end", "at_seconds": 15.000475, "phase": "match_candidate", "seconds": 0.289728, "state": "completed", "title": "Witness for the Prosecution", "year": "1957"}
+{"sequence": 323, "event": "candidate_result", "at_seconds": 15.000705, "title": "Witness for the Prosecution", "accepted_identity": true, "resolved_id": "37257"}
+{"sequence": 324, "event": "span_end", "at_seconds": 15.1281, "phase": "tmdb_http", "seconds": 0.145087, "state": "completed", "request": 94, "endpoint": "/3/search/movie", "title": "The Skin I Live In", "year": "2011"}
+{"sequence": 325, "event": "span_start", "at_seconds": 15.128687, "phase": "tmdb_http", "request": 95, "endpoint": "/3/movie/63311", "title": "", "year": ""}
+{"sequence": 326, "event": "span_start", "at_seconds": 15.250077, "phase": "match_candidate", "title": "Nine Queens", "year": "2000"}
+{"sequence": 327, "event": "span_start", "at_seconds": 15.250463, "phase": "tmdb_http", "request": 96, "endpoint": "/3/search/movie", "title": "Nine Queens", "year": "2000"}
+{"sequence": 328, "event": "span_end", "at_seconds": 15.292953, "phase": "tmdb_http", "seconds": 0.164257, "state": "completed", "request": 95, "endpoint": "/3/movie/63311", "title": "", "year": ""}
+{"sequence": 329, "event": "span_end", "at_seconds": 15.29338, "phase": "match_candidate", "seconds": 0.310755, "state": "completed", "title": "The Skin I Live In", "year": "2011"}
+{"sequence": 330, "event": "candidate_result", "at_seconds": 15.293605, "title": "The Skin I Live In", "accepted_identity": true, "resolved_id": "63311"}
+{"sequence": 331, "event": "span_end", "at_seconds": 15.416051, "phase": "tmdb_http", "seconds": 0.165579, "state": "completed", "request": 96, "endpoint": "/3/search/movie", "title": "Nine Queens", "year": "2000"}
+{"sequence": 332, "event": "span_start", "at_seconds": 15.416661, "phase": "tmdb_http", "request": 97, "endpoint": "/3/movie/18079", "title": "", "year": ""}
+{"sequence": 333, "event": "span_end", "at_seconds": 15.578807, "phase": "tmdb_http", "seconds": 0.162136, "state": "completed", "request": 97, "endpoint": "/3/movie/18079", "title": "", "year": ""}
+{"sequence": 334, "event": "span_end", "at_seconds": 15.579307, "phase": "match_candidate", "seconds": 0.329225, "state": "completed", "title": "Nine Queens", "year": "2000"}
+{"sequence": 335, "event": "candidate_result", "at_seconds": 15.579581, "title": "Nine Queens", "accepted_identity": true, "resolved_id": "18079"}
+{"sequence": 336, "event": "span_start", "at_seconds": 15.643272, "phase": "match_candidate", "title": "Matchstick Men", "year": "2003"}
+{"sequence": 337, "event": "span_start", "at_seconds": 15.643702, "phase": "tmdb_http", "request": 98, "endpoint": "/3/search/movie", "title": "Matchstick Men", "year": "2003"}
+{"sequence": 338, "event": "span_end", "at_seconds": 15.902819, "phase": "tmdb_http", "seconds": 0.259109, "state": "completed", "request": 98, "endpoint": "/3/search/movie", "title": "Matchstick Men", "year": "2003"}
+{"sequence": 339, "event": "span_start", "at_seconds": 15.903378, "phase": "tmdb_http", "request": 99, "endpoint": "/3/movie/7270", "title": "", "year": ""}
+{"sequence": 340, "event": "span_start", "at_seconds": 15.930652, "phase": "match_candidate", "title": "Lucky Number Slevin", "year": "2006"}
+{"sequence": 341, "event": "span_start", "at_seconds": 15.931095, "phase": "tmdb_http", "request": 100, "endpoint": "/3/search/movie", "title": "Lucky Number Slevin", "year": "2006"}
+{"sequence": 342, "event": "span_end", "at_seconds": 16.046878, "phase": "tmdb_http", "seconds": 0.143488, "state": "completed", "request": 99, "endpoint": "/3/movie/7270", "title": "", "year": ""}
+{"sequence": 343, "event": "span_end", "at_seconds": 16.047431, "phase": "match_candidate", "seconds": 0.404157, "state": "completed", "title": "Matchstick Men", "year": "2003"}
+{"sequence": 344, "event": "candidate_result", "at_seconds": 16.047736, "title": "Matchstick Men", "accepted_identity": true, "resolved_id": "7270"}
+{"sequence": 345, "event": "span_start", "at_seconds": 16.070088, "phase": "match_candidate", "title": "The Illusionist", "year": "2006"}
+{"sequence": 346, "event": "span_start", "at_seconds": 16.070676, "phase": "tmdb_http", "request": 101, "endpoint": "/3/search/movie", "title": "The Illusionist", "year": "2006"}
+{"sequence": 347, "event": "span_end", "at_seconds": 16.188167, "phase": "tmdb_http", "seconds": 0.257062, "state": "completed", "request": 100, "endpoint": "/3/search/movie", "title": "Lucky Number Slevin", "year": "2006"}
+{"sequence": 348, "event": "span_start", "at_seconds": 16.18879, "phase": "tmdb_http", "request": 102, "endpoint": "/3/movie/186", "title": "", "year": ""}
+{"sequence": 349, "event": "span_end", "at_seconds": 16.214149, "phase": "tmdb_http", "seconds": 0.143466, "state": "completed", "request": 101, "endpoint": "/3/search/movie", "title": "The Illusionist", "year": "2006"}
+{"sequence": 350, "event": "span_start", "at_seconds": 16.214691, "phase": "tmdb_http", "request": 103, "endpoint": "/3/movie/1491", "title": "", "year": ""}
+{"sequence": 351, "event": "span_start", "at_seconds": 16.403762, "phase": "match_candidate", "title": "The Visit", "year": "2015"}
+{"sequence": 352, "event": "span_start", "at_seconds": 16.404225, "phase": "tmdb_http", "request": 104, "endpoint": "/3/search/movie", "title": "The Visit", "year": "2015"}
+{"sequence": 353, "event": "span_end", "at_seconds": 16.453518, "phase": "tmdb_http", "seconds": 0.238819, "state": "completed", "request": 103, "endpoint": "/3/movie/1491", "title": "", "year": ""}
+{"sequence": 354, "event": "span_end", "at_seconds": 16.45388, "phase": "match_candidate", "seconds": 0.383796, "state": "completed", "title": "The Illusionist", "year": "2006"}
+{"sequence": 355, "event": "candidate_result", "at_seconds": 16.454101, "title": "The Illusionist", "accepted_identity": true, "resolved_id": "1491"}
+{"sequence": 356, "event": "span_end", "at_seconds": 16.454573, "phase": "tmdb_http", "seconds": 0.265778, "state": "completed", "request": 102, "endpoint": "/3/movie/186", "title": "", "year": ""}
+{"sequence": 357, "event": "span_end", "at_seconds": 16.454884, "phase": "match_candidate", "seconds": 0.524233, "state": "completed", "title": "Lucky Number Slevin", "year": "2006"}
+{"sequence": 358, "event": "candidate_result", "at_seconds": 16.455118, "title": "Lucky Number Slevin", "accepted_identity": true, "resolved_id": "186"}
+{"sequence": 359, "event": "span_end", "at_seconds": 16.662256, "phase": "tmdb_http", "seconds": 0.258024, "state": "completed", "request": 104, "endpoint": "/3/search/movie", "title": "The Visit", "year": "2015"}
+{"sequence": 360, "event": "span_start", "at_seconds": 16.663097, "phase": "tmdb_http", "request": 105, "endpoint": "/3/search/movie", "title": "The Visit", "year": ""}
+{"sequence": 361, "event": "span_start", "at_seconds": 16.81631, "phase": "match_candidate", "title": "Sleepaway Camp", "year": "1983"}
+{"sequence": 362, "event": "span_start", "at_seconds": 16.816755, "phase": "tmdb_http", "request": 106, "endpoint": "/3/search/movie", "title": "Sleepaway Camp", "year": "1983"}
+{"sequence": 363, "event": "span_end", "at_seconds": 16.949019, "phase": "tmdb_http", "seconds": 0.285914, "state": "completed", "request": 105, "endpoint": "/3/search/movie", "title": "The Visit", "year": ""}
+{"sequence": 364, "event": "span_start", "at_seconds": 16.949609, "phase": "tmdb_http", "request": 107, "endpoint": "/3/movie/298312/alternative_titles", "title": "", "year": ""}
+{"sequence": 365, "event": "span_start", "at_seconds": 17.102092, "phase": "match_candidate", "title": "Dead Silence", "year": "2007"}
+{"sequence": 366, "event": "span_end", "at_seconds": 17.102602, "phase": "tmdb_http", "seconds": 0.285454, "state": "completed", "request": 106, "endpoint": "/3/search/movie", "title": "Sleepaway Camp", "year": "1983"}
+{"sequence": 367, "event": "span_start", "at_seconds": 17.103271, "phase": "tmdb_http", "request": 108, "endpoint": "/3/search/movie", "title": "Dead Silence", "year": "2007"}
+{"sequence": 368, "event": "span_start", "at_seconds": 17.103641, "phase": "tmdb_http", "request": 109, "endpoint": "/3/movie/13567", "title": "", "year": ""}
+{"sequence": 369, "event": "span_end", "at_seconds": 17.263088, "phase": "tmdb_http", "seconds": 0.31347, "state": "completed", "request": 107, "endpoint": "/3/movie/298312/alternative_titles", "title": "", "year": ""}
+{"sequence": 370, "event": "span_start", "at_seconds": 17.263486, "phase": "tmdb_http", "request": 110, "endpoint": "/3/movie/308063/alternative_titles", "title": "", "year": ""}
+{"sequence": 371, "event": "span_end", "at_seconds": 17.299541, "phase": "tmdb_http", "seconds": 0.196269, "state": "completed", "request": 109, "endpoint": "/3/movie/13567", "title": "", "year": ""}
+{"sequence": 372, "event": "span_end", "at_seconds": 17.299897, "phase": "match_candidate", "seconds": 0.483586, "state": "completed", "title": "Sleepaway Camp", "year": "1983"}
+{"sequence": 373, "event": "candidate_result", "at_seconds": 17.300165, "title": "Sleepaway Camp", "accepted_identity": true, "resolved_id": "13567"}
+{"sequence": 374, "event": "span_start", "at_seconds": 17.419877, "phase": "match_candidate", "title": "Shattered", "year": "1991"}
+{"sequence": 375, "event": "span_end", "at_seconds": 17.42041, "phase": "tmdb_http", "seconds": 0.317449, "state": "completed", "request": 108, "endpoint": "/3/search/movie", "title": "Dead Silence", "year": "2007"}
+{"sequence": 376, "event": "span_start", "at_seconds": 17.421022, "phase": "tmdb_http", "request": 111, "endpoint": "/3/search/movie", "title": "Shattered", "year": "1991"}
+{"sequence": 377, "event": "span_start", "at_seconds": 17.42133, "phase": "tmdb_http", "request": 112, "endpoint": "/3/movie/14001", "title": "", "year": ""}
+{"sequence": 378, "event": "span_end", "at_seconds": 17.614266, "phase": "tmdb_http", "seconds": 0.350772, "state": "completed", "request": 110, "endpoint": "/3/movie/308063/alternative_titles", "title": "", "year": ""}
+{"sequence": 379, "event": "span_start", "at_seconds": 17.614673, "phase": "tmdb_http", "request": 113, "endpoint": "/3/movie/151138/alternative_titles", "title": "", "year": ""}
+{"sequence": 380, "event": "span_start", "at_seconds": 17.675317, "phase": "match_candidate", "title": "Sorry to Bother You", "year": "2018"}
+{"sequence": 381, "event": "span_end", "at_seconds": 17.675778, "phase": "tmdb_http", "seconds": 0.255026, "state": "completed", "request": 111, "endpoint": "/3/search/movie", "title": "Shattered", "year": "1991"}
+{"sequence": 382, "event": "span_start", "at_seconds": 17.67631, "phase": "tmdb_http", "request": 114, "endpoint": "/3/search/movie", "title": "Sorry to Bother You", "year": "2018"}
+{"sequence": 383, "event": "span_start", "at_seconds": 17.676614, "phase": "tmdb_http", "request": 115, "endpoint": "/3/search/movie", "title": "Shattered", "year": ""}
+{"sequence": 384, "event": "span_end", "at_seconds": 17.682829, "phase": "tmdb_http", "seconds": 0.26181, "state": "completed", "request": 112, "endpoint": "/3/movie/14001", "title": "", "year": ""}
+{"sequence": 385, "event": "span_end", "at_seconds": 17.68313, "phase": "match_candidate", "seconds": 0.581038, "state": "completed", "title": "Dead Silence", "year": "2007"}
+{"sequence": 386, "event": "candidate_result", "at_seconds": 17.683342, "title": "Dead Silence", "accepted_identity": true, "resolved_id": "14001"}
+{"sequence": 387, "event": "span_end", "at_seconds": 17.803956, "phase": "tmdb_http", "seconds": 0.189276, "state": "completed", "request": 113, "endpoint": "/3/movie/151138/alternative_titles", "title": "", "year": ""}
+{"sequence": 388, "event": "span_start", "at_seconds": 17.804959, "phase": "tmdb_http", "request": 116, "endpoint": "/3/movie/298312", "title": "", "year": ""}
+{"sequence": 389, "event": "span_start", "at_seconds": 17.805479, "phase": "match_candidate", "title": "Upgrade", "year": "2018"}
+{"sequence": 390, "event": "span_start", "at_seconds": 17.805772, "phase": "tmdb_http", "request": 117, "endpoint": "/3/search/movie", "title": "Upgrade", "year": "2018"}
+{"sequence": 391, "event": "span_end", "at_seconds": 17.857171, "phase": "tmdb_http", "seconds": 0.180857, "state": "completed", "request": 115, "endpoint": "/3/search/movie", "title": "Shattered", "year": ""}
+{"sequence": 392, "event": "span_start", "at_seconds": 17.857778, "phase": "tmdb_http", "request": 118, "endpoint": "/3/movie/2071/alternative_titles", "title": "", "year": ""}
+{"sequence": 393, "event": "span_end", "at_seconds": 17.871931, "phase": "tmdb_http", "seconds": 0.196153, "state": "completed", "request": 114, "endpoint": "/3/search/movie", "title": "Sorry to Bother You", "year": "2018"}
+{"sequence": 394, "event": "span_start", "at_seconds": 17.87247, "phase": "tmdb_http", "request": 119, "endpoint": "/3/movie/424781", "title": "", "year": ""}
+{"sequence": 395, "event": "span_end", "at_seconds": 17.954703, "phase": "tmdb_http", "seconds": 0.148922, "state": "completed", "request": 117, "endpoint": "/3/search/movie", "title": "Upgrade", "year": "2018"}
+{"sequence": 396, "event": "span_start", "at_seconds": 17.955382, "phase": "tmdb_http", "request": 120, "endpoint": "/3/movie/500664", "title": "", "year": ""}
+{"sequence": 397, "event": "span_end", "at_seconds": 17.970213, "phase": "tmdb_http", "seconds": 0.165248, "state": "completed", "request": 116, "endpoint": "/3/movie/298312", "title": "", "year": ""}
+{"sequence": 398, "event": "span_end", "at_seconds": 17.970583, "phase": "match_candidate", "seconds": 1.566821, "state": "completed", "title": "The Visit", "year": "2015"}
+{"sequence": 399, "event": "candidate_result", "at_seconds": 17.970811, "title": "The Visit", "accepted_identity": true, "resolved_id": "298312"}
+{"sequence": 400, "event": "span_end", "at_seconds": 18.020765, "phase": "tmdb_http", "seconds": 0.162979, "state": "completed", "request": 118, "endpoint": "/3/movie/2071/alternative_titles", "title": "", "year": ""}
+{"sequence": 401, "event": "span_start", "at_seconds": 18.02118, "phase": "tmdb_http", "request": 121, "endpoint": "/3/movie/844398/alternative_titles", "title": "", "year": ""}
+{"sequence": 402, "event": "span_end", "at_seconds": 18.075935, "phase": "tmdb_http", "seconds": 0.203454, "state": "completed", "request": 119, "endpoint": "/3/movie/424781", "title": "", "year": ""}
+{"sequence": 403, "event": "span_end", "at_seconds": 18.07645, "phase": "match_candidate", "seconds": 0.401131, "state": "completed", "title": "Sorry to Bother You", "year": "2018"}
+{"sequence": 404, "event": "candidate_result", "at_seconds": 18.076781, "title": "Sorry to Bother You", "accepted_identity": true, "resolved_id": "424781"}
+{"sequence": 405, "event": "span_end", "at_seconds": 18.104922, "phase": "tmdb_http", "seconds": 0.149526, "state": "completed", "request": 120, "endpoint": "/3/movie/500664", "title": "", "year": ""}
+{"sequence": 406, "event": "span_end", "at_seconds": 18.105736, "phase": "match_candidate", "seconds": 0.300251, "state": "completed", "title": "Upgrade", "year": "2018"}
+{"sequence": 407, "event": "candidate_result", "at_seconds": 18.106158, "title": "Upgrade", "accepted_identity": true, "resolved_id": "500664"}
+{"sequence": 408, "event": "span_end", "at_seconds": 18.167543, "phase": "tmdb_http", "seconds": 0.146354, "state": "completed", "request": 121, "endpoint": "/3/movie/844398/alternative_titles", "title": "", "year": ""}
+{"sequence": 409, "event": "span_start", "at_seconds": 18.167961, "phase": "tmdb_http", "request": 122, "endpoint": "/3/movie/1113262/alternative_titles", "title": "", "year": ""}
+{"sequence": 410, "event": "span_end", "at_seconds": 18.312629, "phase": "tmdb_http", "seconds": 0.144659, "state": "completed", "request": 122, "endpoint": "/3/movie/1113262/alternative_titles", "title": "", "year": ""}
+{"sequence": 411, "event": "span_start", "at_seconds": 18.313489, "phase": "tmdb_http", "request": 123, "endpoint": "/3/movie/2071", "title": "", "year": ""}
+{"sequence": 412, "event": "span_end", "at_seconds": 18.463668, "phase": "tmdb_http", "seconds": 0.150169, "state": "completed", "request": 123, "endpoint": "/3/movie/2071", "title": "", "year": ""}
+{"sequence": 413, "event": "span_end", "at_seconds": 18.464186, "phase": "match_candidate", "seconds": 1.044307, "state": "completed", "title": "Shattered", "year": "1991"}
+{"sequence": 414, "event": "candidate_result", "at_seconds": 18.464508, "title": "Shattered", "accepted_identity": true, "resolved_id": "2071"}
+{"sequence": 415, "event": "gpt_stream_event", "at_seconds": 18.564209, "attempt": 1, "type": "response.completed", "item_type": null, "seconds": 14.252166, "usage": {"input_tokens": 7137, "input_tokens_details": {"cached_tokens": 0}, "output_tokens": 607, "output_tokens_details": {"reasoning_tokens": 0}, "total_tokens": 7744, "attribution": {"items": {"msg_0e949d040b05497c016ae9dd9096448191b37d2686e7515abf": {"input_tokens": 6449, "cached_tokens": 0, "output_tokens": 0, "content": [{"input_tokens": 6449, "cached_tokens": 0, "output_tokens": 0}]}, "msg_0e949d040b05497c016ae9dd924cbc8191b67f9b3f5a43cd18": {"input_tokens": 2, "cached_tokens": 0, "output_tokens": 607, "content": [{"input_tokens": 2, "cached_tokens": 0, "output_tokens": 607}]}}, "request_fields": {"instructions": {"input_tokens": 497, "cached_tokens": 0, "output_tokens": 0}, "tools": {"input_tokens": 189, "cached_tokens": 0, "output_tokens": 0}}}}}
+{"sequence": 416, "event": "span_end", "at_seconds": 18.56523, "phase": "gpt_http", "attempt": 1, "seconds": 14.253192}
+{"sequence": 417, "event": "span_start", "at_seconds": 18.565524, "phase": "lease_release"}
+{"sequence": 418, "event": "span_end", "at_seconds": 18.576117, "phase": "lease_release", "seconds": 0.010588, "state": "completed"}
+{"sequence": 419, "event": "span_end", "at_seconds": 18.576356, "phase": "gpt_run", "seconds": 17.464021, "state": "completed", "input_bytes": 21233, "instructions_bytes": 2502, "tools_bytes": 1406}
+{"sequence": 420, "event": "gpt_reply", "at_seconds": 18.576651, "response_id": "resp_0e949d040b05497c016ae9dd90953c8191abb0f6f730ae8477", "calls": []}
+{"sequence": 421, "event": "gpt_candidate_output", "at_seconds": 18.57686, "text": "{\"recommendations\":[{\"title\":\"The Prestige\",\"year\":\"2006\"},{\"title\":\"Oldboy\",\"year\":\"2003\"},{\"title\":\"The Sixth Sense\",\"year\":\"1999\"},{\"title\":\"Fight Club\",\"year\":\"1999\"},{\"title\":\"The Usual Suspects\",\"year\":\"1995\"},{\"title\":\"Shutter Island\",\"year\":\"2010\"},{\"title\":\"Memento\",\"year\":\"2000\"},{\"title\":\"Se7en\",\"year\":\"1995\"},{\"title\":\"The Others\",\"year\":\"2001\"},{\"title\":\"The Game\",\"year\":\"1997\"},{\"title\":\"Primal Fear\",\"year\":\"1996\"},{\"title\":\"Predestination\",\"year\":\"2014\"},{\"title\":\"Incendies\",\"year\":\"2010\"},{\"title\":\"The Invisible Guest\",\"year\":\"2016\"},{\"title\":\"The Body\",\"year\":\"2012\"},{\"title\":\"Identity\",\"year\":\"2003\"},{\"title\":\"Saw\",\"year\":\"2004\"},{\"title\":\"The Machinist\",\"year\":\"2004\"},{\"title\":\"Triangle\",\"year\":\"2009\"},{\"title\":\"Coherence\",\"year\":\"2013\"},{\"title\":\"Timecrimes\",\"year\":\"2007\"},{\"title\":\"Jacob's Ladder\",\"year\":\"1990\"},{\"title\":\"Angel Heart\",\"year\":\"1987\"},{\"title\":\"Frailty\",\"year\":\"2001\"},{\"title\":\"The Skeleton Key\",\"year\":\"2005\"},{\"title\":\"The Mist\",\"year\":\"2007\"},{\"title\":\"Arlington Road\",\"year\":\"1999\"},{\"title\":\"Gone Girl\",\"year\":\"2014\"},{\"title\":\"Mulholland Drive\",\"year\":\"2001\"},{\"title\":\"The Handmaiden\",\"year\":\"2016\"},{\"title\":\"A Tale of Two Sisters\",\"year\":\"2003\"},{\"title\":\"Forgotten\",\"year\":\"2017\"},{\"title\":\"Mother\",\"year\":\"2009\"},{\"title\":\"The Secret in Their Eyes\",\"year\":\"2009\"},{\"title\":\"Tell No One\",\"year\":\"2006\"},{\"title\":\"The Vanishing\",\"year\":\"1988\"},{\"title\":\"Diabolique\",\"year\":\"1955\"},{\"title\":\"Psycho\",\"year\":\"1960\"},{\"title\":\"Witness for the Prosecution\",\"year\":\"1957\"},{\"title\":\"The Skin I Live In\",\"year\":\"2011\"},{\"title\":\"Nine Queens\",\"year\":\"2000\"},{\"title\":\"Matchstick Men\",\"year\":\"2003\"},{\"title\":\"Lucky Number Slevin\",\"year\":\"2006\"},{\"title\":\"The Illusionist\",\"year\":\"2006\"},{\"title\":\"The Visit\",\"year\":\"2015\"},{\"title\":\"Sleepaway Camp\",\"year\":\"1983\"},{\"title\":\"Dead Silence\",\"year\":\"2007\"},{\"title\":\"Shattered\",\"year\":\"1991\"},{\"title\":\"Sorry to Bother You\",\"year\":\"2018\"},{\"title\":\"Upgrade\",\"year\":\"2018\"}],\"scope\":{\"query\":{\"version\":1,\"scope\":\"discover\",\"mode\":\"advanced\",\"feed\":\"catalog\",\"sort\":{\"key\":\"auto\",\"direction\":\"desc\"},\"groups\":[]},\"subjective_requirements\":[\"Very twisted stories with unexpected endings and surprising plot twists.\"],\"requested_count\":\"50\"}}"}
+{"sequence": 422, "event": "span_start", "at_seconds": 18.598516, "phase": "tmdb_matching"}
+{"sequence": 423, "event": "span_start", "at_seconds": 18.598809, "phase": "candidate_eligibility", "title": "The Prestige", "identity": 1124}
+{"sequence": 424, "event": "span_end", "at_seconds": 18.599158, "phase": "candidate_eligibility", "seconds": 0.000347, "state": "completed", "title": "The Prestige", "identity": 1124}
+{"sequence": 425, "event": "eligibility_result", "at_seconds": 18.599379, "identity": 1124, "title": "The Prestige", "result": "eligible"}
+{"sequence": 426, "event": "span_start", "at_seconds": 18.600535, "phase": "persist_results", "count": 1}
+{"sequence": 427, "event": "span_end", "at_seconds": 18.611649, "phase": "persist_results", "seconds": 0.01111, "state": "completed", "count": 1}
+{"sequence": 428, "event": "first_cards", "at_seconds": 18.611901, "count": 1}
+{"sequence": 429, "event": "span_start", "at_seconds": 18.612146, "phase": "candidate_eligibility", "title": "Oldboy", "identity": 670}
+{"sequence": 430, "event": "span_end", "at_seconds": 18.612401, "phase": "candidate_eligibility", "seconds": 0.000253, "state": "completed", "title": "Oldboy", "identity": 670}
+{"sequence": 431, "event": "eligibility_result", "at_seconds": 18.612617, "identity": 670, "title": "Oldboy", "result": "eligible"}
+{"sequence": 432, "event": "span_start", "at_seconds": 18.613725, "phase": "candidate_eligibility", "title": "The Sixth Sense", "identity": 745}
+{"sequence": 433, "event": "span_end", "at_seconds": 18.61402, "phase": "candidate_eligibility", "seconds": 0.000293, "state": "completed", "title": "The Sixth Sense", "identity": 745}
+{"sequence": 434, "event": "eligibility_result", "at_seconds": 18.614223, "identity": 745, "title": "The Sixth Sense", "result": "eligible"}
+{"sequence": 435, "event": "span_start", "at_seconds": 18.615307, "phase": "candidate_eligibility", "title": "Fight Club", "identity": 550}
+{"sequence": 436, "event": "span_end", "at_seconds": 18.615561, "phase": "candidate_eligibility", "seconds": 0.000253, "state": "completed", "title": "Fight Club", "identity": 550}
+{"sequence": 437, "event": "eligibility_result", "at_seconds": 18.615768, "identity": 550, "title": "Fight Club", "result": "eligible"}
+{"sequence": 438, "event": "span_start", "at_seconds": 18.616847, "phase": "candidate_eligibility", "title": "The Usual Suspects", "identity": 629}
+{"sequence": 439, "event": "span_end", "at_seconds": 18.617092, "phase": "candidate_eligibility", "seconds": 0.000243, "state": "completed", "title": "The Usual Suspects", "identity": 629}
+{"sequence": 440, "event": "eligibility_result", "at_seconds": 18.617288, "identity": 629, "title": "The Usual Suspects", "result": "eligible"}
+{"sequence": 441, "event": "span_start", "at_seconds": 18.61833, "phase": "persist_results", "count": 4}
+{"sequence": 442, "event": "span_end", "at_seconds": 18.62955, "phase": "persist_results", "seconds": 0.011215, "state": "completed", "count": 4}
+{"sequence": 443, "event": "span_start", "at_seconds": 18.629869, "phase": "candidate_eligibility", "title": "Shutter Island", "identity": 11324}
+{"sequence": 444, "event": "span_end", "at_seconds": 18.63013, "phase": "candidate_eligibility", "seconds": 0.000259, "state": "completed", "title": "Shutter Island", "identity": 11324}
+{"sequence": 445, "event": "eligibility_result", "at_seconds": 18.630353, "identity": 11324, "title": "Shutter Island", "result": "eligible"}
+{"sequence": 446, "event": "span_start", "at_seconds": 18.631441, "phase": "candidate_eligibility", "title": "Memento", "identity": 77}
+{"sequence": 447, "event": "span_end", "at_seconds": 18.631704, "phase": "candidate_eligibility", "seconds": 0.000261, "state": "completed", "title": "Memento", "identity": 77}
+{"sequence": 448, "event": "eligibility_result", "at_seconds": 18.631901, "identity": 77, "title": "Memento", "result": "eligible"}
+{"sequence": 449, "event": "span_start", "at_seconds": 18.632997, "phase": "candidate_eligibility", "title": "Se7en", "identity": 807}
+{"sequence": 450, "event": "span_end", "at_seconds": 18.633241, "phase": "candidate_eligibility", "seconds": 0.000242, "state": "completed", "title": "Se7en", "identity": 807}
+{"sequence": 451, "event": "eligibility_result", "at_seconds": 18.633434, "identity": 807, "title": "Se7en", "result": "eligible"}
+{"sequence": 452, "event": "span_start", "at_seconds": 18.634464, "phase": "candidate_eligibility", "title": "The Others", "identity": 1933}
+{"sequence": 453, "event": "span_end", "at_seconds": 18.634698, "phase": "candidate_eligibility", "seconds": 0.000232, "state": "completed", "title": "The Others", "identity": 1933}
+{"sequence": 454, "event": "eligibility_result", "at_seconds": 18.63489, "identity": 1933, "title": "The Others", "result": "eligible"}
+{"sequence": 455, "event": "span_start", "at_seconds": 18.635902, "phase": "persist_results", "count": 4}
+{"sequence": 456, "event": "span_end", "at_seconds": 18.647323, "phase": "persist_results", "seconds": 0.011416, "state": "completed", "count": 4}
+{"sequence": 457, "event": "span_start", "at_seconds": 18.648491, "phase": "candidate_eligibility", "title": "The Game", "identity": 2649}
+{"sequence": 458, "event": "span_end", "at_seconds": 18.648753, "phase": "candidate_eligibility", "seconds": 0.00026, "state": "completed", "title": "The Game", "identity": 2649}
+{"sequence": 459, "event": "eligibility_result", "at_seconds": 18.64896, "identity": 2649, "title": "The Game", "result": "eligible"}
+{"sequence": 460, "event": "span_start", "at_seconds": 18.650065, "phase": "candidate_eligibility", "title": "Primal Fear", "identity": 1592}
+{"sequence": 461, "event": "span_end", "at_seconds": 18.650309, "phase": "candidate_eligibility", "seconds": 0.000243, "state": "completed", "title": "Primal Fear", "identity": 1592}
+{"sequence": 462, "event": "eligibility_result", "at_seconds": 18.6505, "identity": 1592, "title": "Primal Fear", "result": "eligible"}
+{"sequence": 463, "event": "span_start", "at_seconds": 18.651605, "phase": "candidate_eligibility", "title": "Predestination", "identity": 206487}
+{"sequence": 464, "event": "span_end", "at_seconds": 18.651851, "phase": "candidate_eligibility", "seconds": 0.000245, "state": "completed", "title": "Predestination", "identity": 206487}
+{"sequence": 465, "event": "eligibility_result", "at_seconds": 18.652051, "identity": 206487, "title": "Predestination", "result": "eligible"}
+{"sequence": 466, "event": "span_start", "at_seconds": 18.653083, "phase": "candidate_eligibility", "title": "Incendies", "identity": 46738}
+{"sequence": 467, "event": "span_end", "at_seconds": 18.653338, "phase": "candidate_eligibility", "seconds": 0.000254, "state": "completed", "title": "Incendies", "identity": 46738}
+{"sequence": 468, "event": "eligibility_result", "at_seconds": 18.653543, "identity": 46738, "title": "Incendies", "result": "eligible"}
+{"sequence": 469, "event": "span_start", "at_seconds": 18.654698, "phase": "persist_results", "count": 4}
+{"sequence": 470, "event": "span_end", "at_seconds": 18.665922, "phase": "persist_results", "seconds": 0.011221, "state": "completed", "count": 4}
+{"sequence": 471, "event": "span_start", "at_seconds": 18.666193, "phase": "candidate_eligibility", "title": "The Invisible Guest", "identity": 411088}
+{"sequence": 472, "event": "span_end", "at_seconds": 18.666443, "phase": "candidate_eligibility", "seconds": 0.000248, "state": "completed", "title": "The Invisible Guest", "identity": 411088}
+{"sequence": 473, "event": "eligibility_result", "at_seconds": 18.666656, "identity": 411088, "title": "The Invisible Guest", "result": "eligible"}
+{"sequence": 474, "event": "span_start", "at_seconds": 18.667787, "phase": "candidate_eligibility", "title": "The Body", "identity": 111083}
+{"sequence": 475, "event": "span_end", "at_seconds": 18.668041, "phase": "candidate_eligibility", "seconds": 0.000253, "state": "completed", "title": "The Body", "identity": 111083}
+{"sequence": 476, "event": "eligibility_result", "at_seconds": 18.668241, "identity": 111083, "title": "The Body", "result": "eligible"}
+{"sequence": 477, "event": "span_start", "at_seconds": 18.669366, "phase": "candidate_eligibility", "title": "Identity", "identity": 2832}
+{"sequence": 478, "event": "span_end", "at_seconds": 18.669625, "phase": "candidate_eligibility", "seconds": 0.000258, "state": "completed", "title": "Identity", "identity": 2832}
+{"sequence": 479, "event": "eligibility_result", "at_seconds": 18.66983, "identity": 2832, "title": "Identity", "result": "eligible"}
+{"sequence": 480, "event": "span_start", "at_seconds": 18.670894, "phase": "candidate_eligibility", "title": "Saw", "identity": 176}
+{"sequence": 481, "event": "span_end", "at_seconds": 18.671218, "phase": "candidate_eligibility", "seconds": 0.000322, "state": "completed", "title": "Saw", "identity": 176}
+{"sequence": 482, "event": "eligibility_result", "at_seconds": 18.671416, "identity": 176, "title": "Saw", "result": "eligible"}
+{"sequence": 483, "event": "span_start", "at_seconds": 18.672465, "phase": "persist_results", "count": 4}
+{"sequence": 484, "event": "span_end", "at_seconds": 18.684164, "phase": "persist_results", "seconds": 0.011696, "state": "completed", "count": 4}
+{"sequence": 485, "event": "span_start", "at_seconds": 18.684443, "phase": "candidate_eligibility", "title": "The Machinist", "identity": 4553}
+{"sequence": 486, "event": "span_end", "at_seconds": 18.684705, "phase": "candidate_eligibility", "seconds": 0.000261, "state": "completed", "title": "The Machinist", "identity": 4553}
+{"sequence": 487, "event": "eligibility_result", "at_seconds": 18.684929, "identity": 4553, "title": "The Machinist", "result": "eligible"}
+{"sequence": 488, "event": "span_start", "at_seconds": 18.686043, "phase": "candidate_eligibility", "title": "Triangle", "identity": 26466}
+{"sequence": 489, "event": "span_end", "at_seconds": 18.686299, "phase": "candidate_eligibility", "seconds": 0.000254, "state": "completed", "title": "Triangle", "identity": 26466}
+{"sequence": 490, "event": "eligibility_result", "at_seconds": 18.686496, "identity": 26466, "title": "Triangle", "result": "eligible"}
+{"sequence": 491, "event": "span_start", "at_seconds": 18.687582, "phase": "candidate_eligibility", "title": "Coherence", "identity": 220289}
+{"sequence": 492, "event": "span_end", "at_seconds": 18.687904, "phase": "candidate_eligibility", "seconds": 0.00032, "state": "completed", "title": "Coherence", "identity": 220289}
+{"sequence": 493, "event": "eligibility_result", "at_seconds": 18.688104, "identity": 220289, "title": "Coherence", "result": "eligible"}
+{"sequence": 494, "event": "span_start", "at_seconds": 18.689187, "phase": "candidate_eligibility", "title": "Timecrimes", "identity": 14139}
+{"sequence": 495, "event": "span_end", "at_seconds": 18.689429, "phase": "candidate_eligibility", "seconds": 0.000239, "state": "completed", "title": "Timecrimes", "identity": 14139}
+{"sequence": 496, "event": "eligibility_result", "at_seconds": 18.689626, "identity": 14139, "title": "Timecrimes", "result": "eligible"}
+{"sequence": 497, "event": "span_start", "at_seconds": 18.690785, "phase": "persist_results", "count": 4}
+{"sequence": 498, "event": "span_end", "at_seconds": 18.702297, "phase": "persist_results", "seconds": 0.011509, "state": "completed", "count": 4}
+{"sequence": 499, "event": "span_start", "at_seconds": 18.702566, "phase": "candidate_eligibility", "title": "Jacob's Ladder", "identity": 2291}
+{"sequence": 500, "event": "span_end", "at_seconds": 18.702802, "phase": "candidate_eligibility", "seconds": 0.000233, "state": "completed", "title": "Jacob's Ladder", "identity": 2291}
+{"sequence": 501, "event": "eligibility_result", "at_seconds": 18.703039, "identity": 2291, "title": "Jacob's Ladder", "result": "eligible"}
+{"sequence": 502, "event": "span_start", "at_seconds": 18.704131, "phase": "candidate_eligibility", "title": "Angel Heart", "identity": 635}
+{"sequence": 503, "event": "span_end", "at_seconds": 18.704382, "phase": "candidate_eligibility", "seconds": 0.000248, "state": "completed", "title": "Angel Heart", "identity": 635}
+{"sequence": 504, "event": "eligibility_result", "at_seconds": 18.704577, "identity": 635, "title": "Angel Heart", "result": "eligible"}
+{"sequence": 505, "event": "span_start", "at_seconds": 18.705638, "phase": "candidate_eligibility", "title": "Frailty", "identity": 12149}
+{"sequence": 506, "event": "span_end", "at_seconds": 18.705895, "phase": "candidate_eligibility", "seconds": 0.000256, "state": "completed", "title": "Frailty", "identity": 12149}
+{"sequence": 507, "event": "eligibility_result", "at_seconds": 18.706102, "identity": 12149, "title": "Frailty", "result": "eligible"}
+{"sequence": 508, "event": "span_start", "at_seconds": 18.707154, "phase": "candidate_eligibility", "title": "The Skeleton Key", "identity": 9913}
+{"sequence": 509, "event": "span_end", "at_seconds": 18.707394, "phase": "candidate_eligibility", "seconds": 0.000239, "state": "completed", "title": "The Skeleton Key", "identity": 9913}
+{"sequence": 510, "event": "eligibility_result", "at_seconds": 18.707592, "identity": 9913, "title": "The Skeleton Key", "result": "eligible"}
+{"sequence": 511, "event": "span_start", "at_seconds": 18.708643, "phase": "persist_results", "count": 4}
+{"sequence": 512, "event": "span_end", "at_seconds": 18.720488, "phase": "persist_results", "seconds": 0.011841, "state": "completed", "count": 4}
+{"sequence": 513, "event": "span_start", "at_seconds": 18.720769, "phase": "candidate_eligibility", "title": "The Mist", "identity": 5876}
+{"sequence": 514, "event": "span_end", "at_seconds": 18.721021, "phase": "candidate_eligibility", "seconds": 0.00025, "state": "completed", "title": "The Mist", "identity": 5876}
+{"sequence": 515, "event": "eligibility_result", "at_seconds": 18.721239, "identity": 5876, "title": "The Mist", "result": "eligible"}
+{"sequence": 516, "event": "span_start", "at_seconds": 18.722388, "phase": "candidate_eligibility", "title": "Arlington Road", "identity": 1073}
+{"sequence": 517, "event": "span_end", "at_seconds": 18.722653, "phase": "candidate_eligibility", "seconds": 0.000263, "state": "completed", "title": "Arlington Road", "identity": 1073}
+{"sequence": 518, "event": "eligibility_result", "at_seconds": 18.722854, "identity": 1073, "title": "Arlington Road", "result": "eligible"}
+{"sequence": 519, "event": "span_start", "at_seconds": 18.723909, "phase": "candidate_eligibility", "title": "Gone Girl", "identity": 210577}
+{"sequence": 520, "event": "span_end", "at_seconds": 18.724154, "phase": "candidate_eligibility", "seconds": 0.000244, "state": "completed", "title": "Gone Girl", "identity": 210577}
+{"sequence": 521, "event": "eligibility_result", "at_seconds": 18.724358, "identity": 210577, "title": "Gone Girl", "result": "eligible"}
+{"sequence": 522, "event": "span_start", "at_seconds": 18.725426, "phase": "candidate_eligibility", "title": "Mulholland Drive", "identity": 1018}
+{"sequence": 523, "event": "span_end", "at_seconds": 18.725673, "phase": "candidate_eligibility", "seconds": 0.000246, "state": "completed", "title": "Mulholland Drive", "identity": 1018}
+{"sequence": 524, "event": "eligibility_result", "at_seconds": 18.725868, "identity": 1018, "title": "Mulholland Drive", "result": "eligible"}
+{"sequence": 525, "event": "span_start", "at_seconds": 18.726955, "phase": "persist_results", "count": 4}
+{"sequence": 526, "event": "span_end", "at_seconds": 18.738212, "phase": "persist_results", "seconds": 0.011253, "state": "completed", "count": 4}
+{"sequence": 527, "event": "span_start", "at_seconds": 18.738485, "phase": "candidate_eligibility", "title": "The Handmaiden", "identity": 290098}
+{"sequence": 528, "event": "span_end", "at_seconds": 18.738735, "phase": "candidate_eligibility", "seconds": 0.000248, "state": "completed", "title": "The Handmaiden", "identity": 290098}
+{"sequence": 529, "event": "eligibility_result", "at_seconds": 18.738931, "identity": 290098, "title": "The Handmaiden", "result": "eligible"}
+{"sequence": 530, "event": "span_start", "at_seconds": 18.740017, "phase": "candidate_eligibility", "title": "A Tale of Two Sisters", "identity": 4552}
+{"sequence": 531, "event": "span_end", "at_seconds": 18.740267, "phase": "candidate_eligibility", "seconds": 0.000248, "state": "completed", "title": "A Tale of Two Sisters", "identity": 4552}
+{"sequence": 532, "event": "eligibility_result", "at_seconds": 18.740471, "identity": 4552, "title": "A Tale of Two Sisters", "result": "eligible"}
+{"sequence": 533, "event": "span_start", "at_seconds": 18.741557, "phase": "candidate_eligibility", "title": "Forgotten", "identity": 488623}
+{"sequence": 534, "event": "span_end", "at_seconds": 18.741789, "phase": "candidate_eligibility", "seconds": 0.00023, "state": "completed", "title": "Forgotten", "identity": 488623}
+{"sequence": 535, "event": "eligibility_result", "at_seconds": 18.742018, "identity": 488623, "title": "Forgotten", "result": "eligible"}
+{"sequence": 536, "event": "span_start", "at_seconds": 18.743047, "phase": "candidate_eligibility", "title": "Mother", "identity": 30018}
+{"sequence": 537, "event": "span_end", "at_seconds": 18.743289, "phase": "candidate_eligibility", "seconds": 0.00024, "state": "completed", "title": "Mother", "identity": 30018}
+{"sequence": 538, "event": "eligibility_result", "at_seconds": 18.743481, "identity": 30018, "title": "Mother", "result": "eligible"}
+{"sequence": 539, "event": "span_start", "at_seconds": 18.744515, "phase": "persist_results", "count": 4}
+{"sequence": 540, "event": "span_end", "at_seconds": 18.755744, "phase": "persist_results", "seconds": 0.011224, "state": "completed", "count": 4}
+{"sequence": 541, "event": "span_start", "at_seconds": 18.756053, "phase": "candidate_eligibility", "title": "The Secret in Their Eyes", "identity": 25376}
+{"sequence": 542, "event": "span_end", "at_seconds": 18.75631, "phase": "candidate_eligibility", "seconds": 0.000256, "state": "completed", "title": "The Secret in Their Eyes", "identity": 25376}
+{"sequence": 543, "event": "eligibility_result", "at_seconds": 18.756509, "identity": 25376, "title": "The Secret in Their Eyes", "result": "eligible"}
+{"sequence": 544, "event": "span_start", "at_seconds": 18.757636, "phase": "candidate_eligibility", "title": "Tell No One", "identity": 10795}
+{"sequence": 545, "event": "span_end", "at_seconds": 18.757898, "phase": "candidate_eligibility", "seconds": 0.00026, "state": "completed", "title": "Tell No One", "identity": 10795}
+{"sequence": 546, "event": "eligibility_result", "at_seconds": 18.758091, "identity": 10795, "title": "Tell No One", "result": "eligible"}
+{"sequence": 547, "event": "span_start", "at_seconds": 18.759205, "phase": "candidate_eligibility", "title": "The Vanishing", "identity": 8740}
+{"sequence": 548, "event": "span_end", "at_seconds": 18.759442, "phase": "candidate_eligibility", "seconds": 0.000235, "state": "completed", "title": "The Vanishing", "identity": 8740}
+{"sequence": 549, "event": "eligibility_result", "at_seconds": 18.759642, "identity": 8740, "title": "The Vanishing", "result": "eligible"}
+{"sequence": 550, "event": "span_start", "at_seconds": 18.760706, "phase": "candidate_eligibility", "title": "Diabolique", "identity": 827}
+{"sequence": 551, "event": "span_end", "at_seconds": 18.760989, "phase": "candidate_eligibility", "seconds": 0.000281, "state": "completed", "title": "Diabolique", "identity": 827}
+{"sequence": 552, "event": "eligibility_result", "at_seconds": 18.761204, "identity": 827, "title": "Diabolique", "result": "eligible"}
+{"sequence": 553, "event": "span_start", "at_seconds": 18.762301, "phase": "persist_results", "count": 4}
+{"sequence": 554, "event": "span_end", "at_seconds": 18.773678, "phase": "persist_results", "seconds": 0.011372, "state": "completed", "count": 4}
+{"sequence": 555, "event": "span_start", "at_seconds": 18.773962, "phase": "candidate_eligibility", "title": "Psycho", "identity": 539}
+{"sequence": 556, "event": "span_end", "at_seconds": 18.774206, "phase": "candidate_eligibility", "seconds": 0.000243, "state": "completed", "title": "Psycho", "identity": 539}
+{"sequence": 557, "event": "eligibility_result", "at_seconds": 18.774404, "identity": 539, "title": "Psycho", "result": "eligible"}
+{"sequence": 558, "event": "span_start", "at_seconds": 18.775474, "phase": "candidate_eligibility", "title": "Witness for the Prosecution", "identity": 37257}
+{"sequence": 559, "event": "span_end", "at_seconds": 18.775735, "phase": "candidate_eligibility", "seconds": 0.000259, "state": "completed", "title": "Witness for the Prosecution", "identity": 37257}
+{"sequence": 560, "event": "eligibility_result", "at_seconds": 18.775947, "identity": 37257, "title": "Witness for the Prosecution", "result": "eligible"}
+{"sequence": 561, "event": "span_start", "at_seconds": 18.777012, "phase": "candidate_eligibility", "title": "The Skin I Live In", "identity": 63311}
+{"sequence": 562, "event": "span_end", "at_seconds": 18.777254, "phase": "candidate_eligibility", "seconds": 0.000239, "state": "completed", "title": "The Skin I Live In", "identity": 63311}
+{"sequence": 563, "event": "eligibility_result", "at_seconds": 18.777484, "identity": 63311, "title": "The Skin I Live In", "result": "eligible"}
+{"sequence": 564, "event": "span_start", "at_seconds": 18.778543, "phase": "candidate_eligibility", "title": "Nine Queens", "identity": 18079}
+{"sequence": 565, "event": "span_end", "at_seconds": 18.778796, "phase": "candidate_eligibility", "seconds": 0.000251, "state": "completed", "title": "Nine Queens", "identity": 18079}
+{"sequence": 566, "event": "eligibility_result", "at_seconds": 18.778994, "identity": 18079, "title": "Nine Queens", "result": "eligible"}
+{"sequence": 567, "event": "span_start", "at_seconds": 18.780067, "phase": "persist_results", "count": 4}
+{"sequence": 568, "event": "span_end", "at_seconds": 18.791358, "phase": "persist_results", "seconds": 0.011286, "state": "completed", "count": 4}
+{"sequence": 569, "event": "span_start", "at_seconds": 18.791707, "phase": "candidate_eligibility", "title": "Matchstick Men", "identity": 7270}
+{"sequence": 570, "event": "span_end", "at_seconds": 18.792, "phase": "candidate_eligibility", "seconds": 0.000292, "state": "completed", "title": "Matchstick Men", "identity": 7270}
+{"sequence": 571, "event": "eligibility_result", "at_seconds": 18.792209, "identity": 7270, "title": "Matchstick Men", "result": "eligible"}
+{"sequence": 572, "event": "span_start", "at_seconds": 18.793328, "phase": "candidate_eligibility", "title": "Lucky Number Slevin", "identity": 186}
+{"sequence": 573, "event": "span_end", "at_seconds": 18.793609, "phase": "candidate_eligibility", "seconds": 0.00028, "state": "completed", "title": "Lucky Number Slevin", "identity": 186}
+{"sequence": 574, "event": "eligibility_result", "at_seconds": 18.793812, "identity": 186, "title": "Lucky Number Slevin", "result": "eligible"}
+{"sequence": 575, "event": "span_start", "at_seconds": 18.794868, "phase": "candidate_eligibility", "title": "The Illusionist", "identity": 1491}
+{"sequence": 576, "event": "span_end", "at_seconds": 18.795123, "phase": "candidate_eligibility", "seconds": 0.000253, "state": "completed", "title": "The Illusionist", "identity": 1491}
+{"sequence": 577, "event": "eligibility_result", "at_seconds": 18.795324, "identity": 1491, "title": "The Illusionist", "result": "eligible"}
+{"sequence": 578, "event": "span_start", "at_seconds": 18.796398, "phase": "candidate_eligibility", "title": "The Visit", "identity": 298312}
+{"sequence": 579, "event": "span_end", "at_seconds": 18.796666, "phase": "candidate_eligibility", "seconds": 0.000266, "state": "completed", "title": "The Visit", "identity": 298312}
+{"sequence": 580, "event": "eligibility_result", "at_seconds": 18.796881, "identity": 298312, "title": "The Visit", "result": "eligible"}
+{"sequence": 581, "event": "span_start", "at_seconds": 18.797975, "phase": "persist_results", "count": 4}
+{"sequence": 582, "event": "span_end", "at_seconds": 18.809394, "phase": "persist_results", "seconds": 0.011415, "state": "completed", "count": 4}
+{"sequence": 583, "event": "span_start", "at_seconds": 18.809685, "phase": "candidate_eligibility", "title": "Sleepaway Camp", "identity": 13567}
+{"sequence": 584, "event": "span_end", "at_seconds": 18.809933, "phase": "candidate_eligibility", "seconds": 0.000247, "state": "completed", "title": "Sleepaway Camp", "identity": 13567}
+{"sequence": 585, "event": "eligibility_result", "at_seconds": 18.810137, "identity": 13567, "title": "Sleepaway Camp", "result": "eligible"}
+{"sequence": 586, "event": "span_start", "at_seconds": 18.811261, "phase": "candidate_eligibility", "title": "Dead Silence", "identity": 14001}
+{"sequence": 587, "event": "span_end", "at_seconds": 18.811514, "phase": "candidate_eligibility", "seconds": 0.000251, "state": "completed", "title": "Dead Silence", "identity": 14001}
+{"sequence": 588, "event": "eligibility_result", "at_seconds": 18.811714, "identity": 14001, "title": "Dead Silence", "result": "eligible"}
+{"sequence": 589, "event": "span_start", "at_seconds": 18.812811, "phase": "candidate_eligibility", "title": "Shattered", "identity": 2071}
+{"sequence": 590, "event": "span_end", "at_seconds": 18.813059, "phase": "candidate_eligibility", "seconds": 0.000246, "state": "completed", "title": "Shattered", "identity": 2071}
+{"sequence": 591, "event": "eligibility_result", "at_seconds": 18.813262, "identity": 2071, "title": "Shattered", "result": "eligible"}
+{"sequence": 592, "event": "span_start", "at_seconds": 18.814413, "phase": "candidate_eligibility", "title": "Sorry to Bother You", "identity": 424781}
+{"sequence": 593, "event": "span_end", "at_seconds": 18.814657, "phase": "candidate_eligibility", "seconds": 0.000243, "state": "completed", "title": "Sorry to Bother You", "identity": 424781}
+{"sequence": 594, "event": "eligibility_result", "at_seconds": 18.814873, "identity": 424781, "title": "Sorry to Bother You", "result": "eligible"}
+{"sequence": 595, "event": "span_start", "at_seconds": 18.815937, "phase": "persist_results", "count": 4}
+{"sequence": 596, "event": "span_end", "at_seconds": 18.826906, "phase": "persist_results", "seconds": 0.010966, "state": "completed", "count": 4}
+{"sequence": 597, "event": "span_start", "at_seconds": 18.827171, "phase": "candidate_eligibility", "title": "Upgrade", "identity": 500664}
+{"sequence": 598, "event": "span_end", "at_seconds": 18.827415, "phase": "candidate_eligibility", "seconds": 0.000243, "state": "completed", "title": "Upgrade", "identity": 500664}
+{"sequence": 599, "event": "eligibility_result", "at_seconds": 18.827614, "identity": 500664, "title": "Upgrade", "result": "eligible"}
+{"sequence": 600, "event": "span_start", "at_seconds": 18.828823, "phase": "persist_results", "count": 1}
+{"sequence": 601, "event": "span_end", "at_seconds": 18.840117, "phase": "persist_results", "seconds": 0.011288, "state": "completed", "count": 1}
+{"sequence": 602, "event": "span_end", "at_seconds": 18.860813, "phase": "tmdb_matching", "seconds": 0.262294, "state": "completed"}
+{"sequence": 603, "event": "span_end", "at_seconds": 18.861319, "phase": "feature_total", "seconds": 18.395353, "state": "completed"}
+{"sequence": 604, "event": "job_finished", "at_seconds": 18.866425, "state": "completed", "message": "Requested verified target reached.", "accepted_count": 50, "inference_attempts": 1, "tmdb_requests": 123, "elapsed_seconds": 18.42958}

@@ -1,3 +1,4 @@
+from services.tmdb_people import normalize_tmdb_person_details
 import atexit
 import copy
 import datetime
@@ -33,6 +34,10 @@ from services.catalog_repository import CatalogRepository, catalog_database_path
 from services.movie_relationships import MovieRelationships
 from services.movie_awards_store import MovieAwardsStore
 from services.movie_awards_routes import register_movie_awards_routes
+from services.movie_ratings import MovieRatingsService, movie_identity
+from services.movie_ratings_store import MovieRatingsStore
+from services.movie_ratings_routes import register_movie_ratings_routes
+from services.plex_transport import plex_json
 from services.movie_awards_refresh import MovieAwardsRefresh, BoundedSourceTransport, RuntimeAwardsSources, bundled_seed_loader
 from services.catalog_writer_lease import CatalogWriterLease, CatalogWriterLeaseError
 from services.canonical_catalog import (
@@ -44,6 +49,7 @@ from services.canonical_catalog import (
 from services.curation_store import UserCurationStore, normalize_curated_movie as _normalize_curated_movie
 from services.curation_routes import register_curation_routes
 from services.frontend_routes import register_frontend_routes
+from services.streaming_templates import DEFAULT_STREAMING_MOVIE_TEMPLATE
 from services.iptv_provider_manager import IPTVProviderManager
 from services.iptv_routes import register_iptv_routes
 from services.player_config import PlayerConfig
@@ -98,6 +104,7 @@ from flask import Flask, Response, jsonify, request, make_response, send_file, s
 from services.catalog_events import CatalogEventBroker
 from services.library_mutations import LibraryMutationError, LibraryMutationService
 from services.library_ingestion import (
+    StaleReconciliationResult,
     LibraryIngestionCoordinator,
     LibraryIngestionDependencies,
     file_copy_is_stable as _ingestion_file_copy_is_stable,
@@ -301,9 +308,6 @@ FOLLOWED_RELEASE_QUERY_TIMEOUT_SECONDS = 8
 FOLLOWED_RELEASE_DEADLINE_SECONDS = 25
 FOLLOWED_RELEASE_WORKERS = 3
 FOLLOWED_RELEASE_RSS_TIMEOUT_SECONDS = 3
-FOLLOWED_RELEASE_RECHECK_BASE_SECONDS = 24 * 60 * 60
-FOLLOWED_RELEASE_RECHECK_MAX_SECONDS = 7 * 24 * 60 * 60
-FOLLOWED_RELEASE_FAILURE_RETRY_SECONDS = 60 * 60
 _source_search_jobs = {}
 _source_search_jobs_lock = threading.Lock()
 _followed_release_scan_lock = threading.Lock()
@@ -399,6 +403,7 @@ _plex_token     = _cfg.get('plex_token', '')
 _ollama_url     = '' if _TEST_MODE else _cfg.get('ollama_url', 'http://localhost:11434')
 _ollama_model   = _cfg.get('ollama_model', 'gemma4:31b-cloud')
 _ollama_candidate_limit = _coerce_ollama_candidate_limit(_cfg.get('ollama_candidate_limit'))
+_ai_provider_config = {key: copy.deepcopy(_cfg[key]) for key in ('ai_provider', 'chatgpt', 'ai_config_generation') if key in _cfg}
 _ai_control_config = ai_control.coerce_config({
     'enabled': _cfg.get('ai_control_enabled', True),
     'trusted_indexers': _cfg.get('ai_control_trusted_indexers', []),
@@ -411,7 +416,7 @@ _streaming_tv_url_template = str(_cfg.get('streaming_tv_url_template') or '')
 _streaming_enabled = _coerce_bool(_cfg.get('streaming_enabled'), True)
 _streaming_label = str(_cfg.get('streaming_label', 'Stream') or 'Stream').strip() or 'Stream'
 _streaming_url_template = str(
-    _cfg.get('streaming_url_template', 'https://streamimdb.ru/embed/movie/{tmdb_id}') or ''
+    _cfg.get('streaming_url_template', DEFAULT_STREAMING_MOVIE_TEMPLATE) or ''
 ).strip()
 _user_data_dir  = str(_TEST_ROOT / 'user-data') if _TEST_MODE else _cfg.get('user_data_dir', os.path.join(_BASE_DIR, 'data'))
 _tmdb_cache_dir = str(_TEST_ROOT / 'tmdb-cache') if _TEST_MODE else _cfg.get('tmdb_cache_dir', os.path.join(_BASE_DIR, 'cache'))
@@ -433,7 +438,8 @@ def _get_iptv_provider_manager():
     return _iptv_provider_manager
 
 
-register_iptv_routes(app, _get_iptv_provider_manager)
+register_iptv_routes(app, _get_iptv_provider_manager, ai_provider=lambda: _ai_provider_config.get('ai_provider', 'ollama'),
+                     data_root_provider=lambda: _user_data_dir)
 register_player_routes(
     app,
     _player_config,
@@ -705,14 +711,19 @@ def _yts_source_imdb_id(value, *, timeout=YTS_SOURCE_IDENTITY_TIMEOUT_SECONDS):
     with _yts_source_identity_cache_lock:
         cached = _yts_source_identity_cache.get(source_url)
         if cached and cached.get('expires_at', 0) > now:
-            return cached.get('imdb_id', '')
+            # A short RSS-budget failure must not suppress a later source
+            # search that has enough time to verify the same page.
+            if cached.get('imdb_id') or timeout <= cached.get('attempt_timeout', YTS_SOURCE_IDENTITY_TIMEOUT_SECONDS):
+                return cached.get('imdb_id', '')
+    if timeout <= 0:
+        return ''
     imdb_id = ''
     try:
         request = urllib.request.Request(source_url, headers={
             'Accept': 'text/html,application/xhtml+xml',
             'User-Agent': 'CinemaParadiso/2.6 (+https://local.app)',
         })
-        with urllib.request.urlopen(request, timeout=timeout) as response:
+        with urllib.request.urlopen(request, timeout=min(timeout, YTS_SOURCE_IDENTITY_TIMEOUT_SECONDS)) as response:
             payload = response.read(YTS_SOURCE_IDENTITY_MAX_BYTES + 1)
         if len(payload) > YTS_SOURCE_IDENTITY_MAX_BYTES:
             raise ValueError('YTS source page exceeded the identity-read limit')
@@ -725,12 +736,23 @@ def _yts_source_imdb_id(value, *, timeout=YTS_SOURCE_IDENTITY_TIMEOUT_SECONDS):
     with _yts_source_identity_cache_lock:
         _yts_source_identity_cache[source_url] = {
             'imdb_id': imdb_id,
+            'attempt_timeout': min(timeout, YTS_SOURCE_IDENTITY_TIMEOUT_SECONDS),
             'expires_at': now + YTS_SOURCE_IDENTITY_CACHE_TTL_SECONDS,
         }
     return imdb_id
 
 
-def _yts_result_matches_movie_identity(result, movie, *, require_verification=False):
+def _clear_failed_yts_source_identity_checks():
+    """Retry failed identity reads on a fresh Follow scan, not every variant."""
+    with _yts_source_identity_cache_lock:
+        failed_urls = [url for url, entry in _yts_source_identity_cache.items()
+                       if not entry.get('imdb_id')]
+        for url in failed_urls:
+            del _yts_source_identity_cache[url]
+
+
+def _yts_result_matches_movie_identity(result, movie, *, require_verification=False,
+                                     timeout=YTS_SOURCE_IDENTITY_TIMEOUT_SECONDS):
     """Reject only YTS results whose own source page proves a different IMDb movie."""
     if not _is_yts_indexer_name((result or {}).get('indexer')):
         return True
@@ -738,7 +760,7 @@ def _yts_result_matches_movie_identity(result, movie, *, require_verification=Fa
     if not expected_imdb_id:
         return True
     source_url = (result or {}).get('infoUrl') or (result or {}).get('info_url') or ''
-    source_imdb_id = _yts_source_imdb_id(source_url)
+    source_imdb_id = _yts_source_imdb_id(source_url, timeout=timeout)
     if source_imdb_id:
         result['source_imdb_id'] = source_imdb_id
         result['source_identity_verified'] = source_imdb_id == expected_imdb_id
@@ -965,7 +987,17 @@ def _movie_release_queries(movie):
     return [item['query'] for item in _movie_release_query_plan(movie)]
 
 
-def _prowlarr_result_matches_movie(result, movie):
+def _prowlarr_result_matches_movie(result, movie, *, identity_timeout=YTS_SOURCE_IDENTITY_TIMEOUT_SECONDS):
+    # A confirmed YTS IMDb identity is stronger than descriptive release
+    # titles/years (translations, aliases and festival/distribution years).
+    # Unknown identity keeps the existing manual title/year fallback; Follow
+    # separately requires verification before declaring availability.
+    expected_imdb_id = _movie_imdb_id(movie).lower()
+    if expected_imdb_id and _is_yts_indexer_name((result or {}).get('indexer')):
+        source_url = (result or {}).get('infoUrl') or (result or {}).get('info_url') or ''
+        source_imdb_id = _yts_source_imdb_id(source_url, timeout=identity_timeout)
+        if source_imdb_id:
+            return source_imdb_id == expected_imdb_id
     wanted_titles = {
         _norm_movie_title(title)
         for title in [(movie or {}).get('title', ''), *((movie or {}).get('title_aliases') or [])]
@@ -1177,6 +1209,14 @@ def _accepted_identity_record_patch(
     return patch
 
 
+class PathContext(dict):
+    """Independent bounded facts captured before external reconciliation work."""
+    generation = 0
+    inventory_exists = False
+    bootstrap_cutoff = 0
+    evidence_revisions = None
+
+
 class AppMetadataStore:
     _lock_guard = threading.Lock()
     _path_locks = {}
@@ -1201,6 +1241,33 @@ class AppMetadataStore:
         self.metadata_overrides_file = self.base_dir / 'metadata_overrides.json'
         self.posters_dir = self.base_dir / 'posters'
         self.catalog = _catalog_repository_for(self.user_data_dir)
+        self._reconciliation_local = threading.local()
+
+    @staticmethod
+    def _reconciliation_identity(record):
+        return {key: record.get(key) for key in ('tmdb_id', 'imdb_id', 'plex_guid', 'identity_title', 'identity_year', 'identity_status', 'manual_lock', 'manual_locked', 'identity_source', 'decision_origin')}
+
+    @contextmanager
+    def reconciliation_guard(self, path, previous):
+        local = self._reconciliation_local
+        old = getattr(local, 'expected', None)
+        record = self.catalog.get_record('app_metadata/files.json', self._key(path), {})
+        # The bounded candidate may already have been superseded before dispatch.
+        if self._reconciliation_identity(record) != self._reconciliation_identity(previous):
+            raise StaleReconciliationResult('identity changed before reconciliation')
+        observed = _metadata_file_facts(path, probe=False)
+        local.expected = (self._key(path), self._reconciliation_identity(record), observed.get('size'), observed.get('modified_time'))
+        try:
+            yield
+        finally:
+            local.expected = old
+
+    def _check_reconciliation_guard(self, path, current):
+        expected = getattr(self._reconciliation_local, 'expected', None)
+        if expected and expected[0] == self._key(path):
+            observed = _metadata_file_facts(path, probe=False)
+            if self._reconciliation_identity(current) != expected[1] or (observed.get('size'), observed.get('modified_time')) != expected[2:]:
+                raise StaleReconciliationResult('physical or manual inputs changed during external work')
 
     def _document_name(self, path):
         return Path(path).resolve().relative_to(self.user_data_dir).as_posix()
@@ -1276,13 +1343,18 @@ class AppMetadataStore:
         with self._identity_operation_lock:
             key = self._key(path)
             current = self.catalog.get_record('app_metadata/files.json', key, {})
+            self._check_reconciliation_guard(path, current)
             record = {
                 **current,
                 **(patch or {}),
                 'path': str(path or current.get('path', '')),
                 'updated_at': time.time(),
             }
-            return self.catalog.upsert_record('app_metadata/files.json', key, record)
+            saved = self.catalog.upsert_record('app_metadata/files.json', key, record)
+            expected = getattr(self._reconciliation_local, 'expected', None)
+            if expected and expected[0] == key:
+                self._reconciliation_local.expected = (key, self._reconciliation_identity(saved), *expected[2:])
+            return saved
 
     def update_file_records_bulk(self, records_by_path):
         updates = dict(records_by_path or {})
@@ -1338,6 +1410,40 @@ class AppMetadataStore:
             '_poster_override_index': self._index_overrides(poster_overrides),
             '_metadata_override_index': self._index_overrides(metadata_overrides),
         }
+
+    def snapshot_for_paths(self, paths, *, identity_hints=None):
+        keys = list(dict.fromkeys(self._key(path) for path in paths))
+        context = PathContext()
+        with self.catalog.library_read_context() as read:
+            connection = read['connection']
+            for field, name in (('files', 'files'), ('plex_files', 'plex_metadata'), ('manual_matches', 'manual_matches')):
+                context[field] = self.catalog.get_records('app_metadata/' + name + '.json', keys, connection=connection)
+            hints = list((identity_hints or {}).values())
+            dependencies = [*context['files'].values(), *context['plex_files'].values(), *context['manual_matches'].values(), *hints]
+            for key in keys:
+                row = context['files'].get(key, {})
+                fallback = _coordinator_plex_data(key, row.get('filename') or os.path.basename(key), context)
+                if fallback:
+                    context['plex_files'].setdefault(key, fallback)
+                    dependencies.append(fallback)
+            ids = {str(row.get('tmdb_id') or '') for row in dependencies} - {''}
+            for offset in range(0, len(keys), 200):
+                selected = connection.execute('SELECT DISTINCT cm.tmdb_id FROM canonical_movies cm JOIN canonical_movie_files f ON f.movie_key=cm.movie_key WHERE f.path_key IN (SELECT value FROM json_each(?))', (_json.dumps(keys[offset:offset + 200]),))
+                ids.update(str(row[0]) for row in selected if row[0])
+            context['tmdb_movies'] = self.catalog.get_records('app_metadata/tmdb_metadata.json', ids, connection=connection)
+            identities = {key for row in [*dependencies, *context['tmdb_movies'].values()] for key in _ownership_keys(row)}
+            overrides = connection.execute('SELECT DISTINCT o.override_type,o.raw_json FROM movie_overrides o JOIN movie_override_identity_keys k ON k.override_id=o.override_id WHERE k.identity_key IN (SELECT value FROM json_each(?))', (_json.dumps(list(identities)),)).fetchall()
+            for kind in ('poster', 'metadata'):
+                rows = [_json.loads(row[1]) for row in overrides if row[0] == kind]
+                context[kind + '_overrides'] = rows
+                context['_' + kind + '_override_index'] = self._index_overrides(rows)
+            context['inventory'] = self.catalog.inventory_entries(keys, connection=connection)
+            context['conflicts'] = {}
+            context.generation = read['generation']
+            context.evidence_revisions = {key: hashlib.sha256(_json.dumps([self._reconciliation_identity(row), row.get('size'), row.get('modified_time')], sort_keys=True).encode()).hexdigest() for key, row in context['files'].items()}
+            context.inventory_exists = bool(connection.execute("SELECT 1 FROM source_documents WHERE name='app_metadata/library_inventory.json'").fetchone()) or self.library_inventory_file.exists()
+            context.bootstrap_cutoff = _library_inventory_bootstrap_cutoff(self) if not context.inventory_exists else 0
+        return context
 
     @staticmethod
     def _index_overrides(overrides):
@@ -1473,6 +1579,7 @@ class AppMetadataStore:
         facts=None,
     ):
         with self._identity_operation_lock:
+            self._check_reconciliation_guard(path, self.catalog.get_record('app_metadata/files.json', self._key(path), {}))
             metadata = self.save_tmdb_metadata(_normalize_tmdb_metadata(tmdb_metadata))
             tmdb_id = str(metadata.get('tmdb_id', '') or '').strip()
             if not tmdb_id:
@@ -1496,7 +1603,7 @@ class AppMetadataStore:
                 self.catalog.upsert_record('app_metadata/manual_matches.json', key, match)
             else:
                 self.catalog.delete_records('app_metadata/manual_matches.json', [key])
-            current = self._read_json(self.files_file, {'files': {}}).get('files', {}).get(key, {})
+            current = self.catalog.get_record('app_metadata/files.json', key, {})
             self.update_file_record(path, _accepted_identity_record_patch(
                 current,
                 metadata,
@@ -1538,6 +1645,7 @@ class AppMetadataStore:
         facts=None,
     ):
         with self._identity_operation_lock:
+            self._check_reconciliation_guard(path, self.catalog.get_record('app_metadata/files.json', self._key(path), {}))
             saved = self.save_plex_metadata(path, plex_metadata)
             key = self._key(path)
             match = {
@@ -1554,7 +1662,7 @@ class AppMetadataStore:
                 self.catalog.upsert_record('app_metadata/manual_matches.json', key, match)
             else:
                 self.catalog.delete_records('app_metadata/manual_matches.json', [key])
-            current = self._read_json(self.files_file, {'files': {}}).get('files', {}).get(key, {})
+            current = self.catalog.get_record('app_metadata/files.json', key, {})
             self.update_file_record(path, _accepted_identity_record_patch(
                 current,
                 {
@@ -1718,7 +1826,7 @@ class AppMetadataStore:
 
     def prune_missing_path_records(self, current_path_keys, roots=None):
         current = {self._key(path) for path in current_path_keys}
-        records = self._read_json(self.files_file, {'files': {}}).get('files', {})
+        records = self.catalog.path_keys_under_roots(roots) if roots else self._read_json(self.files_file, {'files': {}}).get('files', {})
         roots = [self._key(root) for root in (roots or []) if root]
 
         def inside_roots(path_key):
@@ -2554,6 +2662,7 @@ def _all_config():
         config['ai_control_trusted_indexers'] = _ai_control_config['trusted_indexers']
     if _trusted_release_indexers_configured:
         config['trusted_release_indexers'] = _trusted_release_indexers
+    config.update(copy.deepcopy(_ai_provider_config))
     return config
 
 VIDEO_EXTENSIONS = {'.mkv', '.mp4', '.avi', '.m4v', '.mov', '.wmv', '.flv', '.ts', '.m2ts', '.iso'}
@@ -2596,6 +2705,7 @@ def _close_cp_owned_playback():
 
 
 def _stop_cp_background_runtime(*, close_qbittorrent=False):
+    _close_ai_jobs()
     if close_qbittorrent:
         if _qbt_mode != 'embedded':
             raise RuntimeError('Cinema Paradiso cannot close a system-managed qBittorrent client')
@@ -2709,7 +2819,7 @@ def _apply_completed_download_identity(job, store=None):
             'reason': 'The download job has no stable identity',
             'paths': [],
         }
-    paths = _completed_download_video_paths(job.get('imported_paths') or [])
+    paths = list(job.get('paths') or _completed_download_video_paths(job.get('imported_paths') or []))
     if not paths:
         return {
             'state': 'deferred',
@@ -2724,10 +2834,13 @@ def _apply_completed_download_identity(job, store=None):
             store=store,
             refresh=not bool(store.get_tmdb_metadata(tmdb_id)),
             match_source='download_submission',
+            raise_errors=True,
         )
     else:
-        metadata = _fetch_tmdb_metadata_by_imdb(imdb_id, store=store, match_source='download_submission')
+        metadata = _fetch_tmdb_metadata_by_imdb(imdb_id, store=store, match_source='download_submission', raise_errors=True)
         tmdb_id = str(metadata.get('tmdb_id') or '').strip()
+    if not metadata and tmdb_id:
+        raise ValueError('The download identity returned no Movie metadata')
     if not tmdb_id:
         return {
             'state': 'deferred',
@@ -2777,68 +2890,48 @@ def _handle_completed_qbittorrent_imports(manager, results):
     if pending:
         _library_cache = {}
         store = _metadata_store()
-        handoffs = {}
-        for item in pending:
-            key = str(item.get('hash') or '')
-            try:
-                handoffs[key] = _apply_completed_download_identity(item, store=store)
-            except Exception as error:
-                handoffs[key] = {
-                    'state': 'failed',
-                    'reason': str(error),
-                    'paths': [],
-                }
+        repository = store.catalog
         for item in pending:
             if not item.get('hash'):
                 continue
-            handoff = handoffs.get(str(item.get('hash') or ''), {})
-            paths = [] if handoff.get('state') == 'failed' else list(
-                handoff.get('paths') or _completed_download_video_paths(item.get('imported_paths') or [])
-            )
-            committed = _catalog_repository().final_card_publication(paths)
-            complete = bool(paths) and len(committed) == len(paths)
-            queue_result = {'accepted': 0, 'rejected': 0}
-            if not complete and paths:
-                identity_hints = {
-                    path: handoff.get('metadata')
-                    for path in paths
-                    if handoff.get('metadata')
-                }
+            discovered = _completed_download_video_paths(item.get('imported_paths') or [])
+            if not discovered:
+                reason = 'The download job has no stable identity' if not (item.get('tmdb_id') or item.get('imdb_id')) else 'No imported video file is available for identity handoff'
+                journal = {'state': 'deferred', 'reason': reason, 'paths': []}
+                if item.get('identity_handoff') != journal:
+                    manager.jobs.upsert(item['hash'], {'library_scan_pending': True, 'identity_handoff': journal})
+                continue
+            primary = discovered[0]
+            record = repository.get_record('app_metadata/files.json', store._key(primary), {})
+            episode = record.get('_ingestion_retry') or {}
+            source = {key: str(item.get(key) or '') for key in ('tmdb_id', 'imdb_id', 'title', 'year')}
+            source['paths'] = discovered
+            handoff = dict(episode.get('handoff') or {})
+            same_source = episode.get('source_identity') == source
+            if not same_source:
+                handoff = {}
+            targets = [] if handoff.get('state') == 'failed' else list(handoff.get('paths') or (discovered if handoff.get('state') == 'deferred' else []))
+            statuses = repository.publication_status(targets)
+            complete = bool(targets) and all(statuses.get(store._key(path), {}).get('publication_committed') for path in targets)
+            if complete:
+                _catalog_event_broker.publish(repository.generation('media'), reason='qbittorrent',
+                    movie_keys=[statuses[store._key(path)]['movie_key'] for path in targets],
+                    changed_count=len(targets), correlation_id=f"qbt:{item['hash']}")
+            elif not same_source or episode.get('state') not in {'blocked', 'complete'} or handoff.get('state') == 'deferred' or any((status.get('eligible_to_publish') and not status.get('publication_committed')) or status.get('recoverable_prepared') for status in statuses.values()):
                 coordinator = _library_ingestion_coordinator()
-                coordinator.reconcile_paths_now(paths, identity_hints=identity_hints)
-                try:
-                    _prepare_final_card_assets(paths)
-                    committed = _catalog_repository().final_card_publication(paths)
-                except MediaAssetError:
-                    committed = []
-                complete = len(committed) == len(paths)
-                if complete:
-                    _catalog_event_broker.publish(
-                        _catalog_repository().generation('media'),
-                        reason='qbittorrent',
-                        movie_keys=[publication['movie_key'] for publication in committed],
-                        changed_count=len(committed),
-                        correlation_id=f"qbt:{item['hash']}",
-                    )
-                else:
-                    queue_result = coordinator.reconcile_paths(
-                        paths,
-                        reason='qbittorrent',
-                        correlation_id=f"qbt:{item['hash']}",
-                        identity_hints=identity_hints,
-                    )
-            journal_handoff = {
-                key: value for key, value in handoff.items() if key != 'metadata'
-            }
-            if paths:
-                journal_handoff.update({
-                    'state': 'applied' if complete else 'queued',
-                    'queue': queue_result,
-                })
-            manager.jobs.upsert(item['hash'], {
-                'library_scan_pending': not complete,
-                'identity_handoff': journal_handoff,
-            })
+                coordinator.reconcile_paths([primary], reason='qbittorrent', correlation_id=f"qbt:{item['hash']}",
+                    require_publication=True, source_identity=source)
+            if complete:
+                journal = {**handoff, 'state': 'applied', 'paths': targets}
+            elif episode.get('state') == 'blocked' and same_source:
+                journal = {**handoff, 'state': 'failed', 'reason': episode.get('last_error') or 'Publication requires review', 'paths': targets}
+            elif handoff.get('state') == 'deferred' and not source['tmdb_id'] and not source['imdb_id']:
+                journal = handoff
+            else:
+                journal = {**handoff, 'state': 'queued', 'paths': targets}
+            patch = {'library_scan_pending': not complete, 'identity_handoff': journal}
+            if any(item.get(key) != value for key, value in patch.items()):
+                manager.jobs.upsert(item['hash'], patch)
     for item in outside_library:
         if item.get('hash'):
             manager.jobs.upsert(item['hash'], {
@@ -3389,8 +3482,13 @@ def _search_movie_on_single_indexer(
                 continue
             errors.append(str(error))
             continue
+        result_deadline = deadline_at or (time.monotonic() + query_timeout)
         for result in rows:
-            if not _prowlarr_result_matches_movie(result, movie):
+            identity_timeout = _remaining_timeout(result_deadline, query_timeout)
+            if identity_timeout <= 0:
+                timed_out = True
+                break
+            if not _prowlarr_result_matches_movie(result, movie, identity_timeout=identity_timeout):
                 continue
             key = _prowlarr_result_key(result)
             if key in seen:
@@ -3853,7 +3951,7 @@ def _find_best_followed_release(movie, context=None):
     return _probe_followed_release(movie, context).get('release')
 
 
-def _followed_rss_release(movie, rows):
+def _followed_rss_release(movie, rows, *, identity_deadline_at=None):
     if not _movie_imdb_id(movie):
         return None
     for row in rows or []:
@@ -3863,12 +3961,20 @@ def _followed_rss_release(movie, rows):
                 'title': variant.get('title', ''),
                 'indexer': 'YTS RSS',
                 'infoUrl': variant.get('info_url', ''),
+                'magnetUrl': variant.get('magnet_url', ''),
+                'downloadUrl': variant.get('download_url', ''),
+                'infoHash': variant.get('info_hash', ''),
             }
-            if not _prowlarr_result_matches_movie(result, movie):
+            identity_timeout = (YTS_SOURCE_IDENTITY_TIMEOUT_SECONDS if identity_deadline_at is None
+                                else max(0, identity_deadline_at - time.monotonic()))
+            if not _prowlarr_result_matches_movie(result, movie, identity_timeout=identity_timeout):
                 continue
             # The Follow engine is automatic: do not mark an RSS item available
             # unless its own YTS page confirms the followed movie's IMDb identity.
-            if not _yts_result_matches_movie_identity(result, movie, require_verification=True):
+            identity_timeout = (YTS_SOURCE_IDENTITY_TIMEOUT_SECONDS if identity_deadline_at is None
+                                else max(0, identity_deadline_at - time.monotonic()))
+            if not _yts_result_matches_movie_identity(result, movie, require_verification=True,
+                                                    timeout=identity_timeout):
                 continue
             candidate = _followed_release_candidate(result, {'YTS RSS'}, indexer_override='YTS RSS')
             if candidate:
@@ -3913,38 +4019,15 @@ def _followed_release_date(movie):
         return None
 
 
-def _followed_release_date_epoch(release_date):
-    return time.mktime(datetime.datetime.combine(release_date, datetime.time.min).timetuple())
-
-
-def _followed_release_eligibility(movie, now):
-    if str((movie or {}).get('status') or 'watching') == 'available':
-        return {'eligible': False, 'reason': 'available', 'patch': {}}
-    release_date = _followed_release_date(movie)
-    today = datetime.datetime.fromtimestamp(now).date()
-    if release_date and release_date > today:
-        return {
-            'eligible': False,
-            'reason': 'unreleased',
-            'patch': {'next_check_at': _followed_release_date_epoch(release_date)},
-        }
-    if float((movie or {}).get('next_check_at') or 0) > now:
-        return {'eligible': False, 'reason': 'not_due', 'patch': {}}
-    return {'eligible': True, 'reason': 'due', 'patch': {}}
-
-
 def _followed_release_miss_patch(movie, now):
     miss_count = max(0, int((movie or {}).get('miss_count') or 0)) + 1
-    delay = min(
-        FOLLOWED_RELEASE_RECHECK_MAX_SECONDS,
-        FOLLOWED_RELEASE_RECHECK_BASE_SECONDS * (2 ** min(miss_count - 1, 3)),
-    )
     return {
         'status': 'watching',
         'best_release': {},
         'last_checked': now,
         'last_attempted': now,
-        'next_check_at': now + delay,
+        # Clear historical schedules; Movie Follow is startup/Scan driven.
+        'next_check_at': 0,
         'miss_count': miss_count,
     }
 
@@ -3952,7 +4035,7 @@ def _followed_release_miss_patch(movie, now):
 def _followed_release_failure_patch(now):
     return {
         'last_attempted': now,
-        'next_check_at': now + FOLLOWED_RELEASE_FAILURE_RETRY_SECONDS,
+        'next_check_at': 0,
     }
 
 
@@ -3997,7 +4080,6 @@ def _followed_release_priority(movie):
         rank = 2
     return (
         rank,
-        float((movie or {}).get('next_check_at') or 0),
         -float((movie or {}).get('followed_at') or 0),
     )
 
@@ -4130,12 +4212,16 @@ def _fetch_plex_library():
     if not _plex_url or not _plex_token:
         return {}, {}, {}, {}, []
 
+    ratings_owner = None
+    ratings_config = (_plex_url, _plex_token, str(_user_data_dir))
+    try:
+        ratings_owner = _get_movie_ratings_service()
+        ratings_epoch = ratings_owner.store.epoch
+    except Exception:
+        pass
+
     def plex_get(path):
-        sep = '&' if '?' in path else '?'
-        url = f"{_plex_url}{path}{sep}X-Plex-Token={_plex_token}"
-        req = urllib.request.Request(url, headers={'Accept': 'application/json'})
-        with urllib.request.urlopen(req, timeout=15) as resp:
-            return _json.loads(resp.read().decode())
+        return plex_json(_plex_url, _plex_token, path, timeout=15, max_bytes=None, open_url=urllib.request.urlopen)
 
     data = plex_get('/library/sections')
     sections = data.get('MediaContainer', {}).get('Directory', [])
@@ -4145,9 +4231,13 @@ def _fetch_plex_library():
     unmatched = {}
     matched_by_fname = {}
     unmatched_by_fname = {}
+    rating_facts = []
     for section_key in movie_sections:
         data = plex_get(f'/library/sections/{section_key}/all')
         for item in data.get('MediaContainer', {}).get('Metadata', []):
+            rating_facts.append({'_rt_observed_at': time.time(), **{key: item[key] for key in (
+                'type', 'guid', 'Guid', 'Rating', 'rating', 'ratingImage',
+                'audienceRating', 'audienceRatingImage') if key in item}})
             guid        = item.get('guid', '')
             rating_key  = item.get('ratingKey', '')
             title       = item.get('title', '')
@@ -4191,10 +4281,18 @@ def _fetch_plex_library():
                                      'plex_guid': guid}
                             matched[norm] = entry
                             matched_by_fname.setdefault(fname, entry)
+    try:
+        if ratings_owner is not None and ratings_config == (_plex_url, _plex_token, str(_user_data_dir)):
+            ratings_owner.offer_local_snapshot(rating_facts, movie_sections, expected_epoch=ratings_epoch)
+    except Exception:
+        pass  # Optional observations must not fail the existing library sync.
     return matched, unmatched, matched_by_fname, unmatched_by_fname, movie_sections
 
 
 def _qbittorrent_proxy_response(path='', prepare_embedded_html=False):
+    if request.query_string:
+        query = urllib.parse.quote_from_bytes(request.query_string, safe="/?:@!$&'()*+,;=%")
+        path = f'{path}?{query}'
     try:
         status, headers, payload = _get_qbittorrent_manager().proxy(
             path,
@@ -4271,6 +4369,8 @@ def set_plex_config():
     _plex_url   = data.get('url', 'http://localhost:32400').rstrip('/')
     _plex_token = data.get('token', '')
     _save_config(_all_config())
+    if _movie_ratings_instance is not None:
+        _movie_ratings_instance.invalidate_config()
     return jsonify({'success': True})
 
 
@@ -4425,7 +4525,11 @@ def app_data_config():
     except Exception as e:
         return jsonify({'error': f'Cannot create folder: {e}'}), 400
     previous_iptv_provider_manager = _iptv_provider_manager
+    ai_root_changed = Path(user_dir).resolve() != Path(_user_data_dir).resolve()
+    if ai_root_changed:
+        _stop_ai_for_data_root_change()
     _stop_movie_awards_refresh()
+    _stop_movie_ratings()
     _user_data_dir = user_dir
     _tmdb_cache_dir = cache_dir
     _TMDB_CACHE_DIR = _tmdb_cache_dir
@@ -4438,7 +4542,8 @@ def app_data_config():
         previous_iptv_provider_manager.close()
     _save_config(_all_config())
     _start_movie_awards_refresh()
-    return jsonify({'success': True, 'user_data_dir': _user_data_dir, 'tmdb_cache_dir': _tmdb_cache_dir})
+    return jsonify({'success': True, 'user_data_dir': _user_data_dir, 'tmdb_cache_dir': _tmdb_cache_dir,
+                    'chatgpt_reauthentication_required': ai_root_changed})
 
 
 @app.route('/api/prowlarr/config', methods=['GET'])
@@ -4631,6 +4736,8 @@ def _ai_control_tmdb_movie_payload(raw):
     return {
         'tmdb_id': str(raw.get('id') or raw.get('tmdb_id') or ''),
         'title': raw.get('title') or raw.get('name') or '',
+        'original_title': raw.get('original_title', ''),
+        'original_language': raw.get('original_language', ''),
         'year': year,
         'poster_url': raw.get('poster_url') or (f"https://image.tmdb.org/t/p/w342{poster_path}" if poster_path else ''),
         'genres': raw.get('genres') or genres,
@@ -4927,6 +5034,9 @@ def _ai_control_submit_download(item):
 
 @app.route('/api/ai-control/preview', methods=['POST'])
 def ai_control_preview():
+    if _ai_provider_config.get('ai_provider', 'ollama') == 'chatgpt':
+        return jsonify({'error': 'Use the selected provider job endpoint', 'code': 'ai_job_endpoint_required',
+                        'endpoint': '/api/ai/control/turns'}), 409
     data = request.get_json(silent=True) or {}
     prompt = str(data.get('prompt', '') or '').strip()
     if not prompt:
@@ -4957,6 +5067,8 @@ def ai_control_execute():
         return jsonify({'error': 'plan_id is required'}), 400
     try:
         stored_plan = _ai_control_plan_store.get(plan_id)
+        if (stored_plan or {}).get('ai_provenance', {}).get('provider') == 'chatgpt':
+            return jsonify({'error': 'Confirm the GPT action through its recorded review', 'code': 'ai_job_endpoint_required'}), 409
         prepare_download = _ai_control_download_preparer() if (stored_plan or {}).get('action') == 'download' else None
         result = ai_control.execute_plan(
             plan_id,
@@ -4978,23 +5090,52 @@ def ai_control_execute():
 
 @app.route('/api/streaming/config', methods=['GET', 'POST'])
 def streaming_config():
-    from services.streaming_templates import validate_tv_template, effective_tv_template
+    from services.streaming_templates import (
+        validate_tv_template, effective_tv_template, identify_streaming_provider,
+        streaming_provider_options, movie_streaming_sources,
+    )
     global _streaming_enabled, _streaming_label, _streaming_url_template, _streaming_tv_url_template
-    if request.method == 'GET':
-        return jsonify({
+
+    def current_config():
+        try:
+            _, registry = IPTVProviderManager._read_provider_registry(_user_data_dir)
+            iptv_configured = bool(registry['providers'])
+            iptv_providers = [{'provider_id': item['provider_id'], 'name': item['name']} for item in registry['providers']]
+        except (OSError, RuntimeError, ValueError):
+            iptv_configured = True
+            iptv_providers = []
+        return {
+            'iptv_configured': iptv_configured,
+            'iptv_providers': iptv_providers,
             'enabled': _streaming_enabled,
             'label': _streaming_label,
             'url_template': _streaming_url_template,
+            'provider': identify_streaming_provider(_streaming_url_template, _streaming_tv_url_template),
+            'providers': streaming_provider_options(),
+            'movie_sources': movie_streaming_sources(_streaming_enabled, _streaming_url_template, _streaming_label),
             **({'tv_url_template': effective_tv_template(_streaming_url_template, _streaming_tv_url_template)} if _tv_enabled or _streaming_tv_url_template else {}),
-        })
-    data = request.get_json(silent=True) or {}
+        }
+
+    if request.method == 'GET':
+        return jsonify(current_config())
+    data = request.get_json(silent=True)
+    if not isinstance(data, dict):
+        return jsonify({'error': 'Streaming settings must be a JSON object'}), 400
+    preset = None
+    if 'provider' in data:
+        preset = next((option for option in streaming_provider_options() if option['id'] == data['provider']), None)
+        if preset is None and data['provider'] != 'custom':
+            return jsonify({'error': 'Unknown streaming provider'}), 400
     label = str(data.get('label', _streaming_label) or '').strip() or 'Stream'
-    url_template = str(data.get('url_template', _streaming_url_template) or '').strip()
+    url_template = preset['url_template'] if preset else str(data.get('url_template', _streaming_url_template) or '').strip()
     if url_template and not re.match(r'^https?://', url_template, flags=re.IGNORECASE):
         return jsonify({'error': 'Streaming URL template must start with http:// or https://'}), 400
-    from services.streaming_templates import validate_tv_template, effective_tv_template
     try:
-        tv_template = validate_tv_template(data.get('tv_url_template', _streaming_tv_url_template))
+        if url_template and not urllib.parse.urlsplit(url_template).hostname:
+            raise ValueError('Streaming URL template must include an http or https host')
+        tv_template = preset['tv_url_template'] if preset else validate_tv_template(data.get('tv_url_template', _streaming_tv_url_template))
+        # Resolve the effective pair before changing runtime or persisted state.
+        effective_tv_template(url_template, tv_template)
     except ValueError as error:
         return jsonify({'error': str(error)}), 400
     _streaming_tv_url_template = tv_template
@@ -5002,13 +5143,7 @@ def streaming_config():
     _streaming_label = label
     _streaming_url_template = url_template
     _save_config(_all_config())
-    return jsonify({
-        'success': True,
-        'enabled': _streaming_enabled,
-        'label': _streaming_label,
-        'url_template': _streaming_url_template,
-            **({'tv_url_template': effective_tv_template(_streaming_url_template, _streaming_tv_url_template)} if _tv_enabled or _streaming_tv_url_template else {}),
-    })
+    return jsonify(success=True, **current_config())
 
 
 @app.route('/api/prowlarr/test')
@@ -5601,17 +5736,17 @@ def library_details():
     })
 
 
-def _maintenance_audit_from_catalog():
+def _maintenance_audit_from_catalog(read_context=None):
     """Project maintenance queues from authoritative stored file facts.
 
     Physical existence is reconciler/File View ownership. An ordinary Movie View
     request must not restat every catalog path to build its upgrade annotations.
     """
     repository = _catalog_repository()
-    generation = repository.generation('media')
+    generation = read_context['generation'] if read_context is not None else repository.generation('media')
     if _maintenance_audit_cache.get('generation') == generation and _maintenance_audit_cache.get('audit') is not None:
         return _maintenance_audit_cache['audit']
-    candidates = _catalog_maintenance_candidates(repository)
+    candidates = _catalog_maintenance_candidates(repository, read_context=read_context) if read_context is not None else _catalog_maintenance_candidates(repository)
     audit = build_maintenance_audit(candidates, generation=generation)
     _maintenance_audit_cache['generation'] = generation
     _maintenance_audit_cache['audit'] = audit
@@ -5628,10 +5763,11 @@ def _catalog_identity_candidates(repository=None):
     return candidates
 
 
-def _catalog_maintenance_candidates(repository=None):
+def _catalog_maintenance_candidates(repository=None, *, read_context=None):
     repository = repository or _catalog_repository()
-    fingerprints = _metadata_store().get_identity_audit_fingerprints()
-    candidates = repository.store.maintenance_candidates()
+    connection = read_context['connection'] if read_context is not None else None
+    candidates = repository.store.maintenance_candidates(connection=connection)
+    fingerprints = repository.get_records('app_metadata/identity_audit_fingerprints.json', [_norm(item.get('path') or '') for item in candidates], connection=connection)
     for candidate in candidates:
         path = str(candidate.get('path') or '')
         candidate['audit_fingerprint_json'] = dict(
@@ -5737,15 +5873,15 @@ def _library_people_item(item):
 _maintenance_upgrade_key_cache = {'generation': None, 'paths': set()}
 
 
-def _maintenance_upgrade_path_keys():
+def _maintenance_upgrade_path_keys(read_context=None):
     repository = _catalog_repository()
-    generation = repository.generation('media')
+    generation = read_context['generation'] if read_context is not None else repository.generation('media')
     if _maintenance_upgrade_key_cache['generation'] == generation:
         return set(_maintenance_upgrade_key_cache['paths'])
     paths = {
         _norm(item.get('path', ''))
         for item in (
-            (_maintenance_audit_from_catalog().get('upgrades') or {}).get('items') or []
+            (_maintenance_audit_from_catalog(read_context=read_context).get('upgrades') or {}).get('items') or []
         )
         if item.get('path')
     }
@@ -5792,8 +5928,8 @@ def _library_query_filters(values=None):
     }
 
 
-def _library_cards_payload(store, result, *, reconcile_result=None, force_scan=False, force_plex=False, query_signature=''):
-    upgrade_paths = _maintenance_upgrade_path_keys()
+def _library_cards_payload(store, result, *, reconcile_result=None, force_scan=False, force_plex=False, query_signature='', upgrade_paths=None):
+    upgrade_paths = _maintenance_upgrade_path_keys() if upgrade_paths is None else upgrade_paths
     items = [
         _library_card_item(
             _catalog_library_item(candidate, store, None),
@@ -5815,25 +5951,27 @@ def _library_cards_payload(store, result, *, reconcile_result=None, force_scan=F
         'metadata_matched': int(reconcile_result.get('matched', 0) or 0),
         'metadata_pending': int(reconcile_result.get('pending', 0) or 0),
         'metadata_review': int(reconcile_result.get('review', 0) or 0),
-        'catalog_generation': store.catalog.generation('media'),
+        'catalog_generation': result['catalog_generation'],
         **({'query_signature': query_signature} if query_signature else {}),
     })
 
 
 def _paged_library_cards(store, *, reconcile_result=None, force_scan=False, force_plex=False):
     filters = _library_query_filters()
-    upgrade_paths = _maintenance_upgrade_path_keys()
-    filters['upgrade_path_keys'] = list(upgrade_paths)
-    page = request.args.get('page', 1, type=int)
-    page_size = request.args.get('page_size', 40, type=int)
-    result = store.catalog.library_page(filters, page=page, page_size=page_size)
-    return _library_cards_payload(
-        store,
-        result,
-        reconcile_result=reconcile_result,
-        force_scan=force_scan,
-        force_plex=force_plex,
-    )
+    with store.catalog.library_read_context() as context:
+        upgrade_paths = _maintenance_upgrade_path_keys(read_context=context)
+        filters['upgrade_path_keys'] = list(upgrade_paths)
+        page = request.args.get('page', 1, type=int)
+        page_size = request.args.get('page_size', 40, type=int)
+        result = store.catalog.library_page(filters, page=page, page_size=page_size, read_context=context)
+        return _library_cards_payload(
+            store,
+            result,
+            reconcile_result=reconcile_result,
+            force_scan=force_scan,
+            force_plex=force_plex,
+            upgrade_paths=upgrade_paths,
+        )
 
 
 @app.route('/api/library/search/advanced', methods=['POST'])
@@ -5853,18 +5991,21 @@ def advanced_library_search():
             maximum=ADVANCED_SEARCH_MAX_PAGE_SIZE,
         )
         store = _metadata_store()
-        upgrade_paths = _maintenance_upgrade_path_keys()
-        result = store.catalog.library_page(
-            query=normalized,
-            page=page,
-            page_size=page_size,
-            upgrade_path_keys=upgrade_paths,
-        )
-        return _library_cards_payload(
-            store,
-            result,
-            query_signature=advanced_search_signature(normalized, 'library'),
-        )
+        with store.catalog.library_read_context() as context:
+            upgrade_paths = _maintenance_upgrade_path_keys(read_context=context)
+            result = store.catalog.library_page(
+                query=normalized,
+                page=page,
+                page_size=page_size,
+                upgrade_path_keys=upgrade_paths,
+                read_context=context,
+            )
+            return _library_cards_payload(
+                store,
+                result,
+                query_signature=advanced_search_signature(normalized, 'library'),
+                upgrade_paths=upgrade_paths,
+            )
     except (AdvancedSearchValidationError, TypeError, ValueError) as error:
         return jsonify({'error': str(error)}), 400
 
@@ -5909,7 +6050,7 @@ def library():
             for item in (_library_cache.get('items') or [])
             if item.get('path')
         }
-        reconcile_result = _reconcile_library_files(force_unresolved=True) if force_scan else {}
+        reconcile_result = _reconcile_library_files(force_unresolved=True, retry_blocked=True) if force_scan else {}
         if force_plex or refresh_metadata:
             _auto_sync_plex(force=force_plex)
         if not refresh_metadata:
@@ -6105,30 +6246,25 @@ def library_check():
 @app.route('/api/library/selection', methods=['POST'])
 def library_selection():
     body = request.get_json(silent=True) or {}
-    if 'query' in body:
-        try:
-            normalized = normalize_advanced_search_query(body.get('query'), 'library')
-            upgrade_paths = _maintenance_upgrade_path_keys()
-            paths = _catalog_repository().library_selection_paths(
-                query=normalized,
-                upgrade_path_keys=upgrade_paths,
-            )
+    repository = _catalog_repository()
+    try:
+        normalized = normalize_advanced_search_query(body.get('query'), 'library') if 'query' in body else None
+        with repository.library_read_context() as context:
+            upgrade_paths = _maintenance_upgrade_path_keys(read_context=context)
+            if normalized is not None:
+                paths = repository.library_selection_paths(query=normalized, upgrade_path_keys=upgrade_paths, read_context=context)
+            else:
+                filters = _library_query_filters(body.get('filters') or body)
+                filters['upgrade_path_keys'] = list(upgrade_paths)
+                paths = repository.library_selection_paths(filters, read_context=context)
             return jsonify({
                 'paths': paths,
                 'count': len(paths),
-                'query_signature': advanced_search_signature(normalized, 'library'),
-                'catalog_generation': _catalog_repository().generation('media'),
+                **({'query_signature': advanced_search_signature(normalized, 'library')} if normalized is not None else {}),
+                'catalog_generation': context['generation'],
             })
-        except AdvancedSearchValidationError as error:
-            return jsonify({'error': str(error)}), 400
-    filters = _library_query_filters(body.get('filters') or body)
-    filters['upgrade_path_keys'] = list(_maintenance_upgrade_path_keys())
-    paths = _catalog_repository().library_selection_paths(filters)
-    return jsonify({
-        'paths': paths,
-        'count': len(paths),
-        'catalog_generation': _catalog_repository().generation('media'),
-    })
+    except AdvancedSearchValidationError as error:
+        return jsonify({'error': str(error)}), 400
 
 
 @app.route('/api/library/selection/items', methods=['POST'])
@@ -7224,19 +7360,35 @@ def _tmdb_movie_id(movie):
     return str((movie or {}).get('id') or (movie or {}).get('tmdb_id') or '').strip()
 
 
-def _tmdb_sort_summaries(movies, sort_key):
-    movies = list(movies or [])
-    if sort_key == 'vote_average.desc':
-        movies.sort(key=lambda movie: (float(movie.get('vote_average') or movie.get('tmdb_rating') or 0), _tmdb_movie_id(movie)), reverse=True)
-    elif sort_key == 'vote_count.desc':
-        movies.sort(key=lambda movie: (int(movie.get('vote_count') or movie.get('tmdb_vote_count') or 0), _tmdb_movie_id(movie)), reverse=True)
-    elif sort_key == 'primary_release_date.desc':
-        movies.sort(key=lambda movie: (str(movie.get('release_date') or ''), _tmdb_movie_id(movie)), reverse=True)
-    elif sort_key == 'title.asc':
-        movies.sort(key=lambda movie: (str(movie.get('title') or movie.get('original_title') or '').casefold(), _tmdb_movie_id(movie)))
-    elif sort_key == 'popularity.desc':
-        movies.sort(key=lambda movie: (float(movie.get('popularity') or 0), _tmdb_movie_id(movie)), reverse=True)
-    return movies
+def _tmdb_filter_upcoming_movies(movies, today):
+    """Upcoming requires a known calendar release date today or later."""
+    kept = []
+    for movie in movies:
+        release = str(movie.get('release_date') or '').strip()
+        if not re.fullmatch(r'\d{4}-\d{2}-\d{2}', release):
+            continue
+        try:
+            release_date = datetime.date.fromisoformat(release)
+        except ValueError:
+            continue
+        if release_date >= today:
+            kept.append(movie)
+    return kept
+
+
+def _tmdb_upcoming_provider_url(url, today):
+    """Intersect additional Discover criteria with Upcoming's date floor."""
+    parsed = urllib.parse.urlsplit(url)
+    if parsed.path != '/3/discover/movie':
+        return url
+    params = dict(urllib.parse.parse_qsl(parsed.query, keep_blank_values=True))
+    params['primary_release_date.gte'] = max(
+        params.get('primary_release_date.gte', ''), today.isoformat(),
+    )
+    return urllib.parse.urlunsplit(parsed._replace(query=urllib.parse.urlencode(params)))
+
+
+from services.tmdb_advanced_search import sort_movie_summaries as _tmdb_sort_summaries
 
 
 def _tmdb_filter_local_movies(movies, local_groups):
@@ -7275,6 +7427,7 @@ def _tmdb_filter_local_movies(movies, local_groups):
 
 
 def _tmdb_person_seed_movies(plan):
+    today = datetime.date.today()
     people_group = next((group for group in plan.query['groups'] if group['type'] == 'person'), None)
     if not people_group:
         return None
@@ -7290,6 +7443,8 @@ def _tmdb_person_seed_movies(plan):
         else set.union(*credit_sets)
     ) if credit_sets else set()
     title = plan.title.casefold()
+    if plan.query['feed'] == 'upcoming':
+        ordered_credits = _tmdb_filter_upcoming_movies(ordered_credits, today)
     seen = set()
     movies = []
     for movie in ordered_credits:
@@ -7344,30 +7499,39 @@ def _tmdb_discover_cache_entry(cache_key):
             _tmdb_discover_window_cache_lock.notify_all()
 
 
-def _tmdb_discover_window(plan, page, page_size, people_ids=None, *, first_url=None):
+def _tmdb_discover_window(plan, page, page_size, people_ids=None, *, first_url=None, upcoming=False):
     """Accumulate unique matching results before slicing a Discover page.
 
     Query snapshots are independent of page size and request order. Only a
     proven final page may be short; unfinished filtered scans stay retryable.
     """
-    filtered = bool(plan and (plan.strategy == 'title' or plan.local_groups or people_ids is not None))
+    upcoming = upcoming or bool(plan and plan.query['feed'] == 'upcoming')
+    today = datetime.date.today() if upcoming else None
+    locally_filtered = bool(plan and (plan.strategy == 'title' or plan.local_groups or people_ids is not None))
+    filtered = locally_filtered or upcoming
     first_url = first_url or _tmdb_advanced_url(plan, 1)
+    if upcoming:
+        first_url = _tmdb_upcoming_provider_url(first_url, today)
     cache_key = (
         f"filtered:{advanced_search_signature(plan.query, 'discover')}|adult={_tmdb_include_adult_value()}"
-        if filtered else f'native:{_tmdb_discover_snapshot_key(first_url)}'
+        if locally_filtered else f'native:{_tmdb_discover_snapshot_key(first_url)}'
     )
+    if upcoming:
+        cache_key += f'|upcoming={today.isoformat()}'
     # A locally requested sort needs all matches before its first page is stable.
-    complete_order_required = filtered and plan.query['sort']['key'] != 'auto'
+    complete_order_required = locally_filtered and plan.query['sort']['key'] != 'auto'
     start, end = (page - 1) * page_size, page * page_size
     with _tmdb_discover_cache_entry(cache_key) as entry, entry['lock']:
         fetched_this_request = 0
         while (complete_order_required or len(entry['matches']) <= end) and not entry['provider_exhausted']:
-            if filtered and fetched_this_request >= TMDB_DENSE_SCAN_PAGE_BUDGET:
+            if locally_filtered and fetched_this_request >= TMDB_DENSE_SCAN_PAGE_BUDGET:
                 break
             provider_page = entry['next_provider_page']
             page_url = re.sub(r'([?&])page=\d+', rf'\g<1>page={provider_page}', first_url)
             data = _tmdb_fetch_provider_page(page_url)
             batch = list(data.get('results', []) or [])
+            if upcoming:
+                batch = _tmdb_filter_upcoming_movies(batch, today)
             if plan and plan.strategy == 'title' and plan.summary_groups:
                 batch = [movie for movie in batch if movie_matches_summary(movie, plan.summary_groups, _LANG_COUNTRY)]
             if people_ids is not None:
@@ -7390,7 +7554,7 @@ def _tmdb_discover_window(plan, page, page_size, people_ids=None, *, first_url=N
                 entry['provider_exhausted'] = True
         entry['touched_at'] = time.monotonic()
         ordered = (_tmdb_sort_summaries(entry['matches'], plan.query['sort']['key'])
-                   if filtered else entry['matches'])
+                   if locally_filtered else entry['matches'])
         exhausted = entry['provider_exhausted']
         metadata = _tmdb_page_metadata(entry['provider_total_pages'], page_size, entry['provider_total_results'])
         total_results = len(ordered) if exhausted else (None if filtered else entry['provider_total_results'])
@@ -7812,7 +7976,7 @@ def tmdb_discover():
             base_url = endpoint_map.get(list_name, endpoint_map['trending_week'])
             url = f"{base_url}?api_key={urllib.parse.quote(_tmdb_key)}&language=en-US&page={tmdb_pages[0]}"
 
-        window = _tmdb_discover_window(None, page, page_size, first_url=url)
+        window = _tmdb_discover_window(None, page, page_size, first_url=url, upcoming=list_name == 'upcoming')
         movies = []
         for m in window['results']:
             poster_path = m.get('poster_path', '')
@@ -7827,6 +7991,8 @@ def tmdb_discover():
             movies.append({
                 'tmdb_id':    m.get('id'),
                 'title':      m.get('title', ''),
+                'original_title': m.get('original_title', ''),
+                'original_language': m.get('original_language', ''),
                 'year':       year,
                 'poster_url': f"https://image.tmdb.org/t/p/w342{poster_path}" if poster_path else '',
                 'genres':     genres,
@@ -8004,6 +8170,8 @@ def tmdb_search():
             movies.append({
                 'tmdb_id':    m.get('id'),
                 'title':      m.get('title', ''),
+                'original_title': m.get('original_title', ''),
+                'original_language': m.get('original_language', ''),
                 'year':       movie_year,
                 'poster_url': f"https://image.tmdb.org/t/p/w342{poster_path}" if poster_path else '',
                 'genres':     genres,
@@ -8715,19 +8883,6 @@ def _normalize_tmdb_person(person, include_character=False):
     return result
 
 
-def _normalize_tmdb_person_details_payload(data):
-    return {
-        'id': str(data.get('id', '') or ''),
-        'name': data.get('name', '') or '',
-        'profile_url': _tmdb_image_url(data.get('profile_path'), 'w342'),
-        'biography': data.get('biography', '') or '',
-        'birthday': data.get('birthday', '') or '',
-        'deathday': data.get('deathday', '') or '',
-        'place_of_birth': data.get('place_of_birth', '') or '',
-        'known_for_department': data.get('known_for_department', '') or '',
-        'homepage': data.get('homepage', '') or '',
-    }
-
 
 def _normalize_tmdb_details_payload(data):
     directors = []
@@ -8850,7 +9005,7 @@ def _normalize_tmdb_movie_summary(movie, fallback_title='', fallback_year=''):
     return normalized
 
 
-def _fetch_tmdb_metadata_by_id(tmdb_id, store=None, refresh=False, match_source=''):
+def _fetch_tmdb_metadata_by_id(tmdb_id, store=None, refresh=False, match_source='', *, raise_errors=False):
     tmdb_id = str(tmdb_id or '').strip()
     if not tmdb_id:
         return {}
@@ -8875,10 +9030,12 @@ def _fetch_tmdb_metadata_by_id(tmdb_id, store=None, refresh=False, match_source=
             metadata['match_source'] = match_source
         return store.save_tmdb_metadata(metadata)
     except Exception:
+        if raise_errors:
+            raise
         return cached or {}
 
 
-def _fetch_tmdb_metadata_by_imdb(imdb_id, store=None, match_source=''):
+def _fetch_tmdb_metadata_by_imdb(imdb_id, store=None, match_source='', *, raise_errors=False):
     imdb_id = str(imdb_id or '').strip()
     if not imdb_id or not _tmdb_key:
         return {}
@@ -8904,6 +9061,8 @@ def _fetch_tmdb_metadata_by_imdb(imdb_id, store=None, match_source=''):
             metadata['match_source'] = match_source
         return store.save_tmdb_metadata(metadata)
     except Exception:
+        if raise_errors:
+            raise
         return {}
 
 
@@ -9057,7 +9216,7 @@ def _tmdb_metadata_for_file(file_facts, plex_data=None, store=None, refresh=Fals
             return _fetch_tmdb_metadata_by_id(plex_tmdb_id, store=store, refresh=True, match_source='plex_tmdb_id')
         return {}
     file_record = ((snapshot or {}).get('files', {}) if snapshot is not None
-                   else store._read_json(store.files_file, {'files': {}}).get('files', {})).get(store._key(path), {})
+                   else {store._key(path): store.catalog.get_record('app_metadata/files.json', store._key(path), {})}).get(store._key(path), {})
     accepted_tmdb_id = str(file_record.get('tmdb_id', '') or '').strip()
     if accepted_tmdb_id:
         cached = (
@@ -9249,19 +9408,26 @@ def _library_ingestion_coordinator():
                 _catalog_repository().generation('media'),
                 **event,
             ),
-            apply_identity_hint=lambda path, identity, facts: bool(
-                _metadata_store().accept_tmdb_identity(
-                    path,
-                    identity,
-                    source='download_submission',
-                    decision_origin=DECISION_ORIGIN_LIBRARY_RECONCILE,
-                    facts=facts,
-                )
-            ),
+            apply_identity_hint=lambda path, identity, facts, store=None: _apply_ingestion_identity_hint(path, identity, facts, store=store),
             prepare_final_card_assets=lambda paths: _prepare_final_card_assets(paths),
+            retry_repository=lambda: _catalog_repository(),
+            resolve_source_identity=lambda source: _apply_completed_download_identity(source),
         )
         _library_ingestion_coordinator_instance = LibraryIngestionCoordinator(dependencies)
     return _library_ingestion_coordinator_instance
+
+
+def _apply_ingestion_identity_hint(path, identity, facts, store=None):
+    store = store or _metadata_store()
+    with store._identity_operation_lock:
+        current = store.catalog.get_record('app_metadata/files.json', store._key(path), {})
+        # A transport hint cannot replace an accepted or explicit user identity.
+        # The existing migration/identity owner handles those records instead.
+        if resolve_authoritative_identity(current).get('accepted') or _identity_is_manually_protected(current):
+            return False
+        store.accept_tmdb_identity(path, identity, source='download_submission',
+            decision_origin=DECISION_ORIGIN_LIBRARY_RECONCILE, facts=facts)
+        return True
 
 
 def _library_observer():
@@ -9276,6 +9442,7 @@ def _library_observer():
 
 def _shutdown_library_background_services():
     _stop_movie_awards_refresh()
+    _stop_movie_ratings()
     _catalog_event_broker.shutdown()
     if _library_observer_instance is not None:
         _library_observer_instance.shutdown()
@@ -9418,7 +9585,7 @@ def _record_needs_identity_decision_refresh(record, current_fingerprint=''):
     return True
 
 
-def _reconcile_library_files(force_unresolved=False):
+def _reconcile_library_files(force_unresolved=False, *, retry_blocked=False):
     """Delegate the legacy full-scan contract to the one coordinator owner.
 
     The foreground force-scan route and existing parity tests still depend on this
@@ -9426,7 +9593,7 @@ def _reconcile_library_files(force_unresolved=False):
     to the public queued operation in their separately approved gate.
     """
     return _library_ingestion_coordinator().reconcile_all_now(
-        force_unresolved=force_unresolved
+        force_unresolved=force_unresolved, retry_blocked=retry_blocked
     )
 
 def _tmdb_detail_contract_backfill_ids(store=None, limit=None):
@@ -9716,7 +9883,7 @@ def _resolve_tmdb_identity(path, file_facts, plex_data, store):
                 source='manual_tmdb',
             )
 
-    file_record = store._read_json(store.files_file, {'files': {}}).get('files', {}).get(store._key(path), {})
+    file_record = store.catalog.get_record('app_metadata/files.json', store._key(path), {})
     accepted = resolve_authoritative_identity(file_record).get('accepted')
     plex_tmdb_id = str(plex_data.get('tmdb_id') or '')
     saved_tmdb_id = str(file_record.get('tmdb_id') or '') if accepted else ''
@@ -9910,10 +10077,12 @@ def _identity_queries(path, file_facts=None, plex_data=None):
     return _dedupe_title_year_queries(queries)
 
 
-def _identity_tmdb_candidates(queries):
+def _identity_tmdb_candidates(queries, *, exact_first=False, details=None):
     merged = {}
     for query in queries or []:
-        for candidate in _smart_match_tmdb_candidates(query.get('title', ''), query.get('year', '')):
+        for candidate in _smart_match_tmdb_candidates(query.get('title', ''), query.get('year', ''),
+                                                     **({'exact_first': True} if exact_first else {}),
+                                                     **({'details': details} if details else {})):
             identity = str(candidate.get('tmdb_id') or candidate.get('id') or '')
             if not identity:
                 continue
@@ -9959,7 +10128,7 @@ def _enriched_identity_tmdb_candidates(queries, candidates, store=None):
     return enriched
 
 
-def _migrate_locked_manual_match(path, facts, plex_data, store):
+def _migrate_locked_manual_match(path, facts, plex_data, store, reconciliation_context=None):
     manual_match = store.get_manual_match(path)
     provider = manual_match.get('provider')
     if provider == 'tmdb':
@@ -9973,7 +10142,7 @@ def _migrate_locked_manual_match(path, facts, plex_data, store):
                 match_source='manual_tmdb',
             )
         metadata = store.save_tmdb_metadata(metadata or manual_match)
-        current = store.snapshot().get('files', {}).get(store._key(path), {})
+        current = store.catalog.get_record('app_metadata/files.json', store._key(path), {})
         store.update_file_record(path, _accepted_identity_record_patch(
             current,
             metadata,
@@ -9991,7 +10160,7 @@ def _migrate_locked_manual_match(path, facts, plex_data, store):
         return 'matched'
     if provider == 'plex':
         metadata = store.get_plex_metadata(path) or plex_data
-        current = store.snapshot().get('files', {}).get(store._key(path), {})
+        current = store.catalog.get_record('app_metadata/files.json', store._key(path), {})
         store.update_file_record(path, _accepted_identity_record_patch(
             current,
             {
@@ -10077,11 +10246,11 @@ def _revalidate_accepted_identity(path, provider, store, current_record, facts, 
     return 'review'
 
 
-def _migrate_metadata_path(path, target, store=None, revalidate_accepted=False, facts=None):
+def _migrate_metadata_path(path, target, store=None, revalidate_accepted=False, facts=None, reconciliation_context=None):
     if not os.path.isfile(path) or not _path_library_root(path):
         return 'failed'
     store = store or _metadata_store()
-    snapshot = store.snapshot()
+    snapshot = reconciliation_context if reconciliation_context is not None else store.snapshot_for_paths([path])
     path_key = store._key(path)
     current_record = snapshot.get('files', {}).get(path_key, {})
     facts = dict(facts or _metadata_file_facts(path, probe=False))
@@ -10092,7 +10261,7 @@ def _migrate_metadata_path(path, target, store=None, revalidate_accepted=False, 
         or _plex_matched_by_fname.get(filename.lower(), {})
         or {}
     )
-    locked_outcome = _migrate_locked_manual_match(path, facts, plex_data, store)
+    locked_outcome = _migrate_locked_manual_match(path, facts, plex_data, store, reconciliation_context=snapshot)
     if locked_outcome:
         return locked_outcome
     if (
@@ -11053,13 +11222,16 @@ def _smart_match_tmdb_alternative_titles(tmdb_id):
     return list(titles)
 
 
-def _smart_match_tmdb_candidates(title, year=''):
+def _smart_match_tmdb_candidates(title, year='', *, exact_first=False, details=None):
     merged = {}
     for query_year, source in ((year, 'title_with_year'), ('', 'title_without_year')):
         if not query_year and source == 'title_with_year':
             continue
         for rank, movie in enumerate(_smart_match_tmdb_search(title, query_year), 1):
-            normalized = _normalize_tmdb_movie_summary(movie, title, year)
+            # Query hints are not provider facts. In particular an undated
+            # namesake must never inherit the requested year and beat a film
+            # with a real festival/theatrical date discrepancy.
+            normalized = _normalize_tmdb_movie_summary(movie)
             normalized['original_title'] = str(movie.get('original_title', '') or '')
             identity = str(normalized.get('tmdb_id', '') or '')
             if not identity:
@@ -11072,6 +11244,26 @@ def _smart_match_tmdb_candidates(title, year=''):
             else:
                 current['provider_rank'] = min(int(current.get('provider_rank', rank)), rank)
                 current['query_sources'] = list(dict.fromkeys([*current.get('query_sources', []), source]))
+        if exact_first and source == 'title_with_year':
+            # The same identity owner must accept the complete year-filtered
+            # candidate set. Uncertain, alias-only and wrong-year results retain
+            # the existing deeper searches instead of selecting the first hit.
+            decision = evaluate_identity([{'title': title, 'year': year}], list(merged.values()))
+            selected = decision.get('candidate') or {}
+            release_year = str(selected.get('release_date') or '')[:4]
+            exact_title = _norm_movie_title(title) in {_norm_movie_title(selected.get('title') or ''),
+                                                      _norm_movie_title(selected.get('original_title') or '')}
+            if decision.get('outcome') == 'accepted' and release_year and exact_title:
+                proven = release_year == str(year)
+                if (not proven and details and release_year.isdigit() and str(year).isdigit()
+                        and abs(int(release_year) - int(year)) == 1):
+                    raw = details(selected['tmdb_id'])
+                    if raw and str(raw.get('id')) == str(selected['tmdb_id']):
+                        merged[str(selected['tmdb_id'])]['_resolved_details'] = raw
+                        proven = (str(raw.get('release_date') or '')[:4] == release_year
+                                  and str(year) in _tmdb_release_year_values(raw))
+                if proven:
+                    return sorted(merged.values(), key=lambda item: int(item.get('provider_rank', 999)))
     candidates = sorted(merged.values(), key=lambda item: int(item.get('provider_rank', 999)))
     for candidate in candidates[:3]:
         candidate['alternative_titles'] = _smart_match_tmdb_alternative_titles(candidate.get('tmdb_id'))
@@ -11341,7 +11533,7 @@ def _process_smart_match_context(context, provider, ai_match=None, ai_warning=''
     }
 
 
-def _process_smart_match_batch(paths, provider, method):
+def _process_smart_match_batch(paths, provider, method, *, ai_runner=None):
     contexts = [_smart_match_context(path) for path in paths]
     ai_result = {'matches': {}, 'errors': {}}
     item_ids = [f'item-{index}' for index in range(len(contexts))]
@@ -11357,7 +11549,7 @@ def _process_smart_match_batch(paths, provider, method):
                 'title_hint': record.get('candidate_title') or plex_data.get('plex_title') or parsed.get('title'),
                 'year_hint': record.get('candidate_year') or plex_data.get('plex_year') or parsed.get('year'),
             })
-        ai_result = _smart_match_ai_batch(ai_items)
+        ai_result = (ai_runner or _smart_match_ai_batch)(ai_items)
     results = []
     for item_id, context in zip(item_ids, contexts):
         ai_match = ai_result.get('matches', {}).get(item_id) if method == 'ai' else None
@@ -11375,6 +11567,21 @@ def _process_smart_match_path(path, provider, method):
     return _process_smart_match_batch([path], provider, method)[0]
 
 
+def _process_selected_smart_match_batch(paths, provider, binding):
+    from services.ai_provider import AISelection
+    from services.ai_jobs import AIJobError
+    from services.chatgpt_matching import MovieIdentity
+    from services.chatgpt_recommendations import JobCancellation
+    job_id = binding['ai_job_id']
+    job = _get_ai_job_store().snapshot(job_id)
+    if job['selection'] != binding['selection']:
+        raise AIJobError('native_match_binding_changed')
+    selection = AISelection(**binding['selection'])
+    inference = MovieIdentity(_get_chatgpt_transport(job_id), check_permission=_ai_check_permission)
+    return _process_smart_match_batch(paths, provider, 'ai', ai_runner=lambda items:
+        inference.identify(selection, items, cancel=JobCancellation(_get_ai_job_store(), job_id)))
+
+
 def _get_smart_match_coordinator():
     global _smart_match_coordinator, _smart_match_store_dir
     store_dir = str(Path(_user_data_dir).resolve())
@@ -11387,6 +11594,7 @@ def _get_smart_match_coordinator():
             process_batch=_process_smart_match_batch,
             batch_size=8,
             batch_delay=0.15,
+            process_selected_batch=_process_selected_smart_match_batch,
         )
         _smart_match_store_dir = store_dir
     return _smart_match_coordinator
@@ -11399,6 +11607,9 @@ def _public_smart_match_state(state):
     processed = int(state.get('processed', 0) or 0)
     state['progress_percent'] = round((processed / total) * 100, 1) if total else 0
     state['ollama_available'] = bool(_ollama_url and _ollama_model)
+    selected = _ai_provider_config.get('ai_provider', 'ollama')
+    state['ai_provider'] = selected
+    state['ai_available'] = _ai_provider_service.readiness('F3')['ready'] if selected == 'chatgpt' else state['ollama_available']
     state['providers'] = {
         'tmdb': bool(_tmdb_key),
         'plex': bool(_plex_url and _plex_token),
@@ -11422,7 +11633,9 @@ def smart_match_start():
         return jsonify({'error': 'TMDB is not configured'}), 400
     if provider == 'plex' and not (_plex_url and _plex_token):
         return jsonify({'error': 'Plex is not configured'}), 400
-    if method == 'ai' and not (_ollama_url and _ollama_model):
+    internal_binding = request.environ.get('cp.ai_binding')
+    selected_gpt = method == 'ai' and (internal_binding is not None or _ai_provider_config.get('ai_provider', 'ollama') == 'chatgpt')
+    if method == 'ai' and not selected_gpt and not (_ollama_url and _ollama_model):
         return jsonify({'error': 'Ollama is not configured'}), 400
     store = _metadata_store()
     snapshot = store.snapshot()
@@ -11458,6 +11671,28 @@ def smart_match_start():
             'items': ineligible,
         }), 409
     try:
+        if selected_gpt:
+            from services.ai_provider import AIProviderError, AISelection
+            try:
+                selection = AISelection(**internal_binding['selection']) if internal_binding else _ai_provider_service.snapshot('F3')
+                if selection.feature != 'F3' or selection.provider != 'chatgpt' or selection.skill_hash != _load_chatgpt_skill('F3')['hash']:
+                    raise AIProviderError('invalid_match_binding', 409)
+                _ai_check_permission(selection)
+            except AIProviderError as error:
+                return jsonify({'error': error.code, 'code': error.code}), error.status
+            service = _get_ai_job_service()
+            child_context = {key: internal_binding[key] for key in ('parent_job_id', 'session_id')} if internal_binding else {}
+            operation = service.store.create('F3', selection, {'paths': paths, 'database': provider, **child_context},
+                body.get('request_key') or uuid.uuid4().hex)
+            coordinator = _get_smart_match_coordinator()
+            current = coordinator.status()
+            if current.get('ai_binding', {}).get('ai_job_id') == operation['id']:
+                return jsonify({**_public_smart_match_state(current), 'ai_job_id': operation['id']}), 202
+            state = coordinator.start(paths, provider, method, background=False,
+                ai_binding={'ai_job_id': operation['id'], 'selection': selection.public()})
+            if body.get('background') is not False:
+                service.start(operation['id'])
+            return jsonify({**_public_smart_match_state(state), 'ai_job_id': operation['id']}), 202
         state = _get_smart_match_coordinator().start(
             paths,
             provider,
@@ -11482,6 +11717,10 @@ def smart_match_cancel(job_id):
     coordinator = _get_smart_match_coordinator()
     if coordinator.status().get('id') != job_id:
         return jsonify({'error': 'Smart Match job not found'}), 404
+    ai_job_id = coordinator.status().get('ai_binding', {}).get('ai_job_id')
+    if ai_job_id:
+        operation = _get_ai_job_store().snapshot(ai_job_id)
+        _get_ai_job_store().cancel(ai_job_id, operation['revision'], run_number=operation['cursor'].get('run_number', 0))
     return jsonify(_public_smart_match_state(coordinator.cancel()))
 
 
@@ -11763,7 +12002,7 @@ def tmdb_person():
         req = urllib.request.Request(url, headers={'Accept': 'application/json'})
         with urllib.request.urlopen(req, timeout=10) as resp:
             raw = _json.loads(resp.read().decode())
-        return jsonify(_normalize_tmdb_person_details_payload(raw))
+        return jsonify(normalize_tmdb_person_details(raw))
     except urllib.error.HTTPError as e:
         if e.code == 401:
             return jsonify({'error': 'Invalid TMDB API key - check Settings.'}), 401
@@ -11951,6 +12190,13 @@ def _curation_payload(payload, store=None):
     }
 
 
+def _followed_releases_payload(payload, store=None):
+    store = store or _curation_store()
+    result = store.followed_snapshot(payload)
+    result['movies'] = _sort_followed_releases(result['movies'])
+    return result
+
+
 @app.route('/api/tmdb/collection')
 def tmdb_collection():
     collection_id = request.args.get('collection_id', '').strip()
@@ -12069,9 +12315,9 @@ def user_followed_releases():
     store = _curation_store()
     if request.method == 'GET':
         if request.args.get('check') == '1':
-            return jsonify(_curation_payload(_check_followed_releases(), store))
-        movies = _backfill_followed_release_dates(store, store.followed_all())
-        return jsonify(_curation_payload({'movies': _sort_followed_releases(movies)}, store))
+            return check_user_followed_releases()
+        _backfill_followed_release_dates(store, store.followed_all())
+        return jsonify(_followed_releases_payload({}, store))
     body = request.get_json(force=True, silent=True) or {}
     movie = body.get('movie') or body
     try:
@@ -12079,9 +12325,9 @@ def user_followed_releases():
             profile_id = str(movie.get('profile_id') or _acquisition_repository().profile()['id'])
             _acquisition_repository().profile(profile_id)
             followed = store.follow_movie({**_movie_with_followed_imdb_identity(movie), 'profile_id': profile_id})
-            return jsonify(_curation_payload({'movie': followed, 'movies': _sort_followed_releases(store.followed_all())}, store))
+            return jsonify(_followed_releases_payload({'movie': followed}, store))
         removed = store.unfollow_movie(movie)
-        return jsonify(_curation_payload({'success': True, 'removed': removed, 'movies': _sort_followed_releases(store.followed_all())}, store))
+        return jsonify(_followed_releases_payload({'success': True, 'removed': removed}, store))
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
@@ -12089,9 +12335,9 @@ def user_followed_releases():
 @app.route('/api/user/followed-releases/check', methods=['POST'])
 def check_user_followed_releases():
     if not _followed_release_scan_lock.acquire(blocking=False):
-        return jsonify(_curation_payload(_followed_release_scan_in_progress()))
+        return jsonify(_followed_releases_payload(_followed_release_scan_in_progress()))
     try:
-        return jsonify(_curation_payload(_check_followed_releases()))
+        return jsonify(_followed_releases_payload(_check_followed_releases()))
     except Exception as e:
         return jsonify({'error': str(e)}), 500
     finally:
@@ -12100,14 +12346,10 @@ def check_user_followed_releases():
 
 @app.route('/api/user/followed-releases/reconcile-owned', methods=['POST'])
 def reconcile_owned_user_followed_releases():
-    if not _followed_release_scan_lock.acquire(blocking=False):
-        return jsonify(_curation_payload(_followed_release_scan_in_progress()))
     try:
-        return jsonify(_curation_payload(_reconcile_followed_release_ownership()))
+        return jsonify(_followed_releases_payload(_reconcile_followed_release_ownership()))
     except Exception as e:
         return jsonify({'error': str(e)}), 500
-    finally:
-        _followed_release_scan_lock.release()
 
 
 def _normalize_download_quality(value):
@@ -12930,6 +13172,8 @@ def _ollama_enrich_with_tmdb(title, year):
         return {
             'tmdb_id':      m.get('id'),
             'title':        m.get('title', title),
+            'original_title': m.get('original_title', ''),
+            'original_language': m.get('original_language', ''),
             'year':         yr,
             'poster_url':   f"https://image.tmdb.org/t/p/w342{poster_path}" if poster_path else '',
             'genres':       genres,
@@ -13042,6 +13286,7 @@ _movie_acquisition = MovieAcquisition(SimpleNamespace(
     _TV_RE=_TV_RE,
     _ai_control_source_search=lambda *args, **kwargs: _ai_control_source_search(*args, **kwargs),
     _backfill_followed_release_dates=lambda *args, **kwargs: _backfill_followed_release_dates(*args, **kwargs),
+    _clear_failed_yts_source_identity_checks=lambda: _clear_failed_yts_source_identity_checks(),
     _best_download_variant=lambda *args, **kwargs: _best_download_variant(*args, **kwargs),
     _curated_movie_is_owned=lambda *args, **kwargs: _curated_movie_is_owned(*args, **kwargs),
     _curation_store=lambda *args, **kwargs: _curation_store(*args, **kwargs),
@@ -13050,7 +13295,6 @@ _movie_acquisition = MovieAcquisition(SimpleNamespace(
     _fetch_yts_rss_latest=lambda *args, **kwargs: _fetch_yts_rss_latest(*args, **kwargs),
     _find_owned_movies=lambda *args, **kwargs: _find_owned_movies(*args, **kwargs),
     _followed_release_available_patch=lambda *args, **kwargs: _followed_release_available_patch(*args, **kwargs),
-    _followed_release_eligibility=lambda *args, **kwargs: _followed_release_eligibility(*args, **kwargs),
     _followed_release_failure_patch=lambda *args, **kwargs: _followed_release_failure_patch(*args, **kwargs),
     _followed_release_has_mismatched_yts_identity=lambda *args, **kwargs: _followed_release_has_mismatched_yts_identity(*args, **kwargs),
     _followed_release_miss_patch=lambda *args, **kwargs: _followed_release_miss_patch(*args, **kwargs),
@@ -13125,6 +13369,39 @@ def _resolve_typed_player_media(path_key):
 
 _player_manager.media_resolver = _resolve_typed_player_media
 _player_manager.playback_history = TypedPlaybackHistory(_playback_history, lambda: _tv_services()['history'])
+
+
+def _player_queue_projection(media):
+    if media.get('media_type') == 'tv':
+        return _tv_services()['playback'].queue(media)
+    collection_id = media.get('collection_id')
+    if not collection_id:
+        return {}
+    from services.player_queue import collection_queue
+    store = _metadata_store()
+    members, identities, others = store.catalog.store.collection_lookup(collection_id)
+    records = [_catalog_library_item(candidate, store, None)
+               for candidate in [*members, *others] if candidate.get('path')]
+    local = _library_collection_from_catalog(collection_id, records) or {}
+    cached = _tmdb_collection_cache.get(str(collection_id), {}).get('data') or {}
+    # Reuse the collection owner for complete membership; provider failure must not block playback.
+    incomplete = False
+    try:
+        collection = (_curation_store().effective_collection(dict(cached)) if cached.get('parts')
+                      else _effective_tmdb_collection(collection_id))
+    except (ValueError, OSError, RuntimeError):
+        collection, incomplete = local, True
+    owned = [{**row, 'path_key': _norm(row['path'])}
+             for row in [*identities, *records] if row.get('path') and os.path.isfile(row['path'])]
+    result = collection_queue(collection, owned, current=media)
+    if incomplete:
+        result['autoplay_blocked_reason'] = 'Full collection membership is unavailable. Choose a local movie manually.'
+        result['error'] = result['autoplay_blocked_reason']
+    return result
+
+
+from services.player_queue import PlayerQueue
+_player_manager.queue_provider = PlayerQueue(_player_queue_projection)
 from services.tv_acquisition import TVAcquisition
 from services.tv_monitoring import TVMonitoring
 _tv_monitor_stop = threading.Event()
@@ -13209,6 +13486,55 @@ def _get_movie_awards_store(*, create=False):
     return MovieAwardsStore(path) if create or path.is_file() else None
 
 
+_movie_ratings_instance = None
+_movie_ratings_lock = threading.RLock()
+
+
+def _ratings_owned_movies(identities):
+    # Reuse only an initialized canonical owner. An optional read cannot migrate it.
+    with _catalog_repository_lock:
+        repository = _catalog_repository_cache.get(str(Path(_user_data_dir).resolve()))
+    if repository is None:
+        return {}
+    keys = []
+    for identity in identities:
+        keys.extend(_ownership_keys(identity))
+    candidates = repository.store.owned_identity_candidates(keys)
+    result = {}
+    for identity in identities:
+        for candidate in candidates:
+            if not all(str(candidate.get(field) or '') == identity[field]
+                       for field in ('tmdb_id', 'imdb_id', 'plex_guid') if identity.get(field)):
+                continue
+            path = candidate['path_key']
+            plex = _plex_cache.get(path) or repository.get_record('app_metadata/plex_metadata.json', path, {})
+            result[identity['key']] = {'rating_key': plex.get('rating_key', ''),
+                'identity': movie_identity({field: candidate.get(field) for field in ('tmdb_id', 'imdb_id', 'plex_guid')})}
+            break
+    return result
+
+
+def _get_movie_ratings_service():
+    global _movie_ratings_instance
+    with _movie_ratings_lock:
+        if _movie_ratings_instance is None:
+            _movie_ratings_instance = MovieRatingsService(
+                MovieRatingsStore(Path(_user_data_dir) / 'ratings' / 'movie-ratings.sqlite'),
+                config=lambda: {'url': _plex_url, 'token': _plex_token}, ownership=_ratings_owned_movies)
+        return _movie_ratings_instance
+
+
+def _stop_movie_ratings():
+    global _movie_ratings_instance
+    with _movie_ratings_lock:
+        owner, _movie_ratings_instance = _movie_ratings_instance, None
+    if owner is not None:
+        owner.stop()
+
+
+register_movie_ratings_routes(app, _get_movie_ratings_service)
+
+
 def _project_awards_movie(facts):
     # Awards GETs may reuse an already initialized cache, but do not initialize
     # or migrate the catalog merely to show an uncached winning film.
@@ -13258,6 +13584,7 @@ def _start_movie_awards_refresh():
 
 def _start_background_services():
     """Start normal runtime owners; global artwork backfill stays explicit-only."""
+    _library_ingestion_coordinator().recover_pending()
     _start_library_reconcile()
     _start_movie_awards_refresh()
     _library_observer().start()
@@ -13281,12 +13608,500 @@ def _start_background_services():
     _startup_metrics['background_queue_started'] = True
 
 
+def _save_ai_provider_config(payload):
+    global _ai_provider_config
+    updates = {key: copy.deepcopy(payload[key]) for key in ('ai_provider', 'chatgpt', 'ai_config_generation') if key in payload}
+    # Preserve unknown/unrelated disk keys and every current legacy setting.
+    _save_config({**_load_config(), **_all_config(), **updates})
+    _ai_provider_config = updates
+
+
+_chatgpt_auth_owner = None
+_chatgpt_auth_root = None
+
+
+def _stop_ai_for_data_root_change():
+    """Stop old-root work before globals move. Never copy host identity or tokens."""
+    global _chatgpt_auth_owner, _chatgpt_auth_root, _ai_job_service_owner, _ai_job_service_root
+    global _ai_job_store_owner, _ai_job_store_root
+    if _ai_job_service_owner is not None:
+        _ai_job_service_owner.close()
+    if _chatgpt_auth_owner is not None:
+        _chatgpt_auth_owner.close()
+    _chatgpt_auth_owner = _chatgpt_auth_root = None
+    _ai_job_service_owner = _ai_job_service_root = None
+    _ai_job_store_owner = _ai_job_store_root = None
+    if 'chatgpt' in _ai_provider_config:
+        _ai_provider_config['chatgpt'] = {**_ai_provider_config['chatgpt'], 'active_account_id': None, 'model': ''}
+        _ai_provider_config['ai_config_generation'] = _ai_provider_config.get('ai_config_generation', 0) + 1
+
+
+def _get_chatgpt_auth():
+    global _chatgpt_auth_owner, _chatgpt_auth_root
+    root = Path(_user_data_dir).resolve() / 'ai' / 'chatgpt'
+    if _chatgpt_auth_owner is None or root != _chatgpt_auth_root:
+        # Keep crypto/JWT imports and all credential I/O out of Ollama-only startup.
+        from services.chatgpt_auth import ChatGPTAuth
+        from services.chatgpt_credentials import CredentialStore
+        _chatgpt_auth_owner = ChatGPTAuth(CredentialStore(root), on_disconnect=_on_chatgpt_disconnect)
+        _chatgpt_auth_root = root
+    return _chatgpt_auth_owner
+
+
+def _load_chatgpt_skill(feature):
+    from services.chatgpt_skills import load
+    return load(feature)
+
+
+def _ai_feature_dependency(feature, domain_id):
+    if feature == 'F6' and not (_tmdb_key and _youtube_service.api_key):
+        return 'youtube_and_tmdb_required'
+    if feature == 'F1' and not _tmdb_key:
+        return 'integration_missing'
+    if feature == 'F2' and not _ai_control_config.get('enabled', True):
+        return 'feature_disabled'
+    if feature == 'F3' and not (_tmdb_key or (_plex_url and _plex_token)):
+        return 'integration_missing'
+    if feature in ('F4', 'F5'):
+        if not domain_id:
+            return 'provider_required'
+        if feature == 'F5':
+            from services.iptv_metadata_settings import IPTVMetadataSettings
+            if not IPTVMetadataSettings(_user_data_dir).public().get('tmdb_configured'):
+                return 'integration_missing'
+    return None
+
+
+def _ai_legacy_readiness(feature, domain_id):
+    if feature == 'F6':
+        return {'ready': False, 'reason': 'select_chatgpt_in_settings'}
+    ready = bool(_ollama_url and _ollama_model)
+    if feature == 'F2':
+        ready = bool(_ai_control_config.get('enabled', True))  # Existing heuristic interpreter remains usable.
+    elif feature == 'F3':
+        ready = ready and bool(_tmdb_key or (_plex_url and _plex_token))
+    elif feature in ('F4', 'F5'):
+        from services.iptv_metadata_settings import IPTVMetadataSettings
+        settings = IPTVMetadataSettings(_user_data_dir).public()
+        ready = bool(settings.get('ollama_enabled') and settings.get('ollama_model'))
+        if feature == 'F5':
+            ready = ready and bool(settings.get('tmdb_configured'))
+    return {'ready': ready, 'reason': None if ready else 'integration_missing'}
+
+
+from services.ai_provider import AIProviderService
+from services.ai_routes import register_ai_routes
+_ai_job_store_owner = None
+_ai_job_store_root = None
+_ai_job_service_owner = None
+_ai_job_service_root = None
+
+
+def _get_ai_job_store():
+    global _ai_job_store_owner, _ai_job_store_root
+    root = Path(_user_data_dir).resolve()
+    if _ai_job_store_owner is None or root != _ai_job_store_root:
+        from services.ai_jobs import AIJobStore
+        _ai_job_store_owner, _ai_job_store_root = AIJobStore(root), root
+    return _ai_job_store_owner
+
+
+def _on_chatgpt_disconnect(account_id):
+    if _ai_job_store_owner is not None:
+        _ai_job_store_owner.disconnect(account_id)
+
+
+def _get_chatgpt_transport(job_id=None):
+    from services.chatgpt_transport import ChatGPTTransport
+    store = _get_ai_job_store()
+    def reserve():
+        _ai_provider_service.check_evidence_scopes(store.inference_evidence_scopes(job_id))
+        store.reserve_inference(job_id)
+    return ChatGPTTransport(_get_chatgpt_auth().access_token,
+        before_request=reserve if job_id else (lambda: None),
+        on_phase=store.progress_reporter(job_id),
+        inference_slot=lambda cancel: store.inference_slot(job_id or 'connection', cancel))
+
+
+def _ai_tmdb_provider_get(endpoint, params):
+    from services.ai_catalog import AICatalogError
+    if not _tmdb_key:
+        raise AICatalogError('integration_missing')
+    if endpoint not in ('/search/company', '/search/person', '/search/movie', '/discover/movie',
+                        '/trending/movie/week', '/trending/movie/day', '/movie/now_playing',
+                        '/movie/popular', '/movie/upcoming', '/movie/top_rated') and not re.fullmatch(r'/movie/[1-9][0-9]*', endpoint):
+        raise AICatalogError('unsupported_catalogue_endpoint')
+    query = urllib.parse.urlencode({**params, 'api_key': _tmdb_key, 'language': 'en-US',
+                                   'include_adult': _tmdb_include_adult_value()})
+    return _tmdb_fetch_provider_page('https://api.themoviedb.org/3' + endpoint + '?' + query)
+
+
+def _ai_movie_details(identity, *, release_history=False):
+    append = 'keywords,release_dates' if release_history else 'keywords'
+    return _ai_tmdb_provider_get('/movie/' + str(identity), {'append_to_response': append})
+
+
+def _get_ai_catalogue():
+    from services.ai_catalog import AICatalog
+    return AICatalog(_ai_tmdb_provider_get, details=_ai_movie_details, person_seed=_tmdb_person_seed_movies,
+        filter_local=_tmdb_filter_local_movies, local_ready=lambda: any(True for _ in _iter_movie_roots()),
+        project=_normalize_tmdb_movie_summary)
+
+
+def _ai_resolve_recommendation(candidate):
+    from services.ai_catalog import AICatalogError
+    queries = [{'title': candidate['title'], 'year': candidate.get('year', ''), 'source': 'ai_recommendation'}]
+    try:
+        decision = evaluate_identity(queries, _identity_tmdb_candidates(queries, exact_first=True,
+            details=lambda identity: _ai_movie_details(identity, release_history=True)))
+        selected = decision.get('candidate') or {}
+        if decision.get('outcome') != 'accepted' or not selected.get('tmdb_id'):
+            return None
+        raw = selected.get('_resolved_details') or _ai_movie_details(selected['tmdb_id'])
+        if not raw or str(raw.get('id')) != str(selected['tmdb_id']):
+            raise AICatalogError('metadata_unavailable')
+        return {'raw': raw, 'card': _normalize_tmdb_movie_summary(raw)}
+    except AICatalogError:
+        raise
+    except Exception:
+        raise AICatalogError('metadata_unavailable') from None
+
+
+def _ai_scope_context():
+    _ensure_tmdb_genres()
+    if not _tmdb_genres:
+        from services.ai_catalog import AICatalogError
+        raise AICatalogError('metadata_unavailable')
+    options = _load_tmdb_filter_options()
+    return {'genre': [{'id': str(identity), 'label': label} for identity, label in _tmdb_genres.items()],
+            'language': [{'id': item['value'], 'label': item['label']} for item in options.get('languages', [])],
+            'country': [{'id': item['value'], 'label': item['label']} for item in options.get('countries', [])]}
+
+
+def _ai_validate_query_identities(query, context):
+    from services.ai_catalog import AICatalogError
+    for group in query['groups']:
+        kind = group['type']
+        if kind not in ('genre', 'language', 'country', 'person', 'company'):
+            continue
+        known = context.get(kind, [])
+        for value in group['values']:
+            matches = [row for row in known if str(row.get('id')) == value['id']
+                and str(row.get('label') or '').casefold() == value['label'].casefold()
+                and (kind != 'person' or row.get('role') == value['role'])
+                and (kind != 'company' or row.get('country', '') == value.get('country', ''))]
+            if not matches:
+                raise AICatalogError('controlled_identity_required')
+
+
+def _ai_check_permission(selection):
+    from services.ai_provider import AIProviderError
+    accounts = _get_chatgpt_auth().credentials.profiles()
+    profile = next((row for row in accounts if row['account_id'] == selection.account_id), None)
+    if not profile or not profile.get('connected'):
+        raise AIProviderError('account_disconnected', 409)
+    if not profile.get('plan_enabled'):
+        raise AIProviderError('consent_required', 409)
+    configured = _ai_provider_config.get('chatgpt') or {}
+    if ((selection.feature == 'F3' and not configured.get('allow_movie_identity_hints'))
+            or (selection.feature in ('F4', 'F5') and not configured.get('allow_iptv_titles'))):
+        raise AIProviderError('consent_required', 409)
+
+
+def _ai_check_iptv_bulk_binding(selection):
+    from services.ai_provider import AIProviderError
+
+    _ai_check_permission(selection)
+    if _ai_provider_service.snapshot('F5', domain_id=selection.domain_id) != selection:
+        raise AIProviderError('bulk_configuration_changed', 409)
+
+
+def _ai_domain_dispatch(endpoint, *, method='GET', values=None, query=None, body=None, binding=None):
+    """Call a statically selected existing CP endpoint without localhost networking."""
+    from services.chatgpt_tools import ToolError
+    if endpoint not in app.view_functions:
+        raise ToolError('domain_owner_unavailable')
+    url = app.url_map.bind('localhost').build(endpoint, values or {}, method=method)
+    with app.test_request_context(url, base_url='http://127.0.0.1:' + str(os.environ.get('CP_PORT') or '5000'),
+                                  method=method, query_string=query or {}, json=body,
+                                  environ_base={'REMOTE_ADDR': '127.0.0.1', 'cp.ai_binding': binding}):
+        response = app.make_response(app.full_dispatch_request())
+        payload = response.get_json(silent=True)
+        if response.status_code >= 400 or not isinstance(payload, (dict, list)):
+            raise ToolError('domain_owner_rejected_request')
+        return payload
+
+
+def _ai_execute_movie(plan_id, **options):
+    stored = _ai_control_plan_store.get(plan_id)
+    return ai_control.execute_plan(plan_id, plan_store=_ai_control_plan_store,
+        library_roots=get_movies_dirs(), delete_file=_ai_control_delete_file, create_list=_ai_control_create_list,
+        prepare_download=_ai_control_download_preparer() if (stored or {}).get('action') == 'download' else None,
+        submit_download=_ai_control_submit_download, **options)
+
+
+def _get_ai_domain_tools():
+    service = _get_ai_job_service()
+    return service.domain_tools
+
+
+def _ai_tool_availability(definition, context):
+    if definition.get('namespace') == 'cp_metadata' and not (_ai_provider_config.get('chatgpt') or {}).get('allow_movie_identity_hints'):
+        return 'consent_required'
+    if definition['domain'] == 'tv' and not _tv_enabled:
+        return 'feature_disabled'
+    if definition['domain'] == 'iptv' and not (_ai_provider_config.get('chatgpt') or {}).get('allow_iptv_titles'):
+        return 'consent_required'
+    if definition['name'] in ('search_movies', 'suggest_movies', 'resolve_people', 'resolve_companies', 'movie_details') and not _tmdb_key:
+        return 'integration_missing'
+    return None
+
+
+def _ai_resolve_media_reference(reference, action, restart=False):
+    from services.chatgpt_tools import ToolError
+    domain = reference['domain']
+    if domain == 'movie':
+        candidate = _catalog_repository().owned_movie(movie_key=reference['key'])
+        if not candidate:
+            raise ToolError('owned_movie_reference_required')
+        media = _movie_media_resolver(candidate['path_key'])
+        return {'item': dict(media, domain='movie'), 'owner': {
+            'endpoint': 'play_library_file' if action == 'play' else 'clear_player_progress',
+            'body': {'path_key': media['path_key'], **({'restart': restart} if action == 'play' else {})}}}
+    if domain == 'tv':
+        if not _tv_enabled:
+            raise ToolError('tv_disabled')
+        owners = _tv_services()
+        series = owners['repository'].series(reference['series_id'])
+        episode_id = reference['episode_id']
+        if episode_id is None:
+            if action == 'play':
+                raise ToolError('choose_an_episode_from_tv_coverage')
+            return {'item': dict(series, series_id=reference['series_id'], domain='tv'),
+                'owner': {'endpoint': 'tv_hide_series_progress', 'values': {'series_id': reference['series_id']}, 'body': {}}}
+        episode = owners['repository'].episode(episode_id)
+        if episode['series_id'] != reference['series_id']:
+            raise ToolError('episode_series_mismatch')
+        if action == 'play':
+            from services.tv_playback import parse_tv_key
+            key = owners['playback'].target(episode_id)
+            media = owners['playback'].resolve(key)
+            _, file_id = parse_tv_key(key)
+            return {'item': dict(media, series_id=reference['series_id'], domain='tv'),
+                'owner': {'endpoint': 'tv_play', 'values': {'episode_id': episode_id},
+                          'body': {'file_id': file_id, 'restart': restart}}}
+        return {'item': dict(episode, series_id=reference['series_id'], domain='tv'), 'owner': {
+            'endpoint': 'tv_hide_progress', 'values': {'episode_id': episode_id}, 'body': {}}}
+    if domain == 'iptv':
+        if action != 'play' or reference['kind'] == 'series':
+            raise ToolError('choose_this_action_in_iptv_review')
+        manager = _get_iptv_provider_manager()
+        raw = manager.service(reference['provider_id'])
+        identity, kind = reference['item_id'], reference['kind']
+        if kind == 'movie':
+            movie_owner = manager.movie_service(reference['provider_id'])
+            movie = movie_owner.movie(identity)
+            sources = [row for row in movie_owner.sources(identity) if row.get('available')]
+            if len(sources) != 1:
+                raise ToolError('choose_one_available_iptv_source_in_review')
+            identity = str(sources[0]['item_id'])
+        item = raw.store.get_item(kind, identity, provider_key=raw.provider_key())
+        if not item:
+            raise ToolError('iptv_item_not_found')
+        return {'item': {**item, 'iptv_ref': reference, 'domain': 'iptv'}, 'owner': {
+            'endpoint': 'iptv_playback_start', 'values': {'provider_id': reference['provider_id']},
+            'body': {'kind': kind, 'item_id': identity, 'title': item.get('name') or item.get('title') or '',
+                     'extension': item.get('container_extension') or ''}}}
+    raise ToolError('unsupported_media_domain')
+
+
+def _ai_read_tools():
+    from services.chatgpt_tools import ToolResult, ToolError
+    def view(kind, payload):
+        return ToolResult(payload, {'kind': kind, 'data': payload})
+    def maintenance(arguments, context):
+        section = {'duplicates': 'storage', 'storage': 'storage', 'identity': 'identity', 'upgrade': 'upgrades'}[arguments['kind']]
+        payload = _ai_domain_dispatch('maintenance_audit', query={'section': section, 'page': arguments['page'],
+                                                               'page_size': 20, 'q': arguments['query']})
+        def reference_files(value):
+            if isinstance(value, dict):
+                if value.get('path'):
+                    identity = hashlib.sha256(_norm(value['path']).encode()).hexdigest()
+                    value['file_id'] = identity
+                    context.private.setdefault('file_refs', {})[identity] = value['path']
+                for child in list(value.values()):
+                    reference_files(child)
+            elif isinstance(value, list):
+                for child in value:
+                    reference_files(child)
+        reference_files(payload)
+        return view('maintenance', payload)
+    def downloads(arguments, context):
+        payload = _ai_domain_dispatch('qbittorrent_jobs')
+        rows = payload['jobs']
+        selected = set(arguments['ids'])
+        if selected:
+            rows = [row for row in rows if str(row.get('id') or row.get('hash') or '') in selected]
+        return {'items': [{key: row.get(key) for key in ('id', 'hash', 'title', 'name', 'state', 'status', 'progress')}
+                          for row in rows[:100 if selected else 20]], 'total': len(rows)}
+    def metadata(arguments, context):
+        state = _metadata_store().get_smart_match_state() or {}
+        if state.get('id') == arguments['id']:
+            return view('movie-match', _public_smart_match_state(state))
+        return view('metadata-review', _ai_domain_dispatch('identity_audit_status', values={'job_id': arguments['id']}))
+    def integration(arguments, context):
+        kind = arguments['kind']
+        configured = {'tmdb': bool(_tmdb_key), 'plex': bool(_plex_url and _plex_token),
+            'prowlarr': bool(_prowlarr_url and _prowlarr_key), 'ollama': bool(_ollama_url and _ollama_model),
+            'tv': bool(_tv_enabled), 'player': True, 'subtitles': True}
+        if kind == 'iptv':
+            configured[kind] = bool(_get_iptv_provider_manager().list_providers().get('providers'))
+        return {'kind': kind, 'configured': configured[kind], 'network_reachability': 'not_tested'}
+    def providers(arguments, context):
+        listing = _get_iptv_provider_manager().list_providers()
+        return {'providers': [{'provider_id': row['provider_id'], 'name': row['name']} for row in listing['providers']],
+                'selected_provider_id': listing['last_selected_provider_id']}
+    def action_status(arguments, context):
+        action = _get_ai_job_store().action(arguments['id'], context.selection.account_id)
+        if action['session_id'] != context.session_id:
+            raise ToolError('action_session_mismatch')
+        return {'action_id': action['action_id'], 'kind': action['kind'], 'state': action['state'],
+                'outcome': action['outcome'], 'depends_on': action['depends_on']}
+    return {'maintenance_status': maintenance, 'download_status': downloads, 'metadata_job_status': metadata,
+        'redacted_integration_status': integration,
+        'list_iptv_providers': providers, 'action_status': action_status,
+        'copy_job_status': lambda args, context: view('copy-job', _ai_domain_dispatch('library_export_job_detail', values={'job_id': args['id']})),
+        'movie_relationships': lambda args, context: view('movie-relationships', _ai_domain_dispatch('tmdb_related',
+            query={'tmdb_id': args['id'], 'summary': '1', 'page_size': 20}))}
+
+
+def _ai_metadata_snapshot(job_id=None):
+    from services.chatgpt_tools import ToolError
+    state = _metadata_store().get_smart_match_state() or {}
+    if not state.get('id') or job_id is not None and state['id'] != job_id:
+        raise ToolError('metadata_job_not_found')
+    return _public_smart_match_state(state)
+
+
+def _ai_prepare_metadata_preview(arguments, context, request_key):
+    from services.chatgpt_tools import ToolError
+    known = context.private.get('file_refs', {})
+    if not arguments['file_ids'] or any(identity not in known for identity in arguments['file_ids']):
+        raise ToolError('choose_files_from_the_current_maintenance_results')
+    paths = [known[identity] for identity in arguments['file_ids']]
+    binding = None
+    if arguments['method'] == 'ai':
+        selection = _ai_provider_service.for_feature(context.selection, 'F3')
+        binding = {'selection': selection.public(), 'parent_job_id': context.job_id, 'session_id': context.session_id}
+    state = _ai_domain_dispatch('smart_match_start', method='POST', binding=binding,
+        body={'paths': paths, 'provider': arguments['database'], 'method': arguments['method'],
+              'background': False, 'request_key': request_key})
+    if arguments['method'] == 'classic':
+        coordinator = _get_smart_match_coordinator()
+        while state['status'] == 'running':
+            if context.private['cancel'].is_set():
+                coordinator.cancel()
+                raise ToolError('cancelled')
+            state = coordinator.run_batch()
+    return state
+
+
+def _ai_cancel_native_operation(operation):
+    if operation['feature'] == 'F3':
+        coordinator = _get_smart_match_coordinator()
+        if coordinator.status().get('ai_binding', {}).get('ai_job_id') == operation['id']:
+            coordinator.cancel()
+    elif operation['feature'] == 'F5' and operation['cursor'].get('iptv_native_job_id'):
+        _get_iptv_provider_manager().movie_service(operation['selection']['domain_id']).cancel_match_job(operation['cursor']['iptv_native_job_id'])
+    elif operation['feature'] == 'F2':
+        store = _get_ai_job_store()
+        identities = {row['job_id'] for row in operation['cursor'].get('nested', {}).values()}
+        identities.update(row['id'] for row in store.origin_jobs(operation['id']))
+        for identity in identities:
+            child = store.snapshot(identity)
+            if child['state'] in ('queued', 'running', 'paused_budget', 'partial', 'interrupted'):
+                child = store.cancel(child['id'], child['revision'], run_number=child['cursor'].get('run_number', 0))
+                _ai_cancel_native_operation(child)
+
+
+def _get_ai_job_service():
+    global _ai_job_service_owner, _ai_job_service_root
+    root = Path(_user_data_dir).resolve()
+    if _ai_job_service_owner is None or root != _ai_job_service_root:
+        from services.ai_jobs import AIJobService
+        from services.chatgpt_recommendations import Recommender
+        from services.chatgpt_agent import ChatGPTAgent
+        from services.chatgpt_domain_tools import DomainTools
+        from services.chatgpt_matching import NativeMatchJob
+        from services.chatgpt_iptv import IPTVJob
+        from services.chatgpt_youtube import YouTubeSearchJob
+        store = _get_ai_job_store()
+        recommender = Recommender(store, lambda selection, job_id: _get_chatgpt_transport(job_id),
+            _ai_resolve_recommendation, catalogue=_get_ai_catalogue(), scope_context=_ai_scope_context,
+            validate_identities=_ai_validate_query_identities, check_permission=_ai_check_permission)
+        domain_tools = DomainTools(store, _get_ai_catalogue(), _ai_control_plan_store, _ai_domain_dispatch,
+            validate_identities=_ai_validate_query_identities, owned_movies=_find_owned_movies,
+            library_roots=get_movies_dirs, download_ready=lambda: bool(_effective_ai_control_config().get('trusted_indexers')),
+            execute_movie=_ai_execute_movie, availability=_ai_tool_availability, recommender=recommender,
+            media_resolver=_ai_resolve_media_reference, feature_selection=_ai_provider_service.for_feature,
+            read_extra=_ai_read_tools(),
+            run_feature=lambda feature, identity: _get_ai_job_service().handlers[feature](identity),
+            schedule_feature=lambda identity: _get_ai_job_service().start(identity),
+            iptv_factory=lambda identity: _get_iptv_provider_manager().movie_service(identity),
+            metadata_preview=_ai_prepare_metadata_preview, metadata_snapshot=_ai_metadata_snapshot,
+            catalogue_generation=lambda: {name: _catalog_repository().generation(name) for name in ('media', 'curation')},
+            default_count=lambda: _ai_provider_service.public_config()['chatgpt']['recommendation_count'])
+        agent = ChatGPTAgent(store, lambda selection, job_id: _get_chatgpt_transport(job_id), domain_tools.registry,
+                             check_permission=_ai_check_permission, scope_context=lambda: _ai_scope_context() if _tmdb_key else {})
+        matcher = NativeMatchJob(store, _get_smart_match_coordinator, check_permission=_ai_check_permission)
+        iptv = IPTVJob(store, lambda identity: _get_iptv_provider_manager().movie_service(identity),
+            lambda selection, job_id: _get_chatgpt_transport(job_id), check_permission=_ai_check_permission,
+            prepare_review=domain_tools.prepare_iptv_job_review, check_bulk_binding=_ai_check_iptv_bulk_binding,
+            dispatch_apply=lambda *args: _ai_job_service_owner.start_bulk_apply(*args))
+        youtube = YouTubeSearchJob(store, lambda selection, job_id: _get_chatgpt_transport(job_id),
+                                   _youtube_movie_search, check_permission=_ai_check_permission)
+        _ai_job_service_owner = AIJobService(store, {'F1': recommender.run, 'F2': agent.run, 'F3': matcher.run,
+                                                 'F4': iptv.run, 'F5': iptv.run, 'F6': youtube.run},
+            cancel_handlers={feature: _ai_cancel_native_operation for feature in ('F2', 'F3', 'F5')},
+            reconcile_bulk_cancel=iptv.reconcile_cancelled_bulk)
+        _ai_job_service_owner.domain_tools = domain_tools
+        _ai_job_service_root = root
+    return _ai_job_service_owner
+
+
+def _close_ai_jobs():
+    if _ai_job_service_owner is not None:
+        _ai_job_service_owner.close()
+
+
+from services.youtube_movies import YouTubeMovieSearch
+from services.youtube_movie_routes import register_youtube_movie_routes
+
+_youtube_movie_search = YouTubeMovieSearch(_youtube_service, lambda identity: _ai_tmdb_provider_get(
+    '/movie/' + identity, {'append_to_response': 'alternative_titles,translations'}))
+
+_ai_provider_service = AIProviderService(
+    lambda: {**_cfg, **_ai_provider_config}, _save_ai_provider_config,
+    accounts=lambda: _get_chatgpt_auth().credentials.profiles(),
+    skill_loader=_load_chatgpt_skill, dependencies=_ai_feature_dependency, legacy_readiness=_ai_legacy_readiness,
+)
+register_ai_routes(app, _ai_provider_service, auth_factory=_get_chatgpt_auth,
+                   transport_factory=_get_chatgpt_transport, jobs_factory=_get_ai_job_service,
+                   control_factory=_get_ai_domain_tools, check_permission=_ai_check_permission,
+                   iptv_factory=lambda identity: _get_iptv_provider_manager().movie_service(identity))
+register_youtube_movie_routes(app, lambda: _youtube_movie_search, _ai_provider_service,
+                              _get_ai_job_service, _ai_check_permission)
+
+
 if __name__ == '__main__':
     if not _TEST_MODE:
         _start_background_services()
     _startup_metrics['api_ready_ms'] = round((time.perf_counter() - _process_started_at) * 1000, 3)
-    app.run(
-        debug=False,
-        port=int(os.environ.get('CP_PORT', '5000') or '5000'),
-        use_reloader=False,
-    )
+    try:
+        app.run(
+            debug=False,
+            port=int(os.environ.get('CP_PORT', '5000') or '5000'),
+            use_reloader=False,
+        )
+    finally:
+        _close_ai_jobs()

@@ -1,0 +1,24 @@
+{
+  "root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-ui-baseline-state-7d924dc025bb4ce0b4bab74ef0109d26",
+  "baseline_source": "C:\\Users\\dante\\.codex\\worktrees\\mostafa-ui-ux\\cinema paradiso\\.superpowers\\sdd\\mostafa-ui-ux\\baseline\\tests\\native_tv_server.py",
+  "before_accepted_seasons": [
+    1,
+    2
+  ],
+  "queued_status": 200,
+  "queued_body": {
+    "complete": true,
+    "items": [
+      {
+        "info_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "intent_id": "dac9ae912b884717ad55a78bd8a82b42",
+        "state": "submitted",
+        "token": "fd939944ba66848ab7fcb49a5c21f8fc90c78ca4dc3a9f294b51f3008268991e"
+      }
+    ],
+    "request_key": "763421f8-4a8e-4d16-8215-001bfffb0b1d"
+  },
+  "after_accepted_seasons": [
+    2
+  ]
+}

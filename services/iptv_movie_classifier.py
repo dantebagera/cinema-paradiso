@@ -117,6 +117,8 @@ def _decision(category=UNCLASSIFIED, confidence=0.0, method="deterministic", evi
     }
 
 
+
+
 def classify_title_evidence(title):
     """Classify only explicit source-title evidence; never guess Film by default."""
 
@@ -319,3 +321,8 @@ def validate_ollama_classification(payload):
         "method": "ollama",
         "classifier_version": CLASSIFIER_VERSION,
     }
+
+
+# Provider-neutral access to the one validator. Its legacy outputs/errors stay
+# unchanged; a GPT caller applies its own provenance after validation.
+validate_classification_result = validate_ollama_classification

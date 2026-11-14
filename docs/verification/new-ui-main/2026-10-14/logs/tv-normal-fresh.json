@@ -1,0 +1,11 @@
+{
+  "label": "tv-normal-fresh",
+  "root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\fixtures\\tv-normal-fresh-9487df7d4f884bdaa0146237dec9280f",
+  "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\logs\\tv-normal-fresh.log",
+  "port": 5146,
+  "fixture": "tv",
+  "exitCode": 0,
+  "specs": [
+    "tests/e2e/tv-normal-import.spec.js"
+  ]
+}

@@ -158,42 +158,31 @@ class TVSearch:
             raise ValueError('Movie lists cannot filter TV series')
         return result
 
-    def local_rows(self):
-        today = date.today().isoformat()
-        with self.repository.store.connection() as db:
-            rows = {r['id']: {**json.loads(r['metadata']), 'id': r['id'], 'tmdb_id': r['tmdb_id'], 'title': r['title'],
+    def local_rows(self, *, read_context=None):
+        context = read_context if read_context is not None else self.repository.library_read_context()
+        today = context.today.isoformat()
+        rows = {r['id']: {**r['metadata'], 'id': r['id'], 'tmdb_id': r['tmdb_id'], 'title': r['title'],
                              'updated_at': r['updated_at'], 'episode_count': 0, 'available_count': 0, 'completed_count': 0,
                              'last_played': 0, 'recently_aired': '', 'file_facts': [], 'episode_files': {}, 'sources': [],
-                             'watchlisted': False} for r in db.execute('SELECT * FROM series')}
-            for r in db.execute('SELECT * FROM series_curation'):
-                if r['series_id'] in rows:
-                    rows[r['series_id']]['watchlisted'] = bool(r['watchlisted'])
-            for r in db.execute('SELECT e.*,p.completed,p.last_played FROM episodes e LEFT JOIN playback_progress p ON p.episode_id=e.id'):
-                item = rows[r['series_id']]
+                             'watchlisted': bool(context.curation.get(r['id']))} for r in context.series_records.values()}
+        for item in rows.values():
+            for r in self.repository.library_episode_rows(item['id'], read_context=context):
                 if r['air_date'] and r['air_date'] <= today:
                     item['episode_count'] += 1
                     item['completed_count'] += bool(r['completed'])
                     item['recently_aired'] = max(item['recently_aired'], r['air_date'])
                 item['last_played'] = max(item['last_played'], r['last_played'] or 0)
-            available = set()
-            exists = {}
-            for r in db.execute('SELECT e.id AS episode_id,e.series_id,e.air_date,f.* FROM episodes e JOIN episode_file_bindings b ON b.episode_id=e.id JOIN media_files f ON f.id=b.file_id'):
-                path = r['path']
-                if path not in exists:
-                    exists[path] = Path(path).is_file()
-                if not r['available'] or not exists[path]:
-                    continue
-                item = rows[r['series_id']]
-                facts = json.loads(r['facts'])
-                item['file_facts'].append(facts)
-                item['episode_files'].setdefault(r['episode_id'], []).append(facts)
-                item['sources'].append(source_claim(Path(path).name))
-                if r['air_date'] and r['air_date'] <= today:
-                    available.add((r['series_id'], r['episode_id']))
-            for series_id, _ in available:
-                rows[series_id]['available_count'] += 1
+        versions = {(episode_id,v['file_id']):v for episode_id,values in context.versions.items() for v in values}
+        for episode_id, series_id, file_id in context.source_order:
+            version = versions[episode_id,file_id]
+            if not version['available']:
+                continue
+            item = rows[series_id]
+            item['file_facts'].append(version['facts'])
+            item['episode_files'].setdefault(episode_id, []).append(version['facts'])
+            item['sources'].append(source_claim(Path(version['path']).name))
         for item in rows.values():
-            item.update(self.read.coverage(item, self.repository.episodes(item['id'])))
+            item.update(self.read.coverage(item,self.repository.library_episode_rows(item['id'],read_context=context),read_context=context))
         if self.profile:
             from services.acquisition_decision import below_profile_cutoff
             profile = self.profile()
@@ -205,9 +194,8 @@ class TVSearch:
         query = self.normalize(query, 'library')
         page, page_size = max(1, int(page)), min(100, max(1, int(page_size)))
         extras = extras or {}
-        with self.repository.store.connection() as db:
-            assigned_ids = {row[0] for row in db.execute('SELECT DISTINCT series_id FROM tv_path_assignments')}
-        rows = [r for r in self.local_rows() if (r['available_count'] > 0 or r['pending_review_count'] > 0 or r['id'] in assigned_ids)
+        context = self.repository.library_read_context()
+        rows = [r for r in self.local_rows(read_context=context) if (r['available_count'] > 0 or r['pending_review_count'] > 0 or r['id'] in context.assigned_ids)
                 and matches(r, query)]
         monitored = set(extras.get('monitored_ids', []))
         if extras.get('progress') not in {None, '', 'watched', 'unwatched', 'in_progress'}:
@@ -227,8 +215,11 @@ class TVSearch:
         rows = [r for r in rows if extra_match(r)]
         rows = sort_rows(rows, extras.get('sort') or query['sort']['key'], query['sort']['direction'])
         total = len(rows)
-        selected = rows[(page-1)*page_size:page*page_size]
-        items = [{**self.read.detail(r['id']), 'watchlisted': r['watchlisted']} for r in selected]
+        selected = [(r['id'],r['watchlisted']) for r in rows[(page-1)*page_size:page*page_size]]
+        del rows
+        context.retain_series(identity for identity,_ in selected)
+        items = [{**self.read.detail(identity,read_context=context), 'watchlisted': watchlisted} for identity,watchlisted in selected]
+        del context
         # The legacy local adapter deliberately has no network metadata owner.
         # Persisted display fields remain usable while offline.
         if self.metadata is not None:
@@ -239,7 +230,18 @@ class TVSearch:
     def options(self, scope):
         if scope not in {'library', 'discover'}:
             raise ValueError('Invalid TV scope')
-        rows = self.local_rows() if scope == 'library' else []
+        rows = []
+        if scope == 'library':
+            facts = self.repository.library_option_facts()
+            rows = [{**r, 'sources': []} for r in facts['series_records']]
+            by_id = {r['id']: r for r in rows}
+            exists = {}
+            for value in facts['files']:
+                path = value['path']
+                if path not in exists:
+                    exists[path] = Path(path).is_file()
+                if value['available'] and exists[path]:
+                    by_id[value['series_id']]['sources'].append(source_claim(Path(path).name))
         def choices(pairs):
             labels = {}
             for key, label in pairs:
@@ -279,8 +281,24 @@ class TVSearch:
         deadline = time.monotonic() + 15
         page = min(500, max(1, int(page)))
         page_size = min(100, max(1, int(page_size)))
+        # Local preparation and the first provider read are independent.
+        # One worker materializes and closes its own snapshot; no connection is
+        # shared across threads or retained while provider requests finish.
+        def local_facts():
+            context = self.repository.library_read_context()
+            return context, {r['tmdb_id']: r for r in self.local_rows(read_context=context)}
+        with ThreadPoolExecutor(max_workers=1, thread_name_prefix='tv-catalog-read') as pool:
+            local = pool.submit(local_facts)
+            try:
+                return self._discover_page(query, page, page_size, deadline, local)
+            except Exception:
+                # Local validation failed first in the previous sequential path.
+                # Preserve that error even if the provider also fails meanwhile.
+                local.result()
+                raise
+
+    def _discover_page(self, query, page, page_size, deadline, local_future):
         groups = {g['type']: g for g in query['groups']}
-        local = {r['tmdb_id']: r for r in self.local_rows()}
         params = {}
         mapping = {'genre': 'with_genres', 'keyword': 'with_keywords', 'language': 'with_original_language', 'country': 'with_origin_country'}
         for kind, param in mapping.items():
@@ -342,7 +360,7 @@ class TVSearch:
             own = local.get(row['tmdb_id'], {})
             row = {**row, **{k: own.get(k, default) for k, default in [('id', None), ('watchlisted', False), ('available_count', 0), ('completed_count', 0), ('last_played', 0)]}, 'media_type': 'tv'}
             if own:
-                detail = self.read.detail(own['id'])
+                detail = self.read.detail(own['id'], read_context=context)
                 row.update({key: detail.get(key) for key in ('poster_url', 'provider_poster_url', 'poster_override',
                     'primary_action', 'episode_count', 'available_count', 'completed_count', 'offline_percent',
                     'watched_percent', 'coverage_complete', 'pending_review_count', 'series_watched',
@@ -350,6 +368,7 @@ class TVSearch:
                 row['released_count'] = own.get('episode_count', 0)
             return self.metadata.display(row, deadline=deadline) if hasattr(self.metadata, 'display') else row
         if post_filter:
+            context, local = local_future.result()
             # Retain unprocessed/failed detail rows so an outage cannot silently
             # turn a partial filter into a complete zero-result answer.
             local_revision = [(r['tmdb_id'], r['available_count'], r['completed_count'], r['watchlisted'], r['last_played']) for r in local.values()]
@@ -412,6 +431,9 @@ class TVSearch:
             ))
         items = [self.metadata.normalize(row) for batch in raw_pages for row in batch.get('results', [])]
         items = items[offset % TMDB_PAGE_SIZE:offset % TMDB_PAGE_SIZE + page_size]
+        context, local = local_future.result()
+        if time.monotonic() >= deadline:
+            raise TimeoutError('Metadata search time budget reached')
         with ThreadPoolExecutor(max_workers=4) as pool:
             items = list(pool.map(enrich, items))
         total_pages = max(1, math.ceil(provider_total / page_size))

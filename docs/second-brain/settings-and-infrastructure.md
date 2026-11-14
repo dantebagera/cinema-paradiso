@@ -2,6 +2,10 @@
 
 [Code map](../atlas/settings-and-infrastructure.md) · [Second Brain index](README.md) · [Update log](log.md)
 
+## Desktop UI family selections, 2026-11-14
+
+Dante reviewed the side-by-side source-style comparison and chose all recommended families: shared CP buttons; unified card badges with a compact variant; shared pagination and selection bars; shared empty states with a compact variant; Movie dialog appearance; shared search/labelled fields; Movie/TV section-tab appearance. He explicitly limited this to UI: functionality continues to vary by feature. He subsequently instructed: "after you add the rule go with the plan", approving the mandatory reuse rule and source implementation. Reuse applies to every future feature; a functionality difference does not justify duplicating presentation. Extend the shared owner, preserve native attributes and feature callbacks, and pass the reuse gate. The [component registry](../atlas/shared-ui.md) identifies owners and bounded specialized compositions. Dante subsequently separately authorized installation of the reviewed bundle; it was installed and visibly checked without restarting the backend. Further restarts/releases remain separate actions. See the [approved plan](../plans/2026-11-14-shared-ui-standardization.md) and [isolated verification](../verification/shared-ui-2026-11-14/report.md).
+
 | Rule or boundary | Evidence |
 | --- | --- |
 | **SQLite is the finalized Movie catalog.** The approved ingestion design places canonical card publication in SQL and leaves transfer recovery with the existing qBittorrent journal. The repository imports historical JSON for bootstrap and provides explicit rollback exports. The catalog writer lease keeps simultaneous writers from claiming the same database. | [Approved catalog contract](../plans/online-library-ingestion-final-card-zero-regression-plan.md#33-catalog-ownership-contract) · [SQLite repository](../../services/catalog_repository.py) · [Writer lease checks](../../tests/test_catalog_writer_lease.py) |

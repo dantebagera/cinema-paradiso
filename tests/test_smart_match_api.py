@@ -10,6 +10,51 @@ from services.identity_decision import DECISION_ORIGIN_SMART_MATCH
 
 
 class SmartMatchApiTest(unittest.TestCase):
+    def test_gpt_job_pins_model_and_uses_existing_ranker_for_both_databases(self):
+        from services.chatgpt_transport import CompletedResponse, ToolCall
+        from services.chatgpt_skills import load
+        from types import SimpleNamespace
+        for database in ('tmdb', 'plex'):
+            with self.subTest(database=database), tempfile.TemporaryDirectory() as root:
+                movie = Path(root) / 'Alien.1979.mkv'
+                movie.write_bytes(b'fixture')
+                config = {'ai_provider': 'chatgpt', 'chatgpt': {'active_account_id': 'fixture-account',
+                    'model': 'pinned-model', 'allow_movie_identity_hints': True}}
+                auth = SimpleNamespace(credentials=SimpleNamespace(profiles=lambda: [
+                    {'account_id': 'fixture-account', 'connected': True, 'plan_enabled': True}]))
+                observed = []
+                def transport(job_id):
+                    class Runner:
+                        def run(self, selection, **kwargs):
+                            app._get_ai_job_store().reserve_inference(job_id)
+                            observed.append(selection)
+                            return CompletedResponse('synthetic', '', [], [ToolCall('c', 'cp_result.submit', {'matches': [
+                                {'id': 'item-0', 'title': 'Alien', 'year': '1979', 'alternatives': []}]})])
+                    return Runner()
+                with patch.multiple(app, _movies_dirs=[root], _movies_dir=root, _user_data_dir=root,
+                    _tmdb_key='fixture', _plex_url='fixture', _plex_token='fixture',
+                    _ai_provider_config=config, _smart_match_coordinator=None, _smart_match_store_dir=''), \
+                    patch.object(app, '_get_chatgpt_auth', return_value=auth), \
+                    patch.object(app, '_get_chatgpt_transport', side_effect=transport), \
+                    patch.object(app, '_smart_match_context', return_value=(str(movie), movie.name, None, {}, {'rating_key': 'r'})), \
+                    patch.object(app, '_smart_match_candidates_for_queries', return_value=[{
+                        'title': 'Alien', 'year': '1979', 'tmdb_id': '348', 'guid': 'plex://fixture'}]), \
+                    patch.object(app, '_smart_match_ai_batch', side_effect=AssertionError('Ollama used')):
+                    client = app.app.test_client()
+                    started = client.post('/api/metadata/smart-match', json={'paths': [str(movie)],
+                        'provider': database, 'method': 'ai', 'background': False, 'request_key': 'fixture'})
+                    self.assertEqual(started.status_code, 202, started.json)
+                    # Changing the global model cannot alter this operation's binding.
+                    config['chatgpt']['model'] = 'later-model'
+                    result = app._get_ai_job_service().handlers['F3'](started.json['ai_job_id'])
+                    state = app._get_smart_match_coordinator().status()
+                    self.assertEqual(result['state'], 'completed', result)
+                    self.assertEqual(state['proposals'][0]['candidate']['tmdb_id'], '348')
+                    self.assertEqual(state['proposals'][0]['provider'], database)
+                    self.assertEqual(state['proposals'][0]['ai_status'], 'used')
+                    self.assertEqual(observed[0].model, 'pinned-model')
+                    self.assertEqual(result['run_calls'], 1)
+
     def setUp(self):
         self.original_dirs = app._movies_dirs
         self.original_dir = app._movies_dir

@@ -141,6 +141,31 @@ class PlaybackHistoryTests(unittest.TestCase):
         self.service.handle_event(session, {"type": "closed"})
         self.assertEqual(self.history.get(self.path_key)["position_ms"], 6500)
 
+    def test_playlist_switch_saves_departing_file_within_throttle_interval(self):
+        from services.player_manager import PlayerManager, PlayerSession
+        from services.player_queue import PlayerQueue
+        from tests.test_player_manager import FakeRuntime, FakeProcess, EventTransport
+        with self.store.transaction() as connection:
+            self.store._upsert_media_file(connection, 'next-file', {'path': str(self.media), 'filename': 'Next.mkv'})
+        context = self.service.begin_session(self.media_payload)
+        session = PlayerSession('queue-history', FakeProcess(), EventTransport([]), lambda *_: None,
+                                media=self.media_payload, playback_context=context)
+        self.service.handle_event(session, {'type': 'progress', 'position_ms': 1000,
+                                            'duration_ms': 100000, 'paused': False})
+        self.assertEqual(self.history.get(self.path_key)['position_ms'], 0)
+        next_media = {**self.media_payload, 'path_key': 'next-file', 'movie_key': 'next-movie'}
+        manager = PlayerManager(self.config, FakeRuntime(), lambda _: next_media,
+                                playback_history=self.service,
+                                queue_provider=PlayerQueue(lambda _: {}))
+        session.queue = {'current_index': 0, 'items': [
+            {'path_key': self.path_key, 'available': True}, {'path_key': 'next-file', 'available': True}]}
+        manager._active = session
+        manager._handle_event(session, {'type': 'queue.select', 'media_generation': 1,
+                                       'path_key': 'next-file', 'automatic': False, 'sequence': 5})
+        self.assertEqual(self.history.get(self.path_key)['position_ms'], 1000)
+        self.assertEqual(session.media['path_key'], 'next-file')
+        self.assertEqual(session.media_generation, 2)
+
     def test_completion_uses_existing_watched_owner_once(self):
         context = self.service.begin_session(self.media_payload)
         session = Session(context)

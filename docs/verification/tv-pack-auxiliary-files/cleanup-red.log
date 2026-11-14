@@ -1,0 +1,32 @@
+FFF.
+======================================================================
+FAIL: test_pack_bonus_is_unselected_before_resume_and_never_imported (tests.test_verified_tv_acquisition.TVAcquisitionTests.test_pack_bonus_is_unselected_before_resume_and_never_imported)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_verified_tv_acquisition.py", line 267, in test_pack_bonus_is_unselected_before_resume_and_never_imported
+    self.assertEqual(completed['state'], 'imported', completed.get('last_error'))
+AssertionError: 'cleanup_failed' != 'imported'
+- cleanup_failed
++ imported
+ : Unknown staging contents; cleanup requires review
+
+======================================================================
+FAIL: test_changed_auxiliary_source_prevents_cleanup_of_every_source (tests.test_verified_tv_acquisition.TVAcquisitionTests.test_changed_auxiliary_source_prevents_cleanup_of_every_source)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_verified_tv_acquisition.py", line 287, in test_changed_auxiliary_source_prevents_cleanup_of_every_source
+    self.assertIn('changed', result['last_error'].lower())
+AssertionError: 'changed' not found in 'unknown staging contents; cleanup requires review'
+
+======================================================================
+FAIL: test_shared_auxiliary_source_is_retained_on_cleanup (tests.test_verified_tv_acquisition.TVAcquisitionTests.test_shared_auxiliary_source_is_retained_on_cleanup)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_verified_tv_acquisition.py", line 300, in test_shared_auxiliary_source_is_retained_on_cleanup
+    self.assertIn('another', result['last_error'])
+AssertionError: 'another' not found in 'Unknown staging contents; cleanup requires review'
+
+----------------------------------------------------------------------
+Ran 4 tests in 2.036s
+
+FAILED (failures=3)

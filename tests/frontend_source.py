@@ -3,8 +3,25 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
+SHARED_OWNER_PARTS = {
+    'src/features/ai-control/AIControlWorkspace.jsx': (
+        'src/features/ai-control/AIControlResult.jsx', 'src/features/ai-control/AIControlSelectionBar.jsx'),
+    'src/features/iptv/IPTVWorkspace.jsx': (
+        'src/features/iptv/IPTVCards.jsx', 'src/features/iptv/IPTVProposalPanels.jsx'),
+}
+
+
+def read_frontend_owner(relative_path):
+    """Include extracted shared owners when asserting a workspace's composition."""
+    return '\n'.join((ROOT / path).read_text(encoding='utf-8')
+                     for path in (relative_path, *SHARED_OWNER_PARTS.get(relative_path, ())))
+
 FRONTEND_OWNER_FILES = (
     "src/App.jsx",
+    "src/components/Sidebar.jsx",
+    "src/components/ListsToolbar.jsx",
+    "src/components/WorkspaceViewActions.jsx",
+    "src/components/CatalogMetadataFilters.jsx",
     "src/features/home/HomeWorkspace.jsx",
     "src/features/library/LibraryWorkspace.jsx",
     "src/components/Pagination.jsx",
@@ -13,6 +30,8 @@ FRONTEND_OWNER_FILES = (
     "src/features/discover/DiscoverWorkspace.jsx",
     "src/components/Rating.jsx",
     "src/features/ai-control/AIControlWorkspace.jsx",
+    "src/features/ai-control/AIControlResult.jsx",
+    "src/features/ai-control/AIControlSelectionBar.jsx",
     "src/features/downloads/DownloadsWorkspace.jsx",
     "src/features/help/HelpWorkspace.jsx",
     "src/features/settings/SettingsWorkspace.jsx",

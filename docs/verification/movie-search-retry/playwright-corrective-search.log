@@ -1,0 +1,12 @@
+
+Running 4 tests using 1 worker
+
+
+
+(node:46520) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1/4] tests\e2e\library-search-performance.spec.js:16:1 › rapid live typing serializes reads and renders exact identities and reachable count
+[2/4] tests\e2e\library-search-performance.spec.js:60:1 › stale success and failure cannot replace latest search; empty and repeat navigation recover
+[3/4] tests\e2e\library-search-performance.spec.js:91:1 › foreground typing wins while an old background poster preload is outstanding
+[4/4] tests\e2e\library-search-performance.spec.js:122:1 › Movie to File to Movie during a read schedules a valid replacement and settles loading
+  4 passed (21.6s)

@@ -4,6 +4,18 @@
 
 **Source checked** · 2026-11-13 on `master` at `be511f9`. App, player, TV, IPTV and streaming sources have local changes, including new queue and native UI files. The served bundle, selected runtime and live playback are unverified for this pass.
 
+## 2026-11-13 IPTV integration candidate
+
+`App.streamMovie` synchronously opens `StreamPlayerModal`; `App.streamEpisode` supplies the original direct `embedUrl`. `/api/streaming/config` derives `movie_sources` from `streaming_templates.py` and exposes registry-only IPTV names for pending rows. The dialog lets users select web while IPTV reads are pending, resolves IMDb only after source selection, and keeps saved-provider ordering among web rows.
+
+The chooser rechecks local source membership before exact-version playback. `IPTVSourceList` and `useIPTVPlaybackSession` are shared with the workspace. `iptvPlaybackSession` tracks one active owner/token, disposes late starts, retries transient stop failure and distinguishes owner-only unmount cleanup from explicit `stopActive` when choosing web. `usePlayerDialog` retains focus/Escape handling. `IPTVPlayer` and existing provider history remain authoritative. Tests: `movie-stream-sources.spec.js`, `iptv_playback_session.test.mjs`, streaming config API, stream-player, streaming-providers and native-TV specs.
+
+Authority: [approved plan](../plans/2026-11-13-iptv-cast-discover-streaming.md). Evidence: [2026-11-13 isolated verification](../verification/iptv-cast-discover-streaming-2026-11-13/report.md). Candidate is in the managed `iptv-discover-streaming` worktree at baseline `117526b` plus the preserved dirty desktop source. **Isolated-tested; not activated in the running app.**
+
+## YouTube Movie source — 2026-11-14 isolated candidate
+
+`StreamPlayerModal` opens `YouTubeMovieSource` only after selecting YouTube. The shared `StreamSourceList` renders candidate and IPTV version rows. `POST /api/youtube/movie-search` → `YouTubeMovieSearch` resolves TMDB metadata through the existing provider helper and calls `YouTubeService` for search/video metadata. That owner enforces actual runtime ±5%, Arabic-only title queries, queued pagination, retries and deduplication; uploader status is ignored. `POST /api/ai/youtube/movie-search` starts explicit F6 in the existing AI job/account owners; `YouTubeSearchJob` asks only for extra queries, then uses the same filter. `/api/youtube/movie-search/status` reads retained results after cancellation without searching. TV/direct web/IPTV ownership is unchanged. [Plan](../plans/2026-11-14-youtube-movie-stream.md) · [Verification and live limits](../verification/youtube-stream-2026-11-14/report.md). **Isolated-tested, not activated.**
+
 ## Local launch and file selection
 
 | Entry point | Path and owner |
@@ -23,8 +35,8 @@
 ## Browser streaming and IPTV
 
 - **Provider choice** · Settings → **Streaming Link** saves through `GET/POST /api/streaming/config`. `services/streaming_templates.py` owns StreamIMDB, VSEmbed, validation and TV template derivation. `app.py::streaming_config` validates before writing the enabled flag, label and movie/TV templates to application config. It derives the provider name from the saved pair. An explicit TV template takes precedence. Recognized movie presets can derive a TV template when the TV override is empty. Custom movie hosts need their own TV template. [Settings](../../src/features/settings/SettingsWorkspace.jsx) · [API](../../app.py) · [Template owner](../../services/streaming_templates.py)
-- **Movie or episode Stream** · `App.streamMovie` fills the configured movie template and can resolve a missing IMDb ID through `/api/tmdb/imdb_id`. `App.streamEpisode` uses the typed TMDB TV target with season and episode numbers. Both use the shared `StreamPlayerModal`. The overlay reports page loading, adds a slow hint at 12 seconds, and hides on iframe load or after 30 seconds. Provider errors stay in the frame. CP uses the saved provider for the request and leaves local progress and watched state untouched. [App and dialog](../../src/App.jsx) · [URL builders](../../src/utils/appUtils.js) · [Episode stream controls](../../src/features/tv/TVWorkspace.jsx)
-- **IPTV** · `IPTVWorkspace` starts and stops provider sessions through the IPTV API. `IPTVService.start_playback` issues a local session token and HLS manifest URL. `IPTVPlayer` renders video via HLS and reports non-live progress through the provider history endpoint. Inspect that session and provider state for IPTV issues. Local file launch and the Movie/TV external iframe have their own owners. [Workspace](../../src/features/iptv/IPTVWorkspace.jsx) · [Player](../../src/features/iptv/IPTVPlayer.jsx) · [Routes](../../services/iptv_routes.py) · [Session service](../../services/iptv_service.py)
+- **Movie or episode Stream** · Movie opens the source chooser; TV retains its saved-provider direct iframe URL. The extracted [StreamPlayerModal](../../src/components/StreamPlayerModal.jsx) owns both modes. The iframe overlay reports page loading, adds a slow hint at 12 seconds, and hides on load or after 30 seconds. External playback readiness remains unknown. Web streaming does not update owned progress or watched state. See the candidate section above for current selection and cleanup owners.
+- **IPTV** · `IPTVWorkspace` and the Movie chooser start and stop provider sessions through the shared `useIPTVPlaybackSession` owner and the IPTV API. `IPTVService.start_playback` issues a local session token and HLS manifest URL. `IPTVPlayer` renders video via HLS and reports non-live progress through the provider history endpoint. Inspect that session and provider state for IPTV issues. Local file launch and the Movie/TV external iframe have their own owners. [Workspace](../../src/features/iptv/IPTVWorkspace.jsx) · [Player](../../src/features/iptv/IPTVPlayer.jsx) · [Routes](../../services/iptv_routes.py) · [Session service](../../services/iptv_service.py)
 
 ## Where to start with a report
 
@@ -37,3 +49,5 @@
 | Stream opens the wrong site, episode or hangs | Compare saved templates and the exact iframe URL before judging external availability. Check `test_selected_provider_survives_a_fresh_backend_process`, then the desktop provider and loading specs. For IPTV, start with provider playback token and manifest. [Streaming API](../../tests/test_streaming_config_api.py) · [Provider desktop spec](../../tests/e2e/streaming-providers.spec.js) · [Stream desktop spec](../../tests/e2e/stream-player.spec.js) · [IPTV tests](../../tests/test_iptv_service.py) |
 
 The tests listed here are entry points for verification. This documentation pass inspected source and reports.
+
+**2026-11-14 installation update:** Dante approved applying the YouTube feature to the main CP installation. Feature sources and the rebuilt frontend are installed and the 72 focused checks pass there. The running backend still needs Dante’s restart; live YouTube playback/GPT remain unverified. [Installation evidence](../verification/youtube-stream-2026-11-14/report.md#installation-update--2026-11-14).

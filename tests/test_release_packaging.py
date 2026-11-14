@@ -8,6 +8,20 @@ from tests.player_runtime_fixture import create_player_runtime_bundle
 
 
 class PortableReleasePackagingTests(unittest.TestCase):
+    def test_runtime_skills_are_included_without_copying_authentication_data(self):
+        from tools.build_portable_release import copy_application_files
+        with tempfile.TemporaryDirectory() as root:
+            project, output = Path(root) / 'project', Path(root) / 'copy'
+            skill = project / 'resources/ai/chatgpt/movie-curator/SKILL.md'
+            skill.parent.mkdir(parents=True)
+            skill.write_text('Synthetic instructions')
+            credential = project / 'data/ai/chatgpt/host.json'
+            credential.parent.mkdir(parents=True)
+            credential.write_text('private-host-id')
+            output.mkdir()
+            copy_application_files(project, output)
+            self.assertEqual((output / skill.relative_to(project)).read_text(), 'Synthetic instructions')
+            self.assertFalse((output / 'data').exists())
     @staticmethod
     def current_app_version():
         package_path = Path(__file__).resolve().parents[1] / "package.json"

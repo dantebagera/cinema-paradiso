@@ -1,0 +1,23 @@
+test_browser_report_utf8_with_non_ascii_error (__main__.AuditTests.test_browser_report_utf8_with_non_ascii_error) ... ERROR
+test_redirected_profile_uses_existing_browser_cache (__main__.AuditTests.test_redirected_profile_uses_existing_browser_cache) ... ERROR
+
+======================================================================
+ERROR: test_browser_report_utf8_with_non_ascii_error (__main__.AuditTests.test_browser_report_utf8_with_non_ascii_error)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass4_audit_contract_tests.py", line 48, in test_browser_report_utf8_with_non_ascii_error
+    from pass4_audit_contract import load_browser_report
+ImportError: cannot import name 'load_browser_report' from 'pass4_audit_contract' (C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass4_audit_contract.py)
+
+======================================================================
+ERROR: test_redirected_profile_uses_existing_browser_cache (__main__.AuditTests.test_redirected_profile_uses_existing_browser_cache)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass4_audit_contract_tests.py", line 53, in test_redirected_profile_uses_existing_browser_cache
+    from pass4_audit_contract import prepare_browser_environment
+ImportError: cannot import name 'prepare_browser_environment' from 'pass4_audit_contract' (C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass4_audit_contract.py)
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.005s
+
+FAILED (errors=2)

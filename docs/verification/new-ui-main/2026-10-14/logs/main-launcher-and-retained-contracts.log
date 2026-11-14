@@ -1,0 +1,13 @@
+.......F...................................................................
+======================================================================
+FAIL: test_pinned_offline_inputs_reproduce_complete_seed_and_bootstrap_both_organizations (tests.test_movie_awards_bundle.MovieAwardsBundleTests.test_pinned_offline_inputs_reproduce_complete_seed_and_bootstrap_both_organizations)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\Desktop\cinema paradiso\tests\test_movie_awards_bundle.py", line 26, in test_pinned_offline_inputs_reproduce_complete_seed_and_bootstrap_both_organizations
+    self.assertEqual(canonical_bytes(result['seed']), raw)
+AssertionError: b'null\n' != b'{"ceremonies":[{"ceremony":1,"ceremony_ye[2885727 chars]1}\n'
+
+----------------------------------------------------------------------
+Ran 75 tests in 8.043s
+
+FAILED (failures=1)

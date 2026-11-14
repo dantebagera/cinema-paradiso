@@ -1,7 +1,14 @@
 import { expect, test } from '@playwright/test';
 
+async function openControls(page) {
+  const toggle = page.getByRole('button', { name: 'Search, filters & selection', exact: true });
+  await expect(toggle).toBeVisible();
+  if (await toggle.getAttribute('aria-expanded') === 'false') await toggle.click();
+}
+
 test('only text-editable controls display a caret', async ({ page }) => {
   await page.goto('/discover');
+  await openControls(page);
 
   const caretColors = await page.evaluate(() => {
     const host = document.createElement('section');

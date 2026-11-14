@@ -1,0 +1,18 @@
+{
+  "port": 5000,
+  "pid": 64660,
+  "parent_pid": 65196,
+  "created": "2026-10-11T18:26:23.4976720+03:00",
+  "command": "\"C:\\Program Files\\Python312\\python.exe\" app.py",
+  "index_sha256": "D9D51B9174AE48CF421979D2EBB6C0E16DE147E1D716FFC873038A1084CEABA9",
+  "http_status": 200,
+  "assets": [
+    "/assets/logo-Dk1rN4XL.svg",
+    "/assets/manifest-BSGbUmFO.webmanifest",
+    "/assets/index-pJcXpaa4.js",
+    "/assets/vendor-Bb8JjhAW.js",
+    "/assets/vendor-react-CJZMWplS.js",
+    "/assets/vendor-icons-BISePPUw.js",
+    "/assets/index-DmKtwgPZ.css"
+  ]
+}

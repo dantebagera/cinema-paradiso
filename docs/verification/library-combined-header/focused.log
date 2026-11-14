@@ -1,0 +1,17 @@
+
+Running 10 tests using 1 worker
+
+(node:42008) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 tests\e2e\workspace-controls-empty-layout.spec.js:94:5 › combined Library header movie desktop 1280 keeps views and refresh independent in Media and File View (2.1s)
+  ok  2 tests\e2e\workspace-controls-empty-layout.spec.js:94:5 › combined Library header tv desktop 1280 keeps views and refresh independent in Media and File View (2.6s)
+  ok  3 tests\e2e\workspace-controls-empty-layout.spec.js:94:5 › combined Library header movie desktop 1600 keeps views and refresh independent in Media and File View (1.9s)
+  ok  4 tests\e2e\workspace-controls-empty-layout.spec.js:94:5 › combined Library header tv desktop 1600 keeps views and refresh independent in Media and File View (2.4s)
+  ok  5 tests\e2e\workspace-controls-empty-layout.spec.js:94:5 › combined Library header movie desktop 2048 keeps views and refresh independent in Media and File View (1.6s)
+  ok  6 tests\e2e\workspace-controls-empty-layout.spec.js:94:5 › combined Library header tv desktop 2048 keeps views and refresh independent in Media and File View (2.8s)
+  ok  7 tests\e2e\workspace-controls-empty-layout.spec.js:143:1 › combined Library header retains a disabled scan during loading and exposes scan failure without expanding filters (709ms)
+  ok  8 tests\e2e\workspace-controls-empty-layout.spec.js:722:1 › Library remembers separate Media and File controls states when returning to an expanded movie (808ms)
+  ok  9 tests\e2e\workspace-controls-empty-layout.spec.js:778:1 › Movie Library removes titles and retains sticky view actions in media and files (1.1s)
+  ok 10 tests\e2e\workspace-controls-empty-layout.spec.js:797:1 › TV Library retains sticky view, refresh and Maintenance import actions in media and files (2.2s)
+
+  10 passed (20.3s)

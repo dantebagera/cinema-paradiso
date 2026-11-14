@@ -1,0 +1,11 @@
+{
+  "services/chatgpt_recommendations.py": "2821d11f153b325b23f0dd32d19c4abdc5a5910b50561bb1eded998ade180f15",
+  "services/chatgpt_skills.py": "458e1764818455db93372d41e06e424f4848885ac3e1cce1a1c7ffd012b5ca3c",
+  "resources/ai/chatgpt/movie-curator/SKILL.md": "45b4d367567dfa62f1d553173e15aad0ac74a14925186610bca4d6c6961f1652",
+  "tools/profile_ai_features.py": "a43de43036d4157d4a1b2eb34d48f4c78b8eee4a9c712e3bdd27c2de139f100d",
+  "tools/qualify_chatgpt_features.py": "82a1082d2ac29d91a65a9eb93ac72868e1773cfb4d3429d0c9047e99cb6f979a",
+  "tests/test_chatgpt_recommendations.py": "d0e8c73f4747d3dc8c5fb4afb05099c1b9caac6480c9c8002e245f8b7d5c3d92",
+  "tests/test_chatgpt_skills.py": "5f135a9060b0b2f34e54e9b9812db6473fe5f538e36a7cbde9d0a62e4152717a",
+  "tests/test_ai_timing_capture.py": "1b23e5e930687387fd451899538f149181ae5851f161d1f3bb7b8a936338ae9b",
+  "tests/ai_provider_fixture.py": "0d89c040b6265d9390d8dc4f80ec7e2de74ca90c355dda2aa238aecd39858229"
+}

@@ -1,3 +1,5 @@
+import WorkspaceEmptyState from './WorkspaceEmptyState.jsx';
+import Button from './ui/Button.jsx';
 import {
   AlertTriangle,
   CheckCircle2,
@@ -85,20 +87,20 @@ function IdentityRows({
               <b>{statusLabel}</b>
             </div>
             <div className="cleanup-row-actions">
-              <button type="button" className="btn btn-primary btn-green" onClick={() => onPlay(proposal.path)}>
+              <Button variant="play" type="button"  onClick={() => onPlay(proposal.path)}>
                 <Play size={15} /> Play file
-              </button>
-              <button type="button" className="btn btn-primary btn-violet" onClick={() => onTmdbMatch(proposal)}>
+              </Button>
+              <Button variant="ai" type="button"  onClick={() => onTmdbMatch(proposal)}>
                 <Search size={15} /> Search TMDB manually
-              </button>
+              </Button>
               {plexAvailable && (
-                <button type="button" className="btn btn-secondary" onClick={() => onPlexMatch(proposal)}>
+                <Button type="button"  onClick={() => onPlexMatch(proposal)}>
                   <Clapperboard size={15} /> Search Plex manually
-                </button>
+                </Button>
               )}
-              <button type="button" className="btn btn-secondary" onClick={() => onCorrectMetadata(proposal)}>
+              <Button type="button"  onClick={() => onCorrectMetadata(proposal)}>
                 Correct metadata
-              </button>
+              </Button>
             </div>
           </article>
         );
@@ -257,10 +259,10 @@ export default function IdentityReviewPanel({
   function ApplyControls({ label }) {
     return (
       <div className="identity-review-apply-controls">
-        <button type="button" className="btn btn-primary btn-violet" onClick={applySelected} disabled={!selected.size || Boolean(busy)}>
+        <Button variant="ai" type="button"  onClick={applySelected} disabled={!selected.size || Boolean(busy)}>
           {busy === 'apply' ? <Loader2 size={15} className="spin" /> : <CheckCircle2 size={15} />}
           {label} ({selected.size})
-        </button>
+        </Button>
         {hiddenSelectedCount > 0 && <small>{hiddenSelectedCount} selected item{hiddenSelectedCount === 1 ? '' : 's'} hidden by this filter</small>}
       </div>
     );
@@ -335,19 +337,19 @@ export default function IdentityReviewPanel({
         </div>
         <div className="identity-review-scan-actions">
           {audit?.status === 'running' && (
-            <button type="button" className="btn btn-secondary" onClick={onPause}>
+            <Button type="button"  onClick={onPause}>
               <Pause size={15} /> Pause scan
-            </button>
+            </Button>
           )}
           {audit?.status === 'paused' && (
-            <button type="button" className="btn btn-primary" onClick={onResume}>
+            <Button variant="primary" type="button"  onClick={onResume}>
               <Play size={15} /> Resume scan
-            </button>
+            </Button>
           )}
           {audit?.status !== 'running' && (
-            <button type="button" className="btn btn-secondary" onClick={onStart}>
+            <Button type="button"  onClick={onStart}>
               <RefreshCcw size={15} /> Recheck all identities
-            </button>
+            </Button>
           )}
         </div>
       </section>
@@ -407,9 +409,9 @@ export default function IdentityReviewPanel({
             <span>{selected.size} selected{hiddenSelectedCount ? ` · ${hiddenSelectedCount} hidden` : ''}</span>
           </label>
           <div>
-            <button type="button" className="mini-action" onClick={() => addSelected(recommendedIds)} disabled={!recommendedIds.length}>Select recommended</button>
-            <button type="button" className="mini-action" onClick={() => addSelected(visibleIds)} disabled={!visibleIds.length}>Select all visible</button>
-            <button type="button" className="mini-action" onClick={() => choose([])} disabled={!selected.size}>Clear</button>
+            <Button size="compact" type="button"  onClick={() => addSelected(recommendedIds)} disabled={!recommendedIds.length}>Select recommended</Button>
+            <Button size="compact" type="button"  onClick={() => addSelected(visibleIds)} disabled={!visibleIds.length}>Select all visible</Button>
+            <Button size="compact" type="button"  onClick={() => choose([])} disabled={!selected.size}>Clear</Button>
           </div>
         </div>
       )}
@@ -459,18 +461,18 @@ export default function IdentityReviewPanel({
       </ReviewSection>}
 
       {!items?.length && !automaticRows.length && !['running', 'paused'].includes(audit?.status) && (
-        <div className="empty-state library-empty cleanup-empty">
+        <WorkspaceEmptyState size="regular" className="library-empty cleanup-empty">
           <strong>No matched identities currently need review.</strong>
           <span>Run the full-library check after changing metadata authority or matching rules.</span>
-        </div>
+        </WorkspaceEmptyState>
       )}
 
       {!shadowMode && <footer className="identity-review-footer">
         <ApplyControls label="Apply selected corrections" />
         {approved.length > 0 && !renamePreview && (
-          <button type="button" className="btn btn-secondary" onClick={previewRename} disabled={Boolean(busy)}>
+          <Button type="button"  onClick={previewRename} disabled={Boolean(busy)}>
             <Sparkles size={15} /> Preview rename corrected files
-          </button>
+          </Button>
         )}
       </footer>}
 
@@ -492,9 +494,9 @@ export default function IdentityReviewPanel({
               <span><strong>{item.old_filename}</strong><b>{item.new_filename}</b><small>{item.blocked || 'Ready to rename'}</small></span>
             </label>
           ))}
-          <button type="button" className="btn btn-primary" onClick={applyRename} disabled={!renameSelected.size || Boolean(busy)}>
+          <Button variant="primary" type="button"  onClick={applyRename} disabled={!renameSelected.size || Boolean(busy)}>
             Confirm rename selected files
-          </button>
+          </Button>
         </section>
       )}
       {correctionTarget && (

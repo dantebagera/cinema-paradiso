@@ -1,0 +1,20 @@
+{
+  "beforePid": 54304,
+  "afterPid": 55580,
+  "pidChanged": true,
+  "commandLine": "\"C:\\Program Files\\Python312\\python.exe\" app.py",
+  "backgroundQueueStarted": true,
+  "window": {
+    "schema_version": 2,
+    "window_handle": 68616,
+    "browser_pid": 22964,
+    "window_title": "Cinema Paradiso",
+    "url": "http://localhost:5000/",
+    "launch_mode": "installed_web_app",
+    "edge_app_id": "mleldakmoebeolhcnjndafbokokbkgcn",
+    "profile_directory": "Default",
+    "started_at": 1791928931
+  },
+  "qbtPid": 14308,
+  "qbtOriginalPidPreserved": true
+}

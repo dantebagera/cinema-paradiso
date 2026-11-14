@@ -1,0 +1,682 @@
+FFFFFFFFFFFFFFF..FF.FFFFFFFFFFF.F..F.FFFF..FFFF
+======================================================================
+FAIL: test_additional_provider_criteria_keep_the_upcoming_floor (tests.test_upcoming_discover.UpcomingDiscoverTests.test_additional_provider_criteria_keep_the_upcoming_floor) (groups=[], sort='popularity.desc')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_upcoming_discover.py", line 112, in test_additional_provider_criteria_keep_the_upcoming_floor
+    self.assertEqual(self.ids(result), [2, 3])
+AssertionError: Lists differ: [1, 2, 3, 4, 5, 6, 7, 8] != [2, 3]
+
+First differing element 0:
+1
+2
+
+First list contains 6 additional elements.
+First extra element 2:
+3
+
+- [1, 2, 3, 4, 5, 6, 7, 8]
++ [2, 3]
+
+======================================================================
+FAIL: test_additional_provider_criteria_keep_the_upcoming_floor (tests.test_upcoming_discover.UpcomingDiscoverTests.test_additional_provider_criteria_keep_the_upcoming_floor) (groups=[{'type': 'genre', 'values': [{'id': '18', 'label': 'Drama'}]}], sort='auto')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_upcoming_discover.py", line 112, in test_additional_provider_criteria_keep_the_upcoming_floor
+    self.assertEqual(self.ids(result), [2, 3])
+AssertionError: Lists differ: [1, 2, 3, 4, 5, 6, 7, 8] != [2, 3]
+
+First differing element 0:
+1
+2
+
+First list contains 6 additional elements.
+First extra element 2:
+3
+
+- [1, 2, 3, 4, 5, 6, 7, 8]
++ [2, 3]
+
+======================================================================
+FAIL: test_additional_provider_criteria_keep_the_upcoming_floor (tests.test_upcoming_discover.UpcomingDiscoverTests.test_additional_provider_criteria_keep_the_upcoming_floor) (groups=[{'type': 'year', 'values': [{'operator': 'at_least', 'value': 2020}]}], sort='auto')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_upcoming_discover.py", line 112, in test_additional_provider_criteria_keep_the_upcoming_floor
+    self.assertEqual(self.ids(result), [2, 3])
+AssertionError: Lists differ: [1, 2, 3, 4, 5, 6, 7, 8] != [2, 3]
+
+First differing element 0:
+1
+2
+
+First list contains 6 additional elements.
+First extra element 2:
+3
+
+- [1, 2, 3, 4, 5, 6, 7, 8]
++ [2, 3]
+
+======================================================================
+FAIL: test_both_upcoming_routes_keep_today_and_future_and_reject_unknown_or_invalid_dates (tests.test_upcoming_discover.UpcomingDiscoverTests.test_both_upcoming_routes_keep_today_and_future_and_reject_unknown_or_invalid_dates) (route='native')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_upcoming_discover.py", line 70, in test_both_upcoming_routes_keep_today_and_future_and_reject_unknown_or_invalid_dates
+    self.assertEqual(self.ids(result), [2, 3])
+AssertionError: Lists differ: [1, 2, 3, 4, 5, 6, 7, 8] != [2, 3]
+
+First differing element 0:
+1
+2
+
+First list contains 6 additional elements.
+First extra element 2:
+3
+
+- [1, 2, 3, 4, 5, 6, 7, 8]
++ [2, 3]
+
+======================================================================
+FAIL: test_both_upcoming_routes_keep_today_and_future_and_reject_unknown_or_invalid_dates (tests.test_upcoming_discover.UpcomingDiscoverTests.test_both_upcoming_routes_keep_today_and_future_and_reject_unknown_or_invalid_dates) (route='advanced')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_upcoming_discover.py", line 70, in test_both_upcoming_routes_keep_today_and_future_and_reject_unknown_or_invalid_dates
+    self.assertEqual(self.ids(result), [2, 3])
+AssertionError: Lists differ: [1, 2, 3, 4, 5, 6, 7, 8] != [2, 3]
+
+First differing element 0:
+1
+2
+
+First list contains 6 additional elements.
+First extra element 2:
+3
+
+- [1, 2, 3, 4, 5, 6, 7, 8]
++ [2, 3]
+
+======================================================================
+FAIL: test_calendar_rollover_invalidates_upcoming_snapshot (tests.test_upcoming_discover.UpcomingDiscoverTests.test_calendar_rollover_invalidates_upcoming_snapshot) (route='native')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_upcoming_discover.py", line 152, in test_calendar_rollover_invalidates_upcoming_snapshot
+    self.assertEqual(self.ids(self.request(route)), [2, 3])
+AssertionError: Lists differ: [1, 2, 3, 4, 5, 6, 7, 8] != [2, 3]
+
+First differing element 0:
+1
+2
+
+First list contains 6 additional elements.
+First extra element 2:
+3
+
+- [1, 2, 3, 4, 5, 6, 7, 8]
++ [2, 3]
+
+======================================================================
+FAIL: test_calendar_rollover_invalidates_upcoming_snapshot (tests.test_upcoming_discover.UpcomingDiscoverTests.test_calendar_rollover_invalidates_upcoming_snapshot) (route='advanced')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_upcoming_discover.py", line 152, in test_calendar_rollover_invalidates_upcoming_snapshot
+    self.assertEqual(self.ids(self.request(route)), [2, 3])
+AssertionError: Lists differ: [1, 2, 3, 4, 5, 6, 7, 8] != [2, 3]
+
+First differing element 0:
+1
+2
+
+First list contains 6 additional elements.
+First extra element 2:
+3
+
+- [1, 2, 3, 4, 5, 6, 7, 8]
++ [2, 3]
+
+======================================================================
+FAIL: test_empty_and_exact_multiple_have_no_phantom_next_page (tests.test_upcoming_discover.UpcomingDiscoverTests.test_empty_and_exact_multiple_have_no_phantom_next_page) (count=0, route='native')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_upcoming_discover.py", line 218, in test_empty_and_exact_multiple_have_no_phantom_next_page
+    self.assertEqual(final['total_results'], count)
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_empty_and_exact_multiple_have_no_phantom_next_page (tests.test_upcoming_discover.UpcomingDiscoverTests.test_empty_and_exact_multiple_have_no_phantom_next_page) (count=0, route='advanced')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_upcoming_discover.py", line 218, in test_empty_and_exact_multiple_have_no_phantom_next_page
+    self.assertEqual(final['total_results'], count)
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_empty_and_exact_multiple_have_no_phantom_next_page (tests.test_upcoming_discover.UpcomingDiscoverTests.test_empty_and_exact_multiple_have_no_phantom_next_page) (count=3, route='native')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_upcoming_discover.py", line 218, in test_empty_and_exact_multiple_have_no_phantom_next_page
+    self.assertEqual(final['total_results'], count)
+AssertionError: 4 != 3
+
+======================================================================
+FAIL: test_empty_and_exact_multiple_have_no_phantom_next_page (tests.test_upcoming_discover.UpcomingDiscoverTests.test_empty_and_exact_multiple_have_no_phantom_next_page) (count=3, route='advanced')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_upcoming_discover.py", line 218, in test_empty_and_exact_multiple_have_no_phantom_next_page
+    self.assertEqual(final['total_results'], count)
+AssertionError: 4 != 3
+
+======================================================================
+FAIL: test_empty_and_exact_multiple_have_no_phantom_next_page (tests.test_upcoming_discover.UpcomingDiscoverTests.test_empty_and_exact_multiple_have_no_phantom_next_page) (count=40, route='native')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_upcoming_discover.py", line 217, in test_empty_and_exact_multiple_have_no_phantom_next_page
+    self.assertFalse(final['has_next'])
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_empty_and_exact_multiple_have_no_phantom_next_page (tests.test_upcoming_discover.UpcomingDiscoverTests.test_empty_and_exact_multiple_have_no_phantom_next_page) (count=40, route='advanced')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_upcoming_discover.py", line 217, in test_empty_and_exact_multiple_have_no_phantom_next_page
+    self.assertFalse(final['has_next'])
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_empty_and_exact_multiple_have_no_phantom_next_page (tests.test_upcoming_discover.UpcomingDiscoverTests.test_empty_and_exact_multiple_have_no_phantom_next_page) (count=80, route='native')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_upcoming_discover.py", line 217, in test_empty_and_exact_multiple_have_no_phantom_next_page
+    self.assertFalse(final['has_next'])
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_empty_and_exact_multiple_have_no_phantom_next_page (tests.test_upcoming_discover.UpcomingDiscoverTests.test_empty_and_exact_multiple_have_no_phantom_next_page) (count=80, route='advanced')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_upcoming_discover.py", line 217, in test_empty_and_exact_multiple_have_no_phantom_next_page
+    self.assertFalse(final['has_next'])
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_native_filtered_route_also_removes_past_dates (tests.test_upcoming_discover.UpcomingDiscoverTests.test_native_filtered_route_also_removes_past_dates)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_upcoming_discover.py", line 127, in test_native_filtered_route_also_removes_past_dates
+    self.assertEqual(self.ids(self.request('native', genre='18')), [2, 3])
+AssertionError: Lists differ: [1, 2, 3, 4, 5, 6, 7, 8] != [2, 3]
+
+First differing element 0:
+1
+2
+
+First list contains 6 additional elements.
+First extra element 2:
+3
+
+- [1, 2, 3, 4, 5, 6, 7, 8]
++ [2, 3]
+
+======================================================================
+FAIL: test_native_home_request_finishes_sparse_finite_feed_beyond_local_scan_budget (tests.test_upcoming_discover.UpcomingDiscoverTests.test_native_home_request_finishes_sparse_finite_feed_beyond_local_scan_budget)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_upcoming_discover.py", line 98, in test_native_home_request_finishes_sparse_finite_feed_beyond_local_scan_budget
+    self.assertEqual(self.ids(result), [300])
+AssertionError: Lists differ: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13[345 chars] 100] != [300]
+
+First differing element 0:
+1
+300
+
+First list contains 99 additional elements.
+First extra element 1:
+2
+
+Diff is 700 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_person_credits_are_filtered_before_counting_and_paging (tests.test_upcoming_discover.UpcomingDiscoverTests.test_person_credits_are_filtered_before_counting_and_paging)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_upcoming_discover.py", line 143, in test_person_credits_are_filtered_before_counting_and_paging
+    self.assertEqual(self.ids(first), [2])
+AssertionError: Lists differ: [1] != [2]
+
+First differing element 0:
+1
+2
+
+- [1]
++ [2]
+
+======================================================================
+FAIL: test_provider_failure_does_not_commit_partial_batch_and_retry_fills_page (tests.test_upcoming_discover.UpcomingDiscoverTests.test_provider_failure_does_not_commit_partial_batch_and_retry_fills_page) (route='native')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_upcoming_discover.py", line 207, in test_provider_failure_does_not_commit_partial_batch_and_retry_fills_page
+    self.assertEqual(self.ids(retried), list(range(1, 41)))
+AssertionError: Lists differ: [1001, 1, 1002, 2, 1003, 3, 1004, 4, 1005, [143 chars], 20] != [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13,[103 chars], 40]
+
+First differing element 0:
+1001
+1
+
++ [1,
+- [1001,
+-  1,
+-  1002,
+   2,
+-  1003,
+   3,
+-  1004,
+   4,
+-  1005,
+   5,
+-  1006,
+   6,
+-  1007,
+   7,
+-  1008,
+   8,
+-  1009,
+   9,
+-  1010,
+   10,
+-  1011,
+   11,
+-  1012,
+   12,
+-  1013,
+   13,
+-  1014,
+   14,
+-  1015,
+   15,
+-  1016,
+   16,
+-  1017,
+   17,
+-  1018,
+   18,
+-  1019,
+   19,
+-  1020,
+?  --
+
++  20,
++  21,
++  22,
++  23,
++  24,
++  25,
++  26,
++  27,
++  28,
++  29,
++  30,
++  31,
++  32,
++  33,
++  34,
++  35,
++  36,
++  37,
++  38,
++  39,
+-  20]
+?  ^
+
++  40]
+?  ^
+
+
+======================================================================
+FAIL: test_provider_failure_does_not_commit_partial_batch_and_retry_fills_page (tests.test_upcoming_discover.UpcomingDiscoverTests.test_provider_failure_does_not_commit_partial_batch_and_retry_fills_page) (route='advanced')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_upcoming_discover.py", line 207, in test_provider_failure_does_not_commit_partial_batch_and_retry_fills_page
+    self.assertEqual(self.ids(retried), list(range(1, 41)))
+AssertionError: Lists differ: [1001, 1, 1002, 2, 1003, 3, 1004, 4, 1005, [143 chars], 20] != [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13,[103 chars], 40]
+
+First differing element 0:
+1001
+1
+
++ [1,
+- [1001,
+-  1,
+-  1002,
+   2,
+-  1003,
+   3,
+-  1004,
+   4,
+-  1005,
+   5,
+-  1006,
+   6,
+-  1007,
+   7,
+-  1008,
+   8,
+-  1009,
+   9,
+-  1010,
+   10,
+-  1011,
+   11,
+-  1012,
+   12,
+-  1013,
+   13,
+-  1014,
+   14,
+-  1015,
+   15,
+-  1016,
+   16,
+-  1017,
+   17,
+-  1018,
+   18,
+-  1019,
+   19,
+-  1020,
+?  --
+
++  20,
++  21,
++  22,
++  23,
++  24,
++  25,
++  26,
++  27,
++  28,
++  29,
++  30,
++  31,
++  32,
++  33,
++  34,
++  35,
++  36,
++  37,
++  38,
++  39,
+-  20]
+?  ^
+
++  40]
+?  ^
+
+
+======================================================================
+FAIL: test_replacements_fill_39_and_40_card_pages_without_losing_final_matches (tests.test_upcoming_discover.UpcomingDiscoverTests.test_replacements_fill_39_and_40_card_pages_without_losing_final_matches) (route='native', size=39)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_upcoming_discover.py", line 87, in test_replacements_fill_39_and_40_card_pages_without_losing_final_matches
+    self.assertEqual([len(p['results']) for p in pages], [size, size, 81 - size * 2])
+AssertionError: Lists differ: [39, 39, 39] != [39, 39, 3]
+
+First differing element 2:
+39
+3
+
+- [39, 39, 39]
+?           -
+
++ [39, 39, 3]
+
+======================================================================
+FAIL: test_replacements_fill_39_and_40_card_pages_without_losing_final_matches (tests.test_upcoming_discover.UpcomingDiscoverTests.test_replacements_fill_39_and_40_card_pages_without_losing_final_matches) (route='native', size=40)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_upcoming_discover.py", line 87, in test_replacements_fill_39_and_40_card_pages_without_losing_final_matches
+    self.assertEqual([len(p['results']) for p in pages], [size, size, 81 - size * 2])
+AssertionError: Lists differ: [40, 40, 40] != [40, 40, 1]
+
+First differing element 2:
+40
+1
+
+- [40, 40, 40]
+?          ^^
+
++ [40, 40, 1]
+?          ^
+
+
+======================================================================
+FAIL: test_replacements_fill_39_and_40_card_pages_without_losing_final_matches (tests.test_upcoming_discover.UpcomingDiscoverTests.test_replacements_fill_39_and_40_card_pages_without_losing_final_matches) (route='advanced', size=39)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_upcoming_discover.py", line 87, in test_replacements_fill_39_and_40_card_pages_without_losing_final_matches
+    self.assertEqual([len(p['results']) for p in pages], [size, size, 81 - size * 2])
+AssertionError: Lists differ: [39, 39, 39] != [39, 39, 3]
+
+First differing element 2:
+39
+3
+
+- [39, 39, 39]
+?           -
+
++ [39, 39, 3]
+
+======================================================================
+FAIL: test_replacements_fill_39_and_40_card_pages_without_losing_final_matches (tests.test_upcoming_discover.UpcomingDiscoverTests.test_replacements_fill_39_and_40_card_pages_without_losing_final_matches) (route='advanced', size=40)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_upcoming_discover.py", line 87, in test_replacements_fill_39_and_40_card_pages_without_losing_final_matches
+    self.assertEqual([len(p['results']) for p in pages], [size, size, 81 - size * 2])
+AssertionError: Lists differ: [40, 40, 40] != [40, 40, 1]
+
+First differing element 2:
+40
+1
+
+- [40, 40, 40]
+?          ^^
+
++ [40, 40, 1]
+?          ^
+
+
+======================================================================
+FAIL: test_unfinished_local_scan_is_retryable_then_exposes_only_proven_final_matches (tests.test_upcoming_discover.UpcomingDiscoverTests.test_unfinished_local_scan_is_retryable_then_exposes_only_proven_final_matches)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_upcoming_discover.py", line 168, in test_unfinished_local_scan_is_retryable_then_exposes_only_proven_final_matches
+    self.assertEqual(first['results'], [])
+AssertionError: Lists differ: [{'adult': False, 'backdrop_url': '', 'cas[24584 chars]26'}] != []
+
+First list contains 40 additional elements.
+First extra element 0:
+{'adult': False, 'backdrop_url': '', 'cast': [], 'certification': '', 'collection': {}, 'country': 'US', 'country_flag': '\U0001f1fa\U0001f1f8', 'director': {}, 'directors': [], 'genres': ['Drama'], 'imdb_id': '', 'keywords': [], 'language': 'English', 'match_source': '', 'original_language': 'en', 'original_title': '', 'plot': '', 'popularity': 999.0, 'poster_url': '', 'release_date': '2026-10-11', 'release_years': ['2026'], 'release_years_checked_at': 0.0, 'runtime': None, 'tagline': '', 'title': 'Upcoming 001', 'tmdb_id': '1', 'tmdb_rating': '8.0', 'tmdb_vote_count': 100, 'trailer_url': '', 'writers': [], 'year': '2026'}
+
+Diff is 29556 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_upcoming_title_and_ownership_paths_enforce_the_same_date_rule (tests.test_upcoming_discover.UpcomingDiscoverTests.test_upcoming_title_and_ownership_paths_enforce_the_same_date_rule) (groups=[{'type': 'title', 'values': [{'text': 'Upcoming'}]}])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_upcoming_discover.py", line 136, in test_upcoming_title_and_ownership_paths_enforce_the_same_date_rule
+    self.assertEqual(self.ids(self.request(groups=groups)), [2, 3])
+AssertionError: Lists differ: [1, 2, 3, 4, 5, 6, 7, 8] != [2, 3]
+
+First differing element 0:
+1
+2
+
+First list contains 6 additional elements.
+First extra element 2:
+3
+
+- [1, 2, 3, 4, 5, 6, 7, 8]
++ [2, 3]
+
+======================================================================
+FAIL: test_upcoming_title_and_ownership_paths_enforce_the_same_date_rule (tests.test_upcoming_discover.UpcomingDiscoverTests.test_upcoming_title_and_ownership_paths_enforce_the_same_date_rule) (groups=[{'type': 'availability', 'values': [{'id': 'unowned', 'label': 'Not owned'}]}])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_upcoming_discover.py", line 136, in test_upcoming_title_and_ownership_paths_enforce_the_same_date_rule
+    self.assertEqual(self.ids(self.request(groups=groups)), [2, 3])
+AssertionError: Lists differ: [1, 2, 3, 4, 5, 6, 7, 8] != [2, 3]
+
+First differing element 0:
+1
+2
+
+First list contains 6 additional elements.
+First extra element 2:
+3
+
+- [1, 2, 3, 4, 5, 6, 7, 8]
++ [2, 3]
+
+======================================================================
+FAIL: test_future_metadata_date_does_not_hide_a_verified_existing_release (tests.test_movie_follow_contract.MovieFollowContractTest.test_future_metadata_date_does_not_hide_a_verified_existing_release)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_movie_follow_contract.py", line 111, in test_future_metadata_date_does_not_hide_a_verified_existing_release
+    self.assert_available(self.scan())
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_movie_follow_contract.py", line 72, in assert_available
+    self.assertEqual(payload['movies'][0]['status'], 'available')
+AssertionError: 'watching' != 'available'
+- watching
++ available
+
+
+======================================================================
+FAIL: test_provider_failure_does_not_block_the_next_scan (tests.test_movie_follow_contract.MovieFollowContractTest.test_provider_failure_does_not_block_the_next_scan)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_movie_follow_contract.py", line 177, in test_provider_failure_does_not_block_the_next_scan
+    self.assert_available(self.scan())
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_movie_follow_contract.py", line 72, in assert_available
+    self.assertEqual(payload['movies'][0]['status'], 'available')
+AssertionError: 'watching' != 'available'
+- watching
++ available
+
+
+======================================================================
+FAIL: test_rss_accepts_verified_identity_despite_an_alternate_title (tests.test_movie_follow_contract.MovieFollowContractTest.test_rss_accepts_verified_identity_despite_an_alternate_title)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_movie_follow_contract.py", line 122, in test_rss_accepts_verified_identity_despite_an_alternate_title
+    self.assert_available(result)
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_movie_follow_contract.py", line 72, in assert_available
+    self.assertEqual(payload['movies'][0]['status'], 'available')
+AssertionError: 'watching' != 'available'
+- watching
++ available
+
+
+======================================================================
+FAIL: test_scan_ignores_saved_retry_date_and_uses_verified_imdb (tests.test_movie_follow_contract.MovieFollowContractTest.test_scan_ignores_saved_retry_date_and_uses_verified_imdb)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_movie_follow_contract.py", line 82, in test_scan_ignores_saved_retry_date_and_uses_verified_imdb
+    self.assert_available(self.scan())
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_movie_follow_contract.py", line 72, in assert_available
+    self.assertEqual(payload['movies'][0]['status'], 'available')
+AssertionError: 'watching' != 'available'
+- watching
++ available
+
+
+======================================================================
+FAIL: test_second_scan_retries_an_identity_page_that_previously_failed (tests.test_movie_follow_contract.MovieFollowContractTest.test_second_scan_retries_an_identity_page_that_previously_failed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_movie_follow_contract.py", line 147, in test_second_scan_retries_an_identity_page_that_previously_failed
+    self.assert_available(self.scan())
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_movie_follow_contract.py", line 72, in assert_available
+    self.assertEqual(payload['movies'][0]['status'], 'available')
+AssertionError: 'watching' != 'available'
+- watching
++ available
+
+
+======================================================================
+FAIL: test_second_scan_searches_immediately_after_a_miss (tests.test_movie_follow_contract.MovieFollowContractTest.test_second_scan_searches_immediately_after_a_miss)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_movie_follow_contract.py", line 90, in test_second_scan_searches_immediately_after_a_miss
+    self.assert_available(self.scan())
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_movie_follow_contract.py", line 72, in assert_available
+    self.assertEqual(payload['movies'][0]['status'], 'available')
+AssertionError: 'watching' != 'available'
+- watching
++ available
+
+
+======================================================================
+FAIL: test_short_rss_timeout_does_not_poison_longer_movie_search_verification (tests.test_movie_follow_contract.MovieFollowContractTest.test_short_rss_timeout_does_not_poison_longer_movie_search_verification)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_movie_follow_contract.py", line 244, in test_short_rss_timeout_does_not_poison_longer_movie_search_verification
+    self.assert_available(result)
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_movie_follow_contract.py", line 73, in assert_available
+    self.assertEqual(payload['movies'][0]['best_release']['info_hash'], 'a' * 40)
+AssertionError: '' != 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
++ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+
+======================================================================
+FAIL: test_verified_identity_accepts_all_confirmed_title_and_year_variants (tests.test_movie_follow_contract.MovieFollowContractTest.test_verified_identity_accepts_all_confirmed_title_and_year_variants) (title='Northspur')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_movie_follow_contract.py", line 106, in test_verified_identity_accepts_all_confirmed_title_and_year_variants
+    self.assert_available(self.scan())
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_movie_follow_contract.py", line 72, in assert_available
+    self.assertEqual(payload['movies'][0]['status'], 'available')
+AssertionError: 'watching' != 'available'
+- watching
++ available
+
+
+======================================================================
+FAIL: test_verified_identity_accepts_all_confirmed_title_and_year_variants (tests.test_movie_follow_contract.MovieFollowContractTest.test_verified_identity_accepts_all_confirmed_title_and_year_variants) (title='The Uprising')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_movie_follow_contract.py", line 106, in test_verified_identity_accepts_all_confirmed_title_and_year_variants
+    self.assert_available(self.scan())
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_movie_follow_contract.py", line 72, in assert_available
+    self.assertEqual(payload['movies'][0]['status'], 'available')
+AssertionError: 'watching' != 'available'
+- watching
++ available
+
+
+======================================================================
+FAIL: test_verified_identity_accepts_all_confirmed_title_and_year_variants (tests.test_movie_follow_contract.MovieFollowContractTest.test_verified_identity_accepts_all_confirmed_title_and_year_variants) (title='Hope')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_movie_follow_contract.py", line 106, in test_verified_identity_accepts_all_confirmed_title_and_year_variants
+    self.assert_available(self.scan())
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_movie_follow_contract.py", line 72, in assert_available
+    self.assertEqual(payload['movies'][0]['status'], 'available')
+AssertionError: 'watching' != 'available'
+- watching
++ available
+
+
+======================================================================
+FAIL: test_verified_identity_accepts_all_confirmed_title_and_year_variants (tests.test_movie_follow_contract.MovieFollowContractTest.test_verified_identity_accepts_all_confirmed_title_and_year_variants) (title='Sheep in the Box')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_movie_follow_contract.py", line 106, in test_verified_identity_accepts_all_confirmed_title_and_year_variants
+    self.assert_available(self.scan())
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_movie_follow_contract.py", line 72, in assert_available
+    self.assertEqual(payload['movies'][0]['status'], 'available')
+AssertionError: 'watching' != 'available'
+- watching
++ available
+
+
+----------------------------------------------------------------------
+Ran 28 tests in 3.139s
+
+FAILED (failures=38)

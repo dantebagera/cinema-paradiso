@@ -1,0 +1,14 @@
+{
+  "kind": "python",
+  "dist": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\fixtures\\main-existing-failure-baseline-6ff68f2bff004384957aef5f176df880\\dist",
+  "label": "main-existing-failure-baseline",
+  "modules": [
+    "tests.test_movie_awards_bundle",
+    "tests.test_qbittorrent_ui",
+    "tests.test_iptv_movie_service"
+  ],
+  "elapsed": 4.141883,
+  "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\logs\\main-existing-failure-baseline.log",
+  "exitCode": 1,
+  "root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\fixtures\\main-existing-failure-baseline-6ff68f2bff004384957aef5f176df880"
+}

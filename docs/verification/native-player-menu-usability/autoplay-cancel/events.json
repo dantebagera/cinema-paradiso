@@ -1,0 +1,163 @@
+[
+  {
+    "accepted": true,
+    "media_generation": 1,
+    "protocol": 1,
+    "sequence": 2,
+    "session_id": "872ee908807e41aba1851f8d12953738",
+    "type": "ready"
+  },
+  {
+    "media_generation": 1,
+    "protocol": 1,
+    "sequence": 3,
+    "session_id": "872ee908807e41aba1851f8d12953738",
+    "state": "loading",
+    "type": "playback.state"
+  },
+  {
+    "media_generation": 1,
+    "protocol": 1,
+    "sequence": 4,
+    "session_id": "872ee908807e41aba1851f8d12953738",
+    "state": "playing",
+    "type": "playback.state"
+  },
+  {
+    "media_generation": 1,
+    "protocol": 1,
+    "sequence": 5,
+    "session_id": "872ee908807e41aba1851f8d12953738",
+    "tracks": [
+      {
+        "channels": "2",
+        "codec": "aac",
+        "default": true,
+        "external": false,
+        "fingerprint": "audio|und|aac|2|",
+        "forced": false,
+        "hearing_impaired": false,
+        "language": "und",
+        "selected": true,
+        "title": "",
+        "type": "audio"
+      }
+    ],
+    "type": "tracks.changed"
+  },
+  {
+    "media_generation": 1,
+    "protocol": 1,
+    "sequence": 6,
+    "session_id": "872ee908807e41aba1851f8d12953738",
+    "subtitle_delay_ms": 0,
+    "type": "playback.settings"
+  },
+  {
+    "duration_ms": 0,
+    "media_generation": 1,
+    "paused": false,
+    "position_ms": 0,
+    "protocol": 1,
+    "sequence": 7,
+    "session_id": "872ee908807e41aba1851f8d12953738",
+    "type": "progress"
+  },
+  {
+    "duration_ms": 2020,
+    "media_generation": 1,
+    "paused": false,
+    "position_ms": 917,
+    "protocol": 1,
+    "sequence": 8,
+    "session_id": "872ee908807e41aba1851f8d12953738",
+    "type": "progress"
+  },
+  {
+    "duration_ms": 2020,
+    "media_generation": 1,
+    "paused": false,
+    "position_ms": 1917,
+    "protocol": 1,
+    "sequence": 9,
+    "session_id": "872ee908807e41aba1851f8d12953738",
+    "type": "progress"
+  },
+  {
+    "media_generation": 1,
+    "protocol": 1,
+    "sequence": 10,
+    "session_id": "872ee908807e41aba1851f8d12953738",
+    "state": "ended",
+    "type": "playback.state"
+  },
+  {
+    "media_generation": 1,
+    "protocol": 1,
+    "sequence": 11,
+    "session_id": "872ee908807e41aba1851f8d12953738",
+    "state": "paused",
+    "type": "playback.state"
+  },
+  {
+    "duration_ms": 2020,
+    "media_generation": 1,
+    "paused": true,
+    "position_ms": 1963,
+    "protocol": 1,
+    "sequence": 12,
+    "session_id": "872ee908807e41aba1851f8d12953738",
+    "type": "progress"
+  },
+  {
+    "duration_ms": 2020,
+    "media_generation": 1,
+    "paused": true,
+    "position_ms": 1963,
+    "protocol": 1,
+    "sequence": 13,
+    "session_id": "872ee908807e41aba1851f8d12953738",
+    "type": "progress"
+  },
+  {
+    "media_generation": 1,
+    "protocol": 1,
+    "sequence": 14,
+    "session_id": "872ee908807e41aba1851f8d12953738",
+    "type": "closing"
+  },
+  {
+    "media_generation": 1,
+    "protocol": 1,
+    "sequence": 15,
+    "session_id": "872ee908807e41aba1851f8d12953738",
+    "type": "closed"
+  },
+  {
+    "media_generation": 1,
+    "protocol": 1,
+    "sequence": 16,
+    "session_id": "872ee908807e41aba1851f8d12953738",
+    "type": "window.state",
+    "window_state": {
+      "always_on_top": false,
+      "height": 720,
+      "maximized": false,
+      "positioned": true,
+      "screen": "SAMSUNG",
+      "width": 1280,
+      "x": 640,
+      "y": 320
+    }
+  },
+  {
+    "duration_ms": 2020,
+    "media_generation": 1,
+    "paused": true,
+    "position_ms": 1963,
+    "protocol": 1,
+    "sequence": 17,
+    "session_id": "872ee908807e41aba1851f8d12953738",
+    "type": "progress"
+  }
+]

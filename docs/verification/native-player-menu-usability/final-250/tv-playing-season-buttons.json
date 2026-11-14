@@ -1,0 +1,245 @@
+[
+  {
+    "name": "Minimize",
+    "rect": [
+      3280,
+      135,
+      3385,
+      240
+    ]
+  },
+  {
+    "name": "Close",
+    "rect": [
+      3395,
+      135,
+      3500,
+      240
+    ]
+  },
+  {
+    "name": "Previous: S02E02 · Synthetic episode · الحلقة",
+    "rect": [
+      390,
+      1765,
+      495,
+      1870
+    ]
+  },
+  {
+    "name": "Pause",
+    "rect": [
+      520,
+      1765,
+      625,
+      1870
+    ]
+  },
+  {
+    "name": "Next: S02E04 · Synthetic episode · الحلقة",
+    "rect": [
+      650,
+      1765,
+      755,
+      1870
+    ]
+  },
+  {
+    "name": "Mute",
+    "rect": [
+      780,
+      1765,
+      885,
+      1870
+    ]
+  },
+  {
+    "name": "Playback speed 1.00",
+    "rect": [
+      2695,
+      1765,
+      2800,
+      1870
+    ]
+  },
+  {
+    "name": "",
+    "rect": [
+      2825,
+      1765,
+      2930,
+      1870
+    ]
+  },
+  {
+    "name": "Subtitles",
+    "rect": [
+      2955,
+      1765,
+      3060,
+      1870
+    ]
+  },
+  {
+    "name": "Playlist",
+    "rect": [
+      3085,
+      1765,
+      3190,
+      1870
+    ]
+  },
+  {
+    "name": "Settings",
+    "rect": [
+      3215,
+      1765,
+      3320,
+      1870
+    ]
+  },
+  {
+    "name": "Enter fullscreen",
+    "rect": [
+      3345,
+      1765,
+      3450,
+      1870
+    ]
+  },
+  {
+    "name": "Close",
+    "rect": [
+      3312,
+      335,
+      3429,
+      407
+    ]
+  },
+  {
+    "name": "Season 1",
+    "rect": [
+      2410,
+      497,
+      3405,
+      579
+    ]
+  },
+  {
+    "name": "Season 2",
+    "rect": [
+      2410,
+      595,
+      3405,
+      677
+    ]
+  },
+  {
+    "name": "S02E01 · Synthetic episode · الحلقة",
+    "rect": [
+      2410,
+      692,
+      3405,
+      782
+    ]
+  },
+  {
+    "name": "S02E02 · Synthetic episode · الحلقة",
+    "rect": [
+      2410,
+      797,
+      3405,
+      887
+    ]
+  },
+  {
+    "name": "▶  S02E03 · Synthetic episode · الحلقة",
+    "rect": [
+      2410,
+      902,
+      3405,
+      992
+    ]
+  },
+  {
+    "name": "S02E04 · Synthetic episode · الحلقة",
+    "rect": [
+      2410,
+      1007,
+      3405,
+      1097
+    ]
+  },
+  {
+    "name": "S02E05 · Synthetic episode · الحلقة",
+    "rect": [
+      2410,
+      1112,
+      3405,
+      1202
+    ]
+  },
+  {
+    "name": "S02E06 · Synthetic episode · الحلقة",
+    "rect": [
+      2410,
+      1217,
+      3405,
+      1307
+    ]
+  },
+  {
+    "name": "S02E07 · Synthetic episode · الحلقة",
+    "rect": [
+      2410,
+      1322,
+      3405,
+      1412
+    ]
+  },
+  {
+    "name": "S02E08 · Synthetic episode · الحلقة",
+    "rect": [
+      2410,
+      1427,
+      3405,
+      1517
+    ]
+  },
+  {
+    "name": "S02E09 · Synthetic episode · الحلقة",
+    "rect": [
+      2410,
+      1532,
+      3405,
+      1622
+    ]
+  },
+  {
+    "name": "S02E10 · Synthetic episode · الحلقة",
+    "rect": [
+      2410,
+      1637,
+      3405,
+      1727
+    ]
+  },
+  {
+    "name": "S02E11 · Synthetic episode · الحلقة",
+    "rect": [
+      2410,
+      1742,
+      3405,
+      1832
+    ]
+  },
+  {
+    "name": "S02E12 · Synthetic episode · الحلقة",
+    "rect": [
+      2410,
+      1847,
+      3405,
+      1937
+    ]
+  }
+]

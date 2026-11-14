@@ -2,6 +2,16 @@
 
 [Code map](../atlas/playback-and-streaming.md) · [Second Brain index](README.md) · [Update log](log.md)
 
+## 2026-11-14 YouTube Movie source
+
+On 2026-11-14 Dante approved adding YouTube to Movie Stream: actual duration within ±5% of the movie runtime; Arabic names for Arabic films; no normal GPT involvement; always offer Search more and optional Use GPT; ignore official-uploader status entirely. Missing runtime is an explicit error, not permission to relax the duration gate. The implementation follows the existing web enabled flag, retains results and retries, and leaves TV/IPTV behavior intact. [Approved scope](../plans/2026-11-14-youtube-movie-stream.md) · [Isolated evidence](../verification/youtube-stream-2026-11-14/report.md). No activation or real upstream playback/inference was performed.
+
+## 2026-11-13 IPTV integration candidate
+
+On 2026-11-13 Dante explicitly approved changing every Movie Stream caller (Discover, Home, Library and Lists) to open the source chooser first, even when only one source is selectable. This supersedes the Movie-only part of the 24 October direct saved-provider rule. TV episodes still open the saved provider directly. The enabled flag controls web streaming; configured IPTV remains independently usable. Web presence remains unknown; an IPTV match means listed in the last saved catalog, not proven online. The current saved custom movie template is included; a multiple-custom-source settings editor is outside scope.
+
+Authority: [approved plan](../plans/2026-11-13-iptv-cast-discover-streaming.md). Evidence: [2026-11-13 isolated verification](../verification/iptv-cast-discover-streaming-2026-11-13/report.md). Candidate is in the managed `iptv-discover-streaming` worktree at baseline `117526b` plus the preserved dirty desktop source. **Isolated-tested; not activated in the running app.**
+
 ## Approved rules
 
 | Decision | Evidence |
@@ -20,3 +30,5 @@
 - **Native playlist and menu evidence** · The 20 October playlist report records 148 focused tests and synthetic playback through EOF to the next episode, then a stop at a missing episode. The 24 October menu report records 137 relevant Python tests, 26 compiled QML checks and completed 150% checks. Dante authorized installing the assembled 0.1.37 after stopping further tests. Integrity validation and the selector switch passed. Final 250% and representative installed-executable playback coverage remain incomplete in that report. [20 October result](../verification/native-player-playlists/RESULT.md#verification) · [24 October installation result](../verification/native-player-menu-usability/RESULT.md)
 - **Provider-choice evidence** · On 24 October the isolated verification passed 54 focused Python, 140 Node and 14 compiled desktop checks. The desktop tests intercepted external embed pages, so the evidence covers CP's target selection, persistence and UI behavior. Full Python discovery reported 4 failures, 12 errors and 5 skips. The running app still served its earlier bundle at that observation. [Provider verification](../verification/streaming-provider-choice/verification.md)
 - **Current source and open checks** · The 13 November code map identifies the owners and test paths in the dirty checkout. Live runtime selection, served browser bundle, current provider availability and playback behavior are unverified. When investigating a report, identify whether it came from local Movie/TV, the external streaming iframe, or IPTV's provider session before selecting a test path. [Checkout and symptom map](../atlas/playback-and-streaming.md)
+
+**2026-11-14 installation update:** Dante approved applying the YouTube feature to the main CP installation. Feature sources and the rebuilt frontend are installed and the 72 focused checks pass there. The running backend still needs Dante’s restart; live YouTube playback/GPT remain unverified. [Installation evidence](../verification/youtube-stream-2026-11-14/report.md#installation-update--2026-11-14).

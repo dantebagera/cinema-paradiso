@@ -1,0 +1,11 @@
+{
+  "label": "tv-controls-fresh",
+  "root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\fixtures\\tv-controls-fresh-162c21c23e3a4173a0a2f95e1e8ac70f",
+  "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\logs\\tv-controls-fresh.log",
+  "port": 5146,
+  "fixture": "tv",
+  "exitCode": 0,
+  "specs": [
+    "tests/e2e/tv-download-contracts.spec.js"
+  ]
+}

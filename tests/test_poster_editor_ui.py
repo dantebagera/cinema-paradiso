@@ -45,8 +45,8 @@ class PosterEditorUiTest(unittest.TestCase):
     def test_owned_home_and_discover_movies_get_editor_but_unowned_movies_do_not(self):
         app = read_frontend_source()
 
-        self.assertIn("onEditPoster={owned ? onEditPoster : undefined}", app)
-        self.assertIn("onEditPoster={owned ? () => onEditPoster(owned, movie) : undefined}", app)
+        self.assertIn("onEdit={owned ? onEditPoster : undefined}", app)
+        self.assertIn("onEdit={owned ? onEditPoster : undefined}", app)
         self.assertIn("onEditPoster={selectedOwnership ? () => onEditPoster(selectedOwnership, selectedMovie) : undefined}", app)
         self.assertIn("owned?.poster_url", app)
         self.assertIn("updateOwnedPoster", app)

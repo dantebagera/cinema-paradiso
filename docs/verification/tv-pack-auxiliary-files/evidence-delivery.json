@@ -1,0 +1,107 @@
+[
+  {
+    "path": "baseline-focused.log",
+    "sha256": "5681F6FC20FF238C51AD71ED86FC23382B926958B49DAF17B5D458ECEAFFEA8E",
+    "verified": true
+  },
+  {
+    "path": "cleanup-red.log",
+    "sha256": "687D969556DB94425B68B74D61CAF42506354644132AAD5497A54BA2B8F6BB2E",
+    "verified": true
+  },
+  {
+    "path": "complete-green.log",
+    "sha256": "73BECB68F6BBC7CE8EDCB8E15563FF075824C51AC44B95F49F3E67EAD6FE98CC",
+    "verified": true
+  },
+  {
+    "path": "desktop-normal-import.log",
+    "sha256": "BAFD6B3394D429BCCF0038F8C5ED072EC2B84CB33E99CB6C420FDA20E55011FD",
+    "verified": true
+  },
+  {
+    "path": "final-targeted.log",
+    "sha256": "EAFFB0169C2E48B273EAF98AA520844BC06AA47B89E0CB50EC57A201DE2E7F54",
+    "verified": true
+  },
+  {
+    "path": "focused-final.log",
+    "sha256": "02088546A0FFB367380312C32DBC5BAC853C295AD0E3ACD3BEB5BF5B0C7A4DB5",
+    "verified": true
+  },
+  {
+    "path": "focused.log",
+    "sha256": "8F1B6EA16E84F7A6FF116FF1D2DB695C43BBFA59EF0F83EA648B6C05C9F464D5",
+    "verified": true
+  },
+  {
+    "path": "full-python-completed.log",
+    "sha256": "81BE9B3B7A8E522C46F4D4BD00BB0DD6AC2E1C9179E2D4E425F688ED2FEEC775",
+    "verified": true
+  },
+  {
+    "path": "full-python-final.log",
+    "sha256": "F049416D252B61976D15487326CDE632F42C0E2C83F4955ECEB82BF95531DC6E",
+    "verified": true
+  },
+  {
+    "path": "full-python.log",
+    "sha256": "CF3C577A62E82E9197C6D9AD60C34E0D22F51789BC9A524EDE1666B0CCE7251D",
+    "verified": true
+  },
+  {
+    "path": "green.log",
+    "sha256": "0B63F60FD6108BCCAC630D06943CEEB01A0186E9AD2350ECA88D65B66AF8B0F3",
+    "verified": true
+  },
+  {
+    "path": "junction-red.log",
+    "sha256": "8867CCD42A915CBF635E63C7FA2B2D1FD6CA69046435C971F839D8B06FD1903F",
+    "verified": true
+  },
+  {
+    "path": "live-manifest-read-only.json",
+    "sha256": "8A17F385E9541CBCD7B7F28ACE40812CED19311B629B88E7CD6209572BB098AE",
+    "verified": true
+  },
+  {
+    "path": "live-read-only.json",
+    "sha256": "EF8E77D3E8EEE25C80238C6B57BFE88BC6176C9E1FE5F0E99203B39D66F58681",
+    "verified": true
+  },
+  {
+    "path": "main-checkout-tests.log",
+    "sha256": "EE889377E410791976EBAFA0F8CE83ED8808272C9EBD2D3B9E5CB293041C1541",
+    "verified": true
+  },
+  {
+    "path": "pre-repair-main-source.json",
+    "sha256": "79A9DA7DA127E3606D152D03DA640FB62EDD7059671B5391C815C7E1EB1338DD",
+    "verified": true
+  },
+  {
+    "path": "README.md",
+    "sha256": "18DB1FD24FD4E511A2B946DC0D182BADB41B30AC171EE163B68FC52D2BB05BD7",
+    "verified": true
+  },
+  {
+    "path": "red.log",
+    "sha256": "09FF2C2ACA326A10BE17FEBB311D9F49687B3EEEB1C33DBB120F98F59A37EB0F",
+    "verified": true
+  },
+  {
+    "path": "save-path-green.log",
+    "sha256": "39AA8B904EC556C4E4F2FF4AF2B3D099543D9AD99D410C47ADEEF1703DA9C212",
+    "verified": true
+  },
+  {
+    "path": "save-path-red.log",
+    "sha256": "E7C6BB1D669653C26C53C1830963C0C2C248F6F4FD9553F75B3BC2A37DED9D0E",
+    "verified": true
+  },
+  {
+    "path": "source-delivery.json",
+    "sha256": "E3FB9B2931D0BBE7EACFD764EF1607F85B05FC9E8AE02F95DA19BF46394F440C",
+    "verified": true
+  }
+]

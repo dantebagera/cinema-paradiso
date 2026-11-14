@@ -1,0 +1,219 @@
+{
+  "model": "gpt-6.1-sol",
+  "prompt": "i need you to lit 50 movies with very twisted story you wont expect the ending\nyour responce should be a list of movies names and years , no any other details , dont seek more info , dont reply by paragarph or any way of responce  only the list",
+  "config_hash": "685522f0a8dde8fc63cb2f2e616927c2e0d4d72b56d8b6889ec68c9c35816a82",
+  "source_hashes": {
+    "services/ai_jobs.py": "a1771b4fbfd5edb5ef29f1a93fbd89b200ad900813e6cef2e3d3fc3c788b3050",
+    "services/chatgpt_transport.py": "2f444a51eb6b8c9e2d0f09e0d0c4b1dfef4cb3f05a1c17f1e17511e3704152a9",
+    "services/chatgpt_recommendations.py": "17c0f9a6342d8bc16dd1b9be178f6e655c087a587cd29e77bccc5de7679ebec3",
+    "services/chatgpt_recommendation_stream.py": "0e4824e22b7b973a11d96fee5b06251afe6e40d97f8d7723e66e3238004487c1",
+    "tools/profile_ai_features.py": "b48278e23583a4ed15164b93c4c64ddbd8816c1442d2f8132d1635fb2d0069f8",
+    "tools/ai_slot_diagnostics.py": "a4cb534dd876732c8289d61218a9ef497cb1da57c07a4fb825815b131dd3092c"
+  },
+  "captures": [
+    {
+      "label": "slot-qualified-1",
+      "exit_code": 0,
+      "evidence_root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-ai-timing-dxxi3epw",
+      "state": "completed",
+      "accepted_count": 50,
+      "inference_attempts": 1,
+      "tmdb_requests": 127,
+      "elapsed_seconds": 19.098905,
+      "timings": {
+        "gpt_seconds": 16.089137,
+        "gpt_http_seconds": 16.05419,
+        "matching_after_gpt_seconds": 2.268679,
+        "tmdb_http_active_seconds": 9.108327,
+        "gpt_tmdb_overlap_seconds": 7.880217,
+        "other_seconds": 0.741089,
+        "full_seconds": 19.098905,
+        "first_cards_seconds": 16.843051
+      },
+      "slot_operations": [
+        {
+          "phase": "slot_acquire_actual",
+          "seconds": 0.01116609999735374
+        },
+        {
+          "phase": "attempt_reserve_actual",
+          "seconds": 0.009603600003174506
+        },
+        {
+          "phase": "slot_release_actual",
+          "seconds": 0.010231299995211884
+        }
+      ],
+      "slowest_leaf_phases": [
+        {
+          "phase": "sqlite_commit",
+          "operation": "",
+          "at_seconds": 17.3934714999923,
+          "seconds": 1.6849508000013884,
+          "thread_cpu_seconds": 0.0,
+          "thread": 42448
+        },
+        {
+          "phase": "trace_emit",
+          "operation": "",
+          "at_seconds": 12.479539199994178,
+          "seconds": 0.32907210000848863,
+          "thread_cpu_seconds": 0.0,
+          "thread": 4012
+        },
+        {
+          "phase": "trace_emit",
+          "operation": "",
+          "at_seconds": 12.580639799998607,
+          "seconds": 0.22844249999616295,
+          "thread_cpu_seconds": 0.0,
+          "thread": 30640
+        },
+        {
+          "phase": "trace_emit",
+          "operation": "",
+          "at_seconds": 12.601716299992404,
+          "seconds": 0.20791969999845605,
+          "thread_cpu_seconds": 0.0,
+          "thread": 37256
+        }
+      ]
+    },
+    {
+      "label": "slot-qualified-2",
+      "exit_code": 0,
+      "evidence_root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-ai-timing-dhmn1e8c",
+      "state": "completed",
+      "accepted_count": 50,
+      "inference_attempts": 1,
+      "tmdb_requests": 123,
+      "elapsed_seconds": 16.532659,
+      "timings": {
+        "gpt_seconds": 15.609025,
+        "gpt_http_seconds": 15.556239,
+        "matching_after_gpt_seconds": 0.261343,
+        "tmdb_http_active_seconds": 11.003836,
+        "gpt_tmdb_overlap_seconds": 10.426331,
+        "other_seconds": 0.662291,
+        "full_seconds": 16.532659,
+        "first_cards_seconds": 16.282412
+      },
+      "slot_operations": [
+        {
+          "phase": "slot_acquire_actual",
+          "seconds": 0.019887000002199784
+        },
+        {
+          "phase": "attempt_reserve_actual",
+          "seconds": 0.009726899996167049
+        },
+        {
+          "phase": "slot_release_actual",
+          "seconds": 0.01947959999961313
+        }
+      ],
+      "slowest_leaf_phases": [
+        {
+          "phase": "sqlite_commit",
+          "operation": "slot_acquire_actual",
+          "at_seconds": 0.6416526999964844,
+          "seconds": 0.016136799997184426,
+          "thread_cpu_seconds": 0.0,
+          "thread": 10028
+        },
+        {
+          "phase": "sqlite_commit",
+          "operation": "slot_release_actual",
+          "at_seconds": 16.22987949999515,
+          "seconds": 0.015522499990765937,
+          "thread_cpu_seconds": 0.0,
+          "thread": 10028
+        },
+        {
+          "phase": "sqlite_executescript",
+          "operation": "",
+          "at_seconds": 0.013179799992940389,
+          "seconds": 0.00676940000266768,
+          "thread_cpu_seconds": 0.0,
+          "thread": 10028
+        },
+        {
+          "phase": "sqlite_commit",
+          "operation": "",
+          "at_seconds": 16.470249399993918,
+          "seconds": 0.00601979999919422,
+          "thread_cpu_seconds": 0.0,
+          "thread": 10028
+        }
+      ]
+    },
+    {
+      "label": "slot-qualified-3",
+      "exit_code": 0,
+      "evidence_root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-ai-timing-q9ar967w",
+      "state": "completed",
+      "accepted_count": 50,
+      "inference_attempts": 1,
+      "tmdb_requests": 123,
+      "elapsed_seconds": 22.024641,
+      "timings": {
+        "gpt_seconds": 20.605398,
+        "gpt_http_seconds": 20.566429,
+        "matching_after_gpt_seconds": 0.744988,
+        "tmdb_http_active_seconds": 6.527973,
+        "gpt_tmdb_overlap_seconds": 5.199365,
+        "other_seconds": 0.674255,
+        "full_seconds": 22.024641,
+        "first_cards_seconds": 21.583937
+      },
+      "slot_operations": [
+        {
+          "phase": "slot_acquire_actual",
+          "seconds": 0.014567599995643832
+        },
+        {
+          "phase": "attempt_reserve_actual",
+          "seconds": 0.009432100006961264
+        },
+        {
+          "phase": "slot_release_actual",
+          "seconds": 0.011324299994157627
+        }
+      ],
+      "slowest_leaf_phases": [
+        {
+          "phase": "sqlite_commit",
+          "operation": "",
+          "at_seconds": 21.28168440000445,
+          "seconds": 0.2977580000006128,
+          "thread_cpu_seconds": 0.0,
+          "thread": 50004
+        },
+        {
+          "phase": "sqlite_commit",
+          "operation": "slot_acquire_actual",
+          "at_seconds": 0.6530999000096926,
+          "seconds": 0.010558099995250814,
+          "thread_cpu_seconds": 0.0,
+          "thread": 50004
+        },
+        {
+          "phase": "sqlite_executescript",
+          "operation": "",
+          "at_seconds": 0.012998400008655153,
+          "seconds": 0.0067743999970844015,
+          "thread_cpu_seconds": 0.0,
+          "thread": 50004
+        },
+        {
+          "phase": "sqlite_commit",
+          "operation": "",
+          "at_seconds": 21.742774800004554,
+          "seconds": 0.0065448999957880005,
+          "thread_cpu_seconds": 0.0,
+          "thread": 50004
+        }
+      ]
+    }
+  ]
+}

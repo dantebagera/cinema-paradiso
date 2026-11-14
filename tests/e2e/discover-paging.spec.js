@@ -1,4 +1,10 @@
 import { expect, test } from '@playwright/test';
+
+async function openControls(page) {
+  const toggle = page.getByRole('button', { name: 'Search, filters & selection', exact: true });
+  await expect(toggle).toBeVisible();
+  if (await toggle.getAttribute('aria-expanded') === 'false') await toggle.click();
+}
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -8,6 +14,7 @@ async function openDiscover(page) {
   // Match the fullscreen width recorded in the motivating investigation.
   await page.setViewportSize({ width: 3345, height: 1084 });
   await page.goto('/discover', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   return page.locator('.discover-panel .discover-grid');
 }
 
@@ -100,6 +107,7 @@ test('browser Back and Forward restore the full second page and allow continued 
     .getByRole('button', { name: 'Next', exact: true }).click();
   await assertCards(grid, 39, 3, 'Overlap Movie 40', 'Overlap Movie 78');
   await page.getByRole('button', { name: 'Library', exact: true }).click();
+  await openControls(page);
   await expect(page).toHaveURL(/\/library$/);
   await page.goBack();
   await expect(page).toHaveURL(/\/discover$/);

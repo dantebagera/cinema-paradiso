@@ -1,0 +1,20 @@
+
+Running 8 tests using 1 worker
+
+
+(node:7676) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1/8] ..\pass3-specs\following-refresh.spec.js:19:5 › reconnect ownership runs during full scan and older full response cannot restore removed movies
+[2/8] ..\pass3-specs\following-refresh.spec.js:48:5 › another completion during ownership read is reconciled after that read finishes
+[3/8] ..\pass3-specs\following-refresh.spec.js:146:5 › pass3 manual scan calls full scan while catalogue refresh calls ownership only
+[4/8] ..\pass3-specs\home-loading.spec.js:97:5 › Upcoming finishing first waits for effective Trending and fills replacements without blocking Trending
+[5/8] ..\pass3-specs\home-loading.spec.js:328:5 › all twenty Upcoming cards are reachable with existing rail arrows
+
+(node:50920) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[6/8] ..\pass3-specs\home-dashboard-hybrid.spec.js:216:5 › health cards retain current counts, stale recovery and truthful missing/empty states
+[7/8] ..\pass3-specs\home-dashboard-hybrid.spec.js:230:5 › health loading preserves cached counts and high-count detail text stays readable
+[8/8] ..\pass3-specs\home-dashboard-hybrid.spec.js:248:5 › health issue cards keep their cleanup destinations
+  8 passed (9.7s)

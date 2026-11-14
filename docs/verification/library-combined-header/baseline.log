@@ -1,0 +1,257 @@
+
+Running 10 tests using 1 worker
+
+(node:32320) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   1 tests\e2e\workspace-controls-empty-layout.spec.js:94:5 › combined Library header movie desktop 1280 keeps views and refresh independent in Media and File View (1.3s)
+(node:3816) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   2 tests\e2e\workspace-controls-empty-layout.spec.js:94:5 › combined Library header tv desktop 1280 keeps views and refresh independent in Media and File View (1.7s)
+(node:14516) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   3 tests\e2e\workspace-controls-empty-layout.spec.js:94:5 › combined Library header movie desktop 1600 keeps views and refresh independent in Media and File View (1.3s)
+(node:25948) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   4 tests\e2e\workspace-controls-empty-layout.spec.js:94:5 › combined Library header tv desktop 1600 keeps views and refresh independent in Media and File View (1.7s)
+(node:41792) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   5 tests\e2e\workspace-controls-empty-layout.spec.js:94:5 › combined Library header movie desktop 2048 keeps views and refresh independent in Media and File View (1.3s)
+(node:10932) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   6 tests\e2e\workspace-controls-empty-layout.spec.js:94:5 › combined Library header tv desktop 2048 keeps views and refresh independent in Media and File View (1.7s)
+(node:8744) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   7 tests\e2e\workspace-controls-empty-layout.spec.js:143:1 › combined Library header retains a disabled scan during loading and exposes scan failure without expanding filters (1.3s)
+(node:39452) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  8 tests\e2e\workspace-controls-empty-layout.spec.js:722:1 › Library remembers separate Media and File controls states when returning to an expanded movie (1.6s)
+  ok  9 tests\e2e\workspace-controls-empty-layout.spec.js:778:1 › Movie Library removes titles and retains sticky view actions in media and files (781ms)
+  ok 10 tests\e2e\workspace-controls-empty-layout.spec.js:797:1 › TV Library retains sticky view, refresh and Maintenance import actions in media and files (930ms)
+
+
+  1) tests\e2e\workspace-controls-empty-layout.spec.js:94:5 › combined Library header movie desktop 1280 keeps views and refresh independent in Media and File View 
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 1
+    Received:    55
+
+      72 |     await expect(control).toBeVisible();
+      73 |     const box = await control.boundingBox();
+    > 74 |     expect(Math.abs(box.y + box.height / 2 - headingBox.y - headingBox.height / 2)).toBeLessThanOrEqual(1);
+         |                                                                                     ^
+      75 |     expect(box.x).toBeGreaterThanOrEqual(panel.x);
+      76 |     expect(box.x + box.width).toBeLessThanOrEqual(panel.x + panel.width);
+      77 |     expect(box.y).toBeGreaterThanOrEqual(header.y);
+        at assertCombinedLibraryHeader (C:\Users\dante\Desktop\cinema paradiso\tests\e2e\workspace-controls-empty-layout.spec.js:74:85)
+        at C:\Users\dante\Desktop\cinema paradiso\tests\e2e\workspace-controls-empty-layout.spec.js:122:9
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\AppData\Local\Temp\cp-combined-header-094ed49f323c420298d3e35588eec032\baseline-results\workspace-controls-empty-l-97a86-dent-in-Media-and-File-View\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\AppData\Local\Temp\cp-combined-header-094ed49f323c420298d3e35588eec032\baseline-results\workspace-controls-empty-l-97a86-dent-in-Media-and-File-View\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\..\AppData\Local\Temp\cp-combined-header-094ed49f323c420298d3e35588eec032\baseline-results\workspace-controls-empty-l-97a86-dent-in-Media-and-File-View\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\..\AppData\Local\Temp\cp-combined-header-094ed49f323c420298d3e35588eec032\baseline-results\workspace-controls-empty-l-97a86-dent-in-Media-and-File-View\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) tests\e2e\workspace-controls-empty-layout.spec.js:94:5 › combined Library header tv desktop 1280 keeps views and refresh independent in Media and File View 
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 1
+    Received:    55
+
+      72 |     await expect(control).toBeVisible();
+      73 |     const box = await control.boundingBox();
+    > 74 |     expect(Math.abs(box.y + box.height / 2 - headingBox.y - headingBox.height / 2)).toBeLessThanOrEqual(1);
+         |                                                                                     ^
+      75 |     expect(box.x).toBeGreaterThanOrEqual(panel.x);
+      76 |     expect(box.x + box.width).toBeLessThanOrEqual(panel.x + panel.width);
+      77 |     expect(box.y).toBeGreaterThanOrEqual(header.y);
+        at assertCombinedLibraryHeader (C:\Users\dante\Desktop\cinema paradiso\tests\e2e\workspace-controls-empty-layout.spec.js:74:85)
+        at C:\Users\dante\Desktop\cinema paradiso\tests\e2e\workspace-controls-empty-layout.spec.js:122:9
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\AppData\Local\Temp\cp-combined-header-094ed49f323c420298d3e35588eec032\baseline-results\workspace-controls-empty-l-78e6f-dent-in-Media-and-File-View\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\AppData\Local\Temp\cp-combined-header-094ed49f323c420298d3e35588eec032\baseline-results\workspace-controls-empty-l-78e6f-dent-in-Media-and-File-View\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\..\AppData\Local\Temp\cp-combined-header-094ed49f323c420298d3e35588eec032\baseline-results\workspace-controls-empty-l-78e6f-dent-in-Media-and-File-View\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\..\AppData\Local\Temp\cp-combined-header-094ed49f323c420298d3e35588eec032\baseline-results\workspace-controls-empty-l-78e6f-dent-in-Media-and-File-View\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) tests\e2e\workspace-controls-empty-layout.spec.js:94:5 › combined Library header movie desktop 1600 keeps views and refresh independent in Media and File View 
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 1
+    Received:    55
+
+      72 |     await expect(control).toBeVisible();
+      73 |     const box = await control.boundingBox();
+    > 74 |     expect(Math.abs(box.y + box.height / 2 - headingBox.y - headingBox.height / 2)).toBeLessThanOrEqual(1);
+         |                                                                                     ^
+      75 |     expect(box.x).toBeGreaterThanOrEqual(panel.x);
+      76 |     expect(box.x + box.width).toBeLessThanOrEqual(panel.x + panel.width);
+      77 |     expect(box.y).toBeGreaterThanOrEqual(header.y);
+        at assertCombinedLibraryHeader (C:\Users\dante\Desktop\cinema paradiso\tests\e2e\workspace-controls-empty-layout.spec.js:74:85)
+        at C:\Users\dante\Desktop\cinema paradiso\tests\e2e\workspace-controls-empty-layout.spec.js:122:9
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\AppData\Local\Temp\cp-combined-header-094ed49f323c420298d3e35588eec032\baseline-results\workspace-controls-empty-l-da11a-dent-in-Media-and-File-View\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\AppData\Local\Temp\cp-combined-header-094ed49f323c420298d3e35588eec032\baseline-results\workspace-controls-empty-l-da11a-dent-in-Media-and-File-View\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\..\AppData\Local\Temp\cp-combined-header-094ed49f323c420298d3e35588eec032\baseline-results\workspace-controls-empty-l-da11a-dent-in-Media-and-File-View\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\..\AppData\Local\Temp\cp-combined-header-094ed49f323c420298d3e35588eec032\baseline-results\workspace-controls-empty-l-da11a-dent-in-Media-and-File-View\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) tests\e2e\workspace-controls-empty-layout.spec.js:94:5 › combined Library header tv desktop 1600 keeps views and refresh independent in Media and File View 
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 1
+    Received:    55
+
+      72 |     await expect(control).toBeVisible();
+      73 |     const box = await control.boundingBox();
+    > 74 |     expect(Math.abs(box.y + box.height / 2 - headingBox.y - headingBox.height / 2)).toBeLessThanOrEqual(1);
+         |                                                                                     ^
+      75 |     expect(box.x).toBeGreaterThanOrEqual(panel.x);
+      76 |     expect(box.x + box.width).toBeLessThanOrEqual(panel.x + panel.width);
+      77 |     expect(box.y).toBeGreaterThanOrEqual(header.y);
+        at assertCombinedLibraryHeader (C:\Users\dante\Desktop\cinema paradiso\tests\e2e\workspace-controls-empty-layout.spec.js:74:85)
+        at C:\Users\dante\Desktop\cinema paradiso\tests\e2e\workspace-controls-empty-layout.spec.js:122:9
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\AppData\Local\Temp\cp-combined-header-094ed49f323c420298d3e35588eec032\baseline-results\workspace-controls-empty-l-6e80e-dent-in-Media-and-File-View\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\AppData\Local\Temp\cp-combined-header-094ed49f323c420298d3e35588eec032\baseline-results\workspace-controls-empty-l-6e80e-dent-in-Media-and-File-View\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\..\AppData\Local\Temp\cp-combined-header-094ed49f323c420298d3e35588eec032\baseline-results\workspace-controls-empty-l-6e80e-dent-in-Media-and-File-View\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\..\AppData\Local\Temp\cp-combined-header-094ed49f323c420298d3e35588eec032\baseline-results\workspace-controls-empty-l-6e80e-dent-in-Media-and-File-View\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) tests\e2e\workspace-controls-empty-layout.spec.js:94:5 › combined Library header movie desktop 2048 keeps views and refresh independent in Media and File View 
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 1
+    Received:    55
+
+      72 |     await expect(control).toBeVisible();
+      73 |     const box = await control.boundingBox();
+    > 74 |     expect(Math.abs(box.y + box.height / 2 - headingBox.y - headingBox.height / 2)).toBeLessThanOrEqual(1);
+         |                                                                                     ^
+      75 |     expect(box.x).toBeGreaterThanOrEqual(panel.x);
+      76 |     expect(box.x + box.width).toBeLessThanOrEqual(panel.x + panel.width);
+      77 |     expect(box.y).toBeGreaterThanOrEqual(header.y);
+        at assertCombinedLibraryHeader (C:\Users\dante\Desktop\cinema paradiso\tests\e2e\workspace-controls-empty-layout.spec.js:74:85)
+        at C:\Users\dante\Desktop\cinema paradiso\tests\e2e\workspace-controls-empty-layout.spec.js:122:9
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\AppData\Local\Temp\cp-combined-header-094ed49f323c420298d3e35588eec032\baseline-results\workspace-controls-empty-l-12e24-dent-in-Media-and-File-View\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\AppData\Local\Temp\cp-combined-header-094ed49f323c420298d3e35588eec032\baseline-results\workspace-controls-empty-l-12e24-dent-in-Media-and-File-View\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\..\AppData\Local\Temp\cp-combined-header-094ed49f323c420298d3e35588eec032\baseline-results\workspace-controls-empty-l-12e24-dent-in-Media-and-File-View\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\..\AppData\Local\Temp\cp-combined-header-094ed49f323c420298d3e35588eec032\baseline-results\workspace-controls-empty-l-12e24-dent-in-Media-and-File-View\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) tests\e2e\workspace-controls-empty-layout.spec.js:94:5 › combined Library header tv desktop 2048 keeps views and refresh independent in Media and File View 
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 1
+    Received:    55
+
+      72 |     await expect(control).toBeVisible();
+      73 |     const box = await control.boundingBox();
+    > 74 |     expect(Math.abs(box.y + box.height / 2 - headingBox.y - headingBox.height / 2)).toBeLessThanOrEqual(1);
+         |                                                                                     ^
+      75 |     expect(box.x).toBeGreaterThanOrEqual(panel.x);
+      76 |     expect(box.x + box.width).toBeLessThanOrEqual(panel.x + panel.width);
+      77 |     expect(box.y).toBeGreaterThanOrEqual(header.y);
+        at assertCombinedLibraryHeader (C:\Users\dante\Desktop\cinema paradiso\tests\e2e\workspace-controls-empty-layout.spec.js:74:85)
+        at C:\Users\dante\Desktop\cinema paradiso\tests\e2e\workspace-controls-empty-layout.spec.js:122:9
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\AppData\Local\Temp\cp-combined-header-094ed49f323c420298d3e35588eec032\baseline-results\workspace-controls-empty-l-59de2-dent-in-Media-and-File-View\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\AppData\Local\Temp\cp-combined-header-094ed49f323c420298d3e35588eec032\baseline-results\workspace-controls-empty-l-59de2-dent-in-Media-and-File-View\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\..\AppData\Local\Temp\cp-combined-header-094ed49f323c420298d3e35588eec032\baseline-results\workspace-controls-empty-l-59de2-dent-in-Media-and-File-View\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\..\AppData\Local\Temp\cp-combined-header-094ed49f323c420298d3e35588eec032\baseline-results\workspace-controls-empty-l-59de2-dent-in-Media-and-File-View\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) tests\e2e\workspace-controls-empty-layout.spec.js:143:1 › combined Library header retains a disabled scan during loading and exposes scan failure without expanding filters 
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 1
+    Received:    55
+
+      72 |     await expect(control).toBeVisible();
+      73 |     const box = await control.boundingBox();
+    > 74 |     expect(Math.abs(box.y + box.height / 2 - headingBox.y - headingBox.height / 2)).toBeLessThanOrEqual(1);
+         |                                                                                     ^
+      75 |     expect(box.x).toBeGreaterThanOrEqual(panel.x);
+      76 |     expect(box.x + box.width).toBeLessThanOrEqual(panel.x + panel.width);
+      77 |     expect(box.y).toBeGreaterThanOrEqual(header.y);
+        at assertCombinedLibraryHeader (C:\Users\dante\Desktop\cinema paradiso\tests\e2e\workspace-controls-empty-layout.spec.js:74:85)
+        at C:\Users\dante\Desktop\cinema paradiso\tests\e2e\workspace-controls-empty-layout.spec.js:158:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\AppData\Local\Temp\cp-combined-header-094ed49f323c420298d3e35588eec032\baseline-results\workspace-controls-empty-l-5bc92-e-without-expanding-filters\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\AppData\Local\Temp\cp-combined-header-094ed49f323c420298d3e35588eec032\baseline-results\workspace-controls-empty-l-5bc92-e-without-expanding-filters\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\..\AppData\Local\Temp\cp-combined-header-094ed49f323c420298d3e35588eec032\baseline-results\workspace-controls-empty-l-5bc92-e-without-expanding-filters\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\..\AppData\Local\Temp\cp-combined-header-094ed49f323c420298d3e35588eec032\baseline-results\workspace-controls-empty-l-5bc92-e-without-expanding-filters\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7 failed
+    tests\e2e\workspace-controls-empty-layout.spec.js:94:5 › combined Library header movie desktop 1280 keeps views and refresh independent in Media and File View 
+    tests\e2e\workspace-controls-empty-layout.spec.js:94:5 › combined Library header tv desktop 1280 keeps views and refresh independent in Media and File View 
+    tests\e2e\workspace-controls-empty-layout.spec.js:94:5 › combined Library header movie desktop 1600 keeps views and refresh independent in Media and File View 
+    tests\e2e\workspace-controls-empty-layout.spec.js:94:5 › combined Library header tv desktop 1600 keeps views and refresh independent in Media and File View 
+    tests\e2e\workspace-controls-empty-layout.spec.js:94:5 › combined Library header movie desktop 2048 keeps views and refresh independent in Media and File View 
+    tests\e2e\workspace-controls-empty-layout.spec.js:94:5 › combined Library header tv desktop 2048 keeps views and refresh independent in Media and File View 
+    tests\e2e\workspace-controls-empty-layout.spec.js:143:1 › combined Library header retains a disabled scan during loading and exposes scan failure without expanding filters 
+  3 passed (19.9s)

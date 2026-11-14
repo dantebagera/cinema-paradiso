@@ -1,0 +1,11 @@
+{
+    "authorizedBy":  "Dante",
+    "repairReport":  "docs/verification/mostafa-performance/RESULT.md",
+    "exitCode":  0,
+    "delaySeconds":  45,
+    "status":  "request_accepted",
+    "command":  "shutdown.exe /s /t 0",
+    "requestedAtUtc":  "2026-10-12T01:32:59.9053353Z",
+    "scheduledAtUtc":  "2026-10-12T01:32:14.8306111Z",
+    "forcedApplicationClosure":  false
+}

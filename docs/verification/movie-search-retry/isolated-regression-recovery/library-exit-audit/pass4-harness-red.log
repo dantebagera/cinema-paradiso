@@ -1,0 +1,69 @@
+test_shutdown_timeout_is_failure (__main__.CompletionTests.test_shutdown_timeout_is_failure) ... Owned fixture graceful cleanup failed: TimeoutExpired('owned-test-child', 7)
+FAIL
+test_nonzero_exit_is_failure (__main__.CompletionTests.test_nonzero_exit_is_failure) ... Owned fixture graceful cleanup failed: AssertionError()
+FAIL
+test_wrong_stop_pid_is_failure (__main__.CompletionTests.test_wrong_stop_pid_is_failure) ... Owned fixture graceful cleanup failed: AssertionError()
+FAIL
+test_missing_audit_is_failure_after_passing_browser (__main__.CompletionTests.test_missing_audit_is_failure_after_passing_browser) ... FAIL
+test_violation_is_failure_after_passing_browser (__main__.CompletionTests.test_violation_is_failure_after_passing_browser) ... FAIL
+test_forced_cleanup_cannot_qualify (__main__.CompletionTests.test_forced_cleanup_cannot_qualify) ... Owned fixture graceful cleanup failed: TimeoutExpired('owned-test-child', 7)
+FAIL
+
+======================================================================
+FAIL: test_shutdown_timeout_is_failure (__main__.CompletionTests.test_shutdown_timeout_is_failure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass4_audit_contract_tests.py", line 78, in test_shutdown_timeout_is_failure
+    with self.assertRaises(subprocess.TimeoutExpired):self.invoke(Child(timeout=True))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: TimeoutExpired not raised
+
+======================================================================
+FAIL: test_nonzero_exit_is_failure (__main__.CompletionTests.test_nonzero_exit_is_failure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass4_audit_contract_tests.py", line 81, in test_nonzero_exit_is_failure
+    with self.assertRaises(ValueError):self.invoke(Child(exit_code=4))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_wrong_stop_pid_is_failure (__main__.CompletionTests.test_wrong_stop_pid_is_failure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass4_audit_contract_tests.py", line 83, in test_wrong_stop_pid_is_failure
+    with self.assertRaises(ValueError):self.invoke(stop=lambda:{'pid':32124})
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_missing_audit_is_failure_after_passing_browser (__main__.CompletionTests.test_missing_audit_is_failure_after_passing_browser)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass4_audit_contract_tests.py", line 87, in test_missing_audit_is_failure_after_passing_browser
+    with self.assertRaises((ValueError,OSError)):self.invoke()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'ValueError'>, <class 'OSError'>) not raised
+
+======================================================================
+FAIL: test_violation_is_failure_after_passing_browser (__main__.CompletionTests.test_violation_is_failure_after_passing_browser)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass4_audit_contract_tests.py", line 90, in test_violation_is_failure_after_passing_browser
+    with self.assertRaises(ValueError):self.invoke()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_forced_cleanup_cannot_qualify (__main__.CompletionTests.test_forced_cleanup_cannot_qualify)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass4_audit_contract_tests.py", line 92, in test_forced_cleanup_cannot_qualify
+    with self.assertRaises(subprocess.TimeoutExpired):self.invoke(Child(timeout=True))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: TimeoutExpired not raised
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.016s
+
+FAILED (failures=6)

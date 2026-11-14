@@ -1,0 +1,78 @@
+test_outcome_write_failure_preserves_shutdown_timeout (__main__.ReportingFailureTests.test_outcome_write_failure_preserves_shutdown_timeout) ... FAIL
+test_outcome_write_failure_rejects_otherwise_successful_run (__main__.ReportingFailureTests.test_outcome_write_failure_rejects_otherwise_successful_run) ... ok
+test_accounting_query_failure_is_charged_and_halts (__main__.BudgetFailureTests.test_accounting_query_failure_is_charged_and_halts) ... FAIL
+test_final_footprint_exception_is_charged_and_halts (__main__.BudgetFailureTests.test_final_footprint_exception_is_charged_and_halts) ... FAIL
+test_launch_exception_is_charged_and_halts (__main__.BudgetFailureTests.test_launch_exception_is_charged_and_halts) ... FAIL
+
+======================================================================
+FAIL: test_outcome_write_failure_preserves_shutdown_timeout (__main__.ReportingFailureTests.test_outcome_write_failure_preserves_shutdown_timeout)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass4_audit_contract.py", line 52, in finish_run
+    server.wait(timeout=7)
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass4_audit_contract_tests.py", line 16, in wait
+    if self.timeout:raise subprocess.TimeoutExpired('owned-test-child',timeout)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+subprocess.TimeoutExpired: Command 'owned-test-child' timed out after 7 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass4_audit_contract_tests.py", line 134, in test_outcome_write_failure_preserves_shutdown_timeout
+    try:self.invoke_failing_writer(Child(timeout=True))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass4_audit_contract_tests.py", line 130, in invoke_failing_writer
+    return finish_run(server=child,browser=None,stop=lambda:{'pid':32123},report_path=self.path,root=R,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass4_audit_contract.py", line 72, in finish_run
+    outcome_path.write_text(json.dumps(outcome,indent=2)+'\n')
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass4_audit_contract_tests.py", line 126, in write_text
+    def write_text(self,*args,**kwargs):raise OSError('controlled outcome write failure')
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: controlled outcome write failure
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass4_audit_contract_tests.py", line 137, in test_outcome_write_failure_preserves_shutdown_timeout
+    except BaseException as error:self.fail('Original timeout replaced by '+type(error).__name__)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Original timeout replaced by OSError
+
+======================================================================
+FAIL: test_accounting_query_failure_is_charged_and_halts (__main__.BudgetFailureTests.test_accounting_query_failure_is_charged_and_halts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass4_audit_contract_tests.py", line 185, in test_accounting_query_failure_is_charged_and_halts
+    def test_accounting_query_failure_is_charged_and_halts(self):self.run_control('query')
+                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass4_audit_contract_tests.py", line 177, in run_control
+    self.assertTrue(state.get('halted'),'Accounting/launch failure must halt the allowance')
+AssertionError: None is not true : Accounting/launch failure must halt the allowance
+
+======================================================================
+FAIL: test_final_footprint_exception_is_charged_and_halts (__main__.BudgetFailureTests.test_final_footprint_exception_is_charged_and_halts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass4_audit_contract_tests.py", line 186, in test_final_footprint_exception_is_charged_and_halts
+    def test_final_footprint_exception_is_charged_and_halts(self):self.run_control('footprint')
+                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass4_audit_contract_tests.py", line 177, in run_control
+    self.assertTrue(state.get('halted'),'Accounting/launch failure must halt the allowance')
+AssertionError: None is not true : Accounting/launch failure must halt the allowance
+
+======================================================================
+FAIL: test_launch_exception_is_charged_and_halts (__main__.BudgetFailureTests.test_launch_exception_is_charged_and_halts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass4_audit_contract_tests.py", line 187, in test_launch_exception_is_charged_and_halts
+    def test_launch_exception_is_charged_and_halts(self):self.run_control('launch')
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass4_audit_contract_tests.py", line 177, in run_control
+    self.assertTrue(state.get('halted'),'Accounting/launch failure must halt the allowance')
+AssertionError: None is not true : Accounting/launch failure must halt the allowance
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.029s
+
+FAILED (failures=4)

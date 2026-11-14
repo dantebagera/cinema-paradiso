@@ -41,3 +41,54 @@ Added nine topic pairs, from Movie Follow through Settings and Shared Infrastruc
 - **Movie transfer to Following removal** · A reader traced the existing qBittorrent job through transfer and atomic Library publication, then found the catalog-ready or reconnect path that reconciles Following against committed Movie ownership. The walkthrough exposed the alternate torrent ID case, which now has a direct recovery pointer in both Movie Downloads guides. [Movie Follow](../atlas/movie-follow.md) · [Transfer and hybrid IDs](../atlas/movie-downloads-and-import.md#finished-in-qbittorrent-pending-in-cp) · [Library publication](../atlas/movie-library-and-identity-review.md)
 - **TV version to Home** · A reader traced an exact file ID through the TV play endpoint and native player events to the TV catalog and Home Continue Watching. The guides point to separate checks for saved file selection, progress persistence, and Home presentation. The walkthrough found no single test spanning all three. [TV Library](../atlas/tv-library-and-maintenance.md) · [Playback](../atlas/playback-and-streaming.md) · [Home](../atlas/home-lists-and-notifications.md)
 - **Decision and evidence gaps** · Recorded source differences from earlier Playback and Movie Maintenance decisions, plus the Pick My Movie correction verified in a separate checkout. The walkthroughs were read-only source checks. App tests were referenced, and current live feature behavior remains unverified. [Playback decisions](playback-and-streaming.md) · [Maintenance decisions](movie-maintenance.md) · [AI decisions](ai-features.md)
+
+## 2026-11-13 · IPTV cast, Discover badges, and Movie source choice
+
+Updated the IPTV, Movie/TV details, Search/Discover, and Playback/Streaming decision guides and Atlas maps from Dante's explicit approval, the isolated candidate sources, and [2026-11-13 isolated verification](../verification/iptv-cast-discover-streaming-2026-11-13/report.md). Recorded the approved Movie chooser contract change, preserved direct TV streaming, separate read-only provider databases, shared cast/session owners, lazy badges, and exact-source playback. The candidate has not been activated; real external playback remains unverified.
+
+## 2026-11-13 · Correct IPTV Filmography destination
+
+Dante corrected the distinction: portrait opens provider-local movies; the small Filmography control opens full Movie Discover filmography. "Yes go" approved correction, tests and activation. Updated IPTV/detail Second Brain and Atlas, removed the obsolete provider-local full-filmography branch, and reused the shared Movie navigation owner. [Plan](../plans/2026-11-13-iptv-filmography-discover-correction.md) · [Evidence](../verification/iptv-filmography-discover-2026-11-13/report.md).
+
+Filmography correction activation verified: main bundle `index-rEoonoEd.js`, PID32136, unchanged configuration/data owner. Production desktop browser clicked Brad Pitt's small button from Lionz and reached Movie Discover with115 credits and correct IPTV breadcrumb; compiled regression47/47 passed.
+
+## 2026-11-14 · Discover posters load before backdrops
+
+Recorded Dante's decision and the shared scheduling path in the [decision guide](search-and-discover.md) and [code map](../atlas/search-and-discover.md#discover-card-artwork). The compiled candidate passed the desktop artwork and TV checks and reduced median visible Movie poster time by 89 ms in the paired benchmark. The live app still served the baseline bundle. [Implementation and timing](../plans/2026-11-14-discover-poster-priority.md)
+
+## 2026-11-14 · Poster priority extended across CP and activated
+
+Moved the shared scheduling scope to the app shell and connected the existing related-title poster markup. Updated the Search and Discover guides. All ten main workspaces loaded the live frontend without a restart. Movie Discover verified poster-before-backdrop order with real artwork. [App-wide implementation and verification](../plans/2026-11-14-app-wide-poster-priority.md)
+
+## 2026-11-14 · IPTV bulk matching continues after sync
+
+Recorded the approved Resume scope and preparation bar placement in the [IPTV decisions](iptv.md#approved-bulk-matching-decisions) and [code map](../atlas/iptv.md#chatgpt-matching-and-apply). A read-only check confirmed 861 eligible unfinished Lionz sources. The desktop acceptance checks use synthetic data and an offline provider. [Plan and verification](../plans/2026-11-14-iptv-resume-after-sync.md)
+
+## 2026-11-14 · IPTV focused TMDB recheck
+
+Recorded the approved search change and explicit saved-results recheck in the [IPTV decisions](iptv.md#approved-bulk-matching-decisions) and [code map](../atlas/iptv.md#chatgpt-matching-and-apply). The read-only replay verified eight of the 20 sampled search-limit rows. All ten sampled conflict cases stayed in review. [Plan and verification](../plans/2026-11-14-iptv-focused-tmdb-recheck.md)
+
+
+## RT main-folder application — 2026-11-14
+
+Dante approved the4px exception for crowded collapsed cards without TMDB/awards, and applying the feature to main. He then instructed not to test; he will handle testing. Applied21feature files while preserving current main changes and rebuilt main dist successfully. No tests, runtime restart or live verification were performed. Collapsed RT shares the bottom row with TMDB; votes label is omitted there, numeric count retained. Expanded RT sits between awards and TMDB; long titles wrap. Optional-Plex persistence and lazy-loading behavior are unchanged. [Application record](../verification/plex-rotten-tomatoes-2026-11-14/report.md).
+# 2026-11-14 YouTube Movie source
+
+Dante approved duration-first YouTube search (±5%), Arabic names for Arabic films, explicit optional GPT, Search more, and no uploader filtering. Updated Playback/Streaming decisions and Atlas plus AI Atlas. Implemented and verified in isolation; 72 focused Python, 21 Node and 18 desktop/integration scenarios passed; broader Python retains two confirmed baseline source-string failures. No live activation. [Plan](../plans/2026-11-14-youtube-movie-stream.md) · [Report](../verification/youtube-stream-2026-11-14/report.md).
+
+## 2026-11-14 · Saved TMDB recheck after provider sync
+
+Recorded the approved catalog-refresh behavior in the [IPTV decisions](iptv.md#approved-bulk-matching-decisions) and [code map](../atlas/iptv.md#chatgpt-matching-and-apply). Read-only Lionz inspection found all 1,363 saved hints still fit the prepared catalog. The live recheck was not dispatched. [Follow-up and verification](../plans/2026-11-14-iptv-focused-tmdb-recheck.md#approved-follow-up--start-a-saved-recheck-after-sync)
+
+## 2026-11-14 · Shared desktop UI visual choices
+
+Dante chose all eight recommended families from the side-by-side comparison and limited unification to UI. Recorded the selections in Settings/shared-infrastructure Second Brain and Atlas and prepared [the implementation plan](../plans/2026-11-14-shared-ui-standardization.md). No product code or runtime changed in this planning step; implementation and activation remain unapproved.
+
+
+## 2026-11-14 · Mandatory UI reuse and approved family implementation
+
+Dante explicitly approved adding the permanent reuse rule and proceeding with the selected families. Added the hard gate to AGENTS, the [shared UI registry](../atlas/shared-ui.md), build/dev checks, production primitives and caller migrations. StyleGuide now renders production owners. Updated Settings/shared-infrastructure decisions and Atlas. [Verification](../verification/shared-ui-2026-11-14/report.md) separates passing targeted checks, known baseline failures and source-only status. No installed-bundle activation, restart or commit.
+
+## 2026-11-14 · Shared UI bundle activated
+
+Dante separately authorized installation of the reviewed frontend. Installed the exact tested candidate, preserved a full rollback backup and previous assets, verified live JS/CSS byte hashes, and visually checked the live StyleGuide including green Play/Stream. Existing CP windows need refresh; backend and data were unchanged. [Activation evidence and rollback](../verification/shared-ui-2026-11-14/report.md#authorized-live-installation--2026-11-14-1753-cairo).

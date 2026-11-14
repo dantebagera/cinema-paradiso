@@ -1,7 +1,7 @@
 """Bounded TMDB planning for normalized Discover queries.
 
-This module owns provider parameter compilation only.  It deliberately does not
-perform HTTP requests, inspect local curation state, or fetch movie details.
+This module owns provider parameter compilation, evidence predicates and global
+summary ordering. It performs no HTTP, curation reads or detail retrieval.
 """
 
 from dataclasses import dataclass
@@ -91,7 +91,7 @@ def _runtime_bounds(value):
     return value["from"], value["to"]
 
 
-def build_discover_plan(query):
+def build_discover_plan(query, *, complete_catalogue=False):
     normalized, groups = group_map(query, "discover")
     title_group = groups.get("title")
     title = title_group["values"][0]["text"] if title_group else ""
@@ -100,6 +100,8 @@ def build_discover_plan(query):
         _invalid("Title cannot be combined with Keyword in Discover because TMDB title results do not expose keyword membership")
     if title and "runtime" in groups:
         _invalid("Title cannot be combined with Runtime in Discover because TMDB title results do not expose runtime")
+    if title and 'company' in groups:
+        _invalid('Title cannot be combined with Company because title summaries do not expose company membership')
 
     for value in groups.get("genre", {}).get("values", []):
         _controlled_id(value, "Genre", r"[1-9]\d*")
@@ -126,6 +128,13 @@ def build_discover_plan(query):
             provider_params["without_genres"] = excluded_genres.replace("|", ",")
     if "keyword" in groups:
         provider_params["with_keywords"] = _joined_ids(groups["keyword"], "Keyword")
+    if 'company' in groups:
+        included = _joined_ids(groups['company'], 'Company')
+        excluded = _joined_ids(groups['company'], 'Company', excluded=True)
+        if included:
+            provider_params['with_companies'] = included
+        if excluded:
+            provider_params['without_companies'] = excluded.replace('|', ',')
     if "language" in groups:
         provider_params["with_original_language"] = groups["language"]["values"][0]["id"]
     if "country" in groups:
@@ -134,7 +143,8 @@ def build_discover_plan(query):
         provider_params["vote_count.gte"] = groups["minimum_votes"]["values"][0]["value"]
     elif "genre" in groups:
         # Preserve the existing quick-filter noise floor.
-        provider_params["vote_count.gte"] = 50
+        # Complete factual traversals must not silently drop low-vote movies.
+        provider_params["vote_count.gte"] = 0 if complete_catalogue else 50
     if "year" in groups:
         lower, upper = _numeric_bounds(groups["year"]["values"][0])
         if lower is not None:
@@ -251,3 +261,69 @@ def movie_matches_summary(movie, summary_groups, language_country_fallback=None)
             if upper is not None and candidate > upper:
                 return False
     return True
+
+
+def movie_matches_details(movie, groups):
+    """Reapply compiled provider constraints to detail/filmography evidence.
+
+    None means a required fact is unknown. This is distinct from a proved
+    exclusion and lets complete-set callers report unresolved records honestly.
+    """
+    facts = dict(movie)
+    if 'genre_ids' not in facts and isinstance(facts.get('genres'), list):
+        facts['genre_ids'] = [str(row['id']) for row in facts['genres'] if isinstance(row, dict) and row.get('id')]
+    for group in groups:
+        kind = group['type']
+        if kind in SUMMARY_CRITERIA:
+            required = {'genre': 'genre_ids', 'year': 'release_date', 'rating': 'vote_average',
+                        'minimum_votes': 'vote_count', 'language': 'original_language', 'country': 'origin_country'}[kind]
+            if required not in facts or facts[required] is None or facts[required] == '' or (kind in ('genre', 'country') and not facts[required]):
+                if kind == 'country' and facts.get('production_countries'):
+                    facts['origin_country'] = [country['iso_3166_1'] for country in facts['production_countries'] if country.get('iso_3166_1')]
+                else:
+                    return None
+            if kind == 'country' and not facts.get('origin_country'):
+                return None
+            if kind == 'year' and not str(facts.get('release_date') or '')[:4].isdigit():
+                return None
+            if not movie_matches_summary(facts, (group,)):
+                return False
+        elif kind == 'runtime':
+            runtime = facts.get('runtime')
+            if isinstance(runtime, bool) or not isinstance(runtime, (int, float)) or runtime <= 0:
+                return None
+            lower, upper = _runtime_bounds(group['values'][0])
+            if (lower is not None and runtime < lower) or (upper is not None and runtime > upper):
+                return False
+        elif kind in ('company', 'keyword'):
+            raw = facts.get('production_companies') if kind == 'company' else facts.get('keywords')
+            if isinstance(raw, dict):
+                raw = raw.get('keywords')
+            if raw is None:
+                return None
+            known = {str(row.get('id')) for row in raw if isinstance(row, dict) and row.get('id')}
+            included = {value['id'] for value in group['values'] if not value.get('exclude')}
+            excluded = {value['id'] for value in group['values'] if value.get('exclude')}
+            if excluded & known:
+                return False
+            matched = included & known
+            if included and ((group.get('join') == 'and' and matched != included) or (group.get('join') != 'and' and not matched)):
+                return False
+    return True
+
+
+def sort_movie_summaries(movies, sort_key):
+    """One global movie-summary order for desktop queries and AI result sets."""
+    movies = list(movies or [])
+    identity = lambda movie: str((movie or {}).get('id') or (movie or {}).get('tmdb_id') or '').strip()
+    if sort_key == 'vote_average.desc':
+        movies.sort(key=lambda movie: (float(movie.get('vote_average') or movie.get('tmdb_rating') or 0), identity(movie)), reverse=True)
+    elif sort_key == 'vote_count.desc':
+        movies.sort(key=lambda movie: (int(movie.get('vote_count') or movie.get('tmdb_vote_count') or 0), identity(movie)), reverse=True)
+    elif sort_key in ('primary_release_date.desc', 'primary_release_date.asc'):
+        movies.sort(key=lambda movie: (str(movie.get('release_date') or ''), identity(movie)), reverse=sort_key.endswith('.desc'))
+    elif sort_key == 'title.asc':
+        movies.sort(key=lambda movie: (str(movie.get('title') or movie.get('original_title') or '').casefold(), identity(movie)))
+    elif sort_key == 'popularity.desc':
+        movies.sort(key=lambda movie: (float(movie.get('popularity') or 0), identity(movie)), reverse=True)
+    return movies

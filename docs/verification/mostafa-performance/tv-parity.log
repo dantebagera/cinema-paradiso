@@ -1,0 +1,164 @@
+
+> cinema-paradiso-frontend@3.0.0-beta.2 test:e2e
+> powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/run_playwright_e2e.ps1 tests/e2e/tv-parity.spec.js
+
+CP_TEST_ROOT=C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1
+
+> cinema-paradiso-frontend@3.0.0-beta.2 build
+> vite build --outDir C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1\dist
+
+vite v6.4.3 building for production...
+
+(!) outDir C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1\dist is not inside project root and will not be emptied.
+Use --emptyOutDir to override.
+
+transforming...
+✓ 1714 modules transformed.
+rendering chunks...
+computing gzip size...
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/manifest-CWC4etjQ.webmanifest          0.55 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/logo-Dk1rN4XL.svg                      1.25 kB │ gzip:   0.55 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/index.html                                    1.86 kB │ gzip:   0.83 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/styleguide-motif-crop-B3fTh5_H.png   119.86 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/header-Cr7VYxUL.png                  402.60 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/SharedMovieCards-m9chJEm1.css          4.56 kB │ gzip:   1.31 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/HomeWorkspace-me-HIXh0.css             6.76 kB │ gzip:   1.73 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/tv-lKpofHwb.css                       10.44 kB │ gzip:   2.74 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/IPTVWorkspace-DdyZZRE2.css            39.94 kB │ gzip:   6.56 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/index-Cz-Bcnef.css                   208.93 kB │ gzip:  35.86 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/header-CbieqaTQ.js                     0.05 kB │ gzip:   0.07 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/WorkspaceEmptyState-BDDRbUY5.js        0.33 kB │ gzip:   0.23 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/moviePresentation-Di650b9v.js          0.70 kB │ gzip:   0.44 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/WorkspaceViewActions-CUwDNRWC.js       0.85 kB │ gzip:   0.44 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/Pagination-DlDPH26v.js                 0.88 kB │ gzip:   0.49 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/DiscoverResultGrid-ChmX_BLo.js         0.88 kB │ gzip:   0.40 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/useCardGridMetrics-D4zXU0Vg.js         1.66 kB │ gzip:   0.90 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/WorkspacePathBar-CVuVdu-A.js           2.50 kB │ gzip:   0.96 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/LibraryControls-BPz1_ufL.js            2.83 kB │ gzip:   0.91 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/CatalogMetadataFilters-7hNUh0vr.js     3.12 kB │ gzip:   1.36 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/DownloadsWorkspace-BGHrEnq7.js         3.81 kB │ gzip:   1.56 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/vendor-Bb8JjhAW.js                     3.85 kB │ gzip:   1.72 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/iptv-DSQI6a4J.js                       6.50 kB │ gzip:   1.38 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/MetadataCorrectionModal-DSF5r1q9.js    9.96 kB │ gzip:   3.27 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/StyleGuide-Cxf9ndAj.js                10.43 kB │ gzip:   3.01 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/CardLab-DQdIw3TW.js                   11.48 kB │ gzip:   4.12 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/useMovieCollectionCache-CdrcAzBZ.js   12.11 kB │ gzip:   4.15 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/AIControlWorkspace-BGFPcmFX.js        16.90 kB │ gzip:   5.83 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/HelpWorkspace-BlxC_JVT.js             21.47 kB │ gzip:   6.96 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/HomeWorkspace-DEB2zkeH.js             22.58 kB │ gzip:   7.09 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/WorkspaceSelectionBar-Bpd-Lesw.js     31.71 kB │ gzip:   9.97 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/vendor-icons-BwP572SE.js              33.11 kB │ gzip:   6.72 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/SharedMovieCards-C8XwhVHm.js          42.30 kB │ gzip:  13.15 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/ListsWorkspace-BvBkRF-Q.js            46.51 kB │ gzip:  14.33 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/LibraryWorkspace-DVX-PZOd.js          47.99 kB │ gzip:  14.51 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/DiscoverWorkspace-DraU7Cug.js         60.38 kB │ gzip:  18.53 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/CleanupWorkspace-B7YNc7Nr.js          63.68 kB │ gzip:  16.79 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/TVWorkspace-bechYidg.js               73.41 kB │ gzip:  21.61 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/SettingsWorkspace-BCsUQlHo.js         84.72 kB │ gzip:  21.11 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/IPTVWorkspace-CJk60zhx.js             96.28 kB │ gzip:  25.59 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/index-DtEVqtf0.js                    117.67 kB │ gzip:  35.97 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/vendor-react-CJZMWplS.js             189.82 kB │ gzip:  59.19 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1/dist/assets/vendor-player-Dv34CeeU.js            353.87 kB │ gzip: 110.81 kB
+✓ built in 2.27s
+
+Running 19 tests using 1 worker
+
+(node:57408) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 tests\e2e\tv-parity.spec.js:12:1 › TV Library routes identity review to Maintenance and preserves its cards (4.5s)
+  x   2 tests\e2e\tv-parity.spec.js:33:1 › Discover and Library use the in-page media rows and TV File View shows native TV files (1.7s)
+(node:12080) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  3 tests\e2e\tv-parity.spec.js:86:3 › TV Discover shares the movie page gutters and keeps every year field readable at 1366px (1.9s)
+  ok  4 tests\e2e\tv-parity.spec.js:86:3 › TV Discover shares the movie page gutters and keeps every year field readable at 1920px (984ms)
+  ok  5 tests\e2e\tv-parity.spec.js:86:3 › TV Discover shares the movie page gutters and keeps every year field readable at 2048px (1.0s)
+  ok  6 tests\e2e\tv-parity.spec.js:150:1 › TV Discover status uses Catalog and all four quick bars omit Language (3.5s)
+  ok  7 tests\e2e\tv-parity.spec.js:181:3 › TV Library filters keep the movie grid and readable year fields at 1366px (1.1s)
+  ok  8 tests\e2e\tv-parity.spec.js:181:3 › TV Library filters keep the movie grid and readable year fields at 2048px (1.1s)
+  ok  9 tests\e2e\tv-parity.spec.js:257:1 › Advanced search explains how to add filters in both media tabs of Library and Discover (2.1s)
+  ok 10 tests\e2e\tv-parity.spec.js:287:3 › TV desktop parity and uncropped Dark Matter poster at 1920x1080 (5.6s)
+  ok 11 tests\e2e\tv-parity.spec.js:287:3 › TV desktop parity and uncropped Dark Matter poster at 1920x720 (2.9s)
+  ok 12 tests\e2e\tv-parity.spec.js:287:3 › TV desktop parity and uncropped Dark Matter poster at 1366x768 (3.9s)
+  ok 13 tests\e2e\tv-parity.spec.js:317:1 › Born Again exposes season downloads and main cast without adding the series (1.0s)
+  ok 14 tests\e2e\tv-parity.spec.js:325:1 › selected Simpsons episodes resolve missing hashes and queue once without enabling monitoring (5.5s)
+  ok 15 tests\e2e\tv-parity.spec.js:345:1 › top and bottom TV pagination share state (1.3s)
+  ok 16 tests\e2e\tv-parity.spec.js:362:3 › TV Discover and Library fill complete card rows at 1366px (1.6s)
+  ok 17 tests\e2e\tv-parity.spec.js:362:3 › TV Discover and Library fill complete card rows at 1920px (1.6s)
+  ok 18 tests\e2e\tv-parity.spec.js:407:1 › TV Discover enriches every card on a 39-card page (849ms)
+  ok 19 tests\e2e\tv-parity.spec.js:441:1 › TV title draft survives opening advanced criteria and keyboard search (1.1s)
+
+
+  1) tests\e2e\tv-parity.spec.js:33:1 › Discover and Library use the in-page media rows and TV File View shows native TV files 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 70
+    Received: 82
+
+      63 |   expect(tvSwitch.width).toBe(movieSwitch.width);
+      64 |   expect(tvSwitch.height).toBe(movieSwitch.height);
+    > 65 |   expect(tvSwitch.y).toBe(tvRescan.y);
+         |                      ^
+      66 |   expect(tvSwitch.height).toBe(tvRescan.height);
+      67 |   await page.getByRole('group', { name: 'TV library mode' }).getByRole('button', { name: 'File View' }).click();
+      68 |   await openControls(page);
+        at C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-parity.spec.js:65:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\tv-parity-Discover-and-Lib-08ef6--View-shows-native-TV-files\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\tv-parity-Discover-and-Lib-08ef6--View-shows-native-TV-files\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\tv-parity-Discover-and-Lib-08ef6--View-shows-native-TV-files\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tv-parity-Discover-and-Lib-08ef6--View-shows-native-TV-files\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    tests\e2e\tv-parity.spec.js:33:1 › Discover and Library use the in-page media rows and TV File View shows native TV files 
+  18 passed (45.1s)
+Playwright failure data retained at C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-e0c81f678ea5452b8d399803c1dfbfa1
+127.0.0.1 - - [12/Oct/2026 04:21:50] "GET /assets/tv-lKpofHwb.css HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:50] "GET /assets/WorkspaceViewActions-CUwDNRWC.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:50] "GET /api/tv/catalog/options?scope=discover HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:50] "GET /api/tv/lists?list_id=watchlist&page_size=1 HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:50] "GET /discover HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:50] "GET /assets/index-DtEVqtf0.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:50] "GET /assets/index-Cz-Bcnef.css HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:50] "GET /assets/vendor-react-CJZMWplS.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:50] "GET /assets/vendor-Bb8JjhAW.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:50] "GET /assets/vendor-icons-BwP572SE.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:50] "GET /assets/SharedMovieCards-m9chJEm1.css HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:50] "GET /assets/DiscoverWorkspace-DraU7Cug.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:50] "GET /assets/CatalogMetadataFilters-7hNUh0vr.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:50] "GET /assets/SharedMovieCards-C8XwhVHm.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:50] "GET /assets/WorkspaceSelectionBar-Bpd-Lesw.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:50] "GET /assets/moviePresentation-Di650b9v.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:50] "GET /assets/useMovieCollectionCache-CdrcAzBZ.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:50] "GET /assets/DiscoverResultGrid-ChmX_BLo.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:50] "GET /assets/WorkspacePathBar-CVuVdu-A.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:50] "GET /assets/Pagination-DlDPH26v.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:50] "GET /assets/useCardGridMetrics-D4zXU0Vg.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:50] "GET /api/notifications?query=&page=1 HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:51] "GET /api/tv/capabilities HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:51] "GET /api/streaming/config HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:51] "GET /api/power/status HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:51] "GET /api/library/reconcile HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:51] "GET /api/catalog/events HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:51] "GET /api/user/followed-releases HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:51] "GET /api/tmdb/filter-options HTTP/1.1" 400 -
+127.0.0.1 - - [12/Oct/2026 04:21:51] "POST /api/tmdb/discover/advanced HTTP/1.1" 400 -
+127.0.0.1 - - [12/Oct/2026 04:21:51] "POST /api/user/followed-releases/check HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:51] "GET /api/user/lists HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:51] "GET /assets/TVWorkspace-bechYidg.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:51] "GET /assets/tv-lKpofHwb.css HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:51] "GET /assets/WorkspaceViewActions-CUwDNRWC.js HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:51] "GET /api/tv/catalog/options?scope=discover HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:51] "GET /api/tv/lists?list_id=watchlist&page_size=1 HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:51] "POST /api/tv/catalog/search HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:51] "POST /api/tv/catalog/search HTTP/1.1" 200 -
+127.0.0.1 - - [12/Oct/2026 04:21:51] "POST /api/tv/catalog/search HTTP/1.1" 200 -

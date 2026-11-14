@@ -1,0 +1,28 @@
+{
+  "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\logs\\combined-python-focused.log",
+  "exitCode": 0,
+  "kind": "python",
+  "root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\fixtures\\combined-python-focused-ddb760963448457ba5a62cb2003f5d2b",
+  "modules": [
+    "tests.test_upcoming_discover",
+    "tests.test_movie_follow_contract",
+    "tests.test_user_curation_store",
+    "tests.test_yts_option2",
+    "tests.test_curation_routes",
+    "tests.test_source_search_service",
+    "tests.test_tv_download_contracts",
+    "tests.test_tv_follow_season_planning",
+    "tests.test_tv_source_diagnostics",
+    "tests.test_acquisition_decisions",
+    "tests.test_download_monitor",
+    "tests.test_movie_identity_service",
+    "tests.test_identity_verification",
+    "tests.test_authoritative_identity",
+    "tests.test_verified_tv_acquisition",
+    "tests.test_tv_list_filters",
+    "tests.test_tv_credit_portraits"
+  ],
+  "label": "combined-python-focused",
+  "dist": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\fixtures\\combined-python-focused-ddb760963448457ba5a62cb2003f5d2b\\dist",
+  "elapsed": 228.8635384
+}

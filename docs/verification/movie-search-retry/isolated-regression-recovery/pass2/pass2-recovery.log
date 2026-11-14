@@ -1,0 +1,5 @@
+{"database_mapping": [{"database": ".catalog-test.sqlite", "mapped_rows": 63121, "quick_check": [["ok"]], "foreign_key_errors": 0}, {"database": "tv-catalog.sqlite", "mapped_rows": 2153, "quick_check": [["ok"]], "foreign_key_errors": 0}, {"database": "acquisition.sqlite", "mapped_rows": 51601, "quick_check": [["ok"]], "foreign_key_errors": 0}], "json_files_changed": 16}
+{"recovered_desktop":true,"total":75,"rendered":40}
+{"boot": 1, "normal_startup": true, "query_parity": true, "graceful_exit": true, "seconds": 15.859}
+{"boot": 2, "normal_startup": true, "query_parity": true, "graceful_exit": true, "seconds": 7.016}
+{"runnable_recovery": true, "boots": 2, "normal_startup": true, "external_clients": "blocked/unavailable"}

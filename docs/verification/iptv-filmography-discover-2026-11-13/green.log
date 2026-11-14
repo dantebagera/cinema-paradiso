@@ -1,0 +1,108 @@
+
+> cinema-paradiso-frontend@3.0.0-beta.2 test:e2e
+> powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/run_playwright_e2e.ps1 iptv-people.spec.js movie-relationships.spec.js tv-expanded-parity.spec.js --grep-invert 390px
+
+CP_TEST_ROOT=C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a
+
+> cinema-paradiso-frontend@3.0.0-beta.2 build
+> vite build --outDir C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a\dist
+
+vite v6.4.3 building for production...
+
+(!) outDir C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a\dist is not inside project root and will not be emptied.
+Use --emptyOutDir to override.
+
+transforming...
+✓ 1749 modules transformed.
+rendering chunks...
+computing gzip size...
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/manifest-BSGbUmFO.webmanifest          0.55 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/logo-Dk1rN4XL.svg                      1.25 kB │ gzip:   0.55 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/index.html                                    1.94 kB │ gzip:   0.85 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/styleguide-motif-crop-B3fTh5_H.png   119.86 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/header-Cr7VYxUL.png                  402.60 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/home-film-projector-Cy2UE5XO.png     763.94 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/HomeWorkspace-_NC_Abiy.css            13.55 kB │ gzip:   3.27 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/iptv-B6x-Tuph.css                     40.66 kB │ gzip:   6.71 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/index-D1BdEqO-.css                   224.61 kB │ gzip:  38.97 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/WorkspaceEmptyState-BDDRbUY5.js        0.33 kB │ gzip:   0.23 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/WorkspacePathBar-VC2jgWBZ.js           2.50 kB │ gzip:   0.96 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/LibraryControls-DqLCUsop.js            2.83 kB │ gzip:   0.90 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/CatalogMetadataFilters-wwGxlnRo.js     3.11 kB │ gzip:   1.35 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/DownloadsWorkspace-ERF5byUc.js         3.82 kB │ gzip:   1.56 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/vendor-Bb8JjhAW.js                     3.85 kB │ gzip:   1.72 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/useMovieCollectionCache-CUAT5Flh.js    5.59 kB │ gzip:   2.22 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/SourceReviewDialog-gxJ2BvBk.js         6.63 kB │ gzip:   2.40 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/MetadataCorrectionModal-Cb44V_RA.js    9.93 kB │ gzip:   3.26 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/AIControlWorkspace-BwwQi8Pr.js        10.19 kB │ gzip:   3.62 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/StyleGuide-BKKijksB.js                10.45 kB │ gzip:   3.02 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/CardLab-DHzhjOo2.js                   11.52 kB │ gzip:   4.14 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/DiscoverResultGrid-CXaxZ7yb.js        12.07 kB │ gzip:   4.62 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/HomeWorkspace-DT36ZKa5.js             22.66 kB │ gzip:   7.45 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/HelpWorkspace-DwpRDeZN.js             23.08 kB │ gzip:   7.63 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/vendor-icons-n5kuJKvW.js              33.50 kB │ gzip:   6.78 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/AIActionReview-DFcYYzmX.js            35.09 kB │ gzip:  11.39 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/ListsWorkspace-9gTqinJE.js            46.27 kB │ gzip:  14.23 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/LibraryWorkspace-DPX4AV4Q.js          48.85 kB │ gzip:  14.89 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/DiscoverWorkspace-Sc5c6LVF.js         64.40 kB │ gzip:  19.84 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/CleanupWorkspace-DRD0zeV4.js          73.42 kB │ gzip:  19.71 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/IPTVWorkspace-DG6IK3L6.js             91.82 kB │ gzip:  25.95 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/SettingsWorkspace-D4TnGpMe.js         99.72 kB │ gzip:  24.94 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/vendor-react-CJZMWplS.js             189.82 kB │ gzip:  59.19 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/index-BRQwa1ci.js                    297.37 kB │ gzip:  87.96 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-b7f23711dc16408ea7f1fbb8ab6f3a9a/dist/assets/vendor-player-Dv34CeeU.js            353.87 kB │ gzip: 110.81 kB
+✓ built in 2.45s
+
+Running 47 tests using 1 worker
+
+(node:27780) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 tests\e2e\iptv-people.spec.js:3:1 › IPTV portrait browsing preserves provider filters and Back restoration (2.0s)
+  ok  2 tests\e2e\iptv-people.spec.js:39:1 › missing person identity explains disabled filmography without fetching a biography (682ms)
+  ok  3 tests\e2e\iptv-people.spec.js:57:3 › large desktop with 150% display density › cast actions keep the shared rail geometry (814ms)
+  ok  4 tests\e2e\iptv-people.spec.js:75:3 › actor Filmography opens full Movie Discover while the portrait remains provider-local (1.6s)
+  ok  5 tests\e2e\iptv-people.spec.js:75:3 › director Filmography opens full Movie Discover while the portrait remains provider-local (1.6s)
+  ok  6 tests\e2e\movie-relationships.spec.js:109:5 › discover cast award icons remain visible beside counts at 1600px (693ms)
+  ok  7 tests\e2e\movie-relationships.spec.js:109:5 › discover cast award icons remain visible beside counts at 1366px (680ms)
+  ok  8 tests\e2e\movie-relationships.spec.js:109:5 › library cast award icons remain visible beside counts at 1600px (647ms)
+  ok  9 tests\e2e\movie-relationships.spec.js:109:5 › library cast award icons remain visible beside counts at 1366px (645ms)
+  ok 10 tests\e2e\movie-relationships.spec.js:148:5 › discover movie artwork at 1920px › expanded movie artwork stays behind the poster and details without an outer hover effect (939ms)
+  ok 11 tests\e2e\movie-relationships.spec.js:148:5 › discover movie artwork at 1366px › expanded movie artwork stays behind the poster and details without an outer hover effect (785ms)
+  ok 12 tests\e2e\movie-relationships.spec.js:148:5 › library movie artwork at 1920px › expanded movie artwork stays behind the poster and details without an outer hover effect (914ms)
+  ok 13 tests\e2e\movie-relationships.spec.js:148:5 › library movie artwork at 1366px › expanded movie artwork stays behind the poster and details without an outer hover effect (751ms)
+  ok 14 tests\e2e\movie-relationships.spec.js:177:1 › movie details collapse from plain content while actions and dialogs remain usable (1.3s)
+  ok 15 tests\e2e\movie-relationships.spec.js:203:1 › discover expanded movie rails reveal the remaining cast and related titles with matching arrows (6.8s)
+  ok 16 tests\e2e\movie-relationships.spec.js:203:1 › library expanded movie rails reveal the remaining cast and related titles with matching arrows (6.6s)
+  ok 17 tests\e2e\movie-relationships.spec.js:281:1 › related posters reveal full title and year on hover and keyboard focus (3.0s)
+  ok 18 tests\e2e\movie-relationships.spec.js:320:1 › stable async rail, scrollable tiles, restored cast and selected related expansion (3.3s)
+  ok 19 tests\e2e\movie-relationships.spec.js:372:1 › Plex-only owned movie resolves rich cast by exact title and year (711ms)
+  ok 20 tests\e2e\movie-relationships.spec.js:395:1 › director and cast rail retains all loaded credits on short desktops (786ms)
+  ok 21 tests\e2e\movie-relationships.spec.js:423:1 › View all keeps source, page, ownership and card position through inline expansion (1.4s)
+  ok 22 tests\e2e\movie-relationships.spec.js:458:1 › bounded View all shows an exact total and stops at the final page for each source (1.8s)
+  ok 23 tests\e2e\movie-relationships.spec.js:512:1 › a failed relationship count preserves loaded cards and can be retried (1.0s)
+  ok 24 tests\e2e\movie-relationships.spec.js:544:1 › provider failure remains local and short desktop keeps all corners visible (758ms)
+  ok 25 tests\e2e\movie-relationships.spec.js:577:1 › late TMDB details recenter the finished card inside a short desktop viewport (1.4s)
+  ok 26 tests\e2e\movie-relationships.spec.js:585:1 › Short desktop keeps expanded card layout and lets lower content scroll below pinned controls (705ms)
+  ok 27 tests\e2e\movie-relationships.spec.js:600:1 › collection shares one row with mandatory lists and list chips stay bounded (852ms)
+  ok 28 tests\e2e\movie-relationships.spec.js:646:3 › library uses shared rail and returns to original expanded card and scroll (1.3s)
+  ok 29 tests\e2e\movie-relationships.spec.js:646:3 › movie-lists uses shared rail and returns to original expanded card and scroll (1.2s)
+  ok 30 tests\e2e\movie-relationships.spec.js:646:3 › ai-control uses shared rail and returns to original expanded card and scroll (1.4s)
+  ok 31 tests\e2e\movie-relationships.spec.js:646:3 › pick uses shared rail and returns to original expanded card and scroll (1.2s)
+  ok 32 tests\e2e\movie-relationships.spec.js:646:3 › browse uses shared rail and returns to original expanded card and scroll (1.2s)
+  ok 33 tests\e2e\movie-relationships.spec.js:689:1 › browser Back and breadcrumbs reverse deeper related exploration (1.3s)
+  ok 34 tests\e2e\movie-relationships.spec.js:708:1 › unowned tile keeps Discover source, streaming and watchlist actions; breadcrumb restores original expansion (1.1s)
+  ok 35 tests\e2e\movie-relationships.spec.js:723:1 › Back during relationship loading ignores late results and preserves the expanded origin (2.6s)
+  ok 36 tests\e2e\movie-relationships.spec.js:738:1 › a failed Similar source does not block Recommended in Discover (1.0s)
+  ok 37 tests\e2e\movie-relationships.spec.js:750:3 › dense metadata fits at desktop height 1080 (890ms)
+  ok 38 tests\e2e\movie-relationships.spec.js:750:3 › dense metadata fits at desktop height 900 (814ms)
+  ok 39 tests\e2e\movie-relationships.spec.js:750:3 › dense metadata fits at desktop height 720 (805ms)
+  ok 40 tests\e2e\tv-expanded-parity.spec.js:6:1 › expanded TV cast and related rails share arrow scrolling and keep portrait actions clear (3.7s)
+  ok 41 tests\e2e\tv-expanded-parity.spec.js:57:1 › TV Full Credit starts collapsed, retains crew groups and portraits, and leaves actors scrollable (983ms)
+  ok 42 tests\e2e\tv-expanded-parity.spec.js:111:1 › standard TV card keeps dates and episode counts together and opens from the card (603ms)
+  ok 43 tests\e2e\tv-expanded-parity.spec.js:131:1 › related TV posters stay compact with inline arrows and full titles in tooltips (695ms)
+  ok 44 tests\e2e\tv-expanded-parity.spec.js:168:1 › TV score, IMDb, and temporary Arabic display match Movie controls (655ms)
+  ok 45 tests\e2e\tv-expanded-parity.spec.js:190:1 › TV badges, movie-style credits, TV filmography, and related navigation work without changing the library (1.2s)
+  ok 46 tests\e2e\tv-expanded-parity.spec.js:253:1 › saved series keeps its selected season through creator TV filmography and Back (2.6s)
+  ok 47 tests\e2e\tv-expanded-parity.spec.js:270:1 › a TV recommendation failure keeps the series usable and offers retry (732ms)
+
+  47 passed (1.2m)

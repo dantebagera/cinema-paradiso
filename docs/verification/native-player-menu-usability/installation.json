@@ -1,0 +1,11 @@
+{
+  "installed": true,
+  "bundle_version": "0.1.37-qt6.10.3-mpv20260610-lgpl-cp2.8.5",
+  "state": "ready",
+  "verified_files": 1366,
+  "licenses": 6,
+  "exe_sha256": "E73870F7A0727FA15B94002E7541DB41C85A1B81879BD5DC8A1B3D0D81C0146A",
+  "selector_backup": "C:\\Users\\dante\\.codex\\backups\\cp-player-menu-usability-20261024\\selector-before-install-594d058c7a024d218e3edd834773771a.json",
+  "rollback_retained": true,
+  "additional_playback_or_ui_tests": false
+}

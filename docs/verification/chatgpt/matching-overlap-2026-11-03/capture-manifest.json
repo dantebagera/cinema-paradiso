@@ -1,0 +1,80 @@
+{
+  "model": "gpt-6.1-sol",
+  "prompt": "i need you to lit 50 movies with very twisted story you wont expect the ending\nyour responce should be a list of movies names and years , no any other details , dont seek more info , dont reply by paragarph or any way of responce  only the list",
+  "config_hash": "685522f0a8dde8fc63cb2f2e616927c2e0d4d72b56d8b6889ec68c9c35816a82",
+  "source_hashes": {
+    "app.py": "efb00520b54c264b028c80859d14ba12eb9d0a2875196ef03652d085706f7675",
+    "services/chatgpt_recommendations.py": "17c0f9a6342d8bc16dd1b9be178f6e655c087a587cd29e77bccc5de7679ebec3",
+    "services/chatgpt_recommendation_stream.py": "0e4824e22b7b973a11d96fee5b06251afe6e40d97f8d7723e66e3238004487c1",
+    "services/chatgpt_transport.py": "2f444a51eb6b8c9e2d0f09e0d0c4b1dfef4cb3f05a1c17f1e17511e3704152a9",
+    "services/chatgpt_skills.py": "458e1764818455db93372d41e06e424f4848885ac3e1cce1a1c7ffd012b5ca3c",
+    "resources/ai/chatgpt/movie-curator/SKILL.md": "45b4d367567dfa62f1d553173e15aad0ac74a14925186610bca4d6c6961f1652",
+    "tools/profile_ai_features.py": "2d18f8ffca8a782c805f803a7a1b3afd655ee03f389d1fb0293e66829488f363"
+  },
+  "started_unix": 1793707959.787628,
+  "captures": [
+    {
+      "label": "overlap-final-1",
+      "exit_code": 0,
+      "evidence_root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-ai-timing-ob2ov6pr",
+      "state": "completed",
+      "message": "Requested verified target reached.",
+      "accepted_count": 50,
+      "inference_attempts": 1,
+      "tmdb_requests": 127,
+      "elapsed_seconds": 20.376943,
+      "timings": {
+        "gpt_seconds": 19.069776,
+        "gpt_http_seconds": 16.128265,
+        "matching_after_gpt_seconds": 0.451705,
+        "tmdb_http_active_seconds": 7.863138,
+        "gpt_tmdb_overlap_seconds": 7.141145,
+        "other_seconds": 0.855462,
+        "full_seconds": 20.376943,
+        "first_cards_seconds": 19.943504
+      }
+    },
+    {
+      "label": "overlap-final-2",
+      "exit_code": 0,
+      "evidence_root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-ai-timing-igsr1lym",
+      "state": "completed",
+      "message": "Requested verified target reached.",
+      "accepted_count": 50,
+      "inference_attempts": 1,
+      "tmdb_requests": 119,
+      "elapsed_seconds": 21.625464,
+      "timings": {
+        "gpt_seconds": 20.530326,
+        "gpt_http_seconds": 14.63504,
+        "matching_after_gpt_seconds": 0.417129,
+        "tmdb_http_active_seconds": 9.708113,
+        "gpt_tmdb_overlap_seconds": 9.135669,
+        "other_seconds": 0.678009,
+        "full_seconds": 21.625464,
+        "first_cards_seconds": 21.223414
+      }
+    },
+    {
+      "label": "overlap-final-3",
+      "exit_code": 0,
+      "evidence_root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-ai-timing-ds3ojoqk",
+      "state": "completed",
+      "message": "Requested verified target reached.",
+      "accepted_count": 50,
+      "inference_attempts": 1,
+      "tmdb_requests": 131,
+      "elapsed_seconds": 21.371463,
+      "timings": {
+        "gpt_seconds": 20.243128,
+        "gpt_http_seconds": 20.194439,
+        "matching_after_gpt_seconds": 0.418062,
+        "tmdb_http_active_seconds": 7.023943,
+        "gpt_tmdb_overlap_seconds": 6.381734,
+        "other_seconds": 0.710273,
+        "full_seconds": 21.371463,
+        "first_cards_seconds": 20.969104
+      }
+    }
+  ]
+}

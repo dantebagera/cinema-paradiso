@@ -1,0 +1,29 @@
+{
+  "feature": "F2",
+  "label": "native-baseline",
+  "state": "partial",
+  "message": "",
+  "model": "gpt-6.1-sol",
+  "prompt": "Find The Prestige (2006) and show its movie card. Read-only lookup; do not prepare an action.",
+  "elapsed_seconds": 26.827937,
+  "inference_attempts": 3,
+  "tmdb_requests": 18,
+  "accepted_count": 1,
+  "scope": "actual CP Agent/full tool composition; one public Movie lookup; no confirmation or writes",
+  "name": "F2",
+  "evidence_root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-ai-timing-dq4upqnx",
+  "gpt_call_seconds": [
+    4.960246,
+    3.971191,
+    8.083502
+  ],
+  "gpt_roundtrip_seconds": 17.014939,
+  "tmdb_wall_seconds": 4.516619,
+  "lease_seconds": 0.071676,
+  "other_seconds": 5.224703,
+  "first_backend_card_seconds": 14.475644,
+  "unverified_control_count": null,
+  "native_proposal_count": null,
+  "native_processed_count": null,
+  "recommendation_source_hash": "026fc8e1c498401b67ded18b5f6dcb044eeaabf00e6ea1212da678ca7cca754f"
+}

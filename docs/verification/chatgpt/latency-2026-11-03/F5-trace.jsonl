@@ -1,0 +1,55 @@
+{"sequence": 1, "event": "span_start", "at_seconds": 0.025783, "phase": "isolated_app_import"}
+{"sequence": 2, "event": "span_end", "at_seconds": 0.324024, "phase": "isolated_app_import", "seconds": 0.298236, "state": "completed"}
+{"sequence": 3, "event": "capture_started", "at_seconds": 0.546956, "feature": "F5", "label": "native-baseline", "prompt": "Synthetic two-title IPTV supplied-candidate matching", "model": "gpt-6.1-sol", "count": "50", "maximum_calls": 3, "maximum_seconds": 180, "cache_state": "fresh diagnostic process; no production TMDB memory cache"}
+{"sequence": 4, "event": "span_start", "at_seconds": 0.579312, "phase": "feature_total"}
+{"sequence": 5, "event": "span_start", "at_seconds": 0.622196, "phase": "tmdb_http", "request": 1, "endpoint": "/3/search/movie", "title": "alien", "year": "1979"}
+{"sequence": 6, "event": "span_end", "at_seconds": 0.915178, "phase": "tmdb_http", "seconds": 0.292973, "state": "completed", "request": 1, "endpoint": "/3/search/movie", "title": "alien", "year": "1979"}
+{"sequence": 7, "event": "span_start", "at_seconds": 0.916096, "phase": "tmdb_http", "request": 2, "endpoint": "/3/movie/348", "title": "", "year": ""}
+{"sequence": 8, "event": "span_end", "at_seconds": 1.233483, "phase": "tmdb_http", "seconds": 0.317377, "state": "completed", "request": 2, "endpoint": "/3/movie/348", "title": "", "year": ""}
+{"sequence": 9, "event": "span_start", "at_seconds": 1.234244, "phase": "tmdb_http", "request": 3, "endpoint": "/3/movie/1309211", "title": "", "year": ""}
+{"sequence": 10, "event": "span_end", "at_seconds": 1.49915, "phase": "tmdb_http", "seconds": 0.264897, "state": "completed", "request": 3, "endpoint": "/3/movie/1309211", "title": "", "year": ""}
+{"sequence": 11, "event": "span_start", "at_seconds": 1.499711, "phase": "tmdb_http", "request": 4, "endpoint": "/3/movie/454788", "title": "", "year": ""}
+{"sequence": 12, "event": "span_end", "at_seconds": 1.76442, "phase": "tmdb_http", "seconds": 0.2647, "state": "completed", "request": 4, "endpoint": "/3/movie/454788", "title": "", "year": ""}
+{"sequence": 13, "event": "span_start", "at_seconds": 1.764963, "phase": "tmdb_http", "request": 5, "endpoint": "/3/movie/820362", "title": "", "year": ""}
+{"sequence": 14, "event": "span_end", "at_seconds": 2.025385, "phase": "tmdb_http", "seconds": 0.260414, "state": "completed", "request": 5, "endpoint": "/3/movie/820362", "title": "", "year": ""}
+{"sequence": 15, "event": "span_start", "at_seconds": 2.025932, "phase": "tmdb_http", "request": 6, "endpoint": "/3/movie/98401", "title": "", "year": ""}
+{"sequence": 16, "event": "span_end", "at_seconds": 2.294684, "phase": "tmdb_http", "seconds": 0.268744, "state": "completed", "request": 6, "endpoint": "/3/movie/98401", "title": "", "year": ""}
+{"sequence": 17, "event": "span_start", "at_seconds": 2.298605, "phase": "gpt_run", "input_bytes": 854, "instructions_bytes": 641, "tools_bytes": 422}
+{"sequence": 18, "event": "span_start", "at_seconds": 2.299952, "phase": "lease_acquire"}
+{"sequence": 19, "event": "span_end", "at_seconds": 2.309425, "phase": "lease_acquire", "seconds": 0.00947, "state": "completed"}
+{"sequence": 20, "event": "span_start", "at_seconds": 2.309645, "phase": "account_access"}
+{"sequence": 21, "event": "span_end", "at_seconds": 2.310981, "phase": "account_access", "seconds": 0.001333, "state": "completed"}
+{"sequence": 22, "event": "gpt_start", "at_seconds": 2.320804, "attempt": 1}
+{"sequence": 23, "event": "span_start", "at_seconds": 2.321088, "phase": "gpt_http", "attempt": 1}
+{"sequence": 24, "event": "gpt_first_bytes", "at_seconds": 5.061816, "attempt": 1, "seconds": 2.740721}
+{"sequence": 25, "event": "gpt_stream_event", "at_seconds": 6.914474, "attempt": 1, "type": "response.output_item.added", "item_type": "function_call", "seconds": 4.59338, "usage": null}
+{"sequence": 26, "event": "gpt_stream_event", "at_seconds": 7.12068, "attempt": 1, "type": "response.completed", "item_type": null, "seconds": 4.799588, "usage": {"input_tokens": 428, "output_tokens": 20, "total_tokens": 448, "attribution": {"items": {"fc_024984f13194f178016ae9aadff6108191b613088c09ba1d5d": {"input_tokens": 2, "output_tokens": 20}, "msg_024984f13194f178016ae9aadd800481919f80a1466183d7bd": {"input_tokens": 258, "output_tokens": 0, "content": [{"input_tokens": 258, "output_tokens": 0}]}}, "request_fields": {"instructions": {"input_tokens": 121, "output_tokens": 0}, "tools": {"input_tokens": 47, "output_tokens": 0}}}}}
+{"sequence": 27, "event": "span_end", "at_seconds": 7.121623, "phase": "gpt_http", "attempt": 1, "seconds": 4.800533}
+{"sequence": 28, "event": "span_start", "at_seconds": 7.121892, "phase": "lease_release"}
+{"sequence": 29, "event": "span_end", "at_seconds": 7.131423, "phase": "lease_release", "seconds": 0.009529, "state": "completed"}
+{"sequence": 30, "event": "span_end", "at_seconds": 7.131658, "phase": "gpt_run", "seconds": 4.833051, "state": "completed", "input_bytes": 854, "instructions_bytes": 641, "tools_bytes": 422}
+{"sequence": 31, "event": "gpt_reply", "at_seconds": 7.13187, "response_id": "resp_024984f13194f178016ae9aadd7ea0819194fa1319ff7bfa2d", "calls": [{"name": "cp_result.submit", "count": 0}]}
+{"sequence": 32, "event": "span_start", "at_seconds": 7.147624, "phase": "tmdb_http", "request": 7, "endpoint": "/3/search/movie", "title": "the prestige", "year": "2006"}
+{"sequence": 33, "event": "span_end", "at_seconds": 7.412924, "phase": "tmdb_http", "seconds": 0.265292, "state": "completed", "request": 7, "endpoint": "/3/search/movie", "title": "the prestige", "year": "2006"}
+{"sequence": 34, "event": "span_start", "at_seconds": 7.41347, "phase": "tmdb_http", "request": 8, "endpoint": "/3/movie/1124", "title": "", "year": ""}
+{"sequence": 35, "event": "span_end", "at_seconds": 7.753997, "phase": "tmdb_http", "seconds": 0.340518, "state": "completed", "request": 8, "endpoint": "/3/movie/1124", "title": "", "year": ""}
+{"sequence": 36, "event": "span_start", "at_seconds": 7.7563, "phase": "gpt_run", "input_bytes": 313, "instructions_bytes": 641, "tools_bytes": 422}
+{"sequence": 37, "event": "span_start", "at_seconds": 7.757639, "phase": "lease_acquire"}
+{"sequence": 38, "event": "span_end", "at_seconds": 7.767649, "phase": "lease_acquire", "seconds": 0.010006, "state": "completed"}
+{"sequence": 39, "event": "span_start", "at_seconds": 7.767926, "phase": "account_access"}
+{"sequence": 40, "event": "span_end", "at_seconds": 7.768815, "phase": "account_access", "seconds": 0.000887, "state": "completed"}
+{"sequence": 41, "event": "gpt_start", "at_seconds": 7.778373, "attempt": 2}
+{"sequence": 42, "event": "span_start", "at_seconds": 7.778637, "phase": "gpt_http", "attempt": 2}
+{"sequence": 43, "event": "gpt_first_bytes", "at_seconds": 9.491001, "attempt": 2, "seconds": 1.712356}
+{"sequence": 44, "event": "gpt_stream_event", "at_seconds": 10.401145, "attempt": 2, "type": "response.output_item.added", "item_type": "function_call", "seconds": 2.622501, "usage": null}
+{"sequence": 45, "event": "gpt_stream_event", "at_seconds": 10.626496, "attempt": 2, "type": "response.completed", "item_type": null, "seconds": 2.847854, "usage": {"input_tokens": 256, "output_tokens": 21, "total_tokens": 277, "attribution": {"items": {"fc_0a28cd040f0e6f14016ae9aae374108191a0484c17b0ead561": {"input_tokens": 2, "output_tokens": 21}, "msg_0a28cd040f0e6f14016ae9aae211308191ac5fef5dfe885c4a": {"input_tokens": 86, "output_tokens": 0, "content": [{"input_tokens": 86, "output_tokens": 0}]}}, "request_fields": {"instructions": {"input_tokens": 121, "output_tokens": 0}, "tools": {"input_tokens": 47, "output_tokens": 0}}}}}
+{"sequence": 46, "event": "span_end", "at_seconds": 10.627438, "phase": "gpt_http", "attempt": 2, "seconds": 2.848799}
+{"sequence": 47, "event": "span_start", "at_seconds": 10.627708, "phase": "lease_release"}
+{"sequence": 48, "event": "span_end", "at_seconds": 10.6389, "phase": "lease_release", "seconds": 0.011186, "state": "completed"}
+{"sequence": 49, "event": "span_end", "at_seconds": 10.63917, "phase": "gpt_run", "seconds": 2.882867, "state": "completed", "input_bytes": 313, "instructions_bytes": 641, "tools_bytes": 422}
+{"sequence": 50, "event": "gpt_reply", "at_seconds": 10.639443, "response_id": "resp_0a28cd040f0e6f14016ae9aae2106c8191995d24d4e68da070", "calls": [{"name": "cp_result.submit", "count": 0}]}
+{"sequence": 51, "event": "span_start", "at_seconds": 10.663002, "phase": "persist_results", "count": 2}
+{"sequence": 52, "event": "span_end", "at_seconds": 10.674351, "phase": "persist_results", "seconds": 0.011346, "state": "completed", "count": 2}
+{"sequence": 53, "event": "first_cards", "at_seconds": 10.674611, "count": 2}
+{"sequence": 54, "event": "span_end", "at_seconds": 10.685905, "phase": "feature_total", "seconds": 10.10659, "state": "completed"}
+{"sequence": 55, "event": "job_finished", "at_seconds": 10.687977, "state": "completed", "message": "", "accepted_count": 2, "inference_attempts": 2, "tmdb_requests": 8, "elapsed_seconds": 10.139958}

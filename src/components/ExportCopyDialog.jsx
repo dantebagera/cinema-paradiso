@@ -1,3 +1,6 @@
+import Button from './ui/Button.jsx';
+import FormField, { Input } from './ui/FormField.jsx';
+import DialogShell, { DialogHeader, DialogActions } from './ui/DialogShell.jsx';
 import { AlertTriangle, CheckCircle2, Copy, Folder, HardDrive, Loader2, Search, X } from 'lucide-react';
 import { useCallback, useEffect, useState } from 'react';
 import { fetchJson } from '../api/client.js';
@@ -52,14 +55,14 @@ export default function ExportCopyDialog({ movies, onClose, notify }) {
 
   return <>
     <div className="modal-backdrop export-copy-backdrop" role="presentation" onClick={onClose}>
-      <form className="small-dialog export-copy-dialog" role="dialog" aria-modal="true" aria-label="Copy selected movies" onClick={(event) => event.stopPropagation()} onSubmit={startCopy}>
-        <div className="dialog-header"><div><p className="screen-kicker">Export list movies</p><h2>Copy selected to...</h2></div><button type="button" className="inspector-close" onClick={onClose} aria-label="Close copy dialog"><X size={18} /></button></div>
+      <DialogShell as="form" className="small-dialog export-copy-dialog" role="dialog" aria-modal="true" aria-label="Copy selected movies" onClick={(event) => event.stopPropagation()} onSubmit={startCopy}>
+        <DialogHeader ><div><p className="screen-kicker">Export list movies</p><h2>Copy selected to...</h2></div><Button size="icon" type="button" className="inspector-close" onClick={onClose} aria-label="Close copy dialog"><X size={18} /></Button></DialogHeader>
         <p className="dialog-body-path">{formatCount(movies.length)} selected, {formatCount(localCount)} local file{localCount === 1 ? '' : 's'} available to copy. Existing files are skipped.</p>
-        <label className="dialog-field"><span>Destination folder</span><div className="folder-path-row"><input value={destination} onChange={(event) => setDestination(event.target.value)} placeholder="E:\\Friend USB\\Movies or \\\\server\\share\\movies" disabled={Boolean(job && !completed)} /><button type="button" className="btn btn-secondary" onClick={() => setFolderBrowserOpen(true)} disabled={Boolean(job && !completed)}><Folder size={15} /> Browse...</button></div></label>
+        <FormField ><span>Destination folder</span><div className="folder-path-row"><Input value={destination} onChange={(event) => setDestination(event.target.value)} placeholder="E:\\Friend USB\\Movies or \\\\server\\share\\movies" disabled={Boolean(job && !completed)} /><Button type="button"  onClick={() => setFolderBrowserOpen(true)} disabled={Boolean(job && !completed)}><Folder size={15} /> Browse...</Button></div></FormField>
         {job && <div className="export-progress"><div className="export-progress-track"><span style={{ width: `${percent}%` }} /></div><p><strong>{job.status}</strong><span>{formatCount(job.copied_count || 0)} copied, {formatCount(job.skipped_count || 0)} skipped, {formatCount(job.failed_count || 0)} failed</span></p>{job.current && <small>Copying {job.current}</small>}</div>}
         {error && <p className="dialog-error"><AlertTriangle size={14} /> {error}</p>}
-        <div className="dialog-actions"><button type="button" className="btn btn-secondary" onClick={onClose}>Close</button>{job && !completed ? <button type="button" className="btn btn-secondary" onClick={cancelCopy}>Cancel copy</button> : <button type="submit" className="btn btn-primary" disabled={busy || !destination.trim() || !movies.length}>{busy ? <Loader2 size={15} className="spin" /> : <Copy size={15} />} Start copy</button>}</div>
-      </form>
+        <DialogActions ><Button type="button"  onClick={onClose}>Close</Button>{job && !completed ? <Button type="button"  onClick={cancelCopy}>Cancel copy</Button> : <Button variant="primary" type="submit"  disabled={busy || !destination.trim() || !movies.length}>{busy ? <Loader2 size={15} className="spin" /> : <Copy size={15} />} Start copy</Button>}</DialogActions>
+      </DialogShell>
     </div>
     {folderBrowserOpen && <FolderBrowserDialog initialPath={destination} onClose={() => setFolderBrowserOpen(false)} onSelect={(path) => { setDestination(path); setFolderBrowserOpen(false); }} />}
   </>;
@@ -83,13 +86,13 @@ export function FolderBrowserDialog({ initialPath, onSelect, onClose }) {
   const roots = data.roots || [];
   const entries = data.entries || [];
   return <div className="modal-backdrop folder-browser-backdrop" role="presentation" onClick={onClose}>
-    <div className="small-dialog folder-browser-dialog" role="dialog" aria-modal="true" aria-label="Browse destination folder" onClick={(event) => event.stopPropagation()}>
-      <div className="dialog-header"><div><p className="screen-kicker">Copy destination</p><h2>Browse folders</h2></div><button type="button" className="inspector-close" onClick={onClose} aria-label="Close folder browser"><X size={18} /></button></div>
-      <form className="folder-browser-path-form" onSubmit={(event) => { event.preventDefault(); loadFolder(manualPath); }}><input value={manualPath} onChange={(event) => setManualPath(event.target.value)} placeholder="Type a folder path or network share" /><button type="submit" className="btn btn-secondary" disabled={loading}>{loading ? <Loader2 size={15} className="spin" /> : <Search size={15} />} Open</button></form>
-      {data.current_path && <div className="folder-current-path"><span>{data.current_path}</span><button type="button" className="btn btn-primary" onClick={() => onSelect(data.current_path)}><CheckCircle2 size={15} /> Use this folder</button></div>}
+    <DialogShell as="div" className="small-dialog folder-browser-dialog" role="dialog" aria-modal="true" aria-label="Browse destination folder" onClick={(event) => event.stopPropagation()}>
+      <DialogHeader ><div><p className="screen-kicker">Copy destination</p><h2>Browse folders</h2></div><Button size="icon" type="button" className="inspector-close" onClick={onClose} aria-label="Close folder browser"><X size={18} /></Button></DialogHeader>
+      <form className="folder-browser-path-form" onSubmit={(event) => { event.preventDefault(); loadFolder(manualPath); }}><Input value={manualPath} onChange={(event) => setManualPath(event.target.value)} placeholder="Type a folder path or network share" /><Button type="submit"  disabled={loading}>{loading ? <Loader2 size={15} className="spin" /> : <Search size={15} />} Open</Button></form>
+      {data.current_path && <div className="folder-current-path"><span>{data.current_path}</span><Button variant="primary" type="button"  onClick={() => onSelect(data.current_path)}><CheckCircle2 size={15} /> Use this folder</Button></div>}
       {error && <p className="dialog-error"><AlertTriangle size={14} /> {error}</p>}
       <div className="folder-browser-grid"><div><h3>Quick locations</h3><div className="folder-browser-list">{roots.map((entry) => <button type="button" key={entry.path} onClick={() => loadFolder(entry.path)}><HardDrive size={15} /> <span>{entry.name}</span></button>)}</div></div><div><h3>Folders</h3><div className="folder-browser-list">{data.parent && <button type="button" onClick={() => loadFolder(data.parent)}><Folder size={15} /> <span>..</span></button>}{entries.map((entry) => <button type="button" key={entry.path} onClick={() => loadFolder(entry.path)}><Folder size={15} /> <span>{entry.name}</span></button>)}{!loading && !entries.length && !data.parent && <span className="folder-browser-empty">Choose a quick location or type a path.</span>}{!loading && data.current_path && !entries.length && <span className="folder-browser-empty">No child folders.</span>}</div></div></div>
-      <div className="dialog-actions"><button type="button" className="btn btn-secondary" onClick={onClose}>Cancel</button><button type="button" className="btn btn-primary" onClick={() => onSelect(data.current_path)} disabled={!data.current_path}><CheckCircle2 size={15} /> Select folder</button></div>
-    </div>
+      <DialogActions ><Button type="button"  onClick={onClose}>Cancel</Button><Button variant="primary" type="button"  onClick={() => onSelect(data.current_path)} disabled={!data.current_path}><CheckCircle2 size={15} /> Select folder</Button></DialogActions>
+    </DialogShell>
   </div>;
 }

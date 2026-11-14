@@ -1,0 +1,136 @@
+test_future_metadata_date_does_not_hide_a_verified_existing_release (tests.test_movie_follow_contract.MovieFollowContractTest.test_future_metadata_date_does_not_hide_a_verified_existing_release) ... FAIL
+test_matching_title_cannot_override_a_confirmed_wrong_imdb (tests.test_movie_follow_contract.MovieFollowContractTest.test_matching_title_cannot_override_a_confirmed_wrong_imdb) ... ok
+test_provider_failure_does_not_block_the_next_scan (tests.test_movie_follow_contract.MovieFollowContractTest.test_provider_failure_does_not_block_the_next_scan) ... FAIL
+test_quality_and_source_trust_still_reject_ineligible_releases (tests.test_movie_follow_contract.MovieFollowContractTest.test_quality_and_source_trust_still_reject_ineligible_releases) ... ok
+test_rss_accepts_verified_identity_despite_an_alternate_title (tests.test_movie_follow_contract.MovieFollowContractTest.test_rss_accepts_verified_identity_despite_an_alternate_title) ... FAIL
+test_scan_ignores_saved_retry_date_and_uses_verified_imdb (tests.test_movie_follow_contract.MovieFollowContractTest.test_scan_ignores_saved_retry_date_and_uses_verified_imdb) ... FAIL
+test_second_scan_searches_immediately_after_a_miss (tests.test_movie_follow_contract.MovieFollowContractTest.test_second_scan_searches_immediately_after_a_miss) ... FAIL
+test_unreadable_yts_identity_cannot_mark_a_movie_available (tests.test_movie_follow_contract.MovieFollowContractTest.test_unreadable_yts_identity_cannot_mark_a_movie_available) ... ok
+test_unverified_target_cannot_mark_a_movie_available (tests.test_movie_follow_contract.MovieFollowContractTest.test_unverified_target_cannot_mark_a_movie_available) ... ok
+test_verified_identity_accepts_all_confirmed_title_and_year_variants (tests.test_movie_follow_contract.MovieFollowContractTest.test_verified_identity_accepts_all_confirmed_title_and_year_variants) ... 
+  test_verified_identity_accepts_all_confirmed_title_and_year_variants (tests.test_movie_follow_contract.MovieFollowContractTest.test_verified_identity_accepts_all_confirmed_title_and_year_variants) (title='Northspur') ... FAIL
+  test_verified_identity_accepts_all_confirmed_title_and_year_variants (tests.test_movie_follow_contract.MovieFollowContractTest.test_verified_identity_accepts_all_confirmed_title_and_year_variants) (title='The Uprising') ... FAIL
+  test_verified_identity_accepts_all_confirmed_title_and_year_variants (tests.test_movie_follow_contract.MovieFollowContractTest.test_verified_identity_accepts_all_confirmed_title_and_year_variants) (title='Hope') ... FAIL
+  test_verified_identity_accepts_all_confirmed_title_and_year_variants (tests.test_movie_follow_contract.MovieFollowContractTest.test_verified_identity_accepts_all_confirmed_title_and_year_variants) (title='Sheep in the Box') ... FAIL
+
+======================================================================
+FAIL: test_future_metadata_date_does_not_hide_a_verified_existing_release (tests.test_movie_follow_contract.MovieFollowContractTest.test_future_metadata_date_does_not_hide_a_verified_existing_release)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\Desktop\cinema paradiso\tests\test_movie_follow_contract.py", line 112, in test_future_metadata_date_does_not_hide_a_verified_existing_release
+    self.assert_available(self.scan())
+  File "C:\Users\dante\Desktop\cinema paradiso\tests\test_movie_follow_contract.py", line 73, in assert_available
+    self.assertEqual(payload['movies'][0]['status'], 'available')
+AssertionError: 'watching' != 'available'
+- watching
++ available
+
+
+======================================================================
+FAIL: test_provider_failure_does_not_block_the_next_scan (tests.test_movie_follow_contract.MovieFollowContractTest.test_provider_failure_does_not_block_the_next_scan)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\Desktop\cinema paradiso\tests\test_movie_follow_contract.py", line 169, in test_provider_failure_does_not_block_the_next_scan
+    self.assert_available(self.scan())
+  File "C:\Users\dante\Desktop\cinema paradiso\tests\test_movie_follow_contract.py", line 73, in assert_available
+    self.assertEqual(payload['movies'][0]['status'], 'available')
+AssertionError: 'watching' != 'available'
+- watching
++ available
+
+
+======================================================================
+FAIL: test_rss_accepts_verified_identity_despite_an_alternate_title (tests.test_movie_follow_contract.MovieFollowContractTest.test_rss_accepts_verified_identity_despite_an_alternate_title)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\Desktop\cinema paradiso\tests\test_movie_follow_contract.py", line 123, in test_rss_accepts_verified_identity_despite_an_alternate_title
+    self.assert_available(result)
+  File "C:\Users\dante\Desktop\cinema paradiso\tests\test_movie_follow_contract.py", line 73, in assert_available
+    self.assertEqual(payload['movies'][0]['status'], 'available')
+AssertionError: 'watching' != 'available'
+- watching
++ available
+
+
+======================================================================
+FAIL: test_scan_ignores_saved_retry_date_and_uses_verified_imdb (tests.test_movie_follow_contract.MovieFollowContractTest.test_scan_ignores_saved_retry_date_and_uses_verified_imdb)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\Desktop\cinema paradiso\tests\test_movie_follow_contract.py", line 83, in test_scan_ignores_saved_retry_date_and_uses_verified_imdb
+    self.assert_available(self.scan())
+  File "C:\Users\dante\Desktop\cinema paradiso\tests\test_movie_follow_contract.py", line 73, in assert_available
+    self.assertEqual(payload['movies'][0]['status'], 'available')
+AssertionError: 'watching' != 'available'
+- watching
++ available
+
+
+======================================================================
+FAIL: test_second_scan_searches_immediately_after_a_miss (tests.test_movie_follow_contract.MovieFollowContractTest.test_second_scan_searches_immediately_after_a_miss)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\Desktop\cinema paradiso\tests\test_movie_follow_contract.py", line 91, in test_second_scan_searches_immediately_after_a_miss
+    self.assert_available(self.scan())
+  File "C:\Users\dante\Desktop\cinema paradiso\tests\test_movie_follow_contract.py", line 73, in assert_available
+    self.assertEqual(payload['movies'][0]['status'], 'available')
+AssertionError: 'watching' != 'available'
+- watching
++ available
+
+
+======================================================================
+FAIL: test_verified_identity_accepts_all_confirmed_title_and_year_variants (tests.test_movie_follow_contract.MovieFollowContractTest.test_verified_identity_accepts_all_confirmed_title_and_year_variants) (title='Northspur')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\Desktop\cinema paradiso\tests\test_movie_follow_contract.py", line 107, in test_verified_identity_accepts_all_confirmed_title_and_year_variants
+    self.assert_available(self.scan())
+  File "C:\Users\dante\Desktop\cinema paradiso\tests\test_movie_follow_contract.py", line 73, in assert_available
+    self.assertEqual(payload['movies'][0]['status'], 'available')
+AssertionError: 'watching' != 'available'
+- watching
++ available
+
+
+======================================================================
+FAIL: test_verified_identity_accepts_all_confirmed_title_and_year_variants (tests.test_movie_follow_contract.MovieFollowContractTest.test_verified_identity_accepts_all_confirmed_title_and_year_variants) (title='The Uprising')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\Desktop\cinema paradiso\tests\test_movie_follow_contract.py", line 107, in test_verified_identity_accepts_all_confirmed_title_and_year_variants
+    self.assert_available(self.scan())
+  File "C:\Users\dante\Desktop\cinema paradiso\tests\test_movie_follow_contract.py", line 73, in assert_available
+    self.assertEqual(payload['movies'][0]['status'], 'available')
+AssertionError: 'watching' != 'available'
+- watching
++ available
+
+
+======================================================================
+FAIL: test_verified_identity_accepts_all_confirmed_title_and_year_variants (tests.test_movie_follow_contract.MovieFollowContractTest.test_verified_identity_accepts_all_confirmed_title_and_year_variants) (title='Hope')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\Desktop\cinema paradiso\tests\test_movie_follow_contract.py", line 107, in test_verified_identity_accepts_all_confirmed_title_and_year_variants
+    self.assert_available(self.scan())
+  File "C:\Users\dante\Desktop\cinema paradiso\tests\test_movie_follow_contract.py", line 73, in assert_available
+    self.assertEqual(payload['movies'][0]['status'], 'available')
+AssertionError: 'watching' != 'available'
+- watching
++ available
+
+
+======================================================================
+FAIL: test_verified_identity_accepts_all_confirmed_title_and_year_variants (tests.test_movie_follow_contract.MovieFollowContractTest.test_verified_identity_accepts_all_confirmed_title_and_year_variants) (title='Sheep in the Box')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\Desktop\cinema paradiso\tests\test_movie_follow_contract.py", line 107, in test_verified_identity_accepts_all_confirmed_title_and_year_variants
+    self.assert_available(self.scan())
+  File "C:\Users\dante\Desktop\cinema paradiso\tests\test_movie_follow_contract.py", line 73, in assert_available
+    self.assertEqual(payload['movies'][0]['status'], 'available')
+AssertionError: 'watching' != 'available'
+- watching
++ available
+
+
+----------------------------------------------------------------------
+Ran 10 tests in 5.390s
+
+FAILED (failures=9)

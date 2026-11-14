@@ -1,0 +1,102 @@
+{
+  "model": "gpt-6.1-sol",
+  "prompt": "i need you to lit 50 movies with very twisted story you wont expect the ending\nyour responce should be a list of movies names and years , no any other details , dont seek more info , dont reply by paragarph or any way of responce  only the list",
+  "captures": [
+    {
+      "label": "overlap-final-1",
+      "model": "gpt-6.1-sol",
+      "state": "completed",
+      "verified_count": 50,
+      "gpt_calls": 1,
+      "tmdb_reads": 127,
+      "gpt_http_seconds": 16.128265,
+      "gpt_stage_seconds": 19.069776,
+      "local_request_handling_seconds": 2.941511,
+      "gpt_seconds": 19.069776,
+      "matching_after_gpt_seconds": 0.451705,
+      "tmdb_http_active_seconds": 7.863138,
+      "gpt_tmdb_overlap_seconds": 7.141145,
+      "other_seconds": 0.855462,
+      "full_seconds": 20.376943,
+      "first_cards_seconds": 19.943504,
+      "lease_acquire_seconds": [
+        0.011319
+      ],
+      "lease_release_seconds": [
+        2.916595
+      ],
+      "account_access_seconds": [
+        0.000973
+      ]
+    },
+    {
+      "label": "overlap-final-2",
+      "model": "gpt-6.1-sol",
+      "state": "completed",
+      "verified_count": 50,
+      "gpt_calls": 1,
+      "tmdb_reads": 119,
+      "gpt_http_seconds": 14.63504,
+      "gpt_stage_seconds": 20.530326,
+      "local_request_handling_seconds": 5.895286,
+      "gpt_seconds": 20.530326,
+      "matching_after_gpt_seconds": 0.417129,
+      "tmdb_http_active_seconds": 9.708113,
+      "gpt_tmdb_overlap_seconds": 9.135669,
+      "other_seconds": 0.678009,
+      "full_seconds": 21.625464,
+      "first_cards_seconds": 21.223414,
+      "lease_acquire_seconds": [
+        5.850699
+      ],
+      "lease_release_seconds": [
+        0.013532
+      ],
+      "account_access_seconds": [
+        0.001537
+      ]
+    },
+    {
+      "label": "overlap-final-3",
+      "model": "gpt-6.1-sol",
+      "state": "completed",
+      "verified_count": 50,
+      "gpt_calls": 1,
+      "tmdb_reads": 131,
+      "gpt_http_seconds": 20.194439,
+      "gpt_stage_seconds": 20.243128,
+      "local_request_handling_seconds": 0.048689,
+      "gpt_seconds": 20.243128,
+      "matching_after_gpt_seconds": 0.418062,
+      "tmdb_http_active_seconds": 7.023943,
+      "gpt_tmdb_overlap_seconds": 6.381734,
+      "other_seconds": 0.710273,
+      "full_seconds": 21.371463,
+      "first_cards_seconds": 20.969104,
+      "lease_acquire_seconds": [
+        0.019886
+      ],
+      "lease_release_seconds": [
+        0.014208
+      ],
+      "account_access_seconds": [
+        0.001038
+      ]
+    }
+  ],
+  "means": {
+    "gpt_http_seconds": 16.985914666666666,
+    "gpt_stage_seconds": 19.94774333333333,
+    "local_request_handling_seconds": 2.9618286666666664,
+    "matching_after_gpt_seconds": 0.42896533333333337,
+    "tmdb_http_active_seconds": 8.198398000000001,
+    "gpt_tmdb_overlap_seconds": 7.5528493333333335,
+    "other_seconds": 0.7479146666666666,
+    "full_seconds": 21.124623333333332,
+    "first_cards_seconds": 20.712007333333332,
+    "tmdb_reads": 125.66666666666667
+  },
+  "previous_cp_full_mean_seconds": 31.850430333333332,
+  "observed_reduction_percent": 33.67554814094558,
+  "gpt_calls_total": 3
+}

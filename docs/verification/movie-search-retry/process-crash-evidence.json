@@ -1,0 +1,252 @@
+[
+  {
+    "boundary": "before-reservation",
+    "before": {
+      "attempts": {},
+      "correlation_id": "process-fixture",
+      "evidence_signature": "0ed5291a55e3181e135384f2d0d018734b5c5b78c663fedfef3492f7745bffe0",
+      "first_observed_at": 1000.0,
+      "next_due_at": 0,
+      "reason": "qbittorrent",
+      "require_publication": true,
+      "revision": 1,
+      "source_identity": {},
+      "stage": "facts",
+      "state": "waiting",
+      "version": 1
+    },
+    "after": {
+      "attempts": {
+        "facts": 1
+      },
+      "correlation_id": "process-fixture",
+      "evidence_signature": "0ed5291a55e3181e135384f2d0d018734b5c5b78c663fedfef3492f7745bffe0",
+      "first_observed_at": 1000.0,
+      "last_error": "identity_or_media_requires_review",
+      "next_due_at": 0,
+      "reason": "qbittorrent",
+      "require_publication": true,
+      "reservation_guard": "0b09137c06fdfe3258cdb38af8253687ca10708de64e7f8a34d6a9e502a3b988",
+      "revision": 3,
+      "source_identity": {},
+      "stage": "facts",
+      "state": "blocked",
+      "version": 1
+    }
+  },
+  {
+    "boundary": "after-reservation",
+    "before": {
+      "attempts": {
+        "facts": 1
+      },
+      "correlation_id": "process-fixture",
+      "evidence_signature": "a266318fd17b6c2760c7579eabc86bcc9754e811846eed84aa2ce28bd71e2f49",
+      "first_observed_at": 1000.0,
+      "next_due_at": 0,
+      "reason": "qbittorrent",
+      "require_publication": true,
+      "reservation_guard": "665ce36a4e598e58c8688b2dba7419d4b5a5ae4354dc7c574799c4863bf38311",
+      "revision": 2,
+      "source_identity": {},
+      "stage": "facts",
+      "state": "running",
+      "version": 1
+    },
+    "after": {
+      "attempts": {
+        "facts": 1
+      },
+      "correlation_id": "process-fixture",
+      "evidence_signature": "a266318fd17b6c2760c7579eabc86bcc9754e811846eed84aa2ce28bd71e2f49",
+      "first_observed_at": 1000.0,
+      "last_error": "interrupted_attempt",
+      "next_due_at": 1001.0,
+      "reason": "qbittorrent",
+      "require_publication": true,
+      "reservation_guard": "665ce36a4e598e58c8688b2dba7419d4b5a5ae4354dc7c574799c4863bf38311",
+      "revision": 3,
+      "source_identity": {},
+      "stage": "facts",
+      "state": "waiting",
+      "version": 1
+    }
+  },
+  {
+    "boundary": "during-facts",
+    "before": {
+      "attempts": {
+        "facts": 1
+      },
+      "correlation_id": "process-fixture",
+      "evidence_signature": "0c9ef8bacefb117376ab286663114c065d149fd775fbcc5d32ecfad1e6159a44",
+      "first_observed_at": 1000.0,
+      "next_due_at": 0,
+      "reason": "qbittorrent",
+      "require_publication": true,
+      "reservation_guard": "3702a20e0dd3f7bdcf7ed29c69c31c8d5b4dae29e09386c810bed5d06ce6d01a",
+      "revision": 2,
+      "source_identity": {},
+      "stage": "facts",
+      "state": "running",
+      "version": 1
+    },
+    "after": {
+      "attempts": {
+        "facts": 1
+      },
+      "correlation_id": "process-fixture",
+      "evidence_signature": "0c9ef8bacefb117376ab286663114c065d149fd775fbcc5d32ecfad1e6159a44",
+      "first_observed_at": 1000.0,
+      "last_error": "interrupted_attempt",
+      "next_due_at": 1001.0,
+      "reason": "qbittorrent",
+      "require_publication": true,
+      "reservation_guard": "3702a20e0dd3f7bdcf7ed29c69c31c8d5b4dae29e09386c810bed5d06ce6d01a",
+      "revision": 3,
+      "source_identity": {},
+      "stage": "facts",
+      "state": "waiting",
+      "version": 1
+    }
+  },
+  {
+    "boundary": "provider-after-own-write",
+    "before": {
+      "attempts": {
+        "provider": 1
+      },
+      "correlation_id": "process-fixture",
+      "evidence_signature": "cf1e5025fb759dd4f9f09153b6eae5905c843463fffa5ae1f46d827771038926",
+      "first_observed_at": 1000.0,
+      "next_due_at": 0,
+      "reason": "qbittorrent",
+      "require_publication": true,
+      "reservation_guard": "48b54bebdc3d522288e5b6edee7433c65e7108ae4ccaa9a9545bb9a0717d8798",
+      "revision": 2,
+      "source_identity": {
+        "paths": [
+          "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\qualification-5mivlwm8\\provider-after-own-write\\Example.mkv"
+        ],
+        "tmdb_id": "745678"
+      },
+      "stage": "provider",
+      "state": "running",
+      "version": 1
+    },
+    "after": {
+      "attempts": {
+        "provider": 1
+      },
+      "correlation_id": "process-fixture",
+      "evidence_signature": "33fc3ef55bbcf4c60031c063b56605b7a7a65ce3abe9c70c402f71dd58d8f275",
+      "first_observed_at": 1000.0,
+      "last_error": "interrupted_attempt",
+      "next_due_at": 1001.0,
+      "reason": "qbittorrent",
+      "require_publication": true,
+      "reservation_guard": "48b54bebdc3d522288e5b6edee7433c65e7108ae4ccaa9a9545bb9a0717d8798",
+      "revision": 3,
+      "source_identity": {
+        "paths": [
+          "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\qualification-5mivlwm8\\provider-after-own-write\\Example.mkv"
+        ],
+        "tmdb_id": "745678"
+      },
+      "stage": "provider",
+      "state": "waiting",
+      "version": 1
+    }
+  },
+  {
+    "boundary": "last-asset-attempt",
+    "before": {
+      "attempts": {
+        "assets": 4
+      },
+      "evidence_signature": "a15527859d32da4a6370926481be9c77d9c41c4d9e30d605f04c5cc39115dffc",
+      "first_observed_at": 1000.0,
+      "next_due_at": 0,
+      "require_publication": true,
+      "reservation_guard": "dfb7816e5a58379fecea82dd97034d32b7dd88a361e8ef9312437c836e0ab7c4",
+      "revision": 2,
+      "source_identity": {},
+      "stage": "assets",
+      "state": "running",
+      "version": 1
+    },
+    "after": {
+      "attempts": {
+        "assets": 4
+      },
+      "evidence_signature": "a15527859d32da4a6370926481be9c77d9c41c4d9e30d605f04c5cc39115dffc",
+      "first_observed_at": 1000.0,
+      "last_error": "interrupted_attempt",
+      "next_due_at": 0,
+      "require_publication": true,
+      "reservation_guard": "dfb7816e5a58379fecea82dd97034d32b7dd88a361e8ef9312437c836e0ab7c4",
+      "revision": 3,
+      "source_identity": {},
+      "stage": "assets",
+      "state": "blocked",
+      "version": 1
+    }
+  },
+  {
+    "boundary": "persisted-handoff-before-sibling",
+    "before": {
+      "attempts": {
+        "provider": 1
+      },
+      "correlation_id": "process-fixture",
+      "evidence_signature": "cd2c3ab892d8657db1a1aedc96daf5c85bad4ee7e8b171f8cf83c19d39db929c",
+      "first_observed_at": 1000.0,
+      "handoff": {
+        "paths": [],
+        "state": "deferred"
+      },
+      "next_due_at": 0,
+      "reason": "qbittorrent",
+      "require_publication": true,
+      "reservation_guard": "34309cc371adf1420a1905e9f1e68fabf1f8cc75ae7491057f84b9f3e1e7bfb6",
+      "revision": 3,
+      "source_identity": {
+        "paths": [
+          "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\qualification-5mivlwm8\\persisted-handoff-before-sibling\\Example.mkv",
+          "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\qualification-5mivlwm8\\persisted-handoff-before-sibling\\Sibling.mkv"
+        ]
+      },
+      "stage": "provider",
+      "state": "waiting",
+      "version": 1
+    },
+    "after": {
+      "attempts": {
+        "facts": 1,
+        "provider": 1
+      },
+      "correlation_id": "process-fixture",
+      "evidence_signature": "cd2c3ab892d8657db1a1aedc96daf5c85bad4ee7e8b171f8cf83c19d39db929c",
+      "first_observed_at": 1000.0,
+      "handoff": {
+        "paths": [],
+        "state": "deferred"
+      },
+      "last_error": "identity_or_media_requires_review",
+      "next_due_at": 0,
+      "reason": "qbittorrent",
+      "require_publication": true,
+      "reservation_guard": "34309cc371adf1420a1905e9f1e68fabf1f8cc75ae7491057f84b9f3e1e7bfb6",
+      "revision": 5,
+      "source_identity": {
+        "paths": [
+          "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\qualification-5mivlwm8\\persisted-handoff-before-sibling\\Example.mkv",
+          "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\qualification-5mivlwm8\\persisted-handoff-before-sibling\\Sibling.mkv"
+        ]
+      },
+      "stage": "facts",
+      "state": "blocked",
+      "version": 1
+    }
+  }
+]

@@ -1,0 +1,123 @@
+{
+  "date": "2026-10-23",
+  "scope": "source implementation and isolated verification; activation unapproved",
+  "status": "seven approved functional gaps verified in isolation; live activation not performed",
+  "final_owner_tests": {
+    "passed": 451,
+    "failed": 0,
+    "skipped": 0,
+    "seconds": 118.42,
+    "qualification_note": "451/451 passed before the bounded FIFO fix; not rerun as a full batch afterward. See bounded-final.json for newer focused coverage."
+  },
+  "node_tests": {
+    "passed": 14,
+    "failed": 0,
+    "skipped": 0
+  },
+  "earlier_tv_import_tests": {
+    "passed": 83,
+    "failed": 0,
+    "skipped": 0,
+    "seconds": 74.684
+  },
+  "desktop": {
+    "initial_batch_passed": 14,
+    "initial_batch_failed": 1,
+    "initial_failure": "Windows native worker exit 3221226505 during real completion/reconnect",
+    "first_retry_failed": 1,
+    "first_retry_reason": "Fixture scan gate left armed by crashed worker; arm returned 409",
+    "completion_clean_retry_passed": 1,
+    "search_final_before_review_navigation_fix_passed": 3,
+    "navigation_regression_red": 1,
+    "final_navigation_source_compiled": true,
+    "note": "Earlier desktop results remain historical; the five corrective checks ran against current backend and corrected temporary bundle.",
+    "corrective": {
+      "authorization": "Dante explicitly approved one isolated rebuild and the named focused desktop checks",
+      "builds": 1,
+      "build_exit_code": 0,
+      "output_directory": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\dist-corrective",
+      "index_sha256": "695e94fc071215559545e280c896f3eddd17016c23b6d64dadce22f1651146fa",
+      "library_chunk": "LibraryWorkspace-BshmBI4T.js",
+      "search": {
+        "passed": 4,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 21.6
+      },
+      "completion_reconnect": {
+        "passed": 1,
+        "failed": 0,
+        "skipped": 0,
+        "seconds": 7.5
+      },
+      "navigation_regression": "compiled RED against original bundle; compiled GREEN against corrective bundle",
+      "rapid_typing": "under 1000 ms after controlled barrier release asserted; exact timing attachment not retained by line reporter",
+      "viewport": {
+        "width": 1600,
+        "height": 1000
+      },
+      "screenshots_inspected": 3,
+      "fixture_pid_stopped": 41876,
+      "fixture_port": 5139,
+      "production_dist_unchanged": true,
+      "live_pid_unchanged": true
+    }
+  },
+  "diagnostic_cpu_seconds": 23.6875,
+  "api_payloads_exactly_equal": true,
+  "performance_core_equivalence_proved": false,
+  "cache_memory": {
+    "retained_bytes": 21496592,
+    "peak_bytes": 21499042,
+    "cache": {
+      "entries": 32768,
+      "bytes": 24479392
+    },
+    "cpu_seconds": 0.9375
+  },
+  "temporary_root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070",
+  "temporary_footprint_bytes": 70485120,
+  "diagnostic_process_write_bytes": "not captured; cumulative process writes cannot be established retrospectively",
+  "production_dist_index_sha256": "5670d875c3b70b760e7e785637905872e374bed4751e830b6b0c181727362614",
+  "live_port_5000_pid": 56296,
+  "owned_fixture_pid_stopped": 45212,
+  "owned_fixture_port": 5139,
+  "source_hashes": {
+    "app.py": "270d0dc519b2c09f3dea4508ed3a5ae5849c33afde7271e41cd974f8e62fb925",
+    "services/catalog_store.py": "2e77249688da46d9f0a3ca5549d80d4a5d83b6f83d92ba804ee661588aa5a887",
+    "services/catalog_repository.py": "76c1e72bffe33b636d2b6b2efcece26433d3abad0fa7041de269fdb085d8c0f8",
+    "services/library_ingestion.py": "260799141c32ea77cf64e01bce8d1d558d1fc5c3091e036fdba7bc2712e85fc1",
+    "src/features/library/LibraryWorkspace.jsx": "15c0c6c3c98cb6015f166842014fe0612360d0f631617f3f7a894805231bcada",
+    "src/features/library/librarySearchRequests.js": "97bc846a8545a4c98695c2313221f42f6048ea5d61d9c1261cbd3257ba7cd7cd"
+  },
+  "qualification_limits": [
+    "Untouched full broader baseline was not captured.",
+    "Earlier diagnostic writes were not captured and cannot be reconstructed.",
+    "Controlled speedup ratio remains unproved because CPU scheduling equivalence was not established.",
+    "The original 451-test owner batch predates the bounded FIFO fix; focused affected-owner checks identify the newer coverage."
+  ],
+  "read_only_config_owner_recheck": {
+    "user_data_dir": "C:\\Users\\dante\\Desktop\\cinema paradiso\\data",
+    "tmdb_cache_dir": "C:\\Users\\dante\\Desktop\\cinema paradiso\\cache",
+    "movie_sql_derived_path": "C:\\Users\\dante\\AppData\\Local\\Cinema Paradiso\\Catalog\\catalog-read-cb30c1d963c88463.sqlite"
+  },
+  "corrective_fixture_pid_stopped": 41876,
+  "source_hashes_rechecked_after_corrective_tests": true,
+  "additional_bounded_pass": {
+    "status": "seven approved functional gaps verified in isolation; live activation not performed",
+    "summary": "bounded-final.json",
+    "ledger": "bounded-pass.json",
+    "unique_successful_python_methods": 46,
+    "desktop_passed": 2,
+    "real_crash_boundaries_passed": 9,
+    "remaining_scoped_functional_gaps": []
+  },
+  "bounded_final_source_hashes": {
+    "app.py": "270d0dc519b2c09f3dea4508ed3a5ae5849c33afde7271e41cd974f8e62fb925",
+    "services/catalog_repository.py": "ee0a2dfa6134f1756608f92c139d86d09bf34db1f58a3d6f31f8ead6926f18c2",
+    "services/catalog_store.py": "c79086cf39b6b92fbc8124a6837cc133fe9ffdeab0d299e98049d82aa4866b16",
+    "services/library_ingestion.py": "995fa23397fe8f6819dca3dacf061841b608f9fcae7a58cb545d29152bace8c9",
+    "src/features/library/LibraryWorkspace.jsx": "15c0c6c3c98cb6015f166842014fe0612360d0f631617f3f7a894805231bcada",
+    "src/features/library/librarySearchRequests.js": "97bc846a8545a4c98695c2313221f42f6048ea5d61d9c1261cbd3257ba7cd7cd"
+  }
+}

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\dante\Desktop\cinema paradiso\native\player\tools\smoke_player_ui.py", line 361, in <module>
+    if __name__=='__main__': main()
+                             ^^^^^^
+  File "C:\Users\dante\Desktop\cinema paradiso\native\player\tools\smoke_player_ui.py", line 210, in main
+    assert not ctypes.windll.user32.IsIconic(session.hwnd),'Outside double click minimized the player'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Outside double click minimized the player

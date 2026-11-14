@@ -1,0 +1,14 @@
+
+Running 3 tests using 1 worker
+
+(node:15588) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\youtube-movie-stream.spec.js:113:1 › cancel GPT retrieves earlier matches without starting another search (1.5s)
+(node:36028) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 2 tests\e2e\youtube-movie-stream.spec.js:113:1 › cancel GPT retrieves earlier matches without starting another search (1.6s)
+(node:53220) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 3 tests\e2e\youtube-movie-stream.spec.js:113:1 › cancel GPT retrieves earlier matches without starting another search (1.5s)
+
+  3 passed (6.3s)

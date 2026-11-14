@@ -1,0 +1,164 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\dante\\Desktop\\cinema paradiso\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/e2e/movie-remaining-qualification.spec.js",
+      "--workers=1",
+      "--max-failures=1",
+      "--output",
+      "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\qualification-desktop-artifacts",
+      "--reporter=json"
+    ],
+    "configFile": "C:\\Users\\dante\\Desktop\\cinema paradiso\\playwright.config.js",
+    "rootDir": "C:/Users/dante/Desktop/cinema paradiso/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 1,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/dante/AppData/Local/Temp/cp-search-retry-1792774509070/qualification-desktop-artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "C:/Users/dante/Desktop/cinema paradiso/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.61.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "movie-remaining-qualification.spec.js",
+      "file": "movie-remaining-qualification.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "4000-film compiled search dispatches first/latest and reaches every exact result",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 64707,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-23T19:42:34.706Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "4000-search-evidence",
+                      "contentType": "application/json",
+                      "body": "eyJsYXRlc3RSZW5kZXJNcyI6NDUyLCJkaXNwYXRjaGVkIjpbInMiLCJzZWFyY2hmaXgiXSwibWF4aW11bUFjdGl2ZSI6MSwiY2F0YWxvZ3VlU2l6ZSI6NDAwMCwiZXhhY3RVbmlxdWVSZW5kZXJlZCI6NDAwMCwicGFnZXMiOjEwMH0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "79730d4afb820316bc71-33fed2cebac620d74244",
+          "file": "movie-remaining-qualification.spec.js",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "poster transport failure retries on due clock then publishes and refreshes Library and Following",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4874,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-23T19:43:39.568Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "poster-retry-evidence",
+                      "contentType": "application/json",
+                      "body": "eyJmYWlsZWQiOnsiZXZlbnRzIjowLCJmb2xsb3dlZF9jb3VudCI6MSwiZ2VuZXJhdGlvbiI6MTQsImpvYiI6eyJjYXN0IjpbXSwiY2VydGlmaWNhdGlvbiI6IiIsImRpcmVjdG9ycyI6W10sImdlbnJlcyI6WyJEcmFtYSJdLCJoYXNoIjoicXVhbGlmaWNhdGlvbi1pbXBvcnQiLCJpZGVudGl0eV9oYW5kb2ZmIjp7InBhdGhzIjpbIkM6XFxVc2Vyc1xcZGFudGVcXEFwcERhdGFcXExvY2FsXFxUZW1wXFxjcC1zZWFyY2gtcmV0cnktMTc5Mjc3NDUwOTA3MFxccmVtYWluaW5nLWV4b2F5aW5jXFxib3VuZGVkXFxtZWRpYVxcUXVhbGlmaWNhdGlvbi5JbXBvcnQuMjAyNi4xMDgwcC5ta3YiXSwic3RhdGUiOiJxdWV1ZWQiLCJ0bWRiX2lkIjoiODEwMDAxIn0sImltcG9ydGVkX3BhdGhzIjpbIkM6XFxVc2Vyc1xcZGFudGVcXEFwcERhdGFcXExvY2FsXFxUZW1wXFxjcC1zZWFyY2gtcmV0cnktMTc5Mjc3NDUwOTA3MFxccmVtYWluaW5nLWV4b2F5aW5jXFxib3VuZGVkXFxtZWRpYVxcUXVhbGlmaWNhdGlvbi5JbXBvcnQuMjAyNi4xMDgwcC5ta3YiXSwia2V5d29yZHMiOltdLCJsaWJyYXJ5X3NjYW5fcGVuZGluZyI6dHJ1ZSwicGxvdCI6IlBlcnNpc3RlbnQgaXNvbGF0ZWQgcG9zdGVyIHJldHJ5IGFuZCBwdWJsaWNhdGlvbiBmaXh0dXJlLiIsInBvc3Rlcl91cmwiOiJodHRwczovL2ZpeHR1cmUuaW52YWxpZC9wb3N0ZXIucG5nIiwic3RhdGUiOiJpbXBvcnRlZCIsInRpdGxlIjoiUXVhbGlmaWNhdGlvbiBJbXBvcnQiLCJ0bWRiX2lkIjoiODEwMDAxIiwid3JpdGVycyI6W10sInllYXIiOiIyMDI2In0sImxlZGdlciI6eyJhZG1pc3Npb25fb3JkZXIiOjQsImF0dGVtcHRzIjp7ImFzc2V0cyI6MSwiZmFjdHMiOjEsInByb3ZpZGVyIjoxfSwiY29ycmVsYXRpb25faWQiOiJxYnQ6cXVhbGlmaWNhdGlvbi1pbXBvcnQiLCJldmlkZW5jZV9zaWduYXR1cmUiOiJiMjNmMzgzYmE2ZjgwZWNjNGU5ZGRjY2FiMjJjOTQwMjMzNDZlNTIxYjliNDZkNDFiY2VmN2Y5MjE4ZjYyYjczIiwiZmlyc3Rfb2JzZXJ2ZWRfYXQiOjE3OTI3ODQ1NTMuMzQ4NTI4NCwiaGFuZG9mZiI6eyJwYXRocyI6WyJDOlxcVXNlcnNcXGRhbnRlXFxBcHBEYXRhXFxMb2NhbFxcVGVtcFxcY3Atc2VhcmNoLXJldHJ5LTE3OTI3NzQ1MDkwNzBcXHJlbWFpbmluZy1leG9heWluY1xcYm91bmRlZFxcbWVkaWFcXFF1YWxpZmljYXRpb24uSW1wb3J0LjIwMjYuMTA4MHAubWt2Il0sInN0YXRlIjoicmVhZHkiLCJ0bWRiX2lkIjoiODEwMDAxIn0sImxhc3RfZXJyb3IiOiJNZWRpYUFzc2V0RXJyb3I6IGNvbnRyb2xsZWQgZmlyc3QgcG9zdGVyIHRyYW5zcG9ydCBmYWlsdXJlIiwibmV4dF9kdWVfYXQiOjE3OTI3ODQ1NTUuMzQ4NTI4NCwicmVhc29uIjoicWJpdHRvcnJlbnQiLCJyZXF1aXJlX3B1YmxpY2F0aW9uIjp0cnVlLCJyZXNlcnZhdGlvbl9ndWFyZCI6ImVmODcyNTkwNDUzMzY0OTZmMTBhMzFlZjE1YjJlNmI3MTRhNTUyOTAzZjhjZDEwNGY5M2ZiZjFiNzk4M2Y4MTMiLCJyZXZpc2lvbiI6Niwic291cmNlX2lkZW50aXR5Ijp7ImltZGJfaWQiOiIiLCJwYXRocyI6WyJDOlxcVXNlcnNcXGRhbnRlXFxBcHBEYXRhXFxMb2NhbFxcVGVtcFxcY3Atc2VhcmNoLXJldHJ5LTE3OTI3NzQ1MDkwNzBcXHJlbWFpbmluZy1leG9heWluY1xcYm91bmRlZFxcbWVkaWFcXFF1YWxpZmljYXRpb24uSW1wb3J0LjIwMjYuMTA4MHAubWt2Il0sInRpdGxlIjoiUXVhbGlmaWNhdGlvbiBJbXBvcnQiLCJ0bWRiX2lkIjoiODEwMDAxIiwieWVhciI6IjIwMjYifSwic3RhZ2UiOiJhc3NldHMiLCJzdGF0ZSI6IndhaXRpbmciLCJ2ZXJzaW9uIjoxfSwicGlkIjo1NDQwMCwicG9zdGVyX2NhbGxzIjoxLCJwdWJsaWNhdGlvbiI6eyJibG9ja2VycyI6eyJhc3NldHMiOiJhc3NldHNfbm90X3JlYWR5In0sImVsaWdpYmxlX3RvX3B1Ymxpc2giOmZhbHNlLCJsZWdhY3lfdmlzaWJsZSI6ZmFsc2UsIm1vdmllX2tleSI6InRtZGI6ODEwMDAxIiwicGF0aCI6IkM6XFxVc2Vyc1xcZGFudGVcXEFwcERhdGFcXExvY2FsXFxUZW1wXFxjcC1zZWFyY2gtcmV0cnktMTc5Mjc3NDUwOTA3MFxccmVtYWluaW5nLWV4b2F5aW5jXFxib3VuZGVkXFxtZWRpYVxcUXVhbGlmaWNhdGlvbi5JbXBvcnQuMjAyNi4xMDgwcC5ta3YiLCJwdWJsaWNhdGlvbl9jb21taXR0ZWQiOmZhbHNlLCJyZWNvdmVyYWJsZV9wcmVwYXJlZCI6ZmFsc2UsInJlcXVpcmVkX3N0YWdlcyI6WyJhc3NldHMiXX19LCJlYXJseSI6eyJldmVudHMiOjAsImZvbGxvd2VkX2NvdW50IjoxLCJnZW5lcmF0aW9uIjoxNCwiam9iIjp7ImNhc3QiOltdLCJjZXJ0aWZpY2F0aW9uIjoiIiwiZGlyZWN0b3JzIjpbXSwiZ2VucmVzIjpbIkRyYW1hIl0sImhhc2giOiJxdWFsaWZpY2F0aW9uLWltcG9ydCIsImlkZW50aXR5X2hhbmRvZmYiOnsicGF0aHMiOlsiQzpcXFVzZXJzXFxkYW50ZVxcQXBwRGF0YVxcTG9jYWxcXFRlbXBcXGNwLXNlYXJjaC1yZXRyeS0xNzkyNzc0NTA5MDcwXFxyZW1haW5pbmctZXhvYXlpbmNcXGJvdW5kZWRcXG1lZGlhXFxRdWFsaWZpY2F0aW9uLkltcG9ydC4yMDI2LjEwODBwLm1rdiJdLCJzdGF0ZSI6InF1ZXVlZCIsInRtZGJfaWQiOiI4MTAwMDEifSwiaW1wb3J0ZWRfcGF0aHMiOlsiQzpcXFVzZXJzXFxkYW50ZVxcQXBwRGF0YVxcTG9jYWxcXFRlbXBcXGNwLXNlYXJjaC1yZXRyeS0xNzkyNzc0NTA5MDcwXFxyZW1haW5pbmctZXhvYXlpbmNcXGJvdW5kZWRcXG1lZGlhXFxRdWFsaWZpY2F0aW9uLkltcG9ydC4yMDI2LjEwODBwLm1rdiJdLCJrZXl3b3JkcyI6W10sImxpYnJhcnlfc2Nhbl9wZW5kaW5nIjp0cnVlLCJwbG90IjoiUGVyc2lzdGVudCBpc29sYXRlZCBwb3N0ZXIgcmV0cnkgYW5kIHB1YmxpY2F0aW9uIGZpeHR1cmUuIiwicG9zdGVyX3VybCI6Imh0dHBzOi8vZml4dHVyZS5pbnZhbGlkL3Bvc3Rlci5wbmciLCJzdGF0ZSI6ImltcG9ydGVkIiwidGl0bGUiOiJRdWFsaWZpY2F0aW9uIEltcG9ydCIsInRtZGJfaWQiOiI4MTAwMDEiLCJ3cml0ZXJzIjpbXSwieWVhciI6IjIwMjYifSwibGVkZ2VyIjp7ImFkbWlzc2lvbl9vcmRlciI6NCwiYXR0ZW1wdHMiOnsiYXNzZXRzIjoxLCJmYWN0cyI6MSwicHJvdmlkZXIiOjF9LCJjb3JyZWxhdGlvbl9pZCI6InFidDpxdWFsaWZpY2F0aW9uLWltcG9ydCIsImV2aWRlbmNlX3NpZ25hdHVyZSI6ImIyM2YzODNiYTZmODBlY2M0ZTlkZGNjYWIyMmM5NDAyMzM0NmU1MjFiOWI0NmQ0MWJjZWY3ZjkyMThmNjJiNzMiLCJmaXJzdF9vYnNlcnZlZF9hdCI6MTc5Mjc4NDU1My4zNDg1Mjg0LCJoYW5kb2ZmIjp7InBhdGhzIjpbIkM6XFxVc2Vyc1xcZGFudGVcXEFwcERhdGFcXExvY2FsXFxUZW1wXFxjcC1zZWFyY2gtcmV0cnktMTc5Mjc3NDUwOTA3MFxccmVtYWluaW5nLWV4b2F5aW5jXFxib3VuZGVkXFxtZWRpYVxcUXVhbGlmaWNhdGlvbi5JbXBvcnQuMjAyNi4xMDgwcC5ta3YiXSwic3RhdGUiOiJyZWFkeSIsInRtZGJfaWQiOiI4MTAwMDEifSwibGFzdF9lcnJvciI6Ik1lZGlhQXNzZXRFcnJvcjogY29udHJvbGxlZCBmaXJzdCBwb3N0ZXIgdHJhbnNwb3J0IGZhaWx1cmUiLCJuZXh0X2R1ZV9hdCI6MTc5Mjc4NDU1NS4zNDg1Mjg0LCJyZWFzb24iOiJxYml0dG9ycmVudCIsInJlcXVpcmVfcHVibGljYXRpb24iOnRydWUsInJlc2VydmF0aW9uX2d1YXJkIjoiZWY4NzI1OTA0NTMzNjQ5NmYxMGEzMWVmMTViMmU2YjcxNGE1NTI5MDNmOGNkMTA0ZjkzZmJmMWI3OTgzZjgxMyIsInJldmlzaW9uIjo2LCJzb3VyY2VfaWRlbnRpdHkiOnsiaW1kYl9pZCI6IiIsInBhdGhzIjpbIkM6XFxVc2Vyc1xcZGFudGVcXEFwcERhdGFcXExvY2FsXFxUZW1wXFxjcC1zZWFyY2gtcmV0cnktMTc5Mjc3NDUwOTA3MFxccmVtYWluaW5nLWV4b2F5aW5jXFxib3VuZGVkXFxtZWRpYVxcUXVhbGlmaWNhdGlvbi5JbXBvcnQuMjAyNi4xMDgwcC5ta3YiXSwidGl0bGUiOiJRdWFsaWZpY2F0aW9uIEltcG9ydCIsInRtZGJfaWQiOiI4MTAwMDEiLCJ5ZWFyIjoiMjAyNiJ9LCJzdGFnZSI6ImFzc2V0cyIsInN0YXRlIjoid2FpdGluZyIsInZlcnNpb24iOjF9LCJwaWQiOjU0NDAwLCJwb3N0ZXJfY2FsbHMiOjEsInB1YmxpY2F0aW9uIjp7ImJsb2NrZXJzIjp7ImFzc2V0cyI6ImFzc2V0c19ub3RfcmVhZHkifSwiZWxpZ2libGVfdG9fcHVibGlzaCI6ZmFsc2UsImxlZ2FjeV92aXNpYmxlIjpmYWxzZSwibW92aWVfa2V5IjoidG1kYjo4MTAwMDEiLCJwYXRoIjoiQzpcXFVzZXJzXFxkYW50ZVxcQXBwRGF0YVxcTG9jYWxcXFRlbXBcXGNwLXNlYXJjaC1yZXRyeS0xNzkyNzc0NTA5MDcwXFxyZW1haW5pbmctZXhvYXlpbmNcXGJvdW5kZWRcXG1lZGlhXFxRdWFsaWZpY2F0aW9uLkltcG9ydC4yMDI2LjEwODBwLm1rdiIsInB1YmxpY2F0aW9uX2NvbW1pdHRlZCI6ZmFsc2UsInJlY292ZXJhYmxlX3ByZXBhcmVkIjpmYWxzZSwicmVxdWlyZWRfc3RhZ2VzIjpbImFzc2V0cyJdfX0sImNvbXBsZXRlZCI6eyJldmVudHMiOjEsImZvbGxvd2VkX2NvdW50IjoxLCJnZW5lcmF0aW9uIjoxNSwiam9iIjp7ImNhc3QiOltdLCJjZXJ0aWZpY2F0aW9uIjoiIiwiZGlyZWN0b3JzIjpbXSwiZ2VucmVzIjpbIkRyYW1hIl0sImhhc2giOiJxdWFsaWZpY2F0aW9uLWltcG9ydCIsImlkZW50aXR5X2hhbmRvZmYiOnsicGF0aHMiOlsiQzpcXFVzZXJzXFxkYW50ZVxcQXBwRGF0YVxcTG9jYWxcXFRlbXBcXGNwLXNlYXJjaC1yZXRyeS0xNzkyNzc0NTA5MDcwXFxyZW1haW5pbmctZXhvYXlpbmNcXGJvdW5kZWRcXG1lZGlhXFxRdWFsaWZpY2F0aW9uLkltcG9ydC4yMDI2LjEwODBwLm1rdiJdLCJzdGF0ZSI6ImFwcGxpZWQiLCJ0bWRiX2lkIjoiODEwMDAxIn0sImltcG9ydGVkX3BhdGhzIjpbIkM6XFxVc2Vyc1xcZGFudGVcXEFwcERhdGFcXExvY2FsXFxUZW1wXFxjcC1zZWFyY2gtcmV0cnktMTc5Mjc3NDUwOTA3MFxccmVtYWluaW5nLWV4b2F5aW5jXFxib3VuZGVkXFxtZWRpYVxcUXVhbGlmaWNhdGlvbi5JbXBvcnQuMjAyNi4xMDgwcC5ta3YiXSwia2V5d29yZHMiOltdLCJsaWJyYXJ5X3NjYW5fcGVuZGluZyI6ZmFsc2UsInBsb3QiOiJQZXJzaXN0ZW50IGlzb2xhdGVkIHBvc3RlciByZXRyeSBhbmQgcHVibGljYXRpb24gZml4dHVyZS4iLCJwb3N0ZXJfdXJsIjoiaHR0cHM6Ly9maXh0dXJlLmludmFsaWQvcG9zdGVyLnBuZyIsInN0YXRlIjoiaW1wb3J0ZWQiLCJ0aXRsZSI6IlF1YWxpZmljYXRpb24gSW1wb3J0IiwidG1kYl9pZCI6IjgxMDAwMSIsIndyaXRlcnMiOltdLCJ5ZWFyIjoiMjAyNiJ9LCJsZWRnZXIiOnsiYWRtaXNzaW9uX29yZGVyIjo0LCJhdHRlbXB0cyI6eyJhc3NldHMiOjIsImZhY3RzIjoxLCJwcm92aWRlciI6MX0sImNvcnJlbGF0aW9uX2lkIjoicWJ0OnF1YWxpZmljYXRpb24taW1wb3J0IiwiZXZpZGVuY2Vfc2lnbmF0dXJlIjoiYjIzZjM4M2JhNmY4MGVjYzRlOWRkY2NhYjIyYzk0MDIzMzQ2ZTUyMWI5YjQ2ZDQxYmNlZjdmOTIxOGY2MmI3MyIsImZpcnN0X29ic2VydmVkX2F0IjoxNzkyNzg0NTUzLjM0ODUyODQsImhhbmRvZmYiOnsicGF0aHMiOlsiQzpcXFVzZXJzXFxkYW50ZVxcQXBwRGF0YVxcTG9jYWxcXFRlbXBcXGNwLXNlYXJjaC1yZXRyeS0xNzkyNzc0NTA5MDcwXFxyZW1haW5pbmctZXhvYXlpbmNcXGJvdW5kZWRcXG1lZGlhXFxRdWFsaWZpY2F0aW9uLkltcG9ydC4yMDI2LjEwODBwLm1rdiJdLCJzdGF0ZSI6InJlYWR5IiwidG1kYl9pZCI6IjgxMDAwMSJ9LCJsYXN0X2Vycm9yIjoiIiwibmV4dF9kdWVfYXQiOjAsInJlYXNvbiI6InFiaXR0b3JyZW50IiwicmVxdWlyZV9wdWJsaWNhdGlvbiI6dHJ1ZSwicmVzZXJ2YXRpb25fZ3VhcmQiOiJlZjg3MjU5MDQ1MzM2NDk2ZjEwYTMxZWYxNWIyZTZiNzE0YTU1MjkwM2Y4Y2QxMDRmOTNmYmYxYjc5ODNmODEzIiwicmV2aXNpb24iOjgsInNvdXJjZV9pZGVudGl0eSI6eyJpbWRiX2lkIjoiIiwicGF0aHMiOlsiQzpcXFVzZXJzXFxkYW50ZVxcQXBwRGF0YVxcTG9jYWxcXFRlbXBcXGNwLXNlYXJjaC1yZXRyeS0xNzkyNzc0NTA5MDcwXFxyZW1haW5pbmctZXhvYXlpbmNcXGJvdW5kZWRcXG1lZGlhXFxRdWFsaWZpY2F0aW9uLkltcG9ydC4yMDI2LjEwODBwLm1rdiJdLCJ0aXRsZSI6IlF1YWxpZmljYXRpb24gSW1wb3J0IiwidG1kYl9pZCI6IjgxMDAwMSIsInllYXIiOiIyMDI2In0sInN0YWdlIjoiYXNzZXRzIiwic3RhdGUiOiJjb21wbGV0ZSIsInZlcnNpb24iOjF9LCJwaWQiOjU0NDAwLCJwb3N0ZXJfY2FsbHMiOjIsInB1YmxpY2F0aW9uIjp7ImJsb2NrZXJzIjp7fSwiZWxpZ2libGVfdG9fcHVibGlzaCI6dHJ1ZSwibGVnYWN5X3Zpc2libGUiOmZhbHNlLCJtb3ZpZV9rZXkiOiJ0bWRiOjgxMDAwMSIsInBhdGgiOiJDOlxcVXNlcnNcXGRhbnRlXFxBcHBEYXRhXFxMb2NhbFxcVGVtcFxcY3Atc2VhcmNoLXJldHJ5LTE3OTI3NzQ1MDkwNzBcXHJlbWFpbmluZy1leG9heWluY1xcYm91bmRlZFxcbWVkaWFcXFF1YWxpZmljYXRpb24uSW1wb3J0LjIwMjYuMTA4MHAubWt2IiwicHVibGljYXRpb25fY29tbWl0dGVkIjp0cnVlLCJyZWNvdmVyYWJsZV9wcmVwYXJlZCI6dHJ1ZSwicmVxdWlyZWRfc3RhZ2VzIjpbXX19LCJmb3JjZVNjYW5zIjpbXX0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "79730d4afb820316bc71-64fac37ab935a6465ae0",
+          "file": "movie-remaining-qualification.spec.js",
+          "line": 59,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-23T19:42:34.296Z",
+    "duration": 72201.536,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

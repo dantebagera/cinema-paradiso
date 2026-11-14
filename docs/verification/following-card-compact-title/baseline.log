@@ -1,0 +1,117 @@
+
+Running 9 tests using 1 worker
+
+(node:4948) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tests\e2e\following-card.spec.js:26:3 › Following compact heading shares its action row at 1600px with playback true (1.3s)
+(node:40212) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  2 tests\e2e\following-card.spec.js:26:3 › Following compact heading shares its action row at 1920px with playback true (1.3s)
+(node:29444) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  3 tests\e2e\following-card.spec.js:26:3 › Following compact heading shares its action row at 1600px with playback false (1.3s)
+(node:31836) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 4 tests\e2e\following-card.spec.js:63:1 › Following filters use existing statuses and update count while availability badge stays global (1.5s)
+  ok 5 tests\e2e\following-card.spec.js:99:1 › download previews all available movies regardless of filter and preserves explicit shared submission (1.2s)
+  ok 6 tests\e2e\following-card.spec.js:137:1 › scan refreshes selected filter and the global available count from the same followed state (448ms)
+  ok 7 tests\e2e\following-card.spec.js:148:1 › empty filter and empty followed list retain zero counts and safe download state (543ms)
+  ok 8 tests\e2e\following-card.spec.js:161:1 › cancelled pending source review cannot reopen on navigation or after late response (792ms)
+  ok 9 tests\e2e\following-card.spec.js:194:1 › failed source preview remains reviewable and can be retried without queueing (551ms)
+
+
+  1) tests\e2e\following-card.spec.js:26:3 › Following compact heading shares its action row at 1600px with playback true 
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 1
+    Received:    43.9140625
+
+      47 |       ]) {
+      48 |         const box = await control.boundingBox();
+    > 49 |         expect(Math.abs(box.y + box.height / 2 - titleBox.y - titleBox.height / 2)).toBeLessThanOrEqual(1);
+         |                                                                                     ^
+      50 |         expect(box.x).toBeGreaterThanOrEqual(titleBox.x + titleBox.width);
+      51 |         expect(box.x + box.width).toBeLessThanOrEqual(cardBox.x + cardBox.width);
+      52 |       }
+        at C:\Users\dante\Desktop\cinema paradiso\tests\e2e\following-card.spec.js:49:85
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\AppData\Local\Temp\cp-following-compact-b9b8805671644d0192b983a869cb5e3c\baseline-results\following-card-Following-c-0d6dd-t-1600px-with-playback-true\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\AppData\Local\Temp\cp-following-compact-b9b8805671644d0192b983a869cb5e3c\baseline-results\following-card-Following-c-0d6dd-t-1600px-with-playback-true\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\..\AppData\Local\Temp\cp-following-compact-b9b8805671644d0192b983a869cb5e3c\baseline-results\following-card-Following-c-0d6dd-t-1600px-with-playback-true\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\..\AppData\Local\Temp\cp-following-compact-b9b8805671644d0192b983a869cb5e3c\baseline-results\following-card-Following-c-0d6dd-t-1600px-with-playback-true\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) tests\e2e\following-card.spec.js:26:3 › Following compact heading shares its action row at 1920px with playback true 
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 1
+    Received:    43.9140625
+
+      47 |       ]) {
+      48 |         const box = await control.boundingBox();
+    > 49 |         expect(Math.abs(box.y + box.height / 2 - titleBox.y - titleBox.height / 2)).toBeLessThanOrEqual(1);
+         |                                                                                     ^
+      50 |         expect(box.x).toBeGreaterThanOrEqual(titleBox.x + titleBox.width);
+      51 |         expect(box.x + box.width).toBeLessThanOrEqual(cardBox.x + cardBox.width);
+      52 |       }
+        at C:\Users\dante\Desktop\cinema paradiso\tests\e2e\following-card.spec.js:49:85
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\AppData\Local\Temp\cp-following-compact-b9b8805671644d0192b983a869cb5e3c\baseline-results\following-card-Following-c-e6eb3-t-1920px-with-playback-true\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\AppData\Local\Temp\cp-following-compact-b9b8805671644d0192b983a869cb5e3c\baseline-results\following-card-Following-c-e6eb3-t-1920px-with-playback-true\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\..\AppData\Local\Temp\cp-following-compact-b9b8805671644d0192b983a869cb5e3c\baseline-results\following-card-Following-c-e6eb3-t-1920px-with-playback-true\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\..\AppData\Local\Temp\cp-following-compact-b9b8805671644d0192b983a869cb5e3c\baseline-results\following-card-Following-c-e6eb3-t-1920px-with-playback-true\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) tests\e2e\following-card.spec.js:26:3 › Following compact heading shares its action row at 1600px with playback false 
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 1
+    Received:    43.9140625
+
+      47 |       ]) {
+      48 |         const box = await control.boundingBox();
+    > 49 |         expect(Math.abs(box.y + box.height / 2 - titleBox.y - titleBox.height / 2)).toBeLessThanOrEqual(1);
+         |                                                                                     ^
+      50 |         expect(box.x).toBeGreaterThanOrEqual(titleBox.x + titleBox.width);
+      51 |         expect(box.x + box.width).toBeLessThanOrEqual(cardBox.x + cardBox.width);
+      52 |       }
+        at C:\Users\dante\Desktop\cinema paradiso\tests\e2e\following-card.spec.js:49:85
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\AppData\Local\Temp\cp-following-compact-b9b8805671644d0192b983a869cb5e3c\baseline-results\following-card-Following-c-cf435--1600px-with-playback-false\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\AppData\Local\Temp\cp-following-compact-b9b8805671644d0192b983a869cb5e3c\baseline-results\following-card-Following-c-cf435--1600px-with-playback-false\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\..\AppData\Local\Temp\cp-following-compact-b9b8805671644d0192b983a869cb5e3c\baseline-results\following-card-Following-c-cf435--1600px-with-playback-false\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\..\AppData\Local\Temp\cp-following-compact-b9b8805671644d0192b983a869cb5e3c\baseline-results\following-card-Following-c-cf435--1600px-with-playback-false\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3 failed
+    tests\e2e\following-card.spec.js:26:3 › Following compact heading shares its action row at 1600px with playback true 
+    tests\e2e\following-card.spec.js:26:3 › Following compact heading shares its action row at 1920px with playback true 
+    tests\e2e\following-card.spec.js:26:3 › Following compact heading shares its action row at 1600px with playback false 
+  6 passed (11.3s)

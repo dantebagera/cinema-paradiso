@@ -1,0 +1,7 @@
+EVIDENCE_ROOT=C:\Users\dante\AppData\Local\Temp\cp-ai-timing-q9ar967w
+{"sequence": 3, "event": "capture_started", "at_seconds": 0.372723, "feature": "F1", "label": "slot-qualified-3", "prompt": "i need you to lit 50 movies with very twisted story you wont expect the ending\nyour responce should be a list of movies names and years , no any other details , dont seek more info , dont reply by paragarph or any way of responce  only the list", "model": "gpt-6.1-sol", "count": "50", "maximum_calls": 3, "maximum_seconds": 180, "reasoning_effort": "default", "output_format": "JSON/tools", "cache_state": "fresh diagnostic process; no production TMDB memory cache"}
+{"sequence": 19, "event": "gpt_start", "at_seconds": 1.049494, "attempt": 1}
+{"sequence": 363, "event": "gpt_reply", "at_seconds": 21.628495, "response_id": "resp_0e23261d6e4ef260016ae9df848bac81919614502bef0d9c1c", "calls": []}
+{"sequence": 389, "event": "first_cards", "at_seconds": 21.957094, "count": 1}
+{"sequence": 605, "event": "job_finished", "at_seconds": 22.401564, "state": "completed", "message": "Requested verified target reached.", "accepted_count": 50, "inference_attempts": 1, "tmdb_requests": 123, "elapsed_seconds": 22.024641}
+TIMINGS={"gpt_seconds": 20.605398, "gpt_http_seconds": 20.566429, "matching_after_gpt_seconds": 0.744988, "tmdb_http_active_seconds": 6.527973, "gpt_tmdb_overlap_seconds": 5.199365, "other_seconds": 0.674255, "full_seconds": 22.024641, "first_cards_seconds": 21.583937}

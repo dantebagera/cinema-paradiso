@@ -1,0 +1,74 @@
+{
+  "main_files_checked": 223,
+  "main_changed_files": [
+    "data\\qbittorrent\\jobs.json"
+  ],
+  "main_added_files": [],
+  "worktree_changed_source_files": [
+    "src\\components\\movie-card\\cardArtwork.js",
+    "src\\components\\movie-card\\MovieCard.jsx",
+    "src\\components\\RelatedMovieRail.jsx",
+    "src\\features\\iptv\\IPTVWorkspace.jsx",
+    "src\\utils\\listCatalogFilters.js"
+  ],
+  "worktree_config_unchanged": true,
+  "databases": {
+    "main": [
+      {
+        "path": "C:\\Users\\dante\\Desktop\\cinema paradiso\\data\\acquisition.sqlite",
+        "integrity": "ok",
+        "counts_unchanged": false,
+        "changes": {
+          "leases": {
+            "before": 0,
+            "after": 1
+          }
+        }
+      },
+      {
+        "path": "C:\\Users\\dante\\Desktop\\cinema paradiso\\data\\tv-catalog.sqlite",
+        "integrity": "ok",
+        "counts_unchanged": true,
+        "changes": {}
+      },
+      {
+        "path": "C:\\Users\\dante\\Desktop\\cinema paradiso\\data\\awards\\awards.sqlite",
+        "integrity": "ok",
+        "counts_unchanged": true,
+        "changes": {}
+      },
+      {
+        "path": "C:\\Users\\dante\\AppData\\Local\\Cinema Paradiso\\Catalog\\catalog-read-cb30c1d963c88463.sqlite",
+        "integrity": "ok",
+        "counts_unchanged": true,
+        "changes": {}
+      }
+    ],
+    "worktree": [
+      {
+        "path": "C:\\Users\\dante\\.codex\\worktrees\\mostafa-ui-ux\\cinema paradiso\\data\\acquisition.sqlite",
+        "integrity": "ok",
+        "counts_unchanged": true,
+        "changes": {}
+      },
+      {
+        "path": "C:\\Users\\dante\\.codex\\worktrees\\mostafa-ui-ux\\cinema paradiso\\data\\catalog.sqlite",
+        "integrity": "ok",
+        "counts_unchanged": true,
+        "changes": {}
+      },
+      {
+        "path": "C:\\Users\\dante\\.codex\\worktrees\\mostafa-ui-ux\\cinema paradiso\\data\\tv-catalog.sqlite",
+        "integrity": "ok",
+        "counts_unchanged": true,
+        "changes": {}
+      },
+      {
+        "path": "C:\\Users\\dante\\.codex\\worktrees\\mostafa-ui-ux\\cinema paradiso\\data\\awards\\awards.sqlite",
+        "integrity": "ok",
+        "counts_unchanged": true,
+        "changes": {}
+      }
+    ]
+  }
+}

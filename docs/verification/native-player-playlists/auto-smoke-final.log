@@ -1,0 +1,4 @@
+{"native_event": {"accepted": true, "media_generation": 1, "protocol": 1, "sequence": 2, "session_id": "67b54314e9d14989b3dc8505e3967c78", "type": "ready"}}
+{"launched": {"ok": true, "mode": "built_in", "fallback": false, "session_id": "67b54314e9d14989b3dc8505e3967c78", "start_position_ms": 0}, "pid": 64068}
+{"native_event": {"accepted": true, "media_generation": 2, "protocol": 1, "sequence": 16, "session_id": "67b54314e9d14989b3dc8505e3967c78", "type": "ready"}}
+{"ok": true, "same_process": true, "starts": [{"key": "a", "restart": false}, {"key": "b", "restart": true}], "elapsed": 18.88}

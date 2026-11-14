@@ -1,0 +1,14 @@
+{
+  "kind": "python",
+  "root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\fixtures\\schema-atomicity-confirmed-0c484c7496ee4b1db48735cc7b2905f5",
+  "exitCode": 0,
+  "modules": [
+    "tests.test_iptv_movie_gates_0_5.AtomicSchemaInitializationTests",
+    "tests.test_iptv_movie_gates_0_5.ProjectionAndWorkerTests.test_movies_get_is_pure_and_projection_is_nonblocking_progressive",
+    "tests.test_qbittorrent_ui"
+  ],
+  "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\logs\\schema-atomicity-confirmed.log",
+  "dist": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\fixtures\\schema-atomicity-confirmed-0c484c7496ee4b1db48735cc7b2905f5\\dist",
+  "elapsed": 1.3769677,
+  "label": "schema-atomicity-confirmed"
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "path": "services/tv_filename_parser.py",
+    "sha256": "2B7BF73B1ABD52411CDD46A8CDF939AA3BD1C2CD33D6E49932234794ED5FE89F",
+    "verified": true
+  },
+  {
+    "path": "services/tv_acquisition.py",
+    "sha256": "C7641694B710C27D5D2ABA83D3AEF4FC3F2091AF936857DDE05D23B4ED43F22B",
+    "verified": true
+  },
+  {
+    "path": "tests/test_verified_tv_acquisition.py",
+    "sha256": "B166982F66F9A4B83E5D2BB982D1E7B3A21F12558DAB2C7BBDD30A7B6138DE0B",
+    "verified": true
+  },
+  {
+    "path": "services/verified_import.py",
+    "sha256": "78CD0D338E366B3F39C7C747E7A07B2B29FF36A6EC99A56D08B4C96EED29750B",
+    "verified": true
+  },
+  {
+    "path": "docs/plans/2026-10-10-tv-pack-auxiliary-files-fix.md",
+    "sha256": "D8172A21C34E400A60A9918B76C2D5E02EC8CC0CA818F9B8D944246481457E0C",
+    "verified": true
+  }
+]

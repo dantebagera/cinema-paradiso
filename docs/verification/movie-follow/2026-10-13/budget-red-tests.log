@@ -1,0 +1,23 @@
+test_rss_identity_outage_is_bounded_and_still_reaches_movie_search (tests.test_movie_follow_contract.MovieFollowContractTest.test_rss_identity_outage_is_bounded_and_still_reaches_movie_search) ... FAIL
+test_result_identity_reads_respect_the_movie_search_deadline (tests.test_movie_follow_contract.MovieFollowContractTest.test_result_identity_reads_respect_the_movie_search_deadline) ... FAIL
+
+======================================================================
+FAIL: test_rss_identity_outage_is_bounded_and_still_reaches_movie_search (tests.test_movie_follow_contract.MovieFollowContractTest.test_rss_identity_outage_is_bounded_and_still_reaches_movie_search)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\Desktop\cinema paradiso\tests\test_movie_follow_contract.py", line 201, in test_rss_identity_outage_is_bounded_and_still_reaches_movie_search
+    self.assertLessEqual(spent[0], 3)
+AssertionError: 1000.0 not less than or equal to 3
+
+======================================================================
+FAIL: test_result_identity_reads_respect_the_movie_search_deadline (tests.test_movie_follow_contract.MovieFollowContractTest.test_result_identity_reads_respect_the_movie_search_deadline)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\Desktop\cinema paradiso\tests\test_movie_follow_contract.py", line 221, in test_result_identity_reads_respect_the_movie_search_deadline
+    self.assertLessEqual(spent[0], 25)
+AssertionError: 1000.0 not less than or equal to 25
+
+----------------------------------------------------------------------
+Ran 2 tests in 3.371s
+
+FAILED (failures=2)

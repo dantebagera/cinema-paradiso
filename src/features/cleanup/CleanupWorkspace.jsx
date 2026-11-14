@@ -1,3 +1,10 @@
+import SectionTabs, { SectionTab } from '../../components/ui/SectionTabs.jsx';
+import SearchField from '../search/SearchField.jsx';
+import DialogShell, { DialogHeader } from '../../components/ui/DialogShell.jsx';
+import WorkspaceEmptyState from '../../components/WorkspaceEmptyState.jsx';
+import Badge from '../../components/ui/Badge.jsx';
+import FormField, { Input } from '../../components/ui/FormField.jsx';
+import Button from '../../components/ui/Button.jsx';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import {
   AlertTriangle,
@@ -7,6 +14,7 @@ import {
   Folder,
   Loader2,
   Play,
+  Radio,
   RefreshCcw,
   ScanSearch,
   Search,
@@ -30,23 +38,25 @@ import { SmartMatchControls, SmartMatchReviewModal } from '../../components/Smar
 import { cx, formatCount } from '../../utils/appUtils.js'
 import { deletionPlanSummary } from '../../utils/deletionPlan.js'
 import {
-  metadataStatusChipClass,
+  metadataStatusTone,
   metadataStatusLabel,
   renameModalItem,
 } from '../../utils/cleanupUtils.js'
 import { getQualityFactsLabel, isLowQuality, rootLabel } from '../../utils/libraryUtils.js'
 import { formatVoteCount } from '../../utils/moviePresentation.js'
 import TVMaintenanceTab from './TVMaintenanceTab.jsx'
+import IPTVMaintenance from '../iptv/IPTVMaintenance.jsx'
 
 const maintenanceTabs = [
   { id: 'storage', label: 'Storage', icon: ShieldCheck },
   { id: 'identity', label: 'Identity', icon: ScanSearch },
   { id: 'tv', label: 'TV Identity', icon: Film },
+  { id: 'iptv', label: 'IPTV', icon: Radio },
 ];
 const MAINTENANCE_PAGE_SIZE = 50;
 
 function maintenanceTab(initialTab) {
-  if (initialTab === 'tv') return 'tv';
+  if (initialTab === 'tv' || initialTab === 'iptv') return initialTab;
   if (initialTab === 'unmatched' || initialTab === 'identity') return 'identity';
   return 'storage';
 }
@@ -58,10 +68,10 @@ function duplicateVerdictLabel(file) {
   return 'Manual comparison';
 }
 
-function duplicateVerdictClass(tone) {
-  if (tone === 'success') return 'status-owned';
-  if (tone === 'neutral') return 'chip-muted';
-  return 'chip-warning';
+function duplicateVerdictTone(tone) {
+  if (tone === 'success') return 'owned';
+  if (tone === 'neutral') return 'neutral';
+  return 'warning';
 }
 
 function formatDurationMs(value) {
@@ -73,7 +83,8 @@ function formatDurationMs(value) {
   return [hours ? `${hours}h` : '', `${minutes}m`, `${seconds}s`].filter(Boolean).join(' ');
 }
 
-export default function CleanupWorkspace({ notify, onPlay, initialTab = 'storage', onHealthChanged, onOpenLibraryUpgrades }) {
+export default function CleanupWorkspace({ notify, onPlay, initialTab = 'storage', onHealthChanged, onOpenLibraryUpgrades,
+  active = true, onOpenIPTVSettings }) {
   const [activeTab, setActiveTab] = useState(maintenanceTab(initialTab));
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -105,6 +116,7 @@ export default function CleanupWorkspace({ notify, onPlay, initialTab = 'storage
   }, [initialTab]);
 
   const loadMaintenanceSection = useCallback(async (section, page, query) => {
+    if (section === 'iptv') return;
     setLoading(true);
     setError('');
     try {
@@ -666,13 +678,13 @@ export default function CleanupWorkspace({ notify, onPlay, initialTab = 'storage
         </div>
         <div className="library-header-actions">
           <div className="library-action-row">
-            <button type="button" className="btn btn-secondary" onClick={() => loadMaintenanceSection(activeTab, pages[activeTab] || 1, filters.query)} disabled={loading}>
+            {activeTab !== 'iptv' && <Button type="button"  onClick={() => loadMaintenanceSection(activeTab, pages[activeTab] || 1, filters.query)} disabled={loading}>
               <RefreshCcw size={15} /> Refresh
-            </button>
+            </Button>}
             {activeTab === 'identity' && activeSelectedCount > 0 && (
-              <button type="button" className="btn btn-danger" onClick={() => requestDelete(activeTab, [...selected[activeTab]], `Move ${activeSelectedCount} selected file${activeSelectedCount === 1 ? '' : 's'} to Recycle Bin?`)}>
+              <Button variant="danger" type="button"  onClick={() => requestDelete(activeTab, [...selected[activeTab]], `Move ${activeSelectedCount} selected file${activeSelectedCount === 1 ? '' : 's'} to Recycle Bin?`)}>
                 <Trash2 size={15} /> Delete selected ({activeSelectedCount})
-              </button>
+              </Button>
             )}
           </div>
         </div>
@@ -688,32 +700,33 @@ export default function CleanupWorkspace({ notify, onPlay, initialTab = 'storage
         {summary.metadata_pending > 0 && <LibraryStat icon={Loader2} label="Metadata pending" value={formatCount(summary.metadata_pending)} tone="amber" />}
       </div>
 
-      <div className="cleanup-tabs" role="tablist" aria-label="Cleanup workspace tabs">
+      <SectionTabs className="cleanup-tabs" role="tablist" aria-label="Cleanup workspace tabs">
         {maintenanceTabs.map((tab) => {
           const Icon = tab.icon;
           return (
-            <button type="button" role="tab" aria-selected={activeTab === tab.id} className={cx(activeTab === tab.id && 'cleanup-tab-active')} key={tab.id} onClick={() => selectMaintenanceTab(tab.id)}>
+            <SectionTab type="button" role="tab" aria-selected={activeTab === tab.id} active={activeTab === tab.id} key={tab.id} onClick={() => selectMaintenanceTab(tab.id)}>
               <Icon size={16} /> {tab.label}
-            </button>
+            </SectionTab>
           );
         })}
-      </div>
+      </SectionTabs>
 
+      {activeTab === 'iptv' ? <IPTVMaintenance notify={notify} active={active} onOpenSettings={onOpenIPTVSettings} /> :
       <div className="library-toolbar cleanup-toolbar">
-        <label className="library-search cleanup-search">
+        <SearchField className="cleanup-search">
           <Search size={17} />
-          <input value={filters.query} onChange={(event) => updateFilter('query', event.target.value)} placeholder="Search files, paths, or catalog titles..." />
-        </label>
-      </div>
+          <Input value={filters.query} onChange={(event) => updateFilter('query', event.target.value)} placeholder="Search files, paths, or catalog titles..." />
+        </SearchField>
+      </div>}
 
-      {error && (
+      {activeTab !== 'iptv' && error && (
         <div className="library-status library-status-error">
           <AlertTriangle size={16} />
           <span>{error}</span>
         </div>
       )}
 
-      {loading ? (
+      {activeTab !== 'iptv' && (loading ? (
         <div className="library-status">
           <Loader2 size={16} className="spin" />
           <span>Refreshing the maintenance audit...</span>
@@ -752,9 +765,9 @@ export default function CleanupWorkspace({ notify, onPlay, initialTab = 'storage
                     />
                   ) : null}
                   lastSmartMatchControl={lastSmartMatchJob ? (
-                    <button type="button" className="btn btn-secondary" onClick={() => setSmartMatchJob(lastSmartMatchJob)}>
+                    <Button type="button"  onClick={() => setSmartMatchJob(lastSmartMatchJob)}>
                       Open last Smart Match review
-                    </button>
+                    </Button>
                   ) : null}
                 />
               )}
@@ -786,7 +799,7 @@ export default function CleanupWorkspace({ notify, onPlay, initialTab = 'storage
             onRefresh={() => loadMaintenanceSection('tv', pages.tv || 1, filters.query)}
             onPageChange={(page) => setPages((state) => ({ ...state, tv: page }))} />}
         </>
-      )}
+      ))}
 
       {confirmAction && (
         <ConfirmDialog
@@ -889,9 +902,9 @@ function DuplicatesCleanupTab({ groups, selected, onToggle, onSelectPaths, onDel
                   onToggle={(checked) => onToggle(groupPaths, file.path, checked)}
                   onDelete={() => onDelete('storage', [file.path], `Move ${file.filename} to Recycle Bin?`)}
                   actions={(
-                    <button type="button" className="btn btn-primary btn-green" onClick={() => onPlay(file.path)}>
+                    <Button variant="play" type="button"  onClick={() => onPlay(file.path)}>
                       <Play size={15} /> Play file
-                    </button>
+                    </Button>
                   )}
                 />
               ))}
@@ -926,45 +939,45 @@ function UnmatchedCleanupTab({ items, selected, rowStatus, onToggle, onPlay, onD
               <div className="cleanup-file-main">
                 <div className="cleanup-title-line">
                   <h3>{item.filename}</h3>
-                  <span className={cx('chip', metadataStatusChipClass(item))}>{metadataStatusLabel(item)}</span>
+                  <Badge size="compact" kind="status" tone={metadataStatusTone(item)}>{metadataStatusLabel(item)}</Badge>
                 </div>
                 <div className="cleanup-path" title={item.path}>{item.path}</div>
                 <div className="cleanup-meta-row">
-                  <span className="chip chip-muted">{getQualityFactsLabel(item)}</span>
-                  <span className="chip chip-muted">{item.rip_source || 'Unknown source'}</span>
-                  <span className="chip chip-muted">{item.file_size || '?'}</span>
-                  {item.library_root && <span className="chip chip-muted">{rootLabel(item.library_root)}</span>}
-                  {item.fixable_path && <span className="chip chip-warning">Folder depth {item.depth}</span>}
+                  <Badge size="compact" tone="neutral" muted >{getQualityFactsLabel(item)}</Badge>
+                  <Badge size="compact" tone="neutral" muted >{item.rip_source || 'Unknown source'}</Badge>
+                  <Badge size="compact" tone="neutral" muted >{item.file_size || '?'}</Badge>
+                  {item.library_root && <Badge size="compact" tone="neutral" muted >{rootLabel(item.library_root)}</Badge>}
+                  {item.fixable_path && <Badge size="compact" tone="warning">Folder depth {item.depth}</Badge>}
                 </div>
                 <p className="cleanup-hint">{item.metadata_hint || item.plex_hint || 'No metadata hint available.'}</p>
                 {rowStatus[item.path] && <p className={cx('cleanup-row-status', `cleanup-row-${rowStatus[item.path].tone}`)}>{rowStatus[item.path].text}</p>}
               </div>
               <div className="cleanup-row-actions">
-                <button type="button" className="btn btn-primary btn-green" onClick={() => onPlay(item.path)}>
+                <Button variant="play" type="button"  onClick={() => onPlay(item.path)}>
                   <Play size={15} /> Play file
-                </button>
-                <button type="button" className="btn btn-primary btn-violet" onClick={() => onTmdbMatch(item)}>
+                </Button>
+                <Button variant="ai" type="button"  onClick={() => onTmdbMatch(item)}>
                   <Search size={15} /> Search TMDB
-                </button>
+                </Button>
                 {plexAvailable && (
-                  <button type="button" className="btn btn-secondary" onClick={() => onPlexMatch(item)}>
+                  <Button type="button"  onClick={() => onPlexMatch(item)}>
                     <Clapperboard size={15} /> Search Plex
-                  </button>
+                  </Button>
                 )}
                 {item.fixable_path && (
-                  <button type="button" className="btn btn-secondary" onClick={() => onFixPath(item)}>
+                  <Button type="button"  onClick={() => onFixPath(item)}>
                     <Folder size={15} /> Fix path
-                  </button>
+                  </Button>
                 )}
                 {!plexAvailable && !item.fixable_path && (
                   <span className="cleanup-action-note">Plex optional</span>
                 )}
-                <button type="button" className="btn btn-secondary" onClick={() => onRename(item)}>
+                <Button type="button"  onClick={() => onRename(item)}>
                   <Clapperboard size={15} /> Rename
-                </button>
-                <button type="button" className="btn btn-danger" onClick={() => onDelete('identity', [item.path], `Move ${item.filename} to Recycle Bin?`)}>
+                </Button>
+                <Button variant="danger" type="button"  onClick={() => onDelete('identity', [item.path], `Move ${item.filename} to Recycle Bin?`)}>
                   <Trash2 size={15} /> Delete
-                </button>
+                </Button>
               </div>
             </article>
           ))}
@@ -980,12 +993,12 @@ function CleanupSelectionBar({ label, selectedCount, selectableCount, selectLabe
       <span>{label}</span>
       <strong>{formatCount(selectedCount)} selected</strong>
       <div>
-        <button type="button" className="mini-action" onClick={onSelectAll} disabled={!selectableCount}>{selectLabel}</button>
-        <button type="button" className="mini-action" onClick={onClear} disabled={!selectedCount}>Clear</button>
+        <Button size="compact" type="button"  onClick={onSelectAll} disabled={!selectableCount}>{selectLabel}</Button>
+        <Button size="compact" type="button"  onClick={onClear} disabled={!selectedCount}>Clear</Button>
         {onDeleteSelected && (
-          <button type="button" className="mini-action mini-action-danger" onClick={onDeleteSelected} disabled={!selectedCount}>
+          <Button variant="danger" size="compact" type="button"  onClick={onDeleteSelected} disabled={!selectedCount}>
             <Trash2 size={13} /> Delete selected ({formatCount(selectedCount)})
-          </button>
+          </Button>
         )}
       </div>
     </div>
@@ -1048,19 +1061,19 @@ function CleanupFileRow({ item, selected, selectable, badge, badgeTone, onToggle
       <div className="cleanup-file-main">
         <div className="cleanup-title-line">
           <h3>{item.filename}</h3>
-          <span className={cx('chip', duplicateVerdictClass(badgeTone || (badge === 'Recommended keep' ? 'success' : 'warning')))}>{badge}</span>
+          <Badge size="compact" kind="status" tone={duplicateVerdictTone(badgeTone || (badge === 'Recommended keep' ? 'success' : 'warning'))}>{badge}</Badge>
         </div>
         <div className="cleanup-path" title={item.path}>{item.path}</div>
         <div className="cleanup-meta-row">
-          <span className={cx('chip', isLowQuality(item.resolution) && 'chip-warning')}>{getQualityFactsLabel(item)}</span>
-          {item.video_codec && <span className="chip chip-muted">{item.video_codec}{item.video_bit_depth ? ` · ${item.video_bit_depth}-bit` : ''}{item.video_bitrate ? ` · ${(item.video_bitrate / 1000000).toFixed(2)} Mbps` : ''}</span>}
-          {item.audio_codec && <span className="chip chip-muted">{item.audio_codec}{item.audio_channels ? ` · ${item.audio_channels} ch` : ''}</span>}
-          {item.duration_ms > 0 && <span className="chip chip-muted">{formatDurationMs(item.duration_ms)}</span>}
-          {item.comparison_uses_frame_rate && item.video_frame_rate > 0 && <span className="chip chip-muted">{Number(item.video_frame_rate).toFixed(3).replace(/0+$/, '').replace(/\.$/, '')} fps</span>}
-          {item.comparison_uses_aspect_ratio && item.aspect_delta_percent != null && <span className="chip chip-muted">Framing Δ {Number(item.aspect_delta_percent).toFixed(2)}%</span>}
-          <span className="chip chip-muted">{item.rip_source || 'Unknown source'}</span>
-          <span className="chip chip-muted">{item.size_human || item.file_size || '?'}</span>
-          {item.library_root && <span className="chip chip-muted">{rootLabel(item.library_root)}</span>}
+          <Badge size="compact" tone={isLowQuality(item.resolution) ? 'warning' : 'neutral'}>{getQualityFactsLabel(item)}</Badge>
+          {item.video_codec && <Badge size="compact" tone="neutral" muted >{item.video_codec}{item.video_bit_depth ? ` · ${item.video_bit_depth}-bit` : ''}{item.video_bitrate ? ` · ${(item.video_bitrate / 1000000).toFixed(2)} Mbps` : ''}</Badge>}
+          {item.audio_codec && <Badge size="compact" tone="neutral" muted >{item.audio_codec}{item.audio_channels ? ` · ${item.audio_channels} ch` : ''}</Badge>}
+          {item.duration_ms > 0 && <Badge size="compact" tone="neutral" muted >{formatDurationMs(item.duration_ms)}</Badge>}
+          {item.comparison_uses_frame_rate && item.video_frame_rate > 0 && <Badge size="compact" tone="neutral" muted >{Number(item.video_frame_rate).toFixed(3).replace(/0+$/, '').replace(/\.$/, '')} fps</Badge>}
+          {item.comparison_uses_aspect_ratio && item.aspect_delta_percent != null && <Badge size="compact" tone="neutral" muted >Framing Δ {Number(item.aspect_delta_percent).toFixed(2)}%</Badge>}
+          <Badge size="compact" tone="neutral" muted >{item.rip_source || 'Unknown source'}</Badge>
+          <Badge size="compact" tone="neutral" muted >{item.size_human || item.file_size || '?'}</Badge>
+          {item.library_root && <Badge size="compact" tone="neutral" muted >{rootLabel(item.library_root)}</Badge>}
         </div>
         {item.reason && <p className={cx('cleanup-comparison-reason', `cleanup-comparison-${item.verdict_tone || 'warning'}`)}>{item.reason}</p>}
         <DuplicateDecisionEvidence item={item} />
@@ -1068,9 +1081,9 @@ function CleanupFileRow({ item, selected, selectable, badge, badgeTone, onToggle
       <div className="cleanup-row-actions">
         {actions}
         {selectable && (
-          <button type="button" className="btn btn-danger" onClick={onDelete}>
+          <Button variant="danger" type="button"  onClick={onDelete}>
             <Trash2 size={15} /> Delete
-          </button>
+          </Button>
         )}
       </div>
     </article>
@@ -1079,38 +1092,38 @@ function CleanupFileRow({ item, selected, selectable, badge, badgeTone, onToggle
 
 function CleanupEmpty({ title, text }) {
   return (
-    <div className="empty-state library-empty cleanup-empty">
+    <WorkspaceEmptyState size="regular" className="library-empty cleanup-empty">
       <strong>{title}</strong>
       <span>{text}</span>
-    </div>
+    </WorkspaceEmptyState>
   );
 }
 
 function TmdbMatchModal({ state, onClose, onChange, onSearch, onApply }) {
   return (
     <div className="modal-backdrop" role="presentation" onClick={onClose}>
-      <section className="torrent-dialog cleanup-match-dialog" role="dialog" aria-modal="true" aria-label="TMDB match search" onClick={(event) => event.stopPropagation()}>
-        <div className="dialog-header">
+      <DialogShell size="wide" className="torrent-dialog cleanup-match-dialog" role="dialog" aria-modal="true" aria-label="TMDB match search" onClick={(event) => event.stopPropagation()}>
+        <DialogHeader >
           <div>
             <p className="screen-kicker">TMDB match</p>
             <h2>{state.item.filename}</h2>
           </div>
-          <button type="button" className="inspector-close" onClick={onClose} aria-label="Close TMDB match dialog">
+          <Button size="icon" type="button" className="inspector-close" onClick={onClose} aria-label="Close TMDB match dialog">
             <X size={18} />
-          </button>
-        </div>
+          </Button>
+        </DialogHeader>
         <form className="cleanup-match-form" onSubmit={onSearch}>
-          <label className="dialog-field">
+          <FormField >
             <span>Search title</span>
-            <input value={state.title} onChange={(event) => onChange({ title: event.target.value })} />
-          </label>
-          <label className="dialog-field">
+            <Input value={state.title} onChange={(event) => onChange({ title: event.target.value })} />
+          </FormField>
+          <FormField >
             <span>Year</span>
-            <input value={state.year} onChange={(event) => onChange({ year: event.target.value })} inputMode="numeric" />
-          </label>
-          <button type="submit" className="btn btn-primary btn-violet cleanup-match-submit" disabled={state.loading}>
+            <Input value={state.year} onChange={(event) => onChange({ year: event.target.value })} inputMode="numeric" />
+          </FormField>
+          <Button variant="ai" type="submit" className="cleanup-match-submit" disabled={state.loading}>
             {state.loading ? <Loader2 size={15} className="spin" /> : <Search size={15} />} Search TMDB
-          </button>
+          </Button>
         </form>
         {state.error && <p className="settings-inline-status settings-inline-error"><AlertTriangle size={15} /><span>{state.error}</span></p>}
         <div className="match-result-list">
@@ -1124,15 +1137,15 @@ function TmdbMatchModal({ state, onClose, onChange, onSearch, onApply }) {
                 <span>{match.year || 'Unknown year'} | {match.tmdb_rating ? `${match.tmdb_rating} - ${formatVoteCount(match.tmdb_vote_count) || 'no votes'}` : 'No rating'}</span>
                 <small>{match.plot || 'No plot summary available.'}</small>
               </div>
-              <button type="button" className="btn btn-secondary" onClick={() => onApply(match)} disabled={Boolean(state.applying)}>
+              <Button type="button"  onClick={() => onApply(match)} disabled={Boolean(state.applying)}>
                 {state.applying === String(match.tmdb_id) ? <Loader2 size={15} className="spin" /> : <CheckCircle2 size={15} />} Apply match
-              </button>
+              </Button>
             </article>
           )) : (
             <div className="cleanup-empty-match">Search TMDB, then choose the exact public movie identity.</div>
           )}
         </div>
-      </section>
+      </DialogShell>
     </div>
   );
 }
@@ -1140,37 +1153,37 @@ function TmdbMatchModal({ state, onClose, onChange, onSearch, onApply }) {
 function PlexMatchModal({ state, onClose, onChange, onSearch, onScanRetry, onApply }) {
   return (
     <div className="modal-backdrop" role="presentation" onClick={onClose}>
-      <section className="torrent-dialog cleanup-match-dialog" role="dialog" aria-modal="true" aria-label="Plex match search" onClick={(event) => event.stopPropagation()}>
-        <div className="dialog-header">
+      <DialogShell size="wide" className="torrent-dialog cleanup-match-dialog" role="dialog" aria-modal="true" aria-label="Plex match search" onClick={(event) => event.stopPropagation()}>
+        <DialogHeader >
           <div>
             <p className="screen-kicker">Plex match</p>
             <h2>{state.item.filename}</h2>
           </div>
-          <button type="button" className="inspector-close" onClick={onClose} aria-label="Close Plex match dialog">
+          <Button size="icon" type="button" className="inspector-close" onClick={onClose} aria-label="Close Plex match dialog">
             <X size={18} />
-          </button>
-        </div>
+          </Button>
+        </DialogHeader>
         <form className="cleanup-match-form" onSubmit={onSearch}>
-          <label className="dialog-field">
+          <FormField >
             <span>Search title</span>
-            <input value={state.title} onChange={(event) => onChange({ title: event.target.value })} />
-          </label>
-          <label className="dialog-field">
+            <Input value={state.title} onChange={(event) => onChange({ title: event.target.value })} />
+          </FormField>
+          <FormField >
             <span>Year</span>
-            <input value={state.year} onChange={(event) => onChange({ year: event.target.value })} inputMode="numeric" />
-          </label>
-          <button type="submit" className="btn btn-primary cleanup-match-submit" disabled={state.loading}>
+            <Input value={state.year} onChange={(event) => onChange({ year: event.target.value })} inputMode="numeric" />
+          </FormField>
+          <Button variant="primary" type="submit" className="cleanup-match-submit" disabled={state.loading}>
             {state.loading ? <Loader2 size={15} className="spin" /> : <Search size={15} />} Search Plex
-          </button>
+          </Button>
         </form>
         {state.error && <p className="settings-inline-status settings-inline-error"><AlertTriangle size={15} /><span>{state.error}</span></p>}
         {state.needsPlexScan && (
           <div className="cleanup-match-recovery">
             <span>Plex must index this file before its matching agents can be searched.</span>
-            <button type="button" className="btn btn-secondary" onClick={onScanRetry} disabled={state.scanBusy}>
+            <Button type="button"  onClick={onScanRetry} disabled={state.scanBusy}>
               {state.scanBusy ? <Loader2 size={15} className="spin" /> : <RefreshCcw size={15} />}
               {state.scanRequested ? 'Retry Plex lookup' : 'Request Plex scan'}
-            </button>
+            </Button>
           </div>
         )}
         <div className="match-result-list">
@@ -1191,16 +1204,16 @@ function PlexMatchModal({ state, onClose, onChange, onSearch, onScanRetry, onApp
                   <small className="plex-match-reasons">{match.match_reasons.join(' | ')}</small>
                 )}
               </div>
-              <button type="button" className="btn btn-secondary" onClick={() => onApply(match)} disabled={Boolean(state.applying)}>
+              <Button type="button"  onClick={() => onApply(match)} disabled={Boolean(state.applying)}>
                 {state.applying === match.guid ? <Loader2 size={15} className="spin" /> : <CheckCircle2 size={15} />} Apply match
-              </button>
+              </Button>
             </article>
           )) : (
             <div className="cleanup-empty-match">Search Plex agents, then choose the exact metadata match.</div>
           )}
 
         </div>
-      </section>
+      </DialogShell>
     </div>
   );
 }

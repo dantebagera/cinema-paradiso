@@ -1,0 +1,10 @@
+{
+  "url": "http://127.0.0.1:5000/library",
+  "body": "CINEMA\nPARADISO\nHome\nLibrary\nDiscover\nLists\nIPTV\nDownloads\nAI Control\nMaintenance\nNotifications\n179\nSettings\nHelp\nPower\nv3.0.0-beta.2\nMovies\nTV Shows\nMedia View\nFile View\nReview TV identity in Maintenance (52)\nSearch, filters & selection\n0 loaded\nLOADING TV SHOWS…",
+  "errors": [],
+  "httpErrors": [],
+  "blocked": [
+    "/api/user/followed-releases/check"
+  ],
+  "seriesCards": 0
+}

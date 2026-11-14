@@ -95,6 +95,24 @@ class TVVerticalSliceTests(unittest.TestCase):
         history.handle_event(SimpleNamespace(playback_context=context), {'type': 'playback.state', 'state': 'ended'})
         self.assertFalse(any(row['completed'] for row in self.repo.episodes(self.series_id)))
 
+    def test_native_queue_preserves_missing_episode_and_crosses_seasons_without_specials(self):
+        self.ingest('Harbor.S01E01.mkv')
+        self.ingest('Harbor.S01E03.mkv')
+        self.ingest('Harbor.S02E01.mkv')
+        playback = TVPlayback(self.repo, lambda: [self.root])
+        first = self.repo.episodes(self.series_id, 1)[0]
+        media = playback.resolve(playback.target(first['id']))
+        with patch.object(self.repo, 'episodes', wraps=self.repo.episodes) as listing:
+            result = playback.queue(media)
+            self.assertEqual(listing.call_count, 1)
+        self.assertEqual([row['title'].split(' · ')[0] for row in result['items']],
+                         ['S01E01', 'S01E02', 'S01E03', 'S02E01', 'S02E02'])
+        self.assertFalse(result['items'][1]['available'])
+        self.assertTrue(result['items'][2]['available'])
+        self.assertEqual(result['items'][-1]['section'], 'Season 2')
+        self.assertFalse(result['items'][-1]['available'])
+        self.assertEqual(result['items'][-1]['reason'], 'Episode has not aired')
+
     def test_tv_routes_are_off_by_default_and_movie_progress_store_is_unchanged(self):
         client = app.app.test_client()
         with patch.object(app, '_tv_enabled', False):

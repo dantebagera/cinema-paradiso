@@ -178,10 +178,12 @@ class NativePlayerSourceTests(unittest.TestCase):
             "download.svg",
             "enter-fullscreen.svg",
             "exit-fullscreen.svg",
-            "forward-10.svg",
+            "next-file.svg",
             "pause.svg",
             "play.svg",
-            "rewind-10.svg",
+            "previous-file.svg",
+            "playlist.svg",
+            "settings.svg",
             "search.svg",
             "speed.svg",
             "subtitles.svg",
@@ -300,10 +302,8 @@ class NativePlayerSourceTests(unittest.TestCase):
         self.assertIn("id: speedButton", qml)
         self.assertIn('ToolTip.text: "Playback speed"', qml)
         self.assertIn("id: speedPanel", qml)
-        self.assertIn(
-            "closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside",
-            qml,
-        )
+        # Dismissal/click consumption is exercised with the shared production
+        # popup in tst_MenuDismissal.qml and the compiled executable smoke.
         for preset in ("0.50", "0.75", "1.00", "1.25", "1.50", "2.00"):
             self.assertIn(preset, qml)
         self.assertIn("mpv.setSpeed(modelData)", qml)

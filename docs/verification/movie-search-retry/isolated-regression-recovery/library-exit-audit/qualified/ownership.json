@@ -1,0 +1,13 @@
+{
+  "child_pid": 35676,
+  "root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\tmp\\pass3-ui-library-exit-audit-a6df1c80c9b64314821a58fa10028b57",
+  "baseURL": "http://127.0.0.1:55785",
+  "identity_verified_before_browser": true,
+  "record": {
+    "pid": 35676,
+    "nonce": "0f561ead720543cb8d18733cd744c06c",
+    "root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\tmp\\pass3-ui-library-exit-audit-a6df1c80c9b64314821a58fa10028b57",
+    "test_mode": true,
+    "port": 55785
+  }
+}

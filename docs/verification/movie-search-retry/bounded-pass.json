@@ -1,0 +1,289 @@
+{
+  "batches": [
+    {
+      "name": "qualification-process-inventory",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "-v",
+        "-f",
+        "tests.test_movie_isolated_qualification"
+      ],
+      "exit_code": 1,
+      "active_seconds": 6.133,
+      "process_tree_cpu_seconds": 3.421875,
+      "process_tree_write_bytes": 10238868,
+      "processes": 31,
+      "temporary_footprint_bytes": 77634452,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\qualification-process-inventory.log"
+    },
+    {
+      "name": "qualification-fifo-green",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "-v",
+        "-f",
+        "tests.test_movie_isolated_qualification",
+        "tests.test_movie_publication_retries",
+        "tests.test_library_ingestion_queue"
+      ],
+      "exit_code": 1,
+      "active_seconds": 5.102,
+      "process_tree_cpu_seconds": 2.953125,
+      "process_tree_write_bytes": 10174199,
+      "processes": 27,
+      "temporary_footprint_bytes": 81100886,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\qualification-fifo-green.log"
+    },
+    {
+      "name": "qualification-fifo-validation",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "-v",
+        "-f",
+        "tests.test_movie_isolated_qualification.MovieIsolatedQualificationTest.test_c_admission_sequence_is_atomic_operational_and_survives_json_restore",
+        "tests.test_movie_isolated_qualification.MovieIsolatedQualificationTest.test_z_equal_due_retry_admission_order_survives_real_process_restart",
+        "tests.test_movie_publication_retries",
+        "tests.test_library_ingestion_queue"
+      ],
+      "exit_code": 0,
+      "active_seconds": 3.923,
+      "process_tree_cpu_seconds": 1.9375,
+      "process_tree_write_bytes": 18700405,
+      "processes": 7,
+      "temporary_footprint_bytes": 81967696,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\qualification-fifo-validation.log"
+    },
+    {
+      "name": "qualification-remaining-owners",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "-v",
+        "-f",
+        "tests.test_movie_remaining_qualification.RemainingMovieQualificationTest"
+      ],
+      "exit_code": 1,
+      "active_seconds": 6.31,
+      "process_tree_cpu_seconds": 4.484375,
+      "process_tree_write_bytes": 7537458,
+      "processes": 15,
+      "temporary_footprint_bytes": 83715444,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\qualification-remaining-owners.log"
+    },
+    {
+      "name": "qualification-metadata-bounded",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "-v",
+        "-f",
+        "tests.test_movie_remaining_qualification.RemainingMovieQualificationTest.test_b_four_snapshot_branches_empty_selected_data_and_competing_overrides",
+        "tests.test_movie_remaining_qualification.RemainingMovieQualificationTest.test_c_named_file_reads_remain_bounded_among_four_thousand_movies"
+      ],
+      "exit_code": 0,
+      "active_seconds": 11.622,
+      "process_tree_cpu_seconds": 7.34375,
+      "process_tree_write_bytes": 481672997,
+      "processes": 3,
+      "temporary_footprint_bytes": 124538381,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\qualification-metadata-bounded.log"
+    },
+    {
+      "name": "qualification-bounded-published",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "-v",
+        "-f",
+        "tests.test_movie_isolated_qualification.MovieIsolatedQualificationTest.test_d_durable_path_order_does_not_reorder_mixed_in_memory_work",
+        "tests.test_movie_remaining_qualification.RemainingMovieQualificationTest.test_c_named_file_reads_remain_bounded_among_four_thousand_movies"
+      ],
+      "exit_code": 0,
+      "active_seconds": 1.611,
+      "process_tree_cpu_seconds": 0.890625,
+      "process_tree_write_bytes": 3370222,
+      "processes": 3,
+      "temporary_footprint_bytes": 124983038,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\qualification-bounded-published.log"
+    },
+    {
+      "name": "qualification-desktop",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "-m",
+        "tests.run_movie_qualification_desktop"
+      ],
+      "exit_code": 0,
+      "active_seconds": 75.862,
+      "process_tree_cpu_seconds": 129.1875,
+      "process_tree_write_bytes": 499599204,
+      "processes": 13,
+      "temporary_footprint_bytes": 126001639,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\qualification-desktop.log"
+    },
+    {
+      "name": "qualification-dispatch-red",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "-v",
+        "-f",
+        "tests.test_movie_isolated_qualification.MovieIsolatedQualificationTest.test_e_equal_durable_deadlines_dispatch_fifo_despite_conversion_jitter"
+      ],
+      "exit_code": 1,
+      "active_seconds": 1.008,
+      "process_tree_cpu_seconds": 0.09375,
+      "process_tree_write_bytes": 1237,
+      "processes": 3,
+      "temporary_footprint_bytes": 126003424,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\qualification-dispatch-red.log",
+      "expected_exit_code": 1
+    },
+    {
+      "name": "qualification-dispatch-valid-red",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "-v",
+        "-f",
+        "tests.test_movie_isolated_qualification.MovieIsolatedQualificationTest.test_e_equal_durable_deadlines_dispatch_fifo_despite_conversion_jitter"
+      ],
+      "exit_code": 1,
+      "active_seconds": 0.97,
+      "process_tree_cpu_seconds": 0.203125,
+      "process_tree_write_bytes": 1096,
+      "processes": 3,
+      "temporary_footprint_bytes": 126005253,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\qualification-dispatch-valid-red.log",
+      "expected_exit_code": 1
+    },
+    {
+      "name": "qualification-final-fifo-queue",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "-v",
+        "-f",
+        "tests.test_movie_isolated_qualification.MovieIsolatedQualificationTest.test_e_equal_durable_deadlines_dispatch_fifo_despite_conversion_jitter",
+        "tests.test_movie_isolated_qualification.MovieIsolatedQualificationTest.test_z_equal_due_retry_admission_order_survives_real_process_restart",
+        "tests.test_library_ingestion_queue"
+      ],
+      "exit_code": 0,
+      "active_seconds": 2.139,
+      "process_tree_cpu_seconds": 0.8125,
+      "process_tree_write_bytes": 1799626,
+      "processes": 7,
+      "temporary_footprint_bytes": 126439284,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\qualification-final-fifo-queue.log",
+      "expected_exit_code": 0
+    },
+    {
+      "name": "qualification-concurrent-overrides",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "-v",
+        "-f",
+        "tests.test_movie_remaining_qualification.RemainingMovieQualificationTest.test_b_four_snapshot_branches_empty_selected_data_and_competing_overrides"
+      ],
+      "exit_code": 0,
+      "active_seconds": 1.554,
+      "process_tree_cpu_seconds": 0.4375,
+      "process_tree_write_bytes": 6530716,
+      "processes": 3,
+      "temporary_footprint_bytes": 128173414,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\qualification-concurrent-overrides.log",
+      "expected_exit_code": 0
+    },
+    {
+      "name": "qualification-storage-regressions",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "-v",
+        "-f",
+        "tests.test_catalog_repository.CatalogRepositoryTest.test_operational_timestamp_and_revision_refresh_is_not_a_card_generation",
+        "tests.test_catalog_repository.CatalogRepositoryTest.test_path_migration_updates_owned_records_in_one_generation",
+        "tests.test_catalog_repository.CatalogRepositoryTest.test_full_export_is_a_verified_rollback_snapshot",
+        "tests.test_catalog_store.CatalogStoreTest.test_import_preserves_identity_provider_and_user_state",
+        "tests.test_catalog_store.CatalogStoreTest.test_import_is_idempotent",
+        "tests.test_catalog_store.CatalogStoreTest.test_movie_view_hides_new_pending_publications_but_preserves_legacy_rows",
+        "tests.test_canonical_catalog"
+      ],
+      "exit_code": 0,
+      "active_seconds": 7.269,
+      "process_tree_cpu_seconds": 0.609375,
+      "process_tree_write_bytes": 18160721,
+      "processes": 3,
+      "temporary_footprint_bytes": 128176522,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\qualification-storage-regressions.log",
+      "expected_exit_code": 0
+    },
+    {
+      "name": "qualification-final-restart-api",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "-v",
+        "-f",
+        "tests.test_movie_remaining_qualification.RemainingMovieQualificationTest.test_a_publication_notification_and_ack_survive_real_process_termination"
+      ],
+      "exit_code": 0,
+      "active_seconds": 8.613,
+      "process_tree_cpu_seconds": 4.40625,
+      "process_tree_write_bytes": 6194824,
+      "processes": 15,
+      "temporary_footprint_bytes": 129520288,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\qualification-final-restart-api.log",
+      "expected_exit_code": 0
+    }
+  ],
+  "halted": false,
+  "resumptions": [
+    {
+      "after_batch": "qualification-process-inventory",
+      "authorization": "Dante approved bounded FIFO fix and resuming remaining checks within unused allowance",
+      "active_seconds_still_charged": 6.133
+    },
+    {
+      "after_batch": "qualification-fifo-green",
+      "authorization": "same approved bounded fix; restore test used ordinary writer instead of actual JSON import owner; correction documented in plan",
+      "classification": "test fixture correction during fix validation; failed run retained and charged"
+    },
+    {
+      "after_batch": "qualification-remaining-owners",
+      "authorization": "same approved harness work; correct expectation to public case-preserving selection paths",
+      "classification": "test assertion used normalized internal key; failed log and resource use retained"
+    }
+  ],
+  "closed": true,
+  "closure": "Approved seven functional gaps verified; stop further tests under this allowance. Historical evidence limits retained."
+}

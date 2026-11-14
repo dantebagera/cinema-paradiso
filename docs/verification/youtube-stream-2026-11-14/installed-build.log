@@ -1,0 +1,49 @@
+
+> cinema-paradiso-frontend@3.0.0-beta.2 build
+> vite build --outDir C:\Users\dante\AppData\Local\Temp\cp-youtube-activation-backup-5l8rydh8\new-dist
+
+vite v6.4.3 building for production...
+
+(!) outDir C:\Users\dante\AppData\Local\Temp\cp-youtube-activation-backup-5l8rydh8\new-dist is not inside project root and will not be emptied.
+Use --emptyOutDir to override.
+
+transforming...
+✓ 1755 modules transformed.
+rendering chunks...
+computing gzip size...
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/manifest-BSGbUmFO.webmanifest          0.55 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/logo-Dk1rN4XL.svg                      1.25 kB │ gzip:   0.55 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/index.html                                    1.94 kB │ gzip:   0.85 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/styleguide-motif-crop-B3fTh5_H.png   119.86 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/header-Cr7VYxUL.png                  402.60 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/home-film-projector-Cy2UE5XO.png     763.94 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/HomeWorkspace-_NC_Abiy.css            13.55 kB │ gzip:   3.27 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/iptv-B6x-Tuph.css                     40.66 kB │ gzip:   6.71 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/index-DOqCUWrg.css                   226.39 kB │ gzip:  39.32 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/WorkspaceEmptyState-BDDRbUY5.js        0.33 kB │ gzip:   0.23 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/WorkspacePathBar-VC2jgWBZ.js           2.50 kB │ gzip:   0.96 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/LibraryControls-C7sdUqNo.js            2.83 kB │ gzip:   0.91 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/CatalogMetadataFilters-l3zolR2h.js     3.11 kB │ gzip:   1.35 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/DownloadsWorkspace-Blryqaah.js         3.82 kB │ gzip:   1.56 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/vendor-Bb8JjhAW.js                     3.85 kB │ gzip:   1.72 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/useMovieCollectionCache-De-f7Y7L.js    5.59 kB │ gzip:   2.22 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/SourceReviewDialog-DNk0wDc8.js         6.63 kB │ gzip:   2.40 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/DiscoverResultGrid-DBIUMxyS.js         6.82 kB │ gzip:   2.61 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/MetadataCorrectionModal-HbhAiT3B.js    9.93 kB │ gzip:   3.26 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/AIControlWorkspace-Bjoctc2r.js        10.19 kB │ gzip:   3.62 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/StyleGuide--HnvxxZJ.js                10.45 kB │ gzip:   3.02 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/CardLab--Eb6PQCC.js                   11.52 kB │ gzip:   4.14 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/HomeWorkspace-CnfMVOaG.js             22.68 kB │ gzip:   7.46 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/HelpWorkspace-DwpRDeZN.js             23.08 kB │ gzip:   7.63 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/vendor-icons-n5kuJKvW.js              33.50 kB │ gzip:   6.78 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/AIActionReview-h1gKUGq3.js            35.16 kB │ gzip:  11.41 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/ListsWorkspace-pSZMvXkX.js            46.27 kB │ gzip:  14.23 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/LibraryWorkspace-CHn6uk0m.js          48.85 kB │ gzip:  14.89 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/DiscoverWorkspace-CN_F8GAz.js         64.44 kB │ gzip:  19.86 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/CleanupWorkspace-BQEiDSb4.js          73.42 kB │ gzip:  19.72 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/IPTVWorkspace-CMJQd3FM.js             93.81 kB │ gzip:  26.45 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/SettingsWorkspace-C7YSUjdU.js         99.85 kB │ gzip:  24.99 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/vendor-react-CJZMWplS.js             189.82 kB │ gzip:  59.19 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/index-BIL_deZ4.js                    321.50 kB │ gzip:  95.92 kB
+../../AppData/Local/Temp/cp-youtube-activation-backup-5l8rydh8/new-dist/assets/vendor-player-Dv34CeeU.js            353.87 kB │ gzip: 110.81 kB
+✓ built in 2.50s

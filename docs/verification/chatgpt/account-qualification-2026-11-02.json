@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "model": "gpt-6.1-sol",
+  "real_inference_calls": 6,
+  "budget": 6,
+  "connection": {
+    "state": "passed",
+    "model": "gpt-6.1-sol",
+    "inference_calls": 1,
+    "response_id": "resp_095548dc3a459178016ae7dd037aac819184984926f64091fc"
+  },
+  "features": {
+    "F1": {
+      "feature": "F1",
+      "inference_calls": 1,
+      "state": "failed",
+      "model": "gpt-6.1-sol",
+      "code": "feature_qualification_failed"
+    },
+    "F2": {
+      "feature": "F2",
+      "inference_calls": 1,
+      "state": "passed",
+      "model": "gpt-6.1-sol",
+      "response_id": "resp_0322acbf75f18bc3016ae7ffaf229c8191a01b71cdc43bf104",
+      "tool_names": [
+        "cp_runtime.playback_status"
+      ],
+      "skill_hash": "af417f45e772daf3dad6d2e2d4b6a504f8df326fb4cb3f336af7be58a0f0f027",
+      "scope": "single synthetic feature protocol response; full app semantics verified offline"
+    },
+    "F3": {
+      "feature": "F3",
+      "inference_calls": 1,
+      "state": "passed",
+      "model": "gpt-6.1-sol",
+      "response_id": "resp_0f4f45f7c7782a02016ae7ffb272c081919e182c5ee851b8f5",
+      "tool_names": [
+        "cp_result.submit"
+      ],
+      "skill_hash": "f576f1e01f31c0742288c0c0dffcb3a2736cb19385495b578a638b264f93e766",
+      "scope": "single synthetic feature protocol response; full app semantics verified offline"
+    },
+    "F4": {
+      "feature": "F4",
+      "inference_calls": 1,
+      "state": "passed",
+      "model": "gpt-6.1-sol",
+      "response_id": "resp_0c45438f651c03a3016ae7ffb5c87c81918ce7346a725cb507",
+      "tool_names": [
+        "cp_result.submit"
+      ],
+      "skill_hash": "f2f395ddfc3a5b476820ee1cf9ddfda1f141470c35f44d88de6b1d8aecb9e494",
+      "scope": "single synthetic feature protocol response; full app semantics verified offline"
+    },
+    "F5": {
+      "feature": "F5",
+      "inference_calls": 1,
+      "state": "passed",
+      "model": "gpt-6.1-sol",
+      "response_id": "resp_014b9b448cd04842016ae7ffb99cd08191be844298e117acbf",
+      "tool_names": [
+        "cp_result.submit"
+      ],
+      "skill_hash": "eed5b577fbeae657adfbf21d2d08c684f47910c00721e6fbfcc481411e5c458f",
+      "scope": "single synthetic feature protocol response; full app semantics verified offline"
+    }
+  },
+  "F1_scope_evidence": {
+    "scope_declaration_verified": true,
+    "scope": {
+      "query": {
+        "feed": "catalog",
+        "groups": [],
+        "mode": "advanced",
+        "scope": "discover",
+        "sort": {
+          "direction": "desc",
+          "key": "auto"
+        },
+        "version": 1
+      },
+      "subjective_requirements": []
+    },
+    "real_inference_calls": 1,
+    "product_job_state": "failed",
+    "budget_stop": "qualification_feature_budget_used",
+    "recommendation_output_verified_real": false,
+    "response_id": null,
+    "note": "Initial harness required scope and candidates in one response. Normal multi-step F1 returned scope, then the qualification-only one-call guard blocked its next response. Original failed record retained; no retry was sent."
+  },
+  "verification_scope": "Single-response synthetic account/tool protocol checks; full product semantics exercised offline, not a model-quality benchmark."
+}

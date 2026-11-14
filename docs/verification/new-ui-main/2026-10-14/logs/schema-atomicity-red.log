@@ -1,0 +1,24 @@
+E
+======================================================================
+ERROR: test_failed_schema_batch_leaves_no_partial_tables_and_can_retry (tests.test_iptv_movie_gates_0_5.AtomicSchemaInitializationTests.test_failed_schema_batch_leaves_no_partial_tables_and_can_retry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_iptv_movie_gates_0_5.py", line 187, in test_failed_schema_batch_leaves_no_partial_tables_and_can_retry
+    IPTVMovieStore(root, PROVIDER_A)
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\services\iptv_movie_store.py", line 163, in __init__
+    self._initialize()
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\services\iptv_movie_store.py", line 249, in _initialize
+    with self._lock, self.connection(immediate=True) as connection:
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\services\iptv_movie_store.py", line 243, in connection
+    with connection:
+         ^^^^^^^^^^
+TypeError: 'FailingSchemaConnection' object does not support the context manager protocol
+
+----------------------------------------------------------------------
+Ran 1 test in 0.007s
+
+FAILED (errors=1)

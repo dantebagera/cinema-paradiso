@@ -1,0 +1,4524 @@
+{
+  "client_date": "2026-10-24",
+  "timezone": "Africa/Cairo",
+  "captured_utc": "2026-10-23T21:35:23.841474+00:00",
+  "authorization": "Read-only activation preflight and plan documentation only; no activation authorized",
+  "checkout": "C:\\Users\\dante\\Desktop\\cinema paradiso",
+  "branch": "master",
+  "head": "be511f98846a67a182e5b371ad087938e9344362",
+  "dirty_entries": [
+    {
+      "status": " M",
+      "path": "app.py"
+    },
+    {
+      "status": " M",
+      "path": "docs/tv-contracts.md"
+    },
+    {
+      "status": " M",
+      "path": "docs/verification/tv-normal-import/parity/library.png"
+    },
+    {
+      "status": " M",
+      "path": "docs/verification/tv-normal-import/parity/series.png"
+    },
+    {
+      "status": " M",
+      "path": "docs/verification/tv-numeric-repair/verify-live-desktop.cjs"
+    },
+    {
+      "status": " M",
+      "path": "native/player/CMakeLists.txt"
+    },
+    {
+      "status": " M",
+      "path": "native/player/qml/Main.qml"
+    },
+    {
+      "status": " D",
+      "path": "native/player/resources/icons/forward-10.svg"
+    },
+    {
+      "status": " D",
+      "path": "native/player/resources/icons/rewind-10.svg"
+    },
+    {
+      "status": " M",
+      "path": "native/player/runtime-metadata.json"
+    },
+    {
+      "status": " M",
+      "path": "native/player/src/MpvItem.cpp"
+    },
+    {
+      "status": " M",
+      "path": "native/player/src/MpvItem.h"
+    },
+    {
+      "status": " M",
+      "path": "native/player/src/PlayerBridge.cpp"
+    },
+    {
+      "status": " M",
+      "path": "native/player/src/PlayerBridge.h"
+    },
+    {
+      "status": " M",
+      "path": "native/player/tools/smoke_player.py"
+    },
+    {
+      "status": " M",
+      "path": "services/acquisition_store.py"
+    },
+    {
+      "status": " M",
+      "path": "services/catalog_repository.py"
+    },
+    {
+      "status": " M",
+      "path": "services/catalog_store.py"
+    },
+    {
+      "status": " M",
+      "path": "services/curation_store.py"
+    },
+    {
+      "status": " M",
+      "path": "services/iptv_movie_store.py"
+    },
+    {
+      "status": " M",
+      "path": "services/library_ingestion.py"
+    },
+    {
+      "status": " M",
+      "path": "services/movie_acquisition.py"
+    },
+    {
+      "status": " M",
+      "path": "services/playback_history.py"
+    },
+    {
+      "status": " M",
+      "path": "services/player_catalog.py"
+    },
+    {
+      "status": " M",
+      "path": "services/player_config.py"
+    },
+    {
+      "status": " M",
+      "path": "services/player_manager.py"
+    },
+    {
+      "status": " M",
+      "path": "services/player_protocol.py"
+    },
+    {
+      "status": " M",
+      "path": "services/tv_acquisition.py"
+    },
+    {
+      "status": " M",
+      "path": "services/tv_catalog_repository.py"
+    },
+    {
+      "status": " M",
+      "path": "services/tv_filename_parser.py"
+    },
+    {
+      "status": " M",
+      "path": "services/tv_metadata.py"
+    },
+    {
+      "status": " M",
+      "path": "services/tv_monitoring.py"
+    },
+    {
+      "status": " M",
+      "path": "services/tv_playback.py"
+    },
+    {
+      "status": " M",
+      "path": "services/tv_read_model.py"
+    },
+    {
+      "status": " M",
+      "path": "services/tv_routes.py"
+    },
+    {
+      "status": " M",
+      "path": "services/tv_search.py"
+    },
+    {
+      "status": " M",
+      "path": "services/verified_import.py"
+    },
+    {
+      "status": " M",
+      "path": "src/App.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/api/movieDetails.js"
+    },
+    {
+      "status": " M",
+      "path": "src/components/RelatedMovieRail.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/components/SharedMovieCards.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/components/movie-card/MovieCard.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/components/movie-card/expandedCardViewport.js"
+    },
+    {
+      "status": " M",
+      "path": "src/components/movie-card/movieCard.css"
+    },
+    {
+      "status": " M",
+      "path": "src/discoverUtils.js"
+    },
+    {
+      "status": " M",
+      "path": "src/features/discover/DiscoverWorkspace.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/home/HomeWorkspace.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/iptv/IPTVWorkspace.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/iptv/iptv.css"
+    },
+    {
+      "status": " M",
+      "path": "src/features/library/LibraryWorkspace.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/movie-lists/ListsWorkspace.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/movie-lists/MovieListsWorkspace.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/movie-lists/TVListsWorkspace.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/notifications/NotificationWindow.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/search/AdvancedSearchBuilder.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/search/SearchField.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/tv/MediaWorkspace.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/tv/TVAcquisitionReview.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/tv/TVBulkActionBar.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/tv/TVFileView.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/tv/TVLibraryImport.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/tv/TVSearchControls.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/tv/TVWorkspace.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/tv/tv.css"
+    },
+    {
+      "status": " M",
+      "path": "src/main.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/styles.css"
+    },
+    {
+      "status": " M",
+      "path": "src/styles/identityReview.css"
+    },
+    {
+      "status": " M",
+      "path": "src/styles/metadataAuthority.css"
+    },
+    {
+      "status": " M",
+      "path": "src/styles/movieRelationships.css"
+    },
+    {
+      "status": " M",
+      "path": "src/utils/homeMovies.js"
+    },
+    {
+      "status": " M",
+      "path": "tests/discover_paging_server.py"
+    },
+    {
+      "status": " M",
+      "path": "tests/e2e/app-smoke.spec.js"
+    },
+    {
+      "status": " M",
+      "path": "tests/e2e/caret-visibility.spec.js"
+    },
+    {
+      "status": " M",
+      "path": "tests/e2e/continue-watching.spec.js"
+    },
+    {
+      "status": " M",
+      "path": "tests/e2e/cross-page-selection.spec.js"
+    },
+    {
+      "status": " M",
+      "path": "tests/e2e/discover-paging.spec.js"
+    },
+    {
+      "status": " M",
+      "path": "tests/e2e/movie-awards.spec.js"
+    },
+    {
+      "status": " M",
+      "path": "tests/e2e/movie-relationships.spec.js"
+    },
+    {
+      "status": " M",
+      "path": "tests/e2e/native-tv.spec.js"
+    },
+    {
+      "status": " M",
+      "path": "tests/e2e/tv-download-contracts.spec.js"
+    },
+    {
+      "status": " M",
+      "path": "tests/e2e/tv-expanded-parity.spec.js"
+    },
+    {
+      "status": " M",
+      "path": "tests/e2e/tv-normal-import.spec.js"
+    },
+    {
+      "status": " M",
+      "path": "tests/e2e/tv-parity.spec.js"
+    },
+    {
+      "status": " M",
+      "path": "tests/e2e/tv-stabilization.spec.js"
+    },
+    {
+      "status": " M",
+      "path": "tests/frontend_source.py"
+    },
+    {
+      "status": " M",
+      "path": "tests/homeMovies.test.mjs"
+    },
+    {
+      "status": " M",
+      "path": "tests/movie_relationships.test.mjs"
+    },
+    {
+      "status": " M",
+      "path": "tests/native_tv_server.py"
+    },
+    {
+      "status": " M",
+      "path": "tests/test_advanced_library_api.py"
+    },
+    {
+      "status": " M",
+      "path": "tests/test_ai_control_ui.py"
+    },
+    {
+      "status": " M",
+      "path": "tests/test_continue_watching_ui.py"
+    },
+    {
+      "status": " M",
+      "path": "tests/test_discover_hover_ui.py"
+    },
+    {
+      "status": " M",
+      "path": "tests/test_full_row_card_grids_ui.py"
+    },
+    {
+      "status": " M",
+      "path": "tests/test_iptv_movie_gates_0_5.py"
+    },
+    {
+      "status": " M",
+      "path": "tests/test_iptv_ui.py"
+    },
+    {
+      "status": " M",
+      "path": "tests/test_library_action_ux.py"
+    },
+    {
+      "status": " M",
+      "path": "tests/test_library_ingestion_ownership.py"
+    },
+    {
+      "status": " M",
+      "path": "tests/test_library_ingestion_paths.py"
+    },
+    {
+      "status": " M",
+      "path": "tests/test_library_ingestion_queue.py"
+    },
+    {
+      "status": " M",
+      "path": "tests/test_library_reconcile.py"
+    },
+    {
+      "status": " M",
+      "path": "tests/test_native_player.py"
+    },
+    {
+      "status": " M",
+      "path": "tests/test_playback_history.py"
+    },
+    {
+      "status": " M",
+      "path": "tests/test_player_manager.py"
+    },
+    {
+      "status": " M",
+      "path": "tests/test_poster_editor_ui.py"
+    },
+    {
+      "status": " M",
+      "path": "tests/test_power_ui.py"
+    },
+    {
+      "status": " M",
+      "path": "tests/test_qbittorrent_ui.py"
+    },
+    {
+      "status": " M",
+      "path": "tests/test_sql_migration_parity.py"
+    },
+    {
+      "status": " M",
+      "path": "tests/test_tv_catalog.py"
+    },
+    {
+      "status": " M",
+      "path": "tests/test_tv_vertical_slice.py"
+    },
+    {
+      "status": " M",
+      "path": "tests/test_unified_movie_card_ui.py"
+    },
+    {
+      "status": " M",
+      "path": "tests/test_user_curation_store.py"
+    },
+    {
+      "status": " M",
+      "path": "tests/test_verified_tv_acquisition.py"
+    },
+    {
+      "status": " M",
+      "path": "tests/test_watched_watchlist_ui.py"
+    },
+    {
+      "status": " M",
+      "path": "tests/test_workspace_layout_ui.py"
+    },
+    {
+      "status": "??",
+      "path": "docs/handoffs/2026-10-15-database-performance-discussion.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/handoffs/2026-10-20-home-performance-implementation.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/2026-10-10-tv-follow-season-packs-and-source-diagnostics-plan.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/2026-10-10-tv-pack-auxiliary-files-fix.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/2026-10-11-mostafa-ui-preview-setup.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/2026-10-11-mostafa-ui-ux-integration-plan.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/2026-10-12-mostafa-performance-plan.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/2026-10-12-upcoming-movies-backend-rule.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/2026-10-13-movie-follow-startup-scan-fix.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/2026-10-14-automatic-download-library-following-refresh.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/2026-10-14-cp-performance-findings.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/2026-10-14-cp-performance-plan.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/2026-10-14-followed-releases-height.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/2026-10-14-following-card-compact-title.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/2026-10-14-following-card-filters-and-download.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/2026-10-14-library-combined-header.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/2026-10-14-library-database-query-plan.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/2026-10-14-new-ui-main-integration.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/2026-10-14-shared-reveal-scrollbars.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/2026-10-14-trailer-header-actions.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/2026-10-15-database-browse-performance-zero-regression-plan.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/2026-10-18-movie-tv-database-adoption-plan.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/2026-10-19-following-full-width-details.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/2026-10-19-home-dashboard-hybrid-technical.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/2026-10-19-home-dashboard-hybrid.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/2026-10-19-home-header-film-projector.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/2026-10-20-home-loading-performance.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/2026-10-20-native-player-playlists-and-settings.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/2026-10-22-native-player-unicode-paths.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/2026-10-23-global-tv-card-density.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/2026-10-23-movie-library-search-and-retry-performance.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/2026-10-23-tv-first-tab-delay.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/2026-10-23-tv-library-loading-performance.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/2026-10-23-tv-visible-load.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/assets/2026-10-19-home-dashboard-hybrid/01-slim-header.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/assets/2026-10-19-home-dashboard-hybrid/02-old-following-actions.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/assets/2026-10-19-home-dashboard-hybrid/03-current-following-toolbar.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/assets/2026-10-19-home-dashboard-hybrid/04-current-trending-upcoming.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/assets/2026-10-19-home-dashboard-hybrid/05-current-inline-movie-details.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/assets/2026-10-19-home-dashboard-hybrid/06-old-new-trailers.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/assets/2026-10-19-home-dashboard-hybrid/07-old-continue-watching-and-inspector.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/assets/2026-10-19-home-dashboard-hybrid/08-existing-layout-measurements.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/assets/2026-10-19-home-dashboard-hybrid/09-preparation-baseline.txt"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/assets/2026-10-19-home-dashboard-hybrid/10-source-fingerprints.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/plans/assets/2026-10-23-library-search-retry-evidence.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/download-completion/automatic-following.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/download-completion/automatic-library.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/download-completion/verification.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/following-card-compact-title/baseline.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/following-card-compact-title/build.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/following-card-compact-title/focused.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/following-card-compact-title/following-compact-1600.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/following-card-compact-title/following-compact-1920.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/following-card-compact-title/label-red.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/following-card-compact-title/regression.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/following-card/README.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/following-card/build.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/following-card/following-awaiting.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/following-card/following-header.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/following-card/following-monitoring.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/following-card/node.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/following-card/python-final.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/following-full-width-details/build.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/following-full-width-details/following-expanded-1280.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/following-full-width-details/following-expanded-1600.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/following-full-width-details/following-expanded-1920.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/following-full-width-details/home-following-regression.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/global-tv-card-density/dense-1366.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/global-tv-card-density/dense-1920.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/global-tv-card-density/discover-1366.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/global-tv-card-density/discover-1920.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/global-tv-card-density/expanded-1366.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/global-tv-card-density/expanded-1920.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/global-tv-card-density/expanded-preview-1366.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/global-tv-card-density/library-1366.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/global-tv-card-density/library-1920.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/global-tv-card-density/lists-1366.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/global-tv-card-density/lists-1920.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/global-tv-card-density/report.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/home-header/approved-mockup.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/home-header/artwork-prompt.txt"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/home-header/build.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/home-header/home-desktop-1600.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/home-header/home-header-1280.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/home-header/home-header-1600.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/home-header/home-header-1920.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/home-header/node-tests.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/home-header/python-tests.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/home-header/verified-playwright.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/home-performance/progress.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/home-performance/results.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/RESULT.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/baseline.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/build.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/combined-header-movie-File-View-1280.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/combined-header-movie-File-View-1600.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/combined-header-movie-File-View-2048.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/combined-header-movie-Media-View-1280.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/combined-header-movie-Media-View-1600.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/combined-header-movie-Media-View-2048.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/combined-header-tv-File-View-1280.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/combined-header-tv-File-View-1600.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/combined-header-tv-File-View-2048.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/combined-header-tv-Media-View-1280.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/combined-header-tv-Media-View-1600.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/combined-header-tv-Media-View-2048.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/combined-header-tv-long-file-query-1280.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/discover-1280.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/discover-1600.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/discover-1920.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/discover-filters-open.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/final-build.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/final-focused.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/final-full.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/final-python.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/focused.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/full.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/library-empty.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/lists-controls.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/long-query-red.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/python.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/search-clear-and-filter-reset.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/sticky-discover-expanded.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/sticky-library-files.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/sticky-tv-library-files.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/library-combined-header/tv-selection-expanded.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/RESULT.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/after.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/artwork-after.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/artwork-before.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/artwork-final-regression.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/artwork-performance.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/baseline-after.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/baseline.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/baseline.py"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/before.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/benchmark.mjs"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/compare-protection.py"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/desktop-regression.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/diff-check.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/identical-before.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/interactions-before.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/list-benchmark-independent.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/list-benchmark.mjs"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/list-performance.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/live-after.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/live-process-proof.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/native-result.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/native-tv.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/node-final.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/preview-build.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/preview-start.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/preview-start.stderr.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/preview-stop.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/protection-after.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/protection-before-complete.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/protection-before.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/protection-comparison.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/protection-comparison.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/protection-refreshed.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/python-build.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/python-environment-rerun.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/python-focused-final.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/python-focused.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/python-full.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/python-result.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/python-shared-final.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/python-shared-ui.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/run-python-verification.ps1"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/shutdown-after-completion.ps1"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/shutdown-dispatch.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/tv-expanded-parity.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/tv-parity-rerun-results/.last-run.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/tv-parity-rerun.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/tv-parity.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/tv-stream.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/warm-after.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-performance/warm-after.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-ui-ux/RESULT.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-ui-ux/baseline-tv-state.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-ui-ux/logs/baseline-python-frozen.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-ui-ux/logs/collection-final.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-ui-ux/logs/desktop-verified.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-ui-ux/logs/discover-paging-complete.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-ui-ux/logs/layout-owner-final.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-ui-ux/logs/native-tv-verified.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-ui-ux/logs/navigation-final.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-ui-ux/logs/node-verified.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-ui-ux/logs/projection-baseline.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-ui-ux/logs/projection-current.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-ui-ux/logs/python-final.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-ui-ux/logs/python-owner-final.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-ui-ux/logs/tv-download-contracts-verified.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-ui-ux/logs/tv-expanded-parity-verified.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-ui-ux/logs/tv-follow-season-packs-verified.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-ui-ux/logs/tv-geometry-final.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-ui-ux/logs/tv-normal-import-verified.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-ui-ux/logs/tv-parity-complete.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-ui-ux/logs/tv-protected.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-ui-ux/logs/tv-stabilization-complete.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-ui-ux/logs/tv-stream-final.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-ui-ux/original-runtime-unchanged.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-ui-ux/overlay-baseline.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-ui-ux/restored-prior-evidence.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/mostafa-ui-ux/source-guard.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-follow/2026-10-13/baseline-hashes.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-follow/2026-10-13/baseline-tests.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-follow/2026-10-13/broader-tests.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-follow/2026-10-13/budget-green-tests.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-follow/2026-10-13/budget-red-tests.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-follow/2026-10-13/build.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-follow/2026-10-13/desktop-final-tests.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-follow/2026-10-13/desktop-tests.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-follow/2026-10-13/desktop-verified-tests.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-follow/2026-10-13/final-verified-tests.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-follow/2026-10-13/focused-tests.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-follow/2026-10-13/movie-follow.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-follow/2026-10-13/red-tests.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-follow/2026-10-13/verification.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/4000-final-page.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/README.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/automatic-completion.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/automatic-library.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/baseline.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/bounded-4000-reads.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/bounded-final.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/bounded-pass.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/broader-suite.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/build-corrective.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/cache-memory.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/commit-event-ack-evidence.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/completion-suite.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/corrective-automatic-completion.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/corrective-automatic-library.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/corrective-search-final-page.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/desktop-functional-evidence.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/final-ingestion-suite.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/final-owner-suite.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/final-owner-suite.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/final-sql-parity-suite.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/ingestion-suite.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/own-source.diff"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/performance-baseline.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/performance-candidate.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/playwright-corrective-completion.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/playwright-corrective-search.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/poster-completed-following.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/process-crash-evidence.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/qualification-bounded-published.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/qualification-concurrent-overrides.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/qualification-desktop-results.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/qualification-desktop.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/qualification-dispatch-red.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/qualification-dispatch-valid-red.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/qualification-fifo-green.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/qualification-fifo-validation.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/qualification-final-fifo-queue.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/qualification-final-restart-api.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/qualification-metadata-bounded.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/qualification-process-inventory.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/qualification-remaining-owners.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/qualification-storage-regressions.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/restart-dispatch-order.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/restart-order.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/results.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/search-final-page.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/search-suite.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/selection-contract.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/snapshot-branches.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/movie-search-retry/tv-import-suite.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-playlists/RESULT.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-playlists/assembly.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-playlists/auto-fixtures-state.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-playlists/auto-fixtures-stderr.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-playlists/auto-smoke-final.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-playlists/installation.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-playlists/native-build.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-playlists/playlist.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-playlists/runtime-status.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-playlists/settings.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-playlists/shortcuts.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-playlists/shutdown-request.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-playlists/single-file-smoke.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-playlists/ui-fixtures-state.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-playlists/ui-fixtures-stderr.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-unicode/MpvItem.cpp.diff"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-unicode/RESULT.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-unicode/arabic-filename.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-unicode/assembly.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-unicode/build.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-unicode/final-unit-suite.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-unicode/installation.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-unicode/installed-inventory.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-unicode/les-miserables.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-unicode/live-status.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-unicode/retained-runtime-files.txt"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-unicode/runtime-metadata.json.diff"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-unicode/smoke_player.py.diff"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-unicode/test_arabic_directory_and_accented_filename.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-unicode/test_arabic_external_subtitle_on_ascii_video.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-unicode/test_arabic_filename.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-unicode/test_ascii_filename_remains_playable.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-unicode/test_real_les_miserables_with_accented_filename.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-unicode/timeline-pre-controls.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-unicode/timeline-staged-final.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-unicode/timeline-staged.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-unicode/timeline-subtitle-search.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-unicode/timeline-timeline-pointer.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-unicode/timeline-timeline-preview.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-unicode/unicode-installed.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-unicode/unicode-staged-final.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/native-player-unicode/unicode-staged.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/RESULT.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/database-after-activation.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/database-pre-activation-complete.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/desktop/movie-follow-desktop/movie-follow.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/desktop/upcoming-desktop-combined/discover-upcoming-advanced.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/desktop/upcoming-desktop-combined/discover-upcoming-final.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/desktop/upcoming-desktop-combined/discover-upcoming-first.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/desktop/upcoming-desktop-combined/home-upcoming.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/final-proof.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/historical-screenshot-preservation.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/live-desktop/library-probe.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/live-desktop/library-probe.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/live-desktop/main-home.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/live-desktop/main-library.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/live-desktop/main-tv-library.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/live-desktop/result.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/live-desktop/tv-probe.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/live-desktop/tv-probe.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/live-first-start.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/live-restart.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/baseline-node.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/baseline-node.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/broad-desktop.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/broad-desktop.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/combined-build.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/combined-build.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/combined-node.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/combined-node.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/combined-python-focused.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/combined-python-focused.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/corrected-streaming-wiring.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/corrected-streaming-wiring.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/full-python-candidate.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/full-python-candidate.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/iptv-owner-regressions.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/iptv-owner-regressions.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/live-render-confirmed.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/live-render-corrected.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/live-render-final.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/live-render-probe.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/live-render-tv-probe.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/live-render.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/main-baseline-corrected.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/main-baseline-corrected.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/main-existing-failure-baseline.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/main-existing-failure-baseline.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/main-final-full-python.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/main-final-full-python.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/main-final-node.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/main-final-node.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/main-launcher-and-retained-contracts.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/main-launcher-and-retained-contracts.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/main-retained-contracts-confirmed.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/main-retained-contracts-confirmed.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/motivating-desktop-red.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/motivating-desktop-red.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/movie-follow-desktop.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/movie-follow-desktop.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/native-tv-desktop.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/native-tv-desktop.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/promotion-selection.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/red-main-fixes.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/red-main-fixes.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/schema-and-streaming-green.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/schema-and-streaming-green.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/schema-atomicity-confirmed.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/schema-atomicity-confirmed.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/schema-atomicity-red-final.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/schema-atomicity-red-final.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/schema-atomicity-red-valid.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/schema-atomicity-red-valid.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/schema-atomicity-red.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/schema-atomicity-red.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/tv-controls-fresh.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/tv-controls-fresh.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/tv-normal-fresh.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/tv-normal-fresh.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/tv-parity-fresh.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/tv-parity-fresh.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/tv-streaming-fresh.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/tv-streaming-fresh.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/upcoming-desktop-combined.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/logs/upcoming-desktop-combined.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/pinned-input-preservation.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/post-activation-comparison.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/promotion-manifest.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/recovery-location.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/restart-request.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/review.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/new-ui-main/2026-10-14/schema-initialization-performance.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/scrollbars/README.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/scrollbars/following-hover.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/scrollbars/following-idle.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/scrollbars/isolated-build.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/scrollbars/node-suite.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/README.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/baseline-python.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/build-completed.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/build-final.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/build.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/desktop-green.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/desktop-native-tv-completed.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/desktop-native-tv-final.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/desktop-packs-final.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/desktop-red.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/desktop-tv-download-contracts-completed.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/desktop-tv-download-contracts-final.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/desktop-tv-follow-season-packs-completed.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/desktop-tv-follow-season-packs-final.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/desktop-tv-normal-import-completed.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/desktop-tv-normal-import-final.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/desktop-tv-stabilization-completed.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/desktop-tv-stabilization-final.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/final-scope-green.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/final-scope-red.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/focused-completed.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/focused-final.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/focused.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/full-python-completed.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/full-python-final.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/full-python.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/gap-pack-green.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/gap-pack-red.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/iptv-timing-dependency-check.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/iptv-timing-pristine-baseline.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/iptv-timing-rerun.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/iptv-timing-single-current.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/main-checkout-tests.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/new-ownership-green.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/node-completed.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/node.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/planning-green.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/planning-red.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/production-fingerprints-after.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/production-fingerprints-before.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/progress.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/queued-1366.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/queued-1920.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/recognition-green.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/recognition-red.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/review-1366.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/review-1920.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/review-green.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/review-red.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/source-delivery.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/source-review.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/thirteen-episode-green.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-follow-season-packs/transfer-review-red.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-library-performance/active-run.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-library-performance/capture_visible.mjs"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-library-performance/capture_visible.ps1"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-library-performance/compiled_desktop.ps1"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-library-performance/first-tab-fix-2026-10-23.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-library-performance/live-first-load-2026-10-23-1534.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-library-performance/memory-comparison.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-library-performance/probe.py"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-library-performance/progress.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-library-performance/report-compact-attempt.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-library-performance/report-control-correction.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-library-performance/report-desktop-stop.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-library-performance/report-final.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-library-performance/report-local-artwork.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-library-performance/report-resumed.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-library-performance/report-revised-attempt.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-library-performance/report-simultaneous-measurements.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-library-performance/report.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-library-performance/run_check.py"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-library-performance/task-root.txt"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-library-performance/visible-load-final-2026-10-23.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-library-performance/visible-load-root.txt"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-library-performance/visible_server.py"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-pack-auxiliary-files/README.md"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-pack-auxiliary-files/baseline-focused.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-pack-auxiliary-files/cleanup-red.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-pack-auxiliary-files/complete-green.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-pack-auxiliary-files/desktop-normal-import.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-pack-auxiliary-files/evidence-delivery.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-pack-auxiliary-files/final-targeted.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-pack-auxiliary-files/focused-final.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-pack-auxiliary-files/focused.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-pack-auxiliary-files/full-python-completed.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-pack-auxiliary-files/full-python-final.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-pack-auxiliary-files/full-python.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-pack-auxiliary-files/green.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-pack-auxiliary-files/junction-red.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-pack-auxiliary-files/live-manifest-read-only.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-pack-auxiliary-files/live-read-only.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-pack-auxiliary-files/main-checkout-tests.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-pack-auxiliary-files/pre-repair-main-source.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-pack-auxiliary-files/red.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-pack-auxiliary-files/save-path-green.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-pack-auxiliary-files/save-path-red.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/tv-pack-auxiliary-files/source-delivery.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/upcoming-movies/2026-10-12/desktop-upcoming.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/upcoming-movies/2026-10-12/discover-upcoming-advanced.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/upcoming-movies/2026-10-12/discover-upcoming-final.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/upcoming-movies/2026-10-12/discover-upcoming-first.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/upcoming-movies/2026-10-12/home-upcoming.png"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/upcoming-movies/2026-10-12/node-suite.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/upcoming-movies/2026-10-12/python-focused.log"
+    },
+    {
+      "status": "??",
+      "path": "docs/verification/upcoming-movies/2026-10-12/verification.md"
+    },
+    {
+      "status": "??",
+      "path": "native/player/resources/icons/next-file.svg"
+    },
+    {
+      "status": "??",
+      "path": "native/player/resources/icons/playlist.svg"
+    },
+    {
+      "status": "??",
+      "path": "native/player/resources/icons/previous-file.svg"
+    },
+    {
+      "status": "??",
+      "path": "native/player/resources/icons/settings.svg"
+    },
+    {
+      "status": "??",
+      "path": "native/player/tools/smoke_queue.py"
+    },
+    {
+      "status": "??",
+      "path": "services/player_queue.py"
+    },
+    {
+      "status": "??",
+      "path": "src/assets/home-film-projector.png"
+    },
+    {
+      "status": "??",
+      "path": "src/components/AnchoredPopover.jsx"
+    },
+    {
+      "status": "??",
+      "path": "src/components/CatalogMetadataFilters.jsx"
+    },
+    {
+      "status": "??",
+      "path": "src/components/HorizontalCardRail.jsx"
+    },
+    {
+      "status": "??",
+      "path": "src/components/ListsToolbar.jsx"
+    },
+    {
+      "status": "??",
+      "path": "src/components/Sidebar.jsx"
+    },
+    {
+      "status": "??",
+      "path": "src/components/Tooltip.jsx"
+    },
+    {
+      "status": "??",
+      "path": "src/components/WorkspaceChrome.jsx"
+    },
+    {
+      "status": "??",
+      "path": "src/components/WorkspaceControls.jsx"
+    },
+    {
+      "status": "??",
+      "path": "src/components/WorkspaceEmptyState.jsx"
+    },
+    {
+      "status": "??",
+      "path": "src/components/WorkspaceSelectionBar.jsx"
+    },
+    {
+      "status": "??",
+      "path": "src/components/WorkspaceViewActions.jsx"
+    },
+    {
+      "status": "??",
+      "path": "src/components/WorkspaceYearRange.jsx"
+    },
+    {
+      "status": "??",
+      "path": "src/components/horizontalCardRail.css"
+    },
+    {
+      "status": "??",
+      "path": "src/components/movie-card/cardArtwork.js"
+    },
+    {
+      "status": "??",
+      "path": "src/features/home/HomeTrailersPanel.jsx"
+    },
+    {
+      "status": "??",
+      "path": "src/features/home/home.css"
+    },
+    {
+      "status": "??",
+      "path": "src/features/home/homeTrailerModel.js"
+    },
+    {
+      "status": "??",
+      "path": "src/features/search/SearchModeSelect.jsx"
+    },
+    {
+      "status": "??",
+      "path": "src/features/tv/TVSeriesCredits.jsx"
+    },
+    {
+      "status": "??",
+      "path": "src/features/tv/tvCardEnrichment.js"
+    },
+    {
+      "status": "??",
+      "path": "src/hooks/useDismissiblePopover.js"
+    },
+    {
+      "status": "??",
+      "path": "src/hooks/useListCatalogFilters.js"
+    },
+    {
+      "status": "??",
+      "path": "src/hooks/useMovieCardScrollReturn.js"
+    },
+    {
+      "status": "??",
+      "path": "src/styles/scrollbars.css"
+    },
+    {
+      "status": "??",
+      "path": "src/utils/catalogFilterOptions.js"
+    },
+    {
+      "status": "??",
+      "path": "src/utils/listCatalogFilters.js"
+    },
+    {
+      "status": "??",
+      "path": "src/utils/scrollbarActivity.js"
+    },
+    {
+      "status": "??",
+      "path": "tests/download_completion_server.py"
+    },
+    {
+      "status": "??",
+      "path": "tests/e2e/card-artwork-performance.spec.js"
+    },
+    {
+      "status": "??",
+      "path": "tests/e2e/following-card.spec.js"
+    },
+    {
+      "status": "??",
+      "path": "tests/e2e/following-refresh.spec.js"
+    },
+    {
+      "status": "??",
+      "path": "tests/e2e/home-dashboard-hybrid.spec.js"
+    },
+    {
+      "status": "??",
+      "path": "tests/e2e/home-header.spec.js"
+    },
+    {
+      "status": "??",
+      "path": "tests/e2e/home-loading.spec.js"
+    },
+    {
+      "status": "??",
+      "path": "tests/e2e/library-search-performance.spec.js"
+    },
+    {
+      "status": "??",
+      "path": "tests/e2e/lists-layout.spec.js"
+    },
+    {
+      "status": "??",
+      "path": "tests/e2e/movie-follow.spec.js"
+    },
+    {
+      "status": "??",
+      "path": "tests/e2e/movie-remaining-qualification.spec.js"
+    },
+    {
+      "status": "??",
+      "path": "tests/e2e/movie-scroll-return.spec.js"
+    },
+    {
+      "status": "??",
+      "path": "tests/e2e/scrollbar.spec.js"
+    },
+    {
+      "status": "??",
+      "path": "tests/e2e/tv-card-density.spec.js"
+    },
+    {
+      "status": "??",
+      "path": "tests/e2e/tv-first-load.spec.js"
+    },
+    {
+      "status": "??",
+      "path": "tests/e2e/tv-follow-season-packs.spec.js"
+    },
+    {
+      "status": "??",
+      "path": "tests/e2e/tv-visible-load.spec.js"
+    },
+    {
+      "status": "??",
+      "path": "tests/e2e/upcoming-movies.spec.js"
+    },
+    {
+      "status": "??",
+      "path": "tests/e2e/workspace-controls-empty-layout.spec.js"
+    },
+    {
+      "status": "??",
+      "path": "tests/fixtures/library_search_contract.json"
+    },
+    {
+      "status": "??",
+      "path": "tests/fixtures/tv_artwork.svg"
+    },
+    {
+      "status": "??",
+      "path": "tests/home-trailer-model.test.mjs"
+    },
+    {
+      "status": "??",
+      "path": "tests/library-search-requests.test.mjs"
+    },
+    {
+      "status": "??",
+      "path": "tests/list-catalog-filters.test.mjs"
+    },
+    {
+      "status": "??",
+      "path": "tests/list-catalog-performance.test.mjs"
+    },
+    {
+      "status": "??",
+      "path": "tests/movie_follow_server.py"
+    },
+    {
+      "status": "??",
+      "path": "tests/movie_qualification_backend.py"
+    },
+    {
+      "status": "??",
+      "path": "tests/movie_retry_restart_worker.py"
+    },
+    {
+      "status": "??",
+      "path": "tests/run_movie_qualification_desktop.py"
+    },
+    {
+      "status": "??",
+      "path": "tests/test_library_search_performance.py"
+    },
+    {
+      "status": "??",
+      "path": "tests/test_movie_follow_contract.py"
+    },
+    {
+      "status": "??",
+      "path": "tests/test_movie_isolated_qualification.py"
+    },
+    {
+      "status": "??",
+      "path": "tests/test_movie_publication_retries.py"
+    },
+    {
+      "status": "??",
+      "path": "tests/test_movie_remaining_qualification.py"
+    },
+    {
+      "status": "??",
+      "path": "tests/test_player_queue.py"
+    },
+    {
+      "status": "??",
+      "path": "tests/test_player_queue_api.py"
+    },
+    {
+      "status": "??",
+      "path": "tests/test_player_queue_session.py"
+    },
+    {
+      "status": "??",
+      "path": "tests/test_player_unicode_runtime.py"
+    },
+    {
+      "status": "??",
+      "path": "tests/test_tv_credit_portraits.py"
+    },
+    {
+      "status": "??",
+      "path": "tests/test_tv_follow_season_planning.py"
+    },
+    {
+      "status": "??",
+      "path": "tests/test_tv_library_read_performance.py"
+    },
+    {
+      "status": "??",
+      "path": "tests/test_tv_list_filters.py"
+    },
+    {
+      "status": "??",
+      "path": "tests/test_tv_source_diagnostics.py"
+    },
+    {
+      "status": "??",
+      "path": "tests/test_upcoming_discover.py"
+    },
+    {
+      "status": "??",
+      "path": "tests/tv_card_enrichment.test.mjs"
+    },
+    {
+      "status": "??",
+      "path": "tools/movie_search_retry_capture.py"
+    },
+    {
+      "status": "??",
+      "path": "tools/run_movie_isolated_qualification.py"
+    },
+    {
+      "status": "??",
+      "path": "tools/tv_discover_memory.py"
+    },
+    {
+      "status": "??",
+      "path": "tools/tv_readonly_profile.py"
+    },
+    {
+      "status": "??",
+      "path": "tools/tv_tab_timeline.py"
+    }
+  ],
+  "tracked_dirty_count": 114,
+  "untracked_file_count": 597,
+  "task_product_files": [
+    "app.py",
+    "services/catalog_repository.py",
+    "services/catalog_store.py",
+    "services/library_ingestion.py",
+    "src/features/library/LibraryWorkspace.jsx",
+    "src/features/library/librarySearchRequests.js"
+  ],
+  "task_source_hash_drift": [],
+  "runtime_source_files": {
+    "app.py": {
+      "bytes": 577751,
+      "sha256": "270d0dc519b2c09f3dea4508ed3a5ae5849c33afde7271e41cd974f8e62fb925"
+    },
+    "package-lock.json": {
+      "bytes": 62108,
+      "sha256": "1336b38db06a77f2e9ef36cb891547512d8675a3423be5e1a318c8dd3502e1e7"
+    },
+    "package.json": {
+      "bytes": 702,
+      "sha256": "aaf2a41e0f09903a46191bbaff83eac5b2b8fcfa45a63022b40d72b4f6540896"
+    },
+    "requirements.txt": {
+      "bytes": 98,
+      "sha256": "179a297d89ae91053942ad35e1bed149e4762ba8d812d032986e2d4681b18dc9"
+    },
+    "run.bat": {
+      "bytes": 2333,
+      "sha256": "4d7921898c927005e2dfbd145d024992c87d4b986bde160e8841b3a7c5edc80e"
+    },
+    "services/__init__.py": {
+      "bytes": 40,
+      "sha256": "968d3f4641d5e286922ca66b58d02571a8ada1e5be10e7eaa8396fed46a9b21e"
+    },
+    "services/acquisition_decision.py": {
+      "bytes": 7821,
+      "sha256": "c098d3224a7145d874d0c2d94b94ecd16191f86295616b4350cc01efe581b515"
+    },
+    "services/acquisition_profiles.py": {
+      "bytes": 4158,
+      "sha256": "72dfffbe32f8818f6560444d8b0ca2653dcc636c7647969fad98b8dc56357863"
+    },
+    "services/acquisition_routes.py": {
+      "bytes": 1321,
+      "sha256": "6c4fff75e4c45c4cc9271595fc840f253ba30fa657d2dba6c4fc429dd2463b97"
+    },
+    "services/acquisition_store.py": {
+      "bytes": 19535,
+      "sha256": "3ae81c3520fcdba7a6cf306ff0c3cdbe0e07f69dc01966440eea220b139d2230"
+    },
+    "services/advanced_search.py": {
+      "bytes": 13740,
+      "sha256": "2809a4af326fb9ddf6d51dc45764caa26e8c4f4ac51fd68086ce82ab6703d3db"
+    },
+    "services/ai_control.py": {
+      "bytes": 51107,
+      "sha256": "e7790a2c07a0f123e734a53b65bd8225fdcb6832eb33bb0a2453ebcee048e50a"
+    },
+    "services/ai_control_capabilities.json": {
+      "bytes": 731,
+      "sha256": "f0bb14a2be14aeac3e84b320061e55d8dee7940e7a2804062a058152a010258b"
+    },
+    "services/authoritative_identity.py": {
+      "bytes": 4569,
+      "sha256": "e60f62e5e458473cc9728f801c87fc889c6af3bf5a27f3c49a1dfff88c214bd0"
+    },
+    "services/canonical_catalog.py": {
+      "bytes": 70876,
+      "sha256": "294bca88dddd649f5b8162f7cebc6c9768349865f6d6604b3daf7b9ee9eade28"
+    },
+    "services/catalog_events.py": {
+      "bytes": 4352,
+      "sha256": "793fec3fc5345af86b1cf960a925f0f566d0cdf38878c09f7f41f604ac5fe1cb"
+    },
+    "services/catalog_repository.py": {
+      "bytes": 55887,
+      "sha256": "ee0a2dfa6134f1756608f92c139d86d09bf34db1f58a3d6f31f8ead6926f18c2"
+    },
+    "services/catalog_store.py": {
+      "bytes": 144622,
+      "sha256": "c79086cf39b6b92fbc8124a6837cc133fe9ffdeab0d299e98049d82aa4866b16"
+    },
+    "services/catalog_writer_lease.py": {
+      "bytes": 3932,
+      "sha256": "94790c6a02ee61f1c53c9fb4877e256d8b7fd5e6cffd47286def9f07b59bceaf"
+    },
+    "services/curation_routes.py": {
+      "bytes": 8262,
+      "sha256": "5976e43c0ab9c3807eefdc76b29ec9a36756ee2ca91af6bb57f12ca9674e3221"
+    },
+    "services/curation_store.py": {
+      "bytes": 17794,
+      "sha256": "904a4154eee0af63f0ca32f5f952f901e6c140d6086bc5e3735ccc9ad475d219"
+    },
+    "services/download_monitor.py": {
+      "bytes": 2475,
+      "sha256": "995fd946c239d15b86a1bd3014a036660ec81ce26cbcbfc7f85ddd0d610f0a31"
+    },
+    "services/frontend_routes.py": {
+      "bytes": 1906,
+      "sha256": "4af4ad61e42aef94d5484933183bf51d9b943c0b204a77a1475b0d8e1d332fd5"
+    },
+    "services/identity_audit.py": {
+      "bytes": 9697,
+      "sha256": "a7cbe771f8f9827b157369ef06d5e8c71481c42a0f07adadba431c6f54fa76f9"
+    },
+    "services/identity_decision.py": {
+      "bytes": 45642,
+      "sha256": "5b94f46e8cb4e994c0b68c14f018e62fb611b7038eb92df1c908d40cfb2077f0"
+    },
+    "services/identity_repair.py": {
+      "bytes": 4859,
+      "sha256": "6baec4161e6c95f03b4ca822769ba66fe382b3f9bc69f88a6a389bdf4573ed6f"
+    },
+    "services/identity_verification.py": {
+      "bytes": 14668,
+      "sha256": "20214f097e9bf6a291d90e37028664dd447edd5953ccebc942f62dfa675e92c7"
+    },
+    "services/iptv_enrichment_worker.py": {
+      "bytes": 6292,
+      "sha256": "b5bfb58f571cefaed07eb3c49c2c882b2c3551854c15e77c48e4f2de63b8d13f"
+    },
+    "services/iptv_metadata_settings.py": {
+      "bytes": 6893,
+      "sha256": "805332a06089823467e330d8e6167ceed7fa2369aecdfcc14ea84e70cfe781e4"
+    },
+    "services/iptv_movie_classifier.py": {
+      "bytes": 13603,
+      "sha256": "f8ed5e03d0f8aedf49d481f582a9fffa92380eca18a5835fbf04ad6a55701fba"
+    },
+    "services/iptv_movie_service.py": {
+      "bytes": 78288,
+      "sha256": "d31ebd36d22b357e71d88f9b3cf00fbeafc4988a194f3e07ccf953b567b26b2d"
+    },
+    "services/iptv_movie_store.py": {
+      "bytes": 217416,
+      "sha256": "afc57e2b0962a70a27e86b06a2296e9b637446a470166f75deada776b2cb42c0"
+    },
+    "services/iptv_provider_manager.py": {
+      "bytes": 24745,
+      "sha256": "36cf064d1b6cbe7976cdee64b1a2e51d8e766d1876103d05c5028da74b99fb51"
+    },
+    "services/iptv_routes.py": {
+      "bytes": 28463,
+      "sha256": "3ddf4cc9bbcc38b1a5635abefa76ec0b195b65ea82388330bcb4120464582810"
+    },
+    "services/iptv_service.py": {
+      "bytes": 25480,
+      "sha256": "d5d38f32c2f3dfcc5ac434503802ca630b42bd653731f73b7ee03b2bb0bb4e70"
+    },
+    "services/iptv_store.py": {
+      "bytes": 32025,
+      "sha256": "f96792b81a44f71ece20a8c3afd90f9f296993b0484b45b77c11a446c0182964"
+    },
+    "services/iptv_tmdb.py": {
+      "bytes": 25064,
+      "sha256": "7fd6694c9c3ad4f6052987dbb4bb0e04f7fe58699ed084636be97c36aaf0e4d1"
+    },
+    "services/iptv_xtream.py": {
+      "bytes": 4912,
+      "sha256": "d78a3504caf3c92f1f2caf7be00e989dc526dd0e8cd8a336a0a4a5bdd7e76078"
+    },
+    "services/library_ingestion.py": {
+      "bytes": 69460,
+      "sha256": "995fa23397fe8f6819dca3dacf061841b608f9fcae7a58cb545d29152bace8c9"
+    },
+    "services/library_mutations.py": {
+      "bytes": 7792,
+      "sha256": "aa23300d05791062280c8ac4e47da0c7e70c816879d090934a859480455f5a60"
+    },
+    "services/library_observer.py": {
+      "bytes": 6912,
+      "sha256": "15a6b24b252e7594dea712661797c2447624162ccb9a17ae7d8b38f321c35cfc"
+    },
+    "services/library_startup_catchup.py": {
+      "bytes": 3284,
+      "sha256": "e4db46f61c517c61e7306f6f834d047e5d0044bd16b1c4b4b82c6b294f169d8e"
+    },
+    "services/maintenance_audit.py": {
+      "bytes": 57052,
+      "sha256": "e6cba0df4bb68e1f1324c9652afb67796c66966348f94e278fc6fb63a9bb0da8"
+    },
+    "services/media_assets.py": {
+      "bytes": 29490,
+      "sha256": "5abcd9c8138569a009df7bef7b212876f805afbd61836ac7a57d898def8aa390"
+    },
+    "services/media_file_backfill.py": {
+      "bytes": 9768,
+      "sha256": "fbe4963a490fc2012156156b5b3808df93f2a96b2d89be14a507f1cb80b0b157"
+    },
+    "services/media_file_facts.py": {
+      "bytes": 15584,
+      "sha256": "0e29d65cf5ba7693eeb475c400d66050b66cc786ae1f2480c8b83b3e5c3b79a6"
+    },
+    "services/metadata_migration.py": {
+      "bytes": 7189,
+      "sha256": "e857164dabf779f96727a28efe42aa1c9a855f781ba0554d3047da400f51bcad"
+    },
+    "services/movie_acquisition.py": {
+      "bytes": 13973,
+      "sha256": "a39cb187a445b0bbda87ba34b14f2372f619930a2ddde4e21973e00eed3ef453"
+    },
+    "services/movie_awards_identity.py": {
+      "bytes": 20325,
+      "sha256": "28e333518fa26ff5e67e0c067f48b3374743c0c47ef3f07eb879f7ff80af1ece"
+    },
+    "services/movie_awards_refresh.py": {
+      "bytes": 20738,
+      "sha256": "530fef486699ad17432454cfd533af72b34a5320384e1c7e6e364854a65cdf14"
+    },
+    "services/movie_awards_routes.py": {
+      "bytes": 4082,
+      "sha256": "8ad84ff5aad8d429b6bf2c867e20eface612e9f6d7e614cc88eb3063ea42d0d8"
+    },
+    "services/movie_awards_sources.py": {
+      "bytes": 42488,
+      "sha256": "8c118e98e76e567038be4ef1878f4d61d69e7e3e2b38fcef14b70f7155ac39a2"
+    },
+    "services/movie_awards_store.py": {
+      "bytes": 24424,
+      "sha256": "57457d0678b26127cad3f74655fc0953efb0016de09b865bca3d7975ebad4622"
+    },
+    "services/movie_identity.py": {
+      "bytes": 4462,
+      "sha256": "ea7d97681477e4e4fddcc84645a119dde59e8c0e083b6bebdaf34bae2deeef0d"
+    },
+    "services/movie_relationships.py": {
+      "bytes": 7053,
+      "sha256": "b5a32eb3090f1bfb4e3f6022b946f48b8ea4b7076cb2c9f30d6ce7f7aab1c8ab"
+    },
+    "services/playback_history.py": {
+      "bytes": 20190,
+      "sha256": "04f8e534044230b26ced7cb24132203ddb4d59521718157a840a7f9efdca2480"
+    },
+    "services/player_catalog.py": {
+      "bytes": 4761,
+      "sha256": "0215dbb5000b9b68e91f31f3a0effd36304cf0871ac4b91020af966906e40d74"
+    },
+    "services/player_config.py": {
+      "bytes": 15942,
+      "sha256": "3a2c9cf9e14afa6fd215c0227a66659350f41ca644094062c725fd7bae9bc3eb"
+    },
+    "services/player_manager.py": {
+      "bytes": 22713,
+      "sha256": "1e0090d3381b3fbc1fa36995123cef90d1cd1ffb8d8431733bec24a6faca6741"
+    },
+    "services/player_protocol.py": {
+      "bytes": 14630,
+      "sha256": "01f03d4f3bc739d37f1db497b3e3dc4050a1c558adeb367cdc7b2fcfa58502b5"
+    },
+    "services/player_queue.py": {
+      "bytes": 4633,
+      "sha256": "4205e2ba916570126490aedc063f6525f4826e3f8cb5e8334aa3b04a4c07930b"
+    },
+    "services/player_routes.py": {
+      "bytes": 3363,
+      "sha256": "73b7b1b752703635fb85d9befb08ca1b628b91eecd60a608cf7f00c7067645c8"
+    },
+    "services/player_runtime.py": {
+      "bytes": 9979,
+      "sha256": "ebc858e17cb8c59046bb5a48d7eafd6ac8c1405d6cc2f1ab412567071bcf25c2"
+    },
+    "services/player_windows_pipe.py": {
+      "bytes": 5538,
+      "sha256": "e26cb6816f8d22b1662e39a4238e6ec1e51b56fbebebff549aef54159ac15133"
+    },
+    "services/plex_match.py": {
+      "bytes": 6024,
+      "sha256": "a7435e3b33f8bea121293341f997c6792c043e7de7a1f14e38eb8cf2c0b83ac5"
+    },
+    "services/plex_tv.py": {
+      "bytes": 3549,
+      "sha256": "cb0584abff3a99edf4b511add551bdf4952e889f6453b9daeab1cb442cf18ef8"
+    },
+    "services/power_actions.py": {
+      "bytes": 13151,
+      "sha256": "6a682d54cb3493fb22c77c577f7e55662faebb46705cbb15513ddab9bf2ad0cf"
+    },
+    "services/qbittorrent.py": {
+      "bytes": 67823,
+      "sha256": "f0ecd7b91324ee2376227417b6722242819678c7e1db86e3fa7352de7ae33cfe"
+    },
+    "services/quality_catalog.py": {
+      "bytes": 4827,
+      "sha256": "5c45bae57f69bd71b870f0aa8d525882f6241f977c52fcd0a5fbd469d283d65f"
+    },
+    "services/smart_match.py": {
+      "bytes": 21399,
+      "sha256": "daf46cf62357ebce4a4800778b9eea54c3c0c7e9536ea83cadabc85897bdfed3"
+    },
+    "services/source_search.py": {
+      "bytes": 5574,
+      "sha256": "d92a19ccdd828f21b3786aee8479e96c170c4f7cc9ee56eb6fe7c730f5a91325"
+    },
+    "services/streaming_templates.py": {
+      "bytes": 1722,
+      "sha256": "3e88e24525000077b71ea3afb58289d986750c1e1c6ec8a24da0eea25d75fe4b"
+    },
+    "services/subtitle_service.py": {
+      "bytes": 35239,
+      "sha256": "96ff4b258152da7c7c68f20a92c6e8cee5b82ef150742f1bf1fde64b50e801e0"
+    },
+    "services/tmdb_advanced_search.py": {
+      "bytes": 9902,
+      "sha256": "09bb0e53e3ec5c66f1856d01784589352e89ec40cb35ec2cbb7a65331f803725"
+    },
+    "services/tv_acquisition.py": {
+      "bytes": 71604,
+      "sha256": "c7641694b710c27d5d2aba83d3aef4fc3f2091af936857dde05d23b4ed43f22b"
+    },
+    "services/tv_bulk_actions.py": {
+      "bytes": 7928,
+      "sha256": "042865bafd7645e6884abc468095e016f32fadf5195d775cda99f717a17b0956"
+    },
+    "services/tv_catalog_repository.py": {
+      "bytes": 53115,
+      "sha256": "35c4a590a6ad33a28d4c25552c4e7b8ed64ab11924671b3ca705ed89e96df25e"
+    },
+    "services/tv_catalog_store.py": {
+      "bytes": 11393,
+      "sha256": "a8c2bf2c6f593fb60dfa0584f723fa79048d279620ed42448402fd1a99451ac1"
+    },
+    "services/tv_checkpoint.py": {
+      "bytes": 3798,
+      "sha256": "8991981ce259ce401a1d66c260d7ab7774ccb1fd80a9cf5640de4c09ef8eb5f2"
+    },
+    "services/tv_filename_parser.py": {
+      "bytes": 10100,
+      "sha256": "2b7bf73b1abd52411cdd46a8cdf939aa3bd1c2cd33d6e49932234794ed5fe89f"
+    },
+    "services/tv_ingestion.py": {
+      "bytes": 12458,
+      "sha256": "74588215f0b7c62330ef6ce27ec68109a46d001c5cc55b2b23bc43d89205c07a"
+    },
+    "services/tv_library_discovery.py": {
+      "bytes": 9320,
+      "sha256": "a909df877b77ec9ae62b7805587b9ecc5b8e48fdc1ec234c0fe2c0e0c7ff2e77"
+    },
+    "services/tv_metadata.py": {
+      "bytes": 15200,
+      "sha256": "5ecef6623ebfacee8fa626f34c4aee10a1f23057dbe81a3328c49f62322c8a68"
+    },
+    "services/tv_monitoring.py": {
+      "bytes": 61128,
+      "sha256": "3720a69aa35f8f623a455fbcf58c4fbefbe26cfe615a8537e0e327d21beec121"
+    },
+    "services/tv_playback.py": {
+      "bytes": 7643,
+      "sha256": "dc4760b073dd25f7aefdc3d55327d3e3066d4e067597592148ab8331fd0d851b"
+    },
+    "services/tv_read_model.py": {
+      "bytes": 17861,
+      "sha256": "f03d8a5deaed50c3e2768779395a41bf1ad4551b19c98c7c4fcbc3313b7ff391"
+    },
+    "services/tv_routes.py": {
+      "bytes": 26761,
+      "sha256": "666fcecf6475573102dfe6285a6ebf77b1477b02d89c486aa4367a81b90e8fd4"
+    },
+    "services/tv_search.py": {
+      "bytes": 27931,
+      "sha256": "bbbcf81d7b34fa9cb00bfe978d3673df146dbff8c7e8dcf1696b0ca9c11592fa"
+    },
+    "services/tv_services.py": {
+      "bytes": 1893,
+      "sha256": "d1e984ac1608fba79dbd47faeb174d835d9812db41ed7d23338ab8a95e736060"
+    },
+    "services/verified_import.py": {
+      "bytes": 16696,
+      "sha256": "78cd0d338e366b3f39c7c747e7a07b2b29ff36a6ec99a56d08b4c96eed29750b"
+    },
+    "services/youtube_playlist.py": {
+      "bytes": 19789,
+      "sha256": "d9b8e733d4e73e24e64c0f3ed274487042c3f9c91a63ae4eaf9401cec36c7bc7"
+    },
+    "src/App.jsx": {
+      "bytes": 102469,
+      "sha256": "940f21066400506a91b8a8ecd5d9d6a164af62019a6b7bbbea839021df4d1b9f"
+    },
+    "src/api/catalogEvents.js": {
+      "bytes": 1598,
+      "sha256": "40524680317e7b69ab9587386449accbebf61e31ea3c9de6abbca933caf33ceb"
+    },
+    "src/api/client.js": {
+      "bytes": 531,
+      "sha256": "e153c97dd253db9a7fc4fffb14760c87869c73b7405e34d5dfc6ccc00b8d056b"
+    },
+    "src/api/curation.js": {
+      "bytes": 3322,
+      "sha256": "1d8113bc33566fd70fe6cae3d1b9dc54e7cf1483bd6b02850e1cc570c3e379c9"
+    },
+    "src/api/homeTrailers.js": {
+      "bytes": 2547,
+      "sha256": "e47516207ba1954ed6149c05b8088fbf6a4560d2dc4e37935338f70c99569cb2"
+    },
+    "src/api/iptv.js": {
+      "bytes": 10957,
+      "sha256": "753f32c32f0af18c782dd55e347e98f2bf2373001901e12afe47145e1d4ca809"
+    },
+    "src/api/library.js": {
+      "bytes": 3460,
+      "sha256": "e2822ae625ad1fabdcb6f38a19c8f399892aa8b469f9e72dc5df69a8488a2b0f"
+    },
+    "src/api/metadata.js": {
+      "bytes": 1809,
+      "sha256": "bc822fa039a6ce227f0722a4cbcb8965174f0ba4e3459325f2ebcbea8273950c"
+    },
+    "src/api/movieAwards.js": {
+      "bytes": 3726,
+      "sha256": "c88b4bc0cccbfd9c4aaa8426df13e9f48fff5037c69fe18422449ddbc12bbc4c"
+    },
+    "src/api/movieDetails.js": {
+      "bytes": 8888,
+      "sha256": "12d6e82d0d672f81d3b53da71f8b2d44ddabed5d5a3bcc2b5358eb42057e97fa"
+    },
+    "src/api/movieRelationships.js": {
+      "bytes": 1476,
+      "sha256": "5b98885cba2873aefae0a39a2a2800b9b3cb0f82b23932ddbc5834424c22b24f"
+    },
+    "src/api/power.js": {
+      "bytes": 682,
+      "sha256": "2d398059c7130f7bfbd14e13c4dff9feec9ea155f7246b98945c1839827c7e5e"
+    },
+    "src/api/qbittorrent.js": {
+      "bytes": 436,
+      "sha256": "f53f970ada0ad4e250e615eb59d76687cd9ccbbcf7f42d630bebf9014d35446a"
+    },
+    "src/api/sourceReview.js": {
+      "bytes": 628,
+      "sha256": "e299b87c0433a463e4a443a08fe712fb8e541831778f50fca9feb55f270f6114"
+    },
+    "src/api/tvLanguage.js": {
+      "bytes": 747,
+      "sha256": "d5f50457603bbfb233967cfcab51fd345b74a214a9c8043195c9c5493530d136"
+    },
+    "src/assets/header.png": {
+      "bytes": 402602,
+      "sha256": "41584f11eb6ca51eeacc6dedb0262d12faffbe926dbce0f424a0147ce072e506"
+    },
+    "src/assets/home-film-projector.png": {
+      "bytes": 763944,
+      "sha256": "128222be7ea71b87583cb90cc78a35f16f16a7f762b4dfdeb6faa636e0d7cfd5"
+    },
+    "src/assets/logo.svg": {
+      "bytes": 1253,
+      "sha256": "33cbd83ff6e88c7ac88a6ee8596fa017c2493761b5c8bfb76d53ee6ed4ef61f7"
+    },
+    "src/assets/styleguide-motif-crop.png": {
+      "bytes": 119864,
+      "sha256": "b81c2444e32bc2b7f1f2e9d03696db817720c656fe21f73ad45bc28bdcc0430d"
+    },
+    "src/components/AcquisitionDecisionDetails.jsx": {
+      "bytes": 1131,
+      "sha256": "f86bd8c6f1079f4e8f97096140b712ff88a1b6f305e2d264484775b0ef375782"
+    },
+    "src/components/AnchoredPopover.jsx": {
+      "bytes": 2836,
+      "sha256": "b06cea2ef5029dd55ab8338f69410cf84137f1af2389f27220878562c75c6bc2"
+    },
+    "src/components/AppErrorBoundary.jsx": {
+      "bytes": 1229,
+      "sha256": "88f3a7ed40c34ab6d2d98f4f59d96c12baa741a13f9f97e3ecced9700b84cc6c"
+    },
+    "src/components/CatalogMetadataFilters.jsx": {
+      "bytes": 2050,
+      "sha256": "7f2e7ec0ac0ba162bd84dde2c19715268a081c0c82eec459b578e7f389f546eb"
+    },
+    "src/components/DiscoverResultGrid.jsx": {
+      "bytes": 914,
+      "sha256": "c960a0986aa42af0bf03feb6a34eac0322a27e524b87622839bcefce6527591e"
+    },
+    "src/components/ExperimentalBadge.jsx": {
+      "bytes": 371,
+      "sha256": "ccfdbbafda7c9f9425f25152c9dd9fbfeae78cdc51d647c87731c00227cdf022"
+    },
+    "src/components/ExportCopyDialog.jsx": {
+      "bytes": 8115,
+      "sha256": "c06a0214a54628dafd20845de8d5ee7f5cdafaed17b5f868dab4e6cd638c4c8f"
+    },
+    "src/components/HorizontalCardRail.jsx": {
+      "bytes": 3722,
+      "sha256": "37cce61650885180a9f10e3245301c41bfdc74208c00822fd6ed858a36f5583c"
+    },
+    "src/components/IdentityReviewPanel.jsx": {
+      "bytes": 21864,
+      "sha256": "7164cbd6aa03caa3e2408348754301525c2dc17fd80b8b688c8431b95d2ac876"
+    },
+    "src/components/KeywordSearchCard.jsx": {
+      "bytes": 749,
+      "sha256": "195d3dad2382bae2e22a476c402256026b7abb1a5a3f7d8127fa145b7948ea5b"
+    },
+    "src/components/LibraryControls.jsx": {
+      "bytes": 2955,
+      "sha256": "42a9dcabc66187513ec6804abe8dfbdcc3737e23f352b8582d3fc82b558dccd3"
+    },
+    "src/components/ListEditorModal.jsx": {
+      "bytes": 5446,
+      "sha256": "4759eb5d349fbf9db895481b3694b1d4b5ecebd82ec49037f2cc647668fee1b0"
+    },
+    "src/components/ListsToolbar.jsx": {
+      "bytes": 7790,
+      "sha256": "05b9440fac78f074ddec0a3b37ed5b7479a3393fec2fb45c63777dfa8cbb754b"
+    },
+    "src/components/MetadataAuthorityPanel.jsx": {
+      "bytes": 10310,
+      "sha256": "fe7b42c5d800dfc40fc868bc0528d059295935474e3afc563904d0e98314b2b7"
+    },
+    "src/components/MetadataCorrectionModal.jsx": {
+      "bytes": 14094,
+      "sha256": "ecc8964ffb7b53dfb5263268bb4fc2f964773d02af18b27d9cdce9a8c87cd12f"
+    },
+    "src/components/MovieAwards.jsx": {
+      "bytes": 897,
+      "sha256": "7d7491401caf6f63c8ca710393a2f1658fad7b9e2a408a6e0a7bd63e49f39b7d"
+    },
+    "src/components/MovieAwardsContext.jsx": {
+      "bytes": 1863,
+      "sha256": "63e7cdc9f8a9d52f9d78a1e827e704d29844746b91a05ea2f8fdc590ded36456"
+    },
+    "src/components/MovieLanguageToggle.jsx": {
+      "bytes": 2943,
+      "sha256": "e3a97c8562fde5054a6a8eb7f6d8435a26daf3eb54d459691396367369d162f8"
+    },
+    "src/components/MovieRelationshipNavigation.jsx": {
+      "bytes": 193,
+      "sha256": "9e4173a1c0056d9fb9fadd44c891d047a25ee9476008f34decdd9393a4bb3d22"
+    },
+    "src/components/Pagination.jsx": {
+      "bytes": 1292,
+      "sha256": "73b5f9f4fb5181348697e8f6e8dacebf79c03b788ebe3385846fae1adfe7032e"
+    },
+    "src/components/PersonCreditCard.jsx": {
+      "bytes": 5841,
+      "sha256": "4813b3b0d5533033773e802458334f32ebaec75bc5965ad2156680b677af9873"
+    },
+    "src/components/PersonSearchCard.jsx": {
+      "bytes": 1899,
+      "sha256": "aab7712d00ce8d8ab5812592410eebeb67b7c847e86b1e8de5ba559290cc0dd6"
+    },
+    "src/components/PosterEditorModal.jsx": {
+      "bytes": 7823,
+      "sha256": "08bf2c83cc29c6fe98c18383d9ec4c89e87acb5b9bfb90e7357101833eba486d"
+    },
+    "src/components/Rating.jsx": {
+      "bytes": 359,
+      "sha256": "a9db84c95e6e55aa1eb75ab9aed7b800e076529cd9b9c06f856a839f24bd5c4d"
+    },
+    "src/components/RelatedMovieRail.jsx": {
+      "bytes": 5209,
+      "sha256": "3a6e1ffe2dcd77eb08d5b5281a28375c36c3ee1a7e9a7d1dd643fd1cbeb59134"
+    },
+    "src/components/SelectionCheckbox.jsx": {
+      "bytes": 554,
+      "sha256": "23f7a7d5a250e9922715d4391b8002def3e0d6097f37c90129816896e12f039f"
+    },
+    "src/components/SharedMovieCards.jsx": {
+      "bytes": 31082,
+      "sha256": "e8e1adf76601ce33e69af3a64df3da31060ecebc3e3beb04562a51199bf34787"
+    },
+    "src/components/Sidebar.jsx": {
+      "bytes": 11177,
+      "sha256": "609160c0cbb781e4b282be5bfd1f6c1ff1bdd4ae3f122c09d21a306831adbbbe"
+    },
+    "src/components/SmartMatchPanel.jsx": {
+      "bytes": 16825,
+      "sha256": "c0e8b76e033dd6375bb3c51b6c943abe04295b5070fa766ed495fb5fa90ef5d8"
+    },
+    "src/components/SourceReviewDialog.jsx": {
+      "bytes": 7577,
+      "sha256": "2076aab8214949e1a432619185420db90dabbb02e2bce916f1b504b4d86c5946"
+    },
+    "src/components/Tooltip.jsx": {
+      "bytes": 3335,
+      "sha256": "00573ab325989c375679486be2e1a939976b19be4a333d8b2bbd33c3a65f6f21"
+    },
+    "src/components/TorrentActions.jsx": {
+      "bytes": 3890,
+      "sha256": "51bee81464152d94dc0d8f5933859a09e73bd37e21c04c606ca70e8d7ae4c2a2"
+    },
+    "src/components/WorkspaceChrome.jsx": {
+      "bytes": 230,
+      "sha256": "12d6cc58e36bd3f4457c24115cf74454f9694d644243eee89591ac1ccccd2989"
+    },
+    "src/components/WorkspaceControls.jsx": {
+      "bytes": 2498,
+      "sha256": "44ebf84854ff7d4c7a538d54b3700bf9951cefa40fb15b326d61b62d655e6a45"
+    },
+    "src/components/WorkspaceEmptyState.jsx": {
+      "bytes": 347,
+      "sha256": "aba4adca0f8b25dd9c8ed6cabf45392aa22413f5c63e61c802dfdb38cc3ddbae"
+    },
+    "src/components/WorkspacePathBar.jsx": {
+      "bytes": 966,
+      "sha256": "ac7f1c25ad6338d505f89444147aa0984170544845a445883dac85b64ecea747"
+    },
+    "src/components/WorkspaceSelectionBar.jsx": {
+      "bytes": 854,
+      "sha256": "4803c1b8273a2dd8d2c7a5f20cb6a179e63ae23abc637abeffc58e61e8e66482"
+    },
+    "src/components/WorkspaceViewActions.jsx": {
+      "bytes": 956,
+      "sha256": "4273751ba085cac962e5c370e9b6e4276eb853bafe8dd55a320a6eaf5d7e1c2e"
+    },
+    "src/components/WorkspaceYearRange.jsx": {
+      "bytes": 166,
+      "sha256": "15337607e1e015102ea782c46b5f3592c727f5fa24116d2e5dcfc6e23fdbe5bf"
+    },
+    "src/components/horizontalCardRail.css": {
+      "bytes": 5227,
+      "sha256": "4c445f2a9d41f401673e5378c78540f6750cd72f0b8a5558907c3d01d97034a7"
+    },
+    "src/components/movie-card/MovieCard.jsx": {
+      "bytes": 15880,
+      "sha256": "2122563c69430864bbadd4b0410a99038d78e701ebe8351d8f99dbba4cf298b0"
+    },
+    "src/components/movie-card/cardArtwork.js": {
+      "bytes": 3408,
+      "sha256": "c2033fbadbafc9c6a8397c717b341bb1959d876802cdd8b9cf64faed9fadebd1"
+    },
+    "src/components/movie-card/expandedCardViewport.js": {
+      "bytes": 1077,
+      "sha256": "8c15d672f52c2ec55a3b4a233a35273b8037ed36146e28c4db04c000c97c5970"
+    },
+    "src/components/movie-card/movieCard.css": {
+      "bytes": 15331,
+      "sha256": "0b62f472f9da59855cabfdcf9ef168ec707dc8b19904c0d6d1442d0f22e64e70"
+    },
+    "src/discoverUtils.js": {
+      "bytes": 7200,
+      "sha256": "623b964448e30e101c20fcfaa5b6fb6f63271c300ae0970ece5946367befb361"
+    },
+    "src/features/ai-control/AIControlWorkspace.jsx": {
+      "bytes": 32557,
+      "sha256": "ef1f2ffb2878db07e6b6253ac81eaadec2ee984278539567cc4c00394edaeccd"
+    },
+    "src/features/card-lab/CardLab.jsx": {
+      "bytes": 14639,
+      "sha256": "a5f13fc01d6315a68b4887f56292ab97c70528c2ee3e2562ebb94f1fd6fb425b"
+    },
+    "src/features/cleanup/CleanupWorkspace.jsx": {
+      "bytes": 53195,
+      "sha256": "68c6d3f726e56e60cea85781e6beeba467b490a80ee538bdba8154697f392668"
+    },
+    "src/features/cleanup/TVMaintenanceTab.jsx": {
+      "bytes": 7240,
+      "sha256": "69f660204d2943eb03cb1e22b6df292e964b507bc4fffce2a08bb9066f99b888"
+    },
+    "src/features/discover/DiscoverWorkspace.jsx": {
+      "bytes": 135552,
+      "sha256": "b0ccebcfc7a44ce648b36a401e545a63e1898cec8cd7be66b891f3f1396c6116"
+    },
+    "src/features/downloads/DownloadsWorkspace.jsx": {
+      "bytes": 722,
+      "sha256": "34b5151a651a2bdd2d75655d1f6b86730b16524c56475906f7b9238ecf3afd3d"
+    },
+    "src/features/help/HelpWorkspace.jsx": {
+      "bytes": 26338,
+      "sha256": "fe85e980f0a0383f5c8cd8bba3a1bec10640525782419198fe96bad3d7895248"
+    },
+    "src/features/home/HomeTrailersPanel.jsx": {
+      "bytes": 5025,
+      "sha256": "6323d9b4bf56550e4e7f553e13e30fac0841ea8a2131cdb51e6cd5eed01e0bcf"
+    },
+    "src/features/home/HomeWorkspace.jsx": {
+      "bytes": 25119,
+      "sha256": "169ba883f07abc7414422c0b06bbf8796b4d314952c14030d82ec996eab49aba"
+    },
+    "src/features/home/home.css": {
+      "bytes": 15383,
+      "sha256": "e6c409e09716fe3d15a32372c5363c2179a0801b9c7ec3aa160e4ab42ba9e12a"
+    },
+    "src/features/home/homeTrailerModel.js": {
+      "bytes": 1383,
+      "sha256": "a26fd7e3bf801bf313ce3b46d734bdd84f09cb249b48f1289f4af6b0ed6a4234"
+    },
+    "src/features/iptv/IPTVListsWorkspace.jsx": {
+      "bytes": 9227,
+      "sha256": "73e22647f686835019d7cca4b3c360e40ceaf43007e8200cd2eb7b18045054fc"
+    },
+    "src/features/iptv/IPTVPlayer.jsx": {
+      "bytes": 5672,
+      "sha256": "cab8463db677e22bee783f605b42a453ba4ff9a0f48a705b6992e91711466e31"
+    },
+    "src/features/iptv/IPTVWorkspace.jsx": {
+      "bytes": 128166,
+      "sha256": "586bc4a58a8b0fe1c915a1a44bde7368ef70c62f1c38b6651a129b64ec7c4733"
+    },
+    "src/features/iptv/iptv.css": {
+      "bytes": 47151,
+      "sha256": "3f9b40ace1c971e2e894ea0a86605368c2f07356b1dc64a6c0d143a2d0ae0f2a"
+    },
+    "src/features/iptv/iptvMovieFilters.js": {
+      "bytes": 3681,
+      "sha256": "691799e0111ee55d688a4236790311f22f2c39400f3d3e14f5ecf3bdad92aa10"
+    },
+    "src/features/iptv/iptvSyncPolicy.js": {
+      "bytes": 441,
+      "sha256": "3012735cece2c6f3c266694e8511bdd9cf3f2b83c5847cd7da7bdb6d2508ac2b"
+    },
+    "src/features/library/LibraryWorkspace.jsx": {
+      "bytes": 92965,
+      "sha256": "15c0c6c3c98cb6015f166842014fe0612360d0f631617f3f7a894805231bcada"
+    },
+    "src/features/movie-lists/ListsWorkspace.jsx": {
+      "bytes": 2408,
+      "sha256": "c4fe8c7b8bd89391862057d0c6db5bbd0fcdd50833eeabfd72c3ef78b1471361"
+    },
+    "src/features/movie-lists/MovieListsWorkspace.jsx": {
+      "bytes": 43751,
+      "sha256": "a3c098767ba4d160e81b730831282bd9922606904453c57e294bf3d8ecd99a08"
+    },
+    "src/features/movie-lists/TVListsWorkspace.jsx": {
+      "bytes": 11908,
+      "sha256": "a8ee12d4ec4046cd336c102fd604ba9d1287c22e88160e8abc501b1880222a0b"
+    },
+    "src/features/notifications/NotificationWindow.jsx": {
+      "bytes": 4677,
+      "sha256": "6b1cc1d40bf20573e58a003d0f96ecaf4456cf559f9257e4300d305220963b0a"
+    },
+    "src/features/search/AdvancedSearchBuilder.jsx": {
+      "bytes": 24075,
+      "sha256": "f1beaca54fe48c66f759f8169b2a15158f20dd6e1d7613b8f6c029bca01a3bd6"
+    },
+    "src/features/search/SearchField.jsx": {
+      "bytes": 711,
+      "sha256": "b260748a900915412afb23484cc4bd749d86bda7801d392eecdf7e2f3973b495"
+    },
+    "src/features/search/SearchModeSelect.jsx": {
+      "bytes": 266,
+      "sha256": "2cb2180ce8245ddca41bbf678e8f83c03e54bb0731c03d6fd27f293148c3cea7"
+    },
+    "src/features/search/advancedSearchModel.js": {
+      "bytes": 17150,
+      "sha256": "1577b17fd0da6ba8946f6f1863e75d2e16e9f53a34c7c9bd852c8debe37738b2"
+    },
+    "src/features/search/advancedSearchRegistry.js": {
+      "bytes": 2468,
+      "sha256": "0b9c0ba91e817262260bca741336d5bb0f3fe67c5447af6ea33534335c5114ac"
+    },
+    "src/features/settings/AcquisitionProfiles.jsx": {
+      "bytes": 6447,
+      "sha256": "d77d45ac475ba96912fd9db8c07b1a99932edbbc4141a11355696e7ddffb9ea7"
+    },
+    "src/features/settings/SettingsWorkspace.jsx": {
+      "bytes": 104342,
+      "sha256": "b45523db7f3017adc5cfb725abc6f6e9f83c24fd30b27927f2c26c4c190dea6e"
+    },
+    "src/features/settings/TVSettings.jsx": {
+      "bytes": 2270,
+      "sha256": "bbb3852051e4e2913e244f952ad05bc2a5acbb1de9a624ec0967ca5104894eca"
+    },
+    "src/features/settings/ollamaModels.js": {
+      "bytes": 1552,
+      "sha256": "88ef1ae79185a0ebe5e97ce2f25611151952f384e52a243b15068aaf372ffafa"
+    },
+    "src/features/styleguide/StyleGuide.jsx": {
+      "bytes": 12974,
+      "sha256": "d3bbce9b0ce6e5c5d47b1fa7eaa7ec04ce87499cbadecc777cc6e7988660512d"
+    },
+    "src/features/tv/MediaWorkspace.jsx": {
+      "bytes": 3326,
+      "sha256": "9efac33f7de3c18d3cfae59c18e88b62834f3c6739d7ff90ed90d17e9ffc1831"
+    },
+    "src/features/tv/TVAcquisitionReview.jsx": {
+      "bytes": 27042,
+      "sha256": "1133534340e28a7160f2e108dd4a240941537ad9aa23f9bf92cdfcfbdc0e686f"
+    },
+    "src/features/tv/TVBulkActionBar.jsx": {
+      "bytes": 7651,
+      "sha256": "2546d09b5eb5409e78a0f44207c321243f1d704365786ca6eaa5ae88c73cab03"
+    },
+    "src/features/tv/TVDownloads.jsx": {
+      "bytes": 3201,
+      "sha256": "d4a838fec88d478851cca73608dcf2b58ea2fb0d0da5d420bf68c573f8c6f2c8"
+    },
+    "src/features/tv/TVFileView.jsx": {
+      "bytes": 6604,
+      "sha256": "792de5b0a8cfe2a83679c59a449c6e8f354507f8380c52742552516eb3d71eac"
+    },
+    "src/features/tv/TVIngestion.jsx": {
+      "bytes": 2837,
+      "sha256": "4a4b26a61fb7ab8d24673cde5de0bb5f25852037aa65d7cc6d620984cb3357a6"
+    },
+    "src/features/tv/TVLibraryImport.jsx": {
+      "bytes": 822,
+      "sha256": "202333fe3783e6d5849b67c9e0f1de0e07750c3976d958b90992f9442a37650a"
+    },
+    "src/features/tv/TVPosterEditor.jsx": {
+      "bytes": 1332,
+      "sha256": "a30063d727d75e61b1071daff1df7cfe8acc0b5c558a3e9115c658553dff412d"
+    },
+    "src/features/tv/TVSearchControls.jsx": {
+      "bytes": 10922,
+      "sha256": "52ac88cc9d25ac8943fa48f71404670418daec4d835b9fd43adcae94ee3e1208"
+    },
+    "src/features/tv/TVSeriesCredits.jsx": {
+      "bytes": 4448,
+      "sha256": "f6eb6fb6e86d5af17314cb5f13cf2cccc3f82639a373fbc4ced214814eec1ecb"
+    },
+    "src/features/tv/TVWorkspace.jsx": {
+      "bytes": 34899,
+      "sha256": "afdbd97461934a71ec10972425ad549ced0f0e8103a8a17c6ecf598a532904bc"
+    },
+    "src/features/tv/tv.css": {
+      "bytes": 13598,
+      "sha256": "9e48547d09ceba0dea882587aac4f2a240e7dd46d71d70f603b481d7da06e1b3"
+    },
+    "src/features/tv/tvCardEnrichment.js": {
+      "bytes": 1091,
+      "sha256": "b2d7518ef336e87548bb4d779bd34b463e9b788b981a3676a3ba47ff5283a2bb"
+    },
+    "src/hooks/useCardGridMetrics.js": {
+      "bytes": 1571,
+      "sha256": "79dd0514a0898ac019677ad7e2bc87bc935fc1c393df9f066546c15ac61efa95"
+    },
+    "src/hooks/useDismissiblePopover.js": {
+      "bytes": 1799,
+      "sha256": "23a67d747bb9d1cccb71e4319a977dcd93226893df5d4d8aeec1a391cbefe85e"
+    },
+    "src/hooks/useListCatalogFilters.js": {
+      "bytes": 1724,
+      "sha256": "b009b85305b1743ef5cea05fd53670dadb0a4c76cd39d7ba9a52cae9a09cefc5"
+    },
+    "src/hooks/useMovieCardScrollReturn.js": {
+      "bytes": 1551,
+      "sha256": "12f0108a214da6afa95d7883075d3a82f0143f57806a061b4e3f9c8ee4a8f5ca"
+    },
+    "src/hooks/useMovieCollectionCache.js": {
+      "bytes": 3856,
+      "sha256": "d512a05b36161dea6b7269f26a734dd18fd13f4acfbabd7d64ee2e44e3d46f53"
+    },
+    "src/main.jsx": {
+      "bytes": 1083,
+      "sha256": "deff9a865aed1e24e7864974126e5f3c84884d258a2c7846cea8664e1d9a5142"
+    },
+    "src/styles.css": {
+      "bytes": 208266,
+      "sha256": "0972219b615e94117c4d6af7dfc3c2dbf71f484ca9cd0fb536a8296a234f234b"
+    },
+    "src/styles/identityReview.css": {
+      "bytes": 5303,
+      "sha256": "61f3e379ad7215eb47df3ab9c1d1f08c6c99325e817eaac6ba5dc62dd57b3e6d"
+    },
+    "src/styles/metadataAuthority.css": {
+      "bytes": 9196,
+      "sha256": "21a812a1b6788a01e99873386f4df1bb6ac83e1e14c8c3c540802fc2d848767a"
+    },
+    "src/styles/metadataCorrection.css": {
+      "bytes": 2995,
+      "sha256": "017d1abe52f41b13f589becd48fc4398c53db4a029aa6a6b96c79b31b8fea142"
+    },
+    "src/styles/movieAwards.css": {
+      "bytes": 2110,
+      "sha256": "209f7dcb26d8a85651f6832d00af059d6c170c716ad63f2da36c7e1659be69b7"
+    },
+    "src/styles/movieRelationships.css": {
+      "bytes": 5415,
+      "sha256": "ec56155b1f07e9435896151085c6e7c8c036873bed8bddc8e4bc8311594635aa"
+    },
+    "src/styles/playerTheme.css": {
+      "bytes": 825,
+      "sha256": "94d20fa01d83a8c1aa2a6e6a7b3599327f73522cfd14a8d22145c1171955dd40"
+    },
+    "src/styles/posterEditor.css": {
+      "bytes": 3266,
+      "sha256": "193a115cb4b2484c94f8636e1b4cd39889917096a94942426404a570d5d50029"
+    },
+    "src/styles/scrollbars.css": {
+      "bytes": 1914,
+      "sha256": "d59b73cbd49402ee94c6440856deabbb982b6ef40cc146f891541080687ccd38"
+    },
+    "src/styles/smartMatch.css": {
+      "bytes": 3300,
+      "sha256": "219df535c9b7d37a260b62439b7a2369a3d9ef6c22c79c26eb6a9b92af3833e9"
+    },
+    "src/utils/appUtils.js": {
+      "bytes": 4592,
+      "sha256": "0a82e867ef35aaff773196ead69c6f7526bb421a0d5077c724b19959c2caf60a"
+    },
+    "src/utils/cardGrid.js": {
+      "bytes": 2141,
+      "sha256": "ccd258955ef2f47bb2930a755c1f98eaaf913043121601678d119b6faf8a93ac"
+    },
+    "src/utils/catalogFilterOptions.js": {
+      "bytes": 2245,
+      "sha256": "d8b842adaa4625373b7ed653dddb277fdd8c24e1d0daee7908905a6b395f4b97"
+    },
+    "src/utils/cleanupUtils.js": {
+      "bytes": 1837,
+      "sha256": "ed0ff00dc15478f8bd1430c7fcfaf78d89fef0e28884aa69a3d9f86927b6a4ee"
+    },
+    "src/utils/deletionPlan.js": {
+      "bytes": 1246,
+      "sha256": "c7b6c39876297635828a4ae26e04a722174afc414543897273a35f134751dded"
+    },
+    "src/utils/homeMovies.js": {
+      "bytes": 1311,
+      "sha256": "1fd72108c3b5fd24eaa3ad1a0163f72938375adfebd20f0d815fe6789afe3e67"
+    },
+    "src/utils/homeTrailers.js": {
+      "bytes": 3376,
+      "sha256": "b3ca321cc02f9d4582badbe669c300fdb2d520386fcdd4c49881a2f1b236c174"
+    },
+    "src/utils/libraryUtils.js": {
+      "bytes": 24229,
+      "sha256": "1eb63392096a9c1dc5963a014c9466f79102c06d952c2ab16a675848d2a27333"
+    },
+    "src/utils/listCatalogFilters.js": {
+      "bytes": 6672,
+      "sha256": "ea4c777a051625cbb264a6a85edde6234ff1a95278e64c51e2c1a4d0bd47017f"
+    },
+    "src/utils/moviePresentation.js": {
+      "bytes": 1282,
+      "sha256": "a7f8823a81e02e494f111309a48d0f4419c1a61a7c283f33c83daa7023b48794"
+    },
+    "src/utils/scrollbarActivity.js": {
+      "bytes": 974,
+      "sha256": "d94cb7a707ff31f59e718d6e9ac8f84f87be7019f4329bbdb7463dc1fcae97ea"
+    },
+    "static/cinema-paradiso-icon-preview.png": {
+      "bytes": 8580,
+      "sha256": "56996912b62f19e8700e6d4882c5cf8835331972aadf772b1e36ef5f04a77931"
+    },
+    "static/cinema-paradiso.ico": {
+      "bytes": 35306,
+      "sha256": "baebbdf5ae8c929678d8ca3cc641cc2ed11867eb4d2b16127fe99f3086c325f2"
+    },
+    "static/cp-192.png": {
+      "bytes": 27362,
+      "sha256": "3eee2f8a7189a243c08b5f3d0fd412a80e74576fadbe295dc48929a56a64054e"
+    },
+    "static/cp-512.png": {
+      "bytes": 91048,
+      "sha256": "9a4e56f4a7a8fc1e6861480abf9250d4a00ba4e427c685f73056e0bc8c214670"
+    },
+    "static/logo.svg": {
+      "bytes": 1253,
+      "sha256": "33cbd83ff6e88c7ac88a6ee8596fa017c2493761b5c8bfb76d53ee6ed4ef61f7"
+    },
+    "static/manifest.webmanifest": {
+      "bytes": 549,
+      "sha256": "001c18afd8492e7e95a7ba80a8a32afacee857de21436980b9d273e4725473fa"
+    },
+    "static/movie-awards/category-taxonomy.json": {
+      "bytes": 141694,
+      "sha256": "9db7454316079216da8bd7ece27d8df553bacf34c7c3b11266281e06f40d0427"
+    },
+    "static/movie-awards/golden_globe.png": {
+      "bytes": 733273,
+      "sha256": "138a8595012c67287d05d6da8f0f46c397bc3c28834fb1a4e67f4f4450229803"
+    },
+    "static/movie-awards/identity-overrides.json": {
+      "bytes": 5515,
+      "sha256": "482145a84ea0b0f0246c46b484471c655f8d98b5d05a25d2f9235ff327a0374e"
+    },
+    "static/movie-awards/licenses/oscar-data-BSD-2-Clause.txt": {
+      "bytes": 1323,
+      "sha256": "e7e426671e23893c8931d5a02ffdd29564272d7bed5b830efd6a67fd2a99540d"
+    },
+    "static/movie-awards/manifest.json": {
+      "bytes": 7667,
+      "sha256": "c5672e1e986bbfcdafdd136064d01c9838a88fb149271b0f2205ed990e44e3bf"
+    },
+    "static/movie-awards/oscar.png": {
+      "bytes": 387010,
+      "sha256": "89895e4a7e5ffd6558ff3781f0d780e4ec6abc10a0d0468d0a31ef7fbd7a4eda"
+    },
+    "static/movie-awards/seed.json": {
+      "bytes": 2864569,
+      "sha256": "d634b020c4f8410cc1b916eab6c38ab5b389cea749885347f2da51240da918b3"
+    },
+    "tools/cp_window.ps1": {
+      "bytes": 11984,
+      "sha256": "e49d2dc7dd6d31048c7216cfb476766410b46904b4ef00d2c5e4a3ed3b1a59f1"
+    },
+    "tools/stop_stale_backend.ps1": {
+      "bytes": 2148,
+      "sha256": "029eac38700598bfdde950fd6a86c0ad49551e772739c973d44d004b7c55ae00"
+    },
+    "vite.config.js": {
+      "bytes": 1006,
+      "sha256": "a42ec15fc45bce05022b7791b47ec735103ba6034dff2a8d1766456d60e753a5"
+    }
+  },
+  "dirty_runtime_source_files": [
+    {
+      "status": " M",
+      "path": "app.py"
+    },
+    {
+      "status": " M",
+      "path": "services/acquisition_store.py"
+    },
+    {
+      "status": " M",
+      "path": "services/catalog_repository.py"
+    },
+    {
+      "status": " M",
+      "path": "services/catalog_store.py"
+    },
+    {
+      "status": " M",
+      "path": "services/curation_store.py"
+    },
+    {
+      "status": " M",
+      "path": "services/iptv_movie_store.py"
+    },
+    {
+      "status": " M",
+      "path": "services/library_ingestion.py"
+    },
+    {
+      "status": " M",
+      "path": "services/movie_acquisition.py"
+    },
+    {
+      "status": " M",
+      "path": "services/playback_history.py"
+    },
+    {
+      "status": " M",
+      "path": "services/player_catalog.py"
+    },
+    {
+      "status": " M",
+      "path": "services/player_config.py"
+    },
+    {
+      "status": " M",
+      "path": "services/player_manager.py"
+    },
+    {
+      "status": " M",
+      "path": "services/player_protocol.py"
+    },
+    {
+      "status": " M",
+      "path": "services/tv_acquisition.py"
+    },
+    {
+      "status": " M",
+      "path": "services/tv_catalog_repository.py"
+    },
+    {
+      "status": " M",
+      "path": "services/tv_filename_parser.py"
+    },
+    {
+      "status": " M",
+      "path": "services/tv_metadata.py"
+    },
+    {
+      "status": " M",
+      "path": "services/tv_monitoring.py"
+    },
+    {
+      "status": " M",
+      "path": "services/tv_playback.py"
+    },
+    {
+      "status": " M",
+      "path": "services/tv_read_model.py"
+    },
+    {
+      "status": " M",
+      "path": "services/tv_routes.py"
+    },
+    {
+      "status": " M",
+      "path": "services/tv_search.py"
+    },
+    {
+      "status": " M",
+      "path": "services/verified_import.py"
+    },
+    {
+      "status": " M",
+      "path": "src/App.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/api/movieDetails.js"
+    },
+    {
+      "status": " M",
+      "path": "src/components/RelatedMovieRail.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/components/SharedMovieCards.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/components/movie-card/MovieCard.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/components/movie-card/expandedCardViewport.js"
+    },
+    {
+      "status": " M",
+      "path": "src/components/movie-card/movieCard.css"
+    },
+    {
+      "status": " M",
+      "path": "src/discoverUtils.js"
+    },
+    {
+      "status": " M",
+      "path": "src/features/discover/DiscoverWorkspace.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/home/HomeWorkspace.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/iptv/IPTVWorkspace.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/iptv/iptv.css"
+    },
+    {
+      "status": " M",
+      "path": "src/features/library/LibraryWorkspace.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/movie-lists/ListsWorkspace.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/movie-lists/MovieListsWorkspace.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/movie-lists/TVListsWorkspace.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/notifications/NotificationWindow.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/search/AdvancedSearchBuilder.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/search/SearchField.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/tv/MediaWorkspace.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/tv/TVAcquisitionReview.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/tv/TVBulkActionBar.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/tv/TVFileView.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/tv/TVLibraryImport.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/tv/TVSearchControls.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/tv/TVWorkspace.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/features/tv/tv.css"
+    },
+    {
+      "status": " M",
+      "path": "src/main.jsx"
+    },
+    {
+      "status": " M",
+      "path": "src/styles.css"
+    },
+    {
+      "status": " M",
+      "path": "src/styles/identityReview.css"
+    },
+    {
+      "status": " M",
+      "path": "src/styles/metadataAuthority.css"
+    },
+    {
+      "status": " M",
+      "path": "src/styles/movieRelationships.css"
+    },
+    {
+      "status": " M",
+      "path": "src/utils/homeMovies.js"
+    },
+    {
+      "status": "??",
+      "path": "services/player_queue.py"
+    },
+    {
+      "status": "??",
+      "path": "src/assets/home-film-projector.png"
+    },
+    {
+      "status": "??",
+      "path": "src/components/AnchoredPopover.jsx"
+    },
+    {
+      "status": "??",
+      "path": "src/components/CatalogMetadataFilters.jsx"
+    },
+    {
+      "status": "??",
+      "path": "src/components/HorizontalCardRail.jsx"
+    },
+    {
+      "status": "??",
+      "path": "src/components/ListsToolbar.jsx"
+    },
+    {
+      "status": "??",
+      "path": "src/components/Sidebar.jsx"
+    },
+    {
+      "status": "??",
+      "path": "src/components/Tooltip.jsx"
+    },
+    {
+      "status": "??",
+      "path": "src/components/WorkspaceChrome.jsx"
+    },
+    {
+      "status": "??",
+      "path": "src/components/WorkspaceControls.jsx"
+    },
+    {
+      "status": "??",
+      "path": "src/components/WorkspaceEmptyState.jsx"
+    },
+    {
+      "status": "??",
+      "path": "src/components/WorkspaceSelectionBar.jsx"
+    },
+    {
+      "status": "??",
+      "path": "src/components/WorkspaceViewActions.jsx"
+    },
+    {
+      "status": "??",
+      "path": "src/components/WorkspaceYearRange.jsx"
+    },
+    {
+      "status": "??",
+      "path": "src/components/horizontalCardRail.css"
+    },
+    {
+      "status": "??",
+      "path": "src/components/movie-card/cardArtwork.js"
+    },
+    {
+      "status": "??",
+      "path": "src/features/home/HomeTrailersPanel.jsx"
+    },
+    {
+      "status": "??",
+      "path": "src/features/home/home.css"
+    },
+    {
+      "status": "??",
+      "path": "src/features/home/homeTrailerModel.js"
+    },
+    {
+      "status": "??",
+      "path": "src/features/search/SearchModeSelect.jsx"
+    },
+    {
+      "status": "??",
+      "path": "src/features/tv/TVSeriesCredits.jsx"
+    },
+    {
+      "status": "??",
+      "path": "src/features/tv/tvCardEnrichment.js"
+    },
+    {
+      "status": "??",
+      "path": "src/hooks/useDismissiblePopover.js"
+    },
+    {
+      "status": "??",
+      "path": "src/hooks/useListCatalogFilters.js"
+    },
+    {
+      "status": "??",
+      "path": "src/hooks/useMovieCardScrollReturn.js"
+    },
+    {
+      "status": "??",
+      "path": "src/styles/scrollbars.css"
+    },
+    {
+      "status": "??",
+      "path": "src/utils/catalogFilterOptions.js"
+    },
+    {
+      "status": "??",
+      "path": "src/utils/listCatalogFilters.js"
+    },
+    {
+      "status": "??",
+      "path": "src/utils/scrollbarActivity.js"
+    }
+  ],
+  "production_dist": {
+    "path": "C:\\Users\\dante\\Desktop\\cinema paradiso\\dist",
+    "files": {
+      "assets/AIControlWorkspace-CXD49cM2.js": {
+        "bytes": 16829,
+        "sha256": "9dc6fa5f771f9b56fd84fb15a87a5e690991858094ef45dc179030b899240770"
+      },
+      "assets/CardLab-D0HVokO-.js": {
+        "bytes": 11482,
+        "sha256": "5b10dfe0c7da554ba4cdab891e441171a088bf130699c5953aa1081a1c0a5f24"
+      },
+      "assets/CatalogMetadataFilters-Br-Cf_eZ.js": {
+        "bytes": 3106,
+        "sha256": "f8c742564d0d51ce77ed5fe688605528adea74eaabc3d9cd90ad976c1c8f297a"
+      },
+      "assets/CleanupWorkspace-DcOdiauL.js": {
+        "bytes": 63597,
+        "sha256": "a9f8449a683c07f0b66bbf75b1840c138a24d27a661bdb672800430427a58f12"
+      },
+      "assets/DiscoverResultGrid-aN04mdiT.js": {
+        "bytes": 881,
+        "sha256": "7a8f8e95e442c9630b3ed5c645bac9ee93e7320deeda5a70af64116666bda8df"
+      },
+      "assets/DiscoverWorkspace-Bhj4vePC.js": {
+        "bytes": 60227,
+        "sha256": "e20d694a3a8580f2bc13dc326fe64816a40c17576b5da02932ed5f6c16c65df7"
+      },
+      "assets/DownloadsWorkspace-S9JMKEP2.js": {
+        "bytes": 3784,
+        "sha256": "bbdbfb3da3cb28b2113e88d5c4101169acb7de293bba162bf6e1e7df4e440599"
+      },
+      "assets/header-Cr7VYxUL.png": {
+        "bytes": 402602,
+        "sha256": "41584f11eb6ca51eeacc6dedb0262d12faffbe926dbce0f424a0147ce072e506"
+      },
+      "assets/HelpWorkspace-CIk8ZLpA.js": {
+        "bytes": 21465,
+        "sha256": "f930365a0c07ef798ca32b701f4b984dd1eea4861f256e2ea2a6cc65d13a3015"
+      },
+      "assets/home-film-projector-Cy2UE5XO.png": {
+        "bytes": 763944,
+        "sha256": "128222be7ea71b87583cb90cc78a35f16f16a7f762b4dfdeb6faa636e0d7cfd5"
+      },
+      "assets/HomeWorkspace-_NC_Abiy.css": {
+        "bytes": 13554,
+        "sha256": "dce8ea6852fdd5ebe5b064f54be5aff74503e1e65212b3bf3c6fcc8bbb360136"
+      },
+      "assets/HomeWorkspace-DpQlMOmw.js": {
+        "bytes": 22621,
+        "sha256": "516c70995b7ca11dfa632cbdb997a782bb90dfa82ecfd3410d6af258f40cb4ff"
+      },
+      "assets/index-3_nuXu-W.css": {
+        "bytes": 221756,
+        "sha256": "c2399368aebbfc48951873d6f41e1daad871f7f8a2857ab67f40a7143ae14e58"
+      },
+      "assets/index-Cj8tkNX2.js": {
+        "bytes": 273648,
+        "sha256": "612d3d144c818740e2ce0f42d0a5ab3f089908edb4bba0fd572d3f4faf2cabc5"
+      },
+      "assets/iptv-8iAS6ZMQ.js": {
+        "bytes": 6503,
+        "sha256": "fdc8e5859a098379d2582ee3f4568452d3194d9a27634479024e6aa25c9a7f8d"
+      },
+      "assets/IPTVWorkspace-DRuulTon.css": {
+        "bytes": 39889,
+        "sha256": "1a8ee9f41e97deae20b2801e5114670b06ffe56031886ce828679b6656395384"
+      },
+      "assets/IPTVWorkspace-WjhbYepn.js": {
+        "bytes": 96155,
+        "sha256": "ed77eaeaece3e6940275406ceb37fffb32a99152a00c984656d85b2fe35817fb"
+      },
+      "assets/LibraryControls-CGHasCxb.js": {
+        "bytes": 2831,
+        "sha256": "adf2e0c02ebad70c51788e08679a26b92eb77b758e62263be9000f36d97e3f56"
+      },
+      "assets/LibraryWorkspace-CfiBcrjk.js": {
+        "bytes": 47770,
+        "sha256": "ce2ea665b94f17038d345a35a43145e19203535536208174854efef83faae2a0"
+      },
+      "assets/ListsWorkspace-8sSyarEG.js": {
+        "bytes": 46237,
+        "sha256": "21df1c2e5805a006c9515eec9d4fbd7d13b7525d091fe2ad470aeba4c8dc0f4c"
+      },
+      "assets/logo-Dk1rN4XL.svg": {
+        "bytes": 1253,
+        "sha256": "33cbd83ff6e88c7ac88a6ee8596fa017c2493761b5c8bfb76d53ee6ed4ef61f7"
+      },
+      "assets/manifest-BSGbUmFO.webmanifest": {
+        "bytes": 549,
+        "sha256": "001c18afd8492e7e95a7ba80a8a32afacee857de21436980b9d273e4725473fa"
+      },
+      "assets/MetadataCorrectionModal-BSkNfSXo.js": {
+        "bytes": 9925,
+        "sha256": "2224514c5825da87b4470c79612baeb0d927d076672d59ee201eca8ec56e02b2"
+      },
+      "assets/SettingsWorkspace-DWA8f9Tv.js": {
+        "bytes": 84720,
+        "sha256": "75ef345606fd4797f6c007bbb378b3eec5e0ff2a91f1f5c6e70ba35ec7dc0743"
+      },
+      "assets/SourceReviewDialog-BfF--C3-.js": {
+        "bytes": 6629,
+        "sha256": "a7c5eadd474c38121dcf4cbd3d0fc35d7b4c41e4175e7779e2f332998f3a191a"
+      },
+      "assets/StyleGuide-BVRjFmoU.js": {
+        "bytes": 10416,
+        "sha256": "3611bfeb040e816e630c8bac82f11b9e19c79a4adcc9c7dcea92d134c512f728"
+      },
+      "assets/styleguide-motif-crop-B3fTh5_H.png": {
+        "bytes": 119864,
+        "sha256": "b81c2444e32bc2b7f1f2e9d03696db817720c656fe21f73ad45bc28bdcc0430d"
+      },
+      "assets/useMovieCollectionCache-BtJKQC4M.js": {
+        "bytes": 5585,
+        "sha256": "c5f40921d2f78a2a9f29fd72782b4636e74c325b12561b60afe0278538b97065"
+      },
+      "assets/vendor-Bb8JjhAW.js": {
+        "bytes": 3851,
+        "sha256": "63f6b447b655f5fdeee94114448a3e09bc92e8058ddf2ed3b44c16d3967943b3"
+      },
+      "assets/vendor-icons-C8OlgL8L.js": {
+        "bytes": 33109,
+        "sha256": "baab37f381cf116e0d645894cd453f5f70880d20ac4745e936629d64349bef5e"
+      },
+      "assets/vendor-player-Dv34CeeU.js": {
+        "bytes": 353866,
+        "sha256": "84f81a550a2b07e93d1bde4085cb65278a453c352523aabb64571293a4eae8c8"
+      },
+      "assets/vendor-react-CJZMWplS.js": {
+        "bytes": 189824,
+        "sha256": "e697fc45388c3fe8087a2b6812932d72416c70d8872652eb5ffe5b34fa0b1cb9"
+      },
+      "assets/WorkspaceEmptyState-BDDRbUY5.js": {
+        "bytes": 331,
+        "sha256": "ec8b23dddf6eb2f3bc92f50001ed39257ac8728db780f0d67204c2cdbaa2666d"
+      },
+      "assets/WorkspacePathBar-BmCcXNkz.js": {
+        "bytes": 2497,
+        "sha256": "8eec34b613967ba8655017ad2721c2d1964ef64d077eba1ddd0b55c1467f0e0f"
+      },
+      "index.html": {
+        "bytes": 1857,
+        "sha256": "5670d875c3b70b760e7e785637905872e374bed4751e830b6b0c181727362614"
+      }
+    }
+  },
+  "tested_candidate_dist": {
+    "path": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\dist-corrective",
+    "files": {
+      "assets/AIControlWorkspace-HZvPkykp.js": {
+        "bytes": 16829,
+        "sha256": "b04334d8646e3edbf66aae75550fe2dc08c367ea0e333c24cb4055aef6dd3639"
+      },
+      "assets/CardLab-DsmnN8DX.js": {
+        "bytes": 11482,
+        "sha256": "6efc82ede330ca6f8e5ff25a1d8427a2569295f50e21e58724d98b52666658e5"
+      },
+      "assets/CatalogMetadataFilters-CTo03MWP.js": {
+        "bytes": 3106,
+        "sha256": "dbe79d13d54d1d5c18ff34580e1d013cf37e9206a4b0cb3b8e416a4a722475f7"
+      },
+      "assets/CleanupWorkspace-Bf9SaQz_.js": {
+        "bytes": 63597,
+        "sha256": "537aed650458bcee091e167cf9e3dbf50d03700d1bc72959b629f3fcc0d3da2c"
+      },
+      "assets/DiscoverResultGrid-MNsoJA2h.js": {
+        "bytes": 881,
+        "sha256": "1b7d922ebd89e629b2b139c6f81670f7b3284f93018b37b6db4c56618907c5cd"
+      },
+      "assets/DiscoverWorkspace-4z6C_vT2.js": {
+        "bytes": 60227,
+        "sha256": "ffa2325b38e74097bf75892ac8b823dc31294c13bf56b72019aef94718acae02"
+      },
+      "assets/DownloadsWorkspace-CuHskVDD.js": {
+        "bytes": 3784,
+        "sha256": "f832d3f9066735f88b79974f62745c305895204276af9c78cfb961e3b1f34d07"
+      },
+      "assets/header-Cr7VYxUL.png": {
+        "bytes": 402602,
+        "sha256": "41584f11eb6ca51eeacc6dedb0262d12faffbe926dbce0f424a0147ce072e506"
+      },
+      "assets/HelpWorkspace-CIk8ZLpA.js": {
+        "bytes": 21465,
+        "sha256": "f930365a0c07ef798ca32b701f4b984dd1eea4861f256e2ea2a6cc65d13a3015"
+      },
+      "assets/home-film-projector-Cy2UE5XO.png": {
+        "bytes": 763944,
+        "sha256": "128222be7ea71b87583cb90cc78a35f16f16a7f762b4dfdeb6faa636e0d7cfd5"
+      },
+      "assets/HomeWorkspace-_NC_Abiy.css": {
+        "bytes": 13554,
+        "sha256": "dce8ea6852fdd5ebe5b064f54be5aff74503e1e65212b3bf3c6fcc8bbb360136"
+      },
+      "assets/HomeWorkspace-DwaTDwzP.js": {
+        "bytes": 22621,
+        "sha256": "6cfe1cf9d3f379891f41f69027f9582bbbddee587a492c1f57a24d00cf0f0ffc"
+      },
+      "assets/index-3_nuXu-W.css": {
+        "bytes": 221756,
+        "sha256": "c2399368aebbfc48951873d6f41e1daad871f7f8a2857ab67f40a7143ae14e58"
+      },
+      "assets/index-CwW9dSyz.js": {
+        "bytes": 273648,
+        "sha256": "80119c43e061e8a21c37249372106bb9d00cdf2f6d2f1c01d080a0c8224b88e8"
+      },
+      "assets/iptv-OZJyDRwh.js": {
+        "bytes": 6503,
+        "sha256": "2c826f1ea277d19e5d48a6f7f58706fb2b6490053439bbe5b73624a7f1351ba8"
+      },
+      "assets/IPTVWorkspace-B6glMq1T.js": {
+        "bytes": 96155,
+        "sha256": "d33961a8edb18fc5b630ea818d7f9059e7b16fd8a3e30ffb9e891a405afbd6a4"
+      },
+      "assets/IPTVWorkspace-DRuulTon.css": {
+        "bytes": 39889,
+        "sha256": "1a8ee9f41e97deae20b2801e5114670b06ffe56031886ce828679b6656395384"
+      },
+      "assets/LibraryControls-D0rWcd4L.js": {
+        "bytes": 2831,
+        "sha256": "5fbed8927206e89a6fe88549885d3d1238ec0c40bdf2b9245d0e37653376f370"
+      },
+      "assets/LibraryWorkspace-BshmBI4T.js": {
+        "bytes": 48814,
+        "sha256": "9eaff8c3a9de872727e41ef8a3bd581a6a32d269717e185487ccb96befb3a8ea"
+      },
+      "assets/ListsWorkspace-BWUHrznj.js": {
+        "bytes": 46237,
+        "sha256": "f0613f7353d5b90015572c4d119148577b50404f34872ca21bcee0bbb9e9c2af"
+      },
+      "assets/logo-Dk1rN4XL.svg": {
+        "bytes": 1253,
+        "sha256": "33cbd83ff6e88c7ac88a6ee8596fa017c2493761b5c8bfb76d53ee6ed4ef61f7"
+      },
+      "assets/manifest-BSGbUmFO.webmanifest": {
+        "bytes": 549,
+        "sha256": "001c18afd8492e7e95a7ba80a8a32afacee857de21436980b9d273e4725473fa"
+      },
+      "assets/MetadataCorrectionModal-D2l_rHgP.js": {
+        "bytes": 9925,
+        "sha256": "cba610b8bacdcaee9fb46d91b4c3380f0dce15b616980eb91b86c77098a8d819"
+      },
+      "assets/SettingsWorkspace-rfnkZNUf.js": {
+        "bytes": 84720,
+        "sha256": "221b30e92e61e2e8b0ed0653a7875ea82f87bde481b99942c096dba9919d21d3"
+      },
+      "assets/SourceReviewDialog-t9BxdxMW.js": {
+        "bytes": 6629,
+        "sha256": "cf4a935ab2d3875876f8747db5a2016b1912910919c17e0c2aeadf958cdaaabf"
+      },
+      "assets/StyleGuide-j8Ml-njr.js": {
+        "bytes": 10416,
+        "sha256": "5958b6ede78940ab5d8a80974f069cc159211369540c6703b508e1fd63595298"
+      },
+      "assets/styleguide-motif-crop-B3fTh5_H.png": {
+        "bytes": 119864,
+        "sha256": "b81c2444e32bc2b7f1f2e9d03696db817720c656fe21f73ad45bc28bdcc0430d"
+      },
+      "assets/useMovieCollectionCache-CADQ7GXG.js": {
+        "bytes": 5585,
+        "sha256": "2921a10630b54394b8a75b0c2c7b7c7679e41ec0e237a24b738122e5e87cb010"
+      },
+      "assets/vendor-Bb8JjhAW.js": {
+        "bytes": 3851,
+        "sha256": "63f6b447b655f5fdeee94114448a3e09bc92e8058ddf2ed3b44c16d3967943b3"
+      },
+      "assets/vendor-icons-C8OlgL8L.js": {
+        "bytes": 33109,
+        "sha256": "baab37f381cf116e0d645894cd453f5f70880d20ac4745e936629d64349bef5e"
+      },
+      "assets/vendor-player-Dv34CeeU.js": {
+        "bytes": 353866,
+        "sha256": "84f81a550a2b07e93d1bde4085cb65278a453c352523aabb64571293a4eae8c8"
+      },
+      "assets/vendor-react-CJZMWplS.js": {
+        "bytes": 189824,
+        "sha256": "e697fc45388c3fe8087a2b6812932d72416c70d8872652eb5ffe5b34fa0b1cb9"
+      },
+      "assets/WorkspaceEmptyState-BDDRbUY5.js": {
+        "bytes": 331,
+        "sha256": "ec8b23dddf6eb2f3bc92f50001ed39257ac8728db780f0d67204c2cdbaa2666d"
+      },
+      "assets/WorkspacePathBar-BmCcXNkz.js": {
+        "bytes": 2497,
+        "sha256": "8eec34b613967ba8655017ad2721c2d1964ef64d077eba1ddd0b55c1467f0e0f"
+      },
+      "index.html": {
+        "bytes": 1857,
+        "sha256": "695e94fc071215559545e280c896f3eddd17016c23b6d64dadce22f1651146fa"
+      }
+    }
+  },
+  "bundle_files_with_same_path_and_hash": 15,
+  "candidate_bundle_is_full_tree_not_library_chunk_only": true,
+  "configuration_file": {
+    "path": "C:\\Users\\dante\\Desktop\\cinema paradiso\\config.json",
+    "bytes": 4294,
+    "sha256": "9f4d37123f85f0737661fe0734605da5c75c6ba5da60875e7e4dc9055daa40c9"
+  },
+  "configured_owners": {
+    "user_data_dir": "C:\\Users\\dante\\Desktop\\cinema paradiso\\data",
+    "tmdb_cache_dir": "C:\\Users\\dante\\Desktop\\cinema paradiso\\cache",
+    "movies_dirs": [
+      "E:\\Movies"
+    ],
+    "qbt_mode": "embedded",
+    "movie_database": "C:\\Users\\dante\\AppData\\Local\\Cinema Paradiso\\Catalog\\catalog-read-cb30c1d963c88463.sqlite",
+    "acquisition_database": "C:\\Users\\dante\\Desktop\\cinema paradiso\\data\\acquisition.sqlite",
+    "tv_database": "C:\\Users\\dante\\Desktop\\cinema paradiso\\data\\tv-catalog.sqlite",
+    "iptv_state": "C:\\Users\\dante\\Desktop\\cinema paradiso\\data\\iptv",
+    "metadata_assets": "C:\\Users\\dante\\AppData\\Local\\Cinema Paradiso\\Metadata"
+  },
+  "production_databases_opened": false,
+  "live_http_requests_sent": 0,
+  "current_loaded_backend_source_manifest_available": false,
+  "startup_owners": [
+    "persisted Movie retry recovery",
+    "Movie reconciliation",
+    "Movie filesystem observer",
+    "offline catchup",
+    "qBittorrent import monitor",
+    "native TV library scan",
+    "TV monitor when enabled",
+    "Movie awards refresh"
+  ],
+  "launcher_side_effects": [
+    "pip install -r requirements.txt",
+    "npm install if node_modules absent",
+    "build complete frontend into production dist",
+    "force-stop matching backend",
+    "launch UI window and backend"
+  ],
+  "rollback_blocker": "A copy of current on-disk source is not evidence of the source already loaded in PID56296; no verified complete matching live-source snapshot identified in this preflight.",
+  "initial_listener_pid": 56296,
+  "final_runtime_observation": {
+    "port_5000_listeners": [],
+    "previous_backend_pid_56296_exists": false,
+    "previous_launcher_pid_9800_exists": false,
+    "python_app_processes_found": 0,
+    "cause": "unknown",
+    "process_control_commands_by_this_pass": 0,
+    "live_http_requests_by_this_pass": 0,
+    "start_attempted": false
+  }
+}

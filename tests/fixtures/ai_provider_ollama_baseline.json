@@ -1,0 +1,193 @@
+{
+  "functions": {
+    "app.py:_ollama_api_json": "965688ce4544bd9f014a6b25b0cb2961ad1fa6e23dd37bc1d896c8a19a3f11a5",
+    "app.py:_ollama_chat_content": "20886d0cfeba9fcca36422ab48f085017841c37de0ad54b24b324678a876b9cf",
+    "app.py:_ollama_json_content": "f50c3b934d06d67a47303433e7e9325c6a3d3693bf6ff6e43246202904b6d61f",
+    "app.py:_smart_match_ai_batch": "7c217682e55de1551c2ccdf45e1a8f27d0204b62d7f210e32f4ea8a33a6ac37c",
+    "app.py:_ollama_validate_model": "8acefe980ab34df5950e5ff588198df9285f4e83c5405528047fa2be2faa5774",
+    "app.py:_ollama_validation_error": "81fcc7d9b27fd30a3df52dbbacba8abbf85fb6ad57117238f8e78e3b85ee33b8",
+    "app.py:_ollama_model_name": "4e8e9d9c724146465658af00805fb5932646d0ceb3f644821aaecdd638bb11dd",
+    "app.py:_ollama_is_cloud_model": "35cf74621e987c729b57a22fbec596b939c6c59fee09e53921d1c87e26b3a7bc",
+    "app.py:_ollama_cloud_alias": "d052ee9f6ee48dbbf643451679c1d1986001479f512c8c728359a810726f2648",
+    "app.py:_ollama_merge_cloud_model": "ae19efb9ebe25e125735605c0fa9b738478729e277850750d76aece1832d73bf",
+    "app.py:_ollama_cached_access_scan": "e71bc0538a85817167c79484697aec92d26819f738cb47e2d7c397c117c5dc7e",
+    "app.py:_ollama_apply_access_scan": "f3f4e51952eb8d917747575427c94853f3ff2125a56f0311fbe4c09cb3793f07",
+    "app.py:_ollama_model_choices": "17c33cfdef514e0a55c42c5b6a827667be2a21982157e8a25986f524e26129a9",
+    "app.py:_ollama_http_error_detail": "c657cd18ebef6e84b097b63314282ff3de42ca064ab011d77904715c5db65cb3",
+    "app.py:_ollama_probe_model_access": "8c70de3f54e4233345962ef5f8b1f1f678722bc71d42b6e5f4747129194984d1",
+    "app.py:_ollama_enrich_with_tmdb": "d29d580b1ebffd12569d45bb5026208f4c4ae377749e7607207f2cd88ae5c3f6",
+    "app.py:_ollama_candidate_key": "8d90a6245e6584fcd4c8207e7147a230e789d1c81a9de3cc933bf86fe3bf3bd0",
+    "app.py:ollama_recommend": "671b56fc892075780715bcfb2f024829e9adae6276b5cfb5943b7ffc5e8b66e6",
+    "services/ai_control.py:_parse_intent": "d9655bbfcdac153335c2179dc89a94f5218e4d27f12ec0a940a50e1b3373b912",
+    "services/ai_control.py:_intent_messages": "7c5f8ffd5eeec909eaae40a70ea9d944665433ec1ad0a1de2675cb09934ea9c6",
+    "services/ai_control.py:_heuristic_intent": "aa65f22dd975c9520acffa7f25e59bcdcb0748b46a3d75b2869395948323ce77",
+    "services/iptv_movie_service.py:_run_ollama": "297db4ee2ab47fe49777c36f86d5ab6339953c143b8bf666fbd3e72732ce06b8",
+    "services/iptv_movie_service.py:_ollama_classification_decision": "1be3a86b3896a5733aced4d89c8788ccaadb9167622c88a448c8a32fc3d44595"
+  },
+  "ollama_models_sha256": "88ef1ae79185a0ebe5e97ce2f25611151952f384e52a243b15068aaf372ffafa",
+  "ollama_card_sha256": "f3b77d9c48abde48be5435f7f5db5c406490b69f9c11db7bba6cfe437e6b608a",
+  "wire": {
+    "F1": {
+      "requests": [
+        {
+          "endpoint": "/api/chat",
+          "payload": {
+            "model": "fixture-model",
+            "messages": [
+              {
+                "role": "system",
+                "content": "You are a movie recommendation expert. The user will describe a movie or what they want to watch by mood, memory, feeling, actors, or any detail. Return ONLY valid JSON with this exact shape: {\"recommendations\":[{\"title\":\"...\",\"year\":\"...\",\"reason\":\"one sentence why this matches\"}]}. Return at most 15 feature-length movie candidates. Exclude TV series, miniseries, episodes, books, games, and unreleased films. Use the official movie title and release year. No markdown, no explanation, no extra text — only the JSON object."
+              },
+              {
+                "role": "user",
+                "content": "Synthetic mood"
+              }
+            ],
+            "stream": false,
+            "format": "json"
+          },
+          "timeout": 60
+        }
+      ],
+      "status": 200,
+      "output": {
+        "model": "fixture-model",
+        "results": [
+          {
+            "genres": [],
+            "plot": "",
+            "poster_url": "",
+            "reason": "Synthetic reason.",
+            "title": "Fixture Movie",
+            "tmdb_id": null,
+            "tmdb_rating": "",
+            "tmdb_vote_count": 0,
+            "year": "2001"
+          }
+        ]
+      }
+    },
+    "F2": {
+      "output": {
+        "action": "find",
+        "filters": [
+          {
+            "field": "title",
+            "op": "contains",
+            "value": "Fixture"
+          }
+        ],
+        "source": "tmdb"
+      },
+      "requests": [
+        [
+          {
+            "role": "system",
+            "content": "You extract movie-library command meaning. Return only JSON, no markdown. Fill exactly these flat keys, use empty string when absent: action, subject, subject_type, list_name, owned, quality, genre, year_from, year_to, sort, size_gb, comparison. Allowed: action=find/create_list/download/delete/unclear. subject_type=actor/director/title/genre/library/unknown. owned=owned/unowned/either. sort=top_rated/popular/newest. Examples: \"Alan Rickman movies\" => subject Alan Rickman, subject_type actor. \"unowned Jim Carrey movies in 1080p\" => action download, subject Jim Carrey, subject_type actor, owned unowned, quality 1080p. \"Nolan movies\" => subject Christopher Nolan, subject_type director. \"high rated sci fi from the 80s\" => genre Science Fiction, year_from 1980, year_to 1989, sort top_rated. \"larger than 10 GB\" => size_gb 10, comparison over."
+          },
+          {
+            "role": "user",
+            "content": "{\"prompt\":\"Find Fixture\",\"settings\":{\"enabled\":true,\"trusted_indexers\":[],\"download_quality\":\"1080p\",\"ollama_curated_lists\":false,\"delete_mode\":\"recycle_bin\"}}"
+          }
+        ],
+        [
+          {
+            "role": "system",
+            "content": "Repair the prior response. Return one valid JSON object only, with no markdown."
+          },
+          {
+            "role": "user",
+            "content": "{\"prompt\": \"Find Fixture\", \"invalid_response\": \"invalid json\"}"
+          }
+        ]
+      ]
+    },
+    "F3": {
+      "requests": [
+        [
+          {
+            "role": "system",
+            "content": "For every supplied movie file, infer the canonical theatrical movie title and original release year. Preserve each id. Hints may be malformed and are not authoritative. Return one JSON object shaped as {\"matches\":[{\"id\":\"item-1\",\"title\":\"Movie\",\"year\":\"YYYY\",\"alternatives\":[{\"title\":\"Alias\",\"year\":\"YYYY\"}]}]}. Include up to three alternatives only when useful. Do not omit an id or include markdown."
+          },
+          {
+            "role": "user",
+            "content": "{\"files\": [{\"id\": \"fixture-1\", \"filename\": \"Fixture.2001.mkv\", \"folder_name\": \"Fixture (2001)\", \"title_hint\": \"\", \"year_hint\": \"\"}]}"
+          }
+        ],
+        [
+          {
+            "role": "system",
+            "content": "Repair the prior response. Return only valid JSON in the requested matches shape, exactly once for every supplied id, with no markdown."
+          },
+          {
+            "role": "user",
+            "content": "{\"files\": [{\"id\": \"fixture-1\", \"filename\": \"Fixture.2001.mkv\", \"folder_name\": \"Fixture (2001)\", \"title_hint\": \"\", \"year_hint\": \"\"}], \"invalid_response\": \"{\\\"matches\\\": []}\"}"
+          }
+        ]
+      ],
+      "output": {
+        "matches": {
+          "fixture-1": {
+            "title": "Fixture Movie",
+            "year": "2001",
+            "alternatives": []
+          }
+        },
+        "errors": {}
+      }
+    },
+    "F4": {
+      "output": {
+        "category": "Film",
+        "confidence": 0.95,
+        "method": "ollama",
+        "status": "classified",
+        "mixed": false,
+        "evidence": {
+          "ollama_category": "film",
+          "evidence_summary": "Synthetic evidence",
+          "input_title_count": 1
+        },
+        "review_reason": "",
+        "classifier_version": 1
+      },
+      "requests": [
+        {
+          "playlist_name": "Fixture Films",
+          "sample_titles": [
+            "Fixture Movie"
+          ],
+          "allowed_categories": [
+            "Film",
+            "Sports",
+            "Plays",
+            "Music",
+            "Misc"
+          ],
+          "input_hash": "246f6c1b24c1f7d22f3b029c4c779c131a937872ec58576b5538c4a2e5e14828",
+          "classifier_version": 1
+        }
+      ]
+    },
+    "F5": {
+      "requests": [
+        {
+          "url": "http://127.0.0.1:11434/api/generate",
+          "body": {
+            "model": "fixture-model",
+            "prompt": "Return only strict JSON. Use only the supplied IPTV evidence and allowed categories or candidate IDs. Never invent a TMDB ID. Evidence: {\"mode\":\"rank-real-tmdb-candidates\",\"title\":\"Fixture Movie\",\"year\":2001,\"candidates\":[{\"tmdb_id\":123,\"title\":\"Fixture Movie\",\"year\":2001,\"deterministic_score\":100}]}",
+            "stream": false,
+            "format": "json",
+            "options": {
+              "temperature": 0
+            }
+          },
+          "timeout": 20
+        }
+      ],
+      "output": {
+        "tmdb_id": 123
+      }
+    }
+  }
+}

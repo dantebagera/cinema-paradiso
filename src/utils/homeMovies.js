@@ -7,26 +7,21 @@ function homeMovieKey(movie) {
   ].join('|');
 }
 
-function localDateKey(date) {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, '0');
-  const day = String(date.getDate()).padStart(2, '0');
-  return `${year}-${month}-${day}`;
-}
+export const HOME_UPCOMING_PREVIEW_SIZE = 20;
 
-export function buildUpcomingHomeMovies(results, excludedMovies = [], now = new Date()) {
+// The Upcoming API owns release eligibility; Home owns presentation only.
+export function buildUpcomingHomeMovies(results, excludedMovies = []) {
   const excluded = new Set((excludedMovies || []).map(homeMovieKey));
   const seen = new Set();
-  const today = localDateKey(now);
 
   return (results || [])
     .filter((movie) => {
       const key = homeMovieKey(movie);
-      const releaseDate = String(movie?.release_date || '').trim();
-      if (!key || seen.has(key) || excluded.has(key) || releaseDate < today) return false;
+      if (!key || seen.has(key) || excluded.has(key)) return false;
       seen.add(key);
       return true;
     })
+    .slice(0, HOME_UPCOMING_PREVIEW_SIZE)
     .sort((left, right) => (
       String(left.release_date || '').localeCompare(String(right.release_date || ''))
       || Number(right.popularity || 0) - Number(left.popularity || 0)

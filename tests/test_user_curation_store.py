@@ -481,7 +481,7 @@ class UserCurationStoreTest(unittest.TestCase):
         self.assertEqual(response.get_json()["movie"]["imdb_id"], "tt33764258")
         self.assertEqual(response.get_json()["movie"]["profile_id"], "cp-compatibility")
 
-    def test_followed_scan_only_searches_released_due_watching_movies(self):
+    def test_followed_scan_searches_all_pending_movies_without_date_or_retry_gates(self):
         original_user_data_dir = app._user_data_dir
         now = app.time.mktime((2026, 8, 12, 12, 0, 0, 0, 0, -1))
         with tempfile.TemporaryDirectory() as tmp:
@@ -506,13 +506,16 @@ class UserCurationStoreTest(unittest.TestCase):
             finally:
                 app._user_data_dir = original_user_data_dir
 
-        self.assertEqual(probe.call_count, 1)
-        self.assertEqual(probe.call_args.args[0]["title"], "Due Movie")
-        self.assertEqual(checked["scan_stats"]["eligible"], 1)
-        self.assertEqual(checked["scan_stats"]["skipped"], {"available": 1, "unreleased": 1, "not_due": 1, "unverified_identity": 0})
+        self.assertEqual(probe.call_count, 3)
+        self.assertEqual({call.args[0]["title"] for call in probe.call_args_list},
+                         {"Future Movie", "Recently Checked", "Due Movie"})
+        self.assertEqual(checked["scan_stats"]["eligible"], 3)
+        self.assertEqual(checked["scan_stats"]["skipped"], {"available": 1, "unreleased": 0, "not_due": 0, "unverified_identity": 0})
         by_title = {movie["title"]: movie for movie in checked["movies"]}
         self.assertEqual(by_title["Already Found"]["best_release"], {"title": "saved"})
-        self.assertGreaterEqual(by_title["Future Movie"]["next_check_at"], now)
+        for title in ("Future Movie", "Recently Checked", "Due Movie"):
+            self.assertEqual(by_title[title]["next_check_at"], 0)
+            self.assertEqual(by_title[title]["last_checked"], now)
 
     def test_followed_scan_uses_one_yts_rss_batch_before_prowlarr(self):
         original_user_data_dir = app._user_data_dir
@@ -548,13 +551,14 @@ class UserCurationStoreTest(unittest.TestCase):
                 app._user_data_dir = original_user_data_dir
 
         rss_fetch.assert_called_once_with(limit=100, timeout=app.FOLLOWED_RELEASE_RSS_TIMEOUT_SECONDS)
-        self.assertEqual(probe.call_count, 1)
-        self.assertEqual(probe.call_args.args[0]["title"], "Prowlarr Fallback")
+        self.assertEqual(probe.call_count, 2)
+        self.assertEqual({call.args[0]["title"] for call in probe.call_args_list},
+                         {"Prowlarr Fallback", "Future RSS Miss"})
         self.assertEqual(checked["scan_stats"]["rss_candidates"], 3)
         self.assertEqual(checked["scan_stats"]["rss_matches"], 1)
-        self.assertEqual(checked["scan_stats"]["eligible"], 1)
-        self.assertEqual(checked["scan_stats"]["prowlarr_searches"], 1)
-        self.assertEqual(checked["scan_stats"]["skipped"]["unreleased"], 1)
+        self.assertEqual(checked["scan_stats"]["eligible"], 2)
+        self.assertEqual(checked["scan_stats"]["prowlarr_searches"], 2)
+        self.assertEqual(checked["scan_stats"]["skipped"]["unreleased"], 0)
         by_title = {movie["title"]: movie for movie in checked["movies"]}
         self.assertEqual(by_title["RSS Match"]["status"], "available")
         self.assertEqual(by_title["Prowlarr Fallback"]["status"], "watching")
@@ -599,7 +603,7 @@ class UserCurationStoreTest(unittest.TestCase):
         movie = checked["movies"][0]
         self.assertEqual(movie["status"], "watching")
         self.assertEqual(movie["last_checked"], 0)
-        self.assertEqual(movie["next_check_at"], now + app.FOLLOWED_RELEASE_FAILURE_RETRY_SECONDS)
+        self.assertEqual(movie["next_check_at"], 0)
         self.assertEqual(checked["scan_stats"]["failed_searches"], 1)
 
     def test_followed_scan_bounds_parallel_prowlarr_fallbacks(self):

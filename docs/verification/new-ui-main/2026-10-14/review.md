@@ -1,0 +1,3 @@
+# Independent integration review
+
+Reviewer: integration_review, read-only. Original review found no Critical/Important integration defect; retained main owners, all381frontend imports, candidate launcher/helpers and Upcoming rail test adaptation checked. Suggested full retained-source drift guard was added. Additional IPTV schema-batch repair inspected: no nested-BEGIN, connection-leak or new lock-path issue; existing connection context commits/rolls back each batch. This does not make all migration stages one atomic transaction. No product streaming source change. Final tests and live evidence are executor gates.

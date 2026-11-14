@@ -43,6 +43,7 @@ NON_CARD_FIELDS_BY_DOCUMENT = {
         "identity_revision",
         "observed_at",
         "probed_at",
+        "_ingestion_retry",
     },
     "app_metadata/tmdb_metadata.json": {
         "release_years_checked_at",
@@ -271,98 +272,110 @@ class CatalogRepository:
         finally:
             connection.close()
 
-    def final_card_publication(self, paths):
-        """Atomically publish paths satisfying the authoritative final-card predicate.
+    def _publication_assessments(self, connection, paths):
+        keys = list(dict.fromkeys(os.path.normcase(os.path.normpath(str(path))) for path in paths if str(path).strip()))
+        result = {}
+        for candidate in self.store._candidates_for_path_keys(connection, keys):
+            raw_value = candidate.get("raw_json") or {}
+            if isinstance(raw_value, str):
+                try:
+                    raw_value = json.loads(raw_value)
+                except (TypeError, ValueError):
+                    raw_value = {}
+            raw = dict(raw_value) if isinstance(raw_value, dict) else {}
+            card_value = candidate.get("relational_canonical") or {}
+            if isinstance(card_value, str):
+                try:
+                    card_value = json.loads(card_value)
+                except (TypeError, ValueError):
+                    card_value = {}
+            card = dict(card_value) if isinstance(card_value, dict) else {}
+            valid_probe = (
+                raw.get("probe_status") == "ok"
+                and int(raw.get("probe_size") or -1) == int(raw.get("size") or -2)
+                and float(raw.get("probe_modified_time") or -1) == float(raw.get("modified_time") or -2)
+                and not str(raw.get("probe_error") or "")
+                and int(raw.get("file_facts_version") or 0) == FILE_FACTS_VERSION
+                and int(raw.get("classifier_version") or 0) == QUALITY_CLASSIFIER_VERSION
+            )
+            stable_probe = raw.get('ingest_status') == 'stable' and valid_probe
+            identity_ready = (
+                bool(raw.get("metadata_accepted"))
+                and raw.get("identity_status") == "accepted"
+                and bool(card.get("accepted")) and bool(card.get("movie_key"))
+                and bool(card.get("title")) and bool(str(card.get("year") or ""))
+                and bool(card.get("selected_provider"))
+                and bool(card.get("selected_provider_snapshot"))
+                and card.get("enrichment_status") == "complete"
+                and not bool(card.get("fallback_active"))
+                and int(card.get("metadata_contract_version") or 0) == CANONICAL_CONTRACT_VERSION
+                and card.get("projection_contract") == "canonical_movie_card"
+                and card.get("people_status") in {"complete", "empty"}
+                and all(field in card for field in CANONICAL_CARD_FIELDS)
+            )
+            poster = str(card.get("poster_url") or "")
+            local_poster = str(card.get("local_poster_url") or "")
+            poster_ready = not poster
+            if local_poster.startswith("/api/assets/"):
+                checksum = local_poster.rsplit("/", 1)[-1]
+                asset = connection.execute(
+                    "SELECT status, checksum, local_path FROM media_assets "
+                    "WHERE checksum=? AND status='ready' LIMIT 1",
+                    (checksum,),
+                ).fetchone()
+                poster_ready = bool(
+                    asset and asset[0] == "ready" and asset[1] == checksum
+                    and len(checksum) == 64 and Path(asset[2]).is_file()
+                )
+            eligible = bool(stable_probe and identity_ready and poster_ready)
+            stages = [name for name, ready in (("facts", stable_probe), ("identity", identity_ready), ("assets", poster_ready)) if not ready]
+            if eligible and raw.get("movie_view_publication") != "ready":
+                stages.append("publication")
+            key = candidate["path_key"]
+            result[key] = {
+                "path": raw.get("path") or candidate.get("path") or "",
+                "movie_key": card.get("movie_key") or "",
+                "eligible_to_publish": eligible,
+                "recoverable_prepared": bool(valid_probe and identity_ready and poster_ready and (raw.get('_ingestion_retry') or {}).get('stage') == 'assets'),
+                "publication_committed": eligible and raw.get("movie_view_publication") == "ready",
+                "legacy_visible": "movie_view_publication" not in raw,
+                "required_stages": stages,
+                "blockers": {stage: stage + "_not_ready" for stage in stages},
+            }
+        return result
 
-        Existing catalog rows predate the online-ingestion publication marker and
-        remain visible. New ingestion writes ``movie_view_publication=pending``;
-        this method is the one transition that makes those rows queryable by Movie
-        View, and its media-generation bump is committed before an event is sent.
-        """
-        path_keys = [
-            os.path.normcase(os.path.normpath(str(path or "")))
-            for path in paths or () if str(path or "").strip()
-        ]
-        if not path_keys:
-            return []
+    def publication_status(self, paths):
+        with self.library_read_context() as context:
+            return self._publication_assessments(context["connection"], paths)
+
+    def final_card_publication(self, paths):
+        """Only writer of strict final-card publication; status alone never publishes."""
         ready = []
         changed = False
         with self._lock, self.store.transaction() as connection:
-            candidates = self.store._candidates_for_path_keys(connection, path_keys)
-            for candidate in candidates:
-                raw_value = candidate.get("raw_json") or {}
-                if isinstance(raw_value, str):
-                    try:
-                        raw_value = json.loads(raw_value)
-                    except (TypeError, ValueError):
-                        raw_value = {}
-                raw = dict(raw_value) if isinstance(raw_value, dict) else {}
-                card_value = candidate.get("relational_canonical") or {}
-                if isinstance(card_value, str):
-                    try:
-                        card_value = json.loads(card_value)
-                    except (TypeError, ValueError):
-                        card_value = {}
-                card = dict(card_value) if isinstance(card_value, dict) else {}
-                stable_probe = (
-                    raw.get("ingest_status") == "stable"
-                    and raw.get("probe_status") == "ok"
-                    and int(raw.get("probe_size") or -1) == int(raw.get("size") or -2)
-                    and float(raw.get("probe_modified_time") or -1) == float(raw.get("modified_time") or -2)
-                    and not str(raw.get("probe_error") or "")
-                    and int(raw.get("file_facts_version") or 0) == FILE_FACTS_VERSION
-                    and int(raw.get("classifier_version") or 0) == QUALITY_CLASSIFIER_VERSION
-                )
-                identity_ready = (
-                    bool(raw.get("metadata_accepted"))
-                    and raw.get("identity_status") == "accepted"
-                    and bool(card.get("accepted")) and bool(card.get("movie_key"))
-                    and bool(card.get("title")) and bool(str(card.get("year") or ""))
-                    and bool(card.get("selected_provider"))
-                    and bool(card.get("selected_provider_snapshot"))
-                    and card.get("enrichment_status") == "complete"
-                    and not bool(card.get("fallback_active"))
-                    and int(card.get("metadata_contract_version") or 0) == CANONICAL_CONTRACT_VERSION
-                    and card.get("projection_contract") == "canonical_movie_card"
-                    and card.get("people_status") in {"complete", "empty"}
-                    and all(field in card for field in CANONICAL_CARD_FIELDS)
-                )
-                poster = str(card.get("poster_url") or "")
-                local_poster = str(card.get("local_poster_url") or "")
-                poster_ready = not poster
-                if local_poster.startswith("/api/assets/"):
-                    checksum = local_poster.rsplit("/", 1)[-1]
-                    asset = connection.execute(
-                        "SELECT status, checksum, local_path FROM media_assets "
-                        "WHERE checksum=? AND status='ready' LIMIT 1",
-                        (checksum,),
-                    ).fetchone()
-                    poster_ready = bool(
-                        asset and asset[0] == "ready" and asset[1] == checksum
-                        and len(checksum) == 64 and Path(asset[2]).is_file()
-                    )
-                if not (stable_probe and identity_ready and poster_ready):
+            for key, status in self._publication_assessments(connection, paths).items():
+                if not status["eligible_to_publish"]:
                     continue
-                if raw.get("movie_view_publication") != "ready":
-                    raw["movie_view_publication"] = "ready"
-                    key = candidate.get("path_key") or os.path.normcase(
-                        os.path.normpath(str(raw.get("path") or candidate.get("path") or ""))
-                    )
-                    connection.execute(
-                        "UPDATE media_files SET raw_json=? WHERE path_key=?",
-                        (_json_text(raw), key),
-                    )
+                if not status["publication_committed"]:
+                    connection.execute("UPDATE media_files SET raw_json=json_set(raw_json, '$.movie_view_publication','ready') WHERE path_key=?", (key,))
                     changed = True
-                ready.append({
-                    "path": raw.get("path") or candidate.get("path") or "",
-                    "movie_key": card.get("movie_key"),
-                })
+                ready.append({"path": status["path"], "movie_key": status["movie_key"]})
             if changed:
                 self._bump_generation(connection, ("app_metadata/files.json",))
                 self._cache.pop("app_metadata/files.json", None)
         if changed:
             self.schedule_export("app_metadata/files.json")
         return ready
+
+    @contextmanager
+    def library_read_context(self):
+        connection = self.store.connect()
+        try:
+            connection.execute("BEGIN")
+            row = connection.execute("SELECT value FROM catalog_meta WHERE key='media_generation'").fetchone()
+            yield {"connection": connection, "generation": int(row[0]) if row else 0}
+        finally:
+            connection.close()
 
     @staticmethod
     def _normalize_filter_paths(filters):
@@ -375,7 +388,7 @@ class CatalogRepository:
             ]
         return filters
 
-    def library_page(self, filters=None, *, query=None, page=1, page_size=40, upgrade_path_keys=()):
+    def library_page(self, filters=None, *, query=None, page=1, page_size=40, upgrade_path_keys=(), read_context=None):
         normalized_upgrade_paths = self._normalize_filter_paths({
             "upgrade_path_keys": upgrade_path_keys,
         })["upgrade_path_keys"]
@@ -385,9 +398,10 @@ class CatalogRepository:
             page=page,
             page_size=page_size,
             upgrade_path_keys=normalized_upgrade_paths,
+            read_context=read_context,
         )
 
-    def library_selection_paths(self, filters=None, *, query=None, upgrade_path_keys=()):
+    def library_selection_paths(self, filters=None, *, query=None, upgrade_path_keys=(), read_context=None):
         normalized_upgrade_paths = self._normalize_filter_paths({
             "upgrade_path_keys": upgrade_path_keys,
         })["upgrade_path_keys"]
@@ -395,6 +409,7 @@ class CatalogRepository:
             self._normalize_filter_paths(filters),
             query=query,
             upgrade_path_keys=normalized_upgrade_paths,
+            read_context=read_context,
         )
 
     def library_keywords(self, query="", *, page=1, page_size=50):
@@ -536,6 +551,13 @@ class CatalogRepository:
         name = str(name).replace("\\", "/")
         document = json.loads(json.dumps(document))
         with self._lock, self.store.transaction() as connection:
+            if name == "app_metadata/files.json":
+                latest = connection.execute("SELECT path_key, json_extract(raw_json, '$._ingestion_retry') FROM media_files WHERE json_type(raw_json, '$._ingestion_retry')='object'").fetchall()
+                ledgers = {row[0]: json.loads(row[1]) for row in latest}
+                for key, record in document.get("files", {}).items():
+                    record.pop("_ingestion_retry", None)
+                    if key in ledgers:
+                        record["_ingestion_retry"] = ledgers[key]
             connection.execute(
                 "INSERT OR REPLACE INTO source_documents(name, payload_json) VALUES(?, ?)",
                 (name, _json_text(document)),
@@ -641,6 +663,128 @@ class CatalogRepository:
         finally:
             connection.close()
 
+    def get_records(self, name, keys, *, connection=None):
+        name = str(name).replace("\\", "/")
+        if name not in ROW_DOCUMENT_TABLES:
+            raise KeyError(f"Document does not support row reads: {name}")
+        keys = list(dict.fromkeys(str(key) for key in keys))
+        table, column = ROW_DOCUMENT_TABLES[name]
+        owned = connection is None
+        connection = connection or self.store.connect()
+        try:
+            result = {}
+            for offset in range(0, len(keys), 200):
+                rows = connection.execute(
+                    f"SELECT {column}, raw_json FROM {table} WHERE {column} IN (SELECT value FROM json_each(?))",
+                    (_json_text(keys[offset:offset + 200]),),
+                )
+                result.update((str(row[0]), json.loads(row[1])) for row in rows)
+            return result
+        finally:
+            if owned:
+                connection.close()
+
+    def inventory_entries(self, path_keys, *, connection=None):
+        keys = list(dict.fromkeys(str(key) for key in path_keys))
+        owned = connection is None
+        connection = connection or self.store.connect()
+        try:
+            result = {}
+            for offset in range(0, len(keys), 200):
+                rows = connection.execute("""
+                    SELECT j.key, j.value FROM source_documents d,
+                        json_each(d.payload_json, '$.files') j
+                    WHERE d.name='app_metadata/library_inventory.json'
+                      AND j.key IN (SELECT value FROM json_each(?))
+                """, (_json_text(keys[offset:offset + 200]),))
+                result.update((row[0], json.loads(row[1])) for row in rows)
+            return result
+        finally:
+            if owned:
+                connection.close()
+
+    def patch_inventory(self, upserts, removed_keys):
+        name = 'app_metadata/library_inventory.json'
+        changed = False
+        with self._lock, self.store.transaction() as connection:
+            changed = bool(connection.execute("INSERT OR IGNORE INTO source_documents(name,payload_json) VALUES(?,?)", (name, '{"files":{}}')).rowcount)
+            for key in removed_keys:
+                path = '$.files.' + json.dumps(str(key))
+                changed |= bool(connection.execute(
+                    "UPDATE source_documents SET payload_json=json_remove(payload_json,?) WHERE name=? AND json_type(payload_json,?) IS NOT NULL",
+                    (path, name, path),
+                ).rowcount)
+            for key, value in dict(upserts).items():
+                path = '$.files.' + json.dumps(str(key))
+                payload = _json_text(value)
+                changed |= bool(connection.execute(
+                    "UPDATE source_documents SET payload_json=json_set(payload_json,?,json(?)) WHERE name=? AND COALESCE(json_extract(payload_json,?), '')<>json(?)",
+                    (path, payload, name, path, payload),
+                ).rowcount)
+            if changed:
+                self._cache.pop(name, None)
+                connection.execute("INSERT OR REPLACE INTO catalog_meta(key,value) VALUES('export_dirty','1')")
+        if changed:
+            self.schedule_export(name)
+        return changed
+
+    def patch_file_operational(self, path_key, *, expected_revision, retry_state):
+        state = json.loads(_json_text(retry_state))
+        if int(state.get('revision') or 0) != int(expected_revision) + 1:
+            raise ValueError('Retry revision must advance exactly once')
+        with self._lock, self.store.transaction() as connection:
+            changed = connection.execute("""
+                UPDATE media_files SET raw_json=json_set(raw_json, '$._ingestion_retry', json(?))
+                WHERE path_key=? AND COALESCE(json_extract(raw_json, '$._ingestion_retry.revision'),0)=?
+            """, (_json_text(state), str(path_key), int(expected_revision))).rowcount
+            if changed:
+                self._cache.pop('app_metadata/files.json', None)
+                connection.execute("INSERT OR REPLACE INTO catalog_meta(key,value) VALUES('export_dirty','1')")
+        if changed:
+            self.schedule_export('app_metadata/files.json')
+        return bool(changed)
+
+    def next_retry_admission_order(self):
+        """Allocate operational queue order atomically, without a media revision."""
+        with self._lock, self.store.transaction() as connection:
+            existing = connection.execute(
+                "SELECT value FROM catalog_meta WHERE key='retry_admission_order'"
+            ).fetchone()
+            last = int(existing[0]) if existing is not None else 0
+            order = int(last) + 1
+            connection.execute(
+                "INSERT OR REPLACE INTO catalog_meta(key,value) VALUES('retry_admission_order',?)",
+                (str(order),),
+            )
+            return order
+
+    def retry_records(self, limit=4096):
+        connection = self.store.connect()
+        try:
+            return [json.loads(row[0]) for row in connection.execute("""
+                SELECT raw_json FROM media_files
+                WHERE json_extract(raw_json, '$._ingestion_retry.state') IN ('waiting','running')
+                   OR (json_extract(raw_json, '$._ingestion_retry.state')='complete'
+                       AND json_extract(raw_json, '$._ingestion_retry.handoff.state')='deferred'
+                       AND json_array_length(raw_json, '$._ingestion_retry.source_identity.paths')>1)
+                ORDER BY CASE WHEN json_extract(raw_json, '$._ingestion_retry.state')='complete' THEN 1 ELSE 0 END,
+                    COALESCE(json_extract(raw_json, '$._ingestion_retry.next_due_at'),0),
+                    COALESCE(json_extract(raw_json, '$._ingestion_retry.admission_order'),0),
+                    COALESCE(json_extract(raw_json, '$._ingestion_retry.first_observed_at'),0), rowid
+                LIMIT ?
+            """, (min(max(int(limit), 1), 4096),))]
+        finally:
+            connection.close()
+
+    def path_keys_under_roots(self, roots, *, inventory=False):
+        roots = [os.path.normcase(os.path.normpath(str(root))).rstrip('\\/') for root in roots]
+        source = "SELECT j.key AS path_key FROM source_documents d,json_each(d.payload_json,'$.files') j WHERE d.name='app_metadata/library_inventory.json'" if inventory else 'SELECT path_key FROM media_files'
+        connection = self.store.connect()
+        try:
+            return [row[0] for row in connection.execute(f"SELECT path_key FROM ({source}) WHERE EXISTS (SELECT 1 FROM json_each(?) r WHERE path_key=r.value OR substr(path_key,1,length(r.value)+1)=r.value||?)", (_json_text(roots), os.sep))]
+        finally:
+            connection.close()
+
     def upsert_records(self, name, records):
         name = str(name).replace("\\", "/")
         records = {str(key): json.loads(json.dumps(record or {})) for key, record in dict(records or {}).items()}
@@ -669,6 +813,10 @@ class CatalogRepository:
                     current_record = json.loads(current[0]) if current else None
                 except (TypeError, ValueError):
                     current_record = None
+                if name == 'app_metadata/files.json':
+                    record.pop('_ingestion_retry', None)
+                    if current_record and '_ingestion_retry' in current_record:
+                        record['_ingestion_retry'] = current_record['_ingestion_retry']
                 if current_record is None or card_payload(current_record) != card_payload(record):
                     material_change = True
                 self._upsert_record(connection, name, key, record)
@@ -819,7 +967,7 @@ class CatalogRepository:
             for name, record in records.items():
                 record = {**record, "path": str(new_path)}
                 if name == "app_metadata/files.json" and file_patch:
-                    record.update(file_patch)
+                    record.update({key: value for key, value in file_patch.items() if key != "_ingestion_retry"})
                 self._upsert_record(connection, name, new_key, record)
                 changed_documents.add(name)
             for name, root_key in generic:

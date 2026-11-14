@@ -5,6 +5,9 @@ import re
 import sqlite3
 import tempfile
 import unicodedata
+import collections
+import sys
+import threading
 from contextlib import contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
@@ -134,11 +137,60 @@ def _catalog_sort_key(value):
     return "".join(key)
 
 
-def _catalog_search_key(value):
+def _uncached_catalog_search_key(value):
     """Normalize user-facing catalogue text for spacing-insensitive search."""
     decomposed = unicodedata.normalize("NFKD", _text(value)).casefold()
     without_marks = "".join(char for char in decomposed if not unicodedata.combining(char))
     return "".join(char for char in without_marks if char.isalnum())
+
+
+class SearchNormalizationMemo:
+    """Bounded reuse of pure strings; no catalogue decisions are retained."""
+    def __init__(self, max_entries=32768, max_bytes=32 * 1024 * 1024, max_input_bytes=32 * 1024):
+        self.max_entries, self.max_bytes, self.max_input_bytes = max_entries, max_bytes, max_input_bytes
+        self._items = collections.OrderedDict()
+        self._bytes = 0
+        self._lock = threading.Lock()
+
+    def get(self, value, compute):
+        value = str(value or '')
+        input_bytes = sys.getsizeof(value)
+        if input_bytes > self.max_input_bytes:
+            return compute(value)
+        with self._lock:
+            cached = self._items.get(value)
+            if cached is not None:
+                self._items.move_to_end(value)
+                return cached[0]
+        result = compute(value)
+        # Includes conservative OrderedDict node, tuple and entry overhead.
+        cost = input_bytes + sys.getsizeof(result) + 256
+        if cost > self.max_bytes:
+            return result
+        with self._lock:
+            if value not in self._items:
+                self._items[value] = (result, cost)
+                self._bytes += cost
+                while len(self._items) > self.max_entries or self._bytes > self.max_bytes:
+                    _, (_, removed) = self._items.popitem(last=False)
+                    self._bytes -= removed
+        return result
+
+    def clear(self):
+        with self._lock:
+            self._items.clear()
+            self._bytes = 0
+
+    def info(self):
+        with self._lock:
+            return {'entries': len(self._items), 'bytes': self._bytes}
+
+
+_SEARCH_NORMALIZATION_CACHE = SearchNormalizationMemo()
+
+
+def _catalog_search_key(value):
+    return _SEARCH_NORMALIZATION_CACHE.get(value, _uncached_catalog_search_key)
 
 
 def _identity_key(movie):
@@ -1180,6 +1232,15 @@ class CatalogStore:
             f"INSERT OR REPLACE INTO media_files({columns}) VALUES ({placeholders})",
             values,
         )
+        admission = int(((record or {}).get('_ingestion_retry') or {}).get('admission_order') or 0)
+        if admission > 0:
+            # Ordinary writes and JSON restoration already visit this row. Keep
+            # the operational high-water mark without scanning unrelated files.
+            connection.execute("""
+                INSERT INTO catalog_meta(key,value) VALUES('retry_admission_order',?)
+                ON CONFLICT(key) DO UPDATE SET value=excluded.value
+                WHERE CAST(value AS INTEGER)<CAST(excluded.value AS INTEGER)
+            """, (str(admission),))
 
     @classmethod
     def _import_media_files(cls, connection, document):
@@ -2096,11 +2157,7 @@ class CatalogStore:
         finally:
             connection.close()
 
-    def library_page(self, filters=None, *, query=None, page=1, page_size=40, upgrade_path_keys=()):
-        filters = dict(filters or {})
-        page_size = min(max(int(page_size or 40), 1), 200)
-        page = max(int(page or 1), 1)
-        cte = self._library_effective_cte()
+    def _library_selection_sql(self, filters, query, upgrade_path_keys):
         if query is not None:
             normalized_query, where, parameters = self._advanced_library_filter_sql(
                 query,
@@ -2117,28 +2174,62 @@ class CatalogStore:
             where, parameters = self._library_filter_sql(filters)
             sort_mode = filters.get("sort")
             search_rank_sql, search_rank_parameters = self._library_search_rank_sql(filters.get("query"))
+        return where, parameters, search_rank_sql, search_rank_parameters, self._library_sort_sql(sort_mode)
+
+    @contextmanager
+    def library_read_context(self, read_context=None):
+        if read_context is not None:
+            yield read_context
+            return
         connection = self.connect()
         try:
-            total = int(connection.execute(
-                f"{cte} SELECT COUNT(*) FROM effective e{where}", parameters
-            ).fetchone()[0])
-            total_pages = max(1, (total + page_size - 1) // page_size)
-            page = min(page, total_pages)
+            connection.execute("BEGIN")
+            row = connection.execute("SELECT value FROM catalog_meta WHERE key='media_generation'").fetchone()
+            yield {"connection": connection, "generation": int(row[0]) if row else 0}
+        finally:
+            connection.close()
+
+    def library_page(self, filters=None, *, query=None, page=1, page_size=40, upgrade_path_keys=(), read_context=None):
+        filters = dict(filters or {})
+        page_size = min(max(int(page_size or 40), 1), 200)
+        page = max(int(page or 1), 1)
+        cte = self._library_effective_cte()
+        where, parameters, search_rank_sql, search_rank_parameters, sort_sql = self._library_selection_sql(filters, query, upgrade_path_keys)
+        if search_rank_sql:
+            cte = cte.replace('resolved AS (', 'resolved AS MATERIALIZED (')
+        manager = self.library_read_context(read_context)
+        context = manager.__enter__()
+        connection = context["connection"]
+        try:
+            columns = sorted(set(re.findall(r"e\.([a-z_]+)", sort_sql)) | {"path_key"})
+            projection = ", ".join("e." + column for column in columns)
+            rank_projection = (search_rank_sql or "0") + " AS match_rank"
+            # One narrow matched relation serves exact count and ordered page.
+            rows = connection.execute(f"""
+                {cte},
+                matched AS MATERIALIZED (
+                    SELECT {projection}, {rank_projection}
+                    FROM effective e{where}
+                ),
+                bounds AS (
+                    SELECT COUNT(*) AS total, MAX(1, (COUNT(*) + ? - 1) / ?) AS total_pages FROM matched
+                ),
+                page_bounds AS (
+                    SELECT total, total_pages, MIN(?, total_pages) AS page FROM bounds
+                ),
+                page_rows AS (
+                    SELECT e.path_key, ROW_NUMBER() OVER (ORDER BY e.match_rank, {sort_sql}) AS ordinal
+                    FROM matched e ORDER BY e.match_rank, {sort_sql}
+                    LIMIT ? OFFSET (SELECT (page - 1) * ? FROM page_bounds)
+                )
+                SELECT b.total, b.total_pages, b.page, p.path_key
+                FROM page_bounds b LEFT JOIN page_rows p ON 1=1 ORDER BY p.ordinal
+            """, [*search_rank_parameters, *parameters, page_size, page_size, page, page_size, page_size]).fetchall()
+            total, total_pages, page = (int(rows[0][key]) for key in ("total", "total_pages", "page"))
             offset = (page - 1) * page_size
-            path_keys = [
-                row[0]
-                for row in connection.execute(
-                    f"{cte} SELECT e.path_key FROM effective e{where} "
-                    f"ORDER BY {search_rank_sql + ',' if search_rank_sql else ''} "
-                    f"{self._library_sort_sql(sort_mode)} LIMIT ? OFFSET ?",
-                    [*parameters, *search_rank_parameters, page_size, offset],
-                ).fetchall()
-            ]
+            path_keys = [row["path_key"] for row in rows if row["path_key"] is not None]
             candidates = self._candidates_for_path_keys(connection, path_keys)
-            generation_row = connection.execute(
-                "SELECT value FROM catalog_meta WHERE key='media_generation'"
-            ).fetchone()
-            generation = int(generation_row[0]) if generation_row else 0
+            generation = context["generation"]
             summary = self._library_summary_cache
             if not summary or summary["generation"] != generation:
                 facets = {
@@ -2178,6 +2269,7 @@ class CatalogStore:
                 self._library_summary_cache = summary
             return {
                 "candidates": candidates,
+                "catalog_generation": generation,
                 "total": total,
                 "page": page,
                 "page_size": page_size,
@@ -2188,40 +2280,29 @@ class CatalogStore:
                 "stats": summary["stats"],
             }
         finally:
-            connection.close()
+            manager.__exit__(None, None, None)
 
-    def library_selection_paths(self, filters=None, *, query=None, upgrade_path_keys=()):
+    def library_selection_paths(self, filters=None, *, query=None, upgrade_path_keys=(), read_context=None):
         filters = dict(filters or {})
         cte = self._library_effective_cte()
-        if query is not None:
-            normalized_query, where, parameters = self._advanced_library_filter_sql(
-                query,
-                upgrade_path_keys=upgrade_path_keys,
-            )
-            sort_mode = normalized_query["sort"]["key"]
-            title_group = next(
-                (group for group in normalized_query["groups"] if group["type"] == "title"),
-                None,
-            )
-            title_query = title_group["values"][0]["text"] if title_group else ""
-            search_rank_sql, search_rank_parameters = self._library_search_rank_sql(title_query)
-        else:
-            where, parameters = self._library_filter_sql(filters)
-            sort_mode = filters.get("sort")
-            search_rank_sql, search_rank_parameters = self._library_search_rank_sql(filters.get("query"))
-        connection = self.connect()
+        where, parameters, search_rank_sql, search_rank_parameters, sort_sql = self._library_selection_sql(filters, query, upgrade_path_keys)
+        if search_rank_sql:
+            cte = cte.replace('resolved AS (', 'resolved AS MATERIALIZED (')
+        manager = self.library_read_context(read_context)
+        context = manager.__enter__()
+        connection = context["connection"]
         try:
             return [
                 row[0]
                 for row in connection.execute(
                     f"{cte} SELECT e.path FROM effective e{where} "
                     f"ORDER BY {search_rank_sql + ',' if search_rank_sql else ''} "
-                    f"{self._library_sort_sql(sort_mode)}",
+                    f"{sort_sql}",
                     [*parameters, *search_rank_parameters],
                 ).fetchall()
             ]
         finally:
-            connection.close()
+            manager.__exit__(None, None, None)
 
     @staticmethod
     def _library_keyword_counts_cte():
@@ -2709,9 +2790,10 @@ class CatalogStore:
         finally:
             connection.close()
 
-    def maintenance_candidates(self):
+    def maintenance_candidates(self, *, connection=None):
         """Project maintenance evidence from normalized SQL columns only."""
-        connection = self.connect()
+        owned = connection is None
+        connection = connection or self.connect()
         try:
             rows = connection.execute("""
                 SELECT mf.*,
@@ -2742,7 +2824,8 @@ class CatalogStore:
                 ORDER BY mf.added_time DESC, mf.identity_title COLLATE NOCASE
             """).fetchall()
         finally:
-            connection.close()
+            if owned:
+                connection.close()
 
         candidates = []
         for source in rows:

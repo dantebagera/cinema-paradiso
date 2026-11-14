@@ -1,0 +1,218 @@
+[
+  {
+    "name": "Minimize",
+    "rect": [
+      3280,
+      135,
+      3385,
+      240
+    ]
+  },
+  {
+    "name": "Close",
+    "rect": [
+      3395,
+      135,
+      3500,
+      240
+    ]
+  },
+  {
+    "name": "Previous file",
+    "rect": [
+      390,
+      1765,
+      495,
+      1870
+    ]
+  },
+  {
+    "name": "Pause",
+    "rect": [
+      520,
+      1765,
+      625,
+      1870
+    ]
+  },
+  {
+    "name": "Next: Missing member — Missing locally",
+    "rect": [
+      650,
+      1765,
+      755,
+      1870
+    ]
+  },
+  {
+    "name": "Mute",
+    "rect": [
+      780,
+      1765,
+      885,
+      1870
+    ]
+  },
+  {
+    "name": "Playback speed 1.00",
+    "rect": [
+      2695,
+      1765,
+      2800,
+      1870
+    ]
+  },
+  {
+    "name": "",
+    "rect": [
+      2825,
+      1765,
+      2930,
+      1870
+    ]
+  },
+  {
+    "name": "Subtitles",
+    "rect": [
+      2955,
+      1765,
+      3060,
+      1870
+    ]
+  },
+  {
+    "name": "Playlist",
+    "rect": [
+      3085,
+      1765,
+      3190,
+      1870
+    ]
+  },
+  {
+    "name": "Settings",
+    "rect": [
+      3215,
+      1765,
+      3320,
+      1870
+    ]
+  },
+  {
+    "name": "Enter fullscreen",
+    "rect": [
+      3345,
+      1765,
+      3450,
+      1870
+    ]
+  },
+  {
+    "name": "Chapter 01 · Long chapter name · عنوان طويل  ·  0:00",
+    "rect": [
+      2692,
+      995,
+      3394,
+      1067
+    ]
+  },
+  {
+    "name": "Chapter 02 · Long chapter name · عنوان طويل  ·  0:04",
+    "rect": [
+      2692,
+      1077,
+      3394,
+      1149
+    ]
+  },
+  {
+    "name": "Chapter 03 · Long chapter name · عنوان طويل  ·  0:08",
+    "rect": [
+      2692,
+      1160,
+      3394,
+      1232
+    ]
+  },
+  {
+    "name": "Chapter 04 · Long chapter name · عنوان طويل  ·  0:12",
+    "rect": [
+      2692,
+      1242,
+      3394,
+      1314
+    ]
+  },
+  {
+    "name": "Chapter 05 · Long chapter name · عنوان طويل  ·  0:16",
+    "rect": [
+      2692,
+      1325,
+      3394,
+      1397
+    ]
+  },
+  {
+    "name": "Chapter 06 · Long chapter name · عنوان طويل  ·  0:20",
+    "rect": [
+      2692,
+      1407,
+      3394,
+      1479
+    ]
+  },
+  {
+    "name": "Chapter 07 · Long chapter name · عنوان طويل  ·  0:24",
+    "rect": [
+      2692,
+      1490,
+      3394,
+      1562
+    ]
+  },
+  {
+    "name": "Chapter 08 · Long chapter name · عنوان طويل  ·  0:28",
+    "rect": [
+      2692,
+      1572,
+      3394,
+      1644
+    ]
+  },
+  {
+    "name": "Chapter 09 · Long chapter name · عنوان طويل  ·  0:32",
+    "rect": [
+      2692,
+      1655,
+      3394,
+      1727
+    ]
+  },
+  {
+    "name": "Chapter 10 · Long chapter name · عنوان طويل  ·  0:36",
+    "rect": [
+      2692,
+      1737,
+      3394,
+      1809
+    ]
+  },
+  {
+    "name": "Chapter 11 · Long chapter name · عنوان طويل  ·  0:40",
+    "rect": [
+      2692,
+      1820,
+      3394,
+      1892
+    ]
+  },
+  {
+    "name": "Chapter 12 · Long chapter name · عنوان طويل  ·  0:44",
+    "rect": [
+      2692,
+      1902,
+      3394,
+      1974
+    ]
+  }
+]

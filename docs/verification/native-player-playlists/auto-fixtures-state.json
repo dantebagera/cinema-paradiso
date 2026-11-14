@@ -1,0 +1,302 @@
+{
+  "active": true,
+  "media": {
+    "path_key": "b",
+    "path": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-player-playlists-build\\auto-fixtures\\b.mp4",
+    "title": "Harbor Signals \u00b7 S02E04 \u00b7 Synthetic fixture",
+    "year": "2026",
+    "poster_reference": ""
+  },
+  "generation": 2,
+  "starts": [
+    {
+      "key": "a",
+      "restart": false
+    },
+    {
+      "key": "b",
+      "restart": true
+    }
+  ],
+  "events": [
+    {
+      "key": "a",
+      "media_generation": 1,
+      "protocol": 1,
+      "sequence": 3,
+      "session_id": "67b54314e9d14989b3dc8505e3967c78",
+      "state": "loading",
+      "type": "playback.state"
+    },
+    {
+      "key": "a",
+      "media_generation": 1,
+      "protocol": 1,
+      "sequence": 4,
+      "session_id": "67b54314e9d14989b3dc8505e3967c78",
+      "state": "playing",
+      "type": "playback.state"
+    },
+    {
+      "key": "a",
+      "media_generation": 1,
+      "protocol": 1,
+      "sequence": 5,
+      "session_id": "67b54314e9d14989b3dc8505e3967c78",
+      "tracks": [
+        {
+          "channels": "1",
+          "codec": "aac",
+          "default": true,
+          "external": false,
+          "fingerprint": "audio|und|aac|1|",
+          "forced": false,
+          "hearing_impaired": false,
+          "language": "und",
+          "selected": true,
+          "title": "",
+          "type": "audio"
+        }
+      ],
+      "type": "tracks.changed"
+    },
+    {
+      "key": "a",
+      "media_generation": 1,
+      "protocol": 1,
+      "sequence": 6,
+      "session_id": "67b54314e9d14989b3dc8505e3967c78",
+      "subtitle_delay_ms": 0,
+      "type": "playback.settings"
+    },
+    {
+      "key": "a",
+      "duration_ms": 0,
+      "media_generation": 1,
+      "paused": false,
+      "position_ms": 0,
+      "protocol": 1,
+      "sequence": 7,
+      "session_id": "67b54314e9d14989b3dc8505e3967c78",
+      "type": "progress"
+    },
+    {
+      "key": "a",
+      "duration_ms": 3000,
+      "media_generation": 1,
+      "paused": false,
+      "position_ms": 917,
+      "protocol": 1,
+      "sequence": 8,
+      "session_id": "67b54314e9d14989b3dc8505e3967c78",
+      "type": "progress"
+    },
+    {
+      "key": "a",
+      "duration_ms": 3000,
+      "media_generation": 1,
+      "paused": false,
+      "position_ms": 1917,
+      "protocol": 1,
+      "sequence": 9,
+      "session_id": "67b54314e9d14989b3dc8505e3967c78",
+      "type": "progress"
+    },
+    {
+      "key": "a",
+      "duration_ms": 3000,
+      "media_generation": 1,
+      "paused": false,
+      "position_ms": 2917,
+      "protocol": 1,
+      "sequence": 10,
+      "session_id": "67b54314e9d14989b3dc8505e3967c78",
+      "type": "progress"
+    },
+    {
+      "key": "a",
+      "media_generation": 1,
+      "protocol": 1,
+      "sequence": 11,
+      "session_id": "67b54314e9d14989b3dc8505e3967c78",
+      "state": "ended",
+      "type": "playback.state"
+    },
+    {
+      "key": "a",
+      "media_generation": 1,
+      "protocol": 1,
+      "sequence": 12,
+      "session_id": "67b54314e9d14989b3dc8505e3967c78",
+      "state": "paused",
+      "type": "playback.state"
+    },
+    {
+      "key": "a",
+      "duration_ms": 3000,
+      "media_generation": 1,
+      "paused": true,
+      "position_ms": 2934,
+      "protocol": 1,
+      "sequence": 13,
+      "session_id": "67b54314e9d14989b3dc8505e3967c78",
+      "type": "progress"
+    },
+    {
+      "key": "a",
+      "duration_ms": 3000,
+      "media_generation": 1,
+      "paused": true,
+      "position_ms": 2993,
+      "protocol": 1,
+      "sequence": 14,
+      "session_id": "67b54314e9d14989b3dc8505e3967c78",
+      "type": "progress"
+    },
+    {
+      "key": "b",
+      "accepted": true,
+      "media_generation": 2,
+      "protocol": 1,
+      "sequence": 16,
+      "session_id": "67b54314e9d14989b3dc8505e3967c78",
+      "type": "ready"
+    },
+    {
+      "key": "b",
+      "media_generation": 2,
+      "protocol": 1,
+      "sequence": 17,
+      "session_id": "67b54314e9d14989b3dc8505e3967c78",
+      "state": "loading",
+      "type": "playback.state"
+    },
+    {
+      "key": "b",
+      "media_generation": 2,
+      "protocol": 1,
+      "sequence": 18,
+      "session_id": "67b54314e9d14989b3dc8505e3967c78",
+      "state": "paused",
+      "type": "playback.state"
+    },
+    {
+      "key": "b",
+      "media_generation": 2,
+      "protocol": 1,
+      "sequence": 19,
+      "session_id": "67b54314e9d14989b3dc8505e3967c78",
+      "tracks": [
+        {
+          "channels": "1",
+          "codec": "aac",
+          "default": true,
+          "external": false,
+          "fingerprint": "audio|und|aac|1|",
+          "forced": false,
+          "hearing_impaired": false,
+          "language": "und",
+          "selected": true,
+          "title": "",
+          "type": "audio"
+        }
+      ],
+      "type": "tracks.changed"
+    },
+    {
+      "key": "b",
+      "media_generation": 2,
+      "protocol": 1,
+      "sequence": 20,
+      "session_id": "67b54314e9d14989b3dc8505e3967c78",
+      "subtitle_delay_ms": 0,
+      "type": "playback.settings"
+    },
+    {
+      "key": "b",
+      "duration_ms": 0,
+      "media_generation": 2,
+      "paused": true,
+      "position_ms": 0,
+      "protocol": 1,
+      "sequence": 21,
+      "session_id": "67b54314e9d14989b3dc8505e3967c78",
+      "type": "progress"
+    },
+    {
+      "key": "b",
+      "media_generation": 2,
+      "protocol": 1,
+      "sequence": 22,
+      "session_id": "67b54314e9d14989b3dc8505e3967c78",
+      "state": "playing",
+      "type": "playback.state"
+    },
+    {
+      "key": "b",
+      "duration_ms": 3000,
+      "media_generation": 2,
+      "paused": false,
+      "position_ms": 0,
+      "protocol": 1,
+      "sequence": 23,
+      "session_id": "67b54314e9d14989b3dc8505e3967c78",
+      "type": "progress"
+    },
+    {
+      "key": "b",
+      "duration_ms": 3000,
+      "media_generation": 2,
+      "paused": false,
+      "position_ms": 917,
+      "protocol": 1,
+      "sequence": 24,
+      "session_id": "67b54314e9d14989b3dc8505e3967c78",
+      "type": "progress"
+    },
+    {
+      "key": "b",
+      "duration_ms": 3000,
+      "media_generation": 2,
+      "paused": false,
+      "position_ms": 1917,
+      "protocol": 1,
+      "sequence": 25,
+      "session_id": "67b54314e9d14989b3dc8505e3967c78",
+      "type": "progress"
+    },
+    {
+      "key": "b",
+      "duration_ms": 3000,
+      "media_generation": 2,
+      "paused": false,
+      "position_ms": 2917,
+      "protocol": 1,
+      "sequence": 26,
+      "session_id": "67b54314e9d14989b3dc8505e3967c78",
+      "type": "progress"
+    },
+    {
+      "key": "b",
+      "media_generation": 2,
+      "protocol": 1,
+      "sequence": 27,
+      "session_id": "67b54314e9d14989b3dc8505e3967c78",
+      "state": "ended",
+      "type": "playback.state"
+    }
+  ],
+  "config": {
+    "autoplay": true,
+    "window_state": {
+      "width": 1280,
+      "height": 720,
+      "x": 0,
+      "y": 0,
+      "screen": "",
+      "maximized": false,
+      "always_on_top": false,
+      "positioned": false
+    }
+  }
+}

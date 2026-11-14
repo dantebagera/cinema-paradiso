@@ -1,0 +1,218 @@
+[
+  {
+    "name": "Minimize",
+    "rect": [
+      3280,
+      135,
+      3385,
+      240
+    ]
+  },
+  {
+    "name": "Close",
+    "rect": [
+      3395,
+      135,
+      3500,
+      240
+    ]
+  },
+  {
+    "name": "Previous file",
+    "rect": [
+      390,
+      1765,
+      495,
+      1870
+    ]
+  },
+  {
+    "name": "Pause",
+    "rect": [
+      520,
+      1765,
+      625,
+      1870
+    ]
+  },
+  {
+    "name": "Next: Missing member — Missing locally",
+    "rect": [
+      650,
+      1765,
+      755,
+      1870
+    ]
+  },
+  {
+    "name": "Mute",
+    "rect": [
+      780,
+      1765,
+      885,
+      1870
+    ]
+  },
+  {
+    "name": "Playback speed 1.00",
+    "rect": [
+      2695,
+      1765,
+      2800,
+      1870
+    ]
+  },
+  {
+    "name": "",
+    "rect": [
+      2825,
+      1765,
+      2930,
+      1870
+    ]
+  },
+  {
+    "name": "Subtitles",
+    "rect": [
+      2955,
+      1765,
+      3060,
+      1870
+    ]
+  },
+  {
+    "name": "Playlist",
+    "rect": [
+      3085,
+      1765,
+      3190,
+      1870
+    ]
+  },
+  {
+    "name": "Settings",
+    "rect": [
+      3215,
+      1765,
+      3320,
+      1870
+    ]
+  },
+  {
+    "name": "Enter fullscreen",
+    "rect": [
+      3345,
+      1765,
+      3450,
+      1870
+    ]
+  },
+  {
+    "name": "Find subs",
+    "rect": [
+      2692,
+      995,
+      3394,
+      1067
+    ]
+  },
+  {
+    "name": "Off",
+    "rect": [
+      2692,
+      1090,
+      3394,
+      1162
+    ]
+  },
+  {
+    "name": "Unknown — Subtitle 01 · Long release label · العربية — SUBRIP · Default",
+    "rect": [
+      2692,
+      1172,
+      3394,
+      1244
+    ]
+  },
+  {
+    "name": "Unknown — Subtitle 02 · Long release label · العربية — SUBRIP",
+    "rect": [
+      2692,
+      1255,
+      3394,
+      1327
+    ]
+  },
+  {
+    "name": "Unknown — Subtitle 03 · Long release label · العربية — SUBRIP",
+    "rect": [
+      2692,
+      1337,
+      3394,
+      1409
+    ]
+  },
+  {
+    "name": "Unknown — Subtitle 04 · Long release label · العربية — SUBRIP",
+    "rect": [
+      2692,
+      1420,
+      3394,
+      1492
+    ]
+  },
+  {
+    "name": "Unknown — Subtitle 05 · Long release label · العربية — SUBRIP",
+    "rect": [
+      2692,
+      1502,
+      3394,
+      1574
+    ]
+  },
+  {
+    "name": "Unknown — Subtitle 06 · Long release label · العربية — SUBRIP",
+    "rect": [
+      2692,
+      1585,
+      3394,
+      1657
+    ]
+  },
+  {
+    "name": "Unknown — Subtitle 07 · Long release label · العربية — SUBRIP",
+    "rect": [
+      2692,
+      1667,
+      3394,
+      1739
+    ]
+  },
+  {
+    "name": "Unknown — Subtitle 08 · Long release label · العربية — SUBRIP",
+    "rect": [
+      2692,
+      1750,
+      3394,
+      1822
+    ]
+  },
+  {
+    "name": "Unknown — Subtitle 09 · Long release label · العربية — SUBRIP",
+    "rect": [
+      2692,
+      1832,
+      3394,
+      1904
+    ]
+  },
+  {
+    "name": "Unknown — Subtitle 10 · Long release label · العربية — SUBRIP",
+    "rect": [
+      2692,
+      1915,
+      3394,
+      1987
+    ]
+  }
+]

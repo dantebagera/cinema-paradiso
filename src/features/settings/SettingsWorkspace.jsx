@@ -1,5 +1,11 @@
+import Badge from '../../components/ui/Badge.jsx';
+import Button from '../../components/ui/Button.jsx';
+import DialogShell, { DialogActions, DialogHeader } from '../../components/ui/DialogShell.jsx';
+import FormField, { Input, Select } from '../../components/ui/FormField.jsx';
 import AcquisitionProfiles from './AcquisitionProfiles.jsx';
 import TVSettings from './TVSettings.jsx';
+import ChatGPTSettings from '../ai/ChatGPTSettings.jsx';
+import IPTVMetadataSettings from '../iptv/IPTVMetadataSettings.jsx';
 import { useEffect, useRef, useState } from 'react'
 import {
   AlertTriangle,
@@ -67,6 +73,8 @@ const emptySettingsState = {
   streaming: {
     enabled: true,
     label: 'Stream',
+    provider: 'custom',
+    providers: [],
     url_template: 'https://streamimdb.ru/embed/movie/{tmdb_id}'
   },
   iptv: {
@@ -208,7 +216,12 @@ function iptvProviderForm(provider = null) {
   };
 }
 
-export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities, onStreamingConfigChanged }) {
+export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewIdentities, onStreamingConfigChanged,
+  active = true, iptvSettingsRequest = 0 }) {
+  const iptvPanel = useRef(null);
+  useEffect(() => {
+    if (iptvSettingsRequest) iptvPanel.current?.scrollIntoView({ block: 'start' });
+  }, [iptvSettingsRequest]);
   const [forms, setForms] = useState(emptySettingsState);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState({});
@@ -301,6 +314,8 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
         streaming: streaming.status === 'fulfilled' ? {
           enabled: streaming.value.enabled !== false,
           label: streaming.value.label || 'Stream',
+          provider: streaming.value.provider || 'custom',
+          providers: streaming.value.providers || [],
           url_template: streaming.value.url_template || '',
           tv_url_template: streaming.value.tv_url_template || ''
         } : emptySettingsState.streaming,
@@ -553,6 +568,7 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
         body: JSON.stringify(forms.appData)
       });
       setForms((state) => ({ ...state, appData: { user_data_dir: data.user_data_dir || '', tmdb_cache_dir: data.tmdb_cache_dir || '' } }));
+      window.dispatchEvent(new Event('cp-ratings-config-changed'));
       setCardStatus('appData', 'success', 'App data paths saved.', 'Folders are ready.');
       notify('App data paths saved');
     } catch (error) {
@@ -585,6 +601,7 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
       streaming: {
         enabled: Boolean(forms.streaming.enabled),
         label: forms.streaming.label,
+        provider: forms.streaming.provider,
         url_template: forms.streaming.url_template,
         tv_url_template: forms.streaming.tv_url_template || ''
       },
@@ -597,12 +614,15 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payloads[service])
       });
+      if (service === 'plex') window.dispatchEvent(new Event('cp-ratings-config-changed'));
       if (service === 'streaming') {
         setForms((state) => ({
           ...state,
           streaming: {
             enabled: saved.enabled !== false,
             label: saved.label || 'Stream',
+            provider: saved.provider || 'custom',
+            providers: saved.providers || [],
             url_template: saved.url_template || '',
             tv_url_template: saved.tv_url_template || ''
           }
@@ -1104,11 +1124,11 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
 
       <div className="settings-chip-row" aria-label="Configuration summary">
         {summary.map((item) => (
-          <span key={item.key} className={cx('settings-chip', `settings-chip-${item.tone}`, item.ready ? 'settings-chip-ready' : 'settings-chip-missing')}>
+          <Badge kind="status" tone={item.ready ? 'owned' : 'warning'} key={item.key} className={cx('settings-chip', `settings-chip-${item.tone}`, item.ready ? 'settings-chip-ready' : 'settings-chip-missing')}>
             {item.ready ? <CheckCircle2 size={14} /> : <AlertTriangle size={14} />}
             {item.label}
             <small>{item.ready ? 'Ready' : 'Missing'}</small>
-          </span>
+          </Badge>
         ))}
       </div>
 
@@ -1133,15 +1153,15 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
           <SettingsPanelHeader icon={Folder} title="Library Locations" label="Offline roots" text="Every folder is scanned as one merged archive for Library, Cleanup, duplicate detection, and Plex matching." />
           <div className="library-location-list">
             {(forms.library.directories && forms.library.directories.length ? forms.library.directories : ['']).map((directory, index) => (
-              <label className="dialog-field library-location-field" key={`library-dir-${index}`}>
+              <FormField className="library-location-field" key={`library-dir-${index}`}>
                 <span>{index === 0 ? 'Primary movie folder' : `Movie folder ${index + 1}`}</span>
                 <span className="library-location-input">
-                  <input value={directory || ''} onChange={(event) => updateLibraryDirectory(index, event.target.value)} placeholder="E:\\Movies" />
+                  <Input value={directory || ''} onChange={(event) => updateLibraryDirectory(index, event.target.value)} placeholder="E:\\Movies" />
                   <button type="button" className="secret-toggle library-location-remove" onClick={() => removeLibraryDirectory(index)} disabled={(forms.library.directories || []).length <= 1} aria-label={`Remove movie folder ${index + 1}`}>
                     <X size={15} />
                   </button>
                 </span>
-              </label>
+              </FormField>
             ))}
           </div>
           <label className="settings-checkbox-field">
@@ -1156,32 +1176,32 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
             </span>
           </label>
           <SettingsInlineStatus status={statuses.library} />
-          <div className="dialog-actions">
-            <button type="button" className="btn btn-secondary" onClick={addLibraryDirectory}>
+          <DialogActions >
+            <Button type="button"  onClick={addLibraryDirectory}>
               <CirclePlus size={15} /> Add location
-            </button>
-            <button type="submit" className="btn btn-primary" disabled={saving['library-save']}>
+            </Button>
+            <Button variant="primary" type="submit"  disabled={saving['library-save']}>
               {saving['library-save'] ? <Loader2 size={15} className="spin" /> : <Save size={15} />} Save locations
-            </button>
-          </div>
+            </Button>
+          </DialogActions>
         </form>
 
         <form className="settings-panel settings-panel-wide" onSubmit={saveAppData}>
           <SettingsPanelHeader icon={Database} title="App Data" label="Local storage" text="User lists and edited collections live in data. TMDB cache can be rebuilt when needed." />
-          <label className="dialog-field">
+          <FormField >
             <span>User data folder</span>
-            <input value={forms.appData.user_data_dir || ''} onChange={(event) => updateField('appData', 'user_data_dir', event.target.value)} />
-          </label>
-          <label className="dialog-field">
+            <Input value={forms.appData.user_data_dir || ''} onChange={(event) => updateField('appData', 'user_data_dir', event.target.value)} />
+          </FormField>
+          <FormField >
             <span>TMDB cache folder</span>
-            <input value={forms.appData.tmdb_cache_dir || ''} onChange={(event) => updateField('appData', 'tmdb_cache_dir', event.target.value)} />
-          </label>
+            <Input value={forms.appData.tmdb_cache_dir || ''} onChange={(event) => updateField('appData', 'tmdb_cache_dir', event.target.value)} />
+          </FormField>
           <SettingsInlineStatus status={statuses.appData} />
-          <div className="dialog-actions">
-            <button type="submit" className="btn btn-primary" disabled={saving['appData-save']}>
+          <DialogActions >
+            <Button variant="primary" type="submit"  disabled={saving['appData-save']}>
               {saving['appData-save'] ? <Loader2 size={15} className="spin" /> : <Save size={15} />} Save folders
-            </button>
-          </div>
+            </Button>
+          </DialogActions>
         </form>
       </div>
 
@@ -1224,22 +1244,22 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
         <div className="player-settings-columns">
           <section className="player-settings-group">
             <h4>Playback and resume</h4>
-            <label className="dialog-field">
+            <FormField >
               <span>Local Library playback mode</span>
-              <select value={forms.player.mode} onChange={(event) => updateField('player', 'mode', event.target.value)}>
+              <Select value={forms.player.mode} onChange={(event) => updateField('player', 'mode', event.target.value)}>
                 <option value="os_default">Operating-system default player</option>
                 <option value="built_in">Cinema Paradiso Player</option>
-              </select>
-            </label>
+              </Select>
+            </FormField>
             <div className="settings-two-column">
-              <label className="dialog-field">
+              <FormField >
                 <span>Minimum resume position (seconds)</span>
-                <input type="number" min="0" max="3600" value={forms.player.minimum_resume_seconds} onChange={(event) => updateField('player', 'minimum_resume_seconds', event.target.value)} />
-              </label>
-              <label className="dialog-field">
+                <Input type="number" min="0" max="3600" value={forms.player.minimum_resume_seconds} onChange={(event) => updateField('player', 'minimum_resume_seconds', event.target.value)} />
+              </FormField>
+              <FormField >
                 <span>Completion threshold (0.50–1.00)</span>
-                <input type="number" min="0.5" max="1" step="0.01" value={forms.player.completion_threshold} onChange={(event) => updateField('player', 'completion_threshold', event.target.value)} />
-              </label>
+                <Input type="number" min="0.5" max="1" step="0.01" value={forms.player.completion_threshold} onChange={(event) => updateField('player', 'completion_threshold', event.target.value)} />
+              </FormField>
             </div>
             <label className="settings-checkbox-field">
               <input type="checkbox" checked={forms.player.resume_enabled} onChange={(event) => updateField('player', 'resume_enabled', event.target.checked)} />
@@ -1253,49 +1273,49 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
 
           <section className="player-settings-group">
             <h4>Tracks and rendering</h4>
-            <label className="dialog-field">
+            <FormField >
               <span>Preferred audio languages, in order</span>
-              <input
+              <Input
                 value={playerLanguageDrafts.audio}
                 onChange={(event) => setPlayerLanguageDrafts((drafts) => ({ ...drafts, audio: event.target.value }))}
                 placeholder="original, ar, en"
               />
-            </label>
-            <label className="dialog-field">
+            </FormField>
+            <FormField >
               <span>Preferred subtitle languages, in order</span>
-              <input
+              <Input
                 value={playerLanguageDrafts.subtitles}
                 onChange={(event) => setPlayerLanguageDrafts((drafts) => ({ ...drafts, subtitles: event.target.value }))}
                 placeholder="ar, en"
               />
-            </label>
+            </FormField>
             <div className="settings-two-column">
-              <label className="dialog-field">
+              <FormField >
                 <span>Hardware decoding</span>
-                <select value={forms.player.hardware_decoding} onChange={(event) => updateField('player', 'hardware_decoding', event.target.value)}>
+                <Select value={forms.player.hardware_decoding} onChange={(event) => updateField('player', 'hardware_decoding', event.target.value)}>
                   <option value="safe_auto">Safe automatic</option>
                   <option value="off">Off</option>
                   <option value="advanced">Advanced</option>
-                </select>
-              </label>
-              <label className="dialog-field">
+                </Select>
+              </FormField>
+              <FormField >
                 <span>HDR handling</span>
-                <select value={forms.player.hdr_handling} onChange={(event) => updateField('player', 'hdr_handling', event.target.value)}>
+                <Select value={forms.player.hdr_handling} onChange={(event) => updateField('player', 'hdr_handling', event.target.value)}>
                   <option value="auto">Automatic</option>
                   <option value="off">Tone map to SDR</option>
                   <option value="passthrough">Display passthrough</option>
-                </select>
-              </label>
-              <label className="dialog-field">
+                </Select>
+              </FormField>
+              <FormField >
                 <span>Tone mapping</span>
-                <select value={forms.player.tone_mapping} onChange={(event) => updateField('player', 'tone_mapping', event.target.value)}>
+                <Select value={forms.player.tone_mapping} onChange={(event) => updateField('player', 'tone_mapping', event.target.value)}>
                   <option value="auto">Automatic</option>
                   <option value="bt.2446a">BT.2446A</option>
                   <option value="mobius">Mobius</option>
                   <option value="reinhard">Reinhard</option>
                   <option value="hable">Hable</option>
-                </select>
-              </label>
+                </Select>
+              </FormField>
             </div>
             <label className="settings-checkbox-field">
               <input type="checkbox" checked={forms.player.prefer_forced_subtitles} onChange={(event) => updateField('player', 'prefer_forced_subtitles', event.target.checked)} />
@@ -1309,78 +1329,78 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
 
           <section className="player-settings-group">
             <h4>Audio and subtitle storage</h4>
-            <label className="dialog-field">
+            <FormField >
               <span>Audio output</span>
-              <input value={forms.player.audio_output} onChange={(event) => updateField('player', 'audio_output', event.target.value)} placeholder="auto" />
-            </label>
-            <label className="dialog-field">
+              <Input value={forms.player.audio_output} onChange={(event) => updateField('player', 'audio_output', event.target.value)} placeholder="auto" />
+            </FormField>
+            <FormField >
               <span>Audio channel layout</span>
-              <select value={forms.player.audio_downmix} onChange={(event) => updateField('player', 'audio_downmix', event.target.value)}>
+              <Select value={forms.player.audio_downmix} onChange={(event) => updateField('player', 'audio_downmix', event.target.value)}>
                 <option value="auto">Automatic</option>
                 <option value="stereo">Downmix to stereo</option>
                 <option value="5.1">Downmix to 5.1</option>
-              </select>
-            </label>
-            <label className="dialog-field">
+              </Select>
+            </FormField>
+            <FormField >
               <span>Audio passthrough codecs</span>
-              <input
+              <Input
                 value={(forms.player.audio_passthrough || []).join(', ')}
                 onChange={(event) => updateField('player', 'audio_passthrough', event.target.value.split(',').map((value) => value.trim()).filter(Boolean))}
                 placeholder="ac3, eac3, dts, truehd"
               />
-            </label>
-            <label className="dialog-field">
+            </FormField>
+            <FormField >
               <span>Subtitle font</span>
-              <input
+              <Input
                 value={forms.player.subtitle_style.font}
                 onChange={(event) => updateField('player', 'subtitle_style', { ...forms.player.subtitle_style, font: event.target.value })}
                 placeholder="Segoe UI"
               />
-            </label>
+            </FormField>
             <div className="settings-two-column">
-              <label className="dialog-field">
+              <FormField >
                 <span>Subtitle size</span>
-                <input
+                <Input
                   type="number"
                   min="12"
                   max="120"
                   value={forms.player.subtitle_style.size}
                   onChange={(event) => updateField('player', 'subtitle_style', { ...forms.player.subtitle_style, size: Number(event.target.value) })}
                 />
-              </label>
-              <label className="dialog-field">
+              </FormField>
+              <FormField >
                 <span>Subtitle vertical position</span>
-                <input
+                <Input
                   type="number"
                   min="0"
                   max="150"
                   value={forms.player.subtitle_style.position}
                   onChange={(event) => updateField('player', 'subtitle_style', { ...forms.player.subtitle_style, position: Number(event.target.value) })}
                 />
-              </label>
+              </FormField>
             </div>
             <div className="settings-two-column">
-              <label className="dialog-field">
+              <FormField >
                 <span>Subtitle text color (AARRGGBB)</span>
-                <input
+                <Input
                   value={forms.player.subtitle_style.color}
                   onChange={(event) => updateField('player', 'subtitle_style', { ...forms.player.subtitle_style, color: event.target.value })}
                   placeholder="#FFFFFFFF"
                 />
-              </label>
-              <label className="dialog-field">
+              </FormField>
+              <FormField >
                 <span>Subtitle border color (AARRGGBB)</span>
-                <input
+                <Input
                   value={forms.player.subtitle_style.border_color}
                   onChange={(event) => updateField('player', 'subtitle_style', { ...forms.player.subtitle_style, border_color: event.target.value })}
                   placeholder="#FF000000"
                 />
-              </label>
+              </FormField>
             </div>
             <div className="settings-two-column">
-              <label className="dialog-field">
+              <FormField >
                 <span>Subtitle border size</span>
-                <input
+                <Input
                   type="number"
                   min="0"
                   max="10"
@@ -1388,23 +1408,23 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
                   value={forms.player.subtitle_style.border_size}
                   onChange={(event) => updateField('player', 'subtitle_style', { ...forms.player.subtitle_style, border_size: Number(event.target.value) })}
                 />
-              </label>
-              <label className="dialog-field">
+              </FormField>
+              <FormField >
                 <span>Subtitle background (AARRGGBB)</span>
-                <input
+                <Input
                   value={forms.player.subtitle_style.background_color}
                   onChange={(event) => updateField('player', 'subtitle_style', { ...forms.player.subtitle_style, background_color: event.target.value })}
                   placeholder="#00000000"
                 />
-              </label>
+              </FormField>
             </div>
-            <label className="dialog-field">
+            <FormField >
               <span>Downloaded subtitle storage</span>
-              <select value={forms.player.subtitle_storage} onChange={(event) => updateField('player', 'subtitle_storage', event.target.value)}>
+              <Select value={forms.player.subtitle_storage} onChange={(event) => updateField('player', 'subtitle_storage', event.target.value)}>
                 <option value="cache">Cinema Paradiso cache</option>
                 <option value="beside_movie">Beside the movie file</option>
-              </select>
-            </label>
+              </Select>
+            </FormField>
             <label className="settings-checkbox-field">
               <input type="checkbox" checked={forms.player.auto_subtitle_search} onChange={(event) => updateField('player', 'auto_subtitle_search', event.target.checked)} />
               <span><strong>Search providers automatically</strong><small>Disabled by default. Manual subtitle search remains available in the player.</small></span>
@@ -1417,21 +1437,21 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
               <input type="checkbox" checked={forms.player.providers.opensubtitles.enabled} onChange={(event) => updatePlayerProvider('opensubtitles', 'enabled', event.target.checked)} />
               <span><strong>OpenSubtitles</strong><small>The API key identifies Cinema Paradiso. Choose explicitly whether downloads use the consumer key or an OpenSubtitles account.</small></span>
             </label>
-            <label className="dialog-field">
+            <FormField >
               <span>OpenSubtitles authentication</span>
-              <select
+              <Select
                 value={forms.player.providers.opensubtitles.authentication_mode}
                 onChange={(event) => updatePlayerProvider('opensubtitles', 'authentication_mode', event.target.value)}
               >
                 <option value="api_key_only">API key only — consumer quota</option>
                 <option value="account">OpenSubtitles account — personal quota</option>
-              </select>
+              </Select>
               <small>
                 {forms.player.providers.opensubtitles.authentication_mode === 'api_key_only'
                   ? 'No account login. Saving removes any stored OpenSubtitles username and password.'
                   : 'Uses your personal account allowance. Credentials stay in the backend and are never returned to this page.'}
               </small>
-            </label>
+            </FormField>
             <SecretField
               label="OpenSubtitles username"
               value={forms.player.providers.opensubtitles.username}
@@ -1478,21 +1498,21 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
           <p>Shortcuts are ignored while a text field is focused. Escape closes the active overlay or exits fullscreen.</p>
           <div>
             {Object.entries(forms.player.keyboard_shortcuts || {}).map(([action, shortcut]) => (
-              <label className="dialog-field" key={action}>
+              <FormField  key={action}>
                 <span>{playerShortcutLabel(action)}</span>
-                <input value={shortcut} onChange={(event) => updatePlayerShortcut(action, event.target.value)} />
-              </label>
+                <Input value={shortcut} onChange={(event) => updatePlayerShortcut(action, event.target.value)} />
+              </FormField>
             ))}
           </div>
         </details>
 
         <SettingsInlineStatus status={statuses.player} />
         <div className="settings-action-grid">
-          <button type="submit" className="btn btn-primary" disabled={saving['player-save']}>
+          <Button variant="primary" type="submit"  disabled={saving['player-save']}>
             {saving['player-save'] ? <Loader2 size={15} className="spin" /> : <Save size={15} />} Save player
-          </button>
-          <ActionButton loading={saving['player-verify']} icon={ShieldCheck} label="Verify player" onClick={verifyPlayer} />
-          <ActionButton loading={saving['player-reset']} icon={RefreshCcw} label="Reset preferences" onClick={resetPlayer} />
+          </Button>
+          <Button type="button" disabled={saving['player-verify'] || false} loading={saving['player-verify']} icon={ShieldCheck} label="Verify player" onClick={verifyPlayer} />
+          <Button type="button" disabled={saving['player-reset'] || false} loading={saving['player-reset']} icon={RefreshCcw} label="Reset preferences" onClick={resetPlayer} />
         </div>
       </form>
 
@@ -1513,10 +1533,10 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
           loading={saving}
           fields={(
             <>
-              <label className="dialog-field">
+              <FormField >
                 <span>Plex URL</span>
-                <input value={forms.plex.url || ''} onChange={(event) => updateField('plex', 'url', event.target.value)} placeholder="http://localhost:32400" />
-              </label>
+                <Input value={forms.plex.url || ''} onChange={(event) => updateField('plex', 'url', event.target.value)} placeholder="http://localhost:32400" />
+              </FormField>
               <SecretField
                 label="Plex token"
                 value={forms.plex.token || ''}
@@ -1528,10 +1548,10 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
           )}
           actions={(
             <>
-              <ActionButton loading={saving['plex-save']} icon={Save} label="Save Plex" onClick={() => saveIntegration('plex')} primary />
-              <ActionButton loading={saving['plex-test']} icon={PlugZap} label="Test saved" onClick={() => testIntegration('plex')} />
-              <ActionButton loading={saving['plex-sync']} icon={RefreshCcw} label="Refresh Plex Cache" onClick={() => runPlexAction('sync')} />
-              <ActionButton loading={saving['plex-scan']} icon={Radio} label="Force Plex Scan" onClick={() => runPlexAction('scan')} />
+              <Button type="button" disabled={saving['plex-save'] || false} variant="primary" loading={saving['plex-save']} icon={Save} label="Save Plex" onClick={() => saveIntegration('plex')}  />
+              <Button type="button" disabled={saving['plex-test'] || false} loading={saving['plex-test']} icon={PlugZap} label="Test saved" onClick={() => testIntegration('plex')} />
+              <Button type="button" disabled={saving['plex-sync'] || false} loading={saving['plex-sync']} icon={RefreshCcw} label="Refresh Plex Cache" onClick={() => runPlexAction('sync')} />
+              <Button type="button" disabled={saving['plex-scan'] || false} loading={saving['plex-scan']} icon={Radio} label="Force Plex Scan" onClick={() => runPlexAction('scan')} />
             </>
           )}
         />
@@ -1544,10 +1564,10 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
           status={statuses.prowlarr}
           fields={(
             <>
-              <label className="dialog-field">
+              <FormField >
                 <span>Prowlarr URL</span>
-                <input value={forms.prowlarr.url || ''} onChange={(event) => updateField('prowlarr', 'url', event.target.value)} placeholder="http://localhost:9696" />
-              </label>
+                <Input value={forms.prowlarr.url || ''} onChange={(event) => updateField('prowlarr', 'url', event.target.value)} placeholder="http://localhost:9696" />
+              </FormField>
               <SecretField
                 label="API key"
                 value={forms.prowlarr.key || ''}
@@ -1562,21 +1582,21 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
               <div className="settings-subsection">
                 <span className="settings-subsection-title">Automation defaults</span>
                 <div className="settings-two-column">
-                  <label className="dialog-field">
+                  <FormField >
                     <span>Default download quality</span>
-                    <select
+                    <Select
                       value={forms.prowlarr.download_default_quality || '1080p'}
                       onChange={(event) => updateField('prowlarr', 'download_default_quality', event.target.value)}
                     >
                       <option value="1080p">1080p</option>
                       <option value="4K">4K</option>
-                    </select>
-                  </label>
-                  {['movie', 'tv'].map(domain => <div className="dialog-field" key={domain}>
+                    </Select>
+                  </FormField>
+                  {['movie', 'tv'].map(domain => <FormField as="div"  key={domain}>
                     <span>{domain === 'movie' ? 'Movie trusted indexers' : 'TV trusted indexers'}</span>
                     <strong>{downloadIndexerSummary(forms.prowlarr, domain)}</strong>
-                    <button type="button" className="btn btn-secondary" disabled={loading} onClick={() => setDownloadIndexerDialog(domain)}>{loading ? 'Loading indexers…' : 'Select indexers'}</button>
-                  </div>)}
+                    <Button type="button"  disabled={loading} onClick={() => setDownloadIndexerDialog(domain)}>{loading ? 'Loading indexers…' : 'Select indexers'}</Button>
+                  </FormField>)}
                   {forms.prowlarr.indexersError && <p role="alert">{forms.prowlarr.indexersError}</p>}
                 </div>
               </div>
@@ -1584,9 +1604,9 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
           )}
           actions={(
             <>
-              <ActionButton loading={saving['prowlarr-save']} icon={Save} label="Save Prowlarr" onClick={() => saveIntegration('prowlarr')} primary />
-              <ActionButton loading={saving['prowlarr-test']} icon={PlugZap} label="Test saved" onClick={() => testIntegration('prowlarr')} />
-              <ActionButton loading={false} icon={ShieldCheck} label="Trusted indexers" onClick={() => setTrustedIndexerDialogOpen(true)} />
+              <Button type="button" disabled={saving['prowlarr-save'] || false} variant="primary" loading={saving['prowlarr-save']} icon={Save} label="Save Prowlarr" onClick={() => saveIntegration('prowlarr')}  />
+              <Button type="button" disabled={saving['prowlarr-test'] || false} loading={saving['prowlarr-test']} icon={PlugZap} label="Test saved" onClick={() => testIntegration('prowlarr')} />
+              <Button type="button" disabled={false || false} loading={false} icon={ShieldCheck} label="Trusted indexers" onClick={() => setTrustedIndexerDialogOpen(true)} />
             </>
           )}
         />
@@ -1631,8 +1651,8 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
           )}
           actions={(
             <>
-              <ActionButton loading={saving['ai-control-save']} icon={Save} label="Save AI Control" onClick={() => saveAiControl()} primary />
-              <ActionButton loading={false} icon={ShieldCheck} label="Trusted indexers" onClick={() => setAiControlIndexerDialogOpen(true)} />
+              <Button type="button" disabled={saving['ai-control-save'] || false} variant="primary" loading={saving['ai-control-save']} icon={Save} label="Save AI Control" onClick={() => saveAiControl()}  />
+              <Button type="button" disabled={false || false} loading={false} icon={ShieldCheck} label="Trusted indexers" onClick={() => setAiControlIndexerDialogOpen(true)} />
             </>
           )}
         />
@@ -1645,31 +1665,31 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
           status={statuses.qbittorrent}
           fields={(
             <>
-              <label className="dialog-field">
+              <FormField >
                 <span>Torrent handling</span>
-                <select value={forms.qbittorrent.mode || 'embedded'} onChange={(event) => updateField('qbittorrent', 'mode', event.target.value)}>
+                <Select value={forms.qbittorrent.mode || 'embedded'} onChange={(event) => updateField('qbittorrent', 'mode', event.target.value)}>
                   <option value="embedded">Embedded qBittorrent</option>
                   <option value="system">System default client</option>
-                </select>
-              </label>
-              <label className="dialog-field">
+                </Select>
+              </FormField>
+              <FormField >
                 <span>Movie download folder</span>
-                <input
+                <Input
                   value={forms.qbittorrent.download_dir || ''}
                   onChange={(event) => updateField('qbittorrent', 'download_dir', event.target.value)}
                   placeholder="Uses the primary movie folder when empty"
                 />
                 <small>Resolved: {forms.qbittorrent.effective_download_dir || forms.library.directory || 'Not configured'}</small>
-              </label>
-              <label className="dialog-field">
+              </FormField>
+              <FormField >
                 <span>Incomplete downloads folder</span>
-                <input
+                <Input
                   value={forms.qbittorrent.incomplete_dir || ''}
                   onChange={(event) => updateField('qbittorrent', 'incomplete_dir', event.target.value)}
                   placeholder="Uses app data/qbittorrent/incomplete when empty"
                 />
                 <small>Resolved: {forms.qbittorrent.effective_incomplete_dir || 'Saved after configuration'}</small>
-              </label>
+              </FormField>
               {forms.qbittorrent.download_dir_in_library === false ? (
                 <p className="settings-path-warning"><AlertTriangle size={14} /> Completed movies outside library roots are not discovered automatically.</p>
               ) : null}
@@ -1687,12 +1707,12 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
           )}
           actions={(
             <>
-              <ActionButton loading={saving['qbittorrent-save']} icon={Save} label="Save qBittorrent" onClick={saveQbittorrent} primary />
+              <Button type="button" disabled={saving['qbittorrent-save'] || false} variant="primary" loading={saving['qbittorrent-save']} icon={Save} label="Save qBittorrent" onClick={saveQbittorrent}  />
               {forms.qbittorrent.installed && forms.qbittorrent.mode === 'embedded' ? (
-                <ActionButton loading={saving['qbittorrent-update']} icon={RefreshCcw} label="Update qBittorrent" onClick={updateQbittorrent} />
+                <Button type="button" disabled={saving['qbittorrent-update'] || false} loading={saving['qbittorrent-update']} icon={RefreshCcw} label="Update qBittorrent" onClick={updateQbittorrent} />
               ) : null}
               {forms.qbittorrent.installed ? (
-                <ActionButton loading={false} icon={ExternalLink} label="Open Downloads" onClick={() => window.location.assign('/downloads')} />
+                <Button type="button" disabled={false || false} loading={false} icon={ExternalLink} label="Open Downloads" onClick={() => window.location.assign('/downloads')} />
               ) : null}
             </>
           )}
@@ -1728,8 +1748,8 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
           )}
           actions={(
             <>
-              <ActionButton loading={saving['tmdb-save']} icon={Save} label="Save TMDB" onClick={() => saveIntegration('tmdb')} primary />
-              <ActionButton loading={saving['tmdb-test']} icon={PlugZap} label="Test key" onClick={() => testIntegration('tmdb')} />
+              <Button type="button" disabled={saving['tmdb-save'] || false} variant="primary" loading={saving['tmdb-save']} icon={Save} label="Save TMDB" onClick={() => saveIntegration('tmdb')}  />
+              <Button type="button" disabled={saving['tmdb-test'] || false} loading={saving['tmdb-test']} icon={PlugZap} label="Test key" onClick={() => testIntegration('tmdb')} />
             </>
           )}
         />
@@ -1757,7 +1777,7 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
               </p>
               <label className="settings-field">
                 <span>Trailer availability country</span>
-                <input
+                <Input
                   value={forms.youtube.trailerRegion || 'EG'}
                   onChange={(event) => updateField('youtube', 'trailerRegion', event.target.value.toUpperCase().replace(/[^A-Z]/g, '').slice(0, 2))}
                   placeholder="EG"
@@ -1771,10 +1791,10 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
           )}
           actions={(
             <>
-              <ActionButton loading={saving['youtube-save']} icon={Save} label="Save YouTube" onClick={() => saveIntegration('youtube')} primary />
-              <ActionButton loading={saving['youtube-test']} icon={PlugZap} label="Test key" onClick={() => testIntegration('youtube')} />
+              <Button type="button" disabled={saving['youtube-save'] || false} variant="primary" loading={saving['youtube-save']} icon={Save} label="Save YouTube" onClick={() => saveIntegration('youtube')}  />
+              <Button type="button" disabled={saving['youtube-test'] || false} loading={saving['youtube-test']} icon={PlugZap} label="Test key" onClick={() => testIntegration('youtube')} />
               {forms.youtube.configured ? (
-                <ActionButton loading={saving['youtube-clear']} icon={Trash2} label="Clear key" onClick={clearYouTubeKey} />
+                <Button type="button" disabled={saving['youtube-clear'] || false} loading={saving['youtube-clear']} icon={Trash2} label="Clear key" onClick={clearYouTubeKey} />
               ) : null}
             </>
           )}
@@ -1796,37 +1816,63 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
                 />
                 <span>
                   <strong>Enable Stream buttons</strong>
-                  <small>When disabled, Stream is hidden from movie cards and details.</small>
+                  <small>When disabled, Stream is hidden for movies and TV episodes.</small>
                 </span>
               </label>
-              <label className="dialog-field">
+              <FormField >
                 <span>Button label</span>
-                <input value={forms.streaming.label || ''} onChange={(event) => updateField('streaming', 'label', event.target.value)} placeholder="Stream" />
-              </label>
-              <label className="dialog-field">
+                <Input value={forms.streaming.label || ''} onChange={(event) => updateField('streaming', 'label', event.target.value)} placeholder="Stream" />
+              </FormField>
+              <FormField >
+                <span>Streaming provider</span>
+                <Select
+                  className="dialog-input"
+                  aria-label="Streaming provider"
+                  value={forms.streaming.provider}
+                  onChange={(event) => {
+                    const provider = event.target.value;
+                    const preset = forms.streaming.providers.find((option) => option.id === provider);
+                    setForms((state) => ({
+                      ...state,
+                      streaming: {
+                        ...state.streaming,
+                        provider,
+                        ...(preset ? { url_template: preset.url_template, tv_url_template: preset.tv_url_template } : {})
+                      }
+                    }));
+                  }}
+                >
+                  {forms.streaming.providers.map((option) => (
+                    <option key={option.id} value={option.id}>{option.label}{option.id === 'streamimdb' ? ' (default)' : ''}</option>
+                  ))}
+                  <option value="custom">Custom URL</option>
+                </Select>
+                <small>Applies to movies and TV episodes. StreamIMDB is the default. Save Streaming to apply your choice.</small>
+              </FormField>
+              <FormField >
                 <span>URL template</span>
-                <input value={forms.streaming.url_template || ''} onChange={(event) => updateField('streaming', 'url_template', event.target.value)} placeholder="https://streamimdb.ru/embed/movie/{tmdb_id}" />
+                <Input aria-label="URL template" readOnly={forms.streaming.provider !== 'custom'} value={forms.streaming.url_template || ''} onChange={(event) => updateField('streaming', 'url_template', event.target.value)} placeholder="https://streamimdb.ru/embed/movie/{tmdb_id}" />
                 <small>Use {'{tmdb_id}'} or {'{imdb_id}'} where the provider expects the movie ID. Example: https://streamimdb.ru/embed/movie/{'{tmdb_id}'}.</small>
                 <small>If you use {'{imdb_id}'}, CP resolves it from TMDB first.</small>
-              </label>
-            <label className="dialog-field">TV episode URL template
-              <input value={forms.streaming.tv_url_template || ''} onChange={(event) => updateField('streaming', 'tv_url_template', event.target.value)} placeholder="https://example.com/tv/{tmdb_id}/{season_number}/{episode_number}" />
+              </FormField>
+            <FormField >TV episode URL template
+              <Input aria-label="TV episode URL template" readOnly={forms.streaming.provider !== 'custom'} value={forms.streaming.tv_url_template || ''} onChange={(event) => updateField('streaming', 'tv_url_template', event.target.value)} placeholder="https://example.com/tv/{tmdb_id}/{season_number}/{episode_number}" />
               <small>Uses the TV TMDB ID and exact season and episode. Opening a link does not mark watched.</small>
-            </label>
+            </FormField>
             </>
           )}
           actions={(
-            <ActionButton loading={saving['streaming-save']} icon={Save} label="Save Streaming" onClick={() => saveIntegration('streaming')} primary />
+            <Button type="button" disabled={saving['streaming-save'] || false} variant="primary" loading={saving['streaming-save']} icon={Save} label="Save Streaming" onClick={() => saveIntegration('streaming')}  />
           )}
         />
 
         <TVSettings notify={notify} />
         <AcquisitionProfiles notify={notify} />
 
-        <section id="settings-iptv" className="settings-panel integration-card integration-gold settings-iptv-providers">
+        <section ref={iptvPanel} id="settings-iptv" className="settings-panel integration-card integration-gold settings-iptv-providers">
           <div className="settings-iptv-heading">
             <SettingsPanelHeader icon={Radio} title="IPTV Providers" label="Integration" text={`${iptvProviders.length} configured Xtream provider${iptvProviders.length === 1 ? '' : 's'}, each with isolated data.`} />
-            <button type="button" className="btn btn-secondary" onClick={addIPTVProvider}><CirclePlus size={15} /> Add</button>
+            <Button type="button"  onClick={addIPTVProvider}><CirclePlus size={15} /> Add</Button>
           </div>
           <div className="settings-provider-manager">
             <aside className="settings-provider-rail" aria-label="IPTV providers">
@@ -1845,19 +1891,19 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
               {!iptvProviders.length ? <p>No providers configured.</p> : null}
             </aside>
             <div className="settings-provider-editor">
-              <label className="dialog-field">
+              <FormField >
                 <span>Display name</span>
-                <input value={forms.iptv.name || ''} onChange={(event) => updateField('iptv', 'name', event.target.value)} placeholder="Provider name" />
-              </label>
-              <label className="dialog-field">
+                <Input value={forms.iptv.name || ''} onChange={(event) => updateField('iptv', 'name', event.target.value)} placeholder="Provider name" />
+              </FormField>
+              <FormField >
                 <span>Xtream server URL</span>
-                <input value={forms.iptv.server_url || ''} onChange={(event) => updateField('iptv', 'server_url', event.target.value)} placeholder="https://provider.example:2096" />
-              </label>
-              <label className="dialog-field">
+                <Input value={forms.iptv.server_url || ''} onChange={(event) => updateField('iptv', 'server_url', event.target.value)} placeholder="https://provider.example:2096" />
+              </FormField>
+              <FormField >
                 <span>Username</span>
-                <input value={forms.iptv.username || ''} onChange={(event) => updateField('iptv', 'username', event.target.value)} placeholder={forms.iptv.usernameHint || 'Xtream username'} autoComplete="off" />
+                <Input value={forms.iptv.username || ''} onChange={(event) => updateField('iptv', 'username', event.target.value)} placeholder={forms.iptv.usernameHint || 'Xtream username'} autoComplete="off" />
                 {forms.iptv.usernameHint ? <small>Saved account: {forms.iptv.usernameHint}. Leave blank to keep it.</small> : null}
-              </label>
+              </FormField>
               <SecretField
                 label="Password"
                 value={forms.iptv.password || ''}
@@ -1886,13 +1932,16 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
               </p>
               <SettingsInlineStatus status={statuses.iptv} />
               <div className="settings-action-grid">
-                <ActionButton loading={saving['iptv-save']} icon={Save} label="Save & Test" onClick={saveIPTV} primary disabled={!forms.iptv.name || !forms.iptv.server_url} />
-                <ActionButton loading={saving['iptv-sync']} icon={RefreshCcw} label="Sync" onClick={syncIPTV} disabled={!selectedIPTVProviderId || addingIPTVProvider} />
-                <ActionButton loading={saving['iptv-remove']} icon={Trash2} label="Remove" onClick={removeIPTV} disabled={!selectedIPTVProviderId || addingIPTVProvider} />
+                <Button type="button" disabled={saving['iptv-save'] || !forms.iptv.name || !forms.iptv.server_url} variant="primary" loading={saving['iptv-save']} icon={Save} label="Save & Test" onClick={saveIPTV}   />
+                <Button type="button" disabled={saving['iptv-sync'] || !selectedIPTVProviderId || addingIPTVProvider} loading={saving['iptv-sync']} icon={RefreshCcw} label="Sync" onClick={syncIPTV}  />
+                <Button type="button" disabled={saving['iptv-remove'] || !selectedIPTVProviderId || addingIPTVProvider} loading={saving['iptv-remove']} icon={Trash2} label="Remove" onClick={removeIPTV}  />
               </div>
             </div>
           </div>
+          <IPTVMetadataSettings notify={notify} active={active} />
         </section>
+
+        <ChatGPTSettings Card={IntegrationCard} notify={notify} />
 
         <IntegrationCard
           id="settings-ollama"
@@ -1902,13 +1951,13 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
           status={statuses.ollama}
           fields={(
             <>
-              <label className="dialog-field">
+              <FormField >
                 <span>Ollama URL</span>
-                <input value={forms.ollama.url || ''} onChange={(event) => updateField('ollama', 'url', event.target.value)} placeholder="http://localhost:11434" />
-              </label>
-              <label className="dialog-field">
+                <Input value={forms.ollama.url || ''} onChange={(event) => updateField('ollama', 'url', event.target.value)} placeholder="http://localhost:11434" />
+              </FormField>
+              <FormField >
                 <span>Model</span>
-                <select
+                <Select
                   aria-label="Ollama model"
                   value={ollamaCustomModel ? CUSTOM_OLLAMA_MODEL_VALUE : (forms.ollama.model || '')}
                   onChange={(event) => updateOllamaModelChoice(event.target.value)}
@@ -1935,10 +1984,10 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
                     </optgroup>
                   ) : null}
                   <option value={CUSTOM_OLLAMA_MODEL_VALUE}>Find an exact cloud model…</option>
-                </select>
+                </Select>
                 {ollamaCustomModel ? (
                   <span className="ollama-model-lookup">
-                    <input
+                    <Input
                       aria-label="Exact Ollama cloud model"
                       value={ollamaExactModel}
                       onChange={(event) => setOllamaExactModel(event.target.value)}
@@ -1951,7 +2000,7 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
                       placeholder="For example: gemma4:31b-cloud"
                       autoFocus
                     />
-                    <ActionButton
+                    <Button type="button" disabled={saving['ollama-model-lookup'] || false}
                       loading={saving['ollama-model-lookup']}
                       icon={Search}
                       label="Verify & use"
@@ -1968,10 +2017,10 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
                 {(ollamaModelCatalog.warnings || []).length ? (
                   <small>Model list warning: {ollamaModelCatalog.warnings.join(' ')}</small>
                 ) : null}
-              </label>
-              <label className="dialog-field">
+              </FormField>
+              <FormField >
                 <span>AI candidate limit</span>
-                <input
+                <Input
                   type="number"
                   min="1"
                   max="50"
@@ -1980,14 +2029,14 @@ export default function SettingsWorkspace({ notify, onReviewUnmatched, onReviewI
                   onChange={(event) => updateField('ollama', 'candidateLimit', event.target.value)}
                 />
                 <small>CP asks Ollama for this many candidates, then validates them with TMDB. Final results may be fewer after duplicates, TV entries, or unresolved titles are removed. Allowed range: 1-50.</small>
-              </label>
+              </FormField>
             </>
           )}
           actions={(
             <>
-              <ActionButton loading={saving['ollama-save']} icon={Save} label="Save Ollama" onClick={() => saveIntegration('ollama')} primary />
-              <ActionButton loading={saving['ollama-model-scan']} icon={RefreshCcw} label="Scan Cloud Access" onClick={scanOllamaCloudAccess} />
-              <ActionButton loading={saving['ollama-test']} icon={PlugZap} label="Test Model" onClick={() => testIntegration('ollama')} />
+              <Button type="button" disabled={saving['ollama-save'] || false} variant="primary" loading={saving['ollama-save']} icon={Save} label="Save Ollama" onClick={() => saveIntegration('ollama')}  />
+              <Button type="button" disabled={saving['ollama-model-scan'] || false} loading={saving['ollama-model-scan']} icon={RefreshCcw} label="Scan Cloud Access" onClick={scanOllamaCloudAccess} />
+              <Button type="button" disabled={saving['ollama-test'] || false} loading={saving['ollama-test']} icon={PlugZap} label="Test Model" onClick={() => testIntegration('ollama')} />
             </>
           )}
         />
@@ -2052,8 +2101,8 @@ function TrustedIndexerDialog({ title, description, indexers, selectedIds, loadE
     catch (cause) { setError(cause.message); } finally { setBusy(false); }
   }
   return <div className="modal-backdrop trusted-indexer-backdrop" role="presentation" onClick={() => !busy && onClose()}>
-    <section ref={panel} className="small-dialog trusted-indexer-dialog" role="dialog" aria-modal="true" aria-label={title} onClick={event => event.stopPropagation()}>
-      <header className="dialog-header"><div><p className="screen-kicker">Prowlarr</p><h2>{title}</h2></div><button type="button" className="icon-button" disabled={busy} onClick={onClose} aria-label={`Close ${title}`}><X size={20}/></button></header>
+    <DialogShell ref={panel} className="small-dialog trusted-indexer-dialog" role="dialog" aria-modal="true" aria-label={title} onClick={event => event.stopPropagation()}>
+      <DialogHeader as="header" ><div><p className="screen-kicker">Prowlarr</p><h2>{title}</h2></div><Button size="icon" type="button"  disabled={busy} onClick={onClose} aria-label={`Close ${title}`}><X size={20}/></Button></DialogHeader>
       <p className="trusted-indexer-detail">{description}</p>
       {error && <p role="alert">{error}</p>}
       {loadError && <p role="alert">{loadError}</p>}
@@ -2063,8 +2112,8 @@ function TrustedIndexerDialog({ title, description, indexers, selectedIds, loadE
         {!indexers.length && <p className="settings-empty-note">Save and test Prowlarr to load enabled indexers.</p>}
         {!draft.length && <p className="settings-empty-note">No trusted indexers selected.</p>}
       </div>
-      <div className="dialog-actions"><button type="button" className="btn btn-secondary" disabled={busy} onClick={onClose}>Cancel</button><button type="button" className="btn btn-primary" disabled={busy} onClick={save}>{busy ? <Loader2 size={15} className="spin"/> : <Save size={15}/>} Save trusted indexers</button></div>
-    </section>
+      <DialogActions ><Button type="button"  disabled={busy} onClick={onClose}>Cancel</Button><Button variant="primary" type="button"  disabled={busy} onClick={save}>{busy ? <Loader2 size={15} className="spin"/> : <Save size={15}/>} Save trusted indexers</Button></DialogActions>
+    </DialogShell>
   </div>;
 }
 
@@ -2133,30 +2182,23 @@ function integrationText(title) {
     qBittorrent: 'Portable downloads powered by the original qBittorrent WebUI.',
     TMDB: 'Posters, plots, cast, discovery lists, and trailers.',
     'YouTube Data API': 'Long multi-channel trailer feeds and on-demand fallback search for missing movie trailers.',
-    'Streaming Link': 'Configurable embedded movie stream URL template.',
+    'Streaming Link': 'Choose the embedded streaming provider for movies and TV episodes.',
     'IPTV Provider': 'Separate Xtream catalog and integrated local playback.',
-    Ollama: 'AI recommendations and interpretation through your selected Ollama model.'
+    Ollama: 'AI recommendations and interpretation through your selected Ollama model.',
+    'AI Provider & ChatGPT': 'Choose the provider for AI features and connect your ChatGPT plan.'
   }[title] || '';
 }
 
 function SecretField({ label, value, revealed, onReveal, onChange, placeholder = '', disabled = false }) {
   return (
-    <div className="dialog-field secret-field">
+    <FormField as="div" className="secret-field">
       <span>{label}</span>
       <span className="secret-input-wrap">
-        <input aria-label={label} type={revealed ? 'text' : 'password'} value={value} onChange={(event) => onChange(event.target.value)} autoComplete="off" placeholder={placeholder} disabled={disabled} />
+        <Input aria-label={label} type={revealed ? 'text' : 'password'} value={value} onChange={(event) => onChange(event.target.value)} autoComplete="off" placeholder={placeholder} disabled={disabled} />
         <button type="button" className="secret-toggle" onClick={onReveal} aria-label={revealed ? `Hide ${label}` : `Reveal ${label}`} disabled={disabled}>
           {revealed ? <EyeOff size={15} /> : <Eye size={15} />}
         </button>
       </span>
-    </div>
-  );
-}
-
-function ActionButton({ loading, icon: Icon, label, onClick, primary, disabled = false }) {
-  return (
-    <button type="button" className={cx('btn', primary ? 'btn-primary' : 'btn-secondary')} onClick={onClick} disabled={loading || disabled}>
-      {loading ? <Loader2 size={15} className="spin" /> : <Icon size={15} />} {label}
-    </button>
+    </FormField>
   );
 }

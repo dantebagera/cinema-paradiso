@@ -1,0 +1,12 @@
+{
+  "exitCode": 0,
+  "fixture": "upcoming",
+  "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\logs\\upcoming-desktop-combined.log",
+  "specs": [
+    "tests/e2e/upcoming-movies.spec.js",
+    "tests/e2e/discover-paging.spec.js"
+  ],
+  "label": "upcoming-desktop-combined",
+  "port": 5142,
+  "root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\fixtures\\upcoming-desktop-combined-6ac49a9968f94e5bae6f7d31af634100"
+}

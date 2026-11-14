@@ -1,0 +1,26 @@
+Recorded console evidence excerpts from the tool execution transcript.
+Original Playwright stdout was displayed by the tool, not redirected to a file.
+Compiled isolated frontend; CP_TEST_MODE=1; port 5129.
+
+BEFORE visibility implementation:
+Command: playwright test tests/e2e/card-artwork-performance.spec.js
+Library initial backdrop requests: 40/40
+Home initial backdrop requests: 60/60
+Library offscreen /library-40.svg requested: expected false, received true.
+Home clipped /continue-20.svg requested: expected false, received true.
+2 failed, 2 passed (8.1s)
+Artifacts: C:\Users\dante\AppData\Local\Temp\cp-artwork-005356c1cd2b491c8b0f4c6dfafefb4d\before-requests-results
+
+BEFORE related tile integration:
+Command: playwright test tests/e2e/card-artwork-performance.spec.js --grep='Related titles'
+Related initial backdrop requests: 20/20
+Related clipped /related-20.svg requested: expected false, received true.
+1 failed
+Artifacts: C:\Users\dante\AppData\Local\Temp\cp-artwork-005356c1cd2b491c8b0f4c6dfafefb4d\before-related-results
+
+STALE NOTIFICATION RED, after initial visibility implementation:
+Command: playwright test tests/e2e/card-artwork-performance.spec.js --grep='stale artwork'
+1 pending card: expected hidden replacement background-image none; received replacement.svg background.
+2 pending cards: expected hidden replacement background-image none; received replacement.svg background.
+2 failed; both failures reproduced the registration race before its fix.
+Artifacts: C:\Users\dante\AppData\Local\Temp\cp-artwork-005356c1cd2b491c8b0f4c6dfafefb4d\stale-red-results

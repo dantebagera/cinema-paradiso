@@ -1,0 +1,11 @@
+{"target": "S06E20 \u00b7 Synthetic episode \u00b7 \u0627\u0644\u062d\u0644\u0642\u0629", "enabled": true, "rect": "(L2214, T1191, R2811, B1245)"}
+Traceback (most recent call last):
+  File "C:\Users\dante\Desktop\cinema paradiso\native\player\tools\smoke_player_ui.py", line 305, in <module>
+    if __name__=='__main__': main()
+                             ^^^^^^
+  File "C:\Users\dante\Desktop\cinema paradiso\native\player\tools\smoke_player_ui.py", line 217, in main
+    selection=wait_for(lambda:next((e for e in session.events[before:] if e['type']=='queue.select'),None),'S06E20 selection')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dante\Desktop\cinema paradiso\native\player\tools\smoke_player_ui.py", line 35, in wait_for
+    raise AssertionError('Timed out: ' + description)
+AssertionError: Timed out: S06E20 selection

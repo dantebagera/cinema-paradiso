@@ -1,3 +1,4 @@
+import Button from './ui/Button.jsx';
 import { Component } from 'react';
 import { Home, RefreshCcw } from 'lucide-react';
 
@@ -22,12 +23,12 @@ export default class AppErrorBoundary extends Component {
           <h1>Cinema Paradiso hit a display error.</h1>
           <p>{this.state.error.message || 'The current workspace could not be displayed.'}</p>
           <div className="app-crash-actions">
-            <button type="button" className="btn btn-primary" onClick={() => window.location.reload()}>
+            <Button variant="primary" type="button"  onClick={() => window.location.reload()}>
               <RefreshCcw size={16} /> Reload
-            </button>
-            <button type="button" className="btn btn-secondary" onClick={() => window.location.assign('/')}>
+            </Button>
+            <Button type="button"  onClick={() => window.location.assign('/')}>
               <Home size={16} /> Home
-            </button>
+            </Button>
           </div>
         </section>
       </main>

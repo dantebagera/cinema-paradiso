@@ -1,3 +1,6 @@
+import Button from './ui/Button.jsx';
+import FormField, { Input } from './ui/FormField.jsx';
+import DialogShell, { DialogHeader, DialogActions } from './ui/DialogShell.jsx';
 import { X } from 'lucide-react';
 import { cx } from '../utils/appUtils.js';
 import { getMovieIdentity } from '../utils/libraryUtils.js';
@@ -11,12 +14,12 @@ export function LibraryStat({ icon: Icon, label, value, tone, onClick }) {
 export function LibraryRenameModal({ item, onClose, onSubmit }) {
   const identity = getMovieIdentity(item);
   return <div className="modal-backdrop" role="presentation" onClick={onClose}>
-    <form className="small-dialog" onSubmit={onSubmit} role="dialog" aria-modal="true" aria-label="Rename file" onClick={(event) => event.stopPropagation()}>
-      <div className="dialog-header"><div><p className="screen-kicker">Rename file</p><h2>{item.filename}</h2></div><button type="button" className="inspector-close" onClick={onClose} aria-label="Close rename dialog"><X size={18} /></button></div>
-      <label className="dialog-field"><span>Movie title</span><input name="title" defaultValue={identity.title} /></label>
-      <label className="dialog-field"><span>Year</span><input name="year" defaultValue={identity.year} inputMode="numeric" /></label>
-      <div className="dialog-actions"><button type="button" className="btn btn-secondary" onClick={onClose}>Cancel</button><button type="submit" className="btn btn-primary">Rename</button></div>
-    </form>
+    <DialogShell as="form" className="small-dialog" onSubmit={onSubmit} role="dialog" aria-modal="true" aria-label="Rename file" onClick={(event) => event.stopPropagation()}>
+      <DialogHeader ><div><p className="screen-kicker">Rename file</p><h2>{item.filename}</h2></div><Button size="icon" type="button" className="inspector-close" onClick={onClose} aria-label="Close rename dialog"><X size={18} /></Button></DialogHeader>
+      <FormField ><span>Movie title</span><Input name="title" defaultValue={identity.title} /></FormField>
+      <FormField ><span>Year</span><Input name="year" defaultValue={identity.year} inputMode="numeric" /></FormField>
+      <DialogActions ><Button type="button"  onClick={onClose}>Cancel</Button><Button variant="primary" type="submit" >Rename</Button></DialogActions>
+    </DialogShell>
   </div>;
 }
 
@@ -32,8 +35,8 @@ export function ConfirmDialog({
   onConfirm,
 }) {
   return <div className="modal-backdrop" role="presentation" onClick={onCancel}>
-    <section className="small-dialog" role="dialog" aria-modal="true" aria-label={title} onClick={(event) => event.stopPropagation()}>
-      <div className="dialog-header"><div><p className="screen-kicker">Confirm action</p><h2>{title}</h2></div><button type="button" className="inspector-close" onClick={onCancel} aria-label="Close dialog"><X size={18} /></button></div>
+    <DialogShell className="small-dialog" role="dialog" aria-modal="true" aria-label={title} onClick={(event) => event.stopPropagation()}>
+      <DialogHeader ><div><p className="screen-kicker">Confirm action</p><h2>{title}</h2></div><Button size="icon" type="button" className="inspector-close" onClick={onCancel} aria-label="Close dialog"><X size={18} /></Button></DialogHeader>
       <p className="dialog-body-path">{body}</p>
       {acknowledgementLabel && (
         <label className="dialog-confirmation-check">
@@ -41,7 +44,7 @@ export function ConfirmDialog({
           <span>{acknowledgementLabel}</span>
         </label>
       )}
-      <div className="dialog-actions"><button type="button" className="btn btn-secondary" onClick={onCancel}>Cancel</button><button type="button" className={cx('btn', danger ? 'btn-danger' : 'btn-primary')} disabled={Boolean(acknowledgementLabel) && !acknowledged} onClick={onConfirm}>{confirmLabel}</button></div>
-    </section>
+      <DialogActions ><Button type="button"  onClick={onCancel}>Cancel</Button><Button variant={danger ? 'danger' : 'primary'} type="button"  disabled={Boolean(acknowledgementLabel) && !acknowledged} onClick={onConfirm}>{confirmLabel}</Button></DialogActions>
+    </DialogShell>
   </div>;
 }

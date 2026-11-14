@@ -1,3 +1,6 @@
+import Button from './ui/Button.jsx';
+import Badge from './ui/Badge.jsx';
+import DialogShell, { DialogHeader } from './ui/DialogShell.jsx';
 import { AlertTriangle, CheckCircle2, Film, Loader2, RotateCcw, Upload, X } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
@@ -118,17 +121,17 @@ export default function PosterEditorModal({ item, onClose, onSaved, notify }) {
 
   return (
     <div className="modal-backdrop poster-editor-backdrop" role="presentation" onClick={onClose}>
-      <section className="poster-editor-modal" role="dialog" aria-modal="true" aria-label={`Edit poster for ${item.title || 'Library movie'}`} onClick={(event) => event.stopPropagation()}>
-        <header className="dialog-header">
+      <DialogShell size="poster-review" className="poster-editor-modal" role="dialog" aria-modal="true" aria-label={`Edit poster for ${item.title || 'Library movie'}`} onClick={(event) => event.stopPropagation()}>
+        <DialogHeader as="header" >
           <div>
             <p className="screen-kicker">Offline Library presentation</p>
             <h2>Edit poster</h2>
             <p>{item.title || item.filename}</p>
           </div>
-          <button type="button" className="inspector-close" onClick={onClose} aria-label="Close poster editor">
+          <Button size="icon" type="button" className="inspector-close" onClick={onClose} aria-label="Close poster editor">
             <X size={18} />
-          </button>
-        </header>
+          </Button>
+        </DialogHeader>
 
         {loading ? (
           <div className="library-status"><Loader2 size={16} className="spin" /> Loading poster choices...</div>
@@ -144,7 +147,7 @@ export default function PosterEditorModal({ item, onClose, onSaved, notify }) {
                   <span className="mini-label">Primary source</span>
                   <h3>Choose from TMDB</h3>
                 </div>
-                <span className="chip">TMDB</span>
+                <Badge size="compact" >TMDB</Badge>
               </div>
               {tmdbOptions.length ? (
                 <div className="poster-option-grid">{renderOptions(tmdbOptions)}</div>
@@ -163,7 +166,7 @@ export default function PosterEditorModal({ item, onClose, onSaved, notify }) {
                     <span className="mini-label">Library provider</span>
                     <h3>Plex poster</h3>
                   </div>
-                  <span className="chip chip-muted">PLEX</span>
+                  <Badge size="compact" tone="neutral" muted >PLEX</Badge>
                 </div>
                 {plexOptions.length ? (
                   <div className="poster-option-grid">{renderOptions(plexOptions)}</div>
@@ -194,16 +197,16 @@ export default function PosterEditorModal({ item, onClose, onSaved, notify }) {
             hidden
             onChange={(event) => uploadPoster(event.target.files?.[0])}
           />
-          <button type="button" className="btn btn-secondary" onClick={() => fileInput.current?.click()} disabled={Boolean(busy)}>
+          <Button type="button"  onClick={() => fileInput.current?.click()} disabled={Boolean(busy)}>
             {busy === 'upload' ? <Loader2 size={15} className="spin" /> : <Upload size={15} />} Upload local image
-          </button>
+          </Button>
           {data.override?.id && (
-            <button type="button" className="btn btn-secondary" onClick={resetPoster} disabled={Boolean(busy)}>
+            <Button type="button"  onClick={resetPoster} disabled={Boolean(busy)}>
               {busy === 'reset' ? <Loader2 size={15} className="spin" /> : <RotateCcw size={15} />} Reset poster
-            </button>
+            </Button>
           )}
         </div>
-      </section>
+      </DialogShell>
     </div>
   );
 }

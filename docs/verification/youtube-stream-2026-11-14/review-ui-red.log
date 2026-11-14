@@ -1,0 +1,46 @@
+
+Running 1 test using 1 worker
+
+(node:36708) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tests\e2e\youtube-movie-stream.spec.js:98:1 › failed GPT keeps partial results visible and cancellation reads the saved search without another inference (16.6s)
+
+
+  1) tests\e2e\youtube-movie-stream.spec.js:98:1 › failed GPT keeps partial results visible and cancellation reads the saved search without another inference 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.stream-dialog').getByRole('button', { name: 'Play The Example partial match' })
+    Expected: visible
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 15000ms
+      - waiting for locator('.stream-dialog').getByRole('button', { name: 'Play The Example partial match' })
+
+
+      108 |   await dialog.getByRole('button', { name: 'Use GPT', exact: true }).click();
+      109 |   await expect(dialog.getByRole('alert')).toContainText('YouTube query failed');
+    > 110 |   await expect(dialog.getByRole('button', { name: 'Play The Example partial match' })).toBeVisible();
+          |                                                                                        ^
+      111 | });
+      112 |
+        at C:\Users\dante\.codex\worktrees\youtube-movie-stream\cinema paradiso\tests\e2e\youtube-movie-stream.spec.js:110:88
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\youtube-movie-stream-faile-b4920-h-without-another-inference\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\youtube-movie-stream-faile-b4920-h-without-another-inference\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\youtube-movie-stream-faile-b4920-h-without-another-inference\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\youtube-movie-stream-faile-b4920-h-without-another-inference\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    tests\e2e\youtube-movie-stream.spec.js:98:1 › failed GPT keeps partial results visible and cancellation reads the saved search without another inference 

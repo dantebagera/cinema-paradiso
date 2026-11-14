@@ -1,0 +1,36 @@
+.iptv-source-list { overflow-y: auto; padding: 10px; }
+.iptv-source-list > button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 58px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-strong);
+  cursor: pointer;
+  gap: 12px;
+  padding: 9px 11px;
+  text-align: left;
+}
+
+.iptv-source-list > button:hover:not(:disabled) {
+  background: #1b1d21;
+}
+
+.iptv-source-list > button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.iptv-source-list > button span {
+  display: grid;
+  gap: 4px;
+}
+
+.iptv-source-list > button small {
+  color: var(--text-faint);
+  font-size: 0.68rem;
+}
+

@@ -1,3 +1,6 @@
+import Button from './ui/Button.jsx';
+import FormField, { Input } from './ui/FormField.jsx';
+import DialogShell, { DialogHeader, DialogActions } from './ui/DialogShell.jsx';
 import {
   AlertTriangle,
   CheckCircle2,
@@ -209,16 +212,16 @@ export default function MetadataCorrectionModal({
 
   return (
     <div className="modal-backdrop" role="presentation" onClick={onClose}>
-      <section className="torrent-dialog metadata-correction-dialog" role="dialog" aria-modal="true" aria-label="Correct movie metadata" onClick={(event) => event.stopPropagation()}>
-        <div className="dialog-header">
+      <DialogShell size="wide" className="torrent-dialog metadata-correction-dialog" role="dialog" aria-modal="true" aria-label="Correct movie metadata" onClick={(event) => event.stopPropagation()}>
+        <DialogHeader >
           <div>
             <p className="screen-kicker">Correct movie identity</p>
             <h2>Correct metadata</h2>
           </div>
-          <button type="button" className="inspector-close" onClick={onClose} aria-label="Close metadata correction">
+          <Button size="icon" type="button" className="inspector-close" onClick={onClose} aria-label="Close metadata correction">
             <X size={18} />
-          </button>
-        </div>
+          </Button>
+        </DialogHeader>
         <p className="dialog-body-path">{item.filename || item.path}</p>
         {loading ? (
           <div className="library-status"><Loader2 size={16} className="spin" /><span>Loading accepted metadata...</span></div>
@@ -231,23 +234,23 @@ export default function MetadataCorrectionModal({
             </div>
 
             <form className="metadata-correction-search" onSubmit={submitDefaultSearch}>
-              <label className="dialog-field">
+              <FormField >
                 <span>Search or display title</span>
-                <input value={title} onChange={(event) => setTitle(event.target.value)} required />
-              </label>
-              <label className="dialog-field">
+                <Input value={title} onChange={(event) => setTitle(event.target.value)} required />
+              </FormField>
+              <FormField >
                 <span>Year</span>
-                <input value={year} onChange={(event) => setYear(event.target.value.replace(/\D/g, '').slice(0, 4))} inputMode="numeric" placeholder="Optional" />
-              </label>
+                <Input value={year} onChange={(event) => setYear(event.target.value.replace(/\D/g, '').slice(0, 4))} inputMode="numeric" placeholder="Optional" />
+              </FormField>
               <div className="metadata-provider-search-actions">
-                <button type="button" className="btn btn-primary btn-violet" onClick={() => search('tmdb')} disabled={Boolean(busy) || !tmdbAvailable || !title.trim()}>
+                <Button variant="ai" type="button"  onClick={() => search('tmdb')} disabled={Boolean(busy) || !tmdbAvailable || !title.trim()}>
                   {busy === 'search-tmdb' ? <Loader2 size={15} className="spin" /> : <Search size={15} />}
                   {tmdbAvailable ? 'Search TMDB' : 'TMDB unavailable'}
-                </button>
-                <button type="button" className="btn btn-secondary" onClick={() => search('plex')} disabled={Boolean(busy) || !plexAvailable || !title.trim()}>
+                </Button>
+                <Button type="button"  onClick={() => search('plex')} disabled={Boolean(busy) || !plexAvailable || !title.trim()}>
                   {busy === 'search-plex' ? <Loader2 size={15} className="spin" /> : <Clapperboard size={15} />}
                   {plexAvailable ? 'Search Plex' : 'Plex unavailable'}
-                </button>
+                </Button>
               </div>
             </form>
 
@@ -256,10 +259,10 @@ export default function MetadataCorrectionModal({
             {needsPlexScan && (
               <div className="cleanup-match-recovery metadata-plex-recovery">
                 <span>Plex must index this file before its matching agents can be searched.</span>
-                <button type="button" className="btn btn-secondary" onClick={requestPlexScanAndRetry} disabled={Boolean(busy)}>
+                <Button type="button"  onClick={requestPlexScanAndRetry} disabled={Boolean(busy)}>
                   {busy === 'plex-scan' ? <Loader2 size={15} className="spin" /> : <RefreshCcw size={15} />}
                   {scanRequested ? 'Retry Plex lookup' : 'Request Plex scan'}
-                </button>
+                </Button>
               </div>
             )}
 
@@ -316,28 +319,28 @@ export default function MetadataCorrectionModal({
             <div className="metadata-correction-footer">
               <div className="metadata-display-actions">
                 {hasOverride && (
-                  <button type="button" className="btn btn-secondary" onClick={resetDisplayOverride} disabled={Boolean(busy)}>
+                  <Button type="button"  onClick={resetDisplayOverride} disabled={Boolean(busy)}>
                     {busy === 'reset-display' ? <Loader2 size={15} className="spin" /> : <RefreshCcw size={15} />} {resetLabel}
-                  </button>
+                  </Button>
                 )}
-                <button type="button" className="btn btn-secondary" onClick={saveDisplayOverride} disabled={Boolean(busy) || !title.trim()}>
+                <Button type="button"  onClick={saveDisplayOverride} disabled={Boolean(busy) || !title.trim()}>
                   {busy === 'save-display' ? <Loader2 size={15} className="spin" /> : <Save size={15} />}
                   Save display title/year only
-                </button>
+                </Button>
               </div>
-              <div className="dialog-actions metadata-correction-actions">
-                <button type="button" className="btn btn-secondary" onClick={onClose}>Cancel</button>
-                <button type="button" className="btn btn-primary" onClick={applySelectedMatch} disabled={Boolean(busy) || !selectedMatch}>
+              <DialogActions className="metadata-correction-actions">
+                <Button type="button"  onClick={onClose}>Cancel</Button>
+                <Button variant="primary" type="button"  onClick={applySelectedMatch} disabled={Boolean(busy) || !selectedMatch}>
                   {busy.startsWith('apply-') ? <Loader2 size={15} className="spin" /> : <CheckCircle2 size={15} />}
                   Apply {searchProvider === 'plex' ? 'Plex' : 'TMDB'} match
-                </button>
-              </div>
+                </Button>
+              </DialogActions>
             </div>
           </>
         ) : (
           error && <p className="settings-inline-status settings-inline-error"><AlertTriangle size={15} /><span>{error}</span></p>
         )}
-      </section>
+      </DialogShell>
     </div>
   );
 }

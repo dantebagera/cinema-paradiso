@@ -1,0 +1,34 @@
+test_browser_report_utf8_with_non_ascii_error (__main__.AuditTests.test_browser_report_utf8_with_non_ascii_error) ... ERROR
+test_redirected_profile_uses_existing_browser_cache (__main__.AuditTests.test_redirected_profile_uses_existing_browser_cache) ... ERROR
+
+======================================================================
+ERROR: test_browser_report_utf8_with_non_ascii_error (__main__.AuditTests.test_browser_report_utf8_with_non_ascii_error)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass4_audit_contract_tests.py", line 51, in test_browser_report_utf8_with_non_ascii_error
+    self.assertEqual(load_browser_report(self.path),value)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass4_audit_contract.py", line 9, in load_browser_report
+    return json.loads(path.read_text())
+                      ^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\pathlib.py", line 1028, in read_text
+    return f.read()
+           ^^^^^^^^
+  File "C:\Program Files\Python312\Lib\encodings\cp1252.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x90 in position 30: character maps to <undefined>
+
+======================================================================
+ERROR: test_redirected_profile_uses_existing_browser_cache (__main__.AuditTests.test_redirected_profile_uses_existing_browser_cache)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass4_audit_contract_tests.py", line 58, in test_redirected_profile_uses_existing_browser_cache
+    self.assertEqual(actual['PLAYWRIGHT_BROWSERS_PATH'],str(cache));self.assertEqual(actual['LOCALAPPDATA'],env['LOCALAPPDATA'])
+                     ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'PLAYWRIGHT_BROWSERS_PATH'
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.009s
+
+FAILED (errors=2)

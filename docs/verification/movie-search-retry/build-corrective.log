@@ -1,0 +1,49 @@
+
+> cinema-paradiso-frontend@3.0.0-beta.2 build
+> vite build --outDir C:\Users\dante\AppData\Local\Temp\cp-search-retry-1792774509070\dist-corrective
+
+vite v6.4.3 building for production...
+
+(!) outDir C:\Users\dante\AppData\Local\Temp\cp-search-retry-1792774509070\dist-corrective is not inside project root and will not be emptied.
+Use --emptyOutDir to override.
+
+transforming...
+✓ 1719 modules transformed.
+rendering chunks...
+computing gzip size...
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/manifest-BSGbUmFO.webmanifest          0.55 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/logo-Dk1rN4XL.svg                      1.25 kB │ gzip:   0.55 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/index.html                                    1.86 kB │ gzip:   0.84 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/styleguide-motif-crop-B3fTh5_H.png   119.86 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/header-Cr7VYxUL.png                  402.60 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/home-film-projector-Cy2UE5XO.png     763.94 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/HomeWorkspace-_NC_Abiy.css            13.55 kB │ gzip:   3.27 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/IPTVWorkspace-DRuulTon.css            39.89 kB │ gzip:   6.54 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/index-3_nuXu-W.css                   221.76 kB │ gzip:  38.40 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/WorkspaceEmptyState-BDDRbUY5.js        0.33 kB │ gzip:   0.23 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/DiscoverResultGrid-MNsoJA2h.js         0.88 kB │ gzip:   0.41 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/WorkspacePathBar-BmCcXNkz.js           2.50 kB │ gzip:   0.96 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/LibraryControls-D0rWcd4L.js            2.83 kB │ gzip:   0.91 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/CatalogMetadataFilters-CTo03MWP.js     3.11 kB │ gzip:   1.35 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/DownloadsWorkspace-CuHskVDD.js         3.78 kB │ gzip:   1.55 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/vendor-Bb8JjhAW.js                     3.85 kB │ gzip:   1.72 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/useMovieCollectionCache-CADQ7GXG.js    5.59 kB │ gzip:   2.22 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/iptv-OZJyDRwh.js                       6.50 kB │ gzip:   1.38 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/SourceReviewDialog-t9BxdxMW.js         6.63 kB │ gzip:   2.40 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/MetadataCorrectionModal-D2l_rHgP.js    9.93 kB │ gzip:   3.26 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/StyleGuide-j8Ml-njr.js                10.42 kB │ gzip:   3.00 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/CardLab-DsmnN8DX.js                   11.48 kB │ gzip:   4.12 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/AIControlWorkspace-HZvPkykp.js        16.83 kB │ gzip:   5.81 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/HelpWorkspace-CIk8ZLpA.js             21.47 kB │ gzip:   6.96 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/HomeWorkspace-DwaTDwzP.js             22.62 kB │ gzip:   7.43 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/vendor-icons-C8OlgL8L.js              33.11 kB │ gzip:   6.72 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/ListsWorkspace-BWUHrznj.js            46.24 kB │ gzip:  14.22 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/LibraryWorkspace-BshmBI4T.js          48.81 kB │ gzip:  14.88 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/DiscoverWorkspace-4z6C_vT2.js         60.23 kB │ gzip:  18.49 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/CleanupWorkspace-Bf9SaQz_.js          63.60 kB │ gzip:  16.75 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/SettingsWorkspace-rfnkZNUf.js         84.72 kB │ gzip:  21.10 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/IPTVWorkspace-B6glMq1T.js             96.16 kB │ gzip:  25.53 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/vendor-react-CJZMWplS.js             189.82 kB │ gzip:  59.19 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/index-CwW9dSyz.js                    273.65 kB │ gzip:  81.00 kB
+../../AppData/Local/Temp/cp-search-retry-1792774509070/dist-corrective/assets/vendor-player-Dv34CeeU.js            353.87 kB │ gzip: 110.81 kB
+✓ built in 2.48s

@@ -1,0 +1,1 @@
+{"qualified": true, "child_pid": 35676, "stats": {"startTime": "2026-10-24T18:44:48.890Z", "duration": 15730.842999999999, "expected": 5, "skipped": 0, "unexpected": 0, "flaky": 0}, "server_exit_code": 0, "violations": [], "open": 652, "sqlite3.connect": 917, "forced_pids": []}

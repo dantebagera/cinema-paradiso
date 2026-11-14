@@ -1,0 +1,25 @@
+--- tests/test_full_row_card_grids_ui.py (before)
++++ tests/test_full_row_card_grids_ui.py (after)
+@@ -23,7 +23,11 @@
+         self.assertNotIn('movies.slice(0,', self.home)
+ 
+     def test_home_scrolling_rails_share_layout_and_group_trailers(self):
+-        self.assertIn('/api/tmdb/discover?list=upcoming&page=1&page_size=100', self.app)
++        # The later Home-loading contract fills twenty logical cards across bounded provider pages.
++        self.assertIn('/api/tmdb/discover?list=upcoming&page=1&page_size=${HOME_UPCOMING_PREVIEW_SIZE}', self.app)
++        home_model = (ROOT / 'src/utils/homeMovies.js').read_text(encoding='utf-8')
++        self.assertIn('export const HOME_UPCOMING_PREVIEW_SIZE = 20', home_model)
++        self.assertIn('buildUpcomingHomeMovies(cycle.raw, home.trending)', self.app)
+         self.assertIn('<HorizontalCardRail label="Upcoming movies"', self.home)
+         self.assertIn('trackClassName="coming-soon-grid"', self.home)
+         self.assertIn('(movies || []).map(movie =>', self.home)
+@@ -35,7 +39,8 @@
+     def test_library_uses_measured_full_row_page_size(self):
+         self.assertIn("useCardGridMetrics({ target: 40, max: 100, bias: 'lower' })", self.library)
+         self.assertIn("ref={mode === 'movie' ? libraryMovieGridRef : undefined}", self.library)
+-        self.assertIn("activeLibraryQueryRef.current = activeLibraryQuery", self.library)
++        self.assertIn("visibleLibraryReadRef.current = { query: activeLibraryQuery, page: currentPage, pageSize, intent:", self.library)
++        self.assertIn("body: JSON.stringify({ query: descriptor.query, page: descriptor.page, page_size: descriptor.pageSize })", self.library)
+         self.assertIn("[currentPage, notify, pageSize]", self.library)
+ 
+     def test_ai_control_uses_measured_client_page_size(self):

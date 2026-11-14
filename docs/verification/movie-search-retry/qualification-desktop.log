@@ -1,0 +1,11 @@
+
+Running 2 tests using 1 worker
+
+
+(node:26952) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1/2] tests\e2e\movie-remaining-qualification.spec.js:3:1 › 4000-film compiled search dispatches first/latest and reaches every exact result
+[2/2] tests\e2e\movie-remaining-qualification.spec.js:59:1 › poster transport failure retries on due clock then publishes and refreshes Library and Following
+  2 passed (1.2m)
+{"startTime": "2026-10-23T19:42:34.296Z", "duration": 72201.536, "expected": 2, "skipped": 0, "unexpected": 0, "flaky": 0}

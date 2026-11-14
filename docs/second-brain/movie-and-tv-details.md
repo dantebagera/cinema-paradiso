@@ -2,6 +2,12 @@
 
 [Movie and TV detail features code map](../atlas/movie-and-tv-details.md) · [Second Brain index](README.md) · [Update log](log.md)
 
+## 2026-11-13 IPTV integration candidate
+
+On 2026-11-13 Dante extended the existing portrait controls to IPTV. IPTV actor-card navigation retains compatible refinements within the current provider. The small Filmography button clears Discover criteria and opens full Movie Discover filmography, including titles absent from IPTV. This supersedes the earlier provider-only small-button behavior. Reset filters within provider-local portrait browsing retains the person. Explicit Provider View leaves person navigation. Biography is lazy and uses IPTV settings; provider-local portrait browsing remains offline. Full Discover filmography uses the existing TMDB credits flow. Existing Movie/TV behavior stays unchanged.
+
+Authority: [approved plan](../plans/2026-11-13-iptv-cast-discover-streaming.md). Evidence: [2026-11-13 isolated verification](../verification/iptv-cast-discover-streaming-2026-11-13/report.md). Candidate is in the managed `iptv-discover-streaming` worktree at baseline `117526b` plus the preserved dirty desktop source. **Historical integration verification; see the correction and activation record below for current status.**
+
 ## Approved behavior
 
 | Decision | Rule | Authority |
@@ -25,3 +31,23 @@
 
 - **Why are there fewer owned collection members than provider parts?** Confirm the route, which records have real owned files, unresolved parts, and any active Discover criteria. [Collection scenario](../atlas/movie-and-tv-details.md#scenario-pointers)
 - **Why does an award, credit, or related link land on an unexpected page?** Start with the origin and accepted identity. Then inspect the domain, person role or related source, and the saved navigation context. [Details and relationships](../atlas/movie-and-tv-details.md#collections-related-awards-and-artwork)
+
+## Filmography destination correction, 2026-11-13
+
+Dante clarified the small button must open Discover like Movies, and approved applying, testing and activating it with "yes go". The old provider-only button assertion was incorrect and was replaced; portrait browsing retains its local assertion. [Correction plan](../plans/2026-11-13-iptv-filmography-discover-correction.md) · [Verification and activation](../verification/iptv-filmography-discover-2026-11-13/report.md).
+
+Correction activated in the desktop main app: tested bundle `index-rEoonoEd.js` served on port5000 after normal restart; compiled desktop tests 47/47. Live desktop clicking verified: Brad Pitt's small button opened Movie Discover with 115 credits and the IPTV breadcrumb.
+
+
+## RT main-folder application — 2026-11-14
+
+Dante approved the4px exception for crowded collapsed cards without TMDB/awards, and applying the feature to main. He then instructed not to test; he will handle testing. Applied21feature files while preserving current main changes and rebuilt main dist successfully. No tests, runtime restart or live verification were performed. Collapsed RT shares the bottom row with TMDB; votes label is omitted there, numeric count retained. Expanded RT sits between awards and TMDB; long titles wrap. Optional-Plex persistence and lazy-loading behavior are unchanged. [Application record](../verification/plex-rotten-tomatoes-2026-11-14/report.md).
+
+
+## Arabic Movie card defaults — 2026-11-14
+
+Dante approved Arabic movie cards defaulting to Arabic across CP, with English available. `src/utils/movieLanguage.js` selects display titles from original-language metadata. `useTransientMovieLanguage` applies the default to shared Movie cards and Home inspector; Home tiles and related Movie rails reuse the title helper. TV retains its existing hook and IPTV retains its provider-owned Arabic display.
+
+Provider summaries, compact SQL Library cards, curated entries and Continue Watching retain original_title/original_language. Saved original metadata is read from the matching TMDB snapshot even when Plex supplies artwork. No identity, file path, catalog language migration or playback-target change. Arabic detail requests occur on expansion, share a bounded session cache, and retain source text on missing translations. The English choice stays local to the mounted card; a different card starts with the default again. Owned/custom artwork and collection membership stay authoritative; existing localized artwork on unowned cards remains supported.
+
+[Approved plan](../plans/2026-11-14-arabic-movie-card-defaults.md) · [Verification and installation boundary](../verification/arabic-movie-cards-2026-11-14/report.md). Worktree implementation; live installation is not implied by tests.

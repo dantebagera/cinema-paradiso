@@ -1,0 +1,14 @@
+{
+  "root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070",
+  "head": "be511f98846a67a182e5b371ad087938e9344362",
+  "tracked_dirty": 106,
+  "untracked": 533,
+  "files": {
+    "app.py": "87552e91b9edbb59a71996d32ef13ae111fa022f5c5d434a0e4b1acace3af9e3",
+    "services/catalog_store.py": "b71169064020ab42f3eb460f3bf504d06918cf61e832da2592261e61e311a262",
+    "services/catalog_repository.py": "df2773768183ab5dc315c96f38d3ed7f95c0c8b118ce5dbe9d079d27951c47e7",
+    "services/library_ingestion.py": "c06f3f2a6d62470129fb195cc6c4154b98daf9e05a17da64ec20e072c6892d1e",
+    "src/features/library/LibraryWorkspace.jsx": "fce1fff9345de8724a5f14f536bc17d778daa7a12cec0ba1a4a1b9c35ff7f2ad"
+  },
+  "dist_sha256": "5670d875c3b70b760e7e785637905872e374bed4751e830b6b0c181727362614"
+}

@@ -4,3 +4,4 @@ pymediainfo>=6.0.0
 Pillow>=11.0.0
 watchdog==6.0.0
 tzdata==2026.5
+PyJWT[crypto]>=2.15.1,<3

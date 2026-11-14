@@ -1,0 +1,366 @@
+[
+  {
+    "Path": "docs/tv-contracts.md",
+    "SHA256": "B098CD734DC13B511F2BBBE9847A2AA3DF763ED1A153ADD1713C16C8E6327485"
+  },
+  {
+    "Path": "services/acquisition_store.py",
+    "SHA256": "3AE81C3520FCDBA7A6CF306FF0C3CDBE0E07F69DC01966440EEA220B139D2230"
+  },
+  {
+    "Path": "services/tv_acquisition.py",
+    "SHA256": "C7641694B710C27D5D2ABA83D3AEF4FC3F2091AF936857DDE05D23B4ED43F22B"
+  },
+  {
+    "Path": "services/tv_filename_parser.py",
+    "SHA256": "2B7BF73B1ABD52411CDD46A8CDF939AA3BD1C2CD33D6E49932234794ED5FE89F"
+  },
+  {
+    "Path": "services/tv_monitoring.py",
+    "SHA256": "3720A69AA35F8F623A455FBCF58C4FBEFBE26CFE615A8537E0E327D21BEEC121"
+  },
+  {
+    "Path": "services/verified_import.py",
+    "SHA256": "78CD0D338E366B3F39C7C747E7A07B2B29FF36A6EC99A56D08B4C96EED29750B"
+  },
+  {
+    "Path": "src/features/tv/TVAcquisitionReview.jsx",
+    "SHA256": "1133534340E28A7160F2E108DD4A240941537AD9AA23F9BF92CDFCFBDC0E686F"
+  },
+  {
+    "Path": "src/features/tv/tv.css",
+    "SHA256": "00D8817391543F5805770DA7F3B3C620E52C79DE66E6D7A9CBAEA2074E402912"
+  },
+  {
+    "Path": "tests/native_tv_server.py",
+    "SHA256": "8DF9CF4BD4B16A3D6BDCD04D728BDC02706DC4CC4AD398D5878157046E1BDE25"
+  },
+  {
+    "Path": "tests/test_verified_tv_acquisition.py",
+    "SHA256": "B166982F66F9A4B83E5D2BB982D1E7B3A21F12558DAB2C7BBDD30A7B6138DE0B"
+  },
+  {
+    "Path": "docs/plans/2026-10-10-tv-follow-season-packs-and-source-diagnostics-plan.md",
+    "SHA256": "5BAA8E011205C1C428244D9B544B350243FD0EC0FF1EF1607E6BA68E06FD6F76"
+  },
+  {
+    "Path": "docs/plans/2026-10-10-tv-pack-auxiliary-files-fix.md",
+    "SHA256": "D8172A21C34E400A60A9918B76C2D5E02EC8CC0CA818F9B8D944246481457E0C"
+  },
+  {
+    "Path": "docs/plans/2026-10-11-mostafa-ui-ux-integration-plan.md",
+    "SHA256": "601947DCB68E8B73EFC78BD4F7ED9ACEC4742D4F7B384204B0B6245E2D996346"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/README.md",
+    "SHA256": "80F471D3C08E06B3592969C0E49E35F9044C3082183C2D1B298859AA622BC48E"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/baseline-python.log",
+    "SHA256": "001F3F0139DABFA8F865C7A8E31AC1EB89E56CE916D06B4F76C9FD9C8169628E"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/build-completed.log",
+    "SHA256": "D18E5ED292FB1A3CB33D15EE64FB6EF546EAD371D13BF150BB1D9BBDDD7BE05D"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/build-final.log",
+    "SHA256": "8ADD663D25AEBFE475AD5E58E59D52766F936CC288AFACDD160510E3F0F6530A"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/build.log",
+    "SHA256": "B153C518F8ED45F295152ABB0B43F750EB9543823C48E409E2448DE34FF8CF5A"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/desktop-green.log",
+    "SHA256": "62285F22EBAD79D906116D497217B9D901251D7BA946C174AC3EF633DC018F2A"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/desktop-native-tv-completed.log",
+    "SHA256": "5A8DF3DB6882BA8905840F58E5CBACFC45182DD7348638802CF8B118B7064273"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/desktop-native-tv-final.log",
+    "SHA256": "39130E4295F3F2D21F3A412E526AA76396A8E14D905C36651BCF7F589130531A"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/desktop-packs-final.log",
+    "SHA256": "599BB197EA571FEA9A580277574C68A83903200BA8F51A3FA03E40A33EC695C0"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/desktop-red.log",
+    "SHA256": "28AF0416095BE8075363EFDF03AD762182B8D7E15938A1A348BEE72B2B3F37C5"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/desktop-tv-download-contracts-completed.log",
+    "SHA256": "93BEE4A059E9823E3EC1526742BD796BA6141B6720883DF6EEF60EACB925AA00"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/desktop-tv-download-contracts-final.log",
+    "SHA256": "EB66721BDDDF08491339DF7192E526A5309A88CC9A57CC67D803D0CBF179B309"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/desktop-tv-follow-season-packs-completed.log",
+    "SHA256": "39EF0E7530064529DBE21EF4BB86BE67B80C621EDA3F089A140058DD5B489347"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/desktop-tv-follow-season-packs-final.log",
+    "SHA256": "3678B54A6C5AC7A0A84F542E238EC48FF57561D455924692AE1CD13B821DEED8"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/desktop-tv-normal-import-completed.log",
+    "SHA256": "E2E02C524D5CEB33FA51A39D201D2EECCA7F9E1FAAE6820F660AD0F85CC61A60"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/desktop-tv-normal-import-final.log",
+    "SHA256": "F2B4672A33B3E565403F965452BF188991BA394CB011433827A73A5383B2A180"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/desktop-tv-stabilization-completed.log",
+    "SHA256": "71161E33FADEDAF33CCCD6F4A426FAE614D2490179E9BC921462AD813574831D"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/desktop-tv-stabilization-final.log",
+    "SHA256": "CDD47D6F1EFD394245614BFF4E104896950733CE144653FD12D0F22A356CA711"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/final-scope-green.log",
+    "SHA256": "9E1C05624D51F6F573AA6BE1CB6531222CA8346752EDB915E20F6F5804E70454"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/final-scope-red.log",
+    "SHA256": "5643D3BE096AB1B6D8CCCC38A01DB6256D5DBCAABC17D6A459947260F41C2B4C"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/focused-completed.log",
+    "SHA256": "D64FEA2106B15E485D0578CC91791ECC32FD1AF1FBF91E79F0908C8001A70AEA"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/focused-final.log",
+    "SHA256": "36AE146A620BC582B54ADDA394E47DE140DDFFB51F067CCA84FA93621931919A"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/focused.log",
+    "SHA256": "EEF8B822732452DE6663762EC3EEE6B4598E2E1491664C711AF6F41D81ADA288"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/full-python-completed.log",
+    "SHA256": "ED4E77DCC567C0BDDDED6430DD5F9532C5E10C7DEDEEE6AE6AE8AB09BE0B8732"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/full-python-final.log",
+    "SHA256": "487FDCAA6190BEF81197829F1EDBAEB1316EE53243A0F6935D1AE3C0B57B2CFA"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/full-python.log",
+    "SHA256": "44198EE7E9E9ED40698D380F5AA0307105CE25E32D7990D5F53B07A1CF316A7C"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/gap-pack-green.log",
+    "SHA256": "127B5058358009E19CA1BFF60B2419A4F0AC478AB6BFA7383BA527B8E8880597"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/gap-pack-red.log",
+    "SHA256": "53A82D53F7EE347C75776CBA7140994C4BBFDF67950AB2A2F9A974C19CCAA0A3"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/iptv-timing-dependency-check.json",
+    "SHA256": "0BBDCF9F1227ED74A764C3910DEE814E82B28B9C3462BF907E2199FDDCA63AE8"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/iptv-timing-pristine-baseline.log",
+    "SHA256": "6DC2C318A7E97D8E0ED16CEA27A605C4B13D52E98E97CC7A81730857E40059E9"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/iptv-timing-rerun.log",
+    "SHA256": "7DDDC7D753EA2C5D6E6FC14A8161D0AE2D4220F5B917DF10ADA3EB829457A199"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/iptv-timing-single-current.log",
+    "SHA256": "C6111F7EE5BE3AEAC37262992953A3A0F6F66209E867C78759DC455C5CCFAEDD"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/main-checkout-tests.log",
+    "SHA256": "DCFF9241EA065EC9D1A73BF6E8B3DCBB1434885F4B2DFFEBA3D3093D779852DC"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/new-ownership-green.log",
+    "SHA256": "2A3BAD07D35DD495C2FB38D3F108B86AD4918BB3C56AF8E5A81B1D7A356B8BC9"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/node-completed.log",
+    "SHA256": "0619C85AFB5B5BA539CE74128626DEE2A9F02BF43CEA4F860A6BDA8DE42D6C86"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/node.log",
+    "SHA256": "9AF305742F18B1C7786464C62719643D7025564CD1D08D9B6790EE4248D21777"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/planning-green.log",
+    "SHA256": "6430E1C926E37D351F83739DC542DE7B39FE9BA6047126D3F48D6F390653DF59"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/planning-red.log",
+    "SHA256": "8E973F144726E2B84A978E427471CFBEB8CAF937B6835948AA40349DFE810E3A"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/production-fingerprints-after.json",
+    "SHA256": "8767667BF6F3E3F6C94D73070F1AE0012140F8CB94841746C96F43609E12F3A8"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/production-fingerprints-before.json",
+    "SHA256": "538307FEFC49D9F0F4DA8D16112215DF31DE5E7F8EC9CA25785FED7459B59852"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/progress.md",
+    "SHA256": "F7CCF71A8569F5863A2F44848AAD5C6960A5017E5E7E6D32A289C344ED84FD13"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/queued-1366.png",
+    "SHA256": "A5E6A007479C4BFD2C5CFC4BF370B848E88FB051C731C445847292629D9279A2"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/queued-1920.png",
+    "SHA256": "6C576C64DDA196193A243E4D572AD1CB824CAC411F873577A4671D410AFFFA44"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/recognition-green.log",
+    "SHA256": "C65A79C6F75257870491A847784A500B52EDCA9C90C7B6B7D62CEEED113ABD13"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/recognition-red.log",
+    "SHA256": "24ACB421B4EC9BA01CEEE17CD49AD7B7501DF836C6A76BA7D951574F3F32249C"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/review-1366.png",
+    "SHA256": "8C8699A8197847D8EEB34E46540E98CBA62D2C8322B804235D079D92D9CD7F2E"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/review-1920.png",
+    "SHA256": "CE73EBC29A49A4C83DDCF4101AA9BE5C44C6D400CFD090094846A7F807576F0F"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/review-green.log",
+    "SHA256": "2DE6A5164FBC52D537BBD9050AE4E5495F286508F781BC047A4DF54C007FECF1"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/review-red.log",
+    "SHA256": "9DEDC0CCFA0D5E272FA971A10DD1FE1E264649F8FE5E87FDFF568D9691201E43"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/source-delivery.json",
+    "SHA256": "F9437B56B3F64AB976B934671F4311ED6FDFFE6FEDBB443D43030FFC5E7A8237"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/source-review.png",
+    "SHA256": "8EE81AA4293EF6CE085C8A8E07E2A3C4D4FE778D3ED5B04D986D3305C4256715"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/thirteen-episode-green.log",
+    "SHA256": "4ADF0846AF4ACA1A734533D33DC9FABF062BA8A1038971A5A39C7576DC5F5B1B"
+  },
+  {
+    "Path": "docs/verification/tv-follow-season-packs/transfer-review-red.log",
+    "SHA256": "2EDF31E009E5AE074BCA921B6688F5FB2E4C709D045459161B61A266F8B2A3DC"
+  },
+  {
+    "Path": "docs/verification/tv-pack-auxiliary-files/README.md",
+    "SHA256": "18DB1FD24FD4E511A2B946DC0D182BADB41B30AC171EE163B68FC52D2BB05BD7"
+  },
+  {
+    "Path": "docs/verification/tv-pack-auxiliary-files/baseline-focused.log",
+    "SHA256": "5681F6FC20FF238C51AD71ED86FC23382B926958B49DAF17B5D458ECEAFFEA8E"
+  },
+  {
+    "Path": "docs/verification/tv-pack-auxiliary-files/cleanup-red.log",
+    "SHA256": "687D969556DB94425B68B74D61CAF42506354644132AAD5497A54BA2B8F6BB2E"
+  },
+  {
+    "Path": "docs/verification/tv-pack-auxiliary-files/complete-green.log",
+    "SHA256": "73BECB68F6BBC7CE8EDCB8E15563FF075824C51AC44B95F49F3E67EAD6FE98CC"
+  },
+  {
+    "Path": "docs/verification/tv-pack-auxiliary-files/desktop-normal-import.log",
+    "SHA256": "BAFD6B3394D429BCCF0038F8C5ED072EC2B84CB33E99CB6C420FDA20E55011FD"
+  },
+  {
+    "Path": "docs/verification/tv-pack-auxiliary-files/evidence-delivery.json",
+    "SHA256": "FEE4385C5C0041D0990F6CB28B34B47E559ECE625FAC31569343E7365AED0810"
+  },
+  {
+    "Path": "docs/verification/tv-pack-auxiliary-files/final-targeted.log",
+    "SHA256": "EAFFB0169C2E48B273EAF98AA520844BC06AA47B89E0CB50EC57A201DE2E7F54"
+  },
+  {
+    "Path": "docs/verification/tv-pack-auxiliary-files/focused-final.log",
+    "SHA256": "02088546A0FFB367380312C32DBC5BAC853C295AD0E3ACD3BEB5BF5B0C7A4DB5"
+  },
+  {
+    "Path": "docs/verification/tv-pack-auxiliary-files/focused.log",
+    "SHA256": "8F1B6EA16E84F7A6FF116FF1D2DB695C43BBFA59EF0F83EA648B6C05C9F464D5"
+  },
+  {
+    "Path": "docs/verification/tv-pack-auxiliary-files/full-python-completed.log",
+    "SHA256": "81BE9B3B7A8E522C46F4D4BD00BB0DD6AC2E1C9179E2D4E425F688ED2FEEC775"
+  },
+  {
+    "Path": "docs/verification/tv-pack-auxiliary-files/full-python-final.log",
+    "SHA256": "F049416D252B61976D15487326CDE632F42C0E2C83F4955ECEB82BF95531DC6E"
+  },
+  {
+    "Path": "docs/verification/tv-pack-auxiliary-files/full-python.log",
+    "SHA256": "CF3C577A62E82E9197C6D9AD60C34E0D22F51789BC9A524EDE1666B0CCE7251D"
+  },
+  {
+    "Path": "docs/verification/tv-pack-auxiliary-files/green.log",
+    "SHA256": "0B63F60FD6108BCCAC630D06943CEEB01A0186E9AD2350ECA88D65B66AF8B0F3"
+  },
+  {
+    "Path": "docs/verification/tv-pack-auxiliary-files/junction-red.log",
+    "SHA256": "8867CCD42A915CBF635E63C7FA2B2D1FD6CA69046435C971F839D8B06FD1903F"
+  },
+  {
+    "Path": "docs/verification/tv-pack-auxiliary-files/live-manifest-read-only.json",
+    "SHA256": "8A17F385E9541CBCD7B7F28ACE40812CED19311B629B88E7CD6209572BB098AE"
+  },
+  {
+    "Path": "docs/verification/tv-pack-auxiliary-files/live-read-only.json",
+    "SHA256": "EF8E77D3E8EEE25C80238C6B57BFE88BC6176C9E1FE5F0E99203B39D66F58681"
+  },
+  {
+    "Path": "docs/verification/tv-pack-auxiliary-files/main-checkout-tests.log",
+    "SHA256": "EE889377E410791976EBAFA0F8CE83ED8808272C9EBD2D3B9E5CB293041C1541"
+  },
+  {
+    "Path": "docs/verification/tv-pack-auxiliary-files/pre-repair-main-source.json",
+    "SHA256": "79A9DA7DA127E3606D152D03DA640FB62EDD7059671B5391C815C7E1EB1338DD"
+  },
+  {
+    "Path": "docs/verification/tv-pack-auxiliary-files/red.log",
+    "SHA256": "09FF2C2ACA326A10BE17FEBB311D9F49687B3EEEB1C33DBB120F98F59A37EB0F"
+  },
+  {
+    "Path": "docs/verification/tv-pack-auxiliary-files/save-path-green.log",
+    "SHA256": "39AA8B904EC556C4E4F2FF4AF2B3D099543D9AD99D410C47ADEEF1703DA9C212"
+  },
+  {
+    "Path": "docs/verification/tv-pack-auxiliary-files/save-path-red.log",
+    "SHA256": "E7C6BB1D669653C26C53C1830963C0C2C248F6F4FD9553F75B3BC2A37DED9D0E"
+  },
+  {
+    "Path": "docs/verification/tv-pack-auxiliary-files/source-delivery.json",
+    "SHA256": "E3FB9B2931D0BBE7EACFD764EF1607F85B05FC9E8AE02F95DA19BF46394F440C"
+  },
+  {
+    "Path": "tests/e2e/tv-follow-season-packs.spec.js",
+    "SHA256": "4FC26C18DB192E3914FEE7BA998AB6633C767BEA04619BD505325F359F4D2252"
+  },
+  {
+    "Path": "tests/test_tv_follow_season_planning.py",
+    "SHA256": "1300CAE240739287B25A8B07B237358270BDBAD7DE26ACE78AD9E506FFFF964A"
+  },
+  {
+    "Path": "tests/test_tv_source_diagnostics.py",
+    "SHA256": "42A6AD76884DC047FA31D976D7DBB752D8E3482DA19457EE3BA1C03897E91D7C"
+  }
+]

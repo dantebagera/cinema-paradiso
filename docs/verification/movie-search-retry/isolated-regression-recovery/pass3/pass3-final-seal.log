@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass3_finalize.py", line 11, in <module>
+    assert set(changed)==docs,changed
+           ^^^^^^^^^^^^^^^^^^
+AssertionError: ['docs/verification/movie-search-retry/isolated-regression-recovery/README.md']

@@ -1,0 +1,35 @@
+F
+======================================================================
+FAIL: test_failed_schema_batch_leaves_no_partial_tables_and_can_retry (tests.test_iptv_movie_gates_0_5.AtomicSchemaInitializationTests.test_failed_schema_batch_leaves_no_partial_tables_and_can_retry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_iptv_movie_gates_0_5.py", line 201, in test_failed_schema_batch_leaves_no_partial_tables_and_can_retry
+    self.assertEqual(tables, [])
+AssertionError: Lists differ: [('movie_meta',), ('movie_sources',), ('so[268 chars]e',)] != []
+
+First list contains 16 additional elements.
+First extra element 0:
+('movie_meta',)
+
++ []
+- [('movie_meta',),
+-  ('movie_sources',),
+-  ('source_matches',),
+-  ('tmdb_movies',),
+-  ('genres',),
+-  ('movie_genres',),
+-  ('people',),
+-  ('movie_credits',),
+-  ('keywords',),
+-  ('movie_keywords',),
+-  ('collections',),
+-  ('movie_collections',),
+-  ('movie_languages',),
+-  ('movie_countries',),
+-  ('movie_list_memberships',),
+-  ('enrichment_queue',)]
+
+----------------------------------------------------------------------
+Ran 1 test in 0.339s
+
+FAILED (failures=1)

@@ -1,0 +1,312 @@
+{
+  "status": "Partial qualification; bounded pass halted and closed",
+  "six_assertions": {
+    "tests": 6,
+    "passed": 6,
+    "product_behavior_changed": false
+  },
+  "cross_domain": {
+    "group": "cross",
+    "modules": [
+      "test_tv_catalog",
+      "test_tv_vertical_slice",
+      "test_tv_normal_import",
+      "test_verified_tv_acquisition",
+      "test_tv_download_contracts",
+      "test_tv_follow_season_planning",
+      "test_tv_source_diagnostics",
+      "test_tv_library_read_performance",
+      "test_tv_list_filters",
+      "test_tv_credit_portraits",
+      "test_iptv_service",
+      "test_iptv_routes",
+      "test_iptv_provider_manager",
+      "test_iptv_movie_enrichment",
+      "test_iptv_movie_gates_0_5",
+      "test_acquisition_decisions",
+      "test_player_manager",
+      "test_player_protocol",
+      "test_player_play_api",
+      "test_player_catalog",
+      "test_player_queue",
+      "test_player_queue_api",
+      "test_player_queue_session",
+      "test_playback_history",
+      "test_native_player",
+      "test_workspace_layout_ui",
+      "test_unified_movie_card_ui",
+      "test_full_row_card_grids_ui",
+      "test_continue_watching_ui",
+      "test_iptv_ui",
+      "test_iptv_movie_ui",
+      "test_discover_hover_ui",
+      "test_library_action_ux"
+    ],
+    "tests": 462,
+    "failures": 0,
+    "errors": 1,
+    "skips": [],
+    "failed_tests": [
+      "test_invalid_observation_preserves_evidence (tests.test_tv_library_read_performance.TVLibraryProbeContractTests.test_invalid_observation_preserves_evidence)"
+    ]
+  },
+  "recovery": [
+    {
+      "boot": 1,
+      "status": {
+        "catalog": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\tmp\\recovered\\data\\.catalog-test.sqlite",
+        "data": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\tmp\\recovered\\data",
+        "metadata": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\localappdata\\Cinema Paradiso\\Metadata",
+        "movies": [
+          "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\tmp\\recovered\\offline-movies\\0"
+        ],
+        "normal_startup": true,
+        "pid": 54724,
+        "test_mode": false,
+        "tv": [
+          "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\tmp\\recovered\\offline-tv\\0"
+        ]
+      },
+      "bundle_sha256": "695e94fc071215559545e280c896f3eddd17016c23b6d64dadce22f1651146fa",
+      "queries": [
+        {
+          "query": "christmas",
+          "total": 75,
+          "page_count": 40,
+          "same_ordered_paths_and_movie_keys": true,
+          "generation": 10178
+        },
+        {
+          "query": "m",
+          "total": 3955,
+          "page_count": 40,
+          "same_ordered_paths_and_movie_keys": true,
+          "generation": 10178
+        },
+        {
+          "query": "no-match",
+          "total": 0,
+          "page_count": 0,
+          "same_ordered_paths_and_movie_keys": true,
+          "generation": 10178
+        }
+      ],
+      "tv_response_keys": [
+        "complete",
+        "items",
+        "page",
+        "page_size",
+        "total",
+        "total_pages"
+      ],
+      "iptv_provider_checks": [
+        {
+          "id": "2d44d898e1284947b8eb1a64df18af28",
+          "keys": [
+            "generation",
+            "items",
+            "page",
+            "page_size",
+            "projection",
+            "query",
+            "total",
+            "view"
+          ],
+          "returned": 3
+        },
+        {
+          "id": "55219f5721c44255aeff300451a404b4",
+          "keys": [
+            "generation",
+            "items",
+            "page",
+            "page_size",
+            "projection",
+            "total"
+          ],
+          "returned": 0
+        }
+      ],
+      "checkpoint": {
+        "checkpoint": true,
+        "owned_background_stopped": true
+      },
+      "exit_code": 0,
+      "seconds": 15.859
+    },
+    {
+      "boot": 2,
+      "status": {
+        "catalog": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\tmp\\recovered\\data\\.catalog-test.sqlite",
+        "data": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\tmp\\recovered\\data",
+        "metadata": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\localappdata\\Cinema Paradiso\\Metadata",
+        "movies": [
+          "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\tmp\\recovered\\offline-movies\\0"
+        ],
+        "normal_startup": true,
+        "pid": 26244,
+        "test_mode": false,
+        "tv": [
+          "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\tmp\\recovered\\offline-tv\\0"
+        ]
+      },
+      "bundle_sha256": "695e94fc071215559545e280c896f3eddd17016c23b6d64dadce22f1651146fa",
+      "queries": [
+        {
+          "query": "christmas",
+          "total": 75,
+          "page_count": 40,
+          "same_ordered_paths_and_movie_keys": true,
+          "generation": 10178
+        },
+        {
+          "query": "m",
+          "total": 3955,
+          "page_count": 40,
+          "same_ordered_paths_and_movie_keys": true,
+          "generation": 10178
+        },
+        {
+          "query": "no-match",
+          "total": 0,
+          "page_count": 0,
+          "same_ordered_paths_and_movie_keys": true,
+          "generation": 10178
+        }
+      ],
+      "tv_response_keys": [
+        "complete",
+        "items",
+        "page",
+        "page_size",
+        "total",
+        "total_pages"
+      ],
+      "iptv_provider_checks": [
+        {
+          "id": "2d44d898e1284947b8eb1a64df18af28",
+          "keys": [
+            "generation",
+            "items",
+            "page",
+            "page_size",
+            "projection",
+            "query",
+            "total",
+            "view"
+          ],
+          "returned": 3
+        },
+        {
+          "id": "55219f5721c44255aeff300451a404b4",
+          "keys": [
+            "generation",
+            "items",
+            "page",
+            "page_size",
+            "projection",
+            "total"
+          ],
+          "returned": 0
+        }
+      ],
+      "checkpoint": {
+        "checkpoint": true,
+        "owned_background_stopped": true
+      },
+      "exit_code": 0,
+      "seconds": 7.016
+    }
+  ],
+  "compiled_recovery_desktop": {
+    "passed": true,
+    "total": 75,
+    "rendered": 40,
+    "canonical_titles": [
+      "Christmas Bloody Christmas",
+      "Christmas Vacation",
+      "FX's A Christmas Carol",
+      "A Merry Friggin' Christmas",
+      "A Christmas Carol",
+      "The Christmas Chronicles: Part Two",
+      "The Christmas Chronicles",
+      "Jingle Jangle: A Christmas Journey",
+      "A Boy Called Christmas",
+      "Rare Exports: A Christmas Tale",
+      "Black Christmas",
+      "The Muppet Christmas Carol",
+      "The Best Christmas Pageant Ever",
+      "Mariah Carey: Merry Christmas to All!",
+      "Mickey Saves Christmas",
+      "A Christmas Story",
+      "The Man Who Invented Christmas",
+      "Mariah's Christmas: The Magic Continues",
+      "8-Bit Christmas",
+      "The Christmas Note",
+      "The Nightmare Before Christmas",
+      "How the Grinch Stole Christmas",
+      "How the Grinch Stole Christmas!",
+      "Mickey's Twice Upon a Christmas",
+      "Love Actually",
+      "Scent of a Woman",
+      "Silent Night, Deadly Night",
+      "The Family Plan 2",
+      "Home Alone",
+      "Die Hard 2",
+      "The Advent Calendar",
+      "Anna and the Apocalypse",
+      "Terrifier 3",
+      "Krampus",
+      "It's a Wonderful Life",
+      "Red One",
+      "The Holdovers",
+      "The Shepherd",
+      "Look Who's Talking Now",
+      "Silent Night"
+    ],
+    "navigation": "Movie -> File -> Movie settled",
+    "errors": [],
+    "external_requests_blocked": []
+  },
+  "preservation": {
+    "files_compared": 1687,
+    "changed_prior_files": [
+      "tests/test_full_row_card_grids_ui.py",
+      "tests/test_library_action_ux.py"
+    ],
+    "only_six_approved_test_method_spans_changed": {
+      "tests/test_full_row_card_grids_ui.py": true,
+      "tests/test_library_action_ux.py": true
+    },
+    "runtime_input_count": 243,
+    "runtime_input_drift": [],
+    "tracked_dirty_status_identical": true,
+    "tracked_dirty_count": 114,
+    "product_source_changes_this_pass": 0,
+    "live_requests_this_pass": 0,
+    "production_data_access_this_pass": 0,
+    "verified_utc": "2026-10-24T21:21:04.576389+03:00",
+    "access_evidence_basis": "Reviewed action record and guard reports; zero fields are declarative action counts, not independently instrumented access counters."
+  },
+  "resources": {
+    "active_seconds": 372.219,
+    "process_tree_cpu_seconds": 186.03125,
+    "process_tree_write_bytes": 1130368499,
+    "peak_temporary_footprint_bytes": 2695822301,
+    "cumulative_cap_seconds": 600,
+    "per_batch_cap_seconds": 240,
+    "stopped_batch_observed_seconds": 248.771,
+    "unusable_remaining_seconds": 227.781,
+    "accounting_note": "Observed batch runtime includes polling/enumeration shutdown overhead; 240-second cap was exceeded and reported, not presented as satisfied."
+  },
+  "not_run": [
+    "new broader compiled behavior scenarios",
+    "quiet background refresh on Library page 2+",
+    "post-reopen eight-store SQL integrity pass",
+    "fresh focused stale-evidence case rerun"
+  ],
+  "prior_pass_not_repeated": {
+    "movie_owner_tests_passed": 451,
+    "node_tests_passed": 140
+  }
+}

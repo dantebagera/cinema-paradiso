@@ -11,6 +11,10 @@ test('workspace centering accounts for current scroll and viewport offset', () =
   assert.equal(centeredWorkspaceScroll({ top: 700, height: 940 }, { top: 0, height: 1080, scrollTop: 300 }), 930);
   assert.equal(centeredWorkspaceScroll({ top: 10, height: 400 }, { top: 0, height: 1080, scrollTop: 0 }), 0);
 });
+test('expanded cards center below sticky controls and align at their bottom when taller than the available space', () => {
+  assert.equal(centeredWorkspaceScroll({ top: 700, height: 796 }, { top: 0, height: 1080, scrollTop: 300 }, 192), 762);
+  assert.equal(centeredWorkspaceScroll({ top: 700, height: 940 }, { top: 0, height: 1080, scrollTop: 300 }, 192), 808);
+});
 test('page requests deduplicate and retry failures', async () => {
   const previous = global.fetch;
   const calls = [];

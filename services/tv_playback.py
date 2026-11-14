@@ -20,13 +20,42 @@ class TVPlayback:
     def target(self, episode_id, file_id=None):
         episode = self.repository.episode(episode_id)
         row = next(item for item in self.repository.episodes(episode['series_id'], episode['season_number']) if item['id'] == episode_id)
+        return self._target_from_row(row, file_id)
+
+    @staticmethod
+    def _target_from_row(row, file_id=None):
         if not row['released'] or row['reconciliation_required']:
             raise PlayerMediaError('Episode is unreleased or needs metadata reconciliation')
         versions = [v for v in row['versions'] if v['available'] and (file_id is None or v['file_id'] == int(file_id))]
         if not versions:
             raise PlayerMediaError('Episode file is missing')
         selected = next((v for v in versions if v['file_id'] == row['selected_file_id']), versions[0])
-        return f"tv:episode:{episode_id}:file:{selected['file_id']}"
+        return f"tv:episode:{row['id']}:file:{selected['file_id']}"
+
+    def queue(self, media):
+        episode = self.repository.episode(media['episode_id'])
+        series = self.repository.series(episode['series_id'])
+        rows = sorted(self.repository.episodes(episode['series_id']),
+                      key=lambda row: (row['season_number'], row['episode_number']))
+        items = []
+        for row in rows:
+            if (row['season_number'] == 0) != (episode['season_number'] == 0):
+                continue
+            reason = ('Episode numbering needs review' if row['reconciliation_required'] else
+                      'Episode has not aired' if not row['released'] else '')
+            try:
+                key = self._target_from_row(row) if not reason else ''
+                if row['id'] == episode['id']:
+                    key = media['path_key']
+            except PlayerMediaError:
+                key = ''
+            if not key and not reason:
+                reason = 'Episode is missing locally'
+            items.append({'path_key': key or f"missing:tv:{row['id']}",
+                          'title': f"S{row['season_number']:02d}E{row['episode_number']:02d} · {row['title']}",
+                          'section': 'Specials' if row['season_number'] == 0 else f"Season {row['season_number']}",
+                          'available': bool(key) and not reason, 'reason': reason})
+        return {'title': series['title'], 'items': items}
 
     def resolve(self, key):
         episode_id, file_id = parse_tv_key(key)
@@ -37,6 +66,8 @@ class TVPlayback:
         path = Path(row['path']).resolve()
         if not any(Path(root).resolve() in path.parents for root in self.roots()):
             raise PlayerMediaError('Episode file is outside configured TV roots')
+        if not path.is_file():
+            raise PlayerMediaError('Episode file is missing')
         episode = self.repository.episode(episode_id)
         series = self.repository.series(episode['series_id'])
         return {'media_type': 'tv', 'path_key': key, 'path': str(path), 'filename': path.name,
@@ -97,3 +128,8 @@ class TypedPlaybackHistory:
         media = (getattr(session, 'playback_context', None) or {}).get('media', {})
         owner = self.tv_provider() if media.get('media_type') == 'tv' else self.movies
         return owner.handle_event(session, message)
+
+    def flush_session(self, session):
+        media = (getattr(session, 'playback_context', None) or {}).get('media', {})
+        owner = self.tv_provider() if media.get('media_type') == 'tv' else self.movies
+        return owner.flush_session(session)

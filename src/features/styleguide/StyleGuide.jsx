@@ -1,3 +1,6 @@
+import UIReference from './UIReference.jsx';
+import Button from '../../components/ui/Button.jsx';
+import Badge from '../../components/ui/Badge.jsx';
 const paletteSwatches = [
   { label: 'BASE / BACKGROUND', value: '#0A0A0B' },
   { label: 'SURFACE / ELEVATED', value: '#121316' },
@@ -119,7 +122,7 @@ export default function StyleGuide() {
 
         <section className="sg-panel sg-components">
           <BoardTitle>UI Components</BoardTitle>
-          <ComponentSamples />
+          <UIReference />
         </section>
 
         <section className="sg-panel sg-surfaces">
@@ -192,46 +195,6 @@ function ColorSwatch({ label, value, light, compact }) {
   );
 }
 
-function ComponentSamples() {
-  return (
-    <div className="sg-component-stack">
-      <div className="sg-button-row">
-        <button className="sg-btn sg-btn-primary" type="button"><Play size={18} fill="currentColor" />Primary</button>
-        <button className="sg-btn sg-btn-secondary" type="button"><Search size={18} />Secondary</button>
-        <button className="sg-btn sg-btn-ghost" type="button"><MoreVertical size={18} />Ghost</button>
-      </div>
-      <div className="sg-button-row sg-button-row-small">
-        <button type="button"><Sparkles size={15} />Action</button>
-        <button type="button"><Clapperboard size={15} />Movie</button>
-        <button type="button"><MonitorPlay size={15} />TV Show</button>
-        <button type="button"><Folder size={15} />Collection</button>
-      </div>
-      <div className="sg-chip-row">
-        <span className="sg-chip sg-owned">Owned</span>
-        <span className="sg-chip sg-quality">Low Quality</span>
-        <span className="sg-chip sg-info">Upgrade Available</span>
-        <span className="sg-chip sg-ai">AI Pick</span>
-        <span className="sg-chip sg-plex">Plex Match</span>
-      </div>
-      <div className="sg-toolbar">
-        {[Play, Folder, Download, Search, CirclePlus, Settings, CheckCircle2, Trash2].map((Icon, index) => (
-          <button key={index} className={index === 7 ? 'sg-danger-icon' : ''} type="button"><Icon size={21} /></button>
-        ))}
-      </div>
-      <div className="sg-slider-card">
-        <div>
-          <span>Quality</span>
-          <strong>1080p WEB-DL</strong>
-        </div>
-        <div className="sg-slider">
-          <span />
-        </div>
-        <span className="sg-slider-label">1080p</span>
-        <span className="sg-good-pill">Good</span>
-      </div>
-    </div>
-  );
-}
 
 function SurfaceSample() {
   return (
@@ -256,7 +219,7 @@ function SurfaceSample() {
       <div className="sg-health-sample">
         <header>
           <h3>Library Health</h3>
-          <button type="button">View All <ChevronRight size={16} /></button>
+          <Button type="button">View All <ChevronRight size={16} /></Button>
         </header>
         <div className="sg-metric-grid">
           {[
@@ -281,7 +244,7 @@ function SurfaceSample() {
             <p>2160p WEB-DL</p>
             <p>Today&nbsp;&nbsp;&bull;&nbsp;&nbsp;2.6 GB</p>
           </div>
-          <button type="button"><ChevronRight size={18} /></button>
+          <Button type="button"><ChevronRight size={18} /></Button>
         </div>
       </div>
     </div>
@@ -293,7 +256,7 @@ function MovieCardSample() {
     <article className="sg-movie-card">
       <InterstellarPoster />
       <div className="sg-movie-body">
-        <span className="sg-status-owned">Owned</span>
+        <Badge kind="owned">Owned</Badge>
         <h3>Interstellar</h3>
         <p className="sg-year">2014</p>
         <div className="sg-movie-meta">
@@ -304,15 +267,15 @@ function MovieCardSample() {
           <span>169m</span>
         </div>
         <div className="sg-movie-chips">
-          <span>1080p WEB-DL</span>
-          <span>ENG</span>
-          <span>USA / UK</span>
+          <Badge size="compact">1080p WEB-DL</Badge>
+          <Badge size="compact" muted>ENG</Badge>
+          <Badge size="compact" muted>USA / UK</Badge>
         </div>
         <div className="sg-movie-actions">
-          <button className="sg-play-action" type="button"><Play size={19} fill="currentColor" />Play</button>
-          <button type="button"><Download size={19} />Upgrade</button>
-          <button type="button"><Info size={19} />Details</button>
-          <button type="button" aria-label="More"><MoreVertical size={19} /></button>
+          <Button variant="play" type="button"><Play size={19} fill="currentColor" />Play</Button>
+          <Button type="button"><Download size={19} />Upgrade</Button>
+          <Button type="button"><Info size={19} />Details</Button>
+          <Button size="icon" type="button" aria-label="More"><MoreVertical size={19} /></Button>
         </div>
       </div>
     </article>

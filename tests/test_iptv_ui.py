@@ -8,8 +8,10 @@ ROOT = Path(__file__).resolve().parents[1]
 class IPTVUITests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.app_source = (ROOT / "src" / "App.jsx").read_text(encoding="utf-8")
+        cls.app_source = (ROOT / 'src' / 'App.jsx').read_text(encoding='utf-8') + (ROOT / 'src' / 'components' / 'Sidebar.jsx').read_text(encoding='utf-8')
         cls.workspace_source = (ROOT / "src" / "features" / "iptv" / "IPTVWorkspace.jsx").read_text(encoding="utf-8")
+        cls.workspace_source += (ROOT / 'src/features/iptv/IPTVCards.jsx').read_text(encoding='utf-8')
+        cls.workspace_source += (ROOT / 'src/features/iptv/IPTVProposalPanels.jsx').read_text(encoding='utf-8')
         cls.lists_source = (ROOT / "src" / "features" / "iptv" / "IPTVListsWorkspace.jsx").read_text(encoding="utf-8")
         cls.api_source = (ROOT / "src" / "api" / "iptv.js").read_text(encoding="utf-8")
         cls.player_source = (ROOT / "src" / "features" / "iptv" / "IPTVPlayer.jsx").read_text(encoding="utf-8")
@@ -86,7 +88,9 @@ class IPTVUITests(unittest.TestCase):
     def test_provider_switch_stops_playback_and_resets_provider_state(self):
         self.assertIn("async function switchProvider(providerId)", self.workspace_source)
         self.assertIn("resetProviderState()", self.workspace_source)
-        self.assertIn("iptvApi.stopPlayback(previousPlayback.provider_id", self.workspace_source)
+        self.assertIn("playbackSession.stop()", self.workspace_source)
+        session_source = (ROOT / 'src/features/iptv/iptvPlaybackSession.js').read_text(encoding='utf-8')
+        self.assertIn("api.stopPlayback(playback.provider_id, playback.token)", session_source)
         self.assertIn("iptvApi.selectProvider(providerId)", self.workspace_source)
         self.assertIn("activeProviderRef.current !== requestedProviderId", self.workspace_source)
 

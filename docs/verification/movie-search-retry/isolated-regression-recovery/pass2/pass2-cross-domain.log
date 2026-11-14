@@ -1,0 +1,36 @@
+.................................................................................................................................................E............................................................................................................................................................................................................................................................................................................................
+======================================================================
+ERROR: test_invalid_observation_preserves_evidence (tests.test_tv_library_read_performance.TVLibraryProbeContractTests.test_invalid_observation_preserves_evidence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\checkout\docs\verification\tv-library-performance\probe.py", line 24, in record_memory_observation
+    record = measure_single_request(setup)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\unittest\mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\unittest\mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\unittest\mock.py", line 1198, in _execute_mock_call
+    raise effect
+tv_library_probe_contract.ProbeGateError: invalid setup
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\checkout\tests\test_tv_library_read_performance.py", line 169, in test_invalid_observation_preserves_evidence
+    module.record_memory_observation(None,destination)
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\checkout\docs\verification\tv-library-performance\probe.py", line 26, in record_memory_observation
+    with path.open('x', encoding='utf-8') as output:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileExistsError: [Errno 17] File exists: 'C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\tmp\\unit-cross\\invalid-record.json'
+
+----------------------------------------------------------------------
+Ran 462 tests in 242.864s
+
+FAILED (errors=1)
+{"group": "cross", "modules": ["test_tv_catalog", "test_tv_vertical_slice", "test_tv_normal_import", "test_verified_tv_acquisition", "test_tv_download_contracts", "test_tv_follow_season_planning", "test_tv_source_diagnostics", "test_tv_library_read_performance", "test_tv_list_filters", "test_tv_credit_portraits", "test_iptv_service", "test_iptv_routes", "test_iptv_provider_manager", "test_iptv_movie_enrichment", "test_iptv_movie_gates_0_5", "test_acquisition_decisions", "test_player_manager", "test_player_protocol", "test_player_play_api", "test_player_catalog", "test_player_queue", "test_player_queue_api", "test_player_queue_session", "test_playback_history", "test_native_player", "test_workspace_layout_ui", "test_unified_movie_card_ui", "test_full_row_card_grids_ui", "test_continue_watching_ui", "test_iptv_ui", "test_iptv_movie_ui", "test_discover_hover_ui", "test_library_action_ux"], "tests": 462, "failures": 0, "errors": 1, "skips": [], "failed_tests": ["test_invalid_observation_preserves_evidence (tests.test_tv_library_read_performance.TVLibraryProbeContractTests.test_invalid_observation_preserves_evidence)"]}

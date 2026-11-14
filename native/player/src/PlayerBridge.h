@@ -16,11 +16,16 @@ class PlayerBridge final : public QObject
     Q_OBJECT
     Q_PROPERTY(QString title READ title NOTIFY mediaChanged)
     Q_PROPERTY(QString year READ year NOTIFY mediaChanged)
+    Q_PROPERTY(QString mediaType READ mediaType NOTIFY mediaChanged)
     Q_PROPERTY(QString posterReference READ posterReference NOTIFY mediaChanged)
     Q_PROPERTY(QString connectionStatus READ connectionStatus NOTIFY connectionStatusChanged)
     Q_PROPERTY(bool connected READ connected NOTIFY connectionStatusChanged)
     Q_PROPERTY(QVariantMap shortcuts READ shortcuts NOTIFY preferencesChanged)
     Q_PROPERTY(QVariantMap windowState READ windowState NOTIFY preferencesChanged)
+    Q_PROPERTY(QVariantMap queue READ queue NOTIFY queueChanged)
+    Q_PROPERTY(bool autoplay READ autoplay NOTIFY queueChanged)
+    Q_PROPERTY(bool switching READ switching NOTIFY queueChanged)
+    Q_PROPERTY(QString queueError READ queueError NOTIFY queueChanged)
     Q_PROPERTY(bool resumeDecisionPending READ resumeDecisionPending NOTIFY resumeChanged)
     Q_PROPERTY(qint64 resumePositionMs READ resumePositionMs NOTIFY resumeChanged)
     Q_PROPERTY(QVariantList subtitleResults READ subtitleResults NOTIFY subtitleSearchChanged)
@@ -35,11 +40,16 @@ public:
 
     QString title() const;
     QString year() const;
+    QString mediaType() const { return m_mediaType; }
     QString posterReference() const;
     QString connectionStatus() const;
     bool connected() const;
     QVariantMap shortcuts() const;
     QVariantMap windowState() const;
+    QVariantMap queue() const { return m_queue; }
+    bool autoplay() const { return m_autoplay; }
+    bool switching() const { return m_switching; }
+    QString queueError() const { return m_queueError; }
     bool resumeDecisionPending() const;
     qint64 resumePositionMs() const;
     QVariantList subtitleResults() const;
@@ -60,6 +70,8 @@ public:
     Q_INVOKABLE void requestSaveSelectedSubtitle();
     Q_INVOKABLE void chooseResume();
     Q_INVOKABLE void chooseRestart();
+    Q_INVOKABLE void selectQueueItem(int index, bool automatic = false);
+    Q_INVOKABLE void setAutoplay(bool enabled);
     Q_INVOKABLE void reportWindowState(int x, int y, int width, int height,
                                        const QString &screen, bool maximized,
                                        bool alwaysOnTop);
@@ -72,6 +84,8 @@ signals:
     void subtitleSearchChanged();
     void subtitleSaveChanged();
     void closeWindowRequested();
+    void queueChanged();
+    void naturalEndReached();
 
 private slots:
     void handleConnected();
@@ -115,6 +129,7 @@ private:
     bool m_resumeDecisionPending = false;
     QString m_title;
     QString m_year;
+    QString m_mediaType;
     QString m_posterReference;
     QString m_audioTrackFingerprint;
     QString m_subtitleTrackFingerprint;
@@ -132,4 +147,11 @@ private:
     bool m_loadAccepted = false;
     bool m_closingSent = false;
     bool m_closedSent = false;
+    int m_mediaGeneration = 1;
+    bool m_switching = false;
+    bool m_mediaReady = false;
+    bool m_autoplay = true;
+    bool m_ended = false;
+    QVariantMap m_queue;
+    QString m_queueError;
 };

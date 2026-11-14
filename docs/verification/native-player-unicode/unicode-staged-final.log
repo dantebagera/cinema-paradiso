@@ -1,0 +1,10 @@
+test_arabic_directory_and_accented_filename (tests.test_player_unicode_runtime.NativeUnicodePlaybackTests.test_arabic_directory_and_accented_filename) ... ok
+test_arabic_external_subtitle_on_ascii_video (tests.test_player_unicode_runtime.NativeUnicodePlaybackTests.test_arabic_external_subtitle_on_ascii_video) ... ok
+test_arabic_filename (tests.test_player_unicode_runtime.NativeUnicodePlaybackTests.test_arabic_filename) ... ok
+test_ascii_filename_remains_playable (tests.test_player_unicode_runtime.NativeUnicodePlaybackTests.test_ascii_filename_remains_playable) ... ok
+test_real_les_miserables_with_accented_filename (tests.test_player_unicode_runtime.NativeUnicodePlaybackTests.test_real_les_miserables_with_accented_filename) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 31.317s
+
+OK

@@ -1,0 +1,55 @@
+{
+  "feature": "F1",
+  "label": "adam-exact-default",
+  "state": "completed",
+  "model": "gpt-6.1-sol",
+  "prompt": "adam i need you to lit 50 movies with very twisted story you wont expect the ending\nyour responce should be a list of movies names and years , no any other details , dont seek more info , dont reply by paragarph or any way of responce  only the list",
+  "elapsed_seconds": 13.225249,
+  "inference_attempts": 1,
+  "tmdb_requests": 0,
+  "scope": "names/years-only GPT output-format control; no TMDB matching or verified-result claim",
+  "reasoning_effort": "default",
+  "output_format": "plain-list",
+  "unverified_control_count": 50,
+  "name": "adam-exact-default",
+  "evidence_root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-ai-timing-x9izl10i",
+  "gpt_roundtrip_seconds": 13.133705,
+  "gpt_call_seconds": [
+    13.133705
+  ],
+  "message_item_seconds": 3.606432,
+  "completed_usage": {
+    "input_tokens": 64,
+    "output_tokens": 461,
+    "total_tokens": 525,
+    "attribution": {
+      "items": {
+        "msg_038266752fc9abd7016ae9afe510e88191ae87fdac14ce214d": {
+          "input_tokens": 62,
+          "output_tokens": 0,
+          "content": [
+            {
+              "input_tokens": 62,
+              "output_tokens": 0
+            }
+          ]
+        },
+        "msg_038266752fc9abd7016ae9afe7816081919668c232105a3ef0": {
+          "input_tokens": 0,
+          "output_tokens": 438,
+          "content": [
+            {
+              "input_tokens": 0,
+              "output_tokens": 438
+            }
+          ]
+        },
+        "rs_038266752fc9abd7016ae9afe758b88191aff86dd7900c7fb7": {
+          "input_tokens": 2,
+          "output_tokens": 23
+        }
+      }
+    }
+  },
+  "recommendation_source_hash": "026fc8e1c498401b67ded18b5f6dcb044eeaabf00e6ea1212da678ca7cca754f"
+}

@@ -1,3 +1,9 @@
+import DialogShell, { DialogHeader } from '../../components/ui/DialogShell.jsx';
+import SearchField from '../search/SearchField.jsx';
+import Pagination from '../../components/Pagination.jsx';
+import WorkspaceEmptyState from '../../components/WorkspaceEmptyState.jsx';
+import { Input } from '../../components/ui/FormField.jsx';
+import Button from '../../components/ui/Button.jsx';
 import {
   ArrowDown,
   ArrowUp,
@@ -57,14 +63,14 @@ export function IPTVListPickerModal({ item, lists, busy, newName, onNewName, onC
   if (!item) return null;
   return (
     <div className="iptv-list-picker-backdrop" role="presentation" onClick={onClose}>
-      <section className="iptv-list-picker" role="dialog" aria-modal="true" aria-label={`Add ${listTitle(item)} to IPTV list`} onClick={(event) => event.stopPropagation()}>
-        <header>
+      <DialogShell className="iptv-list-picker" role="dialog" aria-modal="true" aria-label={`Add ${listTitle(item)} to IPTV list`} onClick={(event) => event.stopPropagation()}>
+        <DialogHeader as="header">
           <div><p className="screen-kicker">IPTV organization</p><h2>Add to list</h2><span dir="auto">{listTitle(item)}</span></div>
-          <button type="button" className="icon-button" onClick={onClose} aria-label="Close list picker"><X size={18} /></button>
-        </header>
+          <Button size="icon" type="button"  onClick={onClose} aria-label="Close list picker"><X size={18} /></Button>
+        </DialogHeader>
         <form onSubmit={(event) => { event.preventDefault(); onCreate(); }}>
-          <input value={newName} onChange={(event) => onNewName(event.target.value)} placeholder="New list name..." maxLength={80} />
-          <button type="submit" className="btn btn-primary" disabled={!newName.trim() || busy}><CirclePlus size={16} /> Create and add</button>
+          <Input value={newName} onChange={(event) => onNewName(event.target.value)} placeholder="New list name..." maxLength={80} />
+          <Button variant="primary" type="submit"  disabled={!newName.trim() || busy}><CirclePlus size={16} /> Create and add</Button>
         </form>
         <div className="iptv-list-picker-options">
           {lists.map((list) => (
@@ -76,7 +82,7 @@ export function IPTVListPickerModal({ item, lists, busy, newName, onNewName, onC
           ))}
           {!lists.length ? <div className="iptv-picker-empty"><ListPlus size={26} /><span>No custom lists yet.</span></div> : null}
         </div>
-      </section>
+      </DialogShell>
     </div>
   );
 }
@@ -113,8 +119,8 @@ export default function IPTVListsWorkspace({
     <div className="iptv-lists-layout">
       <aside className="iptv-user-list-rail">
         <form onSubmit={(event) => { event.preventDefault(); onCreate(); }}>
-          <input value={newListName} onChange={(event) => onNewListName(event.target.value)} placeholder="New list name..." maxLength={80} />
-          <button type="submit" className="mini-action" disabled={!newListName.trim()}><CirclePlus size={14} /> New list</button>
+          <Input value={newListName} onChange={(event) => onNewListName(event.target.value)} placeholder="New list name..." maxLength={80} />
+          <Button size="compact" type="submit"  disabled={!newListName.trim()}><CirclePlus size={14} /> New list</Button>
         </form>
         <div className="iptv-user-list-options">
           {lists.map((list) => (
@@ -130,15 +136,15 @@ export default function IPTVListsWorkspace({
         {selectedList ? (
           <>
             <header className="iptv-list-management">
-              <input value={renameName} onChange={(event) => onRenameName(event.target.value)} maxLength={80} aria-label="Selected IPTV list name" />
-              <button type="button" className="mini-action" onClick={onRename} disabled={!renameName.trim() || renameName.trim() === selectedList.name}><Pencil size={14} /> Rename</button>
-              <button type="button" className="mini-action mini-action-danger" onClick={onDelete}><Trash2 size={14} /> Delete</button>
+              <Input value={renameName} onChange={(event) => onRenameName(event.target.value)} maxLength={80} aria-label="Selected IPTV list name" />
+              <Button size="compact" type="button"  onClick={onRename} disabled={!renameName.trim() || renameName.trim() === selectedList.name}><Pencil size={14} /> Rename</Button>
+              <Button variant="danger" size="compact" type="button"  onClick={onDelete}><Trash2 size={14} /> Delete</Button>
             </header>
             <div className="iptv-list-toolbar">
               <div className="iptv-segmented" aria-label="IPTV list media type">
                 {TYPE_OPTIONS.map(([id, label]) => <button type="button" key={id} className={kindFilter === id ? 'is-active' : ''} onClick={() => onKindFilter(id)}>{label}</button>)}
               </div>
-              <label className="iptv-search"><Search size={16} /><input value={query} onChange={(event) => onQuery(event.target.value)} placeholder="Search selected list..." dir="auto" /></label>
+              <SearchField className="iptv-search"><Search size={16} /><Input value={query} onChange={(event) => onQuery(event.target.value)} placeholder="Search selected list..." dir="auto" /></SearchField>
               <span>{itemCountLabel(catalog.total)}</span>
             </div>
             <div className="iptv-list-entries">
@@ -153,20 +159,20 @@ export default function IPTVListsWorkspace({
                       {!item.available ? <span className="iptv-unavailable-badge">Unavailable</span> : <ChevronRight size={18} />}
                     </button>
                     <div className="iptv-list-entry-actions">
-                      {item.available && item.kind !== 'series' ? <button type="button" onClick={() => onPlay(item)} aria-label={`Play ${item.name}`} title="Play"><Play size={16} fill="currentColor" /></button> : null}
-                      <button type="button" onClick={() => onMove(item, -1)} disabled={globalIndex === 0} aria-label={`Move ${item.name} up`} title="Move up"><ArrowUp size={16} /></button>
-                      <button type="button" onClick={() => onMove(item, 1)} disabled={globalIndex >= catalog.total - 1} aria-label={`Move ${item.name} down`} title="Move down"><ArrowDown size={16} /></button>
+                      {item.available && item.kind !== 'series' ? <Button type="button" onClick={() => onPlay(item)} aria-label={`Play ${item.name}`} title="Play"><Play size={16} fill="currentColor" /></Button> : null}
+                      <Button type="button" onClick={() => onMove(item, -1)} disabled={globalIndex === 0} aria-label={`Move ${item.name} up`} title="Move up"><ArrowUp size={16} /></Button>
+                      <Button type="button" onClick={() => onMove(item, 1)} disabled={globalIndex >= catalog.total - 1} aria-label={`Move ${item.name} down`} title="Move down"><ArrowDown size={16} /></Button>
                       <button type="button" className="is-danger" onClick={() => onRemove(item)} aria-label={`Remove ${item.name} from list`} title="Remove from list"><Trash2 size={16} /></button>
                     </div>
                   </article>
                 );
               })}
-              {!catalog.items.length && !loading ? <div className="iptv-empty iptv-list-empty"><ListPlus size={30} /><strong>This list is empty</strong><span>Add channels, movies, or series from their cards.</span></div> : null}
+              {!catalog.items.length && !loading ? <WorkspaceEmptyState size="regular" className="iptv-list-empty"><ListPlus size={30} /><strong>This list is empty</strong><span>Add channels, movies, or series from their cards.</span></WorkspaceEmptyState> : null}
               {loading ? <div className="iptv-list-loading">Loading list...</div> : null}
             </div>
-            {pages > 1 ? <div className="iptv-pagination"><button type="button" className="icon-button" onClick={() => onPage(Math.max(1, page - 1))} disabled={page <= 1} aria-label="Previous list page"><ChevronLeft size={18} /></button><span>Page {page} of {pages}</span><button type="button" className="icon-button" onClick={() => onPage(Math.min(pages, page + 1))} disabled={page >= pages} aria-label="Next list page"><ChevronRight size={18} /></button></div> : null}
+            <Pagination page={page} totalPages={pages} onPageChange={onPage} ariaLabel="IPTV list pagination" previousAriaLabel="Previous list page" nextAriaLabel="Next list page" />
           </>
-        ) : <div className="iptv-empty iptv-list-empty"><ListPlus size={32} /><strong>Create an IPTV list</strong><span>Your custom organization stays separate from provider categories.</span></div>}
+        ) : <WorkspaceEmptyState size="regular" className="iptv-list-empty"><ListPlus size={32} /><strong>Create an IPTV list</strong><span>Your custom organization stays separate from provider categories.</span></WorkspaceEmptyState>}
       </section>
     </div>
   );

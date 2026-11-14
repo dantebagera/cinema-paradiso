@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "C:\Users\dante\Desktop\cinema paradiso\native\player\tools\smoke_player_ui.py", line 209, in main
+    assert session.p.poll() is None,'Outside double click closed the player'
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Outside double click closed the player
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dante\Desktop\cinema paradiso\native\player\tools\smoke_player_ui.py", line 361, in <module>
+    if __name__=='__main__': main()
+                             ^^^^^^
+  File "C:\Users\dante\Desktop\cinema paradiso\native\player\tools\smoke_player_ui.py", line 357, in main
+    session.capture("failure")
+  File "C:\Users\dante\Desktop\cinema paradiso\native\player\tools\smoke_player_ui.py", line 128, in capture
+    capture_window(self.hwnd,self.output/(label+'.png'))
+  File "C:\Users\dante\Desktop\cinema paradiso\native\player\tools\smoke_player.py", line 234, in capture_window
+    image = ImageGrab.grab(window=window)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dante\Desktop\cinema paradiso\.venv\Lib\site-packages\PIL\ImageGrab.py", line 96, in grab
+    offset, size, data = Image.core.grabscreen_win32(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: unable to get device context for handle

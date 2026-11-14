@@ -1,0 +1,224 @@
+{
+  "returned_rows": 139,
+  "read_statements": 160,
+  "bounded_get_records": [
+    {
+      "document": "app_metadata/files.json",
+      "keys": 1,
+      "rows": 1
+    },
+    {
+      "document": "app_metadata/plex_metadata.json",
+      "keys": 1,
+      "rows": 0
+    },
+    {
+      "document": "app_metadata/manual_matches.json",
+      "keys": 1,
+      "rows": 1
+    },
+    {
+      "document": "app_metadata/tmdb_metadata.json",
+      "keys": 1,
+      "rows": 1
+    },
+    {
+      "document": "app_metadata/files.json",
+      "keys": 1,
+      "rows": 1
+    },
+    {
+      "document": "app_metadata/plex_metadata.json",
+      "keys": 1,
+      "rows": 0
+    },
+    {
+      "document": "app_metadata/manual_matches.json",
+      "keys": 1,
+      "rows": 1
+    },
+    {
+      "document": "app_metadata/tmdb_metadata.json",
+      "keys": 1,
+      "rows": 1
+    },
+    {
+      "document": "app_metadata/files.json",
+      "keys": 1,
+      "rows": 1
+    },
+    {
+      "document": "app_metadata/plex_metadata.json",
+      "keys": 1,
+      "rows": 0
+    },
+    {
+      "document": "app_metadata/manual_matches.json",
+      "keys": 1,
+      "rows": 1
+    },
+    {
+      "document": "app_metadata/tmdb_metadata.json",
+      "keys": 1,
+      "rows": 1
+    },
+    {
+      "document": "app_metadata/files.json",
+      "keys": 1,
+      "rows": 1
+    },
+    {
+      "document": "app_metadata/plex_metadata.json",
+      "keys": 1,
+      "rows": 0
+    },
+    {
+      "document": "app_metadata/manual_matches.json",
+      "keys": 1,
+      "rows": 1
+    },
+    {
+      "document": "app_metadata/tmdb_metadata.json",
+      "keys": 1,
+      "rows": 1
+    },
+    {
+      "document": "app_metadata/files.json",
+      "keys": 1,
+      "rows": 1
+    },
+    {
+      "document": "app_metadata/plex_metadata.json",
+      "keys": 1,
+      "rows": 0
+    },
+    {
+      "document": "app_metadata/manual_matches.json",
+      "keys": 1,
+      "rows": 1
+    },
+    {
+      "document": "app_metadata/tmdb_metadata.json",
+      "keys": 1,
+      "rows": 1
+    },
+    {
+      "document": "app_metadata/files.json",
+      "keys": 1,
+      "rows": 1
+    },
+    {
+      "document": "app_metadata/plex_metadata.json",
+      "keys": 1,
+      "rows": 0
+    },
+    {
+      "document": "app_metadata/manual_matches.json",
+      "keys": 1,
+      "rows": 1
+    },
+    {
+      "document": "app_metadata/tmdb_metadata.json",
+      "keys": 1,
+      "rows": 1
+    },
+    {
+      "document": "app_metadata/files.json",
+      "keys": 1,
+      "rows": 1
+    },
+    {
+      "document": "app_metadata/plex_metadata.json",
+      "keys": 1,
+      "rows": 0
+    },
+    {
+      "document": "app_metadata/manual_matches.json",
+      "keys": 1,
+      "rows": 1
+    },
+    {
+      "document": "app_metadata/tmdb_metadata.json",
+      "keys": 1,
+      "rows": 1
+    },
+    {
+      "document": "app_metadata/files.json",
+      "keys": 1,
+      "rows": 1
+    },
+    {
+      "document": "app_metadata/plex_metadata.json",
+      "keys": 1,
+      "rows": 0
+    },
+    {
+      "document": "app_metadata/manual_matches.json",
+      "keys": 1,
+      "rows": 1
+    },
+    {
+      "document": "app_metadata/tmdb_metadata.json",
+      "keys": 1,
+      "rows": 1
+    },
+    {
+      "document": "app_metadata/files.json",
+      "keys": 1,
+      "rows": 1
+    },
+    {
+      "document": "app_metadata/plex_metadata.json",
+      "keys": 1,
+      "rows": 0
+    },
+    {
+      "document": "app_metadata/manual_matches.json",
+      "keys": 1,
+      "rows": 1
+    },
+    {
+      "document": "app_metadata/tmdb_metadata.json",
+      "keys": 1,
+      "rows": 1
+    },
+    {
+      "document": "app_metadata/files.json",
+      "keys": 1,
+      "rows": 1
+    },
+    {
+      "document": "app_metadata/plex_metadata.json",
+      "keys": 1,
+      "rows": 0
+    },
+    {
+      "document": "app_metadata/manual_matches.json",
+      "keys": 1,
+      "rows": 1
+    },
+    {
+      "document": "app_metadata/tmdb_metadata.json",
+      "keys": 1,
+      "rows": 1
+    }
+  ],
+  "catalogue_rows": 4000,
+  "named_paths": 1,
+  "result": {
+    "checked": 1,
+    "matched": 1,
+    "review": 0,
+    "pending": 0,
+    "failed": 0,
+    "removed": 0,
+    "facts_refreshed": 0,
+    "provider": "tmdb",
+    "_matched_paths": []
+  },
+  "fixture_root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-exoayinc\\bounded",
+  "publication_committed": true,
+  "whole_core_documents": 0,
+  "full_snapshots": 0,
+  "filesystem_walks": 0
+}

@@ -1,15 +1,17 @@
 import json
+import os
 from pathlib import Path
 import tempfile
 from types import SimpleNamespace
 import unittest
-from unittest.mock import Mock
+from unittest.mock import Mock, patch
 
 from services.acquisition_store import AcquisitionRepository
-from services.qbittorrent import QBittorrentManager, QBittorrentJobStore
+from services.qbittorrent import QBittorrentManager, QBittorrentJobStore, TorrentValidationError
 from services.tv_acquisition import TVAcquisition
 from services.tv_catalog_repository import TVCatalogRepository
 from services.tv_monitoring import TVMonitoring
+from services.tv_filename_parser import parse_episode_name
 from services.verified_import import import_verified_files, rollback_verified_files
 
 
@@ -58,6 +60,25 @@ class VerifiedImportTests(unittest.TestCase):
             source.write_bytes(b'changed')
             with self.assertRaisesRegex(ValueError,'Source changed'):
                 import_verified_files(jobs,'c'*40,[source],staging,root/'library')
+
+
+class AuxiliaryVideoPathTests(unittest.TestCase):
+    def test_louie_featurette_directory_is_ignored_with_both_separators(self):
+        path = 'Louie (2010) Season 2 S02 (1080p BluRay x265 HEVC 10bit AAC 5.1 Garshasp)/Featurettes/Fox Movie Channel Presents World Premiere - Louie Season 2.mkv'
+        for name in (path, path.replace('/', '\\')):
+            with self.subTest(name=name):
+                self.assertTrue(parse_episode_name(name)['ignored'])
+
+    def test_auxiliary_directory_survives_numbered_episode_branches(self):
+        for directory in ('Samples', 'Trailers', 'Extras', 'Featurettes'):
+            for filename in ('Harbor.Signals.S01E01.mkv', 'Harbor.Signals.1x01.mkv'):
+                with self.subTest(directory=directory, filename=filename):
+                    self.assertTrue(parse_episode_name('Harbor Signals/' + directory + '/' + filename)['ignored'])
+
+    def test_package_root_and_similar_folder_are_not_auxiliary(self):
+        for name in ('Extras/S01E01.mkv', 'Featurettes/S01E01.mkv', 'Harbor Signals/Extras Season/S01E01.mkv'):
+            with self.subTest(name=name):
+                self.assertFalse(parse_episode_name(name)['ignored'])
 
 
 class TVAcquisitionTests(unittest.TestCase):
@@ -206,6 +227,234 @@ class TVAcquisitionTests(unittest.TestCase):
         self.assertEqual(result['state'],'validation_failed')
         self.manager.client.resume.assert_not_called()
         self.assertIn('labels disagree',result['last_error'])
+
+    def _auxiliary_pack(self):
+        package = 'Harbor.Signals.S01.1080p.WEB-DL'
+        self.files = []
+        for number in (1, 2, 3):
+            name = package + f'/Harbor.Signals.S01E{number:02d}.1080p.WEB-DL.mkv'
+            path = self.manager.staging_dir / name
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(b'synthetic episode')
+            self.files.append({'index': number - 1, 'name': name, 'size': path.stat().st_size, 'priority': 1})
+        bonus = package + '/Featurettes/Fox Movie Channel Presents World Premiere - Harbor Signals Season 1.mkv'
+        bonus_path = self.manager.staging_dir / bonus
+        bonus_path.parent.mkdir(parents=True)
+        bonus_path.write_bytes(b'synthetic bonus')
+        self.files.insert(0, {'index': 3, 'name': bonus, 'size': bonus_path.stat().st_size, 'priority': 1})
+        self.provider.search_tv.return_value[0].update(title=package, size=sum(row['size'] for row in self.files))
+        self.torrent.update(name=package)
+        def priorities(_hash, indices, priority):
+            for row in self.files:
+                if row['index'] in indices:
+                    row['priority'] = priority
+        self.manager.client.file_priority.side_effect = priorities
+        decision = self.service.search(self.series, 1)['decisions'][0]
+        return decision, bonus
+
+    def test_pack_bonus_is_unselected_before_resume_and_never_imported(self):
+        decision, bonus = self._auxiliary_pack()
+        submitted = self.service.submit(decision['decision_token'], 'bonus-pack')
+        mapping = self.service.validate_manifest(submitted['job'], self.files)
+        self.assertEqual(mapping['skipped_files'], [bonus])
+        self.assertEqual(len(mapping['mappings']), 3)
+        validated = self.manager.process_completed()[0]
+        self.assertEqual(validated['state'], 'downloading', validated.get('last_error'))
+        self.assertEqual(self.files[0]['priority'], 0)
+        self.assertEqual([row['priority'] for row in self.files[1:]], [1, 1, 1])
+        self.manager.client.resume.assert_called_once_with(self.hash)
+        self.torrent['progress'] = 1
+        completed = self.manager.process_completed()[0]
+        self.assertEqual(completed['state'], 'imported', completed.get('last_error'))
+        self.assertEqual(completed['tv_import']['imported_files'], 3)
+        self.assertTrue(all(row['available'] for row in self.tv.episodes(self.series, 1)))
+        self.assertEqual(len(list(self.home.rglob('*.mkv'))), 3)
+        self.assertFalse(any('Premiere' in path.name for path in self.home.rglob('*.mkv')))
+        self.assertFalse((self.manager.staging_dir / bonus).exists())
+
+    def _replace_bonus_directory_with_alias(self, bonus):
+        source = self.manager.staging_dir / bonus
+        unrelated = self.manager.staging_dir / 'unowned-other-job'
+        unrelated.mkdir()
+        preserved = unrelated / source.name
+        source.rename(preserved)
+        source.parent.rmdir()
+        self._directory_alias(unrelated, source.parent)
+        return preserved
+
+    @staticmethod
+    def _directory_alias(target, alias):
+        if os.name == 'nt':
+            import _winapi
+            _winapi.CreateJunction(str(target), str(alias))
+        else:
+            alias.symlink_to(target, target_is_directory=True)
+
+    def test_aliased_save_path_cannot_delete_foreign_auxiliary_source(self):
+        decision, bonus = self._auxiliary_pack()
+        self.service.submit(decision['decision_token'], 'aliased-save-path')
+        self.manager.process_completed()
+        foreign = self.manager.staging_dir / 'unowned-other-job'
+        foreign.mkdir()
+        package = self.manager.staging_dir / Path(bonus).parts[0]
+        package.rename(foreign / package.name)
+        alias = self.manager.staging_dir / 'aliased-save-path'
+        self._directory_alias(foreign, alias)
+        self.torrent.update(save_path=str(alias), progress=1)
+        result = self.manager.process_completed()[0]
+        self.assertEqual(result['state'], 'needs_review', result.get('last_error'))
+        self.assertIn('link', result['last_error'].lower())
+        self.assertEqual((foreign / bonus).read_bytes(), b'synthetic bonus')
+        self.assertTrue(all((foreign / row['name']).exists() for row in self.files[1:]))
+
+    def test_save_path_replaced_with_junction_after_snapshot_prevents_cleanup(self):
+        decision, bonus = self._auxiliary_pack()
+        dedicated = self.manager.staging_dir / 'dedicated-save-path'
+        dedicated.mkdir()
+        package = self.manager.staging_dir / Path(bonus).parts[0]
+        package.rename(dedicated / package.name)
+        self.torrent['save_path'] = str(dedicated)
+        submitted = self.service.submit(decision['decision_token'], 'changed-save-path')
+        self.manager.process_completed()
+        self.torrent['progress'] = 1
+        self.manager.client.remove_without_files.side_effect = OSError('hold before cleanup')
+        self.assertEqual(self.manager.process_completed()[0]['state'], 'cleanup_failed')
+        foreign = self.manager.staging_dir / 'unowned-other-job'
+        dedicated.rename(foreign)
+        self._directory_alias(foreign, dedicated)
+        self.manager.client.remove_without_files.side_effect = None
+        self.service.manage(submitted['intent']['id'], 'retry')
+        result = self.manager.process_completed()[0]
+        self.assertEqual(result['state'], 'cleanup_failed', result.get('last_error'))
+        self.assertIn('link', result['last_error'].lower())
+        self.assertEqual((foreign / bonus).read_bytes(), b'synthetic bonus')
+        self.assertTrue(all((foreign / row['name']).exists() for row in self.files[1:]))
+
+    def test_auxiliary_directory_alias_cannot_delete_another_staging_file(self):
+        decision, bonus = self._auxiliary_pack()
+        self.service.submit(decision['decision_token'], 'bonus-directory-alias')
+        self.manager.process_completed()
+        preserved = self._replace_bonus_directory_with_alias(bonus)
+        self.torrent['progress'] = 1
+        result = self.manager.process_completed()[0]
+        self.assertEqual(result['state'], 'needs_review', result.get('last_error'))
+        self.assertIn('link', result['last_error'].lower())
+        self.assertEqual(preserved.read_bytes(), b'synthetic bonus')
+        self.assertTrue(all((self.manager.staging_dir / row['name']).exists() for row in self.files[1:]))
+
+    def test_auxiliary_directory_alias_after_snapshot_prevents_cleanup(self):
+        decision, bonus = self._auxiliary_pack()
+        submitted = self.service.submit(decision['decision_token'], 'bonus-directory-alias-after-snapshot')
+        self.manager.process_completed()
+        self.torrent['progress'] = 1
+        self.manager.client.remove_without_files.side_effect = OSError('hold before cleanup')
+        result = self.manager.process_completed()[0]
+        self.assertEqual(result['state'], 'cleanup_failed')
+        preserved = self._replace_bonus_directory_with_alias(bonus)
+        self.manager.client.remove_without_files.side_effect = None
+        self.service.manage(submitted['intent']['id'], 'retry')
+        result = self.manager.process_completed()[0]
+        self.assertEqual(result['state'], 'cleanup_failed', result.get('last_error'))
+        self.assertIn('link', result['last_error'].lower())
+        self.assertEqual(preserved.read_bytes(), b'synthetic bonus')
+        self.assertTrue(all((self.manager.staging_dir / row['name']).exists() for row in self.files[1:]))
+
+    def test_changed_auxiliary_source_prevents_cleanup_of_every_source(self):
+        decision, bonus = self._auxiliary_pack()
+        submitted = self.service.submit(decision['decision_token'], 'changed-bonus')
+        self.manager.process_completed()
+        self.torrent['progress'] = 1
+        self.manager.client.remove_without_files.side_effect = OSError('hold before cleanup')
+        result = self.manager.process_completed()[0]
+        self.assertEqual(result['state'], 'cleanup_failed')
+        bonus_path = self.manager.staging_dir / bonus
+        bonus_path.write_bytes(b'changed bonus')
+        self.manager.client.remove_without_files.side_effect = None
+        self.service.manage(submitted['intent']['id'], 'retry')
+        result = self.manager.process_completed()[0]
+        self.assertEqual(result['state'], 'cleanup_failed')
+        self.assertIn('changed', result['last_error'].lower())
+        self.assertEqual(bonus_path.read_bytes(), b'changed bonus')
+        self.assertTrue(all((self.manager.staging_dir / row['name']).exists() for row in self.files[1:]))
+
+    def test_shared_auxiliary_source_is_retained_on_cleanup(self):
+        decision, bonus = self._auxiliary_pack()
+        self.service.submit(decision['decision_token'], 'shared-bonus')
+        self.manager.process_completed()
+        bonus_path = self.manager.staging_dir / bonus
+        self.manager.jobs.upsert('f' * 40, {'state': 'downloading', 'payload_paths': [str(bonus_path)]})
+        self.torrent['progress'] = 1
+        result = self.manager.process_completed()[0]
+        self.assertEqual(result['state'], 'cleanup_failed')
+        self.assertIn('another', result['last_error'])
+        self.assertTrue(bonus_path.exists())
+        self.assertTrue(all((self.manager.staging_dir / row['name']).exists() for row in self.files[1:]))
+
+    def test_retry_recovers_crash_after_auxiliary_unlink_without_duplicate_import(self):
+        decision, bonus = self._auxiliary_pack()
+        submitted = self.service.submit(decision['decision_token'], 'bonus-unlink-recovery')
+        self.manager.process_completed()
+        self.torrent['progress'] = 1
+        bonus_path = self.manager.staging_dir / bonus
+        unlink = Path.unlink
+        def interrupted(path, *args, **kwargs):
+            unlink(path, *args, **kwargs)
+            if path == bonus_path:
+                raise OSError('crash after unlink before removed checkpoint')
+        with patch.object(Path, 'unlink', interrupted):
+            result = self.manager.process_completed()[0]
+        self.assertEqual(result['state'], 'cleanup_failed')
+        self.assertEqual(result['tv_auxiliary_files'][0]['cleanup_state'], 'unlinking')
+        self.assertFalse(bonus_path.exists())
+        self.service.manage(submitted['intent']['id'], 'retry')
+        result = self.manager.process_completed()[0]
+        self.assertEqual(result['state'], 'imported', result.get('last_error'))
+        self.assertEqual(result['tv_auxiliary_files'][0]['cleanup_state'], 'removed')
+        self.assertEqual(len(list(self.home.rglob('*.mkv'))), 3)
+        self.manager.client.add_magnet.assert_called_once()
+
+    def test_unknown_neighbor_of_auxiliary_source_is_not_deleted(self):
+        decision, bonus = self._auxiliary_pack()
+        self.service.submit(decision['decision_token'], 'unknown-bonus-neighbor')
+        self.manager.process_completed()
+        unknown = (self.manager.staging_dir / bonus).parent / 'unknown.mkv'
+        unknown.write_bytes(b'keep this unrelated file')
+        self.torrent['progress'] = 1
+        result = self.manager.process_completed()[0]
+        self.assertEqual(result['state'], 'cleanup_failed')
+        self.assertIn('Unknown', result['last_error'])
+        self.assertEqual(unknown.read_bytes(), b'keep this unrelated file')
+        self.assertTrue((self.manager.staging_dir / bonus).exists())
+
+    def test_explicit_retry_keeps_failed_pack_intent_and_retained_payload(self):
+        decision, bonus = self._auxiliary_pack()
+        submitted = self.service.submit(decision['decision_token'], 'bonus-retry')
+        self.manager.jobs.upsert(self.hash, {'state': 'validation_failed', 'last_error': 'Torrent filenames identify a different series'})
+        retained = self.manager.staging_dir / self.files[1]['name']
+        before = retained.read_bytes()
+        self.service.manage(submitted['intent']['id'], 'retry')
+        validated = self.manager.process_completed()[0]
+        self.assertEqual(validated['state'], 'downloading', validated.get('last_error'))
+        self.assertEqual(validated['acquisition_id'], submitted['intent']['id'])
+        self.assertEqual(retained.read_bytes(), before)
+        self.manager.client.add_magnet.assert_called_once()
+        self.manager.client.resume.assert_called_once_with(self.hash)
+        self.assertEqual(self.files[0]['priority'], 0)
+
+    def test_real_wrong_show_episode_still_blocks_pack_with_auxiliary_files(self):
+        decision, _ = self._auxiliary_pack()
+        self.files[1]['name'] = 'Harbor.Signals.S01.1080p.WEB-DL/Episodes/Another.Show.S01E01.1080p.WEB-DL.mkv'
+        self.service.submit(decision['decision_token'], 'wrong-show-with-bonus')
+        result = self.manager.process_completed()[0]
+        self.assertEqual(result['state'], 'validation_failed')
+        self.assertIn('different series', result['last_error'])
+        self.manager.client.resume.assert_not_called()
+
+    def test_auxiliary_files_cannot_satisfy_season_coverage(self):
+        decision, bonus = self._auxiliary_pack()
+        submitted = self.service.submit(decision['decision_token'], 'bonus-only')
+        with self.assertRaisesRegex(TorrentValidationError, 'cover'):
+            self.service.validate_manifest(submitted['job'], [self.files[0]])
 
     def test_profile_edit_invalidates_old_decision_and_repeat_submit_is_idempotent(self):
         decision=self.service.search(self.series,1,1)['decisions'][0]

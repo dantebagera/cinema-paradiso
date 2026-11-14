@@ -1,5 +1,9 @@
-import { ChevronDown, ChevronUp, Plus, RotateCcw, Search, X } from 'lucide-react';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import Button from '../../components/ui/Button.jsx';
+import { Input, Select } from '../../components/ui/FormField.jsx';
+import { ChevronDown, ChevronUp, Plus, Search, X } from 'lucide-react';
+import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
+import AnchoredPopover from '../../components/AnchoredPopover.jsx';
+import SearchField from './SearchField.jsx';
 import { ADVANCED_SEARCH_LIMITS, criteriaForScope, criterionFor } from './advancedSearchRegistry.js';
 import {
   createEmptyQuery, normalizeAdvancedQuery, queryGroup, withCriterion,
@@ -40,6 +44,13 @@ export function IdentityPicker({ scope, type, searchIdentities, onPick }) {
   const [error, setError] = useState('');
   const [retryToken, setRetryToken] = useState(0);
   const sequence = useRef(0);
+  function clearSearch() {
+    sequence.current += 1;
+    setText('');
+    setItems([]);
+    setLoading(false);
+    setError('');
+  }
   function retryIdentitySearch() {
     setRetryToken((value) => value + 1);
   }
@@ -70,7 +81,7 @@ export function IdentityPicker({ scope, type, searchIdentities, onPick }) {
   }, [retryToken, scope, searchIdentities, text, type]);
   return (
     <div className="advanced-identity-picker">
-      <label><Search size={14} /><input value={text} onChange={(event) => setText(event.target.value)} onKeyDown={(event) => { if (event.key === 'Escape') { setText(''); setItems([]); } }} placeholder={`Find ${type}…`} aria-label={`Find ${type}`} /></label>
+      <SearchField onClear={text ? clearSearch : undefined}><Search size={14} /><Input value={text} onChange={(event) => setText(event.target.value)} onKeyDown={(event) => { if (event.key === 'Escape') clearSearch(); }} placeholder={`Find ${type}…`} aria-label={`Find ${type}`} /></SearchField>
       {loading && <span className="advanced-picker-status">Searching…</span>}
       {!loading && !error && text.trim().length >= 2 && !items.length && <span className="advanced-picker-status">No matches</span>}
       {error && <span className="advanced-picker-error" role="alert">Request failed <button type="button" onClick={retryIdentitySearch}>Retry</button></span>}
@@ -113,19 +124,19 @@ function NumericEditor({ type, value, onChange }) {
   }
   return (
     <div className="advanced-inline-editor">
-      <select value={value.operator} onChange={(event) => {
+      <Select value={value.operator} onChange={(event) => {
         const operator = event.target.value;
         onChange(operator === 'between'
           ? { operator, from: Number(value.value ?? value.from ?? (type === 'year' ? 2000 : 0)), to: Number(value.to ?? value.value ?? (type === 'year' ? new Date().getFullYear() : 10)) }
           : { operator, value: Number(value.value ?? value.from ?? (type === 'year' ? 2000 : 0)) });
       }} aria-label={`${type} operator`}>
         <option value="exactly">Exactly</option><option value="at_least">At least</option><option value="at_most">At most</option><option value="between">Between</option>
-      </select>
+      </Select>
       {between ? <>
-        <input type={type === 'year' ? 'text' : 'number'} value={type === 'year' ? yearDraft.from : value.from} min={type === 'year' ? undefined : 0} max={type === 'year' ? undefined : 10} maxLength={type === 'year' ? 4 : undefined} inputMode={type === 'year' ? 'numeric' : undefined} step={type === 'year' ? undefined : 0.1} onChange={(event) => type === 'year' ? updateYearDraft('from', event.target.value) : onChange({ ...value, from: Number(event.target.value) })} aria-label={`${type} from`} aria-invalid={type === 'year' && Boolean(yearValidation?.error)} />
+        <Input type={type === 'year' ? 'text' : 'number'} value={type === 'year' ? yearDraft.from : value.from} min={type === 'year' ? undefined : 0} max={type === 'year' ? undefined : 10} maxLength={type === 'year' ? 4 : undefined} inputMode={type === 'year' ? 'numeric' : undefined} step={type === 'year' ? undefined : 0.1} onChange={(event) => type === 'year' ? updateYearDraft('from', event.target.value) : onChange({ ...value, from: Number(event.target.value) })} aria-label={`${type} from`} aria-invalid={type === 'year' && Boolean(yearValidation?.error)} />
         <span>to</span>
-        <input type={type === 'year' ? 'text' : 'number'} value={type === 'year' ? yearDraft.to : value.to} min={type === 'year' ? undefined : 0} max={type === 'year' ? undefined : 10} maxLength={type === 'year' ? 4 : undefined} inputMode={type === 'year' ? 'numeric' : undefined} step={type === 'year' ? undefined : 0.1} onChange={(event) => type === 'year' ? updateYearDraft('to', event.target.value) : onChange({ ...value, to: Number(event.target.value) })} aria-label={`${type} to`} aria-invalid={type === 'year' && Boolean(yearValidation?.error)} />
-      </> : <input type={type === 'year' ? 'text' : 'number'} value={type === 'year' ? yearDraft.value : value.value} min={type === 'year' ? undefined : 0} max={type === 'year' ? 4 : undefined} maxLength={type === 'year' ? 4 : undefined} inputMode={type === 'year' ? 'numeric' : undefined} step={type === 'year' ? undefined : 0.1} onChange={(event) => type === 'year' ? updateYearDraft('value', event.target.value) : onChange({ ...value, value: Number(event.target.value) })} aria-label={type} aria-invalid={type === 'year' && Boolean(yearValidation?.error)} />}
+        <Input type={type === 'year' ? 'text' : 'number'} value={type === 'year' ? yearDraft.to : value.to} min={type === 'year' ? undefined : 0} max={type === 'year' ? undefined : 10} maxLength={type === 'year' ? 4 : undefined} inputMode={type === 'year' ? 'numeric' : undefined} step={type === 'year' ? undefined : 0.1} onChange={(event) => type === 'year' ? updateYearDraft('to', event.target.value) : onChange({ ...value, to: Number(event.target.value) })} aria-label={`${type} to`} aria-invalid={type === 'year' && Boolean(yearValidation?.error)} />
+      </> : <Input type={type === 'year' ? 'text' : 'number'} value={type === 'year' ? yearDraft.value : value.value} min={type === 'year' ? undefined : 0} max={type === 'year' ? 4 : undefined} maxLength={type === 'year' ? 4 : undefined} inputMode={type === 'year' ? 'numeric' : undefined} step={type === 'year' ? undefined : 0.1} onChange={(event) => type === 'year' ? updateYearDraft('value', event.target.value) : onChange({ ...value, value: Number(event.target.value) })} aria-label={type} aria-invalid={type === 'year' && Boolean(yearValidation?.error)} />}
       {type === 'year' && yearValidation?.error && <span className="year-draft-error" role="alert">{yearValidation.error}</span>}
     </div>
   );
@@ -135,7 +146,7 @@ function RuntimeEditor({ value, onChange }) {
   const custom = value.preset === 'custom';
   return (
     <div className="advanced-inline-editor">
-      <select value={value.preset} onChange={(event) => {
+      <Select value={value.preset} onChange={(event) => {
         const preset = event.target.value;
         onChange(preset === 'custom' ? { preset, from: value.from ?? 60, to: value.to ?? 150 } : { preset });
       }} aria-label="Runtime preset">
@@ -143,18 +154,18 @@ function RuntimeEditor({ value, onChange }) {
         <option value="feature">Feature (60–149 min)</option>
         <option value="long">Long (150+ min)</option>
         <option value="custom">Custom range</option>
-      </select>
+      </Select>
       {custom && <>
-        <input type="number" value={value.from} min="0" max="1440" onChange={(event) => onChange({ ...value, from: Number(event.target.value) })} aria-label="Runtime from" />
+        <Input type="number" value={value.from} min="0" max="1440" onChange={(event) => onChange({ ...value, from: Number(event.target.value) })} aria-label="Runtime from" />
         <span>to</span>
-        <input type="number" value={value.to} min="0" max="1440" onChange={(event) => onChange({ ...value, to: Number(event.target.value) })} aria-label="Runtime to" />
+        <Input type="number" value={value.to} min="0" max="1440" onChange={(event) => onChange({ ...value, to: Number(event.target.value) })} aria-label="Runtime to" />
       </>}
     </div>
   );
 }
 
 export default function AdvancedSearchBuilder({
-  scope, query, onChange, onRun, onReset, options = {}, searchIdentities, loading = false, error = '', mediaType = 'movie'
+  scope, query, onChange, onRun, onClearSearch, options = {}, searchIdentities, loading = false, error = '', mediaType = 'movie'
 }) {
   const tv = mediaType === 'tv';
   const labelFor = (definition) => tv ? ({year: 'First-air year', runtime: 'Episode runtime', language: 'Original language', country: 'Origin country', library_source: 'Episode file source'}[definition?.type] || definition?.label) : definition?.label;
@@ -166,6 +177,18 @@ export default function AdvancedSearchBuilder({
   const [expanded, setExpanded] = useState(false);
   const [addOpen, setAddOpen] = useState(false);
   const addTriggerRef = useRef(null);
+  const builderRef = useRef(null);
+  const pickerId = useId();
+  const closePicker = useCallback(() => setAddOpen(false), []);
+  function clearSearch() {
+    setAddType('');
+    setPendingText('');
+    setPendingIdentity(null);
+    setPersonRole('actor');
+    setExpanded(false);
+    if (onClearSearch) onClearSearch();
+    else onChange({ ...createEmptyQuery(scope), media_type: mediaType });
+  }
   const groups = normalized.groups;
   const used = new Set(groups.map((group) => group.type));
   const hasTitle = used.has('title');
@@ -217,7 +240,7 @@ export default function AdvancedSearchBuilder({
   const collapsedCount = Math.max(0, groups.length - 6);
   const shownGroups = expanded ? groups : groups.slice(0, 6);
   return (
-    <section className="advanced-search-builder" aria-label={`${scope} advanced search`}>
+    <section ref={builderRef} className="advanced-search-builder" aria-label={`${scope} advanced search`}>
       <div className="advanced-strip-main">
         <button
           ref={addTriggerRef}
@@ -226,6 +249,7 @@ export default function AdvancedSearchBuilder({
           onClick={() => setAddOpen((value) => !value)}
           aria-label="Add advanced search criterion"
           aria-expanded={addOpen}
+          aria-controls={addOpen ? pickerId : undefined}
         >
           <Plus size={17} />
         </button>
@@ -243,8 +267,8 @@ export default function AdvancedSearchBuilder({
               <strong>{labelFor(definition)}</strong>
             </div>
             {editableNumeric ? <div className="advanced-single-editor"><NumericEditor type={group.type} value={singletonValue} onChange={(value) => updateGroup(group.type, [value])} /><button type="button" onClick={() => removeValue(group.type)} aria-label={`Remove ${definition.label.toLowerCase()}`}><X size={13} /></button></div>
-              : group.type === 'title' ? <div className="advanced-single-editor"><input value={singletonValue.text} maxLength={ADVANCED_SEARCH_LIMITS.titleCharacters} onChange={(event) => updateGroup(group.type, [{ text: event.target.value }])} aria-label="Edit title" /><button type="button" onClick={() => removeValue(group.type)} aria-label="Remove title"><X size={13} /></button></div>
-                : group.type === 'minimum_votes' ? <div className="advanced-single-editor"><input type="number" value={singletonValue.value} min="0" max="10000000" step="100" onChange={(event) => updateGroup(group.type, [{ value: Number(event.target.value) }])} aria-label="Minimum votes" /><button type="button" onClick={() => removeValue(group.type)} aria-label="Remove minimum votes"><X size={13} /></button></div>
+              : group.type === 'title' ? <div className="advanced-single-editor"><Input value={singletonValue.text} maxLength={ADVANCED_SEARCH_LIMITS.titleCharacters} onChange={(event) => updateGroup(group.type, [{ text: event.target.value }])} aria-label="Edit title" /><button type="button" onClick={() => removeValue(group.type)} aria-label="Remove title"><X size={13} /></button></div>
+                : group.type === 'minimum_votes' ? <div className="advanced-single-editor"><Input type="number" value={singletonValue.value} min="0" max="10000000" step="100" onChange={(event) => updateGroup(group.type, [{ value: Number(event.target.value) }])} aria-label="Minimum votes" /><button type="button" onClick={() => removeValue(group.type)} aria-label="Remove minimum votes"><X size={13} /></button></div>
                   : group.type === 'runtime' ? <div className="advanced-single-editor"><RuntimeEditor value={singletonValue} onChange={(value) => updateGroup(group.type, [value])} /><button type="button" onClick={() => removeValue(group.type)} aria-label="Remove runtime"><X size={13} /></button></div>
                     : <div className="advanced-value-list">
               {group.values.map((value, index) => {
@@ -265,7 +289,7 @@ export default function AdvancedSearchBuilder({
                   >{relation.toUpperCase()}</button>
                   : <span className="advanced-join-fixed">{relation.toUpperCase()}</span>)}
                 <span className="advanced-value-chip">
-                  {group.type === 'person' ? <><span>{value.label}</span><select value={value.role} onChange={(event) => updateGroup(group.type, group.values.map((item, valueIndex) => valueIndex === index ? { ...item, role: event.target.value } : item))} aria-label={`Role for ${value.label}`}><option value="actor">Actor</option><option value="director">Director</option><option value="writer">Writer</option>{tv && <option value="creator">Creator</option>}</select></> : valueLabel(group.type, value)}
+                  {group.type === 'person' ? <><span>{value.label}</span><Select value={value.role} onChange={(event) => updateGroup(group.type, group.values.map((item, valueIndex) => valueIndex === index ? { ...item, role: event.target.value } : item))} aria-label={`Role for ${value.label}`}><option value="actor">Actor</option><option value="director">Director</option><option value="writer">Writer</option>{tv && <option value="creator">Creator</option>}</Select></> : valueLabel(group.type, value)}
                   <button type="button" onClick={() => removeValue(group.type, index)} aria-label={`Remove ${definition.label.toLowerCase()} ${valueLabel(group.type, value)}`}><X size={13} /></button>
                 </span>
               </span>;
@@ -278,48 +302,49 @@ export default function AdvancedSearchBuilder({
         {collapsedCount > 0 && <button type="button" className="advanced-overflow-toggle" onClick={() => setExpanded((value) => !value)} aria-expanded={expanded} aria-label={expanded ? 'Show fewer criteria' : `+${collapsedCount} more criteria`}>
           {expanded ? <><ChevronUp size={14} /> Less</> : <><ChevronDown size={14} /> +{collapsedCount} more</>}
         </button>}
-        <button type="button" className="advanced-reset-trigger" onClick={() => (onReset ? onReset() : onChange(createEmptyQuery(scope)))} aria-label="Reset advanced search" title="Reset advanced search"><RotateCcw size={14} /></button>
+        <button type="button" className="search-clear-button advanced-clear-trigger" onClick={clearSearch} aria-label="Clear search" title="Clear search"><X size={17} /></button>
       </div>
-      {addOpen && <div className="advanced-add-popover">
+      <AnchoredPopover open={addOpen} anchorRef={builderRef} triggerRef={addTriggerRef} onClose={closePicker}
+        id={pickerId} className="advanced-add-popover" role="dialog" aria-label="Add search criterion">
         <div className="advanced-popover-heading">
           <div><strong>Add criterion</strong><span>Different types use AND. Repeated Genre values can cycle through AND, OR, and NOT.</span></div>
           <div className="advanced-popover-actions">
-            <button type="button" className="btn btn-secondary" onClick={() => (onReset ? onReset() : onChange(createEmptyQuery(scope)))}><RotateCcw size={14} /> Reset</button>
-            <button type="button" className="advanced-popover-close" onClick={() => setAddOpen(false)} aria-label="Close criterion picker"><X size={15} /></button>
+            <Button type="button"  onClick={clearSearch}><X size={14} /> Clear search</Button>
+            <button type="button" className="advanced-popover-close" onClick={() => { closePicker(); addTriggerRef.current?.focus(); }} aria-label="Close criterion picker"><X size={15} /></button>
           </div>
         </div>
         <div className="advanced-add-row">
-          <select value={addType} onChange={(event) => { setAddType(event.target.value); setPendingIdentity(null); setPendingText(''); }} aria-label="Criterion to add">
+          <Select value={addType} onChange={(event) => { setAddType(event.target.value); setPendingIdentity(null); setPendingText(''); }} aria-label="Criterion to add">
             <option value="">Choose criterion…</option>
             {available.map((definition) => <option key={definition.type} value={definition.type}>{labelFor(definition)}</option>)}
-          </select>
-          {addType === 'title' && <input value={pendingText} maxLength={ADVANCED_SEARCH_LIMITS.titleCharacters} onChange={(event) => setPendingText(event.target.value)} placeholder={tv ? "Series title" : "Movie title"} aria-label="Title value" />}
+          </Select>
+          {addType === 'title' && <Input value={pendingText} maxLength={ADVANCED_SEARCH_LIMITS.titleCharacters} onChange={(event) => setPendingText(event.target.value)} placeholder={tv ? "Series title" : "Movie title"} aria-label="Title value" />}
           {['person', 'keyword'].includes(addType) && <>
-            {addType === 'person' && <select value={personRole} onChange={(event) => setPersonRole(event.target.value)} aria-label="Person role"><option value="actor">Actor</option><option value="director">Director</option><option value="writer">Writer</option>{tv && <option value="creator">Creator</option>}</select>}
+            {addType === 'person' && <Select value={personRole} onChange={(event) => setPersonRole(event.target.value)} aria-label="Person role"><option value="actor">Actor</option><option value="director">Director</option><option value="writer">Writer</option>{tv && <option value="creator">Creator</option>}</Select>}
             <IdentityPicker scope={scope} type={addType} searchIdentities={searchIdentities} onPick={setPendingIdentity} />
             {pendingIdentity && <span className="advanced-pending-identity">{pendingIdentity.label}</span>}
           </>}
-          {!!addType && !['title', 'person', 'keyword', 'year', 'rating', 'minimum_votes', 'runtime'].includes(addType) && <select value={pendingIdentity?.id || selectedOptions[0]?.id || ''} onChange={(event) => setPendingIdentity(selectedOptions.find((item) => item.id === event.target.value) || null)} aria-label={`${selectedDefinition?.label} value`}>
+          {!!addType && !['title', 'person', 'keyword', 'year', 'rating', 'minimum_votes', 'runtime'].includes(addType) && <Select value={pendingIdentity?.id || selectedOptions[0]?.id || ''} onChange={(event) => setPendingIdentity(selectedOptions.find((item) => item.id === event.target.value) || null)} aria-label={`${selectedDefinition?.label} value`}>
             {selectedOptions.map((item) => <option key={item.id} value={item.id}>{item.label}</option>)}
-          </select>}
-          <button type="button" className="btn btn-secondary advanced-confirm-add" disabled={!addType || (addType === 'title' && !pendingText.trim()) || (['person', 'keyword'].includes(addType) && !pendingIdentity) || (requiresOptions && !selectedOptions.length)} onClick={() => {
+          </Select>}
+          <Button type="button" className="advanced-confirm-add" disabled={!addType || (addType === 'title' && !pendingText.trim()) || (['person', 'keyword'].includes(addType) && !pendingIdentity) || (requiresOptions && !selectedOptions.length)} onClick={() => {
             if (pendingIdentity && !['person', 'keyword'].includes(addType)) addValue(pendingIdentity); else addPending();
-          }}><Plus size={14} /> Add criterion</button>
+          }}><Plus size={14} /> Add criterion</Button>
         </div>
         <div className="advanced-builder-footer">
-          <label>Sort <select value={normalized.sort.key} onChange={(event) => onChange(normalizeAdvancedQuery({ ...normalized, sort: { key: event.target.value, direction: event.target.value === 'title' || event.target.value === 'title.asc' || event.target.value === 'year-asc' ? 'asc' : 'desc' } }, scope))}>
+          <label>Sort <Select value={normalized.sort.key} onChange={(event) => onChange(normalizeAdvancedQuery({ ...normalized, sort: { key: event.target.value, direction: event.target.value === 'title' || event.target.value === 'title.asc' || event.target.value === 'year-asc' ? 'asc' : 'desc' } }, scope))}>
             {(scope === 'library' ? [
               ['added', 'Newly added'], ['title', 'Title'], ['rating', 'Rating'], ['year-desc', 'Year newest'], ['year-asc', 'Year oldest'], ['quality', 'Quality']
             ] : [
               ['auto', 'Default order'], ['popularity.desc', 'Popularity'], ['vote_average.desc', 'Rating'], ['vote_count.desc', 'Most voted'], ['primary_release_date.desc', 'Release date'], ['title.asc', 'Title A–Z']
             ]).map(([id, label]) => <option key={id} value={id}>{label}</option>)}
-          </select></label>
-          {scope === 'discover' && <label>Feed <select value={normalized.feed} onChange={(event) => onChange(normalizeAdvancedQuery({ ...normalized, feed: event.target.value }, scope))}>
+          </Select></label>
+          {scope === 'discover' && <label>Feed <Select value={normalized.feed} onChange={(event) => onChange(normalizeAdvancedQuery({ ...normalized, feed: event.target.value }, scope))}>
             {[['trending_week', 'Trending Week'], ['catalog', 'TMDB Catalog'], ['trending_today', 'Trending Today'], ['now_playing', tv ? 'On the air' : 'Now Playing'], ['upcoming', tv ? 'Airing today' : 'Upcoming'], ['popular', 'Popular'], ['top_rated', 'Top Rated'], ['best_all_time', 'Best All Time']].map(([id, label]) => <option key={id} value={id}>{label}</option>)}
-          </select></label>}
+          </Select></label>}
         </div>
         {!tv && scope === 'discover' && hasTitle && <p className="advanced-capability-note">Title results use a bounded TMDB scan. Keyword and Runtime are unavailable with Title.</p>}
-      </div>}
+      </AnchoredPopover>
       {error && <div className="advanced-builder-error" role="alert">{error} <button type="button" onClick={onRun}>Retry</button></div>}
     </section>
   );

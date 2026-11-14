@@ -1,0 +1,8 @@
+......C:\Program Files\Python312\Lib\unittest\case.py:589: ResourceWarning: unclosed file <_io.BufferedReader name='C:\\Users\\dante\\AppData\\Local\\Temp\\cp-performance-backend-rerun-7102238622944adcbb6ad9787233b6b7\\dist/index.html'>
+  if method() is not None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+..
+----------------------------------------------------------------------
+Ran 8 tests in 0.131s
+
+OK

@@ -1,0 +1,22 @@
+{"sequence": 1, "event": "span_start", "at_seconds": 0.027984, "phase": "isolated_app_import"}
+{"sequence": 2, "event": "span_end", "at_seconds": 0.374167, "phase": "isolated_app_import", "seconds": 0.346178, "state": "completed"}
+{"sequence": 3, "event": "capture_started", "at_seconds": 0.427812, "feature": "F1", "label": "adam-exact-default", "prompt": "adam i need you to lit 50 movies with very twisted story you wont expect the ending\nyour responce should be a list of movies names and years , no any other details , dont seek more info , dont reply by paragarph or any way of responce  only the list", "model": "gpt-6.1-sol", "count": "50", "maximum_calls": 1, "maximum_seconds": 120, "reasoning_effort": "default", "output_format": "plain-list", "cache_state": "fresh diagnostic process; no production TMDB memory cache"}
+{"sequence": 4, "event": "span_start", "at_seconds": 0.461075, "phase": "feature_total"}
+{"sequence": 5, "event": "span_start", "at_seconds": 0.471731, "phase": "gpt_run", "input_bytes": 283, "instructions_bytes": 0, "tools_bytes": 2}
+{"sequence": 6, "event": "span_start", "at_seconds": 0.472896, "phase": "lease_acquire"}
+{"sequence": 7, "event": "span_end", "at_seconds": 0.482655, "phase": "lease_acquire", "seconds": 0.009754, "state": "completed"}
+{"sequence": 8, "event": "span_start", "at_seconds": 0.482898, "phase": "account_access"}
+{"sequence": 9, "event": "span_end", "at_seconds": 0.483864, "phase": "account_access", "seconds": 0.000962, "state": "completed"}
+{"sequence": 10, "event": "gpt_start", "at_seconds": 0.493833, "attempt": 1}
+{"sequence": 11, "event": "span_start", "at_seconds": 0.494084, "phase": "gpt_http", "attempt": 1}
+{"sequence": 12, "event": "gpt_first_bytes", "at_seconds": 1.954877, "attempt": 1, "seconds": 1.460787}
+{"sequence": 13, "event": "gpt_stream_event", "at_seconds": 3.976157, "attempt": 1, "type": "response.output_item.added", "item_type": "reasoning", "seconds": 3.482066, "usage": null}
+{"sequence": 14, "event": "gpt_stream_event", "at_seconds": 4.100524, "attempt": 1, "type": "response.output_item.added", "item_type": "message", "seconds": 3.606432, "usage": null}
+{"sequence": 15, "event": "gpt_stream_event", "at_seconds": 13.626685, "attempt": 1, "type": "response.completed", "item_type": null, "seconds": 13.132596, "usage": {"input_tokens": 64, "output_tokens": 461, "total_tokens": 525, "attribution": {"items": {"msg_038266752fc9abd7016ae9afe510e88191ae87fdac14ce214d": {"input_tokens": 62, "output_tokens": 0, "content": [{"input_tokens": 62, "output_tokens": 0}]}, "msg_038266752fc9abd7016ae9afe7816081919668c232105a3ef0": {"input_tokens": 0, "output_tokens": 438, "content": [{"input_tokens": 0, "output_tokens": 438}]}, "rs_038266752fc9abd7016ae9afe758b88191aff86dd7900c7fb7": {"input_tokens": 2, "output_tokens": 23}}}}}
+{"sequence": 16, "event": "span_end", "at_seconds": 13.627791, "phase": "gpt_http", "attempt": 1, "seconds": 13.133705}
+{"sequence": 17, "event": "span_start", "at_seconds": 13.628101, "phase": "lease_release"}
+{"sequence": 18, "event": "span_end", "at_seconds": 13.638678, "phase": "lease_release", "seconds": 0.010571, "state": "completed"}
+{"sequence": 19, "event": "span_end", "at_seconds": 13.638946, "phase": "gpt_run", "seconds": 13.167212, "state": "completed", "input_bytes": 283, "instructions_bytes": 0, "tools_bytes": 2}
+{"sequence": 20, "event": "gpt_reply", "at_seconds": 13.639184, "response_id": "resp_038266752fc9abd7016ae9afe510148191afb61748858445d5", "calls": []}
+{"sequence": 21, "event": "span_end", "at_seconds": 13.652072, "phase": "feature_total", "seconds": 13.190993, "state": "completed"}
+{"sequence": 22, "event": "job_finished", "at_seconds": 13.654119, "state": "completed", "message": "", "accepted_count": 0, "inference_attempts": 1, "tmdb_requests": 0, "elapsed_seconds": 13.225249}

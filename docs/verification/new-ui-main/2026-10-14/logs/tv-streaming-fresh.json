@@ -1,0 +1,11 @@
+{
+  "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\logs\\tv-streaming-fresh.log",
+  "label": "tv-streaming-fresh",
+  "root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\fixtures\\tv-streaming-fresh-255e697d77dd451cafe2b8a04aa2e863",
+  "port": 5147,
+  "specs": [
+    "tests/e2e/stream-player.spec.js"
+  ],
+  "exitCode": 0,
+  "fixture": "tv"
+}

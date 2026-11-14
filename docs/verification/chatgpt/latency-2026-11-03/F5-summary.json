@@ -1,0 +1,28 @@
+{
+  "feature": "F5",
+  "label": "native-baseline",
+  "state": "completed",
+  "message": "",
+  "model": "gpt-6.1-sol",
+  "prompt": "Synthetic two-title IPTV supplied-candidate matching",
+  "elapsed_seconds": 10.139958,
+  "inference_attempts": 2,
+  "tmdb_requests": 8,
+  "accepted_count": 2,
+  "scope": "actual native IPTV preview/job owners; synthetic provider/two titles; real GPT/TMDB as required; no Apply",
+  "name": "F5",
+  "evidence_root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-ai-timing-pvt8yl2t",
+  "gpt_call_seconds": [
+    4.800533,
+    2.848799
+  ],
+  "gpt_roundtrip_seconds": 7.649332,
+  "tmdb_wall_seconds": 2.274915,
+  "lease_seconds": 0.040191,
+  "other_seconds": 0.17552,
+  "first_backend_card_seconds": 10.127655,
+  "unverified_control_count": null,
+  "native_proposal_count": null,
+  "native_processed_count": null,
+  "recommendation_source_hash": "026fc8e1c498401b67ded18b5f6dcb044eeaabf00e6ea1212da678ca7cca754f"
+}

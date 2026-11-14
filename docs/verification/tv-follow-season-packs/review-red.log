@@ -1,0 +1,32 @@
+FFF
+======================================================================
+FAIL: test_contradictory_seasons_cannot_claim_an_episode (tests.test_tv_follow_season_planning.ReleaseRecognitionTests.test_contradictory_seasons_cannot_claim_an_episode)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_tv_follow_season_planning.py", line 21, in test_contradictory_seasons_cannot_claim_an_episode
+    self.assertTrue(claim.get('contradictory'))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_bounded_fallback_continues_later_gaps_instead_of_repeating_the_first_four (tests.test_tv_follow_season_planning.SeasonPlanningTests.test_bounded_fallback_continues_later_gaps_instead_of_repeating_the_first_four)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_tv_follow_season_planning.py", line 245, in test_bounded_fallback_continues_later_gaps_instead_of_repeating_the_first_four
+    self.assertTrue(all(row['last_search'] is None and row['next_retry']==0 for row in deferred))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_wrong_show_with_manual_quality_is_rejected_without_review_action (tests.test_tv_source_diagnostics.SourceDiagnosticsTests.test_wrong_show_with_manual_quality_is_rejected_without_review_action)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_tv_source_diagnostics.py", line 15, in test_wrong_show_with_manual_quality_is_rejected_without_review_action
+    self.assertEqual(result['state'],'rejected_sources')
+AssertionError: 'review_required' != 'rejected_sources'
+- review_required
++ rejected_sources
+
+
+----------------------------------------------------------------------
+Ran 3 tests in 7.330s
+
+FAILED (failures=3)

@@ -1,4 +1,6 @@
+import hashlib
 import json
+from contextlib import nullcontext
 import os
 import sqlite3
 import subprocess
@@ -21,26 +23,54 @@ from .iptv_movie_store import (
     ACCEPTED_STATES,
     MOVIE_SCHEMA_VERSION,
     IPTVMovieStore,
+    IPTVSelectionError,
     normalize_search_text,
     source_key,
     validate_movie_key,
 )
 from .iptv_tmdb import (
+    BULK_SEARCH_LIMIT_REASON,
     IPTVTMDBClient,
     IPTVTMDBError,
     MATCHER_VERSION,
     PARSER_VERSION,
     bounded_search_candidates,
+    candidate_title_aliases,
     choose_automatic_match,
     clean_provider_title,
+    collection_first_movie_id,
+    collection_part_number,
     combine_provider_title_evidence,
     extract_year,
+    interpreted_title_evidence,
     normalize_tmdb_movie,
     parse_provider_title,
     provider_id_matches,
+    recovery_candidate_facts,
+    recovery_rival_plausible,
     score_candidate,
+    verify_recovery_candidate,
 )
 from .iptv_xtream import XtreamError
+from .process_liveness import pid_alive
+
+
+BULK_RECOVERY_REASONS = {
+    'recovery_no_candidate': 'No usable TMDB candidates were found.',
+    'recovery_search_limited': BULK_SEARCH_LIMIT_REASON,
+    'recovery_primary_year_conflict': 'The provider year conflicts with the primary TMDB release year.',
+    'recovery_conflicting_provider_metadata': 'The provider listing and cached film details identify different films.',
+    'recovery_title_or_installment_conflict': 'The original title or installment could not be verified.',
+    'recovery_runtime_conflict': 'The provider and TMDB runtimes differ materially.',
+    'recovery_competing_identities': 'More than one TMDB film fits the available evidence.',
+    'recovery_insufficient_identity_evidence': 'The film identity needs more supporting evidence.',
+    'recovery_evidence_too_large': 'The candidate evidence exceeds the recovery request size.',
+    'recovery_invalid_response': 'ChatGPT returned a missing or invalid recovery result.',
+    'recovery_interrupted': 'The recovery request ended without a saved result.',
+    'recovery_model_review': 'ChatGPT flagged the candidate comparison for review.',
+    'recovery_source_changed': 'The source metadata or eligibility changed during recovery.',
+    'recovery_tmdb_failed': 'TMDB verification failed while gathering recovery evidence.',
+}
 
 
 class _CachingTMDBClient:
@@ -51,12 +81,26 @@ class _CachingTMDBClient:
         self._search = {}
         self._movies = {}
         self._normalized = {}
+        self._collections = {}
+
+    def collection(self, tmdb_id):
+        key = int(tmdb_id)
+        if key not in self._collections:
+            self._collections[key] = self.client.collection(key) if hasattr(self.client, 'collection') else {}
+        return dict(self._collections[key])
 
     def search_movies(self, title, year=0, page=1):
         key = (str(title or ""), int(year or 0), int(page or 1))
         if key not in self._search:
             self._search[key] = self.client.search_movies(*key)
         return [dict(row) for row in self._search[key]]
+
+    def search_movie_page(self, title, page=1, *, primary_year=0):
+        key = ('primary', title, page, primary_year)
+        if key not in self._search:
+            self._search[key] = self.client.search_movie_page(title, page, primary_year=primary_year)
+        rows, pages = self._search[key]
+        return [dict(row) for row in rows], pages
 
     def movie(self, tmdb_id, language=""):
         key = (int(tmdb_id), str(language or ""))
@@ -69,6 +113,10 @@ class _CachingTMDBClient:
         if key not in self._normalized:
             self._normalized[key] = self.client.normalized_movie(*key)
         return dict(self._normalized[key])
+
+
+class _RejectedAICandidate(ValueError):
+    pass
 
 
 class IPTVMovieService:
@@ -284,6 +332,19 @@ class IPTVMovieService:
             }
         return store.projection_status()
 
+    def bulk_catalog_continuation(self, keys, filters, apply_id, receipt_keys):
+        raw_generation = self._raw_state()['generation']
+        store = self._ready_store()
+        if not store or self.raw_service.sync_status()['state'] == 'running':
+            raise IPTVSelectionError('iptv_projection_in_progress', 'Finish preparing provider movies in IPTV Metadata before resuming.')
+        generation, eligible = store.bulk_catalog_continuation(keys, filters, raw_generation)
+        if self.raw_service.sync_status()['state'] == 'running' or self._raw_state()['generation'] != raw_generation:
+            raise IPTVSelectionError('iptv_projection_in_progress', 'Finish preparing provider movies in IPTV Metadata before resuming.')
+        if not apply_id:
+            return generation, eligible, set()
+        with store.bulk_match_receipts(receipt_keys, apply_id) as receipts:
+            return generation, eligible, receipts
+
     def retry_projection(self):
         return self.start_projection(wait=False)
 
@@ -403,7 +464,8 @@ class IPTVMovieService:
             playlist_decision = playlist_decisions.get(playlist_id)
             if playlist_decision is None:
                 playlist_decision = store.playlist_classification(playlist_id)
-                if not playlist_decision or int(playlist_decision.get("classifier_version") or 0) != CLASSIFIER_VERSION:
+                if (not playlist_decision or int(playlist_decision.get("classifier_version") or 0) != CLASSIFIER_VERSION
+                        or playlist_decision.get("playlist_name") != (row.get("playlist_name") or "")):
                     playlist_decision = classify_playlist(
                         row.get("playlist_name") or "", [row.get("provider_title") or ""]
                     )
@@ -416,38 +478,76 @@ class IPTVMovieService:
                 row.get("playlist_name") or "",
                 playlist_decision=playlist_decision,
             )
-            decisions.append({"source_key": row["source_key"], **decision})
+            decisions.append({"source_key": row["source_key"], "source_generation": row["source_generation"], **decision})
             totals["processed"] += 1
             bucket = "review" if self._store_category(decision.get("category")) == "unclassified" else "classified"
             totals[bucket] += 1
         store.apply_classification_decisions(decisions)
         return totals
 
-    def classification_preview(self, payload=None):
+    def classification_preview(self, payload=None, *, ai_classifier=None, ai_provenance=None, selection_snapshot=None):
         payload = payload if isinstance(payload, dict) else {}
-        selection = self.store.resolve_selection(
+        selection = selection_snapshot or self.store.resolve_selection(
             mode=payload.get("selection_mode") or "explicit",
             selected_keys=payload.get("selected_keys") or [],
             filters=payload.get("filters") or {}, page=payload.get("page", 1),
             page_size=payload.get("page_size", 50),
         )
-        rows_by_key = {
-            row["source_key"]: row
-            for row in self.store.classification_rows(only_pending=False, limit=5000)
-            if row["source_key"] in set(selection["source_keys"])
-        }
+        if selection_snapshot and selection['catalog_generation'] != self.store.source_generation():
+            raise ValueError('The provider catalog changed; create a new classification preview')
+        rows_by_key = {key: self.store.source(key) for key in selection['source_keys']}
         proposals = []
         forced = self._store_category(payload.get("category")) if payload.get("category") else ""
         if forced and forced == "unclassified":
             raise ValueError("Choose Film, Sports, Plays, Music, or Misc")
+        if forced and ai_classifier:
+            raise ValueError('AI classification cannot also force a manual category')
+        decisions = {}
+        groups = {}
+        playlist_decisions = {}
+        for key, row in rows_by_key.items():
+            if not row:
+                continue
+            if ai_classifier and row.get('classification_manual_lock'):
+                decisions[key] = {'category': row.get('category') or 'unclassified',
+                    'confidence': row.get('classification_confidence') or 0,
+                    'method': 'manual-locked', 'evidence': {}, 'review_reason': 'Manual classification lock is preserved'}
+                continue
+            decision = ({'category': forced.title(), 'confidence': 1, 'method': 'manual-preview',
+                         'evidence': {'requested_category': forced}, 'status': 'classified', 'review_reason': ''}
+                        if forced else classify_source(row['provider_title'], row.get('playlist_name') or ''))
+            decisions[key] = decision
+            playlist_id = row.get('playlist_id')
+            if ai_classifier and playlist_id and playlist_id not in playlist_decisions:
+                playlist_decisions[playlist_id] = self.store.playlist_classification(playlist_id) or {}
+            playlist_mixed = playlist_decisions.get(playlist_id, {}).get('mixed')
+            needs_title_review = decision.get('method') == 'playlist-default' and (
+                row.get('category') == 'unclassified' or playlist_mixed or
+                self._store_category(decision.get('category')) != row.get('category'))
+            if ai_classifier and (self._store_category(decision.get('category')) == 'unclassified' or needs_title_review):
+                groups.setdefault(row.get('playlist_name') or '', []).append(key)
+        for playlist, keys in groups.items():
+            for offset in range(0, len(keys), 25):
+                batch = keys[offset:offset+25]
+                titles = [rows_by_key[key]['provider_title'] for key in batch]
+                result = ai_classifier(playlist, titles)
+                for key in batch:
+                    title = rows_by_key[key]['provider_title']
+                    exception = next((row for row in result.get('title_exceptions', []) if row['title'] == title), None)
+                    chosen = exception or result
+                    confident = float(chosen.get('confidence') or 0) >= .9 and (exception is not None or
+                        not result.get('mixed') and not result.get('uncertain') and result.get('status') == 'classified')
+                    category = self._store_category(chosen.get('category')) if confident else 'unclassified'
+                    decisions[key] = {'category': category, 'confidence': chosen.get('confidence') or 0,
+                        'method': 'chatgpt', 'evidence': {'category': chosen.get('category'),
+                            'evidence_summary': chosen.get('evidence_summary') or '', 'input_title_count': len(titles),
+                            'ai_provenance': dict(ai_provenance or {})},
+                        'review_reason': '' if category != 'unclassified' else 'chatgpt-low-confidence-or-uncertain'}
         for key in selection["source_keys"]:
             row = rows_by_key.get(key)
             if not row:
                 continue
-            decision = (
-                {"category": forced.title(), "confidence": 1, "method": "manual-preview", "evidence": {"requested_category": forced}, "status": "classified", "review_reason": ""}
-                if forced else classify_source(row["provider_title"], row.get("playlist_name") or "")
-            )
+            decision = decisions[key]
             proposals.append({
                 "proposal_id": uuid.uuid4().hex, "source_key": key,
                 "provider_title": row["provider_title"], "provider_year": row["provider_year"],
@@ -459,18 +559,21 @@ class IPTVMovieService:
             })
         return {"provider_id": self.provider_id, "catalog_generation": selection["catalog_generation"], "selection_mode": selection["mode"], "proposals": proposals}
 
-    def classification_apply(self, payload=None):
+    def classification_apply(self, payload=None, *, preserve_manual_locks=False):
         payload = payload if isinstance(payload, dict) else {}
         expected_generation = int(payload.get("catalog_generation") or -1)
         if expected_generation != self.store.source_generation():
             raise ValueError("The provider catalog changed; preview the classification again")
         proposals = [row for row in payload.get("proposals") or [] if isinstance(row, dict) and row.get("selected", True)]
+        unresolved = [row.get('source_key') for row in proposals if self._store_category(row.get('category')) == 'unclassified']
         decisions = [{
             "source_key": row.get("source_key"), "category": row.get("category"),
             "confidence": row.get("confidence", 1), "method": "manual-bulk",
             "evidence": row.get("evidence") or {}, "manual_lock": True,
-        } for row in proposals]
-        return self.store.apply_classification_decisions(decisions, manual=True)
+        } for row in proposals if self._store_category(row.get('category')) != 'unclassified']
+        result = self.store.apply_classification_decisions(decisions, manual=True, preserve_manual_locks=preserve_manual_locks,
+                                                           expected_generation=expected_generation)
+        return {**result, 'skipped': unresolved}
 
     def list_movies(self, filters=None, page=1, page_size=30):
         store = self._ready_store()
@@ -589,22 +692,37 @@ class IPTVMovieService:
         )
         return bool(included)
 
-    def manual_search(self, movie_key, query="", year=0):
+    def manual_search(self, movie_key, query="", year=0, tmdb_id=None):
+        catalog_generation = self.store.source_generation()
         movie = self.movie(movie_key)
+        if movie.get('category') in {'sports', 'music'}:
+            raise ValueError('This source classification only supports provider metadata')
         raw_title = str(query or movie.get("provider_title") or movie.get("name") or "").strip()
         target_year = (
             extract_year(year)
             or extract_year(raw_title)
             or extract_year(movie.get("provider_year") or movie.get("year") or 0)
         )
+        provider_title = movie.get("provider_title") or movie.get("name") or ""
         parsed = (
             parse_provider_title(raw_title, target_year)
-            if query else combine_provider_title_evidence(
-                movie.get("provider_title"), movie.get("provider_year"),
+            if query and raw_title != provider_title else combine_provider_title_evidence(
+                movie.get("provider_title"), extract_year(year) or movie.get("provider_year"),
                 movie.get("detail_title"), movie.get("detail_year"),
+                playlist_name=movie.get("playlist_name"),
             )
         )
-        candidates, attempts = bounded_search_candidates(self.tmdb_client_factory(), parsed)
+        target_year = parsed['year']
+        client = self.tmdb_client_factory()
+        if tmdb_id is not None:
+            if movie.get('category') != 'plays' or not str(tmdb_id).isascii() or not str(tmdb_id).isdigit() or not 0 < int(tmdb_id) <= 2147483647:
+                raise ValueError('Enter a valid TMDB movie ID for this Play')
+            candidate = client.movie(int(tmdb_id))
+            if candidate.get('id') != int(tmdb_id):
+                raise ValueError('TMDB returned a different identity')
+            candidates, attempts = [candidate], []
+        else:
+            candidates, attempts = bounded_search_candidates(client, parsed)
         items = []
         for row in candidates:
             score = score_candidate(parsed, target_year, row)
@@ -630,15 +748,32 @@ class IPTVMovieService:
             "parsed": parsed,
             "attempts": attempts,
             "items": items,
+            "catalog_generation": catalog_generation,
         }
 
-    def manual_match(self, movie_key, tmdb_id):
+    def manual_match(self, movie_key, tmdb_id, *, expected_category=None, expected_generation=None):
         movie_key = validate_movie_key(movie_key)
         store = self._ready_store()
         if store is None:
             raise RuntimeError("Provider movies are still being prepared")
+        category = store.movie(movie_key).get('category')
+        generation = store.source_generation() if expected_generation is None else int(expected_generation)
+        if store.source_generation() != generation:
+            raise ValueError('The provider catalog changed. Search again before applying.')
+        if expected_category is not None and category != expected_category:
+            raise ValueError('The source classification changed. Search again before applying.')
+        if category in {'sports', 'music'}:
+            raise ValueError('This source classification only supports provider metadata')
         client = self.tmdb_client_factory()
         snapshot = client.normalized_movie(tmdb_id)
+        if int(snapshot.get('tmdb_id') or 0) != int(tmdb_id):
+            raise ValueError('TMDB returned a different identity')
+        play_localization = None
+        if category == 'plays' and snapshot.get('original_language') == 'ar':
+            try:
+                play_localization = client.normalized_movie(tmdb_id, language='ar-SA')
+            except IPTVTMDBError:
+                pass  # The verified base snapshot still supplies metadata.
         next_key = store.apply_match(
             movie_key,
             snapshot,
@@ -646,8 +781,12 @@ class IPTVMovieService:
             method="manual",
             confidence=100,
             evidence={"tmdb_id": int(tmdb_id)},
+            expected_category=category,
+            expected_generation=generation,
         )
-        if snapshot.get("original_language") == "ar":
+        if play_localization:
+            store.save_localization(tmdb_id, 'ar-SA', play_localization)
+        elif category != 'plays' and snapshot.get("original_language") == "ar":
             store.save_localization(tmdb_id, "ar-SA", client.normalized_movie(tmdb_id, language="ar-SA"))
         return next_key
 
@@ -768,7 +907,7 @@ class IPTVMovieService:
             raise RuntimeError("Provider movies are still being prepared")
         return store.remove_match(validate_movie_key(movie_key), reprocess=bool(reprocess))
 
-    def enrich_source(self, source_key_value, *, tmdb_client=None):
+    def enrich_source(self, source_key_value, *, tmdb_client=None, claimed_at=None):
         store = self._ready_store()
         if store is None:
             raise RuntimeError("Provider movies are still being prepared")
@@ -788,6 +927,7 @@ class IPTVMovieService:
         parsed = combine_provider_title_evidence(
             source.get("provider_title"), source.get("provider_year"),
             source.get("detail_title"), source.get("detail_year"),
+            playlist_name=source.get("playlist_name"),
         )
         sibling = store.accepted_sibling_candidate(source_key_value)
         if sibling.get("state") == "candidate":
@@ -807,21 +947,29 @@ class IPTVMovieService:
                             "parsed": parsed,
                         }
                     },
+                    claimed_at=claimed_at,
                 )
                 return "matched-auto"
         client = tmdb_client or self.tmdb_client_factory()
-        store.set_match_state([source_key_value], "provider-id-pending", method="provider-detail")
+        store.set_match_state([source_key_value], "provider-id-pending", method="provider-detail", claimed_at=claimed_at)
         detail = self.raw_service.enrichment_movie_detail(source["source_id"])
-        store.update_provider_detail(source_key_value, detail)
+        store.update_provider_detail(source_key_value, detail, claimed_at=claimed_at)
         source = store.source(source_key_value) or source
         parsed = combine_provider_title_evidence(
             source.get("provider_title"), source.get("provider_year"),
             source.get("detail_title") or detail.get("name"),
             source.get("detail_year") or detail.get("year"),
+            playlist_name=source.get("playlist_name"),
         )
-        provider_tmdb_id = int(detail.get("tmdb_id") or source.get("provider_tmdb_id") or 0)
-        if provider_tmdb_id:
-            payload = client.movie(provider_tmdb_id)
+        provider_tmdb_id = source.get("provider_tmdb_id") or 0
+        provider_evidence = {"provider_tmdb_id": provider_tmdb_id, "validated": False, "parsed": parsed}
+        if provider_tmdb_id > 0:
+            payload = _tmdb_record_if_found(client.movie, provider_tmdb_id)
+            if payload is None:
+                provider_evidence["lookup"] = "not-found"
+        else:
+            payload = None
+        if payload is not None:
             valid, confidence = provider_id_matches(
                 parsed,
                 parsed["year"],
@@ -837,17 +985,20 @@ class IPTVMovieService:
                     method="provider-tmdb-id",
                     confidence=confidence,
                     evidence={"provider_id_validation": {"provider_tmdb_id": provider_tmdb_id, "validated": True, "score": confidence, "parsed": parsed}},
+                    claimed_at=claimed_at,
                 )
                 if snapshot.get("original_language") == "ar":
-                    store.save_localization(provider_tmdb_id, "ar-SA", client.normalized_movie(provider_tmdb_id, language="ar-SA"))
+                    localized = _tmdb_record_if_found(client.normalized_movie, provider_tmdb_id, language="ar-SA")
+                    if localized is not None:
+                        store.save_localization(provider_tmdb_id, "ar-SA", localized)
                 return "matched-auto"
-        provider_evidence = {"provider_tmdb_id": provider_tmdb_id, "validated": False, "parsed": parsed}
-        store.set_match_state([source_key_value], "search-pending", method="title-year-search", evidence={"provider_id_validation": provider_evidence})
-        candidates, attempts = bounded_search_candidates(client, parsed)
+        store.set_match_state([source_key_value], "search-pending", method="title-year-search",
+                              evidence={"provider_id_validation": provider_evidence}, claimed_at=claimed_at)
+        candidates, attempts = bounded_search_candidates(client, parsed, skip_missing_details=True)
         decision = choose_automatic_match(parsed, parsed["year"], candidates)
-        if decision["accepted"]:
-            accepted = decision["accepted"]
-            snapshot = client.normalized_movie(accepted["id"])
+        accepted = decision["accepted"]
+        snapshot = _tmdb_record_if_found(client.normalized_movie, accepted["id"]) if accepted else None
+        if snapshot is not None:
             store.apply_match(
                 f"source:{source_key_value}",
                 snapshot,
@@ -858,9 +1009,12 @@ class IPTVMovieService:
                     "provider_id_validation": provider_evidence,
                     "fallback_search": {"parsed": parsed, "attempts": attempts, "candidate_count": len(decision["candidates"])},
                 },
+                claimed_at=claimed_at,
             )
             if snapshot.get("original_language") == "ar":
-                store.save_localization(accepted["id"], "ar-SA", client.normalized_movie(accepted["id"], language="ar-SA"))
+                localized = _tmdb_record_if_found(client.normalized_movie, accepted["id"], language="ar-SA")
+                if localized is not None:
+                    store.save_localization(accepted["id"], "ar-SA", localized)
             return "matched-auto"
         evidence = {
             "provider_id_validation": provider_evidence,
@@ -869,19 +1023,23 @@ class IPTVMovieService:
                 "candidates": [{"tmdb_id": int(row.get("id") or 0), "score": row.get("match_score", 0), "alias": row.get("search_alias"), "phase": row.get("search_phase")} for row in decision["candidates"][:5]],
             },
         }
+        state = decision["state"]
+        if accepted:
+            state = "unmatched"
+            evidence["fallback_search"]["missing_candidate_tmdb_id"] = accepted["id"]
         store.set_match_state(
-            [source_key_value], decision["state"], method="strict-title-year", evidence=evidence
+            [source_key_value], state, method="strict-title-year", evidence=evidence, claimed_at=claimed_at
         )
-        return decision["state"]
+        return state
 
-    def enrich_work_cluster(self, source_keys, *, tmdb_client=None, should_continue=None):
+    def enrich_work_cluster(self, source_keys, *, tmdb_client=None, should_continue=None, claimed_at=None):
         client = _CachingTMDBClient(tmdb_client or self.tmdb_client_factory())
         outcomes = []
         for key in list(dict.fromkeys(str(value or "").strip() for value in source_keys if str(value or "").strip())):
             if should_continue is not None and not should_continue():
                 break
             try:
-                state = self.enrich_source(key, tmdb_client=client)
+                state = self.enrich_source(key, tmdb_client=client, claimed_at=claimed_at)
                 outcomes.append({"source_key": key, "state": state})
             except Exception as error:
                 outcomes.append({"source_key": key, "state": "error", "error": str(error)[:300], "_error": error})
@@ -920,14 +1078,6 @@ class IPTVMovieService:
                 failed.append({"tmdb_id": tmdb_id, "error": str(error)[:300]})
         return {"requested": len(tmdb_ids), "saved": saved, "failed": failed}
 
-    @staticmethod
-    def _pid_alive(pid):
-        try:
-            os.kill(int(pid), 0)
-            return True
-        except (OSError, ValueError):
-            return False
-
     @property
     def _scheduler_path(self):
         return self.metadata_settings.root / "metadata-worker-scheduler.json"
@@ -947,7 +1097,7 @@ class IPTVMovieService:
                     current = json.loads(path.read_text(encoding="utf-8"))
                 except (OSError, json.JSONDecodeError):
                     current = {}
-                if self._pid_alive(current.get("pid")):
+                if pid_alive(current.get("pid")):
                     return False
                 try:
                     path.unlink()
@@ -973,26 +1123,34 @@ class IPTVMovieService:
         if current.get("provider_id") == self.provider_id and current.get("token") == token:
             try:
                 self._scheduler_path.unlink()
-            except FileNotFoundError:
+            except OSError:
                 pass
 
     def _monitor_worker(self, process, token):
         try:
-            process.wait()
+            exit_code = process.wait()
         except Exception:
             while process.poll() is None:
                 time.sleep(0.25)
-        self._release_global_capacity(token)
-        with self._process_lock:
-            if self._processes.get(self.provider_id) is process:
-                self._processes.pop(self.provider_id, None)
-            waiting = [service for service in self._instances.values() if service.provider_id != self.provider_id]
+            exit_code = process.poll()
+        try:
+            if not self._closing:
+                self.store.worker_finished(
+                    "crashed", f"IPTV metadata worker exited before finishing (exit code {exit_code})",
+                    token=token, only_active=True,
+                )
+        finally:
+            self._release_global_capacity(token)
+            with self._process_lock:
+                if self._processes.get(self.provider_id) is process:
+                    self._processes.pop(self.provider_id, None)
+                waiting = [service for service in self._instances.values() if service.provider_id != self.provider_id]
         if self._closing:
             return
         for service in waiting:
             try:
                 if service.enrichment_status().get("state") == "waiting-capacity":
-                    service.resume_enrichment()
+                    service._launch_enrichment(resume=True, queued=True)
                     break
             except Exception:
                 continue
@@ -1027,64 +1185,81 @@ class IPTVMovieService:
                 for provider_id, process in self._processes.items()
                 if process.poll() is None
             }
-            self._processes = active
+            self._processes.clear()
+            self._processes.update(active)
             current = active.get(self.provider_id)
             if current is not None:
                 return current
-            if len(active) >= self.GLOBAL_WORKER_LIMIT or not self._claim_global_capacity(token):
-                self.store.worker_waiting_for_capacity(token)
-                return None
-            environment = os.environ.copy()
-            environment.update({
-                "CP_IPTV_WORKER_PROVIDER_ID": self.provider_id,
-                "CP_IPTV_WORKER_PROVIDER_ROOT": str(self.root),
-                "CP_IPTV_WORKER_USER_DATA_DIR": str(self.metadata_settings.root.parent),
-                "CP_IPTV_WORKER_LEASE_TOKEN": token,
-                "CP_IPTV_WORKER_MAX_JOBS": str(max(0, int(diagnostic_limit or 0))),
-                "CP_IPTV_WORKER_SCHEDULER_PATH": str(self._scheduler_path),
-            })
+            process = None
             try:
+                if len(active) >= self.GLOBAL_WORKER_LIMIT or not self._claim_global_capacity(token):
+                    self.store.worker_waiting_for_capacity(token)
+                    return None
+                environment = os.environ.copy()
+                environment.update({
+                    "CP_IPTV_WORKER_PROVIDER_ID": self.provider_id,
+                    "CP_IPTV_WORKER_PROVIDER_ROOT": str(self.root),
+                    "CP_IPTV_WORKER_USER_DATA_DIR": str(self.metadata_settings.root.parent),
+                    "CP_IPTV_WORKER_LEASE_TOKEN": token,
+                    "CP_IPTV_WORKER_MAX_JOBS": str(max(0, int(diagnostic_limit or 0))),
+                    "CP_IPTV_WORKER_SCHEDULER_PATH": str(self._scheduler_path),
+                })
                 process = self.process_factory(
                     [sys.executable, "-m", "services.iptv_enrichment_worker"],
                     cwd=str(Path(__file__).resolve().parents[1]), env=environment,
                     stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
                     creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0),
                 )
-            except Exception:
-                self._release_global_capacity(token)
-                raise
-            self._processes[self.provider_id] = process
-            self._update_global_capacity_pid(token, process.pid)
-            # The child owns the durable running transition. Keeping that
-            # write off the request thread avoids a duplicate parent/child DB
-            # race and preserves the bounded Start/Continue acknowledgement.
-            threading.Thread(target=self._monitor_worker, args=(process, token), name=f"cp-iptv-worker-monitor-{self.provider_id[:8]}", daemon=True).start()
+                self._update_global_capacity_pid(token, process.pid)
+                self._processes[self.provider_id] = process
+                # The child owns the durable running transition.
+                threading.Thread(target=self._monitor_worker, args=(process, token),
+                                 name=f"cp-iptv-worker-monitor-{self.provider_id[:8]}", daemon=True).start()
+            except Exception as error:
+                reason = f"Could not start the IPTV metadata worker: {self.metadata_settings.redact(error)}"
+                try:
+                    self.store.worker_finished("crashed", reason, token=token, only_active=True)
+                finally:
+                    self._processes.pop(self.provider_id, None)
+                    if process is not None and process.poll() is None:
+                        try:
+                            process.terminate()
+                        except OSError:
+                            pass
+                    self._release_global_capacity(token)
+                raise RuntimeError(reason) from error
             return process
 
     def start_enrichment(self, *, consent=False, diagnostic=False):
-        if self._ready_store() is None or self.projection_status().get("state") != "complete":
-            raise RuntimeError("Finish preparing provider movies before starting metadata enrichment")
-        existing = self._existing_local_worker_start()
-        if existing is not None:
-            return self._merge_control_status(existing)
-        self.metadata_settings.credential()
-        limit = self.WORKER_BATCH_LIMIT if diagnostic else 0
-        token = self.store.schedule_enrichment(consent=bool(consent), diagnostic_limit=limit)
-        self._spawn_worker(token, diagnostic_limit=limit)
+        return self._launch_enrichment(consent=consent, diagnostic=diagnostic)
+
+    def _launch_enrichment(self, *, resume=False, consent=False, diagnostic=False, continue_after_restart=False,
+                           queued=False):
+        if not queued:
+            store = self._ready_store()
+            if (store is None or self.raw_service.sync_status()["state"] == "running"
+                    or store.projection_status()["state"] != "complete"
+                    or store.source_generation() != self._raw_state()["generation"]):
+                raise RuntimeError("Finish preparing provider movies before starting metadata enrichment")
+        with self._process_lock:
+            existing = self._existing_local_worker_start()
+            if existing is not None:
+                return self._merge_control_status(existing)
+            self.metadata_settings.credential()
+            if resume:
+                token = self.store.resume_worker(continue_after_restart=bool(continue_after_restart))
+                limit = self.store.worker_control_status()["diagnostic_limit"]
+            else:
+                limit = self.WORKER_BATCH_LIMIT if diagnostic else 0
+                token = self.store.schedule_enrichment(consent=bool(consent), diagnostic_limit=limit)
+            self._spawn_worker(token, diagnostic_limit=limit)
         return self._merge_control_status(self.store.worker_control_status())
 
     def pause_enrichment(self):
         return self._merge_control_status(self.store.worker_command("pause"))
 
     def resume_enrichment(self, *, continue_after_restart=False):
-        existing = self._existing_local_worker_start()
-        if existing is not None:
-            return self._merge_control_status(existing)
-        self.metadata_settings.credential()
-        token = self.store.resume_worker(continue_after_restart=bool(continue_after_restart))
-        diagnostic_limit = self.store.worker_control_status().get("diagnostic_limit", 0)
-        self._spawn_worker(token, diagnostic_limit=diagnostic_limit)
-        return self._merge_control_status(self.store.worker_control_status())
+        return self._launch_enrichment(resume=True, continue_after_restart=continue_after_restart)
 
     def cancel_enrichment(self):
         with self._process_lock:
@@ -1122,9 +1297,8 @@ class IPTVMovieService:
             }
         try:
             status = self._public_worker_status({
-                **self.store.worker_control_status(),
+                **self.store.worker_control_status(include_projection=True),
                 "batch_limit": self.WORKER_BATCH_LIMIT,
-                "projection": self.projection_status(),
                 "summary_available": True,
                 "status_stale": False,
             })
@@ -1171,12 +1345,401 @@ class IPTVMovieService:
         count = self.store.re_evaluate_stale()
         return {**self.enrichment_status(), "requeued": count}
 
-    def _proposal_for_source(self, source_key_value, client, *, method="tmdb"):
+    @staticmethod
+    def _source_title_evidence(source):
+        return combine_provider_title_evidence(
+            source.get("provider_title"), source.get("provider_year"),
+            source.get("detail_title"), source.get("detail_year"),
+            playlist_name=source.get("playlist_name"),
+        )
+
+    def bulk_tmdb_client(self):
+        return _CachingTMDBClient(self.tmdb_client_factory())
+
+    def recheck_bulk_search(self, source, saved, client):
+        """Use saved title hints only when the current listing still supports them."""
+        if (not source or source.get('match_state') in ACCEPTED_STATES or source.get('classification_manual_lock')
+                or not self.bulk_inference_eligible(source)):
+            return None
+        prior, interpretation = saved['evidence']['identity'], saved['evidence']['interpretation']
+        current = interpreted_title_evidence(self._source_title_evidence(source), interpretation)['bulk_identity']
+        if current != prior:
+            return None
+        return self.bulk_source_proposal(source, client, interpretation=interpretation, interpreted=True, automatic=True)
+
+    @staticmethod
+    def _bulk_provider_facts(source):
+        from .chatgpt_tools import model_safe
+
+        try:
+            detail = json.loads(source.get('detail_json') or '{}')
+        except (TypeError, ValueError):
+            detail = {}
+        if not isinstance(detail, dict):
+            detail = {}
+        def value(column, *names):
+            return next((detail[name] for name in names if isinstance(detail.get(name), str) and detail[name].strip()),
+                        source.get(column) or '')
+        cast = value('provider_cast', 'cast_names', 'cast').split(',')
+        return model_safe({'title': source['provider_title'], 'year': source['provider_year'],
+                           'playlist': source.get('playlist_name') or '',
+                           'detail_title': value('detail_title', 'name', 'title'),
+                           'detail_year': extract_year(source.get('detail_year')) or extract_year(detail.get('year')),
+                           'duration': value('provider_duration', 'duration'),
+                           'cast': ', '.join(name.strip() for name in cast[:8]),
+                           'director': value('provider_director', 'director'),
+                           'plot': value('provider_plot', 'plot', 'description')})
+
+    @staticmethod
+    def _bulk_candidate_fingerprint(movie):
+        facts = recovery_candidate_facts(movie, localized=False)
+        facts['collection'] = (movie.get('belongs_to_collection') or {}).get('id')
+        return hashlib.sha256(json.dumps(facts, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+
+    @staticmethod
+    def _bulk_candidate_proof(movie):
+        return {key: movie[key] for key in ('localized_titles', 'collection_first_movie_id', 'collection_part_number')
+                if movie.get(key)}
+
+    @staticmethod
+    def _bulk_proof_current(client, movie, proof):
+        collection = (movie.get('belongs_to_collection') or {}).get('id')
+        if proof.get('collection_first_movie_id') and proof['collection_first_movie_id'] != collection_first_movie_id(client, collection):
+            return False
+        if proof.get('collection_part_number') and proof['collection_part_number'] != collection_part_number(client, collection, movie['id']):
+            return False
+        if proof.get('localized_titles'):
+            localized = client.movie(movie['id'], language='ar-SA')
+            current = {str(localized.get(key) or '').strip() for key in ('title', 'original_title')} - {''}
+            return current == set(proof['localized_titles'])
+        return True
+
+    def _bulk_recovery_evidence(self, source, parsed, candidates):
+        ordered = sorted(candidates, key=lambda row: (
+            -score_candidate(parsed, parsed['year'], row), int(row['id'])))
+        hydrated = [row for row in ordered if row.get('candidate_hydrated')]
+        selected = hydrated[:8]
+        selected_ids = {row['id'] for row in selected}
+        limited = (any(row.get('bulk_search_limited') for row in ordered) or
+                   any(row['id'] not in selected_ids and recovery_rival_plausible(parsed, row)
+                       for row in ordered))
+        return {'provider': self._bulk_provider_facts(source), 'search_limit_reached': limited,
+                'candidates': [recovery_candidate_facts(row) for row in selected],
+                'candidate_fingerprints': {str(row['id']): self._bulk_candidate_fingerprint(row) for row in selected},
+                'candidate_proofs': {str(row['id']): self._bulk_candidate_proof(row) for row in selected}}
+
+    @staticmethod
+    def compact_bulk_recovery(evidence):
+        from .chatgpt_tools import model_safe
+
+        provider = dict(evidence['provider'])
+        provider['plot'] = provider['plot'][:360]
+        targets = set(combine_provider_title_evidence(provider['title'], provider['year'],
+            provider['detail_title'], provider['detail_year'], playlist_name=provider['playlist'])['aliases'])
+        target_words = set(' '.join(targets).split())
+        candidates = []
+        for candidate in evidence['candidates']:
+            names = {clean_provider_title(candidate[key]) for key in ('title', 'original_title')}
+            aliases = sorted((alias for alias in candidate['aliases'] if alias not in names),
+                             key=lambda alias: (alias not in targets, not bool(set(alias.split()) & target_words)))
+            compact = dict(candidate, aliases=aliases[:4], overview=candidate['overview'][:240])
+            candidates.append(compact)
+        return model_safe({'provider': provider, 'candidates': candidates,
+                           'search_limit_reached': evidence['search_limit_reached']})
+
+    def prepare_bulk_recovery(self, source, prior, client):
+        parsed = self._source_title_evidence(source)
+        interpretation = prior['evidence'].get('interpretation') or {}
+        parsed = interpreted_title_evidence(parsed, {**interpretation, 'year': ''})
+        # Prefer raw/detail aliases before model suggestions when a query bound is reached.
+        aliases = list(dict.fromkeys([*parsed['bulk_identity']['provider_aliases'], *parsed['aliases']]))
+        candidates, attempts = bounded_search_candidates(client, parsed, search_aliases=aliases, strict_bounds=True)
+        return dict(self._bulk_recovery_evidence(source, parsed, candidates), search_attempts=attempts)
+
+    @staticmethod
+    def bulk_inference_eligible(source):
+        return (not source['match_manual_lock'] and
+                (source.get('match_state') not in ACCEPTED_STATES or source.get('match_stale')) and
+                source['category'] in {'film', 'unclassified'} and
+                (not source['classification_manual_lock'] or source['category'] == 'film'))
+
+    @classmethod
+    def bulk_recovery_eligible(cls, source, proposal):
+        unresolved = proposal['outcome'] in {'review', 'unmatched'} or proposal['evidence'].get('first_pass_invalid_response')
+        if not unresolved or not cls.bulk_inference_eligible(source):
+            return False
+        interpretation = proposal['evidence'].get('interpretation') or {}
+        if interpretation.get('category') not in (None, 'Film'):
+            return False
+        local = classify_source(source['provider_title'], source.get('playlist_name') or '')
+        return (proposal['category'] == 'film' or source['category'] == 'film' or
+                local['category'] == 'Film' or bool(cls._bulk_provider_facts(source)['duration']))
+
+    @classmethod
+    def finish_bulk_recovery(cls, prior, entry, decision=None, reason=''):
+        from .chatgpt_tools import model_safe
+
+        evidence = entry.get('evidence')
+        recovery = {key: entry[key] for key in ('evidence_hash', 'candidate_ids', 'protocol_hash', 'attempts') if key in entry}
+        recovery['first_pass'] = {'outcome': prior['outcome'], 'reason': prior.get('review_reason', '')}
+        if evidence:
+            recovery['input'] = entry.get('submitted_input') or cls.compact_bulk_recovery(evidence)
+            recovery['search_attempts'] = model_safe(evidence['search_attempts'])
+        if decision is not None:
+            recovery['decision'] = decision
+            candidate_id = decision['candidate_id']
+            facts = verify_recovery_candidate(evidence['provider'], evidence['candidates'], candidate_id,
+                                               search_limited=evidence['search_limit_reached'])
+            recovery['verification'] = facts
+            if not reason:
+                reason = facts['reason']
+                if decision['decision'] == 'review' and (not reason or candidate_id is None):
+                    reason = 'recovery_model_review'
+        message = BULK_RECOVERY_REASONS.get(reason, '')
+        recovery['reason'] = reason
+        if entry.get('tmdb_error'):
+            recovery['tmdb_error'] = entry['tmdb_error']
+        result = {**prior, 'evidence': {**prior['evidence'], 'recovery': recovery},
+                  'review_reason': message, 'warnings': [message] if message else []}
+        if not reason:
+            candidate = next(row for row in evidence['candidates'] if row['candidate_id'] == candidate_id)
+            result.update(category='film', classification_confidence=.9, confidence=100,
+                          outcome='verified', recommendation='recommended', candidate_tmdb_id=candidate_id,
+                          bulk_automatic=True, source_revision=entry['source_revision'],
+                          match_revision=entry['match_revision'],
+                          candidate_fingerprint=evidence['candidate_fingerprints'][str(candidate_id)],
+                          tmdb_proof=evidence['candidate_proofs'][str(candidate_id)])
+            result['evidence']['candidate'] = {'tmdb_id': candidate_id, 'title': candidate['title'],
+                                                'year': extract_year(candidate['release_date'])}
+        else:
+            result.update(recommendation='review',
+                          outcome='unmatched' if reason == 'recovery_no_candidate' else
+                          'failed' if reason in {'recovery_tmdb_failed', 'recovery_invalid_response',
+                                                 'recovery_interrupted'} else 'review')
+        return result
+
+    def bulk_source_proposal(self, source, client, *, interpretation=None, interpreted=False, automatic=False,
+                             focused_search=True):
+        """Prepare one review row, or return None when interpretation is still needed."""
+        current = source['category']
+        classification_locked = bool(source['classification_manual_lock'])
+        match_locked = bool(source['match_manual_lock'])
+        row = {'source_key': source['source_key'], 'proposal_id': source['source_key'],
+               'provider_title': source['provider_title'], 'provider_year': source['provider_year'],
+               'previous_category': current, 'category': current, 'candidate_tmdb_id': 0,
+               'classification_confidence': source['classification_confidence'], 'confidence': 0,
+               'method': 'chatgpt-bulk', 'evidence': {}, 'locked': classification_locked,
+               'match_manual_lock': match_locked, 'recommendation': 'review', 'warnings': []}
+
+        def outcome(kind, reason=''):
+            return {**row, 'outcome': kind, 'review_reason': reason,
+                    'warnings': [reason] if reason else []}
+
+        if match_locked:
+            return outcome('review', 'Manual match lock preserved.')
+        if automatic and source.get('match_state') in ACCEPTED_STATES and not source.get('match_stale'):
+            return outcome('review', 'This source already has a verified film match.')
+        local = classify_source(source['provider_title'], source.get('playlist_name') or '')
+        local_category = self._store_category(local.get('category'))
+        if classification_locked or current in {'sports', 'music', 'plays'} or (automatic and current == 'misc'):
+            category, confidence = current, source['classification_confidence']
+        elif local_category != 'unclassified' and local['confidence'] >= .9 and local['method'] != 'playlist-default':
+            category, confidence = local_category, local['confidence']
+        elif current == 'film' and source['classification_confidence'] >= .9:
+            category, confidence = current, source['classification_confidence']
+        else:
+            category, confidence = 'unclassified', 0
+        if category not in {'film', 'unclassified'}:
+            row.update(category=category, classification_confidence=confidence)
+            return outcome('categorized')
+
+        if automatic and classification_locked and category != 'film':
+            return outcome('review', 'Manual classification lock preserved.')
+
+        parsed = self._source_title_evidence(source)
+        hints = []
+        if interpreted:
+            if interpretation is None:
+                if automatic:
+                    row['evidence']['first_pass_invalid_response'] = True
+                return outcome('failed', 'ChatGPT did not return a valid row after repair.')
+            row['evidence']['interpretation'] = dict(interpretation)
+            if interpretation['uncertain'] or interpretation['confidence'] < .9:
+                return outcome('review', 'ChatGPT could not classify this source confidently.')
+            if category == 'unclassified':
+                category = self._store_category(interpretation['category'])
+                confidence = interpretation['confidence']
+            hints = list(dict.fromkeys(filter(None, (
+                clean_provider_title(title, parsed['year']) for title in
+                [interpretation['title'], *interpretation['aliases']]))))
+            row['evidence']['search_hints'] = hints
+            row['evidence']['suggested_year'] = extract_year(interpretation['year'])
+            parsed = interpreted_title_evidence(parsed, interpretation)
+            row['evidence']['identity'] = parsed['bulk_identity']
+        row.update(category=category, classification_confidence=confidence)
+        if category not in {'film', 'unclassified'}:
+            return outcome('categorized')
+        if classification_locked and category != 'film':
+            return outcome('review', 'Manual classification lock preserved.')
+        candidate = None
+        candidates = []
+        score = 0
+        try:
+            provider_id = int(source['provider_tmdb_id'] or 0)
+            if provider_id and not interpreted:
+                try:
+                    supplied = client.movie(provider_id)
+                except IPTVTMDBError as error:
+                    if error.status != 404:
+                        raise
+                    supplied = {}
+                valid, score = provider_id_matches(parsed, parsed['year'], supplied)
+                if valid and supplied.get('id') == provider_id:
+                    candidate = supplied
+                    row['evidence']['provider_id_validated'] = True
+            if (not candidate and category == 'film') or (automatic and candidate):
+                if automatic and not parsed.get('bulk_identity'):
+                    parsed = interpreted_title_evidence(parsed, {})
+                aliases = list(dict.fromkeys([*parsed['aliases'], *hints]))
+                candidates, attempts = bounded_search_candidates(client, parsed, search_aliases=aliases,
+                    **({'strict_bounds': True, 'focused': focused_search} if automatic else {}))
+                decision = choose_automatic_match(parsed, parsed['year'], candidates)
+                row['evidence']['search_attempts'] = attempts
+                row['evidence']['candidates'] = [
+                    {'tmdb_id': item['id'], 'title': item.get('title') or '',
+                     'year': extract_year(item.get('release_date')), 'score': item['match_score'],
+                     'identity_conflict': item.get('identity_conflict', ''),
+                     'rival_score': item.get('rival_score', item['match_score'])}
+                    for item in decision['candidates']]
+                candidate = decision['accepted'] or (candidate if not candidates else None)
+                if candidate:
+                    score = candidate.get('match_score', score)
+                elif interpreted:
+                    row['recommendation'] = 'no-match'
+                    if decision.get('reason') == BULK_SEARCH_LIMIT_REASON:
+                        row['evidence']['review_code'] = 'recovery_search_limited'
+                    return (outcome('review', decision.get('reason') or 'TMDB candidates could not be independently verified.')
+                            if decision['state'] == 'ambiguous' else outcome('unmatched', 'No verified TMDB candidate.'))
+        except IPTVTMDBError as error:
+            row['evidence']['verification_error'] = {
+                'message': str(error), 'status': error.status,
+                'retryable': error.retryable, 'retry_after': error.retry_after}
+            return outcome('failed', 'TMDB verification failed for this source.')
+        if candidate and automatic:
+            recovery = self._bulk_recovery_evidence(source, parsed, candidates)
+            if not any(item['candidate_id'] == candidate['id'] for item in recovery['candidates']):
+                recovery['candidates'].append(recovery_candidate_facts(candidate))
+            facts = verify_recovery_candidate(recovery['provider'], recovery['candidates'], candidate['id'],
+                search_limited=recovery['search_limit_reached'], require_support=False)
+            if not facts['verified']:
+                row['evidence']['first_pass_verification'] = facts
+                row['evidence']['review_code'] = facts['reason']
+                return outcome('review', BULK_RECOVERY_REASONS[facts['reason']]) if interpreted else None
+            row['bulk_automatic'] = True
+            row['source_revision'] = source['source_revision']
+            row['match_revision'] = source['match_revision']
+            row['candidate_fingerprint'] = self._bulk_candidate_fingerprint(candidate)
+            row['tmdb_proof'] = self._bulk_candidate_proof(candidate)
+        if candidate:
+            row.update(category='film', classification_confidence=max(.9, confidence),
+                       candidate_tmdb_id=candidate['id'], confidence=score, recommendation='recommended')
+            row['evidence']['candidate'] = {'tmdb_id': candidate['id'], 'title': candidate.get('title') or '',
+                                            'year': extract_year(candidate.get('release_date') or candidate.get('year'))}
+            return outcome('verified')
+        if interpreted:
+            return outcome('unmatched', 'No verified TMDB candidate.')
+        return None
+
+    def apply_bulk_proposals(self, proposals, kind, generation, *, operation_id=None, stop_requested=None):
+        if not operation_id and not self.store.bulk_selection_current(generation):
+            raise ValueError('The provider catalog changed. Start a new review.')
+        report = {'applied': [], 'skipped': [], 'failed': [], 'locked': []}
+        if kind == 'classification':
+            decisions = []
+            for row in proposals:
+                key = row['source_key']
+                if (row.get('catalog_stale') or row['outcome'] not in {'categorized', 'unmatched', 'review'} or
+                        row['category'] in {'unclassified', row['previous_category']} or
+                        row['classification_confidence'] < .9 or row['locked'] or row['match_manual_lock']
+                        or row.get('apply_state') == 'applied'):
+                    report['skipped'].append(key)
+                    continue
+                decisions.append({'source_key': key, 'category': row['category'], 'method': 'chatgpt-bulk',
+                                  'confidence': row['classification_confidence'], 'evidence': row['evidence'],
+                                  'expected_category': row['previous_category']})
+            result = self.store.apply_classification_decisions(decisions, manual=True, preserve_manual_locks=True,
+                expected_generation=generation, preserve_match_locks=True, stable_projection=True)
+            return {**report, 'applied': result['applied'], 'locked': result['locked'],
+                    'skipped': [*report['skipped'], *result['missing']]}
+        receipts = (self.store.bulk_match_receipts([row['source_key'] for row in proposals], operation_id)
+                    if operation_id else nullcontext(set()))
+        with receipts as applied:
+            return self._apply_bulk_matches(proposals, generation, report, applied, operation_id, stop_requested)
+
+    def _apply_bulk_matches(self, proposals, generation, report, applied, operation_id, stop_requested):
+        client = None
+        outcomes = []
+        halted = ''
+        for row in proposals:
+            key = row['source_key']
+            if (row.get('catalog_stale') or row['outcome'] != 'verified' or row['category'] != 'film' or row.get('match_manual_lock')
+                    or type(row.get('candidate_tmdb_id')) is not int or row['candidate_tmdb_id'] < 1
+                    or row.get('apply_state') == 'applied'):
+                report['skipped'].append(key)
+                continue
+            if key in applied:
+                outcomes.append((row, 'applied', '', False))
+                report['applied'].append(key)
+                continue
+            if halted or (stop_requested and stop_requested()):
+                halted = halted or 'bulk_apply_stopped'
+                continue
+            message, retryable = '', False
+            try:
+                tmdb_id = row['candidate_tmdb_id']
+                if client is None:
+                    client = self.bulk_tmdb_client()
+                automatic = row.get('bulk_automatic', False)
+                if automatic:
+                    current = client.movie(tmdb_id)
+                    if (self._bulk_candidate_fingerprint(current) != row['candidate_fingerprint'] or
+                            not self._bulk_proof_current(client, current, row.get('tmdb_proof', {}))):
+                        raise IPTVSelectionError('skipped', 'TMDB evidence changed after verification.')
+                    movie = normalize_tmdb_movie(current)
+                else:
+                    movie = client.normalized_movie(tmdb_id)
+                if movie.get('tmdb_id') != tmdb_id:
+                    raise ValueError('TMDB returned a different identity.')
+                self.store.apply_match(f'source:{key}', movie, manual=not automatic, method='chatgpt-bulk',
+                    confidence=row['confidence'], evidence=row['evidence'], expected_category=row['previous_category'],
+                    expected_generation=generation, preserve_match_lock=True, preserve_classification_lock=True,
+                    stable_projection=True, bulk_operation_id=operation_id, stop_requested=stop_requested,
+                    expected_source_revision=row.get('source_revision'), expected_match_revision=row.get('match_revision'),
+                    bulk_automatic=automatic)
+                outcome = 'applied'
+            except IPTVSelectionError as error:
+                if operation_id and error.code in ('iptv_selection_changed', 'bulk_apply_stopped'):
+                    halted = error.code
+                    continue
+                outcome, message = error.code if operation_id else 'failed', self.metadata_settings.redact(error)
+            except KeyError:
+                outcome, message = 'skipped', 'The source is no longer available.'
+            except (ValueError, IPTVTMDBError, sqlite3.OperationalError) as error:
+                outcome, message = 'failed', self.metadata_settings.redact(error)
+                retryable = isinstance(error, sqlite3.OperationalError) or (
+                    isinstance(error, IPTVTMDBError) and (error.retryable or error.status in (408, 429, 500, 502, 503, 504)))
+            outcomes.append((row, outcome, message, retryable))
+            report[outcome].append({'source_key': key, 'error': message} if outcome == 'failed' else key)
+        if operation_id:
+            report.update(outcomes=outcomes, halted=halted)
+        return report
+
+    def _proposal_for_source(self, source_key_value, client, *, method="tmdb", ai_ranker=None, ai_title_hints=None):
         source = self.store.source(source_key_value)
         if not source:
             raise KeyError("IPTV movie source was not found")
         if source.get("category") != "film":
-            return {"candidate_tmdb_id": 0, "recommendation": "no-match", "confidence": 0,
+            return {"candidate_tmdb_id": 0, "recommendation": "skipped", "confidence": 0,
                     "evidence": {"classification": source.get("category")},
                     "warnings": ["Only Film sources can be matched to TMDB"]}
         with self.store.connection() as connection:
@@ -1184,27 +1747,54 @@ class IPTVMovieService:
         if match and match["manual_lock"]:
             return {"candidate_tmdb_id": 0, "recommendation": "locked", "confidence": 0,
                     "evidence": {}, "warnings": ["Manual match lock is preserved"]}
-        parsed = combine_provider_title_evidence(
-            source.get("provider_title"), source.get("provider_year"),
-            source.get("detail_title"), source.get("detail_year"),
-        )
+        parsed = self._source_title_evidence(source)
         candidates, attempts = bounded_search_candidates(client, parsed)
         decision = choose_automatic_match(parsed, parsed.get("year"), candidates)
         scored = decision.get("candidates") or []
         chosen = decision.get("accepted") or (scored[0] if scored and float(scored[0].get("match_score") or 0) >= 78 else None)
         warnings = []
-        if method == "ai" and candidates:
-            if not self.ollama_runner:
+        search_hints = []
+
+        def eligible(rows):
+            year = parsed.get('year') or 0
+            return [row for row in rows if row['match_score'] >= 78 and
+                    (not year or not (release := extract_year(row.get('release_date') or row.get('year'))) or abs(release - year) <= 1)]
+
+        if ai_ranker:
+            shortlist = eligible(scored)
+            if not shortlist and ai_title_hints:
+                search_hints = ai_title_hints(source_key_value, {
+                    'title': str(source.get('provider_title') or '')[:240],
+                    'year': parsed.get('year') or 0, 'aliases': parsed.get('aliases', [])[:6],
+                })
+                previous_aliases = set(parsed.get('aliases') or [])
+                queries = list(dict.fromkeys(clean_provider_title(hint, parsed.get('year')) for hint in search_hints))
+                queries = [query for query in queries if query and query not in previous_aliases]
+                if queries:
+                    extra_candidates, extra_attempts = bounded_search_candidates(client, parsed, search_aliases=queries)
+                    attempts += extra_attempts
+                    candidates = list({row['id']: row for row in [*candidates, *extra_candidates]}.values())
+                    decision = choose_automatic_match(parsed, parsed.get('year'), candidates)
+                    scored = decision['candidates']
+                    shortlist = eligible(scored)
+            candidates_for_ai = shortlist
+            chosen = None
+        else:
+            candidates_for_ai = candidates
+        if method == "ai" and candidates_for_ai:
+            if not ai_ranker and not self.ollama_runner:
                 raise RuntimeError("IPTV Ollama matching is unavailable")
             bounded = [{
                 "tmdb_id": int(row.get("id") or 0), "title": str(row.get("title") or "")[:240],
                 "original_title": str(row.get("original_title") or "")[:240],
                 "year": extract_year(row.get("release_date") or row.get("year")),
                 "deterministic_score": score_candidate(parsed, parsed.get("year"), row),
-            } for row in candidates[:8]]
-            response = self.ollama_runner({
+                **({'aliases': [alias[:240] for alias in candidate_title_aliases(row)[:6]]} if ai_ranker else {}),
+            } for row in candidates_for_ai[:8]]
+            response = (ai_ranker or self.ollama_runner)({
                 "mode": "rank-real-tmdb-candidates", "title": str(source.get("provider_title") or "")[:240],
-                "year": int(source.get("provider_year") or 0), "aliases": list(parsed.get("aliases") or [])[:6],
+                "year": int((parsed.get('year') if ai_ranker else source.get('provider_year')) or 0),
+                "aliases": [alias[:240] for alias in (parsed.get('aliases') or [])[:6]],
                 "candidates": bounded,
             })
             if isinstance(response, str):
@@ -1212,17 +1802,25 @@ class IPTVMovieService:
             if not isinstance(response, dict):
                 raise ValueError("Ollama match output must be structured JSON")
             ai_id = int(response.get("tmdb_id") or 0)
-            allowed = {int(row.get("id") or 0): row for row in candidates}
+            if ai_ranker and ai_id == 0:
+                return {'candidate_tmdb_id': 0, 'recommendation': 'no-match', 'confidence': 0,
+                    'evidence': {'parsed': parsed, 'attempts': attempts, 'candidate_count': len(bounded), 'method': 'chatgpt', 'search_hints': search_hints},
+                    'warnings': ['AI ranking declined an identity; explicit review remains available']}
+            allowed_ids = {row['tmdb_id'] for row in bounded} if ai_ranker else None
+            allowed = {int(row.get("id") or 0): row for row in candidates if allowed_ids is None or int(row.get('id') or 0) in allowed_ids}
             if ai_id not in allowed:
-                raise ValueError("Ollama proposed an identity outside the validated TMDB candidate set")
+                raise _RejectedAICandidate('ChatGPT proposed an identity outside the actually supplied candidate set' if ai_ranker else
+                                 "Ollama proposed an identity outside the validated TMDB candidate set")
             candidate = next((row for row in scored if int(row.get("id") or 0) == ai_id), None)
             if not candidate or float(candidate.get("match_score") or 0) < 78:
-                raise ValueError("Ollama proposed a candidate rejected by deterministic validation")
+                raise _RejectedAICandidate('ChatGPT proposed a candidate rejected by deterministic validation' if ai_ranker else
+                                 "Ollama proposed a candidate rejected by deterministic validation")
             chosen = candidate
             warnings.append("AI ranking is advisory; explicit apply is still required")
         if not chosen:
-            return {"candidate_tmdb_id": 0, "recommendation": "no-match", "confidence": 0,
-                    "evidence": {"parsed": parsed, "attempts": attempts, "candidate_count": len(candidates)},
+            result = ('candidate-rejected' if candidates else 'no-candidates') if ai_ranker else 'no-match'
+            return {"candidate_tmdb_id": 0, "recommendation": result, "confidence": 0,
+                    "evidence": {"parsed": parsed, "attempts": attempts, "candidate_count": len(candidates), "search_hints": search_hints},
                     "warnings": warnings}
         confidence = float(chosen.get("match_score") or score_candidate(parsed, parsed.get("year"), chosen))
         recommendation = "recommended" if decision.get("accepted") and int(decision["accepted"].get("id") or 0) == int(chosen.get("id") or 0) else "review"
@@ -1234,30 +1832,59 @@ class IPTVMovieService:
                 "candidate": {"tmdb_id": int(chosen.get("id") or 0), "title": chosen.get("title") or chosen.get("original_title") or "", "year": extract_year(chosen.get("release_date") or chosen.get("year"))},
                 "runner_up_gap": confidence - float(scored[1].get("match_score") or 0) if len(scored) > 1 else None,
                 "method": method,
+                "search_hints": search_hints,
             },
         }
 
-    def create_match_job(self, payload=None):
+    def create_match_job(self, payload=None, *, ai_ranker=None, ai_title_hints=None, selection_snapshot=None, resume_job_id=None,
+                         on_created=lambda job_id: None, on_progress=None, ai_provenance=None):
         payload = payload if isinstance(payload, dict) else {}
         method = str(payload.get("method") or "tmdb").strip().lower()
         if method not in {"tmdb", "ai"}:
             raise ValueError("IPTV movie matching method must be tmdb or ai")
-        selection = self.store.resolve_selection(
+        selection = selection_snapshot or self.store.resolve_selection(
             mode=payload.get("selection_mode") or "explicit",
             selected_keys=payload.get("selected_keys") or [], filters=payload.get("filters") or {},
             page=payload.get("page", 1), page_size=payload.get("page_size", 50),
         )
-        job_id = self.store.create_proposal_job(method=method, selection=selection)
+        if selection_snapshot and selection['catalog_generation'] != self.store.source_generation():
+            raise ValueError('The provider catalog changed; create a new match preview')
+        if resume_job_id:
+            previous = self.store.resume_proposal_job(resume_job_id, selection)
+            completed = {row['source_key'] for row in previous['proposals']}
+            job_id = resume_job_id
+        else:
+            job_id = self.store.create_proposal_job(method=method, selection=selection)
+            completed = set()
+        on_created(job_id)
         client = None
+        processed = len(completed)
         try:
             for key in selection["source_keys"]:
+                if key in completed:
+                    continue
                 source = self.store.source(key)
                 if source and source.get("category") == "film" and client is None:
                     client = _CachingTMDBClient(self.tmdb_client_factory())
-                proposal = self._proposal_for_source(key, client, method=method)
+                try:
+                    proposal = self._proposal_for_source(key, client, method=method, ai_ranker=ai_ranker,
+                                                         ai_title_hints=ai_title_hints)
+                except Exception as error:
+                    if not ai_ranker or not (isinstance(error, _RejectedAICandidate) or
+                                             getattr(error, 'code', None) == 'invalid_iptv_result'):
+                        raise
+                    proposal = {'candidate_tmdb_id': 0, 'recommendation': 'candidate-rejected', 'confidence': 0,
+                                'warnings': ['ChatGPT did not return an eligible result for this source.']}
+                if ai_ranker:
+                    proposal['evidence'] = {**proposal.get('evidence', {}), 'ai_provenance': dict(ai_provenance or {})}
                 self.store.save_proposal(job_id, key, **proposal)
+                processed += 1
+                if on_progress:
+                    on_progress(processed)
             return self.store.finish_proposal_job(job_id, state="ready")
         except Exception as error:
+            if ai_ranker and getattr(error, 'code', None) in ('paused_budget', 'job_not_running', 'cancelled'):
+                raise  # Existing proposals stay unapplyable until explicit continuation completes them.
             self.store.finish_proposal_job(job_id, state="failed", error=self.metadata_settings.redact(error))
             raise
 
@@ -1295,10 +1922,14 @@ class IPTVMovieService:
                 continue
             try:
                 snapshot = client.normalized_movie(tmdb_id)
+                if int(snapshot.get('tmdb_id') or 0) != tmdb_id:
+                    raise ValueError('TMDB returned a different identity')
                 self.store.apply_match(
                     f"source:{proposal['source_key']}", snapshot, manual=True,
                     method=f"bulk-{job['method']}", confidence=proposal.get("confidence") or 100,
                     evidence={"proposal_id": proposal_id, "job_id": job_id},
+                    expected_category='film', preserve_match_lock=True,
+                    expected_generation=int(job['catalog_generation']),
                 )
                 self.store.mark_proposal_apply(proposal_id, "applied", f"TMDB {tmdb_id}")
                 report["applied"].append(proposal_id)
@@ -1541,6 +2172,15 @@ class IPTVMovieService:
                     pass
         with self._process_lock:
             self._instances.pop(self.provider_id, None)
+
+
+def _tmdb_record_if_found(fetch, tmdb_id, **options):
+    try:
+        return fetch(tmdb_id, **options)
+    except IPTVTMDBError as error:
+        if error.status != 404:
+            raise
+        return None
 
 
 def classify_enrichment_error(error):

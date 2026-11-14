@@ -2,6 +2,7 @@ import unittest
 import tempfile
 from pathlib import Path
 from unittest.mock import Mock, patch
+from contextlib import nullcontext
 
 import app
 from services.catalog_repository import CatalogRepository
@@ -18,18 +19,26 @@ def library_query(groups=None):
 
 
 class AdvancedLibraryApiTest(unittest.TestCase):
+    def test_selected_item_projection_accepts_empty_selection(self):
+        response = self.client.post('/api/library/selection/items', json={'paths': []})
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.get_json()['count'], 0)
+
     def setUp(self):
         self.client = app.app.test_client()
 
     def test_transport_delegates_normalized_query_to_catalog_owner(self):
         catalog = Mock()
         catalog.library_page.return_value = {
+            'catalog_generation': 7,
             "candidates": [], "total": 0, "page": 1, "page_size": 40,
             "total_pages": 1, "page_start": 0, "page_end": 0,
             "facets": {"genres": [], "sources": [], "languages": [], "countries": []},
             "stats": {"total": 0, "low": 0, "matched": 0, "pending": 0, "unmatched": 0},
         }
         catalog.generation.return_value = 7
+        context = {'connection': Mock(), 'generation': 7}
+        catalog.library_read_context.return_value = nullcontext(context)
         store = Mock(catalog=catalog)
         query = library_query([{
             "type": "genre", "join": "or",
@@ -48,11 +57,13 @@ class AdvancedLibraryApiTest(unittest.TestCase):
         delegated = catalog.library_page.call_args.kwargs
         self.assertEqual(delegated["query"]["groups"][0]["type"], "genre")
         self.assertEqual(delegated["page_size"], 40)
+        self.assertIs(delegated['read_context'], context)
 
     def test_selection_consumes_the_same_normalized_query(self):
         repository = Mock()
         repository.library_selection_paths.return_value = ["E:/Movies/Alien.mkv"]
         repository.generation.return_value = 9
+        repository.library_read_context.return_value = nullcontext({'connection': Mock(), 'generation': 9})
         query = library_query([{
             "type": "runtime", "values": [{"preset": "feature"}],
         }])

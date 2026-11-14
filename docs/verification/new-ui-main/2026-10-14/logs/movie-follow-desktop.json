@@ -1,0 +1,11 @@
+{
+  "specs": [
+    "tests/e2e/movie-follow.spec.js"
+  ],
+  "root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\fixtures\\movie-follow-desktop-8eb1956cc2624d91b768ebeb827a6314",
+  "port": 5143,
+  "fixture": "movie-follow",
+  "label": "movie-follow-desktop",
+  "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\logs\\movie-follow-desktop.log",
+  "exitCode": 0
+}

@@ -6,7 +6,8 @@ const streamPage = '<!doctype html><html><body><button>Play video</button></body
 async function openMovie(page) {
   const movie = { tmdb_id: '864168', title: 'Joy Ride', year: '2023', genres: ['Comedy'], summary: 'Four friends travel together.', poster_url: '' };
   await page.route('**/api/streaming/config', (route) => route.fulfill({ json: {
-    enabled: true, label: 'Stream', url_template: 'https://stream.example.test/movie/{tmdb_id}'
+    enabled: true, label: 'Stream', url_template: 'https://stream.example.test/movie/{tmdb_id}',
+    movie_sources: [{ id: 'custom', label: 'Custom URL', url_template: 'https://stream.example.test/movie/{tmdb_id}' }]
   } }));
   await page.route('**/api/tmdb/discover**', (route) => route.fulfill({ json: {
     results: [movie], page: 1, total_pages: 1, total_results: 1
@@ -28,6 +29,7 @@ test('movie page load removes CP status immediately and leaves provider controls
   const action = await openMovie(page);
   await page.clock.install();
   await action.click();
+  await page.locator('.stream-dialog').getByRole('button', { name: /Custom URL/ }).click();
   const dialog = page.locator('.stream-dialog');
   await expect(dialog.locator('iframe')).toHaveAttribute('src', streamUrl);
   await expect(page.frameLocator('.stream-dialog iframe').getByRole('button', { name: 'Play video' })).toBeVisible();
@@ -48,6 +50,7 @@ test('delayed page keeps a truthful loading status, then removes it on load and 
   let pending;
   await page.route(streamUrl, (route) => { pending = route; });
   await action.click();
+  await page.locator('.stream-dialog').getByRole('button', { name: /Custom URL/ }).click();
   await expect.poll(() => Boolean(pending)).toBe(true);
   const status = page.locator('.stream-dialog').getByRole('status');
   await expect(status).toContainText('Loading stream page');
@@ -60,6 +63,7 @@ test('delayed page keeps a truthful loading status, then removes it on load and 
   await page.keyboard.press('Escape');
   pending = null;
   await action.click();
+  await page.locator('.stream-dialog').getByRole('button', { name: /Custom URL/ }).click();
   await expect.poll(() => Boolean(pending)).toBe(true);
   await expect(status).toContainText('Loading stream page');
   await expect(status).not.toContainText('taking longer');
@@ -73,6 +77,7 @@ test('a provider 404 page stays visible without a misleading CP preparation stat
   await page.route(streamUrl, (route) => route.fulfill({ status: 404, contentType: 'text/html', body: '<p>Media unavailable</p>' }));
   const action = await openMovie(page);
   await action.click();
+  await page.locator('.stream-dialog').getByRole('button', { name: /Custom URL/ }).click();
   await expect(page.frameLocator('.stream-dialog iframe').getByText('Media unavailable')).toBeVisible();
   await expect(page.locator('.stream-dialog').getByRole('status')).toHaveCount(0, { timeout: 2000 });
   if (process.env.CP_STREAM_EVIDENCE_DIR) await page.screenshot({ path: `${process.env.CP_STREAM_EVIDENCE_DIR}/movie-unavailable.png` });

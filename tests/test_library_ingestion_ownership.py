@@ -38,7 +38,10 @@ class LibraryIngestionOwnershipTest(unittest.TestCase):
         completion_end = source.index("\ndef ", completion_start + 5)
         completion = source[completion_start:completion_end]
         self.assertIn("_library_ingestion_coordinator()", completion)
-        self.assertIn("reconcile_paths_now", completion)
+        self.assertNotIn("reconcile_paths_now", completion)
+        self.assertNotIn("_prepare_final_card_assets", completion)
+        self.assertNotIn(".final_card_publication(", completion)
+        self.assertIn("publication_status", completion)
         self.assertIn("reconcile_paths", completion)
         self.assertNotIn("_start_library_reconcile(force=True)", completion)
 

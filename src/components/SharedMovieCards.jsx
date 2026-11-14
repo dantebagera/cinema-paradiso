@@ -1,3 +1,7 @@
+import Badge from './ui/Badge.jsx';
+import DialogShell, { DialogHeader } from './ui/DialogShell.jsx';
+import Button, { StreamButton } from './ui/Button.jsx';
+import IPTVAvailabilityBadge from './IPTVAvailabilityBadge.jsx';
 import {
   AlertTriangle, Bell, Bookmark, BookOpen, Check, Clapperboard, ExternalLink, Film, Loader2,
   FileText, MonitorPlay, Pencil, Play, RefreshCcw, Search, Sparkles, Trash2, Wand2, X
@@ -17,6 +21,7 @@ import {
 } from '../utils/moviePresentation.js';
 import { canonicalOwnedMovie } from '../discoverUtils.js';
 import RelatedMovieRail from './RelatedMovieRail.jsx';
+import HorizontalCardRail from './HorizontalCardRail.jsx';
 import { PersonBioModal, PersonCreditCard, usePersonBiography } from './PersonCreditCard.jsx';
 import { useMovieAwardCounts, usePersonAwardCounts } from './MovieAwardsContext.jsx';
 
@@ -41,16 +46,16 @@ function usePendingPlay(onPlay, path) {
 
 function MoviePlayButton({ pending, onPlay }) {
   return (
-    <button
+    <Button variant="play"
       type="button"
-      className="btn btn-primary btn-green movie-play-action"
+      className="movie-play-action"
       onClick={onPlay}
       disabled={pending}
       aria-busy={pending || undefined}
     >
       {pending ? <Loader2 size={15} className="spin" /> : <Play size={15} />}
       {pending ? 'Opening player…' : 'Play'}
-    </button>
+    </Button>
   );
 }
 
@@ -59,12 +64,12 @@ export function MoviePlotDetailsButton({ movie }) {
   const plot = movie?.summary || movie?.plot || '';
   if (plot.length <= 200) return null;
   return <>
-    <button type="button" className="btn btn-secondary movie-plot-action" onClick={() => setOpen(true)}><BookOpen size={15} /> Read full plot</button>
+    <Button type="button" className="movie-plot-action" onClick={() => setOpen(true)}><BookOpen size={15} /> Read full plot</Button>
     {open && createPortal(<div className="modal-backdrop" onClick={() => setOpen(false)}>
-      <section className="movie-plot-dialog" role="dialog" aria-modal="true" aria-label={`Plot of ${movie.title}`} onClick={(event) => event.stopPropagation()} onKeyDown={(event) => { if (event.key === 'Escape') setOpen(false); }}>
-        <header><h3>{movie.title}</h3><button type="button" className="mini-action" autoFocus onClick={() => setOpen(false)}>Close</button></header>
+      <DialogShell size="plot" className="movie-plot-dialog" role="dialog" aria-modal="true" aria-label={`Plot of ${movie.title}`} onClick={(event) => event.stopPropagation()} onKeyDown={(event) => { if (event.key === 'Escape') setOpen(false); }}>
+        <DialogHeader as="header"><h3>{movie.title}</h3><Button size="compact" type="button"  autoFocus onClick={() => setOpen(false)}>Close</Button></DialogHeader>
         <p dir="auto">{plot}</p>
-      </section>
+      </DialogShell>
     </div>, document.body)}
   </>;
 }
@@ -91,9 +96,9 @@ export function OwnedFileDetailsButton({ owned, onOpenFileDetails }) {
   const ownedItem = owned?.canonical_card || owned?.library_item || owned;
   if (!ownedItem?.path || !onOpenFileDetails) return null;
   return (
-    <button type="button" className="btn btn-secondary" onClick={() => onOpenFileDetails(ownedItem)}>
+    <Button type="button"  onClick={() => onOpenFileDetails(ownedItem)}>
       <FileText size={15} /> File details
-    </button>
+    </Button>
   );
 }
 
@@ -143,6 +148,7 @@ export function PosterStateControls({
 }
 
 export function DiscoverMovieCard({
+  iptvAvailability,
   movie,
   reason,
   owned,
@@ -203,14 +209,17 @@ export function DiscoverMovieCard({
   const ownedPath = owned?.path || '';
   const playAction = usePendingPlay(onPlay, ownedPath);
   return (
-    <UnifiedMovieCard
+    <UnifiedMovieCard ratingsIdentity={displayMovie}
+      availability={iptvAvailability && Number(movie.tmdb_id) > 0
+        ? <IPTVAvailabilityBadge movie={movie} providers={iptvAvailability.providers} onStream={onStream} /> : undefined}
       className={cx('discover-movie-card', 'movie-awards-consumer', expanded && 'discover-card-expanded')}
       awardCounts={awardCounts}
       title={displayMovie.title}
       year={displayMovie.year}
       posterUrl={displayMovie.poster_url}
+      backdropUrl={displayDetails?.backdrop_url || displayMovie.backdrop_url || displayMovie.poster_url}
       rating={displayMovie.tmdb_rating}
-      voteCount={formatVoteCount(displayMovie.tmdb_vote_count)}
+      voteCount={formatVoteCount(displayMovie.tmdb_vote_count, { includeLabel: expanded })}
       chips={(displayMovie.genres || []).slice(0, 2)}
       mutedChips={[
         displayMovie.language,
@@ -297,33 +306,33 @@ export function DiscoverMovieCard({
                 <MoviePlayButton pending={playAction.pending} onPlay={playAction.play} />
                 <OwnedFileDetailsButton owned={ownedItem} onOpenFileDetails={onOpenFileDetails} />
                 {lowQuality && (
-                  <button type="button" className="btn btn-secondary" onClick={() => onFindTorrent(displayMovie, true)}>
+                  <Button type="button"  onClick={() => onFindTorrent(baseDisplayMovie, true)}>
                     <Wand2 size={15} /> Find upgrade
-                  </button>
+                  </Button>
                 )}
               </>
             ) : (
               <>
                 {!unreleased && (
-                  <button type="button" className="btn btn-primary" onClick={() => onFindTorrent(movie)}>
+                  <Button variant="primary" type="button"  onClick={() => onFindTorrent(movie)}>
                     <Search size={15} /> Find sources
-                  </button>
+                  </Button>
                 )}
                 {!unreleased && streamingAvailable && (
-                  <button type="button" className="btn btn-secondary btn-green-outline" onClick={() => onStream(movie)}>
-                    <MonitorPlay size={15} /> {streamingLabel}
-                  </button>
+                  <StreamButton type="button"  onClick={() => onStream(movie)}>
+                     {streamingLabel}
+                  </StreamButton>
                 )}
               </>
             )}
-            <button type="button" className="btn btn-secondary" onClick={() => onTrailer(displayMovie)}>
+            <Button type="button"  onClick={() => onTrailer(baseDisplayMovie)}>
               <Film size={15} /> Trailer
-            </button>
+            </Button>
             <MoviePlotDetailsButton movie={displayMovie} />
             {!owned && (
-              <button type="button" className="btn btn-secondary" onClick={() => onFollow(movie)}>
+              <Button type="button"  onClick={() => onFollow(movie)}>
                 <Bell size={15} /> {followed ? 'Following' : 'Follow'}
-              </button>
+              </Button>
             )}
           </div>
           <MovieExpandedFacts movie={displayMovie} details={displayDetails} />
@@ -381,9 +390,9 @@ export function MovieKeywordRow({ keywords = [] }) {
     <div className="movie-keyword-row" aria-label="Movie keywords">
       <span className="movie-keyword-label">Keywords</span>
       {visibleKeywords.map((keyword) => (
-        <span className="movie-keyword-chip" dir="auto" key={keyword}>{keyword}</span>
+        <Badge size="compact" muted className="movie-keyword-chip" dir="auto" key={keyword}>{keyword}</Badge>
       ))}
-      {remainingKeywords > 0 ? <span className="movie-keyword-more">+{remainingKeywords}</span> : null}
+      {remainingKeywords > 0 ? <Badge size="compact" muted>+{remainingKeywords}</Badge> : null}
     </div>
   );
 }
@@ -464,22 +473,22 @@ export function MovieExpandedCuration({
           {(collectionStatus === 'error' && onCollectionRetry) || onEditCollection ? (
             <div className="collection-actions">
               {collectionStatus === 'error' && onCollectionRetry ? (
-                <button
+                <Button size="compact"
                   type="button"
-                  className="mini-action"
+
                   onClick={onCollectionRetry}
                   title={collectionError || 'Retry loading collection details'}
                 >
                   <RefreshCcw size={13} /> Retry
-                </button>
+                </Button>
               ) : null}
               {onEditCollection ? (
-                <button type="button" className="mini-action" onClick={() => onEditCollection(activeCollection)}>Edit</button>
+                <Button size="compact" type="button"  onClick={() => onEditCollection(activeCollection)}>Edit</Button>
               ) : null}
               {activeCollection.is_edited && onResetCollection ? (
-                <button type="button" className="mini-action mini-action-danger" onClick={() => onResetCollection(activeCollection)}>
+                <Button variant="danger" size="compact" type="button"  onClick={() => onResetCollection(activeCollection)}>
                   <RefreshCcw size={13} /> Reset
-                </button>
+                </Button>
               ) : null}
             </div>
           ) : null}
@@ -488,19 +497,19 @@ export function MovieExpandedCuration({
       <div className="lists-panel">
         <div className="lists-panel-header">
           <span className="mini-label">Lists</span>
-          {onEditLists ? <button type="button" className="mini-action" onClick={onEditLists}>Add to list</button> : null}
+          {onEditLists ? <Button size="compact" type="button"  onClick={onEditLists}>Add to list</Button> : null}
         </div>
         {itemLists.length ? (
           <div className="list-chip-row">
             {visibleItemLists.map((list) => (
-              <span className="list-chip" key={list.id}>
+              <Badge size="compact" muted className="list-chip" key={list.id}>
                 <button type="button" onClick={canBrowseLists ? () => onListBrowse(list) : undefined}>{list.name}</button>
                 {onRemoveFromList ? (
                   <button type="button" aria-label={`Remove ${movie.title} from ${list.name}`} onClick={() => onRemoveFromList(list.id)}>
                     <Trash2 size={13} />
                   </button>
                 ) : null}
-              </span>
+              </Badge>
             ))}
             {hiddenListCount ? <span className="list-chip-overflow">+{hiddenListCount} more</span> : null}
           </div>
@@ -524,8 +533,8 @@ export function MovieExpandedDetails({
   const { personBio, openPersonBio, closePersonBio } = usePersonBiography();
   const loading = details?.loading;
   const allDirectors = details?.directors?.length ? details.directors : directors?.length ? directors : details?.director?.name ? [details.director] : [];
-  const expandedDirectors = allDirectors.slice(0, 10);
-  const expandedCast = (details?.cast?.length ? details.cast : cast || []).slice(0, Math.max(0, 10 - expandedDirectors.length));
+  const expandedDirectors = allDirectors;
+  const expandedCast = details?.cast?.length ? details.cast : cast || [];
   const canBrowsePeople = Boolean(onPersonBrowse);
   const personFilmographyAction = onPersonDiscover || onPersonBrowse;
 
@@ -538,8 +547,8 @@ export function MovieExpandedDetails({
         <p className="discover-detail-error"><AlertTriangle size={15} /> {details.error}</p>
       ) : (
         <section className="movie-expanded-credits-panel" aria-label="Director and top cast">
-          <span className="mini-label">Director &amp; top cast</span>
-          <div className="movie-expanded-people-grid">
+          <HorizontalCardRail label="cast" className="credit-card-rail" trackClassName="movie-expanded-people-grid" arrowPlacement="edges" resetKey={movie?.tmdb_id}
+            header={<span className="mini-label">Director &amp; top cast</span>}>
             {expandedDirectors.length ? (
               expandedDirectors.map((person) => (
                 <AwardPersonCreditCard
@@ -572,7 +581,7 @@ export function MovieExpandedDetails({
             ) : (
               <small className="movie-expanded-credit-empty">No cast data found.</small>
             )}
-          </div>
+          </HorizontalCardRail>
         </section>
       )}
       </div>
@@ -673,14 +682,15 @@ export function LibraryMovieCard({
   const playAction = usePendingPlay(onPlay, item.path);
 
   return (
-    <UnifiedMovieCard
+    <UnifiedMovieCard ratingsIdentity={displayMovie}
       className={cx('library-movie-card', 'movie-awards-consumer', expanded && 'library-movie-card-expanded')}
       awardCounts={awardCounts}
       title={displayMovie.title}
       year={displayMovie.year}
       posterUrl={displayMovie.poster_url}
+      backdropUrl={displayDetails?.backdrop_url || displayMovie.backdrop_url || displayMovie.poster_url}
       rating={displayMovie.rating || displayMovie.tmdb_rating || item.plex_rating}
-      voteCount={formatVoteCount(displayMovie.tmdb_vote_count)}
+      voteCount={formatVoteCount(displayMovie.tmdb_vote_count, { includeLabel: expanded })}
       chips={(displayMovie.genres || genres).slice(0, 2)}
       mutedChips={[
         locale,
@@ -765,18 +775,18 @@ export function LibraryMovieCard({
           <MovieKeywordRow keywords={displayDetails?.keywords || displayMovie.keywords} />
           <div className="library-card-actions">
             <MoviePlayButton pending={playAction.pending} onPlay={playAction.play} />
-            <button type="button" className="btn btn-secondary" onClick={onTrailer}>
+            <Button type="button"  onClick={onTrailer}>
               <Film size={15} /> Trailer
-            </button>
+            </Button>
             <MoviePlotDetailsButton movie={displayMovie} />
-            <button type="button" className="btn btn-secondary" onClick={onCorrectMetadata}>
+            <Button type="button"  onClick={onCorrectMetadata}>
               <Pencil size={15} /> Correct metadata
-            </button>
+            </Button>
             <OwnedFileDetailsButton owned={item} onOpenFileDetails={onOpenFileDetails} />
             {lowQuality && (
-              <button type="button" className="btn btn-upgrade" onClick={() => onFindTorrent(movieForSearch, true)}>
+              <Button variant="upgrade" type="button"  onClick={() => onFindTorrent(movieForSearch, true)}>
                 <Wand2 size={15} /> Find upgrade
-              </button>
+              </Button>
             )}
           </div>
           <MovieExpandedFacts movie={displayMovie} details={displayDetails} />

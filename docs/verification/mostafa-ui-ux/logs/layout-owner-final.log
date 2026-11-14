@@ -1,0 +1,8 @@
+test_desktop_sidebar_collapses_with_refined_workspace_gutters (tests.test_workspace_layout_ui.WorkspaceLayoutUiTest.test_desktop_sidebar_collapses_with_refined_workspace_gutters) ... ok
+test_production_workspaces_share_discover_content_width (tests.test_workspace_layout_ui.WorkspaceLayoutUiTest.test_production_workspaces_share_discover_content_width) ... ok
+test_shared_workspace_keeps_discover_outer_padding (tests.test_workspace_layout_ui.WorkspaceLayoutUiTest.test_shared_workspace_keeps_discover_outer_padding) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.003s
+
+OK

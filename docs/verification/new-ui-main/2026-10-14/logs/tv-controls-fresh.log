@@ -1,0 +1,16 @@
+
+Running 9 tests using 1 worker
+
+(node:15372) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-download-contracts.spec.js:16:1 › independent Settings selectors save through the real API and Cancel discards edits (3.5s)
+  ok 2 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-download-contracts.spec.js:44:1 › new unsaved collection stays read-only through review then reserves and publishes after explicit Download (5.9s)
+  ok 3 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-download-contracts.spec.js:76:1 › existing flat collection exposes destination blocker and preserves its media (1.2s)
+  ok 4 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-download-contracts.spec.js:90:1 › selector keeps saved selection on failed save and exposes unavailable and empty states (967ms)
+  ok 5 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-download-contracts.spec.js:105:1 › shared selector contains long source lists, shows load errors and discards unavailable and empty drafts (1.4s)
+  ok 6 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-download-contracts.spec.js:126:1 › multiple-season review reuses approved-home choice and refreshes every season destination (2.5s)
+  ok 7 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-download-contracts.spec.js:139:1 › lower checked-season and all-season review adds nothing before explicit submission and preserves destinations (8.1s)
+  ok 8 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-download-contracts.spec.js:178:1 › empty TV trust preserves blocked draft and explicit Start failure is visible (1.4s)
+  ok 9 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-download-contracts.spec.js:197:1 › task polling renders backend counts, errors and Cairo times without stale navigation (16.2s)
+
+  9 passed (41.9s)

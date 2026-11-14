@@ -108,12 +108,18 @@ export function canonicalOwnedMovie(movie = {}, owned = null) {
   if (!canonical.accepted) return movie;
   return {
     ...movie,
+    accepted: true,
+    poster_override: canonical.poster_override,
+    poster_override_locked: canonical.poster_override_locked,
     movie_key: canonical.movie_key || owned?.movie_key || movie.movie_key,
     title: canonical.title || movie.title,
+    original_title: canonical.original_title || movie.original_title,
+    original_language: canonical.original_language || movie.original_language,
     year: canonical.year || movie.year,
     tmdb_id: canonical.tmdb_id || movie.tmdb_id,
     imdb_id: canonical.imdb_id || movie.imdb_id,
     poster_url: canonical.poster_url || movie.poster_url,
+    backdrop_url: canonical.backdrop_url || movie.backdrop_url,
     genres: canonical.genres || movie.genres,
     plot: canonical.summary || canonical.plot || movie.plot || '',
     summary: canonical.summary || canonical.plot || movie.summary || '',

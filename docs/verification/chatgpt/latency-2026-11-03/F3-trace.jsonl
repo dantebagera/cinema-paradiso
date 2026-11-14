@@ -1,0 +1,41 @@
+{"sequence": 1, "event": "span_start", "at_seconds": 0.026235, "phase": "isolated_app_import"}
+{"sequence": 2, "event": "span_end", "at_seconds": 0.340504, "phase": "isolated_app_import", "seconds": 0.314265, "state": "completed"}
+{"sequence": 3, "event": "capture_started", "at_seconds": 0.684835, "feature": "F3", "label": "native-baseline", "prompt": "Synthetic Movie Smart Match batch: Alien (1979), The Prestige (2006)", "model": "gpt-6.1-sol", "count": "50", "maximum_calls": 2, "maximum_seconds": 180, "cache_state": "fresh diagnostic process; no production TMDB memory cache"}
+{"sequence": 4, "event": "span_start", "at_seconds": 0.731501, "phase": "feature_total"}
+{"sequence": 5, "event": "span_start", "at_seconds": 0.814569, "phase": "gpt_run", "input_bytes": 276, "instructions_bytes": 877, "tools_bytes": 1049}
+{"sequence": 6, "event": "span_start", "at_seconds": 0.815981, "phase": "lease_acquire"}
+{"sequence": 7, "event": "span_end", "at_seconds": 0.829955, "phase": "lease_acquire", "seconds": 0.013967, "state": "completed"}
+{"sequence": 8, "event": "span_start", "at_seconds": 0.830218, "phase": "account_access"}
+{"sequence": 9, "event": "span_end", "at_seconds": 0.831259, "phase": "account_access", "seconds": 0.001039, "state": "completed"}
+{"sequence": 10, "event": "gpt_start", "at_seconds": 0.845237, "attempt": 1}
+{"sequence": 11, "event": "span_start", "at_seconds": 0.845523, "phase": "gpt_http", "attempt": 1}
+{"sequence": 12, "event": "gpt_first_bytes", "at_seconds": 2.974467, "attempt": 1, "seconds": 2.128939}
+{"sequence": 13, "event": "gpt_stream_event", "at_seconds": 4.676103, "attempt": 1, "type": "response.output_item.added", "item_type": "function_call", "seconds": 3.830574, "usage": null}
+{"sequence": 14, "event": "gpt_stream_event", "at_seconds": 5.304998, "attempt": 1, "type": "response.completed", "item_type": null, "seconds": 4.459471, "usage": {"input_tokens": 412, "output_tokens": 57, "total_tokens": 469, "attribution": {"items": {"fc_02b0958f7d0b6bb0016ae9aabda39c819182f7b98d7d3ab7b9": {"input_tokens": 2, "output_tokens": 57}, "msg_02b0958f7d0b6bb0016ae9aabb5df881918d3d1b90bcebbf11": {"input_tokens": 80, "output_tokens": 0, "content": [{"input_tokens": 80, "output_tokens": 0}]}}, "request_fields": {"instructions": {"input_tokens": 162, "output_tokens": 0}, "tools": {"input_tokens": 168, "output_tokens": 0}}}}}
+{"sequence": 15, "event": "span_end", "at_seconds": 5.306171, "phase": "gpt_http", "attempt": 1, "seconds": 4.460646}
+{"sequence": 16, "event": "span_start", "at_seconds": 5.306477, "phase": "lease_release"}
+{"sequence": 17, "event": "span_end", "at_seconds": 5.316475, "phase": "lease_release", "seconds": 0.009985, "state": "completed"}
+{"sequence": 18, "event": "span_end", "at_seconds": 5.316762, "phase": "gpt_run", "seconds": 4.502192, "state": "completed", "input_bytes": 276, "instructions_bytes": 877, "tools_bytes": 1049}
+{"sequence": 19, "event": "gpt_reply", "at_seconds": 5.316986, "response_id": "resp_02b0958f7d0b6bb0016ae9aabb5ce8819184c29d714a4b01df", "calls": [{"name": "cp_result.submit", "count": 0}]}
+{"sequence": 20, "event": "span_start", "at_seconds": 5.317788, "phase": "tmdb_http", "request": 1, "endpoint": "/3/search/movie", "title": "Alien", "year": "1979"}
+{"sequence": 21, "event": "span_end", "at_seconds": 5.615081, "phase": "tmdb_http", "seconds": 0.297286, "state": "completed", "request": 1, "endpoint": "/3/search/movie", "title": "Alien", "year": "1979"}
+{"sequence": 22, "event": "span_start", "at_seconds": 5.615663, "phase": "tmdb_http", "request": 2, "endpoint": "/3/search/movie", "title": "Alien", "year": ""}
+{"sequence": 23, "event": "span_end", "at_seconds": 5.880723, "phase": "tmdb_http", "seconds": 0.265052, "state": "completed", "request": 2, "endpoint": "/3/search/movie", "title": "Alien", "year": ""}
+{"sequence": 24, "event": "span_start", "at_seconds": 5.881253, "phase": "tmdb_http", "request": 3, "endpoint": "/3/movie/348/alternative_titles", "title": "", "year": ""}
+{"sequence": 25, "event": "span_end", "at_seconds": 6.134368, "phase": "tmdb_http", "seconds": 0.253107, "state": "completed", "request": 3, "endpoint": "/3/movie/348/alternative_titles", "title": "", "year": ""}
+{"sequence": 26, "event": "span_start", "at_seconds": 6.134831, "phase": "tmdb_http", "request": 4, "endpoint": "/3/movie/820362/alternative_titles", "title": "", "year": ""}
+{"sequence": 27, "event": "span_end", "at_seconds": 6.394963, "phase": "tmdb_http", "seconds": 0.260124, "state": "completed", "request": 4, "endpoint": "/3/movie/820362/alternative_titles", "title": "", "year": ""}
+{"sequence": 28, "event": "span_start", "at_seconds": 6.395435, "phase": "tmdb_http", "request": 5, "endpoint": "/3/movie/945961/alternative_titles", "title": "", "year": ""}
+{"sequence": 29, "event": "span_end", "at_seconds": 6.695556, "phase": "tmdb_http", "seconds": 0.300113, "state": "completed", "request": 5, "endpoint": "/3/movie/945961/alternative_titles", "title": "", "year": ""}
+{"sequence": 30, "event": "span_start", "at_seconds": 6.697081, "phase": "tmdb_http", "request": 6, "endpoint": "/3/search/movie", "title": "The Prestige", "year": "2006"}
+{"sequence": 31, "event": "span_end", "at_seconds": 6.848654, "phase": "tmdb_http", "seconds": 0.151566, "state": "completed", "request": 6, "endpoint": "/3/search/movie", "title": "The Prestige", "year": "2006"}
+{"sequence": 32, "event": "span_start", "at_seconds": 6.849111, "phase": "tmdb_http", "request": 7, "endpoint": "/3/search/movie", "title": "The Prestige", "year": ""}
+{"sequence": 33, "event": "span_end", "at_seconds": 6.999078, "phase": "tmdb_http", "seconds": 0.14996, "state": "completed", "request": 7, "endpoint": "/3/search/movie", "title": "The Prestige", "year": ""}
+{"sequence": 34, "event": "span_start", "at_seconds": 6.999671, "phase": "tmdb_http", "request": 8, "endpoint": "/3/movie/1124/alternative_titles", "title": "", "year": ""}
+{"sequence": 35, "event": "span_end", "at_seconds": 7.163129, "phase": "tmdb_http", "seconds": 0.16345, "state": "completed", "request": 8, "endpoint": "/3/movie/1124/alternative_titles", "title": "", "year": ""}
+{"sequence": 36, "event": "span_start", "at_seconds": 7.163556, "phase": "tmdb_http", "request": 9, "endpoint": "/3/movie/1423789/alternative_titles", "title": "", "year": ""}
+{"sequence": 37, "event": "span_end", "at_seconds": 7.332664, "phase": "tmdb_http", "seconds": 0.169102, "state": "completed", "request": 9, "endpoint": "/3/movie/1423789/alternative_titles", "title": "", "year": ""}
+{"sequence": 38, "event": "span_start", "at_seconds": 7.333076, "phase": "tmdb_http", "request": 10, "endpoint": "/3/movie/1405070/alternative_titles", "title": "", "year": ""}
+{"sequence": 39, "event": "span_end", "at_seconds": 7.477263, "phase": "tmdb_http", "seconds": 0.144179, "state": "completed", "request": 10, "endpoint": "/3/movie/1405070/alternative_titles", "title": "", "year": ""}
+{"sequence": 40, "event": "span_end", "at_seconds": 7.56734, "phase": "feature_total", "seconds": 6.835835, "state": "completed"}
+{"sequence": 41, "event": "job_finished", "at_seconds": 7.569186, "state": "completed", "message": "", "accepted_count": 0, "inference_attempts": 1, "tmdb_requests": 10, "elapsed_seconds": 6.883439}

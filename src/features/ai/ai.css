@@ -1,0 +1,15 @@
+.ai-provider-status { gap: 7px; flex-wrap: wrap; }
+.ai-provider-status a { color: var(--ai-violet-text); }
+.ai-job-status { margin-block: var(--space-3); }
+.ai-job-status .settings-action-grid { margin-top: var(--space-3); }
+.ai-job-status-inline { margin-block: var(--space-3); }
+.ai-job-status-inline .discover-inline-status { margin: 0; padding: 0; border: 0; border-radius: 0; background: none; }
+.ai-job-status-inline svg { flex-shrink: 0; }
+.ai-feature-status { display: grid; gap: 6px; }
+.ai-feature-status p { display: flex; justify-content: space-between; gap: var(--space-3); margin: 0; font-size: 12px; }
+.ai-feature-status p span { color: #a1a1aa; }
+.ai-action-review { display: grid; gap: var(--space-3); margin-block: var(--space-3); }
+.ai-domain-target { padding: var(--space-3); border: 1px solid #27272a; border-radius: var(--radius-ui); align-self: start; }
+.ai-domain-target strong { display: block; }
+.ai-read-result h3 { text-transform: capitalize; }
+.ai-owner-report { display: flex; gap: var(--space-3); flex-wrap: wrap; }

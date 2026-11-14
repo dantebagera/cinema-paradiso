@@ -1,0 +1,16 @@
+...F.........................
+======================================================================
+FAIL: test_cold_start_reconciliation_uses_persisted_sql_and_keeps_pages_on_one_generation (tests.test_sql_migration_parity.SqlMigrationParityTest.test_cold_start_reconciliation_uses_persisted_sql_and_keeps_pages_on_one_generation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\Desktop\cinema paradiso\tests\test_sql_migration_parity.py", line 1200, in test_cold_start_reconciliation_uses_persisted_sql_and_keeps_pages_on_one_generation
+    self.assertEqual(status["status"], "completed")
+AssertionError: 'running' != 'completed'
+- running
++ completed
+
+
+----------------------------------------------------------------------
+Ran 29 tests in 41.381s
+
+FAILED (failures=1)

@@ -379,11 +379,13 @@ class SmartMatchCoordinator:
         process_batch=None,
         batch_size=5,
         batch_delay=0.1,
+        process_selected_batch=None,
     ):
         self._load_state = load_state
         self._save_state = save_state
         self._process_path = process_path
         self._process_batch = process_batch
+        self._process_selected_batch = process_selected_batch
         self._batch_size = batch_size
         self._batch_delay = batch_delay
         self._lock = threading.RLock()
@@ -427,10 +429,10 @@ class SmartMatchCoordinator:
         with self._lock:
             return {**self._default_state(), **(self._load_state() or {})}
 
-    def start(self, paths, provider, method, background=True):
+    def start(self, paths, provider, method, background=True, *, ai_binding=None):
         with self._lock:
             current = self.status()
-            if current["status"] in {"running", "paused"}:
+            if current["status"] in {"running", "paused", "paused_budget"}:
                 raise RuntimeError("Smart Match preview is already active")
             paths = list(dict.fromkeys(paths or []))
             now = time.time()
@@ -446,6 +448,11 @@ class SmartMatchCoordinator:
                 "started_at": now,
                 "updated_at": now,
             }
+            if ai_binding is not None:
+                if method != 'ai' or not self._process_selected_batch:
+                    raise RuntimeError('Selected AI processor is unavailable')
+                from copy import deepcopy
+                state['ai_binding'] = deepcopy(ai_binding)
             self._save_state(state)
         if background:
             self._ensure_thread()
@@ -454,7 +461,7 @@ class SmartMatchCoordinator:
     def cancel(self):
         with self._lock:
             state = self.status()
-            if state["status"] == "running":
+            if state["status"] == "running" or (state.get('ai_binding') and state['status'] in ('paused_budget', 'paused')):
                 state["status"] = "cancelled"
                 state["current_path"] = ""
                 state["updated_at"] = time.time()
@@ -466,7 +473,8 @@ class SmartMatchCoordinator:
             state = self.status()
             if state["status"] == "running" and state["remaining"] > 0:
                 pass
-            elif state["status"] in {"paused", "cancelled"} and state["remaining"] > 0:
+            elif (state["status"] in {"paused", "cancelled"} or
+                  (state.get('ai_binding') and state['status'] in ('paused_budget', 'failed'))) and state["remaining"] > 0:
                 state["status"] = "running"
                 state["updated_at"] = time.time()
                 self._save_state(state)
@@ -482,12 +490,23 @@ class SmartMatchCoordinator:
             batch = state["paths"][state["processed"]:state["processed"] + (limit or self._batch_size)]
         batch_results = None
         batch_error = ""
-        if self._process_batch:
+        if self._process_batch or state.get('ai_binding'):
             try:
                 batch_results = list(
-                    self._process_batch(batch, state["provider"], state["method"]) or []
+                    (self._process_selected_batch(batch, state['provider'], state['ai_binding']) if state.get('ai_binding')
+                     else self._process_batch(batch, state["provider"], state["method"])) or []
                 )
             except Exception as exc:
+                if state.get('ai_binding'):
+                    with self._lock:
+                        current = self.status()
+                        if current['status'] != 'running':
+                            return current
+                        code = getattr(exc, 'code', 'selected_ai_failed')
+                        current.update(status='paused_budget' if code == 'paused_budget' else 'cancelled' if code == 'cancelled' else 'failed',
+                                       ai_error=code, current_path='', updated_at=time.time())
+                        self._save_state(current)
+                        return current
                 batch_results = []
                 batch_error = str(exc)
         for index, path in enumerate(batch):

@@ -1,5 +1,6 @@
 import unittest
 from pathlib import Path
+from tests.frontend_source import read_frontend_owner
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -8,7 +9,10 @@ ROOT = Path(__file__).resolve().parents[1]
 class IPTVMovieUITests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.workspace = (ROOT / "src" / "features" / "iptv" / "IPTVWorkspace.jsx").read_text(encoding="utf-8")
+        cls.workspace = read_frontend_owner('src/features/iptv/IPTVWorkspace.jsx')
+        cls.metadata_settings = (ROOT / 'src/features/iptv/IPTVMetadataSettings.jsx').read_text(encoding='utf-8')
+        cls.settings = (ROOT / 'src/features/settings/SettingsWorkspace.jsx').read_text(encoding='utf-8')
+        cls.maintenance = (ROOT / 'src/features/iptv/IPTVMaintenance.jsx').read_text(encoding='utf-8')
         cls.api = (ROOT / "src" / "api" / "iptv.js").read_text(encoding="utf-8")
         cls.css = (ROOT / "src" / "features" / "iptv" / "iptv.css").read_text(encoding="utf-8")
 
@@ -33,26 +37,31 @@ class IPTVMovieUITests(unittest.TestCase):
         self.assertIn("iptvApi.setMovieList", self.workspace)
 
     def test_metadata_key_is_password_style_blank_and_never_loaded_from_main_settings(self):
-        self.assertIn('type="password"', self.workspace)
-        self.assertIn("setMetadataCredential('')", self.workspace)
-        self.assertIn("IPTV TMDB credential", self.workspace)
-        self.assertIn("IPTV TMDB stored on this device", self.workspace)
-        self.assertIn("Test saved credential", self.workspace)
-        self.assertIn("Replace credential", self.workspace)
+        self.assertIn('type="password"', self.metadata_settings)
+        self.assertIn("setMetadataCredential('')", self.metadata_settings)
+        for label in ("IPTV TMDB credential", "IPTV TMDB stored on this device", "Test saved credential",
+                      "Replace credential", "Advanced AI"):
+            self.assertIn(label, self.metadata_settings)
+            self.assertNotIn(label, self.workspace)
+        self.assertIn('<IPTVMetadataSettings', self.settings.split('id="settings-iptv"', 1)[1])
         self.assertIn("saveMetadataSettings", self.api)
-        self.assertNotIn("tmdb_key", self.workspace)
+        self.assertNotIn("tmdb_key", self.metadata_settings)
         self.assertNotIn("tmdb_key", self.api)
 
-    def test_metadata_is_a_provider_scoped_dashboard_with_continuous_controls(self):
+    def test_metadata_review_and_maintenance_have_separate_controls(self):
         self.assertIn("{ id: 'metadata', label: 'Metadata'", self.workspace)
-        self.assertIn("provider sources evaluated", self.workspace)
-        self.assertIn("Improve this provider", self.workspace)
-        self.assertIn("Continue metadata improvement", self.workspace)
-        self.assertIn("Cancel future work", self.workspace)
-        self.assertIn("Retry failures", self.workspace)
-        self.assertIn("Re-evaluate stale automatic results", self.workspace)
-        self.assertIn("start-diagnostic", self.workspace)
-        self.assertIn("Run next {formatCount(worker?.batch_limit || 100)}", self.workspace)
+        self.assertIn("ChatGPT matching", self.workspace)
+        self.assertIn('aria-label="Unmatched listings"', self.workspace)
+        self.assertIn('reviewProvider={provider}', self.maintenance)
+        self.assertNotIn('<IPTVEnrichmentOverview', self.maintenance)
+        self.assertIn('<IPTVEnrichmentPanel', self.workspace)
+        for label in ("Retry failures", "Re-evaluate stale automatic results",
+                      "start-diagnostic", "Run next {formatCount(worker?.batch_limit || 100)}",
+                      "Preview rechecking automatic matches", "Preview grouping versions of the same movie"):
+            self.assertIn(label, self.maintenance)
+            self.assertNotIn(label, self.workspace)
+        self.assertNotIn("Improve this provider", self.maintenance)
+        self.assertNotIn("Cancel future work", self.maintenance)
 
     def test_projection_never_uses_a_false_empty_finished_view(self):
         self.assertIn("Preparing provider movies", self.workspace)
@@ -68,7 +77,7 @@ class IPTVMovieUITests(unittest.TestCase):
         self.assertIn("extension: source.container_extension", self.workspace)
 
     def test_rich_people_localization_and_external_links_are_iptv_owned(self):
-        movie_view = self.workspace.split("function MovieView", 1)[1].split("function SeriesView", 1)[0]
+        movie_view = (ROOT / 'src/features/iptv/IPTVCards.jsx').read_text(encoding='utf-8')
         self.assertIn("function IPTVPeopleCredits", self.workspace)
         self.assertIn("Director &amp; top cast", self.workspace)
         self.assertIn("movie-expanded-people-grid", self.workspace)

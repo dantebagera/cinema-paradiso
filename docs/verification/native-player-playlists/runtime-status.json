@@ -1,0 +1,44 @@
+{
+  "state": "ready",
+  "ready": true,
+  "os_fallback_available": true,
+  "player_version": "0.1.35",
+  "mpv_version": "git-48e6c35c0e05",
+  "qt_version": "6.10.3",
+  "architecture": "x86_64",
+  "bundle_version": "0.1.35-qt6.10.3-mpv20260610-lgpl-cp2.8.5",
+  "ipc_protocol_version": 1,
+  "notices": [
+    {
+      "component": "Qt",
+      "spdx": "LGPL-3.0-only",
+      "source": "https://www.qt.io/development/open-source-lgpl-obligations"
+    },
+    {
+      "component": "mpv",
+      "spdx": "LGPL-2.1-or-later",
+      "source": "https://github.com/mpv-player/mpv"
+    },
+    {
+      "component": "FFmpeg",
+      "spdx": "LGPL-3.0-or-later",
+      "source": "https://ffmpeg.org/legal.html"
+    },
+    {
+      "component": "Cinema Paradiso Player relinking instructions",
+      "spdx": "LicenseRef-Relinking-Instructions",
+      "source": "native/player/runtime/licenses/RELINKING.md"
+    },
+    {
+      "component": "Cinema Paradiso Player third-party notices",
+      "spdx": "LicenseRef-Third-Party-Notices",
+      "source": "native/player/runtime/licenses/THIRD-PARTY-NOTICES.md"
+    },
+    {
+      "component": "Cinema Paradiso Player source information",
+      "spdx": "LicenseRef-Source-Information",
+      "source": "native/player/runtime/licenses/SOURCE-OFFER.md"
+    }
+  ],
+  "detail": "The built-in player runtime is ready."
+}

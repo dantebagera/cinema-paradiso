@@ -1,0 +1,20 @@
+Collecting pywinauto
+  Downloading pywinauto-0.6.9-py2.py3-none-any.whl.metadata (2.0 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting six (from pywinauto)
+  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting comtypes (from pywinauto)
+  Downloading comtypes-1.4.17-py3-none-any.whl.metadata (7.8 kB)
+Collecting pywin32 (from pywinauto)
+  Downloading pywin32-312-cp312-cp312-win_amd64.whl.metadata (11 kB)
+Downloading pywinauto-0.6.9-py2.py3-none-any.whl (363 kB)
+Downloading comtypes-1.4.17-py3-none-any.whl (298 kB)
+Downloading pywin32-312-cp312-cp312-win_amd64.whl (6.9 MB)
+   ---------------------------------------- 6.9/6.9 MB 3.6 MB/s  0:00:01
+Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+Installing collected packages: six, pywin32, comtypes, pywinauto
+
+Successfully installed comtypes-1.4.17 pywin32-312 pywinauto-0.6.9 six-1.17.0
+
+[notice] A new release of pip is available: 26.1.1 -> 26.2.2
+[notice] To update, run: C:\Users\dante\Desktop\cinema paradiso\.venv\Scripts\python.exe -m pip install --upgrade pip

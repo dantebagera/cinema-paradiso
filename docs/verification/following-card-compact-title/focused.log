@@ -1,0 +1,16 @@
+
+Running 9 tests using 1 worker
+
+(node:24428) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\following-card.spec.js:26:3 › Following compact heading shares its action row at 1600px with playback true (1.3s)
+  ok 2 tests\e2e\following-card.spec.js:26:3 › Following compact heading shares its action row at 1920px with playback true (749ms)
+  ok 3 tests\e2e\following-card.spec.js:26:3 › Following compact heading shares its action row at 1600px with playback false (858ms)
+  ok 4 tests\e2e\following-card.spec.js:75:1 › Following filters use existing statuses and update count while availability badge stays global (923ms)
+  ok 5 tests\e2e\following-card.spec.js:111:1 › download previews all available movies regardless of filter and preserves explicit shared submission (919ms)
+  ok 6 tests\e2e\following-card.spec.js:149:1 › scan refreshes selected filter and the global available count from the same followed state (488ms)
+  ok 7 tests\e2e\following-card.spec.js:160:1 › empty filter and empty followed list retain zero counts and safe download state (557ms)
+  ok 8 tests\e2e\following-card.spec.js:173:1 › cancelled pending source review cannot reopen on navigation or after late response (805ms)
+  ok 9 tests\e2e\following-card.spec.js:206:1 › failed source preview remains reviewable and can be retried without queueing (553ms)
+
+  9 passed (7.9s)

@@ -1,0 +1,376 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\dante\\Desktop\\cinema paradiso\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "following-refresh.spec.js",
+      "home-dashboard-hybrid.spec.js",
+      "home-loading.spec.js",
+      "--config",
+      "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass3-playwright.config.cjs",
+      "--grep",
+      "reconnect ownership runs|another completion during ownership|health cards retain|health loading preserves|health issue cards|all twenty Upcoming cards|Upcoming finishing first|pass3 manual scan"
+    ],
+    "configFile": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass3-playwright.config.cjs",
+    "rootDir": "C:/Users/dante/AppData/Local/Temp/cp-regression-recovery-30b40a41d572/pass3-specs",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/dante/AppData/Local/Temp/cp-regression-recovery-30b40a41d572/pass3-browser-results/home-following",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "C:/Users/dante/AppData/Local/Temp/cp-regression-recovery-30b40a41d572/pass3-specs",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json",
+        {
+          "outputFile": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass3-browser-home-following.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.61.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "following-refresh.spec.js",
+      "file": "following-refresh.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "reconnect ownership runs during full scan and older full response cannot restore removed movies",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1290,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T18:29:38.707Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fa09c6fe9fc9d1d7c7ff-d489b9658870befbe8e5",
+          "file": "following-refresh.spec.js",
+          "line": 19,
+          "column": 5
+        },
+        {
+          "title": "another completion during ownership read is reconciled after that read finishes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 507,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T18:29:40.166Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fa09c6fe9fc9d1d7c7ff-c57d0a93ad750b88cc17",
+          "file": "following-refresh.spec.js",
+          "line": 48,
+          "column": 5
+        },
+        {
+          "title": "pass3 manual scan calls full scan while catalogue refresh calls ownership only",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 614,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T18:29:40.679Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fa09c6fe9fc9d1d7c7ff-d87c8b25d1e08e8c06a8",
+          "file": "following-refresh.spec.js",
+          "line": 146,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "home-dashboard-hybrid.spec.js",
+      "file": "home-dashboard-hybrid.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "health cards retain current counts, stale recovery and truthful missing/empty states",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1547,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T18:29:43.970Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1e5d21c42b1f505707c3-f018982878f219e48850",
+          "file": "home-dashboard-hybrid.spec.js",
+          "line": 216,
+          "column": 5
+        },
+        {
+          "title": "health loading preserves cached counts and high-count detail text stays readable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 612,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T18:29:45.685Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1e5d21c42b1f505707c3-e0f8d3150a9ac223d15b",
+          "file": "home-dashboard-hybrid.spec.js",
+          "line": 230,
+          "column": 5
+        },
+        {
+          "title": "health issue cards keep their cleanup destinations",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1559,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T18:29:46.303Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1e5d21c42b1f505707c3-ca26e4c106f128d3515c",
+          "file": "home-dashboard-hybrid.spec.js",
+          "line": 248,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "home-loading.spec.js",
+      "file": "home-loading.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Upcoming finishing first waits for effective Trending and fills replacements without blocking Trending",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 370,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T18:29:41.306Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "211bed8c8f6bd8eabb5e-04dc87b1d8485e56fce6",
+          "file": "home-loading.spec.js",
+          "line": 97,
+          "column": 5
+        },
+        {
+          "title": "all twenty Upcoming cards are reachable with existing rail arrows",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1899,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-24T18:29:41.682Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "211bed8c8f6bd8eabb5e-c8abeb45e641f892a7ba",
+          "file": "home-loading.spec.js",
+          "line": 328,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-24T18:29:38.196Z",
+    "duration": 9749.625,
+    "expected": 8,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

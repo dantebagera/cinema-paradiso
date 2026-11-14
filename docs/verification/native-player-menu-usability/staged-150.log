@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\Users\dante\Desktop\cinema paradiso\native\player\tools\smoke_player_ui.py", line 409, in <module>
+    if __name__=='__main__': main()
+                             ^^^^^^
+  File "C:\Users\dante\Desktop\cinema paradiso\native\player\tools\smoke_player_ui.py", line 376, in main
+    session.dismiss('speed-'+('paused' if paused else 'playing'))
+  File "C:\Users\dante\Desktop\cinema paradiso\native\player\tools\smoke_player_ui.py", line 143, in dismiss
+    assert not unexpected, (label,'outside click activated playback',unexpected)
+           ^^^^^^^^^^^^^^
+AssertionError: ('speed-playing', 'outside click activated playback', [{'media_generation': 6, 'protocol': 1, 'sequence': 68, 'session_id': 'e1f300b3822f44499a34bb6fd604eabd', 'state': 'paused', 'type': 'playback.state'}])

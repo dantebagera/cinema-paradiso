@@ -1,0 +1,13 @@
+
+Running 5 tests using 1 worker
+
+
+(node:52088) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1/5] ..\pass3-specs\library-search-performance.spec.js:16:5 › rapid live typing serializes reads and renders exact identities and reachable count
+[2/5] ..\pass3-specs\library-search-performance.spec.js:60:5 › stale success and failure cannot replace latest search; empty and repeat navigation recover
+[3/5] ..\pass3-specs\library-search-performance.spec.js:91:5 › foreground typing wins while an old background poster preload is outstanding
+[4/5] ..\pass3-specs\library-search-performance.spec.js:122:5 › Movie to File to Movie during a read schedules a valid replacement and settles loading
+[5/5] ..\pass3-specs\library-search-performance.spec.js:145:5 › pass3 quiet refresh preserves page two, query, cards, loading and notifications
+  5 passed (15.7s)

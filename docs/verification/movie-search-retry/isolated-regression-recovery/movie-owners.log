@@ -1,0 +1,97 @@
+............................................................................................................................FEException in thread Thread-2 (<lambda>):
+Traceback (most recent call last):
+  File "C:\Program Files\Python312\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Program Files\Python312\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\checkout\tests\test_movie_publication_retries.py", line 127, in <lambda>
+    worker = threading.Thread(target=lambda: coordinator._run_path_episode(item))
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\checkout\services\library_ingestion.py", line 1041, in _run_path_episode
+    return self._execute_path_episode(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\checkout\services\library_ingestion.py", line 1092, in _execute_path_episode
+    if not self._write_episode(path, state):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\checkout\services\library_ingestion.py", line 888, in _write_episode
+    elif not repository.patch_file_operational(self.normalize_path(path), expected_revision=previous_revision, retry_state=next_state):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\checkout\services\catalog_repository.py", line 736, in patch_file_operational
+    changed = connection.execute("""
+              ^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: media_files
+...............................................................................................................................................................................................................EE.....................................................................................................................
+======================================================================
+ERROR: test_live_provider_reservation_is_not_treated_as_crashed_by_another_caller (tests.test_movie_publication_retries.RetryRepositoryTest.test_live_provider_reservation_is_not_treated_as_crashed_by_another_caller)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\checkout\tests\test_movie_publication_retries.py", line 89, in tearDown
+    self.workspace.cleanup()
+  File "C:\Program Files\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Program Files\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Program Files\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\shutil.py", line 639, in _rmtree_unsafe
+    onexc(os.rmdir, path, err)
+  File "C:\Program Files\Python312\Lib\shutil.py", line 637, in _rmtree_unsafe
+    os.rmdir(path)
+OSError: [WinError 145] The directory is not empty: 'C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\tmp\\unit-owners\\tmpsvinvikv'
+
+======================================================================
+ERROR: test_other_process_cannot_acquire_owned_catalog (tests.test_catalog_writer_lease.CatalogWriterLeaseTest.test_other_process_cannot_acquire_owned_catalog)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\checkout\tests\test_catalog_writer_lease.py", line 70, in test_other_process_cannot_acquire_owned_catalog
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "C:\Program Files\Python312\Lib\subprocess.py", line 1534, in _execute_child
+    sys.audit("subprocess.Popen", executable, args, cwd, env)
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\guard.py", line 70, in audit
+    if not permitted:deny(event,exe)
+                     ^^^^^^^^^^^^^^^
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\guard.py", line 33, in deny
+    raise BoundaryViolation('ISOLATION BLOCKED '+event+': '+str(value)[:180])
+guard.BoundaryViolation: ISOLATION BLOCKED subprocess.Popen: None
+
+======================================================================
+ERROR: test_process_crash_releases_operating_system_handle (tests.test_catalog_writer_lease.CatalogWriterLeaseTest.test_process_crash_releases_operating_system_handle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\checkout\tests\test_catalog_writer_lease.py", line 92, in test_process_crash_releases_operating_system_handle
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "C:\Program Files\Python312\Lib\subprocess.py", line 1534, in _execute_child
+    sys.audit("subprocess.Popen", executable, args, cwd, env)
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\guard.py", line 70, in audit
+    if not permitted:deny(event,exe)
+                     ^^^^^^^^^^^^^^^
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\guard.py", line 33, in deny
+    raise BoundaryViolation('ISOLATION BLOCKED '+event+': '+str(value)[:180])
+guard.BoundaryViolation: ISOLATION BLOCKED subprocess.Popen: None
+
+======================================================================
+FAIL: test_live_provider_reservation_is_not_treated_as_crashed_by_another_caller (tests.test_movie_publication_retries.RetryRepositoryTest.test_live_provider_reservation_is_not_treated_as_crashed_by_another_caller)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\checkout\tests\test_movie_publication_retries.py", line 129, in test_live_provider_reservation_is_not_treated_as_crashed_by_another_caller
+    self.assertTrue(entered.wait(2))
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 451 tests in 100.857s
+
+FAILED (failures=1, errors=3)
+{"group": "owners", "modules": ["test_catalog_store", "test_catalog_repository", "test_canonical_catalog", "test_advanced_library_api", "test_library_search_performance", "test_advanced_search_model", "test_advanced_discover_api", "test_library_ingestion_paths", "test_library_ingestion_queue", "test_library_ingestion_stability", "test_library_ingestion_performance", "test_movie_publication_retries", "test_qbittorrent_api", "test_qbittorrent_service", "test_download_monitor", "test_library_ingestion_api", "test_catalog_events", "test_media_assets", "test_library_ingestion_ownership", "test_library_observer", "test_library_startup_catchup", "test_startup_background", "test_library_reconcile", "test_library_ownership", "test_movie_follow_contract", "test_user_curation_store", "test_catalog_writer_lease", "test_authoritative_identity", "test_identity_decision_service", "test_identity_verification", "test_plex_manual_match", "test_movie_identity_service", "test_sql_migration_parity"], "tests": 451, "failures": 1, "errors": 3, "skips": [], "failed_tests": ["test_live_provider_reservation_is_not_treated_as_crashed_by_another_caller (tests.test_movie_publication_retries.RetryRepositoryTest.test_live_provider_reservation_is_not_treated_as_crashed_by_another_caller)", "test_live_provider_reservation_is_not_treated_as_crashed_by_another_caller (tests.test_movie_publication_retries.RetryRepositoryTest.test_live_provider_reservation_is_not_treated_as_crashed_by_another_caller)", "test_other_process_cannot_acquire_owned_catalog (tests.test_catalog_writer_lease.CatalogWriterLeaseTest.test_other_process_cannot_acquire_owned_catalog)", "test_process_crash_releases_operating_system_handle (tests.test_catalog_writer_lease.CatalogWriterLeaseTest.test_process_crash_releases_operating_system_handle)"]}

@@ -1,0 +1,14 @@
+.stream-source-stage { min-height: 240px; max-height: 65vh; overflow-y: auto; }
+.stream-source-status, .stream-source-error { display: flex; align-items: center; gap: 12px; padding: 16px; color: var(--text-muted); }
+.stream-source-error { color: var(--text-strong); }
+.iptv-source-list > .stream-source-highlighted { box-shadow: inset 0 0 0 1px var(--projector-gold); }
+.stream-dialog > .iptv-player { min-height: 0; }
+.stream-dialog .iptv-player-stage { max-height: 70vh; }
+.stream-dialog > .trailer-dialog-header { padding-right: 64px; }
+.youtube-search-controls { display: flex; align-items: center; gap: 12px; padding: 14px 16px; flex-wrap: wrap; }
+.youtube-search-controls > div { display: grid; gap: 5px; flex: 1; min-width: 240px; }
+.youtube-search-controls small { color: var(--text-muted); }
+.youtube-movie-source .stream-source-stage { max-height: 48vh; }
+.youtube-movie-source .iptv-source-list strong { overflow-wrap: anywhere; }
+.youtube-movie-source .iptv-source-list svg { flex-shrink: 0; }
+.youtube-movie-source .stream-player-shell { height: min(50vh, 500px); }

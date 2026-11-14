@@ -95,8 +95,10 @@ class TVMetadata:
             for job in person.get('jobs') or [person]:
                 kind = 'director' if job.get('job') == 'Director' else 'writer' if person.get('department') == 'Writing' else None
                 if kind:
-                    result.append({'tmdb_id': person['id'], 'name': person['name'], 'kind': kind, 'role': job.get('job', kind.title())})
-        result.extend({'tmdb_id': p['id'], 'name': p['name'], 'kind': 'creator', 'role': 'Creator'} for p in row.get('created_by', []))
+                    result.append({'tmdb_id': person['id'], 'name': person['name'], 'kind': kind, 'role': job.get('job', kind.title()),
+                                   'portrait_url': 'https://image.tmdb.org/t/p/w185' + person['profile_path'] if person.get('profile_path') else ''})
+        result.extend({'tmdb_id': p['id'], 'name': p['name'], 'kind': 'creator', 'role': 'Creator',
+                       'portrait_url': 'https://image.tmdb.org/t/p/w185' + p['profile_path'] if p.get('profile_path') else ''} for p in row.get('created_by', []))
         return list({(p['tmdb_id'], p['kind'], p['role']): p for p in result}.values())
 
     @staticmethod
@@ -194,7 +196,7 @@ class TVMetadata:
         return {**row, 'preview': True, 'cast': row['credits'], 'year_range': year_range(row), 'status_label': row['status'] or 'Status Unknown',
                 'season_count': sum(s['number'] > 0 for s in seasons), 'episode_count': raw.get('number_of_episodes', 0),
                 'available_count': 0, 'seasons': seasons, 'default_season': first_season['season_number'] if first_season else next((s['number'] for s in seasons), 0),
-                'primary_action': {'playable': False, 'label': 'No local episodes', 'reason': 'Downloads add this show to your library automatically. Adding it manually does not start downloads.'}, 'stream_target': stream_target}
+                'primary_action': {'playable': False, 'label': 'No local episodes', 'reason': ''}, 'stream_target': stream_target}
 
     def translation(self, tmdb_id, language='ar-SA'):
         tmdb_id = int(tmdb_id)

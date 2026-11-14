@@ -4,6 +4,7 @@ from pathlib import Path
 
 from .iptv_metadata_settings import IPTVMetadataSettings
 from .iptv_movie_service import IPTVMovieService, classify_enrichment_error
+from .iptv_movie_store import IPTVEnrichmentSuperseded
 from .iptv_service import IPTVService
 
 
@@ -46,32 +47,40 @@ def run_worker(movie_service, *, max_jobs=0, lease_token=""):
             outcomes = movie_service.enrich_work_cluster(
                 cluster["source_keys"],
                 should_continue=lambda: store.worker_run_requested(token),
+                claimed_at=cluster["claimed_at"],
             )
             pause_reason = None
             for outcome in outcomes:
+                completed += 1
                 source_key_value = outcome["source_key"]
                 error = outcome.get("_error")
                 if error is None:
-                    store.finish_job(source_key_value, status="done")
-                    completed += 1
+                    store.finish_job(source_key_value, status="done", claimed_at=cluster["claimed_at"])
+                    continue
+                if isinstance(error, IPTVEnrichmentSuperseded):
                     continue
                 state, code, retryable, retry_after = classify_enrichment_error(error)
                 message = movie_service.metadata_settings.redact(error)
-                store.set_match_state(
-                    [source_key_value], state, method="worker", error_code=code, error_message=message
-                )
-                store.finish_job(
-                    source_key_value,
-                    status="pending" if retryable else "failed",
-                    retry_after=retry_after,
-                    error=message,
-                )
+                try:
+                    store.set_match_state(
+                        [source_key_value], state, method="worker", error_code=code, error_message=message,
+                        claimed_at=cluster["claimed_at"],
+                    )
+                except IPTVEnrichmentSuperseded:
+                    pass
+                else:
+                    store.finish_job(
+                        source_key_value,
+                        status="pending" if retryable else "failed",
+                        retry_after=retry_after,
+                        error=message,
+                        claimed_at=cluster["claimed_at"],
+                    )
                 if code == "authentication":
                     pause_reason = "IPTV TMDB authentication failed"
                 if code == "rate-limit":
                     store.worker_backoff(token, "IPTV TMDB rate limit reached", time.time() + retry_after)
                     pause_reason = "IPTV TMDB rate limit reached"
-                completed += 1
             if len(outcomes) < len(cluster["source_keys"]):
                 store.release_cluster(cluster["work_key"], token)
             else:

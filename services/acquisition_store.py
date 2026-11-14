@@ -15,7 +15,7 @@ class AcquisitionRepository:
         self.path, self.clock = guarded_path(path), clock
         self.path.parent.mkdir(parents=True, exist_ok=True)
         with self.connection() as db:
-            if db.execute('PRAGMA user_version').fetchone()[0] > 3:
+            if db.execute('PRAGMA user_version').fetchone()[0] > 4:
                 raise ValueError('Acquisition schema is newer than this application')
             db.executescript('''
                 CREATE TABLE IF NOT EXISTS profiles(id TEXT PRIMARY KEY,name TEXT NOT NULL,payload TEXT NOT NULL,version INTEGER NOT NULL);
@@ -53,8 +53,12 @@ class AcquisitionRepository:
                   task_id TEXT, episode_key TEXT, event_key TEXT NOT NULL UNIQUE,
                   severity TEXT NOT NULL, title TEXT NOT NULL, body TEXT NOT NULL,
                   link TEXT NOT NULL, created_at REAL NOT NULL, read_at REAL);
-                PRAGMA user_version=3;
             ''')
+            db.execute('BEGIN IMMEDIATE')
+            columns = {row[1] for row in db.execute('PRAGMA table_info(tv_task_episodes)')}
+            if 'source_diagnostics' not in columns:
+                db.execute("ALTER TABLE tv_task_episodes ADD COLUMN source_diagnostics TEXT NOT NULL DEFAULT '{}'")
+            db.execute('PRAGMA user_version=4')
             profile = default_profile(compatibility=True, quality=quality)
             db.execute('INSERT OR IGNORE INTO profiles VALUES(?,?,?,?)', (profile['id'], profile['name'], json.dumps(profile), 1))
             profile = default_profile()

@@ -1,3 +1,4 @@
+import Button from './ui/Button.jsx';
 import { Clapperboard, Film, PenLine } from 'lucide-react';
 import { useState } from 'react';
 
@@ -34,19 +35,19 @@ export default function PersonSearchCard({ person, meta, knownFor = [], roles = 
       </div>
       <div className="person-search-actions">
         {canBrowseActing && (
-          <button type="button" className="btn btn-secondary" onClick={() => onOpenFilmography(person, 'actor')}>
+          <Button type="button"  onClick={() => onOpenFilmography(person, 'actor')}>
             <Film size={15} /> Acting credits
-          </button>
+          </Button>
         )}
         {canBrowseDirecting && (
-          <button type="button" className="btn btn-secondary" onClick={() => onOpenFilmography(person, 'director')}>
+          <Button type="button"  onClick={() => onOpenFilmography(person, 'director')}>
             <Clapperboard size={15} /> Directed films
-          </button>
+          </Button>
         )}
         {canBrowseWriting && (
-          <button type="button" className="btn btn-secondary" onClick={() => onOpenFilmography(person, 'writer')}>
+          <Button type="button"  onClick={() => onOpenFilmography(person, 'writer')}>
             <PenLine size={15} /> Written films
-          </button>
+          </Button>
         )}
       </div>
     </article>

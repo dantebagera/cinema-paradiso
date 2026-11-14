@@ -1,0 +1,183 @@
+
+> cinema-paradiso-frontend@3.0.0-beta.2 test:e2e
+> powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/run_playwright_e2e.ps1 iptv-people.spec.js --grep opens full
+
+CP_TEST_ROOT=C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd
+
+> cinema-paradiso-frontend@3.0.0-beta.2 build
+> vite build --outDir C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd\dist
+
+vite v6.4.3 building for production...
+
+(!) outDir C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd\dist is not inside project root and will not be emptied.
+Use --emptyOutDir to override.
+
+transforming...
+✓ 1749 modules transformed.
+rendering chunks...
+computing gzip size...
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/manifest-BSGbUmFO.webmanifest          0.55 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/logo-Dk1rN4XL.svg                      1.25 kB │ gzip:   0.55 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/index.html                                    1.94 kB │ gzip:   0.85 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/styleguide-motif-crop-B3fTh5_H.png   119.86 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/header-Cr7VYxUL.png                  402.60 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/home-film-projector-Cy2UE5XO.png     763.94 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/HomeWorkspace-_NC_Abiy.css            13.55 kB │ gzip:   3.27 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/iptv-B6x-Tuph.css                     40.66 kB │ gzip:   6.71 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/index-D1BdEqO-.css                   224.61 kB │ gzip:  38.97 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/WorkspaceEmptyState-BDDRbUY5.js        0.33 kB │ gzip:   0.23 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/WorkspacePathBar-VC2jgWBZ.js           2.50 kB │ gzip:   0.96 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/LibraryControls-DqLCUsop.js            2.83 kB │ gzip:   0.90 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/CatalogMetadataFilters-wwGxlnRo.js     3.11 kB │ gzip:   1.35 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/DownloadsWorkspace-ERF5byUc.js         3.82 kB │ gzip:   1.56 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/vendor-Bb8JjhAW.js                     3.85 kB │ gzip:   1.72 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/useMovieCollectionCache-CUAT5Flh.js    5.59 kB │ gzip:   2.22 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/SourceReviewDialog-gxJ2BvBk.js         6.63 kB │ gzip:   2.40 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/MetadataCorrectionModal-Cb44V_RA.js    9.93 kB │ gzip:   3.26 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/AIControlWorkspace-BwwQi8Pr.js        10.19 kB │ gzip:   3.62 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/StyleGuide-BKKijksB.js                10.45 kB │ gzip:   3.02 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/CardLab-DHzhjOo2.js                   11.52 kB │ gzip:   4.14 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/DiscoverResultGrid-CXaxZ7yb.js        12.07 kB │ gzip:   4.62 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/HomeWorkspace-DT36ZKa5.js             22.66 kB │ gzip:   7.45 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/HelpWorkspace-DwpRDeZN.js             23.08 kB │ gzip:   7.63 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/vendor-icons-n5kuJKvW.js              33.50 kB │ gzip:   6.78 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/AIActionReview-DFcYYzmX.js            35.09 kB │ gzip:  11.39 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/ListsWorkspace-9gTqinJE.js            46.27 kB │ gzip:  14.23 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/LibraryWorkspace-DPX4AV4Q.js          48.85 kB │ gzip:  14.89 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/DiscoverWorkspace-Sc5c6LVF.js         64.40 kB │ gzip:  19.84 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/CleanupWorkspace-DRD0zeV4.js          73.42 kB │ gzip:  19.71 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/IPTVWorkspace-DG6IK3L6.js             91.82 kB │ gzip:  25.95 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/SettingsWorkspace-D4TnGpMe.js         99.72 kB │ gzip:  24.94 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/vendor-react-CJZMWplS.js             189.82 kB │ gzip:  59.19 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/index-BRQwa1ci.js                    297.37 kB │ gzip:  87.96 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd/dist/assets/vendor-player-Dv34CeeU.js            353.87 kB │ gzip: 110.81 kB
+✓ built in 2.46s
+
+Running 2 tests using 1 worker
+
+(node:31076) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tests\e2e\iptv-people.spec.js:75:3 › actor Filmography opens full Movie Discover while the portrait remains provider-local (17.4s)
+(node:18780) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  2 tests\e2e\iptv-people.spec.js:75:3 › director Filmography opens full Movie Discover while the portrait remains provider-local (16.9s)
+
+
+  1) tests\e2e\iptv-people.spec.js:75:3 › actor Filmography opens full Movie Discover while the portrait remains provider-local 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('IPTV > Actor: Fixture Actor', { exact: true })
+    Expected: visible
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 15000ms
+      - waiting for getByText('IPTV > Actor: Fixture Actor', { exact: true })
+
+
+      89 |     await expect(page).toHaveURL(/\/discover$/);
+      90 |     await expect(page.getByRole('heading', { name: outside.title, exact: true })).toBeVisible();
+    > 91 |     await expect(page.getByText(`IPTV > ${role === 'actor' ? 'Actor' : 'Director'}: ${person}`, { exact: true })).toBeVisible();
+         |                                                                                                                   ^
+      92 |     expect(creditsRequest.searchParams.get('person_id')).toBe(personId);
+      93 |     expect(creditsRequest.searchParams.get('role')).toBe(role);
+      94 |     await expect(page.getByRole('button', { name: 'Movies', exact: true })).toHaveAttribute('aria-pressed', 'true');
+        at C:\Users\dante\.codex\worktrees\iptv-discover-streaming\cinema paradiso\tests\e2e\iptv-people.spec.js:91:115
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\iptv-people-actor-Filmogra-33753-rait-remains-provider-local\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\iptv-people-actor-Filmogra-33753-rait-remains-provider-local\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\iptv-people-actor-Filmogra-33753-rait-remains-provider-local\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\iptv-people-actor-Filmogra-33753-rait-remains-provider-local\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) tests\e2e\iptv-people.spec.js:75:3 › director Filmography opens full Movie Discover while the portrait remains provider-local 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('IPTV > Director: Fixture Director', { exact: true })
+    Expected: visible
+    Timeout: 15000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 15000ms
+      - waiting for getByText('IPTV > Director: Fixture Director', { exact: true })
+
+
+      89 |     await expect(page).toHaveURL(/\/discover$/);
+      90 |     await expect(page.getByRole('heading', { name: outside.title, exact: true })).toBeVisible();
+    > 91 |     await expect(page.getByText(`IPTV > ${role === 'actor' ? 'Actor' : 'Director'}: ${person}`, { exact: true })).toBeVisible();
+         |                                                                                                                   ^
+      92 |     expect(creditsRequest.searchParams.get('person_id')).toBe(personId);
+      93 |     expect(creditsRequest.searchParams.get('role')).toBe(role);
+      94 |     await expect(page.getByRole('button', { name: 'Movies', exact: true })).toHaveAttribute('aria-pressed', 'true');
+        at C:\Users\dante\.codex\worktrees\iptv-discover-streaming\cinema paradiso\tests\e2e\iptv-people.spec.js:91:115
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\iptv-people-director-Filmo-5e47a-rait-remains-provider-local\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\iptv-people-director-Filmo-5e47a-rait-remains-provider-local\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\iptv-people-director-Filmo-5e47a-rait-remains-provider-local\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\iptv-people-director-Filmo-5e47a-rait-remains-provider-local\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    tests\e2e\iptv-people.spec.js:75:3 › actor Filmography opens full Movie Discover while the portrait remains provider-local 
+    tests\e2e\iptv-people.spec.js:75:3 › director Filmography opens full Movie Discover while the portrait remains provider-local 
+Playwright evidence retained at C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-77dfc299efe045e0920fae966bf52fcd
+127.0.0.1 - - [13/Nov/2026 21:27:03] "GET /assets/IPTVWorkspace-DG6IK3L6.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:03] "GET /assets/AIActionReview-DFcYYzmX.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:03] "GET /assets/SourceReviewDialog-gxJ2BvBk.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:03] "GET /assets/DiscoverResultGrid-CXaxZ7yb.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:03] "GET /assets/useMovieCollectionCache-CUAT5Flh.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:03] "GET /assets/iptv-B6x-Tuph.css HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:03] "GET /assets/LibraryControls-DqLCUsop.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:03] "GET /api/tv/capabilities HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:03] "GET /api/power/status HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:03] "GET /api/streaming/config HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:03] "GET /api/notifications?query=&page=1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:03] "GET /api/library/reconcile HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:03] "GET /api/ai/config HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:03] "GET /api/catalog/events HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:03] "GET /api/user/followed-releases HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:03] "GET /api/iptv/providers HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:03] "POST /api/user/followed-releases/reconcile-owned HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:03] "POST /api/user/followed-releases/check HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:03] "GET /api/iptv/providers/30b09d9efe7d4ee5bafb69ab855747e2/status HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:03] "GET /api/iptv/providers/30b09d9efe7d4ee5bafb69ab855747e2/recent?limit=12 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:04] "GET /api/iptv/providers/30b09d9efe7d4ee5bafb69ab855747e2/movies/metadata/status HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:04] "GET /api/iptv/providers/30b09d9efe7d4ee5bafb69ab855747e2/movies?view=provider&sort=recent&page=1&page_size=30 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:04] "GET /api/iptv/providers/30b09d9efe7d4ee5bafb69ab855747e2/movies/facets?view=provider HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:04] "GET /api/iptv/providers/30b09d9efe7d4ee5bafb69ab855747e2/movies?view=cp&sort=recent&page=1&page_size=30 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:04] "GET /api/iptv/providers/30b09d9efe7d4ee5bafb69ab855747e2/movies/facets?view=cp HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:04] "GET /api/iptv/providers/30b09d9efe7d4ee5bafb69ab855747e2/movies/tmdb:550 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:05] "GET /assets/DiscoverWorkspace-Sc5c6LVF.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:05] "GET /assets/WorkspacePathBar-VC2jgWBZ.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:05] "GET /assets/CatalogMetadataFilters-wwGxlnRo.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:05] "GET /api/tmdb/filter-options HTTP/1.1" 400 -
+127.0.0.1 - - [13/Nov/2026 21:27:05] "GET /api/tv/catalog/options?scope=discover HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:05] "GET /api/user/lists HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:05] "GET /api/movie-awards/snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:05] "POST /api/tv/catalog/search HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:05] "POST /api/iptv/movies/availability HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:05] "POST /api/library/check HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:05] "GET /api/tv/lists HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:08] "GET /api/power/status HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:13] "GET /api/power/status HTTP/1.1" 200 -
+127.0.0.1 - - [13/Nov/2026 21:27:18] "GET /api/power/status HTTP/1.1" 200 -

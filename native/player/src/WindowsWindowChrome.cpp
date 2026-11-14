@@ -3,6 +3,7 @@
 #include <QCoreApplication>
 #include <QQuickWindow>
 #include <QWindow>
+#include <QVariant>
 
 #ifdef Q_OS_WIN
 #ifndef NOMINMAX
@@ -180,6 +181,13 @@ bool WindowsWindowChrome::nativeEventFilter(
 
     if (nativeMessage->message != WM_NCHITTEST) {
         return false;
+    }
+
+    // Ordinary menus own the whole window's dismissing gesture. Return client
+    // input so Windows cannot drag, resize or maximize behind the QML overlay.
+    if (m_window->property("blocksWindowGestures").toBool()) {
+        *result = HTCLIENT;
+        return true;
     }
 
     if (m_window->visibility() == QWindow::FullScreen) {

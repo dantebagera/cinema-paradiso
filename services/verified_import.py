@@ -3,6 +3,26 @@ import hashlib
 import os
 from pathlib import Path
 import shutil
+import stat
+
+
+def verified_staging_source(path, staging_root):
+    """Keep the manifest path inside staging without traversing directory aliases."""
+    root = Path(os.path.abspath(staging_root))
+    source = Path(os.path.abspath(path))
+    if root not in source.parents:
+        raise ValueError('Cleanup source escaped staging')
+    current = root
+    for component in ('', *source.relative_to(root).parts):
+        if component:
+            current = current / component
+        try:
+            attributes = current.lstat()
+        except FileNotFoundError:
+            continue  # A previously checkpointed cleanup may have removed this path.
+        if stat.S_ISLNK(attributes.st_mode) or getattr(attributes, 'st_file_attributes', 0) & getattr(stat, 'FILE_ATTRIBUTE_REPARSE_POINT', 0x400):
+            raise ValueError('Staging source traverses a symbolic link or directory junction; review required')
+    return source.resolve()
 
 
 def sha256(path):
@@ -167,19 +187,41 @@ def finalize_verified_move(jobs, torrent_hash, staging_root):
     if not job or job.get('tv_publication', {}).get('state') != 'committed' or not job.get('torrent_removed'):
         raise ValueError('Move cleanup requires committed TV publication and torrent removal')
     staging_root = Path(staging_root).resolve()
-    recorded_root = Path(job['tv_staging_root']).resolve()
+    recorded_path = Path(job['tv_staging_root'])
+    recorded_root = (verified_staging_source(recorded_path, staging_root)
+                     if recorded_path != staging_root else staging_root)
     if recorded_root != staging_root and staging_root not in recorded_root.parents:
         raise ValueError('Recorded cleanup directory escaped staging')
     plan = job['preserving_import_plan']
     declared = {row['source'] for row in job['tv_selected_files']}
     if {row['source'] for row in plan} != declared:
         raise ValueError('Move cleanup does not match the validated selected manifest')
-    for row in plan:
-        source, target = Path(row['source']).resolve(), Path(row['target']).resolve()
+    auxiliary = job.get('tv_auxiliary_files') or []
+    skipped = ((job.get('validated_manifest') or {}).get('domain') or {}).get('skipped_files') or []
+    source_paths = {row['source']: recorded_root / row['name'] if row.get('name') else Path(row['source'])
+                    for row in job['tv_selected_files']}
+    for row in auxiliary:
+        if row.get('name') not in skipped:
+            raise ValueError('Auxiliary cleanup does not match the validated skipped manifest')
+        path = recorded_root / row['name']
+        if str(verified_staging_source(path, staging_root)) != row['source']:
+            raise ValueError('Auxiliary cleanup path changed; review required')
+        source_paths[row['source']] = path
+    auxiliary_sources = {row['source'] for row in auxiliary}
+    if auxiliary_sources & declared or len(auxiliary_sources) != len(auxiliary):
+        raise ValueError('Auxiliary cleanup does not match the validated skipped manifest')
+    declared |= auxiliary_sources
+    cleanup_sources = plan + auxiliary
+    for row in cleanup_sources:
+        source = verified_staging_source(source_paths[row['source']], staging_root)
+        if str(source) != row['source']:
+            raise ValueError('Cleanup source path changed; review required')
         if staging_root not in source.parents or (recorded_root != source.parent and recorded_root not in source.parents):
             raise ValueError('Cleanup source escaped its recorded staging directory')
-        if not target.is_file() or target.stat().st_size != row['size'] or sha256(target) != row['sha256']:
-            raise ValueError('Published destination changed; cleanup requires review')
+        if 'target' in row:
+            target = Path(row['target']).resolve()
+            if not target.is_file() or target.stat().st_size != row['size'] or sha256(target) != row['sha256']:
+                raise ValueError('Published destination changed; cleanup requires review')
         if source.exists():
             if not source.is_file() or source.stat().st_size != row['size'] or sha256(source) != row['sha256']:
                 raise ValueError('Source changed; cleanup requires review')
@@ -193,28 +235,33 @@ def finalize_verified_move(jobs, torrent_hash, staging_root):
             references = list(other.get('payload_paths') or [])
             references += [entry['source'] for entry in other.get('preserving_import_plan') or []]
             references += [entry['source'] for entry in other.get('tv_selected_files') or []]
+            references += [entry['source'] for entry in other.get('tv_auxiliary_files') or []]
             other_root = Path(other.get('tv_staging_root') or other.get('tv_download_staging_root') or staging_root)
             references += [str(other_root / entry['name']) for entry in
                 ((other.get('validated_manifest') or {}).get('domain') or {}).get('mappings', [])]
+            references += [str(other_root / name) for name in
+                ((other.get('validated_manifest') or {}).get('domain') or {}).get('skipped_files', [])]
             if any(Path(path).resolve() == source for path in references):
                 raise ValueError('Source is referenced by another active job; cleanup requires review')
     # A dedicated payload directory belongs to this job only when its contents are known.
     # The shared staging root itself may contain other jobs and is never traversed/deleted.
-    cleanup_dirs = {Path(row['source']).parent for row in plan if Path(row['source']).parent != staging_root}
+    cleanup_dirs = {Path(row['source']).parent for row in cleanup_sources if Path(row['source']).parent != staging_root}
     if recorded_root != staging_root:
         cleanup_dirs.add(recorded_root)
     for folder in cleanup_dirs:
         if folder.exists() and any(path.is_file() and str(path.resolve()) not in declared for path in folder.rglob('*')):
             raise ValueError('Unknown staging contents; cleanup requires review')
     jobs.upsert(torrent_hash, {'cleanup_started': True, 'rollback_available': False})
-    for row in plan:
-        source = Path(row['source'])
+    for row in cleanup_sources:
+        source = verified_staging_source(source_paths[row['source']], staging_root)
+        if str(source) != row['source']:
+            raise ValueError('Cleanup source path changed; review required')
         if source.exists():
             row['cleanup_state'] = 'unlinking'
-            jobs.upsert(torrent_hash, {'preserving_import_plan': plan})
+            jobs.upsert(torrent_hash, {'preserving_import_plan': plan, 'tv_auxiliary_files': auxiliary})
             source.unlink()
         row['cleanup_state'] = 'removed'
-        jobs.upsert(torrent_hash, {'preserving_import_plan': plan})
+        jobs.upsert(torrent_hash, {'preserving_import_plan': plan, 'tv_auxiliary_files': auxiliary})
     for folder in sorted(cleanup_dirs, key=lambda path: len(path.parts), reverse=True):
         while folder != staging_root and staging_root in folder.resolve().parents and folder.is_dir():
             if any(folder.iterdir()):

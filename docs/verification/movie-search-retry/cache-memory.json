@@ -1,0 +1,9 @@
+{
+  "retained_bytes": 21496592,
+  "peak_bytes": 21499042,
+  "cache": {
+    "entries": 32768,
+    "bytes": 24479392
+  },
+  "cpu_seconds": 0.9375
+}

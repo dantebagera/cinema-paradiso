@@ -27,7 +27,7 @@ class DiscoverHoverUiTest(unittest.TestCase):
         self.assertRegex(
             self.styles,
             re.compile(
-                r"\.discover-card-expanded\s*\{[^}]*border-color:\s*#d4af375a;[^}]*box-shadow:\s*var\(--shadow-card\);",
+                r"\.discover-card-expanded\s*\{[^}]*box-shadow:\s*var\(--shadow-card\);[^}]*transform:\s*none;",
                 re.S,
             ),
         )

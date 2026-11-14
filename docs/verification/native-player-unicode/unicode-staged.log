@@ -1,0 +1,20 @@
+test_arabic_directory_and_accented_filename (tests.test_player_unicode_runtime.NativeUnicodePlaybackTests.test_arabic_directory_and_accented_filename) ... FAIL
+test_arabic_external_subtitle_on_ascii_video (tests.test_player_unicode_runtime.NativeUnicodePlaybackTests.test_arabic_external_subtitle_on_ascii_video) ... ok
+test_arabic_filename (tests.test_player_unicode_runtime.NativeUnicodePlaybackTests.test_arabic_filename) ... ok
+test_ascii_filename_remains_playable (tests.test_player_unicode_runtime.NativeUnicodePlaybackTests.test_ascii_filename_remains_playable) ... ok
+test_real_les_miserables_with_accented_filename (tests.test_player_unicode_runtime.NativeUnicodePlaybackTests.test_real_les_miserables_with_accented_filename) ... ok
+
+======================================================================
+FAIL: test_arabic_directory_and_accented_filename (tests.test_player_unicode_runtime.NativeUnicodePlaybackTests.test_arabic_directory_and_accented_filename)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\Desktop\cinema paradiso\tests\test_player_unicode_runtime.py", line 61, in test_arabic_directory_and_accented_filename
+    self.assert_plays(Path(os.environ["CP_NATIVE_TEST_MEDIA_ROOT"]) / "\u0645\u062c\u0644\u062f" / "Les Mis�rables.mp4")
+  File "C:\Users\dante\Desktop\cinema paradiso\tests\test_player_unicode_runtime.py", line 39, in assert_plays
+    self.assertGreaterEqual(report["track_count"], 2)
+AssertionError: 1 not greater than or equal to 2
+
+----------------------------------------------------------------------
+Ran 5 tests in 31.756s
+
+FAILED (failures=1)

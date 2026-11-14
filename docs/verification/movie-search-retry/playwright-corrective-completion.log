@@ -1,0 +1,9 @@
+
+Running 1 test using 1 worker
+
+
+
+(node:26528) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1/1] tests\e2e\following-refresh.spec.js:112:1 › real import publication refreshes Library and removes Following without Force scan, including reconnect
+  1 passed (7.5s)

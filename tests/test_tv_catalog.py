@@ -8,6 +8,97 @@ from services.tv_read_model import TVReadModel
 
 
 class TVCatalogTests(unittest.TestCase):
+    def version_fixture(self):
+        from services.tv_playback import TVPlayback
+        rows = self.repo.episodes(self.series_id, 1)[:2]
+        files = []
+        for row in rows:
+            pair = []
+            for name, quality in [('z-low', '720p'), ('a-high', '1080p')]:
+                path = self.root / f'{row["id"]}-{name}.mkv'
+                path.write_bytes(b'synthetic')
+                pair.append(self.repo.bind_file(path, [row['id']], {'quality_class': quality}, [self.root]))
+            files.append(pair)
+        return rows, files, TVPlayback(self.repo, lambda: [self.root])
+
+    def version_paths(self, rows, playback):
+        yield playback
+        if hasattr(self.repo, 'library_read_context'):
+            from types import SimpleNamespace
+            from services.tv_playback import TVPlayback
+            context = self.repo.library_read_context()
+            yield TVPlayback(SimpleNamespace(episode=self.repo.episode, series=self.repo.series,
+                episodes=lambda *a, **kw: self.repo.library_episode_rows(*a, **kw, read_context=context)), lambda: [self.root])
+
+    def test_version_order_and_default_target_are_preserved(self):
+        rows, files, playback = self.version_fixture()
+        self.assertEqual(files, [[1, 2], [3, 4]])
+        for adapter in self.version_paths(rows, playback):
+            values = adapter.repository.episodes(self.series_id, 1)[:2]
+            self.assertEqual([[v['file_id'] for v in row['versions']] for row in values], [[1, 2], [3, 4]])
+            for row, pair in zip(rows, files):
+                self.assertEqual(adapter.target(row['id']), f'tv:episode:{row["id"]}:file:{pair[0]}')
+
+    def test_saved_and_explicit_versions_are_preserved(self):
+        rows, files, playback = self.version_fixture()
+        self.repo.save_progress(rows[0]['id'], files[0][1], position_ms=123)
+        for adapter in self.version_paths(rows, playback):
+            self.assertEqual(adapter.target(rows[0]['id']), f'tv:episode:{rows[0]["id"]}:file:2')
+            self.assertEqual(adapter.target(rows[0]['id'], 1), f'tv:episode:{rows[0]["id"]}:file:1')
+
+    def test_unavailable_version_selection_is_preserved(self):
+        from services.player_catalog import PlayerMediaError
+        rows, files, playback = self.version_fixture()
+        self.repo.save_progress(rows[0]['id'], 2)
+        (self.root/f'{rows[0]["id"]}-a-high.mkv').unlink()
+        for adapter in self.version_paths(rows, playback):
+            self.assertEqual(adapter.target(rows[0]['id']), f'tv:episode:{rows[0]["id"]}:file:1')
+            with self.assertRaisesRegex(PlayerMediaError, 'Episode file is missing'):
+                adapter.target(rows[0]['id'], 2)
+        (self.root/f'{rows[0]["id"]}-z-low.mkv').unlink()
+        for adapter in self.version_paths(rows, playback):
+            with self.assertRaisesRegex(PlayerMediaError, 'Episode file is missing'):
+                adapter.target(rows[0]['id'])
+
+    def test_queue_preserves_current_and_successor_file_keys(self):
+        rows, files, playback = self.version_fixture()
+        current = {'episode_id': rows[0]['id'], 'path_key': f'tv:episode:{rows[0]["id"]}:file:2'}
+        for unavailable in (False, True):
+            if unavailable:
+                for name in ('z-low', 'a-high'): (self.root/f'{rows[1]["id"]}-{name}.mkv').unlink()
+            for adapter in self.version_paths(rows, playback):
+                queue = adapter.queue(current)
+                expected = [{'path_key': current['path_key'], 'title': f'{rows[0]["code"]} · {rows[0]["title"]}',
+                             'section': 'Season 1', 'available': True, 'reason': ''},
+                            {'path_key': f'missing:tv:{rows[1]["id"]}' if unavailable else f'tv:episode:{rows[1]["id"]}:file:3',
+                             'title': f'{rows[1]["code"]} · {rows[1]["title"]}', 'section': 'Season 1',
+                             'available': not unavailable, 'reason': 'Episode is missing locally' if unavailable else ''}]
+                remaining = self.repo.episodes(self.series_id)
+                for row in remaining:
+                    if row['season_number'] == 0 or row['id'] in {r['id'] for r in rows}: continue
+                    reason = 'Episode has not aired' if not row['released'] else 'Episode is missing locally'
+                    expected.append({'path_key':f'missing:tv:{row["id"]}', 'title':f'{row["code"]} · {row["title"]}',
+                                     'section':f'Season {row["season_number"]}', 'available':False,'reason':reason})
+                self.assertEqual(queue,{'title':self.fixture['series']['title'],'items':expected})
+
+    def test_stored_unavailable_versions_remain_unplayable_when_files_exist(self):
+        from services.player_catalog import PlayerMediaError
+        rows, files, playback = self.version_fixture()
+        self.repo.save_progress(rows[0]['id'], files[0][1])
+        with self.repo.store.transaction() as db:
+            db.execute('UPDATE media_files SET available=0 WHERE id=?', (files[0][1],))
+        self.assertTrue((self.root/f'{rows[0]["id"]}-a-high.mkv').is_file())
+        for adapter in self.version_paths(rows, playback):
+            self.assertEqual(adapter.target(rows[0]['id']), f'tv:episode:{rows[0]["id"]}:file:1')
+            with self.assertRaisesRegex(PlayerMediaError, 'Episode file is missing'):
+                adapter.target(rows[0]['id'], files[0][1])
+        with self.repo.store.transaction() as db:
+            db.execute('UPDATE media_files SET available=0 WHERE id=?', (files[0][0],))
+        self.assertTrue((self.root/f'{rows[0]["id"]}-z-low.mkv').is_file())
+        for adapter in self.version_paths(rows, playback):
+            with self.assertRaisesRegex(PlayerMediaError, 'Episode file is missing'):
+                adapter.target(rows[0]['id'])
+
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.root = Path(self.temp.name)

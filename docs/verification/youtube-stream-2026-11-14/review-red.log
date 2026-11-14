@@ -1,0 +1,62 @@
+======================================================================
+ERROR: test_failed_second_query_returns_partial_real_results_and_keeps_error (tests.test_chatgpt_youtube.YouTubeJobTests.test_failed_second_query_returns_partial_real_results_and_keeps_error)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\youtube-movie-stream\cinema paradiso\tests\test_chatgpt_youtube.py", line 76, in test_failed_second_query_returns_partial_real_results_and_keeps_error
+    self.assertEqual([v['video_id'] for v in result['output']['candidates']], ['aaaaaa1'])
+                                             ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+
+======================================================================
+FAIL: test_cancel_during_upstream_response_does_not_commit_a_late_result (tests.test_youtube_movies.MovieSearchTests.test_cancel_during_upstream_response_does_not_commit_a_late_result)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\youtube-movie-stream\cinema paradiso\tests\test_youtube_movies.py", line 160, in test_cancel_during_upstream_response_does_not_commit_a_late_result
+    self.assertEqual(result['candidates'], [])
+AssertionError: Lists differ: [{'video_id': 'aaaaaa1', 'title': 'The Exa[183 chars]a1'}] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+{'video_id': 'aaaaaa1', 'title': 'The Example full movie', 'channel_title': 'Anyone', 'duration_seconds': 6000.0, 'runtime_difference': 0.0, 'title_score': 1, 'embeddable': True, 'url': 'https://www.youtube.com/watch?v=aaaaaa1'}
+
++ []
+- [{'channel_title': 'Anyone',
+-   'duration_seconds': 6000.0,
+-   'embeddable': True,
+-   'runtime_difference': 0.0,
+-   'title': 'The Example full movie',
+-   'title_score': 1,
+-   'url': 'https://www.youtube.com/watch?v=aaaaaa1',
+-   'video_id': 'aaaaaa1'}]
+
+======================================================================
+FAIL: test_failed_assisted_query_and_unattempted_queries_are_retryable_without_more_gpt (tests.test_youtube_movies.MovieSearchTests.test_failed_assisted_query_and_unattempted_queries_are_retryable_without_more_gpt)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\youtube-movie-stream\cinema paradiso\tests\test_youtube_movies.py", line 145, in test_failed_assisted_query_and_unattempted_queries_are_retryable_without_more_gpt
+    self.assertEqual(self.youtube._request_json.call_args.args[1]['q'], 'alternate two')
+AssertionError: 'The Example 2001' != 'alternate two'
+- The Example 2001
++ alternate two
+
+
+======================================================================
+FAIL: test_mixed_arabic_title_does_not_include_english_translation_in_queries (tests.test_youtube_movies.MovieSearchTests.test_mixed_arabic_title_does_not_include_english_translation_in_queries)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\youtube-movie-stream\cinema paradiso\tests\test_youtube_movies.py", line 130, in test_mixed_arabic_title_does_not_include_english_translation_in_queries
+    self.assertNotIn('Example', result['queries'][0])
+AssertionError: 'Example' unexpectedly found in '\u0627\u0644\u0641\u064a\u0644\u0645 (The Example) \u0641\u064a\u0644\u0645 \u0643\u0627\u0645\u0644'
+
+======================================================================
+FAIL: test_status_reads_partial_results_without_search_or_inference (tests.test_youtube_movies_api.YouTubeMovieApiTests.test_status_reads_partial_results_without_search_or_inference)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\youtube-movie-stream\cinema paradiso\tests\test_youtube_movies_api.py", line 44, in test_status_reads_partial_results_without_search_or_inference
+    self.assertEqual(result.status_code, 200)
+AssertionError: 404 != 200
+
+----------------------------------------------------------------------
+Ran 22 tests in 2.032s
+
+FAILED (failures=4, errors=1)

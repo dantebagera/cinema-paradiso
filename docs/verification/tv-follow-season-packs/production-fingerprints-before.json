@@ -1,0 +1,14 @@
+[
+  {
+    "relative": "config.json",
+    "sha256": "B106DC6DEFB1A6758361C0DCAEB8908A544FDD7805EFB0A9F2AD01798847AAC9"
+  },
+  {
+    "relative": "dist/index.html",
+    "sha256": "3F945E569C5A68A3DE480394A502B98A04AA9E912927A5B3C578449013B15A5F"
+  },
+  {
+    "relative": "data/qbittorrent/jobs.json",
+    "sha256": "C69FB1BD0FF90BBD4C7A7760BE092B6A2ABE3B8156C45A153870C153418F1DFF"
+  }
+]

@@ -2,6 +2,10 @@
 
 [Decisions and evidence](../second-brain/settings-and-infrastructure.md) · [Atlas index](README.md)
 
+## Shared desktop UI audit, 2026-11-14
+
+Dante approved implementation after selecting all recommended families. Shared `Button`/`StreamButton`/`ActionLink`, `Badge`, `FormField`, `DialogShell` and `SectionTabs` now join the existing card/workspace/search owners. Settings' private ActionButton and duplicate IPTV/AI pagination and AI selection presentation have been removed. StyleGuide uses production components. The [shared UI registry](shared-ui.md) is the authoritative starting point for every new feature; `predev` and `prebuild` enforce its reuse gate. See the [approved plan](../plans/2026-11-14-shared-ui-standardization.md) and [verification report](../verification/shared-ui-2026-11-14/report.md). Dante subsequently authorized installation: the reviewed entry `index-CD1fO69d.js` and CSS `index-BEkepvH5.css` were served and visually checked on 2026-11-14, with a complete rollback backup. See the report for the bounded live evidence.
+
 **Source checked** · 2026-11-13 on `master` at `be511f9`, with local changes. The listener on port 5000 was PID `31920`, and the homepage served `/assets/index-9d_Ds88k.js`, matching the entry script named in this checkout's `dist/index.html`. The effective runtime data directory and live feature behavior remain unverified.
 
 ## Settings and data ownership

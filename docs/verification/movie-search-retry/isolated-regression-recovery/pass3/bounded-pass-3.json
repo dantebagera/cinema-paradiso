@@ -1,0 +1,237 @@
+{
+  "batches": [
+    {
+      "name": "pass3-harness-red",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass3_support_tests.py"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "active_seconds": 0.346,
+      "process_tree_cpu_seconds": 0.09375,
+      "process_tree_write_bytes": 7730,
+      "processes": 3,
+      "temporary_footprint_bytes": 2695853001,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass3-harness-red.log"
+    },
+    {
+      "name": "pass3-harness-green",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass3_support_tests.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "active_seconds": 0.352,
+      "process_tree_cpu_seconds": 0.109375,
+      "process_tree_write_bytes": 1780,
+      "processes": 3,
+      "temporary_footprint_bytes": 2695859776,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass3-harness-green.log"
+    },
+    {
+      "name": "pass3-prepare",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass3_prepare.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "active_seconds": 1.362,
+      "process_tree_cpu_seconds": 0.859375,
+      "process_tree_write_bytes": 386301,
+      "processes": 7,
+      "temporary_footprint_bytes": 2696242607,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass3-prepare.log"
+    },
+    {
+      "name": "pass3-tv-module",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\dispatch3.py",
+        "tv-module"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "active_seconds": 15.185,
+      "process_tree_cpu_seconds": 7.46875,
+      "process_tree_write_bytes": 72204500,
+      "processes": 5,
+      "temporary_footprint_bytes": 2697705856,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass3-tv-module.log"
+    },
+    {
+      "name": "pass3-browser-prepare",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass3_prepare_browser.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "active_seconds": 0.351,
+      "process_tree_cpu_seconds": 0.125,
+      "process_tree_write_bytes": 78695,
+      "processes": 3,
+      "temporary_footprint_bytes": 2696475159,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass3-browser-prepare.log"
+    },
+    {
+      "name": "pass3-repeat-evidence",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\dispatch3.py",
+        "evidence-repeat"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "active_seconds": 0.55,
+      "process_tree_cpu_seconds": 0.28125,
+      "process_tree_write_bytes": 1216,
+      "processes": 5,
+      "temporary_footprint_bytes": 2696477002,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass3-repeat-evidence.log"
+    },
+    {
+      "name": "pass3-library-desktop",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass3_behavior.py",
+        "library"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 0,
+      "active_seconds": 1.253,
+      "process_tree_cpu_seconds": 0.875,
+      "process_tree_write_bytes": 2948034,
+      "processes": 5,
+      "temporary_footprint_bytes": 2699425387,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass3-library-desktop.log"
+    },
+    {
+      "name": "pass3-library-desktop-2",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass3_behavior.py",
+        "library"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "active_seconds": 25.902,
+      "process_tree_cpu_seconds": 14.796875,
+      "process_tree_write_bytes": 101772001,
+      "processes": 18,
+      "temporary_footprint_bytes": 2704541575,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass3-library-desktop-2.log"
+    },
+    {
+      "name": "pass3-home-following-desktop",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass3_behavior.py",
+        "home-following"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "active_seconds": 13.008,
+      "process_tree_cpu_seconds": 13.125,
+      "process_tree_write_bytes": 41956239,
+      "processes": 23,
+      "temporary_footprint_bytes": 2710192040,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass3-home-following-desktop.log"
+    },
+    {
+      "name": "pass3-post-recovery-stores",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass3_recovery_dispatch.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "active_seconds": 9.064,
+      "process_tree_cpu_seconds": 8.390625,
+      "process_tree_write_bytes": 2597,
+      "processes": 5,
+      "temporary_footprint_bytes": 2708100975,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass3-post-recovery-stores.log"
+    },
+    {
+      "name": "pass3-guard-controls",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass2_preflight.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "active_seconds": 0.553,
+      "process_tree_cpu_seconds": 0.25,
+      "process_tree_write_bytes": 2356,
+      "processes": 7,
+      "temporary_footprint_bytes": 2708103749,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass3-guard-controls.log"
+    },
+    {
+      "name": "pass3-evidence-stage",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass3_evidence.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "active_seconds": 1.236,
+      "process_tree_cpu_seconds": 0.6875,
+      "process_tree_write_bytes": 503562,
+      "processes": 5,
+      "temporary_footprint_bytes": 2708109472,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass3-evidence-stage.log"
+    },
+    {
+      "name": "pass3-final-seal",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass3_finalize.py"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 0,
+      "active_seconds": 0.742,
+      "process_tree_cpu_seconds": 0.53125,
+      "process_tree_write_bytes": 323,
+      "processes": 3,
+      "temporary_footprint_bytes": 2708116485,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass3-final-seal.log"
+    },
+    {
+      "name": "pass3-final-seal-2",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass3_finalize.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "active_seconds": 0.955,
+      "process_tree_cpu_seconds": 0.6875,
+      "process_tree_write_bytes": 452001,
+      "processes": 5,
+      "temporary_footprint_bytes": 2708118318,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass3-final-seal-2.log"
+    }
+  ],
+  "halted": false,
+  "closed": true,
+  "closure_reason": "Remaining scoped checks passed; reviewed, preservation verified, no further execution.",
+  "closed_utc": "2026-10-24T18:34:12.2506465Z"
+}

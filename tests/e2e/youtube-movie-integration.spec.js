@@ -1,0 +1,31 @@
+import { test, expect } from '@playwright/test';
+
+test('real Movie search HTTP owner filters boundaries and renders Arabic results in compiled UI', async ({ page, request }) => {
+  test.skip(process.env.CP_YOUTUBE_INTEGRATION !== '1', 'Requires the disposable upstream fixture server');
+  const initialCalls = (await (await request.get('/__test/youtube-calls')).json()).length;
+  const movie = { tmdb_id: '550', title: 'Terrorism and Kebab', year: '1992', genres: ['Drama'], poster_url: '' };
+  await page.route('**/api/tmdb/discover**', route => route.fulfill({ json: { results: [movie], page: 1, total_pages: 1, total_results: 1 } }));
+  await page.route('**/api/tmdb/details**', route => route.fulfill({ json: movie }));
+  await page.route('**/api/tmdb/related**', route => route.fulfill({ json: { results: [] } }));
+  await page.goto('/discover');
+  await page.getByRole('heading', { name: movie.title, exact: true }).click();
+  await page.locator('.unified-movie-card-expanded').getByRole('button', { name: 'Stream', exact: true }).click();
+  const dialog = page.locator('.stream-dialog');
+  await dialog.getByRole('button', { name: /YouTube/ }).click();
+  await expect(dialog.getByRole('button', { name: /^Play / })).toHaveCount(2);
+  await expect(dialog.getByText('الإرهاب والكباب خارج المدة', { exact: true })).toHaveCount(0);
+  await expect(dialog.getByText('الإرهاب والكباب مقطع', { exact: true })).toHaveCount(0);
+  await dialog.getByRole('button', { name: 'Play الإرهاب والكباب نسخة أخرى' }).click();
+  await expect(dialog.locator('iframe')).toHaveCount(0);
+  await expect(dialog.getByRole('link', { name: 'Open on YouTube', exact: true })).toHaveAttribute('href', 'https://www.youtube.com/watch?v=aaaaaa2');
+  await dialog.getByRole('button', { name: 'Back to results' }).click();
+  await dialog.getByRole('button', { name: 'Search more', exact: true }).click();
+  await expect(dialog.getByRole('button', { name: /^Play / })).toHaveCount(3);
+  const calls = await (await request.get('/__test/youtube-calls')).json();
+  const searches = calls.slice(initialCalls).filter(call => call.path === 'search');
+  expect(searches).toHaveLength(2);
+  for (const call of searches) expect(call.params.q).toContain('الإرهاب والكباب');
+  expect(searches[1].params.pageToken).toBe('next');
+  expect(await dialog.evaluate(el => el.scrollWidth <= el.clientWidth)).toBe(true);
+  if (process.env.CP_YOUTUBE_EVIDENCE_DIR) await page.screenshot({ path: `${process.env.CP_YOUTUBE_EVIDENCE_DIR}/arabic-integrated.png` });
+});

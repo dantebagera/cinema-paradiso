@@ -1,5 +1,6 @@
 import { fetchJson } from './client.js';
 import { observeCatalogGeneration } from './library.js';
+import { movieDisplayTitle } from '../utils/movieLanguage.js';
 
 function ownedPath(movie, owned) {
   return String(owned?.path || owned?.library_item?.path || owned?.canonical_card?.path || '').trim();
@@ -24,8 +25,8 @@ export function markMovieDetailsCacheStale(cache = {}) {
 export function mergeCanonicalMovieDetails(summary = {}, details = {}) {
   const merged = { ...(summary || {}), ...(details || {}) };
   const textFields = [
-    'title', 'year', 'tmdb_id', 'imdb_id', 'plex_guid', 'poster_url',
-    'plot', 'summary', 'rating', 'language', 'country', 'country_flag', 'release_date'
+    'title', 'year', 'tmdb_id', 'imdb_id', 'plex_guid', 'poster_url', 'backdrop_url',
+    'plot', 'summary', 'rating', 'language', 'country', 'country_flag', 'release_date', 'original_title', 'original_language'
   ];
   textFields.forEach((field) => {
     if ((merged[field] === '' || merged[field] == null) && summary?.[field] != null) {
@@ -148,12 +149,34 @@ export async function fetchCanonicalMovieDetails(movie, owned = null) {
   };
 }
 
+const languageCache = new Map();
+const pendingLanguages = new Map();
+const LANGUAGE_CACHE_TTL = 30 * 60 * 1000;
+
+export function cachedMovieLanguage(tmdbId, language = 'ar-SA') {
+  const key = `${tmdbId}:${language}`;
+  const entry = languageCache.get(key);
+  if (entry && Date.now() - entry.time < LANGUAGE_CACHE_TTL) return entry.data;
+  languageCache.delete(key);
+  return null;
+}
+
 export async function fetchTransientMovieLanguage(tmdbId, language = 'ar-SA') {
   const id = String(tmdbId || '').trim();
   if (!id) throw new Error('A TMDB ID is required for language display.');
-  return fetchJson(
+  const cached = cachedMovieLanguage(id, language);
+  if (cached) return cached;
+  const key = `${id}:${language}`;
+  if (pendingLanguages.has(key)) return pendingLanguages.get(key);
+  const pending = fetchJson(
     `/api/tmdb/details?tmdb_id=${encodeURIComponent(id)}&language=${encodeURIComponent(language)}`
-  );
+  ).then(data => {
+    languageCache.set(key, { time: Date.now(), data });
+    while (languageCache.size > 128) languageCache.delete(languageCache.keys().next().value);
+    return data;
+  }).finally(() => pendingLanguages.delete(key));
+  pendingLanguages.set(key, pending);
+  return pending;
 }
 
 function firstPlotText(...values) {
@@ -167,18 +190,40 @@ export function mergeTransientMovieLanguage(movie, details, localized) {
     ? { ...(movie || {}), summary: englishPlot, plot: englishPlot }
     : movie;
   if (!localized) return { displayMovie, displayDetails: details };
-  return {
-    displayMovie: {
-      ...(displayMovie || {}),
-      ...localized,
-      summary: firstPlotText(localized.summary, localized.plot) || englishPlot
-    },
-    displayDetails: {
-      ...(details || {}),
-      ...localized,
-      loading: false,
-      error: ''
+  const overlay = (base) => {
+    const result = { ...(base || {}) };
+    for (const field of ['title', 'tagline', 'language', 'country']) {
+      if (typeof localized[field] === 'string' && localized[field].trim()) result[field] = localized[field];
     }
+    result.title = movieDisplayTitle(movie, details, localized);
+    result.plot = result.summary = firstPlotText(localized.summary, localized.plot) || englishPlot;
+    const protectedArtwork = movie?.accepted || details?.accepted || movie?.poster_override || details?.poster_override
+      || movie?.poster_override_locked || details?.poster_override_locked || movie?.poster_url?.startsWith('/api/assets/');
+    if (!protectedArtwork) {
+      for (const field of ['poster_url', 'backdrop_url']) {
+        if (localized[field]) result[field] = localized[field];
+      }
+    }
+    for (const field of ['genres', 'keywords']) {
+      if (localized[field]?.length) result[field] = localized[field];
+    }
+    for (const field of ['cast', 'directors', 'writers']) {
+      const people = base?.[field]?.length ? base[field] : details?.[field];
+      if (people?.length) result[field] = people.map(person => {
+        const translated = localized[field]?.find(other => person.id && String(other.id) === String(person.id));
+        return translated ? { ...person, name: translated.name || person.name, character: translated.character || person.character } : person;
+      });
+      else if (localized[field]?.length) result[field] = localized[field];
+    }
+    if (base?.collection?.id && String(base.collection.id) === String(localized.collection?.id) && localized.collection?.name) {
+      result.collection = { ...base.collection, name: localized.collection.name };
+    }
+    if (result.directors?.length) result.director = result.directors[0];
+    return result;
+  };
+  return {
+    displayMovie: overlay(displayMovie),
+    displayDetails: overlay(details)
   };
 }
 

@@ -1,0 +1,11 @@
+{
+  "specs": [
+    "tests/e2e/upcoming-movies.spec.js"
+  ],
+  "root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\fixtures\\motivating-desktop-red-6f975f5df64245f6af646196a475b910",
+  "port": 5142,
+  "fixture": "upcoming",
+  "label": "motivating-desktop-red",
+  "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\logs\\motivating-desktop-red.log",
+  "exitCode": 1
+}

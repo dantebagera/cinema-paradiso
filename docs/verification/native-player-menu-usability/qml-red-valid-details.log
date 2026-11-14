@@ -1,0 +1,46 @@
+********* Start testing of cp_player_ui *********
+Config: Using QtTest library 6.10.3, Qt 6.10.3 (x86_64-little_endian-llp64 shared (dynamic) release build; by MSVC 2022), windows 11
+PASS   : cp_player_ui::MenuDismissal::initTestCase()
+PASS   : cp_player_ui::MenuDismissal::test_dragBegunInsideDoesNotDismiss()
+PASS   : cp_player_ui::MenuDismissal::test_escapeExplicitCloseAndReopen()
+PASS   : cp_player_ui::MenuDismissal::test_insideActionAndBlankSpace()
+FAIL!  : cp_player_ui::MenuDismissal::test_outsideGestureConsumed() 'Dismiss on completed click, keeping playback blocked through release' returned FALSE. ()
+C:\Users\dante\Desktop\cinema paradiso\native\player\tests\qml\tst_MenuDismissal.qml(24) : failure location
+FAIL!  : cp_player_ui::MenuDismissal::test_replacementDoesNotLeaveBlocker() Compared values are not the same
+   Actual   (): 1
+   Expected (): 0
+C:\Users\dante\Desktop\cinema paradiso\native\player\tests\qml\tst_MenuDismissal.qml(59) : failure location
+PASS   : cp_player_ui::MenuDismissal::cleanupTestCase()
+PASS   : cp_player_ui::PlayerScrolling::initTestCase()
+FAIL!  : cp_player_ui::PlayerScrolling::test_dragWidthAndPaint() Compared values are not the same
+   Actual   (): 6
+   Expected (): 8
+C:\Users\dante\Desktop\cinema paradiso\native\player\tests\qml\tst_PlayerScrolling.qml(24) : failure location
+FAIL!  : cp_player_ui::PlayerScrolling::test_keyboardFocusReveals() property opacity
+   Actual   (): 0.45
+   Expected (): 0.72
+C:\Users\dante\Desktop\cinema paradiso\native\player\tests\qml\tst_PlayerScrolling.qml(52) : failure location
+FAIL!  : cp_player_ui::PlayerScrolling::test_noOverflowNoBar() 'verify()' returned FALSE. ()
+C:\Users\dante\Desktop\cinema paradiso\native\player\tests\qml\tst_PlayerScrolling.qml(32) : failure location
+FAIL!  : cp_player_ui::PlayerScrolling::test_revealOnHover() property opacity
+   Actual   (): 0.45
+   Expected (): 0.72
+C:\Users\dante\Desktop\cinema paradiso\native\player\tests\qml\tst_PlayerScrolling.qml(36) : failure location
+FAIL!  : cp_player_ui::PlayerScrolling::test_scrollActivitySurvives900ms() Compared values are not the same
+   Actual   (): 0.45
+   Expected (): 0
+C:\Users\dante\Desktop\cinema paradiso\native\player\tests\qml\tst_PlayerScrolling.qml(47) : failure location
+PASS   : cp_player_ui::PlayerScrolling::cleanupTestCase()
+PASS   : cp_player_ui::PlaylistContent::initTestCase()
+FAIL!  : cp_player_ui::PlaylistContent::test_currentSeasonOnOpen() 'Season 1 must start collapsed' returned FALSE. ()
+C:\Users\dante\Desktop\cinema paradiso\native\player\tests\qml\tst_PlaylistContent.qml(31) : failure location
+PASS   : cp_player_ui::PlaylistContent::test_moviesRemainFlat()
+FAIL!  : cp_player_ui::PlaylistContent::test_oneSeasonAtATime() 'verify()' returned FALSE. ()
+C:\Users\dante\Desktop\cinema paradiso\native\player\tests\qml\tst_PlaylistContent.qml(39) : failure location
+PASS   : cp_player_ui::PlaylistContent::test_originalQueueIndexForS06E20()
+FAIL!  : cp_player_ui::PlaylistContent::test_reopenRestoresPlayingSeason() 'verify()' returned FALSE. ()
+C:\Users\dante\Desktop\cinema paradiso\native\player\tests\qml\tst_PlaylistContent.qml(60) : failure location
+PASS   : cp_player_ui::PlaylistContent::test_unavailableAndMalformedPreserveIndexes()
+PASS   : cp_player_ui::PlaylistContent::cleanupTestCase()
+Totals: 12 passed, 10 failed, 0 skipped, 0 blacklisted, 16652ms
+********* Finished testing of cp_player_ui *********

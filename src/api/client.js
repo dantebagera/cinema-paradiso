@@ -10,10 +10,21 @@ export async function fetchJson(url, options) {
     }
   }
   if (!response.ok || data.error) {
-    const error = new Error(data.error || `Request failed: ${response.status}`);
+    const detail = data.error;
+    const error = new Error(typeof detail === 'string' ? detail
+      : detail?.message || detail?.code?.replaceAll('_', ' ') || `Request failed: ${response.status}`);
+    if (detail?.code) error.code = detail.code;
     error.data = data;
     error.status = response.status;
     throw error;
+  }
+  const method = String(options?.method || 'GET').toUpperCase();
+  const changesCatalog = method !== 'GET' && (
+    String(url).startsWith('/api/app-data/config') ||
+    (String(url).startsWith('/api/iptv/providers') && !/\/(playback|history|test|selection)(\/|$|\?)/.test(String(url)))
+  );
+  if (changesCatalog && typeof window !== 'undefined') {
+    window.dispatchEvent(new Event('cp-iptv-catalog-changed'));
   }
   return data;
 }

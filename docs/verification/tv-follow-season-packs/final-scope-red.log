@@ -1,0 +1,33 @@
+FFF
+======================================================================
+FAIL: test_deferred_gap_pack_keeps_full_scope_and_covers_non_due_trigger (tests.test_tv_follow_season_planning.SeasonPlanningTests.test_deferred_gap_pack_keeps_full_scope_and_covers_non_due_trigger)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_tv_follow_season_planning.py", line 223, in test_deferred_gap_pack_keeps_full_scope_and_covers_non_due_trigger
+    self.assertEqual(self.monitor.task(task['id'])['counts']['queued'],3)
+AssertionError: 1 != 3
+
+======================================================================
+FAIL: test_gap_pack_overlapping_an_earlier_singleton_is_not_retargeted (tests.test_tv_follow_season_planning.SeasonPlanningTests.test_gap_pack_overlapping_an_earlier_singleton_is_not_retargeted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_tv_follow_season_planning.py", line 237, in test_gap_pack_overlapping_an_earlier_singleton_is_not_retargeted
+    self.assert_overlapping_gap_pack_is_not_retargeted(4)
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_tv_follow_season_planning.py", line 232, in assert_overlapping_gap_pack_is_not_retargeted
+    self.assertEqual(self.monitor.task(task['id'])['counts']['queued'],1)
+AssertionError: 3 != 1
+
+======================================================================
+FAIL: test_deferred_gap_pack_overlapping_a_prior_pass_is_not_retargeted (tests.test_tv_follow_season_planning.SeasonPlanningTests.test_deferred_gap_pack_overlapping_a_prior_pass_is_not_retargeted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_tv_follow_season_planning.py", line 240, in test_deferred_gap_pack_overlapping_a_prior_pass_is_not_retargeted
+    self.assert_overlapping_gap_pack_is_not_retargeted(1)
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_tv_follow_season_planning.py", line 232, in assert_overlapping_gap_pack_is_not_retargeted
+    self.assertEqual(self.monitor.task(task['id'])['counts']['queued'],1)
+AssertionError: 2 != 1
+
+----------------------------------------------------------------------
+Ran 3 tests in 4.158s
+
+FAILED (failures=3)

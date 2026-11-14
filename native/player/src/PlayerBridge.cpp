@@ -165,6 +165,9 @@ void PlayerBridge::connectToBackend()
 
 void PlayerBridge::requestClose()
 {
+    if (m_mediaReady) {
+        sendProgress();
+    }
     if (!m_closingSent) {
         m_closingSent = true;
         sendMessage(QStringLiteral("closing"));
@@ -176,6 +179,39 @@ void PlayerBridge::requestClose()
     m_socket.flush();
     m_socket.waitForBytesWritten(250);
     emit closeWindowRequested();
+}
+
+void PlayerBridge::selectQueueItem(int index, bool automatic)
+{
+    const QVariantList rows = m_queue.value(QStringLiteral("items")).toList();
+    const int current = m_queue.value(QStringLiteral("current_index")).toInt();
+    if (m_switching || m_resumeDecisionPending || index < 0 || index >= rows.size() || index == current) {
+        return;
+    }
+    const QVariantMap row = rows[index].toMap();
+    if (!row.value(QStringLiteral("available")).toBool()) {
+        m_queueError = row.value(QStringLiteral("reason")).toString();
+        emit queueChanged();
+        return;
+    }
+    if (automatic && (!m_ended || !m_autoplay || index != current + 1)) {
+        return;
+    }
+    sendProgress();
+    m_switching = true;
+    m_progressTimer.stop();
+    emit queueChanged();
+    sendMessage(QStringLiteral("queue.select"), {
+        {QStringLiteral("path_key"), row.value(QStringLiteral("path_key")).toString()},
+        {QStringLiteral("automatic"), automatic},
+    });
+}
+
+void PlayerBridge::setAutoplay(bool enabled)
+{
+    m_autoplay = enabled;
+    emit queueChanged();
+    sendMessage(QStringLiteral("player.preferences"), {{QStringLiteral("autoplay"), enabled}});
 }
 
 void PlayerBridge::requestSubtitleSearch()
@@ -330,7 +366,11 @@ void PlayerBridge::handleDisconnected()
 
 void PlayerBridge::handleFileLoaded()
 {
+    m_mediaReady = true;
+    m_switching = false;
+    emit queueChanged();
     if (m_player) {
+        m_player->setPaused(m_resumeDecisionPending);
         for (const QVariant &value : m_player->audioTracks()) {
             const QVariantMap track = value.toMap();
             if (!m_audioTrackFingerprint.isEmpty()
@@ -366,8 +406,14 @@ void PlayerBridge::handleFileLoaded()
 
 void PlayerBridge::handlePlaybackEnded()
 {
+    if (!m_mediaReady || m_switching) {
+        return;
+    }
     sendProgress();
     sendPlaybackState(QStringLiteral("ended"));
+    m_ended = true;
+    m_progressTimer.stop();
+    emit naturalEndReached();
 }
 
 void PlayerBridge::handlePlaybackError(const QString &code, const QString &message)
@@ -381,7 +427,7 @@ void PlayerBridge::handlePlaybackError(const QString &code, const QString &messa
 
 void PlayerBridge::handlePausedChanged()
 {
-    if (!m_loadAccepted || !m_player) {
+    if (!m_loadAccepted || !m_player || !m_mediaReady || m_switching) {
         return;
     }
     sendPlaybackState(m_player->paused() ? QStringLiteral("paused")
@@ -406,7 +452,7 @@ void PlayerBridge::handleTracksChanged()
 
 void PlayerBridge::sendProgress()
 {
-    if (!m_loadAccepted || !m_player) {
+    if (!m_loadAccepted || !m_player || !m_mediaReady || m_switching) {
         return;
     }
     const double position = std::max(0.0, m_player->position());
@@ -437,7 +483,11 @@ bool PlayerBridge::validateEnvelope(const QJsonObject &message,
 
 bool PlayerBridge::handleLoad(const QJsonObject &message)
 {
-    if (!validateEnvelope(message, QStringLiteral("load")) || m_loadAccepted || !m_player) {
+    if (!validateEnvelope(message, QStringLiteral("load")) || !m_player) {
+        return false;
+    }
+    const int generation = message.value(QStringLiteral("media_generation")).toInt(1);
+    if ((m_loadAccepted && generation != m_mediaGeneration + 1) || generation < 1) {
         return false;
     }
     const QJsonObject media = message.value(QStringLiteral("media")).toObject();
@@ -467,10 +517,32 @@ bool PlayerBridge::handleLoad(const QJsonObject &message)
         return false;
     }
 
+    m_progressTimer.stop();
+    m_mediaReady = false;
+    m_ended = false;
+    m_switching = true;
+    m_mediaGeneration = generation;
+    m_queue = message.value(QStringLiteral("queue")).toObject().toVariantMap();
+    if (media.value(QStringLiteral("shared_without_segments")).toBool()) {
+        m_queue.insert(QStringLiteral("autoplay_blocked_reason"),
+                       QStringLiteral("This file contains multiple episodes without separate playback boundaries. Choose the next file manually."));
+    }
+    m_queueError = m_queue.value(QStringLiteral("error")).toString();
+    m_subtitleResults.clear();
+    m_subtitleResultIdsByPath.clear();
+    m_lastSelectedSubtitleResultId.clear();
+    m_subtitleSearchStatus = QStringLiteral("idle");
+    m_subtitleSearchError.clear();
+    m_subtitleSaveStatus = QStringLiteral("idle");
+    m_subtitleSaveError.clear();
+    emit subtitleSearchChanged();
+    emit subtitleSaveChanged();
+    emit queueChanged();
     m_lastReceivedSequence =
         static_cast<quint64>(message.value(QStringLiteral("sequence")).toDouble());
     m_title = title;
     m_year = year;
+    m_mediaType = media.value(QStringLiteral("media_type")).toString();
     m_posterReference = poster;
     m_resumeSeconds = startMs / 1000.0;
     m_audioTrackFingerprint = audioFingerprint;
@@ -482,6 +554,8 @@ bool PlayerBridge::handleLoad(const QJsonObject &message)
 
     const QVariantMap preferences =
         message.value(QStringLiteral("preferences")).toObject().toVariantMap();
+    m_autoplay = preferences.value(QStringLiteral("autoplay"), true).toBool();
+    emit queueChanged();
     const QVariantMap requestedShortcuts =
         preferences.value(QStringLiteral("keyboard_shortcuts")).toMap();
     static const QSet<QString> allowedShortcutActions{
@@ -614,6 +688,18 @@ void PlayerBridge::handleMessage(const QJsonObject &message)
             failAndClose(QStringLiteral("invalid_load"),
                          QStringLiteral("The backend playback request was rejected"));
         }
+        return;
+    }
+    if (message.contains(QStringLiteral("media_generation"))
+        && message.value(QStringLiteral("media_generation")).toInt() != m_mediaGeneration) {
+        return;
+    }
+    if (type == QStringLiteral("queue.error") && validateEnvelope(message, type)) {
+        m_lastReceivedSequence = static_cast<quint64>(message.value(QStringLiteral("sequence")).toDouble());
+        m_queueError = message.value(QStringLiteral("message")).toString().left(1024);
+        m_switching = false;
+        if (m_mediaReady && !m_ended) m_progressTimer.start();
+        emit queueChanged();
         return;
     }
     if (type == QStringLiteral("subtitle.results")
@@ -783,6 +869,7 @@ void PlayerBridge::sendMessage(const QString &type, const QJsonObject &payload)
     message.insert(QStringLiteral("protocol"), ProtocolVersion);
     message.insert(QStringLiteral("session_id"), m_sessionId);
     message.insert(QStringLiteral("sequence"), static_cast<qint64>(m_sendSequence++));
+    message.insert(QStringLiteral("media_generation"), m_mediaGeneration);
     const QByteArray encoded = QJsonDocument(message).toJson(QJsonDocument::Compact) + '\n';
     if (encoded.size() <= MaximumMessageBytes) {
         m_socket.write(encoded);
@@ -799,7 +886,7 @@ void PlayerBridge::sendPlaybackState(const QString &state)
 
 void PlayerBridge::sendTracks()
 {
-    if (!m_player) {
+    if (!m_player || !m_mediaReady || m_switching) {
         return;
     }
     QJsonArray tracks;
@@ -816,7 +903,7 @@ void PlayerBridge::sendTracks()
 
 void PlayerBridge::sendPlaybackSettings()
 {
-    if (!m_loadAccepted || !m_player) {
+    if (!m_loadAccepted || !m_player || !m_mediaReady || m_switching) {
         return;
     }
     QJsonObject payload;

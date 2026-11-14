@@ -1,3 +1,5 @@
+import { ActionLink } from './ui/Button.jsx';
+import Button from './ui/Button.jsx';
 import { Download, ExternalLink, Loader2 } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { fetchJson } from '../api/client.js';
@@ -73,9 +75,9 @@ export default function TorrentActions({ variant, movieTitle, movieYear, tmdbId 
   const canSubmit = (action.kind === 'magnet' || (action.kind === 'torrent' && mode === 'embedded'))
     && (mode === 'system' || hasStableIdentity);
   return <div className="torrent-action-group">
-    {canSubmit ? <button type="button" className={cx('btn', primary ? 'btn-primary' : 'btn-secondary')} onClick={handlePrimary} disabled={busy}>{busy ? <Loader2 size={15} className="spin" /> : <Download size={15} />}{mode === 'system' ? 'Open magnet' : 'Download'}</button> : action.kind === 'torrent' ? <span className="torrent-no-link">No magnet</span> : null}
-    {mode === 'embedded' && magnetUrl ? <a className="btn btn-secondary" href={magnetUrl}><ExternalLink size={15} /> Open externally</a> : null}
-    {variant.info_url ? <a className="btn btn-secondary" href={variant.info_url} target="_blank" rel="noreferrer"><ExternalLink size={15} /> Open source page</a> : null}
+    {canSubmit ? <Button variant={primary ? 'primary' : 'secondary'} type="button"  onClick={handlePrimary} disabled={busy}>{busy ? <Loader2 size={15} className="spin" /> : <Download size={15} />}{mode === 'system' ? 'Open magnet' : 'Download'}</Button> : action.kind === 'torrent' ? <span className="torrent-no-link">No magnet</span> : null}
+    {mode === 'embedded' && magnetUrl ? <ActionLink  href={magnetUrl}><ExternalLink size={15} /> Open externally</ActionLink> : null}
+    {variant.info_url ? <ActionLink  href={variant.info_url} target="_blank" rel="noreferrer"><ExternalLink size={15} /> Open source page</ActionLink> : null}
     {action.kind === 'none' ? <span className="torrent-no-link">No link</span> : null}
   </div>;
 }

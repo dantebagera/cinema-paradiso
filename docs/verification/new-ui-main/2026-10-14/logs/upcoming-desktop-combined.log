@@ -1,0 +1,16 @@
+
+Running 9 tests using 1 worker
+
+(node:55344) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\discover-paging.spec.js:37:3 › real Discover API fills consecutive expanded desktop pages and preserves the final remainder (2.0s)
+  ok 2 tests\e2e\discover-paging.spec.js:37:3 › real Discover API fills consecutive collapsed desktop pages and preserves the final remainder (1.2s)
+  ok 3 tests\e2e\discover-paging.spec.js:65:1 › sidebar expansion and collapse repeatedly repaginate the real unique result stream (1.5s)
+  ok 4 tests\e2e\discover-paging.spec.js:79:1 › finite title search shows all three movies with either sidebar layout (706ms)
+  ok 5 tests\e2e\discover-paging.spec.js:92:1 › narrower desktop retains complete measured rows when collapse cannot fit another column (757ms)
+  ok 6 tests\e2e\discover-paging.spec.js:103:1 › browser Back and Forward restore the full second page and allow continued paging (2.1s)
+  ok 7 tests\e2e\discover-paging.spec.js:124:1 › Advanced title sorting publishes complete stable pages without repeating earlier movies (1.5s)
+  ok 8 tests\e2e\upcoming-movies.spec.js:40:1 › Home View all uses the backend Upcoming selection and preserves full pages and navigation (2.3s)
+  ok 9 tests\e2e\upcoming-movies.spec.js:96:1 › direct Upcoming selection and extra ownership and Advanced criteria keep the backend rule (1.8s)
+
+  9 passed (17.5s)

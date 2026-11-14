@@ -1,6 +1,7 @@
 import hashlib
 import json
 import math
+import re
 
 
 QUERY_VERSION = 1
@@ -20,10 +21,10 @@ SUPPORTED_CRITERIA = {
     "discover": {
         "title", "genre", "person", "keyword", "year", "rating",
         "minimum_votes", "language", "country", "runtime", "viewing_status",
-        "movie_list", "availability", "tv_status",
+        "movie_list", "availability", "tv_status", "company",
     },
 }
-REPEATABLE_CRITERIA = {"genre", "person", "keyword", "movie_list", "resolution", "library_source"}
+REPEATABLE_CRITERIA = {"genre", "person", "keyword", "movie_list", "resolution", "library_source", "company"}
 OR_ONLY_CRITERIA = {"resolution", "library_source"}
 PERSON_ROLES = {"actor", "director", "writer"}
 NUMERIC_OPERATORS = {"exactly", "at_least", "at_most", "between"}
@@ -34,12 +35,12 @@ DISCOVER_FEEDS = {
 }
 SORT_KEYS = {
     "library": {"added", "title", "rating", "year-desc", "year-asc", "quality"},
-    "discover": {"auto", "popularity.desc", "vote_average.desc", "vote_count.desc", "primary_release_date.desc", "title.asc"},
+    "discover": {"auto", "popularity.desc", "vote_average.desc", "vote_count.desc", "primary_release_date.desc", "primary_release_date.asc", "title.asc"},
 }
 CRITERION_ORDER = [
     "title", "genre", "person", "keyword", "year", "rating", "minimum_votes",
     "language", "country", "runtime", "viewing_status", "movie_list",
-    "resolution", "library_source", "availability", "tv_status",
+    "resolution", "library_source", "availability", "tv_status", "company",
 ]
 
 
@@ -81,8 +82,10 @@ def _identity_value(value, criterion_type, media_type="movie"):
     if not isinstance(value, dict):
         _fail(f"{criterion_type} value must be an object")
     allowed = {"id", "label", "role"} if criterion_type == "person" else {"id", "label"}
-    if criterion_type == "genre":
+    if criterion_type in {"genre", "company"}:
         allowed = allowed | {"exclude"}
+    if criterion_type == "company":
+        allowed = allowed | {"country"}
     unknown = set(value) - allowed
     if unknown:
         _fail(f"Unknown {criterion_type} value fields: {', '.join(sorted(unknown))}")
@@ -91,11 +94,18 @@ def _identity_value(value, criterion_type, media_type="movie"):
     if not identity or not label:
         _fail(f"{criterion_type} requires a controlled identity")
     normalized = {"id": identity, "label": label}
-    if criterion_type == "genre" and "exclude" in value:
+    if criterion_type in {"genre", "company"} and "exclude" in value:
         if not isinstance(value["exclude"], bool):
-            _fail("Genre exclusion must be true or false")
+            _fail(f"{criterion_type.title()} exclusion must be true or false")
         if value["exclude"]:
             normalized["exclude"] = True
+    if criterion_type == "company":
+        if not re.fullmatch(r'[1-9][0-9]*', identity):
+            _fail('Company must use a controlled TMDB identity')
+        country = _text(value.get('country'), 'Company country', 2).upper()
+        if country and not re.fullmatch('[A-Z]{2}', country):
+            _fail('Company country must be an ISO country code')
+        normalized['country'] = country
     if criterion_type == "person":
         role = _text(value.get("role"), "person role", 20).lower()
         if role not in (PERSON_ROLES | ({"creator"} if media_type == "tv" else set())):
@@ -157,7 +167,7 @@ def _normalize_value(criterion_type, value, media_type="movie"):
         if not title:
             _fail("Title cannot be empty")
         return {"text": title}
-    if criterion_type in {"genre", "person", "keyword", "language", "country", "movie_list"}:
+    if criterion_type in {"genre", "person", "keyword", "language", "country", "movie_list", "company"}:
         return _identity_value(value, criterion_type, media_type)
     if criterion_type in {"year", "rating"}:
         return _numeric_value(value, criterion_type)
@@ -223,6 +233,8 @@ def normalize_query(query, expected_scope=None, *, media_type="movie"):
             _fail(f"Criterion {criterion_type or '(missing)'} is not supported in {scope}")
         if criterion_type == "tv_status" and media_type != "tv":
             _fail("Series status is only supported for TV Discover")
+        if criterion_type == 'company' and media_type != 'movie':
+            _fail('Company search is currently supported only for Movie Discover')
         if criterion_type in seen_types:
             _fail(f"Duplicate {criterion_type} group")
         seen_types.add(criterion_type)
@@ -237,8 +249,8 @@ def normalize_query(query, expected_scope=None, *, media_type="movie"):
             value = _normalize_value(criterion_type, raw_value, media_type)
             key = _value_key(criterion_type, value)
             if key in seen_values:
-                if criterion_type == "genre" and bool(seen_values[key].get("exclude")) != bool(value.get("exclude")):
-                    _fail("A genre cannot be both included and excluded")
+                if criterion_type in {"genre", "company"} and bool(seen_values[key].get("exclude")) != bool(value.get("exclude")):
+                    _fail(f"A {criterion_type} cannot be both included and excluded")
                 continue
             seen_values[key] = value
             values.append(value)
@@ -310,3 +322,55 @@ def query_signature(query, expected_scope=None):
 def group_map(query, expected_scope=None):
     normalized = normalize_query(query, expected_scope)
     return normalized, {group["type"]: group for group in normalized["groups"]}
+
+
+def query_json_schema(scope='discover', *, media_type='movie'):
+    """Structural tool schema for this owner's query language.
+
+    normalize_query remains authoritative for contradictions, total-value budgets
+    and execution semantics; callers must invoke it after structural validation.
+    """
+    if scope not in SUPPORTED_CRITERIA:
+        _fail('Unsupported query schema scope')
+    def obj(properties):
+        return {'type': 'object', 'properties': properties, 'required': list(properties), 'additionalProperties': False}
+    def string(**constraints):
+        return {'type': 'string', **constraints}
+    def array(items, **constraints):
+        return {'type': 'array', 'items': items, **constraints}
+    identity = {'id': string(minLength=1, maxLength=120), 'label': string(minLength=1, maxLength=160)}
+    groups = []
+    for kind in sorted(SUPPORTED_CRITERIA[scope]):
+        if (kind == 'tv_status' and media_type != 'tv') or (kind == 'company' and media_type != 'movie'):
+            continue
+        if kind == 'title':
+            value = obj({'text': string(minLength=1, maxLength=MAX_TITLE_CHARACTERS)})
+        elif kind in ('year', 'rating'):
+            number = {'type': 'integer'} if kind == 'year' else {'type': 'number'}
+            value = {'anyOf': [obj({'operator': string(enum=[operator]),
+                **({'from': number, 'to': number} if operator == 'between' else {'value': number})})
+                for operator in sorted(NUMERIC_OPERATORS)]}
+        elif kind == 'runtime':
+            value = {'anyOf': [obj({'preset': string(enum=sorted(RUNTIME_PRESETS - {'custom'}))}),
+                obj({'preset': string(enum=['custom']), 'from': {'type': 'integer'}, 'to': {'type': 'integer'}})]}
+        elif kind == 'minimum_votes':
+            value = obj({'value': {'type': 'integer'}})
+        else:
+            fields = dict(identity)
+            if kind == 'person':
+                fields['role'] = string(enum=sorted(PERSON_ROLES | ({'creator'} if media_type == 'tv' else set())))
+            if kind in ('genre', 'company'):
+                fields['exclude'] = {'type': 'boolean'}
+            if kind == 'company':
+                fields['country'] = string(maxLength=2)
+            value = obj(fields)
+        fields = {'type': string(enum=[kind]), 'values': array(value, minItems=1, maxItems=MAX_GROUP_VALUES)}
+        if kind in REPEATABLE_CRITERIA:
+            fields['join'] = string(enum=['or'] if kind in OR_ONLY_CRITERIA else ['and', 'or'])
+        groups.append(obj(fields))
+    properties = {'version': {'type': 'integer', 'enum': [QUERY_VERSION]}, 'scope': string(enum=[scope]),
+        'mode': string(enum=['advanced']), 'groups': array({'anyOf': groups}),
+        'sort': obj({'key': string(enum=sorted(SORT_KEYS[scope])), 'direction': string(enum=['asc', 'desc'])})}
+    if scope == 'discover':
+        properties['feed'] = string(enum=sorted(DISCOVER_FEEDS))
+    return obj(properties)

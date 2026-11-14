@@ -1,0 +1,168 @@
+{
+  "status": "bounded pass closed; broader regression and runnable recovery not fully qualified",
+  "authorization": "Bounded isolated broader regression and runnable recovery; preserve all changes; no live app/production data access.",
+  "workspace": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572",
+  "source_preservation": {
+    "files_compared": 1687,
+    "changed_or_missing": [],
+    "existing_tracked_entries_preserved": true,
+    "tracked_dirty_count": 114,
+    "ignored_source_included": [
+      "src/features/library/librarySearchRequests.js"
+    ],
+    "head": "be511f98846a67a182e5b371ad087938e9344362",
+    "production_http_requests": 0,
+    "production_process_control_actions": 0,
+    "production_data_reads_or_writes": 0,
+    "verified_utc": "2026-10-24T17:58:54Z"
+  },
+  "movie_owner_batch": {
+    "tests": 451,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "fresh_full_batch": true
+  },
+  "cross_domain": {
+    "tests": 462,
+    "passed": 410,
+    "failures": 10,
+    "errors": 42,
+    "skips": 0,
+    "modules": [
+      "test_tv_catalog",
+      "test_tv_vertical_slice",
+      "test_tv_normal_import",
+      "test_verified_tv_acquisition",
+      "test_tv_download_contracts",
+      "test_tv_follow_season_planning",
+      "test_tv_source_diagnostics",
+      "test_tv_library_read_performance",
+      "test_tv_list_filters",
+      "test_tv_credit_portraits",
+      "test_iptv_service",
+      "test_iptv_routes",
+      "test_iptv_provider_manager",
+      "test_iptv_movie_enrichment",
+      "test_iptv_movie_gates_0_5",
+      "test_acquisition_decisions",
+      "test_player_manager",
+      "test_player_protocol",
+      "test_player_play_api",
+      "test_player_catalog",
+      "test_player_queue",
+      "test_player_queue_api",
+      "test_player_queue_session",
+      "test_playback_history",
+      "test_native_player",
+      "test_workspace_layout_ui",
+      "test_unified_movie_card_ui",
+      "test_full_row_card_grids_ui",
+      "test_continue_watching_ui",
+      "test_iptv_ui",
+      "test_iptv_movie_ui",
+      "test_discover_hover_ui",
+      "test_library_action_ux"
+    ],
+    "failure_groups": {
+      "ffmpeg_discovery_guard": 41,
+      "iptv_routes_return_500_from_guard": 4,
+      "missing_TV_baseline_source_environment": 1,
+      "unresolved_source_text_assertions": 6
+    }
+  },
+  "node": {
+    "files": [
+      "advancedSearchModel.test.mjs",
+      "appUtils.test.mjs",
+      "browser_curation_cache.test.mjs",
+      "browser_ownership_cache.test.mjs",
+      "cardGrid.test.mjs",
+      "cardLabPrototype.test.mjs",
+      "catalogEvents.test.mjs",
+      "cleanupUtils.test.mjs",
+      "deletionPlan.test.mjs",
+      "discoverUtils.test.mjs",
+      "home-trailer-model.test.mjs",
+      "homeMovies.test.mjs",
+      "homeTrailers.test.mjs",
+      "iptv_movie_filters.test.mjs",
+      "iptv_sync_policy.test.mjs",
+      "library-search-requests.test.mjs",
+      "libraryUtils.test.mjs",
+      "list-catalog-filters.test.mjs",
+      "list-catalog-performance.test.mjs",
+      "movie_relationships.test.mjs",
+      "movieAwards.test.mjs",
+      "movieDetails.test.mjs",
+      "ollamaModels.test.mjs",
+      "tv_card_enrichment.test.mjs",
+      "tv_search.test.mjs"
+    ],
+    "exit_code": 0,
+    "tests": 140,
+    "pass": 140,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0
+  },
+  "recovery": {
+    "snapshot_files_copied_and_hashed": 27599,
+    "copied_snapshot_bytes": 2561595752,
+    "copied_movie_database_quick_check": [
+      [
+        "ok"
+      ]
+    ],
+    "guard_negative_controls": 8,
+    "kill_on_close_control": {
+      "passed": true,
+      "abrupt_job_owner_exit_killed_owned_child": true,
+      "owned_child_pid": 11524
+    },
+    "path_mapper_implemented_not_executed": true,
+    "normal_startup_boots_executed": 0,
+    "compiled_recovered_UI_checks_executed": 0,
+    "graceful_recovered_shutdowns_executed": 0,
+    "reopen_checks_executed": 0
+  },
+  "resources": {
+    "active_seconds": 589.508,
+    "active_cap_seconds": 600,
+    "remaining_seconds": 10.491999999999962,
+    "process_tree_cpu_seconds": 245.890625,
+    "process_tree_write_bytes": 4339678501,
+    "write_cap_bytes": 8589934592,
+    "last_footprint_bytes": 2675397710,
+    "footprint_cap_bytes": 4294967296,
+    "closed": true
+  },
+  "review": {
+    "fresh_read_only_reviewer": true,
+    "findings": [
+      "Job kill-on-close missing",
+      "Media root mapping could collide",
+      "Recovered responder PID ownership insufficient"
+    ],
+    "source_corrections_reviewed": true,
+    "job_close_control_passed": true,
+    "mapping_and_owned_boot_runtime_unverified": true
+  },
+  "limitations": [
+    "No whole-checkout green claim: selected cross-domain batch failed.",
+    "Recovery only prepared/copied/guard-tested; no boot, UI, shutdown or reopen executed.",
+    "First 451 run had 1 timeout failure plus cleanup error and 2 guard-child errors. Three focused cases and full 451 rerun passed unchanged; timing sensitivity is retained.",
+    "Git-only source copying omitted the ignored imported request scheduler; copied and sealed it before all 140 Node tests passed. No source assertion was weakened.",
+    "Six source-text assertion failures require comparison with approved behavior; no product regression or obsolete-test ruling is made here.",
+    "45 IPTV checks were affected by guard-blocked read-only FFmpeg discovery. The TV read-performance case requires an absent CP_TV_PERF_BASELINE_SOURCE. These were not repaired/rerun under the closed allowance.",
+    "No new build or compiled desktop check was executed in this pass. No live activity, production state copy/read/write, process control, dependency change, product code edit, commit or deployment occurred."
+  ],
+  "next_required": [
+    "Permit read-only discovery of the exact installed FFmpeg tool while retaining execution/network denial, then rerun affected IPTV modules.",
+    "Locate and verify the required TV performance baseline; otherwise leave its comparison unverified.",
+    "Trace six source-text assertions to their current visible contracts and replace only demonstrably obsolete implementation checks with meaningful coverage.",
+    "In a fresh bounded allowance, execute/review path mapping, normal recovered startup, exact owned API/bundle checks, recovered compiled desktop navigation, graceful checkpoint/exit, second boot and copied-store integrity checks."
+  ],
+  "verified_utc": "2026-10-24T17:59:50Z",
+  "owned_test_processes_remaining": 0
+}

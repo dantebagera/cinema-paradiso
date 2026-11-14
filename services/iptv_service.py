@@ -203,8 +203,7 @@ class IPTVService:
 
     def status(self):
         self.cleanup_playback_sessions()
-        with self._sync_lock:
-            sync = dict(self._sync_state)
+        sync = self.sync_status()
         return {
             "provider_id": self.provider_id,
             **self.public_config(),
@@ -212,6 +211,10 @@ class IPTVService:
             "sync": sync,
             "playback": {"ffmpeg_available": bool(self.ffmpeg_path)},
         }
+
+    def sync_status(self):
+        with self._sync_lock:
+            return dict(self._sync_state)
 
     def start_sync(self):
         with self._sync_lock:
@@ -283,7 +286,7 @@ class IPTVService:
             "duration": info.get("duration"),
             "year": info.get("year") or info.get("releasedate"),
             "rating": info.get("rating") or info.get("rating_5based"),
-            "tmdb_id": info.get("tmdb_id") or info.get("tmdb"),
+            "tmdb_id": next((value for value in (info.get("tmdb_id"), info.get("tmdb")) if _safe_int(value) > 0), None),
             "container_extension": movie.get("container_extension"),
         }
         for key, value in mapping.items():

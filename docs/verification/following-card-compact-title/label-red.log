@@ -1,0 +1,108 @@
+
+Running 3 tests using 1 worker
+
+(node:45988) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tests\e2e\following-card.spec.js:26:3 › Following compact heading shares its action row at 1600px with playback true (1.3s)
+(node:43896) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  2 tests\e2e\following-card.spec.js:26:3 › Following compact heading shares its action row at 1920px with playback true (1.3s)
+(node:6220) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  3 tests\e2e\following-card.spec.js:26:3 › Following compact heading shares its action row at 1600px with playback false (1.3s)
+
+
+  1) tests\e2e\following-card.spec.js:26:3 › Following compact heading shares its action row at 1600px with playback true 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      61 |         const labelWidth = context.measureText(select.selectedOptions[0].textContent.trim()).width;
+      62 |         return labelWidth <= select.clientWidth - parseFloat(controlStyle.paddingLeft) - parseFloat(controlStyle.paddingRight);
+    > 63 |       })).toBe(true);
+         |           ^
+      64 |       expect(await panel.locator('.section-heading').evaluate(element => element.scrollWidth <= element.clientWidth + 1)).toBe(true);
+      65 |       const listBox = await panel.locator('.release-list').boundingBox();
+      66 |       expect(listBox.y - cardBox.y).toBeLessThanOrEqual(96);
+        at C:\Users\dante\Desktop\cinema paradiso\tests\e2e\following-card.spec.js:63:11
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\AppData\Local\Temp\cp-following-compact-b9b8805671644d0192b983a869cb5e3c\label-red-results\following-card-Following-c-0d6dd-t-1600px-with-playback-true\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\AppData\Local\Temp\cp-following-compact-b9b8805671644d0192b983a869cb5e3c\label-red-results\following-card-Following-c-0d6dd-t-1600px-with-playback-true\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\..\AppData\Local\Temp\cp-following-compact-b9b8805671644d0192b983a869cb5e3c\label-red-results\following-card-Following-c-0d6dd-t-1600px-with-playback-true\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\..\AppData\Local\Temp\cp-following-compact-b9b8805671644d0192b983a869cb5e3c\label-red-results\following-card-Following-c-0d6dd-t-1600px-with-playback-true\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) tests\e2e\following-card.spec.js:26:3 › Following compact heading shares its action row at 1920px with playback true 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      61 |         const labelWidth = context.measureText(select.selectedOptions[0].textContent.trim()).width;
+      62 |         return labelWidth <= select.clientWidth - parseFloat(controlStyle.paddingLeft) - parseFloat(controlStyle.paddingRight);
+    > 63 |       })).toBe(true);
+         |           ^
+      64 |       expect(await panel.locator('.section-heading').evaluate(element => element.scrollWidth <= element.clientWidth + 1)).toBe(true);
+      65 |       const listBox = await panel.locator('.release-list').boundingBox();
+      66 |       expect(listBox.y - cardBox.y).toBeLessThanOrEqual(96);
+        at C:\Users\dante\Desktop\cinema paradiso\tests\e2e\following-card.spec.js:63:11
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\AppData\Local\Temp\cp-following-compact-b9b8805671644d0192b983a869cb5e3c\label-red-results\following-card-Following-c-e6eb3-t-1920px-with-playback-true\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\AppData\Local\Temp\cp-following-compact-b9b8805671644d0192b983a869cb5e3c\label-red-results\following-card-Following-c-e6eb3-t-1920px-with-playback-true\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\..\AppData\Local\Temp\cp-following-compact-b9b8805671644d0192b983a869cb5e3c\label-red-results\following-card-Following-c-e6eb3-t-1920px-with-playback-true\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\..\AppData\Local\Temp\cp-following-compact-b9b8805671644d0192b983a869cb5e3c\label-red-results\following-card-Following-c-e6eb3-t-1920px-with-playback-true\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) tests\e2e\following-card.spec.js:26:3 › Following compact heading shares its action row at 1600px with playback false 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      61 |         const labelWidth = context.measureText(select.selectedOptions[0].textContent.trim()).width;
+      62 |         return labelWidth <= select.clientWidth - parseFloat(controlStyle.paddingLeft) - parseFloat(controlStyle.paddingRight);
+    > 63 |       })).toBe(true);
+         |           ^
+      64 |       expect(await panel.locator('.section-heading').evaluate(element => element.scrollWidth <= element.clientWidth + 1)).toBe(true);
+      65 |       const listBox = await panel.locator('.release-list').boundingBox();
+      66 |       expect(listBox.y - cardBox.y).toBeLessThanOrEqual(96);
+        at C:\Users\dante\Desktop\cinema paradiso\tests\e2e\following-card.spec.js:63:11
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\AppData\Local\Temp\cp-following-compact-b9b8805671644d0192b983a869cb5e3c\label-red-results\following-card-Following-c-cf435--1600px-with-playback-false\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\AppData\Local\Temp\cp-following-compact-b9b8805671644d0192b983a869cb5e3c\label-red-results\following-card-Following-c-cf435--1600px-with-playback-false\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\..\AppData\Local\Temp\cp-following-compact-b9b8805671644d0192b983a869cb5e3c\label-red-results\following-card-Following-c-cf435--1600px-with-playback-false\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\..\AppData\Local\Temp\cp-following-compact-b9b8805671644d0192b983a869cb5e3c\label-red-results\following-card-Following-c-cf435--1600px-with-playback-false\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3 failed
+    tests\e2e\following-card.spec.js:26:3 › Following compact heading shares its action row at 1600px with playback true 
+    tests\e2e\following-card.spec.js:26:3 › Following compact heading shares its action row at 1920px with playback true 
+    tests\e2e\following-card.spec.js:26:3 › Following compact heading shares its action row at 1600px with playback false 

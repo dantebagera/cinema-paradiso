@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-20T04:16:54.702385+03:00",
+  "task_complete": true,
+  "force_app_close": false,
+  "state": "requested",
+  "response": {
+    "active_downloads": 3,
+    "plan": {
+      "action": "device",
+      "after_download": false,
+      "close_qbittorrent": false,
+      "created_at": 1792459014.667878,
+      "detail": "Preparing to turn off",
+      "plan_id": "003dfdf789804b289114c72924f010a5",
+      "state": "draining",
+      "target_status": [],
+      "targets": [],
+      "updated_at": 1792459014.667878
+    },
+    "supported": true,
+    "torrent_client": {
+      "can_close": true,
+      "mode": "embedded"
+    }
+  }
+}

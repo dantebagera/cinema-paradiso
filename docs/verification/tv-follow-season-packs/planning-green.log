@@ -1,0 +1,15 @@
+...........F...................................................................
+======================================================================
+FAIL: test_pack_submission_failure_keeps_all_associations_for_recovery (tests.test_tv_follow_season_planning.SeasonPlanningTests.test_pack_submission_failure_keeps_all_associations_for_recovery)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_tv_follow_season_planning.py", line 126, in test_pack_submission_failure_keeps_all_associations_for_recovery
+    self.manager.client.add_magnet.assert_called_once()
+  File "C:\Program Files\Python312\Lib\unittest\mock.py", line 928, in assert_called_once
+    raise AssertionError(msg)
+AssertionError: Expected 'add_magnet' to have been called once. Called 0 times.
+
+----------------------------------------------------------------------
+Ran 79 tests in 89.676s
+
+FAILED (failures=1)

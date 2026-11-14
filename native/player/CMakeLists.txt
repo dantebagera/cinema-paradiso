@@ -55,6 +55,11 @@ qt_add_qml_module(cp-player
     QML_FILES
         qml/Main.qml
         qml/PlayerTheme.qml
+        qml/CpButton.qml
+        qml/CpPlaylistContent.qml
+        qml/CpRevealScrollBar.qml
+        qml/CpScrollView.qml
+        qml/CpMenuPopup.qml
 )
 
 set(CP_PLAYER_ICON_PNG
@@ -72,10 +77,12 @@ set(CP_PLAYER_CONTROL_ICONS
     resources/icons/audio-language-tracks.svg
     resources/icons/enter-fullscreen.svg
     resources/icons/exit-fullscreen.svg
-    resources/icons/forward-10.svg
     resources/icons/pause.svg
+    resources/icons/previous-file.svg
+    resources/icons/next-file.svg
+    resources/icons/playlist.svg
+    resources/icons/settings.svg
     resources/icons/play.svg
-    resources/icons/rewind-10.svg
     resources/icons/search.svg
     resources/icons/speed.svg
     resources/icons/subtitles.svg
@@ -129,3 +136,25 @@ add_custom_command(TARGET cp-player POST_BUILD
         "$<TARGET_FILE_DIR:cp-player>/libmpv-2.dll"
     VERBATIM
 )
+
+# Tests stage the real production components; never package test tooling in the player.
+option(CP_PLAYER_BUILD_TESTS "Build isolated QML behavior tests" OFF)
+if(CP_PLAYER_BUILD_TESTS)
+    enable_testing()
+    find_package(Qt6 6.10 REQUIRED COMPONENTS QuickTest)
+    qt_add_executable(cp-player-ui-tests tests/ui_main.cpp)
+    set_target_properties(cp-player-ui-tests PROPERTIES WIN32_EXECUTABLE FALSE)
+    target_link_libraries(cp-player-ui-tests PRIVATE Qt6::QuickTest Qt6::QuickControls2)
+    set(CP_UI_IMPORTS "${CMAKE_CURRENT_BINARY_DIR}/ui-test-imports")
+    set(CP_UI_MODULE "${CP_UI_IMPORTS}/CinemaParadiso/Player")
+    file(MAKE_DIRECTORY "${CP_UI_MODULE}")
+    file(WRITE "${CP_UI_MODULE}/qmldir" "module CinemaParadiso.Player\nsingleton PlayerTheme 1.0 PlayerTheme.qml\n")
+    foreach(type CpButton CpPlaylistContent CpRevealScrollBar CpScrollView CpMenuPopup)
+        configure_file("qml/${type}.qml" "${CP_UI_MODULE}/${type}.qml" COPYONLY)
+        file(APPEND "${CP_UI_MODULE}/qmldir" "${type} 1.0 ${type}.qml\n")
+    endforeach()
+    configure_file(qml/PlayerTheme.qml "${CP_UI_MODULE}/PlayerTheme.qml" COPYONLY)
+    add_test(NAME player-ui COMMAND cp-player-ui-tests
+        -input "${CMAKE_CURRENT_SOURCE_DIR}/tests/qml" -import "${CP_UI_IMPORTS}"
+        -o "${CMAKE_CURRENT_BINARY_DIR}/player-ui.txt,txt")
+endif()

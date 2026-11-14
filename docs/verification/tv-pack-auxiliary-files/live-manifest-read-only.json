@@ -1,0 +1,132 @@
+{
+  "verification": "Read-only actual qBittorrent filenames through corrected pure parser; no import or probe",
+  "files": 14,
+  "matched_episodes": 13,
+  "ignored_auxiliary": 1,
+  "rows": [
+    {
+      "name": "Louie (2010) Season 2 S02 (1080p BluRay x265 HEVC 10bit AAC 5.1 Garshasp)/Featurettes/Fox Movie Channel Presents World Premiere - Louie Season 2.mkv",
+      "ignored": true,
+      "season": 2,
+      "episodes": [],
+      "identity": null
+    },
+    {
+      "name": "Louie (2010) Season 2 S02 (1080p BluRay x265 HEVC 10bit AAC 5.1 Garshasp)/Louie (2010) - S02E01 - Pregnant (1080p BluRay x265 Garshasp).mkv",
+      "ignored": false,
+      "season": 2,
+      "episodes": [
+        1
+      ],
+      "identity": "matched"
+    },
+    {
+      "name": "Louie (2010) Season 2 S02 (1080p BluRay x265 HEVC 10bit AAC 5.1 Garshasp)/Louie (2010) - S02E02 - Bummer-Blueberries (1080p BluRay x265 Garshasp).mkv",
+      "ignored": false,
+      "season": 2,
+      "episodes": [
+        2
+      ],
+      "identity": "matched"
+    },
+    {
+      "name": "Louie (2010) Season 2 S02 (1080p BluRay x265 HEVC 10bit AAC 5.1 Garshasp)/Louie (2010) - S02E03 - Moving (1080p BluRay x265 Garshasp).mkv",
+      "ignored": false,
+      "season": 2,
+      "episodes": [
+        3
+      ],
+      "identity": "matched"
+    },
+    {
+      "name": "Louie (2010) Season 2 S02 (1080p BluRay x265 HEVC 10bit AAC 5.1 Garshasp)/Louie (2010) - S02E04 - Joan (1080p BluRay x265 Garshasp).mkv",
+      "ignored": false,
+      "season": 2,
+      "episodes": [
+        4
+      ],
+      "identity": "matched"
+    },
+    {
+      "name": "Louie (2010) Season 2 S02 (1080p BluRay x265 HEVC 10bit AAC 5.1 Garshasp)/Louie (2010) - S02E05 - Country Drive (1080p BluRay x265 Garshasp).mkv",
+      "ignored": false,
+      "season": 2,
+      "episodes": [
+        5
+      ],
+      "identity": "matched"
+    },
+    {
+      "name": "Louie (2010) Season 2 S02 (1080p BluRay x265 HEVC 10bit AAC 5.1 Garshasp)/Louie (2010) - S02E06 - Subway-Pamela (1080p BluRay x265 Garshasp).mkv",
+      "ignored": false,
+      "season": 2,
+      "episodes": [
+        6
+      ],
+      "identity": "matched"
+    },
+    {
+      "name": "Louie (2010) Season 2 S02 (1080p BluRay x265 HEVC 10bit AAC 5.1 Garshasp)/Louie (2010) - S02E07 - Oh, Louie-Tickets (1080p BluRay x265 Garshasp).mkv",
+      "ignored": false,
+      "season": 2,
+      "episodes": [
+        7
+      ],
+      "identity": "matched"
+    },
+    {
+      "name": "Louie (2010) Season 2 S02 (1080p BluRay x265 HEVC 10bit AAC 5.1 Garshasp)/Louie (2010) - S02E08 - Come On, God (1080p BluRay x265 Garshasp).mkv",
+      "ignored": false,
+      "season": 2,
+      "episodes": [
+        8
+      ],
+      "identity": "matched"
+    },
+    {
+      "name": "Louie (2010) Season 2 S02 (1080p BluRay x265 HEVC 10bit AAC 5.1 Garshasp)/Louie (2010) - S02E09 - Eddie (1080p BluRay x265 Garshasp).mkv",
+      "ignored": false,
+      "season": 2,
+      "episodes": [
+        9
+      ],
+      "identity": "matched"
+    },
+    {
+      "name": "Louie (2010) Season 2 S02 (1080p BluRay x265 HEVC 10bit AAC 5.1 Garshasp)/Louie (2010) - S02E10 - Halloween-Ellie (1080p BluRay x265 Garshasp).mkv",
+      "ignored": false,
+      "season": 2,
+      "episodes": [
+        10
+      ],
+      "identity": "matched"
+    },
+    {
+      "name": "Louie (2010) Season 2 S02 (1080p BluRay x265 HEVC 10bit AAC 5.1 Garshasp)/Louie (2010) - S02E11 - Duckling (1080p BluRay x265 Garshasp).mkv",
+      "ignored": false,
+      "season": 2,
+      "episodes": [
+        11
+      ],
+      "identity": "matched"
+    },
+    {
+      "name": "Louie (2010) Season 2 S02 (1080p BluRay x265 HEVC 10bit AAC 5.1 Garshasp)/Louie (2010) - S02E12 - Niece (1080p BluRay x265 Garshasp).mkv",
+      "ignored": false,
+      "season": 2,
+      "episodes": [
+        12
+      ],
+      "identity": "matched"
+    },
+    {
+      "name": "Louie (2010) Season 2 S02 (1080p BluRay x265 HEVC 10bit AAC 5.1 Garshasp)/Louie (2010) - S02E13 - New Jersey-Airport (1080p BluRay x265 Garshasp).mkv",
+      "ignored": false,
+      "season": 2,
+      "episodes": [
+        13
+      ],
+      "identity": "matched"
+    }
+  ]
+}

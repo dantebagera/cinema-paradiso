@@ -1,0 +1,368 @@
+CP_TEST_ROOT=C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7
+
+> cinema-paradiso-frontend@3.0.0-beta.2 build
+> vite build --outDir C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7\dist
+
+vite v6.4.3 building for production...
+
+(!) outDir C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7\dist is not inside project root and will not be emptied.
+Use --emptyOutDir to override.
+
+transforming...
+✓ 1714 modules transformed.
+rendering chunks...
+computing gzip size...
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/manifest-CWC4etjQ.webmanifest          0.55 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/logo-Dk1rN4XL.svg                      1.25 kB │ gzip:   0.55 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/index.html                                    1.86 kB │ gzip:   0.84 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/styleguide-motif-crop-B3fTh5_H.png   119.86 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/header-Cr7VYxUL.png                  402.60 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/SharedMovieCards-m9chJEm1.css          4.56 kB │ gzip:   1.31 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/HomeWorkspace-me-HIXh0.css             6.76 kB │ gzip:   1.73 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/tv-lKpofHwb.css                       10.44 kB │ gzip:   2.74 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/IPTVWorkspace-DdyZZRE2.css            39.94 kB │ gzip:   6.56 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/index-BOnniS35.css                   208.91 kB │ gzip:  35.86 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/header-CbieqaTQ.js                     0.05 kB │ gzip:   0.07 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/WorkspaceEmptyState-BDDRbUY5.js        0.33 kB │ gzip:   0.23 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/moviePresentation-Di650b9v.js          0.70 kB │ gzip:   0.44 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/WorkspaceViewActions-CUwDNRWC.js       0.85 kB │ gzip:   0.44 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/Pagination-DkfGERdl.js                 0.88 kB │ gzip:   0.49 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/DiscoverResultGrid-kzh717Iz.js         0.88 kB │ gzip:   0.41 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/useCardGridMetrics-D4zXU0Vg.js         1.66 kB │ gzip:   0.90 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/WorkspacePathBar-CVuVdu-A.js           2.50 kB │ gzip:   0.96 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/LibraryControls-jFYLvFQb.js            2.83 kB │ gzip:   0.91 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/CatalogMetadataFilters-BDpoUgen.js     3.12 kB │ gzip:   1.36 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/DownloadsWorkspace-BF5l86xb.js         3.81 kB │ gzip:   1.56 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/vendor-Bb8JjhAW.js                     3.85 kB │ gzip:   1.72 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/iptv-D2ycluK8.js                       6.50 kB │ gzip:   1.38 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/MetadataCorrectionModal-CIR1gTRR.js    9.96 kB │ gzip:   3.28 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/StyleGuide-3rsNYCL0.js                10.43 kB │ gzip:   3.01 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/CardLab-Ddgx2uRf.js                   11.48 kB │ gzip:   4.12 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/useMovieCollectionCache-j8_ghewx.js   12.11 kB │ gzip:   4.15 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/AIControlWorkspace-DmjdJf_e.js        16.90 kB │ gzip:   5.84 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/HelpWorkspace-BlxC_JVT.js             21.47 kB │ gzip:   6.96 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/HomeWorkspace-MEtuVKdw.js             22.58 kB │ gzip:   7.09 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/WorkspaceSelectionBar-Cm0rtKRW.js     31.71 kB │ gzip:   9.97 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/vendor-icons-BwP572SE.js              33.11 kB │ gzip:   6.72 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/SharedMovieCards-BvJfggPF.js          41.37 kB │ gzip:  12.78 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/ListsWorkspace-DawhLV5Q.js            46.38 kB │ gzip:  14.24 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/LibraryWorkspace-Bmb5bEZd.js          47.99 kB │ gzip:  14.51 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/DiscoverWorkspace-BrFXMkUv.js         60.38 kB │ gzip:  18.54 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/CleanupWorkspace-CFst2wnD.js          63.68 kB │ gzip:  16.79 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/TVWorkspace-Ds5Nv0-h.js               73.41 kB │ gzip:  21.61 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/SettingsWorkspace-BO7FerfL.js         84.72 kB │ gzip:  21.11 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/IPTVWorkspace-Cxofsr2E.js             96.26 kB │ gzip:  25.57 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/index-D3W4WEUi.js                    117.67 kB │ gzip:  35.97 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/vendor-react-CJZMWplS.js             189.82 kB │ gzip:  59.19 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7/dist/assets/vendor-player-Dv34CeeU.js            353.87 kB │ gzip: 110.81 kB
+✓ built in 2.37s
+
+Running 223 tests using 1 worker
+
+(node:63224) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok   1 tests\e2e\app-smoke.spec.js:207:3 › / renders without a workspace crash (1.6s)
+  ok   2 tests\e2e\app-smoke.spec.js:207:3 › /library renders without a workspace crash (224ms)
+  ok   3 tests\e2e\app-smoke.spec.js:207:3 › /movie-lists renders without a workspace crash (239ms)
+  ok   4 tests\e2e\app-smoke.spec.js:207:3 › /cleanup renders without a workspace crash (234ms)
+  ok   5 tests\e2e\app-smoke.spec.js:207:3 › /discover renders without a workspace crash (239ms)
+  ok   6 tests\e2e\app-smoke.spec.js:207:3 › /ai-control renders without a workspace crash (230ms)
+  ok   7 tests\e2e\app-smoke.spec.js:207:3 › /iptv renders without a workspace crash (323ms)
+  ok   8 tests\e2e\app-smoke.spec.js:207:3 › /downloads renders without a workspace crash (228ms)
+  ok   9 tests\e2e\app-smoke.spec.js:207:3 › /help renders without a workspace crash (246ms)
+  ok  10 tests\e2e\app-smoke.spec.js:207:3 › /settings renders without a workspace crash (308ms)
+  ok  11 tests\e2e\app-smoke.spec.js:220:1 › Home without playback history and shared desktop workspaces retain their layout (2.2s)
+  ok  12 tests\e2e\app-smoke.spec.js:242:1 › Home expanded details keep canonical rating and vote counts above stale feed summaries (322ms)
+  ok  13 tests\e2e\app-smoke.spec.js:255:1 › Followed releases Sources hands control to the existing torrent review (379ms)
+  ok  14 tests\e2e\app-smoke.spec.js:271:1 › release watcher keeps a three-row preview while View all and Following expose the complete set (1.3s)
+  ok  15 tests\e2e\app-smoke.spec.js:385:1 › desktop sidebar collapses persistently while workspace margins stay fixed (1.6s)
+  ok  16 tests\e2e\app-smoke.spec.js:538:1 › power menu separates frontend reset, CP restart, optional torrent close, and device shutdown (503ms)
+  ok  17 tests\e2e\app-smoke.spec.js:591:1 › sidebar popups switch exclusively and dismiss outside or with Escape (1.0s)
+  ok  18 tests\e2e\app-smoke.spec.js:644:1 › Continue Watching uses compact uncropped posters and centralized resume restart remove actions (852ms)
+  ok  19 tests\e2e\app-smoke.spec.js:726:1 › Downloads shows qBittorrent without migration-only review records (243ms)
+  ok  20 tests\e2e\app-smoke.spec.js:734:1 › Settings scans accessible Ollama cloud models and validates the saved selection (791ms)
+  ok  21 tests\e2e\app-smoke.spec.js:809:1 › Settings keeps OS playback default, redacts provider secrets, and verifies the native runtime (508ms)
+  ok  22 tests\e2e\app-smoke.spec.js:916:1 › Advanced Search shares normalized Library and Discover execution without losing cards on error (4.7s)
+  ok  23 tests\e2e\app-smoke.spec.js:1076:1 › year filter drafts stay editable without taking down Discover, Library, or advanced search (773ms)
+  ok  24 tests\e2e\app-smoke.spec.js:1113:1 › Library switches between canonical movie and raw file views (1.1s)
+  ok  25 tests\e2e\app-smoke.spec.js:1193:1 › local Library playback uses the centralized player route without changing Stream (556ms)
+  ok  26 tests\e2e\app-smoke.spec.js:1242:1 › Library people search renders stored actors and writers from canonical metadata (398ms)
+  ok  27 tests\e2e\app-smoke.spec.js:1294:1 › existing actor and director People search remains available in Library and Discover (639ms)
+  ok  28 tests\e2e\app-smoke.spec.js:1387:1 › Library Keywords resolves a stored identity and filters owned SQL movies (613ms)
+  ok  29 tests\e2e\app-smoke.spec.js:1452:1 › Library Keywords offers the same query in Movies when no stored keyword exists (559ms)
+  ok  30 tests\e2e\app-smoke.spec.js:1494:1 › static CP surfaces hide the browser caret while text controls keep it (292ms)
+  ok  31 tests\e2e\app-smoke.spec.js:1506:1 › Library keyword pagination replaces bounded pages and reaches every identity (1.6s)
+  ok  32 tests\e2e\app-smoke.spec.js:1577:1 › Library Keywords ignores an older in-flight SQL suggestion response (872ms)
+  ok  33 tests\e2e\app-smoke.spec.js:1634:1 › Discover Keywords keeps TMDB identity, ownership attachment, and back navigation (1.0s)
+  ok  34 tests\e2e\app-smoke.spec.js:1742:1 › Discover Keywords ignores a stale TMDB keyword response (425ms)
+  ok  35 tests\e2e\app-smoke.spec.js:1786:1 › Discover relationship paging rejects stale pages and follows shrinking provider totals (837ms)
+  ok  36 tests\e2e\app-smoke.spec.js:1891:1 › Discover collection navigation wins over an older in-flight list request (570ms)
+  ok  37 tests\e2e\app-smoke.spec.js:1996:1 › Library collection never shows a false zero and opens the full collection in Discover with one click (1.6s)
+  ok  38 tests\e2e\app-smoke.spec.js:2033:1 › Discover collection ignores a prior movie search and distinguishes filtered from empty parts (803ms)
+  ok  39 tests\e2e\app-smoke.spec.js:2075:1 › Keyword modes surface their authoritative SQL and TMDB errors (762ms)
+  ok  40 tests\e2e\app-smoke.spec.js:2103:1 › Discover People search ignores a stale response and clears its loading state (375ms)
+  ok  41 tests\e2e\app-smoke.spec.js:2148:1 › Discover People and Actor Director Writer relationships replace pages beyond ten (2.3s)
+  ok  42 tests\e2e\app-smoke.spec.js:2278:1 › Pick relationship browsing uses shared Previous and Next replacement pages (813ms)
+  ok  43 tests\e2e\app-smoke.spec.js:2366:1 › movie credit Filmography opens all credits while the card keeps Discover refinements (617ms)
+  ok  44 tests\e2e\app-smoke.spec.js:2444:1 › Library Filmography opens full credits even when Discover has active filters (1.4s)
+  ok  45 tests\e2e\app-smoke.spec.js:2475:1 › Library credit clicks load the people projection before filtering owned work (1.6s)
+  ok  46 tests\e2e\app-smoke.spec.js:2534:1 › Library server paging, filtered selection, and navigation preserve exact result state (595ms)
+  ok  47 tests\e2e\app-smoke.spec.js:2584:1 › owned Library posters render from immutable local assets without detail providers (1.7s)
+  ok  48 tests\e2e\app-smoke.spec.js:2647:1 › Discover unowned cards keep remote actions and do not acquire an ownership badge (451ms)
+  ok  49 tests\e2e\app-smoke.spec.js:2689:1 › bulk Find sources keeps owned movies as upgrades and switches the actual quality variant (499ms)
+  ok  50 tests\e2e\app-smoke.spec.js:2862:1 › Maintenance tabs remain interactive after the audit loads (292ms)
+  ok  51 tests\e2e\app-smoke.spec.js:2873:1 › Duplicate cleanup confirms and submits the complete safe movie folder (780ms)
+  ok  52 tests\e2e\app-smoke.spec.js:3036:1 › Maintenance highlights the exact evidence that prevented automatic selection (418ms)
+  ok  53 tests\e2e\app-smoke.spec.js:3092:1 › Maintenance explains quality, content, and frame-rate evidence without using fps as a quality score (275ms)
+  ok  54 tests\e2e\app-smoke.spec.js:3184:1 › Library unifies resolution filtering within the shared controls in both views (465ms)
+  ok  55 tests\e2e\app-smoke.spec.js:3250:1 › Maintenance upgrade summary opens the authoritative Library filter (2.0s)
+  ok  56 tests\e2e\app-smoke.spec.js:3301:1 › every stateful workspace preserves its page state after sidebar navigation (5.2s)
+  ok  57 tests\e2e\app-smoke.spec.js:3391:1 › IPTV Movies keeps provider playlists, My list, grouped sources, unmatched fallback, and metadata settings separate (3.5s)
+  ok  58 tests\e2e\app-smoke.spec.js:3498:1 › IPTV providers keep same IDs isolated, stop playback on switch, and remove only the selected provider (4.6s)
+  ok  59 tests\e2e\app-smoke.spec.js:3568:1 › Library, Discover-owned, and Movie List cards render one canonical movie contract (2.2s)
+  ok  60 tests\e2e\app-smoke.spec.js:3736:1 › AI Control cards start fully selected, preserve custom selection across pages, and confirm exact server keys (558ms)
+  ok  61 tests\e2e\app-smoke.spec.js:3803:1 › Library metadata correction searches TMDB and Plex while keeping display edits separate (790ms)
+  ok  62 tests\e2e\app-smoke.spec.js:3888:1 › curation generation refresh keeps an expanded Discover card open (479ms)
+  ok  63 tests\e2e\app-smoke.spec.js:3911:1 › adaptive Discover paging fills the measured desktop card rows (394ms)
+  ok  64 tests\e2e\app-smoke.spec.js:3948:1 › Home uses scrolling poster rails, paired sections and inline movie details (2.6s)
+  ok  65 tests\e2e\app-smoke.spec.js:4250:1 › Home library health distinguishes unavailable, stale and empty status (511ms)
+  ok  66 tests\e2e\app-smoke.spec.js:4277:1 › bootstrap paints before the frontend entry bundle executes (239ms)
+  ok  67 tests\e2e\app-smoke.spec.js:4312:1 › cold Library navigation measures the grid once and defers unrelated startup work (491ms)
+  ok  68 tests\e2e\app-smoke.spec.js:4399:1 › committed catalog event quietly adds a final Library card without unmounting or losing state (689ms)
+  ok  69 tests\e2e\continue-watching.spec.js:30:1 › Continue Watching keeps only the selected menu open with mouse and keyboard (520ms)
+  ok  70 tests\e2e\continue-watching.spec.js:54:1 › Continue Watching View card opens only that expanded movie and supports a second selection (932ms)
+  ok  71 tests\e2e\continue-watching.spec.js:71:1 › Continue Watching View card selects Movies when Discover last showed TV (966ms)
+  ok  72 tests\e2e\continue-watching.spec.js:91:1 › Continue Watching explains missing identity without searching for a different movie (356ms)
+  ok  73 tests\e2e\cross-page-selection.spec.js:23:1 › Discover keeps selected movies and bulk payloads across server pages (568ms)
+  ok  74 tests\e2e\cross-page-selection.spec.js:108:1 › Library keeps selected movies and resolved bulk items across server pages (503ms)
+  ok  75 tests\e2e\cross-page-selection.spec.js:160:1 › Movie Lists keeps selection and source-review payloads across client pages (477ms)
+  ok  76 tests\e2e\cross-page-selection.spec.js:245:1 › Maintenance keeps selected paths across pages and previews the complete delete set (403ms)
+  ok  77 tests\e2e\lists-layout.spec.js:11:1 › Popularity uses cached scores for owned and unowned titles while retaining canonical owned display (406ms)
+  ok  78 tests\e2e\lists-layout.spec.js:34:1 › Partial cached projections hydrate the fields needed for active list filters (546ms)
+  ok  79 tests\e2e\lists-layout.spec.js:58:1 › Add movie search renders results and submits the chosen identity without a display crash (546ms)
+  ok  80 tests\e2e\lists-layout.spec.js:83:1 › New list dialog dismisses on browser navigation without submitting or stealing focus (638ms)
+  ok  81 tests\e2e\lists-layout.spec.js:97:1 › Failed filter metadata is visibly incomplete and retry restores matches without list mutations (587ms)
+  ok  82 tests\e2e\lists-layout.spec.js:152:1 › Lists fills the workspace and shares sticky, remembered controls with catalog views (777ms)
+  ok  83 tests\e2e\lists-layout.spec.js:185:1 › List picker searches, dismisses and protects smart lists; dialogs retain failures and save custom names (1.3s)
+  ok  84 tests\e2e\lists-layout.spec.js:217:1 › Search and filter clearing are independent, and selection actions remain reachable while collapsed (602ms)
+  ok  85 tests\e2e\lists-layout.spec.js:237:1 › TV shares the list picker and controls, preserves selection across pages and opens TV Shows (1.5s)
+  ok  86 tests\e2e\lists-layout.spec.js:271:1 › Uncached saved movies hydrate the regular Discover card and reuse details when expanded (538ms)
+  ok  87 tests\e2e\lists-layout.spec.js:289:1 › Movie list refinements find uncached matches beyond the first page, sort them and preserve valid year drafts (690ms)
+  ok  88 tests\e2e\lists-layout.spec.js:327:1 › TV list controls submit TV criteria together and clear refinements independently of search (471ms)
+  ok  89 tests\e2e\movie-awards.spec.js:23:3 › Oscars navigation restores detail-only plots through Arabic, repeated awards, and history (1.2s)
+  ok  90 tests\e2e\movie-awards.spec.js:23:3 › Golden Globe navigation restores detail-only plots through Arabic, repeated awards, and history (1.2s)
+  ok  91 tests\e2e\movie-awards.spec.js:76:1 › real awards API: number-left icons, award-only footer, exact actor/director films and Back (792ms)
+  ok  92 tests\e2e\movie-awards.spec.js:104:3 › desktop geometry 1920x1080 (748ms)
+  ok  93 tests\e2e\movie-awards.spec.js:104:3 › desktop geometry 1600x1000 (693ms)
+  ok  94 tests\e2e\movie-awards.spec.js:104:3 › desktop geometry 1366x900 (644ms)
+  ok  95 tests\e2e\movie-awards.spec.js:104:3 › desktop geometry 1366x768 (614ms)
+  ok  96 tests\e2e\movie-awards.spec.js:142:1 › all 120 verified winning films are reachable through real pagination (759ms)
+  ok  97 tests\e2e\movie-awards.spec.js:151:1 › award keyboard Space keeps one history entry and browser Back/Forward restores the winning set (598ms)
+  ok  98 tests\e2e\movie-awards.spec.js:167:1 › a late snapshot leaves the expanded card open and zero/unknown movie awards hidden (578ms)
+  ok  99 tests\e2e\movie-awards.spec.js:181:1 › a single Globe stays below the empty Oscar position and opens the real winning films (634ms)
+  ok 100 tests\e2e\movie-awards.spec.js:200:1 › first snapshot failure is quiet and regular details remain usable (525ms)
+  ok 101 tests\e2e\movie-awards.spec.js:208:1 › pending Globe coverage leaves only the positive Oscar pair visible (511ms)
+  ok 102 tests\e2e\movie-awards.spec.js:220:1 › the same person has separate rendered acting and directing totals and winning-film membership (541ms)
+  ok 103 tests\e2e\movie-awards.spec.js:237:1 › Back during a delayed award response discards its late winning films (660ms)
+  ok 104 tests\e2e\movie-awards.spec.js:248:1 › an awards generation conflict retries page one once with the current real generation (766ms)
+  ok 105 tests\e2e\movie-awards.spec.js:269:1 › Arabic display retains the canonical awards and number-left icon order (1.5s)
+  ok 106 tests\e2e\movie-awards.spec.js:281:1 › an owned candidate uses accepted movie counts instead of its conflicting raw ID (536ms)
+  ok 107 tests\e2e\movie-awards.spec.js:299:1 › Home inline details opt in while poster rails and IPTV stay free of movie awards (456ms)
+  ok 108 tests\e2e\movie-awards.spec.js:314:3 › people IDs that collide with award-winning entities do not display awards (428ms)
+  ok 109 tests\e2e\movie-awards.spec.js:314:3 › keywords IDs that collide with award-winning entities do not display awards (427ms)
+  ok 110 tests\e2e\movie-awards.spec.js:330:3 › library award click uses the accepted identity and Back restores its expanded origin (1.4s)
+  ok 111 tests\e2e\movie-awards.spec.js:330:3 › movie-lists award click uses the accepted identity and Back restores its expanded origin (1.4s)
+  ok 112 tests\e2e\movie-awards.spec.js:330:3 › ai-control award click uses the accepted identity and Back restores its expanded origin (2.3s)
+  ok 113 tests\e2e\movie-awards.spec.js:330:3 › pick award click uses the accepted identity and Back restores its expanded origin (735ms)
+  ok 114 tests\e2e\movie-awards.spec.js:330:3 › browse award click uses the accepted identity and Back restores its expanded origin (762ms)
+  ok 115 tests\e2e\movie-relationships.spec.js:109:5 › discover cast award icons remain visible beside counts at 1600px (571ms)
+  ok 116 tests\e2e\movie-relationships.spec.js:109:5 › discover cast award icons remain visible beside counts at 1366px (517ms)
+  ok 117 tests\e2e\movie-relationships.spec.js:109:5 › library cast award icons remain visible beside counts at 1600px (488ms)
+  ok 118 tests\e2e\movie-relationships.spec.js:109:5 › library cast award icons remain visible beside counts at 1366px (516ms)
+  ok 119 tests\e2e\movie-relationships.spec.js:148:5 › discover movie artwork at 1920px › expanded movie artwork stays behind the poster and details without an outer hover effect (738ms)
+  ok 120 tests\e2e\movie-relationships.spec.js:148:5 › discover movie artwork at 1366px › expanded movie artwork stays behind the poster and details without an outer hover effect (876ms)
+  ok 121 tests\e2e\movie-relationships.spec.js:148:5 › library movie artwork at 1920px › expanded movie artwork stays behind the poster and details without an outer hover effect (711ms)
+  ok 122 tests\e2e\movie-relationships.spec.js:148:5 › library movie artwork at 1366px › expanded movie artwork stays behind the poster and details without an outer hover effect (624ms)
+  ok 123 tests\e2e\movie-relationships.spec.js:177:1 › movie details collapse from plain content while actions and dialogs remain usable (1.1s)
+  ok 124 tests\e2e\movie-relationships.spec.js:203:1 › discover expanded movie rails reveal the remaining cast and related titles with matching arrows (6.1s)
+  ok 125 tests\e2e\movie-relationships.spec.js:203:1 › library expanded movie rails reveal the remaining cast and related titles with matching arrows (6.1s)
+  ok 126 tests\e2e\movie-relationships.spec.js:281:1 › related posters reveal full title and year on hover and keyboard focus (1.2s)
+  ok 127 tests\e2e\movie-relationships.spec.js:320:1 › stable async rail, scrollable tiles, restored cast and selected related expansion (3.1s)
+  ok 128 tests\e2e\movie-relationships.spec.js:372:1 › Plex-only owned movie resolves rich cast by exact title and year (571ms)
+  ok 129 tests\e2e\movie-relationships.spec.js:395:1 › director and cast rail retains all loaded credits on short desktops (649ms)
+  ok 130 tests\e2e\movie-relationships.spec.js:423:1 › View all keeps source, page, ownership and card position through inline expansion (1.2s)
+  ok 131 tests\e2e\movie-relationships.spec.js:458:1 › bounded View all shows an exact total and stops at the final page for each source (1.5s)
+  ok 132 tests\e2e\movie-relationships.spec.js:512:1 › a failed relationship count preserves loaded cards and can be retried (854ms)
+  ok 133 tests\e2e\movie-relationships.spec.js:544:1 › provider failure remains local and short desktop keeps all corners visible (596ms)
+  ok 134 tests\e2e\movie-relationships.spec.js:577:1 › late TMDB details recenter the finished card inside a short desktop viewport (1.3s)
+  ok 135 tests\e2e\movie-relationships.spec.js:585:1 › Short desktop keeps expanded card layout and lets lower content scroll below pinned controls (585ms)
+  x  136 tests\e2e\movie-relationships.spec.js:600:1 › collection shares one row with mandatory lists and list chips stay bounded (45.1s)
+(node:85876) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 137 tests\e2e\movie-relationships.spec.js:646:3 › library uses shared rail and returns to original expanded card and scroll (2.2s)
+  ok 138 tests\e2e\movie-relationships.spec.js:646:3 › movie-lists uses shared rail and returns to original expanded card and scroll (1.2s)
+  ok 139 tests\e2e\movie-relationships.spec.js:646:3 › ai-control uses shared rail and returns to original expanded card and scroll (1.2s)
+  ok 140 tests\e2e\movie-relationships.spec.js:646:3 › pick uses shared rail and returns to original expanded card and scroll (1.0s)
+  ok 141 tests\e2e\movie-relationships.spec.js:646:3 › browse uses shared rail and returns to original expanded card and scroll (1.0s)
+  ok 142 tests\e2e\movie-relationships.spec.js:689:1 › browser Back and breadcrumbs reverse deeper related exploration (1.1s)
+  ok 143 tests\e2e\movie-relationships.spec.js:708:1 › unowned tile keeps Discover source, streaming and watchlist actions; breadcrumb restores original expansion (809ms)
+  ok 144 tests\e2e\movie-relationships.spec.js:723:1 › Back during relationship loading ignores late results and preserves the expanded origin (2.4s)
+  ok 145 tests\e2e\movie-relationships.spec.js:738:1 › a failed Similar source does not block Recommended in Discover (806ms)
+  ok 146 tests\e2e\movie-relationships.spec.js:750:3 › dense metadata fits at desktop height 1080 (686ms)
+  ok 147 tests\e2e\movie-relationships.spec.js:750:3 › dense metadata fits at desktop height 900 (707ms)
+  ok 148 tests\e2e\movie-relationships.spec.js:750:3 › dense metadata fits at desktop height 720 (629ms)
+  ok 149 tests\e2e\movie-scroll-return.spec.js:64:3 › discover restores the pre-expansion scroll after repeated mouse and keyboard collapses (1.6s)
+  ok 150 tests\e2e\movie-scroll-return.spec.js:64:3 › library restores the pre-expansion scroll after repeated mouse and keyboard collapses (1.2s)
+  ok 151 tests\e2e\movie-scroll-return.spec.js:64:3 › movie-lists restores the pre-expansion scroll after repeated mouse and keyboard collapses (1.2s)
+  ok 152 tests\e2e\movie-scroll-return.spec.js:64:3 › ai-control restores the pre-expansion scroll after repeated mouse and keyboard collapses (1.2s)
+  ok 153 tests\e2e\movie-scroll-return.spec.js:64:3 › pick restores the pre-expansion scroll after repeated mouse and keyboard collapses (2.2s)
+  ok 154 tests\e2e\movie-scroll-return.spec.js:64:3 › browse restores the pre-expansion scroll after repeated mouse and keyboard collapses (1.3s)
+  ok 155 tests\e2e\movie-scroll-return.spec.js:91:1 › Switching movies lets the new expanded card own scrolling (677ms)
+  ok 156 tests\e2e\stream-player.spec.js:26:1 › movie page load removes CP status immediately and leaves provider controls accessible (585ms)
+  ok 157 tests\e2e\stream-player.spec.js:45:1 › delayed page keeps a truthful loading status, then removes it on load and resets on reopen (537ms)
+  ok 158 tests\e2e\stream-player.spec.js:72:1 › a provider 404 page stays visible without a misleading CP preparation status (413ms)
+  -  159 tests\e2e\stream-player.spec.js:81:1 › TV page load clears CP status without changing episode identity or watched state
+  ok 160 tests\e2e\workspace-controls-empty-layout.spec.js:60:1 › Lists reuses styled fields and supports media-tab keyboard navigation without losing queries (445ms)
+  ok 161 tests\e2e\workspace-controls-empty-layout.spec.js:88:1 › TV-disabled Lists falls back to Movies despite a saved TV preference (328ms)
+  ok 162 tests\e2e\workspace-controls-empty-layout.spec.js:98:3 › Movie Watchlist explains empty membership even with a search (380ms)
+  ok 163 tests\e2e\workspace-controls-empty-layout.spec.js:98:3 › Movie Watched explains empty membership even with a search (380ms)
+  ok 164 tests\e2e\workspace-controls-empty-layout.spec.js:98:3 › Movie Following explains empty membership even with a search (376ms)
+  ok 165 tests\e2e\workspace-controls-empty-layout.spec.js:110:1 › Movie list filter recovery retains the list and restores missing cards even when Library is empty (656ms)
+  ok 166 tests\e2e\workspace-controls-empty-layout.spec.js:127:1 › Empty custom Movie list opens its existing add dialog without saving membership (336ms)
+  ok 167 tests\e2e\workspace-controls-empty-layout.spec.js:138:1 › Library distinguishes a genuinely empty source and routes Settings through App navigation (1.2s)
+  ok 168 tests\e2e\workspace-controls-empty-layout.spec.js:149:1 › Unaccepted files get Movie View guidance and the existing File View recovery (423ms)
+  ok 169 tests\e2e\workspace-controls-empty-layout.spec.js:159:1 › Library filter recovery uses the existing full reset and restores cards (415ms)
+  ok 170 tests\e2e\workspace-controls-empty-layout.spec.js:170:1 › Accepted but unavailable movies are not labelled as an empty archive or unaccepted metadata (319ms)
+  ok 171 tests\e2e\workspace-controls-empty-layout.spec.js:178:1 › File View distinguishes an empty inventory from a filtered inventory (611ms)
+  ok 172 tests\e2e\workspace-controls-empty-layout.spec.js:198:1 › A failed Library read shows its error without declaring the source empty (327ms)
+  ok 173 tests\e2e\workspace-controls-empty-layout.spec.js:206:1 › TV Lists separates empty membership, filtered results, pending requests and failed reads (588ms)
+  ok 174 tests\e2e\workspace-controls-empty-layout.spec.js:241:1 › TV Lists explains empty Watched and custom membership without offering filter recovery (770ms)
+  ok 175 tests\e2e\workspace-controls-empty-layout.spec.js:260:1 › TV Lists recovers an out-of-range page without clearing list membership or changing page size (419ms)
+  ok 176 tests\e2e\workspace-controls-empty-layout.spec.js:281:1 › Discover disclosure retains criteria, shows summaries, and does not fetch merely by opening or closing (676ms)
+  ok 177 tests\e2e\workspace-controls-empty-layout.spec.js:305:1 › Invalid and incomplete Discover years remain visible and block Refresh when filters close (644ms)
+  ok 178 tests\e2e\workspace-controls-empty-layout.spec.js:323:1 › Discover bulk actions appear after selection and disappear on Clear (448ms)
+  ok 179 tests\e2e\workspace-controls-empty-layout.spec.js:340:3 › Discover desktop 1280 brings cards higher without changing card width or page completeness (463ms)
+  ok 180 tests\e2e\workspace-controls-empty-layout.spec.js:340:3 › Discover desktop 1600 brings cards higher without changing card width or page completeness (457ms)
+  ok 181 tests\e2e\workspace-controls-empty-layout.spec.js:340:3 › Discover desktop 1920 brings cards higher without changing card width or page completeness (487ms)
+  ok 182 tests\e2e\workspace-controls-empty-layout.spec.js:366:3 › discover-movie keeps clear search in its field and reset filters after all selectors (667ms)
+  ok 183 tests\e2e\workspace-controls-empty-layout.spec.js:366:3 › library-movie keeps clear search in its field and reset filters after all selectors (380ms)
+  ok 184 tests\e2e\workspace-controls-empty-layout.spec.js:366:3 › discover-tv keeps clear search in its field and reset filters after all selectors (949ms)
+  ok 185 tests\e2e\workspace-controls-empty-layout.spec.js:366:3 › library-tv keeps clear search in its field and reset filters after all selectors (781ms)
+  ok 186 tests\e2e\workspace-controls-empty-layout.spec.js:366:3 › library-file keeps clear search in its field and reset filters after all selectors (393ms)
+  ok 187 tests\e2e\workspace-controls-empty-layout.spec.js:366:3 › library-tv-file keeps clear search in its field and reset filters after all selectors (772ms)
+  ok 188 tests\e2e\workspace-controls-empty-layout.spec.js:447:7 › discover movie clear identity search retains People mode and returns focus (528ms)
+  ok 189 tests\e2e\workspace-controls-empty-layout.spec.js:447:7 › discover movie clear identity search retains Keywords mode and returns focus (512ms)
+  ok 190 tests\e2e\workspace-controls-empty-layout.spec.js:474:5 › discover movie clear advanced search removes criteria and stays Advanced (1.4s)
+  ok 191 tests\e2e\workspace-controls-empty-layout.spec.js:447:7 › discover tv clear identity search retains People mode and returns focus (1.2s)
+  ok 192 tests\e2e\workspace-controls-empty-layout.spec.js:447:7 › discover tv clear identity search retains Keywords mode and returns focus (1.2s)
+  ok 193 tests\e2e\workspace-controls-empty-layout.spec.js:474:5 › discover tv clear advanced search removes criteria and stays Advanced (1.7s)
+  ok 194 tests\e2e\workspace-controls-empty-layout.spec.js:447:7 › library movie clear identity search retains People mode and returns focus (403ms)
+  ok 195 tests\e2e\workspace-controls-empty-layout.spec.js:447:7 › library movie clear identity search retains Keywords mode and returns focus (441ms)
+  ok 196 tests\e2e\workspace-controls-empty-layout.spec.js:474:5 › library movie clear advanced search removes criteria and stays Advanced (1.9s)
+  ok 197 tests\e2e\workspace-controls-empty-layout.spec.js:447:7 › library tv clear identity search retains People mode and returns focus (1.1s)
+  ok 198 tests\e2e\workspace-controls-empty-layout.spec.js:447:7 › library tv clear identity search retains Keywords mode and returns focus (1.1s)
+  ok 199 tests\e2e\workspace-controls-empty-layout.spec.js:474:5 › library tv clear advanced search removes criteria and stays Advanced (1.6s)
+  ok 200 tests\e2e\workspace-controls-empty-layout.spec.js:528:5 › discover movie expansion restores expanded controls and retains drafts and selection (2.1s)
+  ok 201 tests\e2e\workspace-controls-empty-layout.spec.js:528:5 › discover movie expansion restores collapsed controls and retains drafts and selection (976ms)
+  ok 202 tests\e2e\workspace-controls-empty-layout.spec.js:528:5 › library movie expansion restores expanded controls and retains drafts and selection (684ms)
+  ok 203 tests\e2e\workspace-controls-empty-layout.spec.js:528:5 › library movie expansion restores collapsed controls and retains drafts and selection (763ms)
+  ok 204 tests\e2e\workspace-controls-empty-layout.spec.js:615:1 › Library remembers separate Media and File controls states when returning to an expanded movie (639ms)
+  ok 205 tests\e2e\workspace-controls-empty-layout.spec.js:641:1 › Discover Movie chrome stays pinned with controls collapsed and expanded without requerying (711ms)
+  ok 206 tests\e2e\workspace-controls-empty-layout.spec.js:658:1 › Discover TV uses the same pinned tabs and expanded controls (1.0s)
+  ok 207 tests\e2e\workspace-controls-empty-layout.spec.js:671:1 › Movie Library removes titles and retains sticky view actions in media and files (856ms)
+  ok 208 tests\e2e\workspace-controls-empty-layout.spec.js:690:1 › TV Library retains sticky view, refresh and Maintenance import actions in media and files (1.2s)
+  ok 209 tests\e2e\workspace-controls-empty-layout.spec.js:714:1 › Advanced picker stays outside pinned controls and preserves its draft through collapse (965ms)
+  ok 210 tests\e2e\workspace-controls-empty-layout.spec.js:740:5 › discover movie advanced picker floats above controls without adding scroll and dismisses accessibly (815ms)
+  ok 211 tests\e2e\workspace-controls-empty-layout.spec.js:740:5 › discover tv advanced picker floats above controls without adding scroll and dismisses accessibly (1.1s)
+  ok 212 tests\e2e\workspace-controls-empty-layout.spec.js:740:5 › library movie advanced picker floats above controls without adding scroll and dismisses accessibly (596ms)
+  ok 213 tests\e2e\workspace-controls-empty-layout.spec.js:740:5 › library tv advanced picker floats above controls without adding scroll and dismisses accessibly (996ms)
+  ok 214 tests\e2e\workspace-controls-empty-layout.spec.js:812:1 › Every Discover tool uses one default-collapsed panel and removes the title bar (1.4s)
+  ok 215 tests\e2e\workspace-controls-empty-layout.spec.js:842:1 › TV bulk review dismisses when its retained workspace is hidden and selection survives (858ms)
+  ok 216 tests\e2e\workspace-controls-empty-layout.spec.js:860:1 › TV cards retain the backend explanation when no episode target is available (1.5s)
+  ok 217 tests\e2e\workspace-controls-empty-layout.spec.js:873:1 › Mixed TV download confirmation uses the reviewed local subset and retains external selection (1.4s)
+  ok 218 tests\e2e\workspace-controls-empty-layout.spec.js:888:1 › External TV selection stays read-only, deduplicates across pages and preserves draft through collapse (890ms)
+  ok 219 tests\e2e\workspace-controls-empty-layout.spec.js:908:1 › TV membership resolves external metadata only on action and reuses resolved IDs after failure (881ms)
+  ok 220 tests\e2e\workspace-controls-empty-layout.spec.js:927:1 › TV Watchlist supports external rows; mixed download preview uses only cataloged IDs and remains visible when collapsed (931ms)
+  ok 221 tests\e2e\workspace-controls-empty-layout.spec.js:947:3 › Movies sends its selected identity through the shared Find sources review (464ms)
+  ok 222 tests\e2e\workspace-controls-empty-layout.spec.js:947:3 › Browse Indexers sends its selected identity through the shared Find sources review (9.9s)
+  ok 223 tests\e2e\workspace-controls-empty-layout.spec.js:947:3 › Pick My Movie sends its selected identity through the shared Find sources review (556ms)
+
+
+  1) tests\e2e\movie-relationships.spec.js:600:1 › collection shares one row with mandatory lists and list chips stay bounded 
+
+    Test timeout of 45000ms exceeded.
+
+    Error: locator.click: Test timeout of 45000ms exceeded.
+    Call log:
+      - waiting for getByRole('heading', { name: 'The Hunt', exact: true })
+
+
+      62 |   }
+      63 |   await page.goto(`/${scope}`);
+    > 64 |   await page.getByRole('heading', { name: seed.title, exact: true }).click();
+         |                                                                      ^
+      65 |   await expect(expanded(page)).toBeVisible();
+      66 | }
+      67 | async function fullCard(page, checkInitialPosition = true) {
+        at expandSeed (C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\movie-relationships.spec.js:64:70)
+        at C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\movie-relationships.spec.js:613:3
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\movie-relationships-collec-e8896-and-list-chips-stay-bounded\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\movie-relationships-collec-e8896-and-list-chips-stay-bounded\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\movie-relationships-collec-e8896-and-list-chips-stay-bounded\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\movie-relationships-collec-e8896-and-list-chips-stay-bounded\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    tests\e2e\movie-relationships.spec.js:600:1 › collection shares one row with mandatory lists and list chips stay bounded 
+  1 skipped
+  221 passed (4.5m)
+Playwright failure data retained at C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-3d9d87b1849a43afbd360a98d5c06ba7
+127.0.0.1 - - [11/Oct/2026 22:25:26] "GET /assets/SharedMovieCards-BvJfggPF.js HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:26] "GET /assets/moviePresentation-Di650b9v.js HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:26] "GET /assets/SharedMovieCards-m9chJEm1.css HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:26] "GET /assets/useMovieCollectionCache-j8_ghewx.js HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:26] "GET /assets/DiscoverResultGrid-kzh717Iz.js HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:26] "GET /assets/Pagination-DkfGERdl.js HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:26] "GET /assets/WorkspacePathBar-CVuVdu-A.js HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:26] "GET /assets/useCardGridMetrics-D4zXU0Vg.js HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:26] "GET /api/notifications?query=&page=1 HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:26] "GET /api/power/status HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:26] "GET /api/streaming/config HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:26] "GET /api/library/reconcile HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:26] "GET /api/catalog/events HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:26] "GET /api/tmdb/filter-options HTTP/1.1" 400 -
+127.0.0.1 - - [11/Oct/2026 22:25:26] "GET /api/movie-awards/snapshot HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:31] "GET /api/power/status HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:36] "GET /discover HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:36] "GET /assets/index-D3W4WEUi.js HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:36] "GET /assets/vendor-Bb8JjhAW.js HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:36] "GET /assets/vendor-react-CJZMWplS.js HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:36] "GET /assets/vendor-icons-BwP572SE.js HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:36] "GET /assets/index-BOnniS35.css HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:36] "GET /assets/DiscoverWorkspace-BrFXMkUv.js HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:36] "GET /assets/CatalogMetadataFilters-BDpoUgen.js HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:36] "GET /assets/SharedMovieCards-BvJfggPF.js HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:36] "GET /assets/SharedMovieCards-m9chJEm1.css HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:36] "GET /assets/WorkspaceSelectionBar-Cm0rtKRW.js HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:36] "GET /assets/moviePresentation-Di650b9v.js HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:36] "GET /assets/useMovieCollectionCache-j8_ghewx.js HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:36] "GET /assets/DiscoverResultGrid-kzh717Iz.js HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:36] "GET /assets/WorkspacePathBar-CVuVdu-A.js HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:36] "GET /assets/useCardGridMetrics-D4zXU0Vg.js HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:36] "GET /assets/Pagination-DkfGERdl.js HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:36] "GET /api/power/status HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:36] "GET /api/notifications?query=&page=1 HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:36] "GET /api/library/reconcile HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:36] "GET /api/streaming/config HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:36] "GET /api/catalog/events HTTP/1.1" 200 -
+127.0.0.1 - - [11/Oct/2026 22:25:36] "GET /api/tmdb/filter-options HTTP/1.1" 400 -
+127.0.0.1 - - [11/Oct/2026 22:25:36] "GET /api/movie-awards/snapshot HTTP/1.1" 200 -

@@ -1,0 +1,120 @@
+FFFFFFFFFF.EF.F
+======================================================================
+ERROR: test_pack_bonus_is_unselected_before_resume_and_never_imported (tests.test_verified_tv_acquisition.TVAcquisitionTests.test_pack_bonus_is_unselected_before_resume_and_never_imported)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_verified_tv_acquisition.py", line 257, in test_pack_bonus_is_unselected_before_resume_and_never_imported
+    mapping = self.service.validate_manifest(submitted['job'], self.files)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\services\tv_acquisition.py", line 607, in validate_manifest
+    raise TorrentValidationError('Torrent filenames identify a different series')
+services.qbittorrent.TorrentValidationError: Torrent filenames identify a different series
+
+======================================================================
+FAIL: test_auxiliary_directory_survives_numbered_episode_branches (tests.test_verified_tv_acquisition.AuxiliaryVideoPathTests.test_auxiliary_directory_survives_numbered_episode_branches) (directory='Samples', filename='Harbor.Signals.S01E01.mkv')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_verified_tv_acquisition.py", line 75, in test_auxiliary_directory_survives_numbered_episode_branches
+    self.assertTrue(parse_episode_name('Harbor Signals/' + directory + '/' + filename)['ignored'])
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_auxiliary_directory_survives_numbered_episode_branches (tests.test_verified_tv_acquisition.AuxiliaryVideoPathTests.test_auxiliary_directory_survives_numbered_episode_branches) (directory='Samples', filename='Harbor.Signals.1x01.mkv')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_verified_tv_acquisition.py", line 75, in test_auxiliary_directory_survives_numbered_episode_branches
+    self.assertTrue(parse_episode_name('Harbor Signals/' + directory + '/' + filename)['ignored'])
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_auxiliary_directory_survives_numbered_episode_branches (tests.test_verified_tv_acquisition.AuxiliaryVideoPathTests.test_auxiliary_directory_survives_numbered_episode_branches) (directory='Trailers', filename='Harbor.Signals.S01E01.mkv')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_verified_tv_acquisition.py", line 75, in test_auxiliary_directory_survives_numbered_episode_branches
+    self.assertTrue(parse_episode_name('Harbor Signals/' + directory + '/' + filename)['ignored'])
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_auxiliary_directory_survives_numbered_episode_branches (tests.test_verified_tv_acquisition.AuxiliaryVideoPathTests.test_auxiliary_directory_survives_numbered_episode_branches) (directory='Trailers', filename='Harbor.Signals.1x01.mkv')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_verified_tv_acquisition.py", line 75, in test_auxiliary_directory_survives_numbered_episode_branches
+    self.assertTrue(parse_episode_name('Harbor Signals/' + directory + '/' + filename)['ignored'])
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_auxiliary_directory_survives_numbered_episode_branches (tests.test_verified_tv_acquisition.AuxiliaryVideoPathTests.test_auxiliary_directory_survives_numbered_episode_branches) (directory='Extras', filename='Harbor.Signals.S01E01.mkv')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_verified_tv_acquisition.py", line 75, in test_auxiliary_directory_survives_numbered_episode_branches
+    self.assertTrue(parse_episode_name('Harbor Signals/' + directory + '/' + filename)['ignored'])
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_auxiliary_directory_survives_numbered_episode_branches (tests.test_verified_tv_acquisition.AuxiliaryVideoPathTests.test_auxiliary_directory_survives_numbered_episode_branches) (directory='Extras', filename='Harbor.Signals.1x01.mkv')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_verified_tv_acquisition.py", line 75, in test_auxiliary_directory_survives_numbered_episode_branches
+    self.assertTrue(parse_episode_name('Harbor Signals/' + directory + '/' + filename)['ignored'])
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_auxiliary_directory_survives_numbered_episode_branches (tests.test_verified_tv_acquisition.AuxiliaryVideoPathTests.test_auxiliary_directory_survives_numbered_episode_branches) (directory='Featurettes', filename='Harbor.Signals.S01E01.mkv')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_verified_tv_acquisition.py", line 75, in test_auxiliary_directory_survives_numbered_episode_branches
+    self.assertTrue(parse_episode_name('Harbor Signals/' + directory + '/' + filename)['ignored'])
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_auxiliary_directory_survives_numbered_episode_branches (tests.test_verified_tv_acquisition.AuxiliaryVideoPathTests.test_auxiliary_directory_survives_numbered_episode_branches) (directory='Featurettes', filename='Harbor.Signals.1x01.mkv')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_verified_tv_acquisition.py", line 75, in test_auxiliary_directory_survives_numbered_episode_branches
+    self.assertTrue(parse_episode_name('Harbor Signals/' + directory + '/' + filename)['ignored'])
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_louie_featurette_directory_is_ignored_with_both_separators (tests.test_verified_tv_acquisition.AuxiliaryVideoPathTests.test_louie_featurette_directory_is_ignored_with_both_separators) (name='Louie (2010) Season 2 S02 (1080p BluRay x265 HEVC 10bit AAC 5.1 Garshasp)/Featurettes/Fox Movie Channel Presents World Premiere - Louie Season 2.mkv')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_verified_tv_acquisition.py", line 69, in test_louie_featurette_directory_is_ignored_with_both_separators
+    self.assertTrue(parse_episode_name(name)['ignored'])
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_louie_featurette_directory_is_ignored_with_both_separators (tests.test_verified_tv_acquisition.AuxiliaryVideoPathTests.test_louie_featurette_directory_is_ignored_with_both_separators) (name='Louie (2010) Season 2 S02 (1080p BluRay x265 HEVC 10bit AAC 5.1 Garshasp)\\Featurettes\\Fox Movie Channel Presents World Premiere - Louie Season 2.mkv')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_verified_tv_acquisition.py", line 69, in test_louie_featurette_directory_is_ignored_with_both_separators
+    self.assertTrue(parse_episode_name(name)['ignored'])
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_explicit_retry_keeps_failed_pack_intent_and_retained_payload (tests.test_verified_tv_acquisition.TVAcquisitionTests.test_explicit_retry_keeps_failed_pack_intent_and_retained_payload)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_verified_tv_acquisition.py", line 281, in test_explicit_retry_keeps_failed_pack_intent_and_retained_payload
+    self.assertEqual(validated['state'], 'downloading', validated.get('last_error'))
+AssertionError: 'validation_failed' != 'downloading'
+- validation_failed
++ downloading
+ : Torrent filenames identify a different series
+
+======================================================================
+FAIL: test_auxiliary_files_cannot_satisfy_season_coverage (tests.test_verified_tv_acquisition.TVAcquisitionTests.test_auxiliary_files_cannot_satisfy_season_coverage)
+----------------------------------------------------------------------
+services.qbittorrent.TorrentValidationError: Torrent filenames identify a different series
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_verified_tv_acquisition.py", line 300, in test_auxiliary_files_cannot_satisfy_season_coverage
+    with self.assertRaisesRegex(TorrentValidationError, 'cover'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "cover" does not match "Torrent filenames identify a different series"
+
+----------------------------------------------------------------------
+Ran 7 tests in 2.796s
+
+FAILED (failures=12, errors=1)

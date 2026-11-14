@@ -1,0 +1,26 @@
+{
+  "source_record": "docs/verification/tv-library-performance/active-run.json",
+  "run_id": "930057e1-4f6e-4758-82bc-3c28a263aaeb",
+  "files": [
+    {
+      "source": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-tv-library-6c63f44b-c527-4646-8563-835031b1d28c\\930057e1-4f6e-4758-82bc-3c28a263aaeb\\baseline\\services\\tv_catalog_repository.py",
+      "copy": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass2-tv-baseline\\services\\tv_catalog_repository.py",
+      "sha256": "e65dddc6c75742ba69aa35dcc6cf80325849f08abe21c1cd5433eb8a8d3e615a"
+    },
+    {
+      "source": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-tv-library-6c63f44b-c527-4646-8563-835031b1d28c\\930057e1-4f6e-4758-82bc-3c28a263aaeb\\baseline\\services\\tv_playback.py",
+      "copy": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass2-tv-baseline\\services\\tv_playback.py",
+      "sha256": "dc4760b073dd25f7aefdc3d55327d3e3066d4e067597592148ab8331fd0d851b"
+    },
+    {
+      "source": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-tv-library-6c63f44b-c527-4646-8563-835031b1d28c\\930057e1-4f6e-4758-82bc-3c28a263aaeb\\baseline\\services\\tv_read_model.py",
+      "copy": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass2-tv-baseline\\services\\tv_read_model.py",
+      "sha256": "640e88a395b3e05348fab64fcb9676ab1175ed450dba96889ba82d28292d3860"
+    },
+    {
+      "source": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-tv-library-6c63f44b-c527-4646-8563-835031b1d28c\\930057e1-4f6e-4758-82bc-3c28a263aaeb\\baseline\\services\\tv_search.py",
+      "copy": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass2-tv-baseline\\services\\tv_search.py",
+      "sha256": "43c005522957c16c97e65edbcb1359d5fead6cd64a5b369d17216149f1b108cc"
+    }
+  ]
+}

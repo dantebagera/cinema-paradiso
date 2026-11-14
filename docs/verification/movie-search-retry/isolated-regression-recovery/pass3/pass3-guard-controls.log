@@ -1,0 +1,3 @@
+{"guard_negative_controls": 8, "passed": true}
+Exact FFmpeg discovery allowed; writes and execution blocked
+{"original_guard_controls": 8, "ffmpeg_discovery": true, "ffmpeg_write_and_execution_blocked": true}

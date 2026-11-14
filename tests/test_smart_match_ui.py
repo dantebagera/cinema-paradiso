@@ -21,7 +21,8 @@ class SmartMatchUiTest(unittest.TestCase):
         self.assertIn('value="plex"', panel)
         self.assertIn('value="classic"', panel)
         self.assertIn('value="ai"', panel)
-        self.assertIn("disabled={!ollamaAvailable}", panel)
+        self.assertIn("disabled={!aiAvailable}", panel)
+        self.assertIn("ai.provider === 'chatgpt' ? Boolean(ai.feature('F3')?.ready) : ollamaAvailable", panel)
         self.assertIn("providers?.tmdb === false && providers?.plex !== false", panel)
         self.assertIn("!providers?.[provider]", panel)
 

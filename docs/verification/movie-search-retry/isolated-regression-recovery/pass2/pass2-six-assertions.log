@@ -1,0 +1,11 @@
+test_home_health_uses_backend_cleanup_counts (tests.test_library_action_ux.LibraryActionUxTest.test_home_health_uses_backend_cleanup_counts) ... ok
+test_library_refreshes_quietly_for_background_changes (tests.test_library_action_ux.LibraryActionUxTest.test_library_refreshes_quietly_for_background_changes) ... ok
+test_release_watcher_exposes_manual_full_scan_and_ownership_reconciliation (tests.test_library_action_ux.LibraryActionUxTest.test_release_watcher_exposes_manual_full_scan_and_ownership_reconciliation) ... ok
+test_library_loads_ignore_older_responses (tests.test_library_action_ux.LibraryActionUxTest.test_library_loads_ignore_older_responses) ... ok
+test_home_scrolling_rails_share_layout_and_group_trailers (tests.test_full_row_card_grids_ui.FullRowCardGridUiTests.test_home_scrolling_rails_share_layout_and_group_trailers) ... ok
+test_library_uses_measured_full_row_page_size (tests.test_full_row_card_grids_ui.FullRowCardGridUiTests.test_library_uses_measured_full_row_page_size) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.013s
+
+OK

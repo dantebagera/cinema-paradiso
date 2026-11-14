@@ -1,3 +1,7 @@
+import SearchField from '../features/search/SearchField.jsx';
+import Button from './ui/Button.jsx';
+import FormField, { Input } from './ui/FormField.jsx';
+import DialogShell, { DialogHeader, DialogActions } from './ui/DialogShell.jsx';
 import { AlertTriangle, CirclePlus, Loader2, Search, Trash2, X } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { formatCount } from '../utils/appUtils.js';
@@ -60,24 +64,24 @@ export default function ListEditorModal({ item, bulkItems = [], items, lists, on
 
   return (
     <div className="modal-backdrop" role="presentation" onClick={onClose}>
-      <section className="small-dialog" role="dialog" aria-modal="true" aria-label="List editor" onClick={(event) => event.stopPropagation()}>
-        <div className="dialog-header">
+      <DialogShell className="small-dialog" role="dialog" aria-modal="true" aria-label="List editor" onClick={(event) => event.stopPropagation()}>
+        <DialogHeader >
           <div><p className="screen-kicker">User lists</p><h2>{selected.length > 1 ? 'Add selected movies to list' : item ? 'Add movie to list' : 'Create list'}</h2></div>
-          <button type="button" className="inspector-close" onClick={onClose} aria-label="Close list editor"><X size={18} /></button>
-        </div>
+          <Button size="icon" type="button" className="inspector-close" onClick={onClose} aria-label="Close list editor"><X size={18} /></Button>
+        </DialogHeader>
         <form onSubmit={submitCreate}>
-          <label className="dialog-field"><span>New list name</span><input value={name} onChange={(event) => setName(event.target.value)} placeholder="My Best, Marvel Universe..." /></label>
+          <FormField ><span>New list name</span><Input value={name} onChange={(event) => setName(event.target.value)} placeholder="My Best, Marvel Universe..." /></FormField>
           {selected.length > 0 && <p className="dialog-body-path list-editor-selection-summary">{formatCount(selectedPayloads.length)} selected movie{selectedPayloads.length === 1 ? '' : 's'} will be added.</p>}
           {!item && !bulkItems.length && <>
-            <label className="library-search curation-search"><Search size={17} /><input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search local movies to add..." /></label>
+            <SearchField className="curation-search"><Search size={17} /><Input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search local movies to add..." /></SearchField>
             {candidates.length > 0 && <div className="curation-candidates">{candidates.map((movie) => { const payload = moviePayload(movie); return <button type="button" key={movie.path} onClick={() => { setSelected((current) => [...current, movie]); setSearch(''); }}><CirclePlus size={15} />{payload.title}{payload.year ? ` (${payload.year})` : ''}</button>; })}</div>}
-            <div className="curation-list">{selected.map((movie) => { const payload = moviePayload(movie); return <div className="curation-row" key={movie.path}><span>{payload.title}{payload.year ? ` (${payload.year})` : ''}</span><button type="button" className="mini-action mini-action-danger" onClick={() => setSelected((current) => current.filter((entry) => entry.path !== movie.path))}><Trash2 size={13} /> Remove</button></div>; })}</div>
+            <div className="curation-list">{selected.map((movie) => { const payload = moviePayload(movie); return <div className="curation-row" key={movie.path}><span>{payload.title}{payload.year ? ` (${payload.year})` : ''}</span><Button variant="danger" size="compact" type="button"  onClick={() => setSelected((current) => current.filter((entry) => entry.path !== movie.path))}><Trash2 size={13} /> Remove</Button></div>; })}</div>
           </>}
           {error && <p className="dialog-error list-editor-error"><AlertTriangle size={14} /> {error}</p>}
-          <div className="dialog-actions"><button type="button" className="btn btn-secondary" onClick={onClose}>Cancel</button><button type="submit" className="btn btn-primary" disabled={busy || !name.trim() || (!item && selected.length === 0)}>{busy ? <Loader2 size={15} className="spin" /> : <CirclePlus size={15} />} Create</button></div>
+          <DialogActions ><Button type="button"  onClick={onClose}>Cancel</Button><Button variant="primary" type="submit"  disabled={busy || !name.trim() || (!item && selected.length === 0)}>{busy ? <Loader2 size={15} className="spin" /> : <CirclePlus size={15} />} Create</Button></DialogActions>
         </form>
         {selected.length > 0 && lists.length > 0 && <div className="existing-list-picker"><span className="mini-label">Existing lists</span>{lists.filter((list) => canAddWatched || list.system_type !== 'watched').map((list) => <button type="button" key={list.id} onClick={() => addExisting(list.id)} disabled={busy}>{list.name}</button>)}</div>}
-      </section>
+      </DialogShell>
     </div>
   );
 }

@@ -1,0 +1,13 @@
+Home dashboard hybrid planning preparation, 2026-10-19 Africa/Cairo.
+No product implementation performed.
+Measurements: existing old/current Home at 1600/1920, shared installed React runtime, external requests blocked.
+Slim old header sizing probe: 190px at both widths; 179.45px text block; no overflow.
+Current toolbar at old column proportions: 522.98px and 649.58px panels with 20px padding; zero heading overflow.
+Awaiting release: 99.76px text inside 102px available selected-label width.
+Existing-source Node baseline: 4 passed, 0 failed.
+Existing-source Python UI baseline: 11 passed, 0 failed.
+Isolated API bootstrap: app, Upcoming fixture and completion fixture each HTTP 200; all test processes stopped and ports verified closed.
+Smoke shell initially exited 1 during Stop-Process/Wait-Process cleanup; subsequent explicit port-closure assertion passed. Full redesigned runner has not run.
+No Vite product build, implemented-hybrid suite or live activation performed.
+SHA256 unchanged for 125 pre-existing dirty/untracked product source/test/service/tool files captured before measurement. See 10-source-fingerprints.json.
+Temporary full logs: C:\Users\dante\AppData\Local\Temp\cp-home-plan-083ad50bc571485eb48ce3e3a9d30137

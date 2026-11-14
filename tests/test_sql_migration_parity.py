@@ -14,6 +14,8 @@ class SqlMigrationParityTest(unittest.TestCase):
     """Fixture-backed contract tests for the JSON-to-SQL catalog migration."""
 
     def setUp(self):
+        self.dispatcher_patch = patch('services.library_ingestion.LibraryIngestionCoordinator._ensure_dispatcher_locked')
+        self.dispatcher_patch.start()
         self.movies_tmp = tempfile.TemporaryDirectory()
         self.data_tmp = tempfile.TemporaryDirectory()
         self.movies_dir = Path(self.movies_tmp.name)
@@ -65,6 +67,20 @@ class SqlMigrationParityTest(unittest.TestCase):
         app._plex_token = self.original_state["plex_token"]
         self.movies_tmp.cleanup()
         self.data_tmp.cleanup()
+        self.dispatcher_patch.stop()
+
+    @staticmethod
+    def _complete_imports(manager, jobs):
+        """Drive real admitted coordinator work within controlled provider patches."""
+        handled = app._handle_completed_qbittorrent_imports(manager, jobs)
+        coordinator = app._library_ingestion_coordinator()
+        for _ in range(8):
+            if not coordinator._pending:
+                break
+            _key, item = coordinator._pending.popitem(last=False)
+            coordinator._run_path_episode(item)
+        app._handle_completed_qbittorrent_imports(manager, jobs)
+        return handled
 
     def _movie_path(self, filename):
         path = self.movies_dir / filename
@@ -857,7 +873,7 @@ class SqlMigrationParityTest(unittest.TestCase):
         self.assertTrue(job_patch["library_scan_pending"])
         self.assertEqual(job_patch["identity_handoff"]["state"], "queued")
         self.assertEqual(job_patch["identity_handoff"]["paths"], [])
-        self.assertEqual(job_patch["identity_handoff"]["queue"]["accepted"], 1)
+        self.assertEqual(app._library_ingestion_coordinator().status()["queue_depth"], 1)
 
     def test_cancelled_download_does_not_touch_catalog_reconciliation_or_identity_handoff(self):
         manager = unittest.mock.Mock()
@@ -895,18 +911,18 @@ class SqlMigrationParityTest(unittest.TestCase):
         with patch("app._apply_completed_download_identity", side_effect=RuntimeError("catalog locked")), patch(
             "app._start_library_reconcile"
         ) as start_reconcile:
-            handled = app._handle_completed_qbittorrent_imports(manager, completion)
+            handled = self._complete_imports(manager, completion)
 
         self.assertTrue(handled)
         start_reconcile.assert_not_called()
-        manager.jobs.upsert.assert_called_once_with("fixture-retry", {
+        self.assertEqual(manager.jobs.upsert.call_args.args, ("fixture-retry", {
             "library_scan_pending": True,
             "identity_handoff": {
                 "state": "failed",
                 "reason": "catalog locked",
                 "paths": [],
             },
-        })
+        }))
 
     def test_imported_job_outside_library_is_deferred_once_not_replayed_forever(self):
         manager = unittest.mock.Mock()
@@ -1058,7 +1074,7 @@ class SqlMigrationParityTest(unittest.TestCase):
             "year": "2026",
             "plot": "The submitted identity survives import without filename matching.",
         }), patch("app._start_library_reconcile", return_value={"status": "running"}) as start_reconcile:
-            handled = app._handle_completed_qbittorrent_imports(manager, completion)
+            handled = self._complete_imports(manager, completion)
 
         candidate = self._candidate_for_path(downloaded)
         library_item = app._catalog_library_item(candidate, self.store, self.store.snapshot())
@@ -1076,6 +1092,39 @@ class SqlMigrationParityTest(unittest.TestCase):
         self.assertEqual(job_patch["identity_handoff"]["paths"], [str(downloaded)])
         self.assertFalse(job_patch["library_scan_pending"])
         start_reconcile.assert_not_called()
+
+    def test_already_publishable_download_notifies_subscribers_before_journal_completion(self):
+        from services.catalog_events import CatalogEventBroker
+        downloaded = self._movie_path('Automatic.Refresh.2026.1080p.mkv')
+        stable_time = time.time() - app._FILE_STABILITY_SECONDS - 1
+        os.utime(downloaded, (stable_time, stable_time))
+        metadata = {'tmdb_id': '801', 'imdb_id': 'tt0000801', 'title': 'Automatic Refresh',
+                    'year': '2026', 'plot': 'A completed download must refresh the open Library.'}
+        completion = {'hash': 'automatic-refresh', 'state': 'imported', 'library_scan_pending': True,
+                      'imported_paths': [str(downloaded)], **metadata}
+        manager = unittest.mock.Mock()
+        with patch('app.probe_media_file', return_value=self._successful_probe(downloaded)), \
+                patch('app._fetch_tmdb_metadata_by_id', return_value=metadata), \
+                patch('app._catalog_event_broker', CatalogEventBroker()):
+            self._complete_imports(manager, [completion])
+        self.assertEqual(len(app._catalog_repository().final_card_publication([str(downloaded)])), 1)
+
+        broker = CatalogEventBroker()
+        subscriber = broker.subscribe(current_generation=self.store.catalog.generation('media'))
+        subscriber.get_nowait()  # Initial sync; the next item must come from completion.
+        def journal_completed(*_args):
+            event = subscriber.get_nowait()
+            self.assertEqual(event['reason'], 'qbittorrent')
+            self.assertEqual(event['movie_keys'], ['tmdb:801'])
+            self.assertEqual(event['correlation_id'], 'qbt:automatic-refresh')
+        manager.jobs.upsert.side_effect = journal_completed
+        with patch('app._fetch_tmdb_metadata_by_id', return_value=metadata), \
+                patch('app._catalog_event_broker', broker), \
+                patch('app._library_ingestion_coordinator') as coordinator:
+            self.assertTrue(app._handle_completed_qbittorrent_imports(manager, [completion]))
+        coordinator.assert_not_called()
+        self.assertFalse(manager.jobs.upsert.call_args.args[1]['library_scan_pending'])
+        self.assertEqual(manager.jobs.upsert.call_args.args[1]['identity_handoff']['state'], 'applied')
 
     def test_imdb_download_identity_resolves_before_startup_reconciliation(self):
         downloaded = self._movie_path("IMDb.Identity.2026.1080p.mkv")
@@ -1104,7 +1153,7 @@ class SqlMigrationParityTest(unittest.TestCase):
             "genres": ["Drama"],
             "tmdb_rating": "7.2",
         }), patch("app._start_library_reconcile", return_value={"status": "running"}):
-            handled = app._handle_completed_qbittorrent_imports(manager, completion)
+            handled = self._complete_imports(manager, completion)
 
         generation = self.store.catalog.generation("media")
         client = app.app.test_client()
@@ -1126,6 +1175,10 @@ class SqlMigrationParityTest(unittest.TestCase):
         self.assertEqual(manager.jobs.upsert.call_args.args[1]["identity_handoff"]["state"], "applied")
 
     def test_cold_start_reconciliation_uses_persisted_sql_and_keeps_pages_on_one_generation(self):
+        stable_time = time.time() - app._FILE_STABILITY_SECONDS - 1
+        for path in self.paths.values():
+            if isinstance(path, Path) and path.is_file():
+                os.utime(path, (stable_time, stable_time))
         before_generation = self.store.catalog.generation("media")
         previous_state = dict(app._library_reconcile_state)
         app._library_cache = {}
@@ -1156,6 +1209,55 @@ class SqlMigrationParityTest(unittest.TestCase):
             item.get("canonical_metadata", {}).get("tmdb_id") == "100"
             for item in library["items"]
         ))
+
+    def test_completed_multi_video_jobs_keep_resolved_and_deferred_target_contracts(self):
+        for resolved in (True, False):
+            suffix = 'resolved' if resolved else 'deferred'
+            large = self._movie_path(f'Large.Target.{suffix}.2009.mkv')
+            small = self._movie_path(f'Small.Extra.{suffix}.2009.mkv')
+            large.write_bytes(b'large video payload')
+            small.write_bytes(b'extra')
+            metadata = {'tmdb_id': '789012' if resolved else '789013', 'title': f'Target {suffix}', 'year': '2009', 'plot': 'Synthetic multi-video handoff.'}
+            if not resolved:
+                self.store.apply_tmdb_match(str(large), metadata)
+                self.store.apply_tmdb_match(str(small), {**metadata, 'tmdb_id': '789014', 'title': 'Deferred Extra'})
+            stable_time = time.time() - app._FILE_STABILITY_SECONDS - 1
+            for path in (large, small):
+                os.utime(path, (stable_time, stable_time))
+            job = {'hash': suffix, 'state': 'imported', 'library_scan_pending': True, 'imported_paths': [str(small), str(large)], **(metadata if resolved else {})}
+            manager = unittest.mock.Mock()
+            with patch('app.probe_media_file', side_effect=lambda path: self._successful_probe(Path(path))), patch('app._fetch_tmdb_metadata_by_id', return_value=metadata):
+                self._complete_imports(manager, [job])
+            journal = manager.jobs.upsert.call_args.args[1]
+            expected = [str(large)] if resolved else [str(large), str(small)]
+            self.assertFalse(journal['library_scan_pending'], (suffix, journal, self.store.catalog.get_record('app_metadata/files.json', app._norm(str(large)))))
+            self.assertEqual(journal['identity_handoff']['paths'], expected)
+            self.assertTrue(all(item['publication_committed'] for item in self.store.catalog.publication_status(expected).values()))
+            if resolved:
+                self.assertEqual(self.store.catalog.get_record('app_metadata/files.json', app._norm(str(small))), {})
+
+    def test_failed_new_lookup_cannot_acknowledge_an_already_published_discovered_file(self):
+        from services.catalog_events import CatalogEventBroker
+        path = self._movie_path('Published.But.Lookup.Failed.2010.mkv')
+        os.utime(path, (time.time() - 30, time.time() - 30))
+        metadata = {'tmdb_id': '790123', 'title': 'Published Fixture', 'year': '2010', 'plot': 'Published before a separate failed handoff.'}
+        manager = unittest.mock.Mock()
+        job = {'hash': 'first', 'state': 'imported', 'library_scan_pending': True, 'imported_paths': [str(path)], **metadata}
+        broker = CatalogEventBroker()
+        with patch('app._catalog_event_broker', broker), patch('app.probe_media_file', return_value=self._successful_probe(path)), patch('app._fetch_tmdb_metadata_by_id', return_value=metadata):
+            self._complete_imports(manager, [job])
+        self.assertTrue(self.store.catalog.publication_status([str(path)])[app._norm(str(path))]['publication_committed'])
+        failed = {**job, 'hash': 'second', 'tmdb_id': '790124'}
+        before = broker.status()['retained']
+        with patch('app._catalog_event_broker', broker), patch('app._apply_completed_download_identity', side_effect=ValueError('synthetic permanent lookup failure')) as resolve:
+            self._complete_imports(manager, [failed])
+            self._complete_imports(manager, [failed])
+        patch_value = manager.jobs.upsert.call_args.args[1]
+        self.assertTrue(patch_value['library_scan_pending'])
+        self.assertEqual(patch_value['identity_handoff']['state'], 'failed')
+        self.assertEqual(patch_value['identity_handoff']['paths'], [])
+        self.assertEqual(resolve.call_count, 1)
+        self.assertEqual(broker.status()['retained'], before)
 
 
 if __name__ == "__main__":

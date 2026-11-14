@@ -1,0 +1,88 @@
+{
+  "model": "gpt-6.1-sol",
+  "prompt": "i need you to lit 50 movies with very twisted story you wont expect the ending\nyour responce should be a list of movies names and years , no any other details , dont seek more info , dont reply by paragarph or any way of responce  only the list",
+  "order": [
+    "plain-1",
+    "cp-1",
+    "plain-2",
+    "cp-2",
+    "plain-3",
+    "cp-3"
+  ],
+  "config_hash": "685522f0a8dde8fc63cb2f2e616927c2e0d4d72b56d8b6889ec68c9c35816a82",
+  "started_unix": 1793706115.049317,
+  "captures": [
+    {
+      "label": "plain-1",
+      "exit_code": 0,
+      "evidence_root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-ai-timing-qqxh4gi8",
+      "state": "completed",
+      "accepted_count": 0,
+      "inference_attempts": 1,
+      "elapsed_seconds": 18.511346,
+      "unverified_control_count": 50,
+      "first_gpt_seconds": 18.455601,
+      "first_http_seconds": 15.517039
+    },
+    {
+      "label": "cp-1",
+      "exit_code": 0,
+      "evidence_root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-ai-timing-jn2tpmvk",
+      "state": "completed",
+      "accepted_count": 50,
+      "inference_attempts": 2,
+      "elapsed_seconds": 33.249252,
+      "unverified_control_count": null,
+      "first_gpt_seconds": 10.956504,
+      "first_http_seconds": 10.915577
+    },
+    {
+      "label": "plain-2",
+      "exit_code": 0,
+      "evidence_root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-ai-timing-8qxu9yjy",
+      "state": "completed",
+      "accepted_count": 0,
+      "inference_attempts": 1,
+      "elapsed_seconds": 16.231558,
+      "unverified_control_count": 50,
+      "first_gpt_seconds": 16.169793,
+      "first_http_seconds": 16.133276
+    },
+    {
+      "label": "cp-2",
+      "exit_code": 0,
+      "evidence_root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-ai-timing-d3o24gfs",
+      "state": "completed",
+      "accepted_count": 50,
+      "inference_attempts": 2,
+      "elapsed_seconds": 34.460207,
+      "unverified_control_count": null,
+      "first_gpt_seconds": 17.09274,
+      "first_http_seconds": 17.048007
+    },
+    {
+      "label": "plain-3",
+      "exit_code": 0,
+      "evidence_root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-ai-timing-ijrn2wmd",
+      "state": "completed",
+      "accepted_count": 0,
+      "inference_attempts": 1,
+      "elapsed_seconds": 14.226897,
+      "unverified_control_count": 50,
+      "first_gpt_seconds": 14.170151,
+      "first_http_seconds": 14.136991
+    },
+    {
+      "label": "cp-3",
+      "exit_code": 0,
+      "evidence_root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-ai-timing-uinxp1vt",
+      "state": "completed",
+      "accepted_count": 50,
+      "inference_attempts": 2,
+      "elapsed_seconds": 27.841832,
+      "unverified_control_count": null,
+      "first_gpt_seconds": 14.639229,
+      "first_http_seconds": 14.605366
+    }
+  ]
+}

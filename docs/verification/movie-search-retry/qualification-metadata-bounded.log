@@ -1,0 +1,7 @@
+test_b_four_snapshot_branches_empty_selected_data_and_competing_overrides (tests.test_movie_remaining_qualification.RemainingMovieQualificationTest.test_b_four_snapshot_branches_empty_selected_data_and_competing_overrides) ... ok
+test_c_named_file_reads_remain_bounded_among_four_thousand_movies (tests.test_movie_remaining_qualification.RemainingMovieQualificationTest.test_c_named_file_reads_remain_bounded_among_four_thousand_movies) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 10.128s
+
+OK

@@ -1,0 +1,1100 @@
+[
+  {
+    "file": "docs/plans/2026-10-11-mostafa-ui-preview-setup.md",
+    "sha256": "40af88faf187abbf8d6bcd3ab12d99a25efcbda428aab819af161a0c5425f3f7",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/plans/2026-10-11-mostafa-ui-ux-integration-plan.md",
+    "sha256": "d62b029dd36f7ecc07d3a9cbc6796ab2a152422e51249743190c0f53357f5a22",
+    "priorMainSha256": "e22a2413de18321f68d451d84de7e4f7896c98442c90c0a897cd8fdb4cfe2217",
+    "action": "replace"
+  },
+  {
+    "file": "docs/plans/2026-10-12-mostafa-performance-plan.md",
+    "sha256": "b86b17cc841c2be8d8dc89896e99b6ea66e446a958c97393cc5a2f5e973766e9",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/plans/2026-10-14-new-ui-main-integration.md",
+    "sha256": "eb7a378bd9343b83e69eefa431908f3389991380c486d970c8705a4289adee45",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/RESULT.md",
+    "sha256": "44e1e2e13fa42c328f9543eadbe8319c71d9283a66715966775a25db9ae1e8c9",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/after.json",
+    "sha256": "2b8c5e9911ae9599192eebade01567af39218dfeae5ed653d39b305bb3a482ff",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/artwork-after.log",
+    "sha256": "a6e1f2b23fd1077a4920868c2ce13ab34dff689a6352b0d6a5c4c5618f9d5a80",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/artwork-before.log",
+    "sha256": "dd0e47f4127b9dbcfdefb19bd74ac8d04bdf1901192dd67d2c7501f0ade6bf53",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/artwork-final-regression.log",
+    "sha256": "693808a6472bf1db3e44bdca15a2594a46faf2903c3cdb3078caa0b1f05f6979",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/artwork-performance.json",
+    "sha256": "ed8da1990980f3c23cb9903c7fa1963565dea4fb2eb042d774c3f0138f5f7777",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/baseline-after.log",
+    "sha256": "0dfa01b73ecf5c8ccfe06b4aa761ed1cb2066670a02df9b5f474800eaa134ab0",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/baseline.log",
+    "sha256": "b96c84aa3cebc996f074ba4987d07798cf7d74e8a5796552ab2012efc3b33e1a",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/baseline.py",
+    "sha256": "d3736d48ed7540e5ef371f87a0af3895111b125505314ba3277e0cd69701e8af",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/before.json",
+    "sha256": "869c507bc2798e387a1738cb155608f6d2cfd8eadef90eb916aab1542b98dd25",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/benchmark.mjs",
+    "sha256": "7e432f386630b6d9d9c16d9bd2e36ac2f0649c0b46358c9504dc2914aabc1dec",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/compare-protection.py",
+    "sha256": "ae187fca8495c295d2c1c0f6bf515564e142a1968783c0b25b3839829f3efa85",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/desktop-regression.log",
+    "sha256": "d15a29082838251dab9424a679bcacc775c8bc7f14193b462124367ed2642d52",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/diff-check.log",
+    "sha256": "4a20943a977bcd21f0a28949941b04d7146225142b19044047c7e14356b79a20",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/identical-before.json",
+    "sha256": "d9cbd97351c8316bee9c979cd69f3066106d7eb92f616046dc23f98c1e2614a0",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/interactions-before.json",
+    "sha256": "c19f0291ccc8a7c228eccac64627aba59dc1520c33f024d4f93f79d5b0c26419",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/list-benchmark-independent.json",
+    "sha256": "3d6ef6521f71eefa2fcfa6a4efa2a6bdda20b173cc79d6648877482dd8b85675",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/list-benchmark.mjs",
+    "sha256": "485c298add1bb9193342b7bfbfb4893d905a72ab83e3d1e2d8b5bc537b735d3c",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/list-performance.json",
+    "sha256": "090c3bea358108c3507dc122cefeab7970314547f8deef0e960f9ecf50db7b61",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/live-after.log",
+    "sha256": "a9577c375693eb3f22bb4982ab2f1ea482dc8e3d85bce7411a0c413dd5ba6181",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/live-process-proof.json",
+    "sha256": "5d268a558023543b9b0e26337ddd70dec5461fcb4d3e61e00e9963cf58fb6609",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/native-result.json",
+    "sha256": "c01dc12e44a58eb80504709a90ceb325133af2e4e00a5d50c67fad8b468775cd",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/native-tv.log",
+    "sha256": "e30c2dbaa6abc32a697e75f347724e86fde5a1a519d5c93fb1902a6004e8258c",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/node-final.log",
+    "sha256": "f3696c23905e5f2426e92bfa2e0c0b89fbe2c35707922b87589af813721f67c9",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/preview-build.log",
+    "sha256": "9faa9135ed15793845bdc705c83dee70d35c834ad5b0e11ce2c27d6d23d2c376",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/preview-start.log",
+    "sha256": "fa431de7e5ea1139a72a0ab8c43ee9d5bfc7c4f8a1d438b1a29a7bb07374a4e0",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/preview-start.stderr.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/preview-stop.log",
+    "sha256": "03a8d2cc2de04dc51d4c002fbc296ae0f6d85af949f600c959ba88a753f4da14",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/protection-after.json",
+    "sha256": "f15ade1c794370d8551b79fac66a5417e737092ccc896931b1ffc62dae3ece1d",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/protection-before-complete.json",
+    "sha256": "2afd0df25a5ed225cafd81204aa44fb79500d274534d08adeac7cb20c91e42a3",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/protection-before.json",
+    "sha256": "ee43f5246068d3581a8e5d154fa70e85b4b8f51ef99e501135c8c3412adb87a9",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/protection-comparison.json",
+    "sha256": "47f53dc9ba2f31f022e4cbd37e44e80fa704aedf55c838cf0c94480830547fcf",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/protection-comparison.log",
+    "sha256": "9a51b868a7074a43205c0ae494c778e724fd2b1dda83b579658f9364314d7bd7",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/protection-refreshed.json",
+    "sha256": "caf79cff19d3a2a24ce8a70c8b6778be59fd3647894c7b419be7bd82a2382c6a",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/python-build.log",
+    "sha256": "9dda4f7a8ce90d3a7ff5c420ea705df21ec1547586c6201ca3458fa837bb976c",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/python-environment-rerun.log",
+    "sha256": "6c74c1e68d0164ac1aed9caaf796b27e6507d7c8370965f49cfb019964fd0c8a",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/python-focused-final.log",
+    "sha256": "4d47efbedd695fbce44e6d1acb2390c05a80dbd8df9d8e171556c816df0db9e1",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/python-focused.log",
+    "sha256": "306ed9f14c3cbc816eafa9516c76b2c1fcd024e592a30659efb2dcd875794627",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/python-full.log",
+    "sha256": "b0c1b0dfc471afac8eb11640d76b44999e7569ce9236d1cc8881c3c5eccce051",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/python-result.json",
+    "sha256": "b3dd439eb3fe3c31175fd84f1544c30eda010a1ae1e90eea0af9e7d2b1f16f39",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/python-shared-final.log",
+    "sha256": "d0ce0352ccb254320a459294c8589fe8510457de4b5ac4a31bc4bb1aec88b595",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/python-shared-ui.log",
+    "sha256": "fcbd727ef7a97e2e3cb76b794b4e945627ab28a4b360b419ab338de9275ebdb9",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/run-python-verification.ps1",
+    "sha256": "b7ecf215a1778c57227fc05de2f8bdf5234b96971b2595bd78f87cd420628432",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/shutdown-after-completion.ps1",
+    "sha256": "8ada3364e32088c4008115ac6dc81aa52b1d07ea1efba3a7dfaca833bbd55d54",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/shutdown-dispatch.json",
+    "sha256": "ba8aa996cf3c59464bf1eca7c13630d232c166453b0d83b47256ee51c44b3556",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/tv-expanded-parity.log",
+    "sha256": "c335940b25bd835599503ccffa6a2950a3e464c163465f612204dc1888473896",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/tv-parity-rerun-results/.last-run.json",
+    "sha256": "91d1c43004802cd49950d78eb11c8fa7d05da8ffffe219a8b13b2f561bc00903",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/tv-parity-rerun.log",
+    "sha256": "2d5363f6e1e7aa4d677c4fdb3c46db135a2b6e2d5da2b5d021a3960389aea2be",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/tv-parity.log",
+    "sha256": "d0bad0be40409e53fe3d05c8d4cbdbc13b67ca87572fc8b16ca7fa5e6742556b",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/tv-stream.log",
+    "sha256": "49ffd17b41775a137c40a1decefe19f7ca074227376ea2fb995b14c491d5909e",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/warm-after.json",
+    "sha256": "a0b8ed86bcf6bfdc559589d46be299189827a3d840c292ec39bd1b591c61027c",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-performance/warm-after.log",
+    "sha256": "b31da1a7f216baf67c8cdb9d4b33389e595e388699ee49774e2b09be008478a6",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-ui-ux/RESULT.md",
+    "sha256": "de08ba95621123faf3310e82d1e9fafd5668512e10f0ca64078829408389140a",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-ui-ux/baseline-tv-state.json",
+    "sha256": "73dfe8824c9fd4a318b592432ddc4b777dd0c266abfefd5a8cd878ff17206475",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-ui-ux/logs/baseline-python-frozen.log",
+    "sha256": "c3c7612c00dcb3f29bbd54e5f974590875b91a7e4111a61d026f347825d3b182",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-ui-ux/logs/collection-final.log",
+    "sha256": "916793bae220f0d05f8f45d53d6a48a20cde9ca08f999bb625c1d24f28146eb5",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-ui-ux/logs/desktop-verified.log",
+    "sha256": "02e8d75feb3dce3f4fe8988660754f7c50c261bf765cbfecda2be634c87567aa",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-ui-ux/logs/discover-paging-complete.log",
+    "sha256": "5df25d467122db39eebe334a02219f0517c1340038372a6dc88e8d58adf11290",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-ui-ux/logs/layout-owner-final.log",
+    "sha256": "2e2afcfeed78e191b6c85a3233ecbb467753d8b57a31bb8a1f7c782a6460e16f",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-ui-ux/logs/native-tv-verified.log",
+    "sha256": "a44b509d01911a43c35c8f4947ecd987789cc29265b0c73f2c15d6dcf7082bed",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-ui-ux/logs/navigation-final.log",
+    "sha256": "9d267e6db6fd46fb2e8c2be323f60e1e0f864876c102ffa241eee10188abf53b",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-ui-ux/logs/node-verified.log",
+    "sha256": "071d399715b35def40f63c46c5cb06723cbb271d805073891024afa9e5386be3",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-ui-ux/logs/projection-baseline.log",
+    "sha256": "1cf4a57c37b00226dba8c679ba06369677aa6989bc89252b312de66168e01e48",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-ui-ux/logs/projection-current.log",
+    "sha256": "adb93a0307558b206f0423662608dded2fde46126539b51c775b02f590bd69ca",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-ui-ux/logs/python-final.log",
+    "sha256": "025f2f1fef70c922ed69c3b088019fec34b1404ed83c64f7078136e1f55cb99e",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-ui-ux/logs/python-owner-final.log",
+    "sha256": "c8573da0cd03a6c15b58263c1289c65245f3ba7bd29388a0c7fc4d1f21449296",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-ui-ux/logs/tv-download-contracts-verified.log",
+    "sha256": "78f942ebc973b57516fe3898a70ec89f35480b5b4cbc3df9c63c6f50ef548d85",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-ui-ux/logs/tv-expanded-parity-verified.log",
+    "sha256": "29d27c9b7f3daa43910175293b4a876c442aa8552a170d3586a30ec0dd3840dc",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-ui-ux/logs/tv-follow-season-packs-verified.log",
+    "sha256": "cf46fa6dc426c4284d2a4ae8396493d81780c12b882d5f7e1bf4130b59503638",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-ui-ux/logs/tv-geometry-final.log",
+    "sha256": "ceee390f40d33ea9ddbe67f0c5f5a1b113a833d4392194af4a1c7fb9b6b294a3",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-ui-ux/logs/tv-normal-import-verified.log",
+    "sha256": "dcb8ceb9834573e9e251d555672a89c3a5ff943002eb07354f2fe2be17a1804d",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-ui-ux/logs/tv-parity-complete.log",
+    "sha256": "9225fcce0840b1b514a83fa6c75fe6424074dcc26c12144bbf4b2aae02e48302",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-ui-ux/logs/tv-protected.log",
+    "sha256": "8a67745dd0d5b0612af42baf1d14589a3c5ade652b89e8b9e92f621b0ce8f895",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-ui-ux/logs/tv-stabilization-complete.log",
+    "sha256": "7be022819cf53a61c0148f014435814c8b302fc6697c4cbdd60866994486d7f6",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-ui-ux/logs/tv-stream-final.log",
+    "sha256": "0ffce62ed4c2f25e27402d508a76b596f23bbc688fff08530f1f7b4be0d0b8f7",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-ui-ux/original-runtime-unchanged.json",
+    "sha256": "b4620000dd2e21fb2cb39587cb5123e936753de6664030184121e4c904293230",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-ui-ux/overlay-baseline.json",
+    "sha256": "00a27777c77a4963613b7c0e7e199b7a11efde685f95f72e93788a8dfe40f48b",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-ui-ux/restored-prior-evidence.json",
+    "sha256": "ba46b0dd68e99731900411fee610f4a6b054b090ea69be449257a7fdd0286194",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/mostafa-ui-ux/source-guard.json",
+    "sha256": "bd62067d7fea8cdc7169a143d6eab0f2d8788b0e1de382b2be087b49ae3ecd6f",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/new-ui-main/2026-10-14/historical-screenshot-preservation.json",
+    "sha256": "871f5f0254f9fb026fe1156168e3d07d46bcd93673aad39a1c444e6d8c6d3f2a",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/new-ui-main/2026-10-14/recovery-location.json",
+    "sha256": "eec1e7a25dbfe826c9e7fa5192f7d8c72bdaa56dc6340a6fb639890a69721cd4",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/new-ui-main/2026-10-14/review.md",
+    "sha256": "66332c271ad3596ae4385d894267816e7c88f54c0d7ddef10ff72cf9f667f63b",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/new-ui-main/2026-10-14/schema-initialization-performance.json",
+    "sha256": "385550e14cf91b0a1984089ff1cd162eeb49b422ccb26b050511de7239520159",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "docs/verification/tv-numeric-repair/verify-live-desktop.cjs",
+    "sha256": "d498a206520c3c2d50ffc007ec2558339096cfa43c16ceddd28e3e179f9c887b",
+    "priorMainSha256": "b09f3662aeaa17cb382d9f987c2b4d2a1e5aa894a3030217e51660f0e8e0e7c6",
+    "action": "replace"
+  },
+  {
+    "file": "services/iptv_movie_store.py",
+    "sha256": "afc57e2b0962a70a27e86b06a2296e9b637446a470166f75deada776b2cb42c0",
+    "priorMainSha256": "be3f53b1fafa3e6904a3c324549e09f042626c27977d1802e6c3e9051ec06a82",
+    "action": "replace"
+  },
+  {
+    "file": "services/tv_metadata.py",
+    "sha256": "440119daa8a8514aaa35425cb6b1426bd3c628939cb2dc8104dbc04877ff7266",
+    "priorMainSha256": "133ea4a1c28597039ceee000c981bbd05742d09e76e021c4d8c387e9b0ac6f13",
+    "action": "replace"
+  },
+  {
+    "file": "services/tv_read_model.py",
+    "sha256": "640e88a395b3e05348fab64fcb9676ab1175ed450dba96889ba82d28292d3860",
+    "priorMainSha256": "41457a4ccb8f8cac79a5b2b89eb62089ddfd4914a0a45aa2c9cf3c2eedca9c98",
+    "action": "replace"
+  },
+  {
+    "file": "services/tv_routes.py",
+    "sha256": "666fcecf6475573102dfe6285a6ebf77b1477b02d89c486aa4367a81b90e8fd4",
+    "priorMainSha256": "50a2b338aa3981751f8643e606111b4ed624a02904af2a8206bafea6e14d5d9c",
+    "action": "replace"
+  },
+  {
+    "file": "src/App.jsx",
+    "sha256": "52b0f1f7da1bbe1d9f06d10ef37e6ac79b93bd17494c6af17517767569a4ff14",
+    "priorMainSha256": "b2a63be4d6fc4825715143dda2f5ffb9806dffbdee4b78b459c8d0c5c2000eb6",
+    "action": "replace"
+  },
+  {
+    "file": "src/api/movieDetails.js",
+    "sha256": "12d6e82d0d672f81d3b53da71f8b2d44ddabed5d5a3bcc2b5358eb42057e97fa",
+    "priorMainSha256": "57a99bd220e784ee2ae8db6bf56ee8d7ef3b2353cb56a49092efa93aec217b50",
+    "action": "replace"
+  },
+  {
+    "file": "src/components/AnchoredPopover.jsx",
+    "sha256": "b06cea2ef5029dd55ab8338f69410cf84137f1af2389f27220878562c75c6bc2",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "src/components/CatalogMetadataFilters.jsx",
+    "sha256": "7f2e7ec0ac0ba162bd84dde2c19715268a081c0c82eec459b578e7f389f546eb",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "src/components/HorizontalCardRail.jsx",
+    "sha256": "d6712cea8c8ecbb2b53545de9e422a40973f2a0fa75606e4195451b98659c978",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "src/components/ListsToolbar.jsx",
+    "sha256": "05b9440fac78f074ddec0a3b37ed5b7479a3393fec2fb45c63777dfa8cbb754b",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "src/components/RelatedMovieRail.jsx",
+    "sha256": "3a6e1ffe2dcd77eb08d5b5281a28375c36c3ee1a7e9a7d1dd643fd1cbeb59134",
+    "priorMainSha256": "9e62ddc229a6b491157ee23fec0c3c3242e3f88aa4f8bbfbcfc0c0a00ebc5f7c",
+    "action": "replace"
+  },
+  {
+    "file": "src/components/SharedMovieCards.jsx",
+    "sha256": "e8e1adf76601ce33e69af3a64df3da31060ecebc3e3beb04562a51199bf34787",
+    "priorMainSha256": "b67f0dc20e687c65475c6de88bd00aa28d95e2fdb82a46383f2f15ff81ac3064",
+    "action": "replace"
+  },
+  {
+    "file": "src/components/Sidebar.jsx",
+    "sha256": "609160c0cbb781e4b282be5bfd1f6c1ff1bdd4ae3f122c09d21a306831adbbbe",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "src/components/Tooltip.jsx",
+    "sha256": "00573ab325989c375679486be2e1a939976b19be4a333d8b2bbd33c3a65f6f21",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "src/components/WorkspaceChrome.jsx",
+    "sha256": "092e9626e06c63199c6563b3cbda5188cd1af89dc562a78f8e4c2d90092da2ce",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "src/components/WorkspaceControls.jsx",
+    "sha256": "3f3bcf267f704602dab549a276e14bdf36870db5707b59515bec7a0f9d6c3dc9",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "src/components/WorkspaceEmptyState.jsx",
+    "sha256": "aba4adca0f8b25dd9c8ed6cabf45392aa22413f5c63e61c802dfdb38cc3ddbae",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "src/components/WorkspaceSelectionBar.jsx",
+    "sha256": "4803c1b8273a2dd8d2c7a5f20cb6a179e63ae23abc637abeffc58e61e8e66482",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "src/components/WorkspaceViewActions.jsx",
+    "sha256": "4273751ba085cac962e5c370e9b6e4276eb853bafe8dd55a320a6eaf5d7e1c2e",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "src/components/WorkspaceYearRange.jsx",
+    "sha256": "15337607e1e015102ea782c46b5f3592c727f5fa24116d2e5dcfc6e23fdbe5bf",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "src/components/horizontalCardRail.css",
+    "sha256": "1373ec7611070f50e2fe33cce5b8cc6c0bbe433036b5ffaf1e6e9cd5c487bf7c",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "src/components/movie-card/MovieCard.jsx",
+    "sha256": "80806d9c10dd7b3f408db0b5da9da739693ce08c58da5837280cfbc0d62a5504",
+    "priorMainSha256": "fab39c25fc350a8eab8adcfd6e26983af6b42ef636a72913fd238e70c174070d",
+    "action": "replace"
+  },
+  {
+    "file": "src/components/movie-card/cardArtwork.js",
+    "sha256": "610ec53fed5b7cea789fe1d6284969fc631cf19f43c02d0ef57356fef60d49c0",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "src/components/movie-card/expandedCardViewport.js",
+    "sha256": "8c15d672f52c2ec55a3b4a233a35273b8037ed36146e28c4db04c000c97c5970",
+    "priorMainSha256": "49100448f8cbdc572c12b275e1008c41b07ff9658209d20450993a3bc7b76101",
+    "action": "replace"
+  },
+  {
+    "file": "src/components/movie-card/movieCard.css",
+    "sha256": "4cbc3b01b57d0288c8a1ed99b76f69672bba03969a7edddcaa47142caee317e8",
+    "priorMainSha256": "f96bc7a709ce8108daa2c47487a68c4d5d698e82cbb9e4973071b2159a2e7e75",
+    "action": "replace"
+  },
+  {
+    "file": "src/discoverUtils.js",
+    "sha256": "623b964448e30e101c20fcfaa5b6fb6f63271c300ae0970ece5946367befb361",
+    "priorMainSha256": "d42ed367999c2c0f8f06935bf0d77fa335987db949578d52f54bbe61cbb86a98",
+    "action": "replace"
+  },
+  {
+    "file": "src/features/discover/DiscoverWorkspace.jsx",
+    "sha256": "b0ccebcfc7a44ce648b36a401e545a63e1898cec8cd7be66b891f3f1396c6116",
+    "priorMainSha256": "10c03532f9c585d80ed967f2a5640dce82091c5212343274f6f6576a63b4ec07",
+    "action": "replace"
+  },
+  {
+    "file": "src/features/home/HomeTrailersPanel.jsx",
+    "sha256": "c6718843ea2e4809503406dbb6e3e8e7ddc4eace1edd604c3ad94d7557a8f86b",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "src/features/home/HomeWorkspace.jsx",
+    "sha256": "f6a01b6fe522c3814f98255da8843f06121ee89ec9c8bae22bf01b81dc2b516c",
+    "priorMainSha256": "b339d1e03cbc1096842f9ee67f538b77ebce77967334bdc88967634b81510a7d",
+    "action": "replace"
+  },
+  {
+    "file": "src/features/home/home.css",
+    "sha256": "9dc802d9f32af240c3bd17988519e43464acb3ca780e7c793c06d5e7cb311d6f",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "src/features/home/homeTrailerModel.js",
+    "sha256": "a26fd7e3bf801bf313ce3b46d734bdd84f09cb249b48f1289f4af6b0ed6a4234",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "src/features/iptv/IPTVWorkspace.jsx",
+    "sha256": "586bc4a58a8b0fe1c915a1a44bde7368ef70c62f1c38b6651a129b64ec7c4733",
+    "priorMainSha256": "5d36ca7a83d6e5738c2304f67923c9dbad540641bb2cfc7b7e855aa6fde41df6",
+    "action": "replace"
+  },
+  {
+    "file": "src/features/iptv/iptv.css",
+    "sha256": "bde2f50c5ed53c2072e707ab8ebd366b379cdab6b433b32c31fc24f0c98669bb",
+    "priorMainSha256": "5846b41ad126f2983c90e6c88f48feabeb9fa64d324d4b43d887c295afa5b4e3",
+    "action": "replace"
+  },
+  {
+    "file": "src/features/library/LibraryWorkspace.jsx",
+    "sha256": "177585f8b84bddfef2ea64e91bde66b73aa6215ce43c18152ddcdbd69b2c9df1",
+    "priorMainSha256": "77108a9049e96245a4196c4d7379a4df7c6e66f4dd1ee1dfa7098432653138ce",
+    "action": "replace"
+  },
+  {
+    "file": "src/features/movie-lists/ListsWorkspace.jsx",
+    "sha256": "c4fe8c7b8bd89391862057d0c6db5bbd0fcdd50833eeabfd72c3ef78b1471361",
+    "priorMainSha256": "1e8dfb26ac4d3f850ab484ce23ea6d537ba73f9d5926644b122f3814196c2397",
+    "action": "replace"
+  },
+  {
+    "file": "src/features/movie-lists/MovieListsWorkspace.jsx",
+    "sha256": "a3c098767ba4d160e81b730831282bd9922606904453c57e294bf3d8ecd99a08",
+    "priorMainSha256": "e0eed5859908244f9ae6ed6c66a99c50e2480bf290a1a15e52be4fb9e260ea57",
+    "action": "replace"
+  },
+  {
+    "file": "src/features/movie-lists/TVListsWorkspace.jsx",
+    "sha256": "a8ee12d4ec4046cd336c102fd604ba9d1287c22e88160e8abc501b1880222a0b",
+    "priorMainSha256": "ad476b307e31d2a44bbe6e0a4bfd6786a5a762f3741b71dd3deabf331d66f3e2",
+    "action": "replace"
+  },
+  {
+    "file": "src/features/notifications/NotificationWindow.jsx",
+    "sha256": "6b1cc1d40bf20573e58a003d0f96ecaf4456cf559f9257e4300d305220963b0a",
+    "priorMainSha256": "eb95443a51569c1ab05c754cba6f35ee3be2b999b96111e75ec20d5d9f7b8e3d",
+    "action": "replace"
+  },
+  {
+    "file": "src/features/search/AdvancedSearchBuilder.jsx",
+    "sha256": "f1beaca54fe48c66f759f8169b2a15158f20dd6e1d7613b8f6c029bca01a3bd6",
+    "priorMainSha256": "538e8938e74554b6ecddc7528381061c6f0508410f71bb43ad8ca7bf6be89752",
+    "action": "replace"
+  },
+  {
+    "file": "src/features/search/SearchField.jsx",
+    "sha256": "b260748a900915412afb23484cc4bd749d86bda7801d392eecdf7e2f3973b495",
+    "priorMainSha256": "25742880e79ac8a28e8f6170abbd14bed1cd5619b57cef883fbbf39b627fbfe3",
+    "action": "replace"
+  },
+  {
+    "file": "src/features/search/SearchModeSelect.jsx",
+    "sha256": "2cb2180ce8245ddca41bbf678e8f83c03e54bb0731c03d6fd27f293148c3cea7",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "src/features/tv/MediaWorkspace.jsx",
+    "sha256": "cca7607930f41eafcf44ce34e0f253ad16ffb8a6a07749f30bd637ae95414e87",
+    "priorMainSha256": "0d487241bbc9d1da91680b7644cdda55eb597f37b9e19272682ac434a3de6585",
+    "action": "replace"
+  },
+  {
+    "file": "src/features/tv/TVBulkActionBar.jsx",
+    "sha256": "4e3b68eee9251cccab973ca07be302746e06674afdb0179837c4bbcee35bbf9c",
+    "priorMainSha256": "81576eddfc074a92909c2adc6b119d8488e2e6fd5d516c9415d2bcf32a096a94",
+    "action": "replace"
+  },
+  {
+    "file": "src/features/tv/TVFileView.jsx",
+    "sha256": "42ab8ca8ad05c564b34ec97aa008efa51b0eba94764e964acee3cafb8292df32",
+    "priorMainSha256": "265fdff4576075b96d651423732c2f58f7d9d4890ef9e2ecf6faa84cae040598",
+    "action": "replace"
+  },
+  {
+    "file": "src/features/tv/TVSearchControls.jsx",
+    "sha256": "5b85f09f1c0656c097e6cc3eece55399edfa2fd62c16787f6a6f6838d86362e3",
+    "priorMainSha256": "8cb0a919de1dd27f8b54b8396978be252716ac29a008a9520449cec28342752e",
+    "action": "replace"
+  },
+  {
+    "file": "src/features/tv/TVSeriesCredits.jsx",
+    "sha256": "f6eb6fb6e86d5af17314cb5f13cf2cccc3f82639a373fbc4ced214814eec1ecb",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "src/features/tv/TVWorkspace.jsx",
+    "sha256": "b3853d1a4d09a3173ef4eadccb2e4de8cff44b1b385e740f97206dd22c4ff39e",
+    "priorMainSha256": "d551de528f196a585c81f7e4189126cefce98828a8e7729468ff9abb8461bbf5",
+    "action": "replace"
+  },
+  {
+    "file": "src/features/tv/tv.css",
+    "sha256": "bd2c734cbefacbb4bf805159d4d599748edb68bec882a708522a58b932baf375",
+    "priorMainSha256": "00d8817391543f5805770da7f3b3c620e52c79de66e6d7a9cbaea2074e402912",
+    "action": "replace"
+  },
+  {
+    "file": "src/hooks/useDismissiblePopover.js",
+    "sha256": "23a67d747bb9d1cccb71e4319a977dcd93226893df5d4d8aeec1a391cbefe85e",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "src/hooks/useListCatalogFilters.js",
+    "sha256": "b009b85305b1743ef5cea05fd53670dadb0a4c76cd39d7ba9a52cae9a09cefc5",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "src/hooks/useMovieCardScrollReturn.js",
+    "sha256": "12f0108a214da6afa95d7883075d3a82f0143f57806a061b4e3f9c8ee4a8f5ca",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "src/styles.css",
+    "sha256": "3b5af8a110acfa9adf1ca4bacdfe74956e5a98f8b952a9021ff41e4b4ce7991f",
+    "priorMainSha256": "5440e492957b8dbb5f6bc98a766937f769a630772df81c0a8f240a181b4862d0",
+    "action": "replace"
+  },
+  {
+    "file": "src/styles/identityReview.css",
+    "sha256": "61f3e379ad7215eb47df3ab9c1d1f08c6c99325e817eaac6ba5dc62dd57b3e6d",
+    "priorMainSha256": "a0178c02040436acc6ddb93704bf3aebc3b977b62ea5f255f43698905ea40075",
+    "action": "replace"
+  },
+  {
+    "file": "src/styles/metadataAuthority.css",
+    "sha256": "21a812a1b6788a01e99873386f4df1bb6ac83e1e14c8c3c540802fc2d848767a",
+    "priorMainSha256": "5e562a8e04ced5ecdd7f7fadb52c98f702701268cf66265a117e53e976e34a83",
+    "action": "replace"
+  },
+  {
+    "file": "src/styles/movieRelationships.css",
+    "sha256": "ec56155b1f07e9435896151085c6e7c8c036873bed8bddc8e4bc8311594635aa",
+    "priorMainSha256": "3a80e3f2b8ee4fd9c5d5c7998b6f0f60c7e33c6a2c6a326f4eb5404a0b449bf7",
+    "action": "replace"
+  },
+  {
+    "file": "src/utils/catalogFilterOptions.js",
+    "sha256": "d8b842adaa4625373b7ed653dddb277fdd8c24e1d0daee7908905a6b395f4b97",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "src/utils/listCatalogFilters.js",
+    "sha256": "ea4c777a051625cbb264a6a85edde6234ff1a95278e64c51e2c1a4d0bd47017f",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "tests/e2e/app-smoke.spec.js",
+    "sha256": "33acb35a73dc224b98f8fb60df38f9aa6facea91a2ac975cd0f10c97d5afd1b5",
+    "priorMainSha256": "a69604874ee2b090d9c7c668a379e043e9d216542eb894c5e51b2f0432642e35",
+    "action": "replace"
+  },
+  {
+    "file": "tests/e2e/card-artwork-performance.spec.js",
+    "sha256": "a311a0f58f302db68b95f704e5ce194d3f1d34bf4d38d4d5ceb417cc5a48609b",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "tests/e2e/caret-visibility.spec.js",
+    "sha256": "2589a03ac4fefc968da77cd9be3412f4a38b767c6597cc8d3a30206cde0f0d5d",
+    "priorMainSha256": "9b9af4115399923b7198c1bdaaedee3443bc6e2d9adf284ba8c2f837854a85c4",
+    "action": "replace"
+  },
+  {
+    "file": "tests/e2e/continue-watching.spec.js",
+    "sha256": "0e939783021c030beb5b328ca1925141c9544db3202ec2f60eb1fb3cdec0a4b9",
+    "priorMainSha256": "c972bbda16b4602a4b4d2aee3bdcc77a3e4dfaf80ab7475c3925b2962273d5a7",
+    "action": "replace"
+  },
+  {
+    "file": "tests/e2e/cross-page-selection.spec.js",
+    "sha256": "cb72f80b982a0fe9e77ec4db5f0f19d23e21122f9fadbe9e0387185425835517",
+    "priorMainSha256": "e52ce750b74c4c4b245c6ae66559324650d8159debf1c2098d6aff4636e5131e",
+    "action": "replace"
+  },
+  {
+    "file": "tests/e2e/discover-paging.spec.js",
+    "sha256": "ff88f5c04c160211dfb4cccac783cc0b57ea8952e243e48eb81d28f0046f8601",
+    "priorMainSha256": "772360ac4433f6a656393b559f50e02be60ce7657cf91450bbaa3dae7010357f",
+    "action": "replace"
+  },
+  {
+    "file": "tests/e2e/lists-layout.spec.js",
+    "sha256": "3ad2c572bafb823a92fad3902b89ddafcb24236c59fd613878bad9584a3e650b",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "tests/e2e/movie-awards.spec.js",
+    "sha256": "1477733dcbf3a7f9392d6b247c04b715a73f6377a1556f1f501603f217074406",
+    "priorMainSha256": "4932ec0b25beafeef05763b7dec51878790848be44de5562ada3d61e8454465a",
+    "action": "replace"
+  },
+  {
+    "file": "tests/e2e/movie-relationships.spec.js",
+    "sha256": "d9a902470e2162770aebba4304931f974bb2f4d6c40f5d9198a684c0aeda0aa2",
+    "priorMainSha256": "ff7250f4b5edc9d04e73d595908d801a14aa093f6686e81787d1f6ec8d16e6d8",
+    "action": "replace"
+  },
+  {
+    "file": "tests/e2e/movie-scroll-return.spec.js",
+    "sha256": "cc0a632437a23ab8536ae9f6167acdf62f5bdaeeb9fb136788b7424a271bcc51",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "tests/e2e/native-tv.spec.js",
+    "sha256": "5cc97678994f09d5d486256984925ca12db93c30f5fabd949ff2d89999c85b68",
+    "priorMainSha256": "2184d19a90c4fe9281340667c970bfb4e229ca0244a4c228a111385e3cd764ce",
+    "action": "replace"
+  },
+  {
+    "file": "tests/e2e/tv-download-contracts.spec.js",
+    "sha256": "7dc3645fe1008b05b8254c6380fa0cc3f8523608dc8b0497d6ac524ce0739d69",
+    "priorMainSha256": "f6ff4829dc7434a5cc750a89e78b0b8ae1e0ee6a0125b91ef322f88401b57cbb",
+    "action": "replace"
+  },
+  {
+    "file": "tests/e2e/tv-expanded-parity.spec.js",
+    "sha256": "63139576d8fbca8a01485b2c3d1fd71b66cfc50345d3d1871a944a4618243755",
+    "priorMainSha256": "9343eba6720ad72cc3532a1e607bf0938670c45e9dc952673f534b16fe2b6418",
+    "action": "replace"
+  },
+  {
+    "file": "tests/e2e/tv-normal-import.spec.js",
+    "sha256": "cddc3a0cb2b3581f535d78f05ac7960e25a6aa46198817b5d5af9ac22561d5ce",
+    "priorMainSha256": "3d77ce91a7613d179a4e558d2ec9600396e98dff9e7bc06bd170c02f4b72a687",
+    "action": "replace"
+  },
+  {
+    "file": "tests/e2e/tv-parity.spec.js",
+    "sha256": "6ff20d462388123a0ec1198d85cf56cf1ea20da6ada2780c0780ab0fa71b28c0",
+    "priorMainSha256": "9ebd7c1610b4037e5a9d0abc7dcd86f940d91914f07b49afdf8f541f064eb8c3",
+    "action": "replace"
+  },
+  {
+    "file": "tests/e2e/tv-stabilization.spec.js",
+    "sha256": "3814ae5350ee013fc4c726241a2097a3317bf6c8f7aa9d72e80aae45df22c4ae",
+    "priorMainSha256": "e3da3e6cc62c68947fb0b14bd52e5512e13fdf76b503479881a9d8fb91cc4ee1",
+    "action": "replace"
+  },
+  {
+    "file": "tests/e2e/upcoming-movies.spec.js",
+    "sha256": "6ec5f7f5983f07506bfe9329e05d6da728ec1bea4fc9585d9a6b46fb2e569112",
+    "priorMainSha256": "96fd76ee34aede2b48b110ad9485e3ca3e5f0d739cf8df52dbd3a76e84cee323",
+    "action": "replace"
+  },
+  {
+    "file": "tests/e2e/workspace-controls-empty-layout.spec.js",
+    "sha256": "3f63ce8c1819e78135b1074344d36b8c45a47f2dc95296e583506190e3231740",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "tests/frontend_source.py",
+    "sha256": "8b559ef18e412892792eddabb6a7aa89903c696280cfc7adea22883db681a5a4",
+    "priorMainSha256": "ef6034aa88d7aa4993f9a4d52216d45dbbb39e06ea7ff0f0f5bc48dc210cfcc9",
+    "action": "replace"
+  },
+  {
+    "file": "tests/home-trailer-model.test.mjs",
+    "sha256": "7b9c74e185e588de751c5a2151a9a27588e6863f3155f9c1bc5207bafce4c145",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "tests/list-catalog-filters.test.mjs",
+    "sha256": "4a4a86650e08165d3ed3618b9c64b92101f3fb9ab3686ea949267903ac35e66b",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "tests/list-catalog-performance.test.mjs",
+    "sha256": "5bb25f59b5bc3bfa3a231b864a2f99457deafe397a5f03a799ece540519bb15a",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "tests/movie_relationships.test.mjs",
+    "sha256": "c42fbf51c0d0b4a388f0b95075e973220efe6cc7da0a8198c75ad7f03407090d",
+    "priorMainSha256": "4599b4219c6988920a71b24876d29ffad6c076f357a9666690b7494e340c2cb0",
+    "action": "replace"
+  },
+  {
+    "file": "tests/test_ai_control_ui.py",
+    "sha256": "bd202a77728f93a3c0c685b58a175bbf275e891999e218216e6f11e551c50cbd",
+    "priorMainSha256": "b96c7ca61a14f167c5030b9a23e8ac0a1d3aad5aa1364f9714c1ce951c39344a",
+    "action": "replace"
+  },
+  {
+    "file": "tests/test_continue_watching_ui.py",
+    "sha256": "11fba5be94f109779c92a6aa54ed61e19a62dc9c53f262381117c785926a7337",
+    "priorMainSha256": "8fb6417f75bb45e65148085445bfd301260a84028e8c9c3b2484d7dcb28f30d4",
+    "action": "replace"
+  },
+  {
+    "file": "tests/test_discover_hover_ui.py",
+    "sha256": "a98c7a8737a2efe3a1ff290a0751fa500fdec2f064d416c1e15ba8bc9eae46ca",
+    "priorMainSha256": "7fe000a24e64c85ee43300566a9ffee9ac42273637fbfa08b78727d967c96a58",
+    "action": "replace"
+  },
+  {
+    "file": "tests/test_full_row_card_grids_ui.py",
+    "sha256": "5f860005771dedb430ecf93e32856d4d2f98718370ba9579bcf3188fe654bce5",
+    "priorMainSha256": "cd4d63cad09265d3ff0c92e6278e4fc8cc127bae54ee9977087a530f3c75992b",
+    "action": "replace"
+  },
+  {
+    "file": "tests/test_iptv_movie_gates_0_5.py",
+    "sha256": "ea0858380da66bf43e0eec9aaf4b8c9938907ec3bcd1e79a473764d040beef72",
+    "priorMainSha256": "74502bbf49bb3830c3db0c717ae746bbc6a32796294e42a86bbd45f66a41e97a",
+    "action": "replace"
+  },
+  {
+    "file": "tests/test_iptv_ui.py",
+    "sha256": "15574378e310df2e92e045d7be61e0a3381f77860395182c586b5f31706a34e3",
+    "priorMainSha256": "1f0d72efec2be83a0d14b0267c8da34e508bd8bcaafcfc8bda8f78aeedaaef8e",
+    "action": "replace"
+  },
+  {
+    "file": "tests/test_library_action_ux.py",
+    "sha256": "cb9517bcf01bae2246714df84f2f6cd4fa2f19480a11bc5cf31d87d519641540",
+    "priorMainSha256": "6a4af481bb03444f0cc4b7cc15105d99fe88bd3fcb73ba74c3c18646689771b8",
+    "action": "replace"
+  },
+  {
+    "file": "tests/test_poster_editor_ui.py",
+    "sha256": "7d747ba61c13f13e7b8aac744d03460d91e54affa476dd730a0d17fa9832705a",
+    "priorMainSha256": "7aba0a56e9d6ccdf97dd2e28c517aeeb2d15d9993eecdaa25b3ea39c7b7a85b7",
+    "action": "replace"
+  },
+  {
+    "file": "tests/test_power_ui.py",
+    "sha256": "48cf0b8d18af98d6417939caa874a3d640e06c2365a1a9576e68f5e9d7d47f3b",
+    "priorMainSha256": "2f7d64969b9eca27b2e6f220b37e2b8942f30110c47ff2490141e608c46ef403",
+    "action": "replace"
+  },
+  {
+    "file": "tests/test_qbittorrent_ui.py",
+    "sha256": "6aa2bff867253e07a40b73af02c2b18d822d1e9edb440833ef21f272f9cffe34",
+    "priorMainSha256": "5747e0425372666d45e5ea8ca7bfbd82cc183e3a815a6a39c59b8f55b6ea0054",
+    "action": "replace"
+  },
+  {
+    "file": "tests/test_tv_credit_portraits.py",
+    "sha256": "5eba45a6bd6f5e181f87ed1a3d5369050301db79278c7149be63597a186036ea",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "tests/test_tv_list_filters.py",
+    "sha256": "09d9a73e129570935d6ff757fa01ce20c91b4c3ac519f914e857724bc9433e11",
+    "priorMainSha256": null,
+    "action": "add"
+  },
+  {
+    "file": "tests/test_unified_movie_card_ui.py",
+    "sha256": "662e338f5919a43d723a631788d80c549f0386c52abb8926e9cbe38128c278d1",
+    "priorMainSha256": "a33ad64bd420ff9857b904eb30d5065c80ec7ab5d4abcc27753c364efe995c78",
+    "action": "replace"
+  },
+  {
+    "file": "tests/test_watched_watchlist_ui.py",
+    "sha256": "d7287bfa05fe68a0d936c6095ad9c54073f8124dcdcf388a386c28b6427358e6",
+    "priorMainSha256": "ec5bd72d0b5cd818e811f0bdf6441da89995c7bc3496f8c9b355dd0458aec49a",
+    "action": "replace"
+  },
+  {
+    "file": "tests/test_workspace_layout_ui.py",
+    "sha256": "7e898bcf6835ea6b1b34f3d31ef2250d506b0525daec44f3d56224102f45d8ba",
+    "priorMainSha256": "618025c63f4dbd55245d10b8acfb26267ae74332277d69671aa9e9cde5a8d78d",
+    "action": "replace"
+  }
+]

@@ -1,0 +1,6 @@
+test_invalid_observation_preserves_evidence (tests.test_tv_library_read_performance.TVLibraryProbeContractTests.test_invalid_observation_preserves_evidence) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.007s
+
+OK

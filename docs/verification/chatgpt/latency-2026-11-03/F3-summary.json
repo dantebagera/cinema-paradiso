@@ -1,0 +1,27 @@
+{
+  "feature": "F3",
+  "label": "native-baseline",
+  "state": "completed",
+  "message": "",
+  "model": "gpt-6.1-sol",
+  "prompt": "Synthetic Movie Smart Match batch: Alien (1979), The Prestige (2006)",
+  "elapsed_seconds": 6.883439,
+  "inference_attempts": 1,
+  "tmdb_requests": 10,
+  "accepted_count": 0,
+  "scope": "actual native Movie Smart Match coordinator, synthetic two-file batch, real GPT/TMDB, no metadata apply",
+  "name": "F3",
+  "evidence_root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-ai-timing-nhw91li8",
+  "gpt_call_seconds": [
+    4.460646
+  ],
+  "gpt_roundtrip_seconds": 4.460646,
+  "tmdb_wall_seconds": 2.153939,
+  "lease_seconds": 0.023952,
+  "other_seconds": 0.244902,
+  "first_backend_card_seconds": null,
+  "unverified_control_count": null,
+  "native_proposal_count": 2,
+  "native_processed_count": 2,
+  "recommendation_source_hash": "026fc8e1c498401b67ded18b5f6dcb044eeaabf00e6ea1212da678ca7cca754f"
+}

@@ -36,10 +36,10 @@ export function metadataStatusLabel(item) {
   return 'Unmatched metadata';
 }
 
-export function metadataStatusChipClass(item) {
-  if (item.metadata_status === 'pending') return 'chip-warning';
-  if (item.metadata_status === 'conflict') return 'chip-warning';
-  if (item.metadata_status === 'unverified') return 'chip-warning';
-  if (item.metadata_status === 'review') return 'chip-warning';
-  return 'status-missing';
+export function metadataStatusTone(item) {
+  if (item.metadata_status === 'pending') return 'warning';
+  if (item.metadata_status === 'conflict') return 'warning';
+  if (item.metadata_status === 'unverified') return 'warning';
+  if (item.metadata_status === 'review') return 'warning';
+  return 'missing';
 }

@@ -1,0 +1,18 @@
+[
+  {
+    "relative": "services/tv_filename_parser.py",
+    "sha256": "70251BA6C45E5F6731A43955F1C166BCE3B998D97066E52B5A75E58AFA7533DD"
+  },
+  {
+    "relative": "services/tv_acquisition.py",
+    "sha256": "05D1D28C713F233092265A1A490C4BBCD86E524C65BE249AF8C159C9557B430A"
+  },
+  {
+    "relative": "tests/test_verified_tv_acquisition.py",
+    "sha256": "29A236A6407BCB7177A5D4F85DCD70C346AB30DE94C4468E3A43DF84E6FEAC40"
+  },
+  {
+    "relative": "services/verified_import.py",
+    "sha256": "538D48BCABE3D7C8C955D2FCAC8A79BCBAFDEB563F72E303500DD7A4B38AAAF0"
+  }
+]

@@ -1,0 +1,340 @@
+
+> cinema-paradiso-frontend@3.0.0-beta.2 test:e2e
+> powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/run_playwright_e2e.ps1 tests/e2e/tv-follow-season-packs.spec.js tests/e2e/tv-download-contracts.spec.js tests/e2e/tv-normal-import.spec.js tests/e2e/tv-stabilization.spec.js tests/e2e/native-tv.spec.js
+
+CP_TEST_ROOT=C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3
+
+> cinema-paradiso-frontend@3.0.0-beta.2 build
+> vite build --outDir C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3\dist
+
+vite v6.4.3 building for production...
+
+(!) outDir C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3\dist is not inside project root and will not be emptied.
+Use --emptyOutDir to override.
+
+transforming...
+✓ 1690 modules transformed.
+rendering chunks...
+computing gzip size...
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/manifest-CWC4etjQ.webmanifest          0.55 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/logo-Dk1rN4XL.svg                      1.25 kB │ gzip:   0.55 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/index.html                                    1.86 kB │ gzip:   0.83 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/styleguide-motif-crop-B3fTh5_H.png   119.86 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/header-Cr7VYxUL.png                  402.60 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/tv-BwQa9PdZ.css                       10.60 kB │ gzip:   2.81 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/IPTVWorkspace-Cx_ZMdzz.css            39.79 kB │ gzip:   6.54 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/index-DmKtwgPZ.css                   207.19 kB │ gzip:  35.43 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/header-CbieqaTQ.js                     0.05 kB │ gzip:   0.07 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/moviePresentation-Di650b9v.js          0.70 kB │ gzip:   0.44 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/Pagination-DoBVrSkv.js                 0.88 kB │ gzip:   0.49 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/DiscoverResultGrid-BVPvHUhL.js         0.88 kB │ gzip:   0.40 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/WorkspacePathBar-B5uETC_B.js           2.50 kB │ gzip:   0.96 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/LibraryControls-C7HfwYCT.js            2.83 kB │ gzip:   0.90 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/DownloadsWorkspace-Ci39ZYNp.js         3.81 kB │ gzip:   1.56 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/vendor-Bb8JjhAW.js                     3.85 kB │ gzip:   1.72 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/iptv-CQKlML1t.js                       6.50 kB │ gzip:   1.38 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/MetadataCorrectionModal-DNpn2vOO.js    9.97 kB │ gzip:   3.27 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/StyleGuide-By6PoeV1.js                10.43 kB │ gzip:   3.01 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/CardLab-CtUF-51V.js                   11.48 kB │ gzip:   4.12 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/useMovieCollectionCache-BiWM3ByQ.js   12.11 kB │ gzip:   4.16 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/AIControlWorkspace-BOFOMA3z.js        16.57 kB │ gzip:   5.74 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/HelpWorkspace-Cb2BtTya.js             21.47 kB │ gzip:   6.96 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/HomeWorkspace-DrGzvFgf.js             22.22 kB │ gzip:   6.61 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/SearchField-C9aLr90M.js               27.27 kB │ gzip:   8.45 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/vendor-icons-BISePPUw.js              32.69 kB │ gzip:   6.62 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/ListsWorkspace-CBjVrkwT.js            32.97 kB │ gzip:   9.35 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/useCardGridMetrics-B4-QBy9b.js        36.97 kB │ gzip:  11.46 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/LibraryWorkspace-kR-DHz1h.js          47.09 kB │ gzip:  13.96 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/CleanupWorkspace-DJtHLPAC.js          63.68 kB │ gzip:  16.78 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/DiscoverWorkspace-CizCc5YQ.js         63.93 kB │ gzip:  18.69 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/TVWorkspace-CyUlHKGZ.js               70.42 kB │ gzip:  20.22 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/SettingsWorkspace-DCxfisVs.js         84.72 kB │ gzip:  21.10 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/IPTVWorkspace-Drc9yaDs.js             96.11 kB │ gzip:  25.51 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/index-BbznKxre.js                    113.99 kB │ gzip:  34.76 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/vendor-react-CJZMWplS.js             189.82 kB │ gzip:  59.19 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3/dist/assets/vendor-player-Dv34CeeU.js            353.87 kB │ gzip: 110.81 kB
+✓ built in 2.23s
+
+Running 30 tests using 1 worker
+
+(node:11736) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 tests\e2e\native-tv.spec.js:9:1 › TV library uses CP cards, preserves movie state and opens a dedicated series route (2.5s)
+  ok  2 tests\e2e\native-tv.spec.js:31:1 › TV selection previews exact local deletion and one-shot download without executing either (1.5s)
+  ok  3 tests\e2e\native-tv.spec.js:50:1 › Follow preview and saved draft never start a transfer (826ms)
+  ok  4 tests\e2e\native-tv.spec.js:63:1 › episode streaming targets exact released episode without marking watched (603ms)
+  ok  5 tests\e2e\native-tv.spec.js:76:1 › manual episode completion does not move the durable Play cursor (616ms)
+  ok  6 tests\e2e\native-tv.spec.js:88:1 › TV Home keeps manual watch edits separate from the next Play target (549ms)
+  ok  7 tests\e2e\native-tv.spec.js:96:1 › TV release review explains rejected capture and submits only the accepted fixture (2.0s)
+  x   8 tests\e2e\tv-download-contracts.spec.js:16:1 › independent Settings selectors save through the real API and Cancel discards edits (1.8s)
+(node:10396) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  9 tests\e2e\tv-download-contracts.spec.js:44:1 › new unsaved collection stays read-only through review then reserves and publishes after explicit Download (9.5s)
+  ok 10 tests\e2e\tv-download-contracts.spec.js:75:1 › existing flat collection exposes destination blocker and preserves its media (683ms)
+  ok 11 tests\e2e\tv-download-contracts.spec.js:89:1 › selector keeps saved selection on failed save and exposes unavailable and empty states (771ms)
+  ok 12 tests\e2e\tv-download-contracts.spec.js:104:1 › shared selector contains long source lists, shows load errors and discards unavailable and empty drafts (1.2s)
+  ok 13 tests\e2e\tv-download-contracts.spec.js:125:1 › multiple-season review reuses approved-home choice and refreshes every season destination (10.1s)
+  x  14 tests\e2e\tv-download-contracts.spec.js:138:1 › lower checked-season and all-season review adds nothing before explicit submission and preserves destinations (5.6s)
+(node:9736) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 15 tests\e2e\tv-download-contracts.spec.js:177:1 › empty TV trust preserves blocked draft and explicit Start failure is visible (3.6s)
+  ok 16 tests\e2e\tv-download-contracts.spec.js:196:1 › task polling renders backend counts, errors and Cairo times without stale navigation (16.2s)
+  x  17 tests\e2e\tv-follow-season-packs.spec.js:5:3 › season packs keep manual review and real Follow/import at desktop 1366 (11.0s)
+(node:52024) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  18 tests\e2e\tv-follow-season-packs.spec.js:5:3 › season packs keep manual review and real Follow/import at desktop 1920 (11.7s)
+(node:54792) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 19 tests\e2e\tv-follow-season-packs.spec.js:62:1 › source review shows attributed reasons and reuses the existing confirmation dialog (5.9s)
+  x  20 tests\e2e\tv-normal-import.spec.js:5:1 › review renders the backend season destination and normal lifecycle in existing desktop dialog (15.9s)
+(node:27896) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 21 tests\e2e\tv-normal-import.spec.js:22:1 › unsafe canonical show name retains source browsing while destination review blocks download (4.9s)
+  ok 22 tests\e2e\tv-normal-import.spec.js:36:1 › Downloads distinguishes cleanup failure and hides rollback after cleanup begins (323ms)
+  x  23 tests\e2e\tv-normal-import.spec.js:52:1 › real isolated completion returns the season binding and renders completed status without rollback (335ms)
+(node:8780) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 24 tests\e2e\tv-normal-import.spec.js:78:1 › ambiguous home selection persists through the owner and refreshes a long desktop destination (7.3s)
+  ok 25 tests\e2e\tv-normal-import.spec.js:98:1 › review keeps loading, failed search and partial coverage in existing dialog (800ms)
+  ok 26 tests\e2e\tv-stabilization.spec.js:5:1 › shared TV criteria filter the real catalog and reset restores results (1.2s)
+  ok 27 tests\e2e\tv-stabilization.spec.js:24:1 › TV status and in-progress viewing state filter from the main Library bar (940ms)
+  ok 28 tests\e2e\tv-stabilization.spec.js:46:1 › discover preview is read-only and trailers use the shared player without movie requests (1.7s)
+  ok 29 tests\e2e\tv-stabilization.spec.js:75:1 › TV watchlist is separate from monitoring and survives metadata refresh (1.4s)
+  ok 30 tests\e2e\tv-stabilization.spec.js:93:1 › partial release search offers retry and close ignores a late response (548ms)
+
+
+  1) tests\e2e\tv-download-contracts.spec.js:16:1 › independent Settings selectors save through the real API and Cancel discards edits 
+
+    SyntaxError: Unexpected token '<', "<!doctype "... is not valid JSON
+
+      35 |   expect(saved.effective_download_trusted_indexers).toEqual(['2']);
+      36 |   expect(saved.effective_tv_download_trusted_indexers).toEqual(['7']);
+    > 37 |   const calls = await (await request.post('/__tv_fixture/source-policy')).json();
+         |                 ^
+      38 |   expect(calls.automatic_indexers).toEqual(['7']);
+      39 |   expect(calls.manual_indexers).toBeNull();
+      40 |   await page.screenshot({path:`${evidence}/settings.png`});
+        at C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\e2e\tv-download-contracts.spec.js:37:17
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\tv-download-contracts-inde-6170a-I-and-Cancel-discards-edits\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\tv-download-contracts-inde-6170a-I-and-Cancel-discards-edits\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\tv-download-contracts-inde-6170a-I-and-Cancel-discards-edits\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tv-download-contracts-inde-6170a-I-and-Cancel-discards-edits\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) tests\e2e\tv-download-contracts.spec.js:138:1 › lower checked-season and all-season review adds nothing before explicit submission and preserves destinations 
+
+    Error: expect(received).toHaveLength(expected)
+
+    Expected length: 2
+    Received length: 1
+    Received array:  [{"info_hash": "dddddddddddddddddddddddddddddddddddddddd", "intent_id": "d1bf7c246a8e4b3d8dc278d9b19b3f8b", "state": "submitted", "token": "66bf1220b50c323a625ef1c131adb76aa8a5cfe1cc44bcd14b455cf768ee6900"}]
+
+      164 |   const batch = await (await response).json();
+      165 |   expect(batch.complete).toBe(true);
+    > 166 |   expect(batch.items).toHaveLength(2);
+          |                       ^
+      167 |   try {
+      168 |     const acquisitions = (await (await request.get('/api/tv/acquisitions')).json()).items.filter(item => batch.items.some(member => member.intent_id === item.id));
+      169 |     expect(acquisitions.map(item=>item.job.destination).sort()).toEqual([
+        at C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\e2e\tv-download-contracts.spec.js:166:23
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\tv-download-contracts-lowe-fe3e7--and-preserves-destinations\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\tv-download-contracts-lowe-fe3e7--and-preserves-destinations\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\tv-download-contracts-lowe-fe3e7--and-preserves-destinations\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tv-download-contracts-lowe-fe3e7--and-preserves-destinations\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) tests\e2e\tv-follow-season-packs.spec.js:5:3 › season packs keep manual review and real Follow/import at desktop 1366 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 3
+    Received: 0
+
+      34 |     const outcome = await run.json();
+      35 |     expect(outcome.queries.at(-1).episode).toBeNull();
+    > 36 |     expect(outcome.tasks[0].counts.queued).toBe(3);
+         |                                            ^
+      37 |     expect(new Set(outcome.tasks[0].episodes.map(row=>row.intent_id)).size).toBe(1);
+      38 |     await page.reload();
+      39 |     await expect(follow).toContainText('3 queued');
+        at C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\e2e\tv-follow-season-packs.spec.js:36:44
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\tv-follow-season-packs-sea-51f62-llow-import-at-desktop-1366\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\tv-follow-season-packs-sea-51f62-llow-import-at-desktop-1366\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\tv-follow-season-packs-sea-51f62-llow-import-at-desktop-1366\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tv-follow-season-packs-sea-51f62-llow-import-at-desktop-1366\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) tests\e2e\tv-follow-season-packs.spec.js:5:3 › season packs keep manual review and real Follow/import at desktop 1920 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 3
+    Received: 0
+
+      34 |     const outcome = await run.json();
+      35 |     expect(outcome.queries.at(-1).episode).toBeNull();
+    > 36 |     expect(outcome.tasks[0].counts.queued).toBe(3);
+         |                                            ^
+      37 |     expect(new Set(outcome.tasks[0].episodes.map(row=>row.intent_id)).size).toBe(1);
+      38 |     await page.reload();
+      39 |     await expect(follow).toContainText('3 queued');
+        at C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\e2e\tv-follow-season-packs.spec.js:36:44
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\tv-follow-season-packs-sea-e12b1-llow-import-at-desktop-1920\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\tv-follow-season-packs-sea-e12b1-llow-import-at-desktop-1920\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\tv-follow-season-packs-sea-e12b1-llow-import-at-desktop-1920\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tv-follow-season-packs-sea-e12b1-llow-import-at-desktop-1920\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) tests\e2e\tv-normal-import.spec.js:5:1 › review renders the backend season destination and normal lifecycle in existing desktop dialog 
+
+    Error: expect(locator).toBeEnabled() failed
+
+    Locator:  getByRole('dialog', { name: 'TV release review' }).getByRole('button', { name: 'Download selected releases' })
+    Expected: enabled
+    Received: disabled
+    Timeout:  15000ms
+
+    Call log:
+      - Expect "toBeEnabled" with timeout 15000ms
+      - waiting for getByRole('dialog', { name: 'TV release review' }).getByRole('button', { name: 'Download selected releases' })
+        33 × locator resolved to <button disabled class="primary-button">Download selected releases</button>
+           - unexpected value "disabled"
+
+
+      15 |   await expect(dialog.getByText(`Destination: ${review.import_destination.path}`, { exact: true })).toBeVisible();
+      16 |   await expect(dialog).toContainText('Verified episodes move into the season folder. Completed downloads are removed from qBittorrent.');
+    > 17 |   await expect(dialog.getByRole('button', { name: 'Download selected releases' })).toBeEnabled();
+         |                                                                                    ^
+      18 |   expect(await dialog.evaluate(element => element.scrollWidth <= element.clientWidth)).toBe(true);
+      19 |   await page.screenshot({ path: 'docs/verification/tv-normal-import/review.png' });
+      20 | });
+        at C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\e2e\tv-normal-import.spec.js:17:84
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\tv-normal-import-review-re-37809--in-existing-desktop-dialog\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\tv-normal-import-review-re-37809--in-existing-desktop-dialog\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\tv-normal-import-review-re-37809--in-existing-desktop-dialog\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tv-normal-import-review-re-37809--in-existing-desktop-dialog\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) tests\e2e\tv-normal-import.spec.js:52:1 › real isolated completion returns the season binding and renders completed status without rollback 
+
+    Error: expect(received).toBeTruthy()
+
+    Received: false
+
+      53 |   try {
+      54 |     const response = await request.post('/__tv_fixture/complete-normal');
+    > 55 |     expect(response.ok()).toBeTruthy();
+         |                           ^
+      56 |     const result = await response.json();
+      57 |     expect(result.job.state).toBe('imported');
+      58 |     expect(result.job.import_mode).toBe('move');
+        at C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\e2e\tv-normal-import.spec.js:55:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\tv-normal-import-real-isol-570d4-ted-status-without-rollback\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\tv-normal-import-real-isol-570d4-ted-status-without-rollback\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\tv-normal-import-real-isol-570d4-ted-status-without-rollback\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tv-normal-import-real-isol-570d4-ted-status-without-rollback\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6 failed
+    tests\e2e\tv-download-contracts.spec.js:16:1 › independent Settings selectors save through the real API and Cancel discards edits 
+    tests\e2e\tv-download-contracts.spec.js:138:1 › lower checked-season and all-season review adds nothing before explicit submission and preserves destinations 
+    tests\e2e\tv-follow-season-packs.spec.js:5:3 › season packs keep manual review and real Follow/import at desktop 1366 
+    tests\e2e\tv-follow-season-packs.spec.js:5:3 › season packs keep manual review and real Follow/import at desktop 1920 
+    tests\e2e\tv-normal-import.spec.js:5:1 › review renders the backend season destination and normal lifecycle in existing desktop dialog 
+    tests\e2e\tv-normal-import.spec.js:52:1 › real isolated completion returns the season binding and renders completed status without rollback 
+  24 passed (2.1m)
+Playwright failure data retained at C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-833d16ce3d534323b36f88b1feae15c3
+127.0.0.1 - - [10/Oct/2026 03:47:39] "GET /api/tv/series/1/monitor HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:39] "GET /api/tv/series/1 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:39] "GET /api/tv/related?tmdb_id=900001&source=recommendations&page=1 HTTP/1.1" 400 -
+127.0.0.1 - - [10/Oct/2026 03:47:39] "GET /api/acquisition/profiles HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:39] "GET /api/tv/tasks?series_id=1 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:39] "GET /api/tv/tasks?series_id=1&history=true HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:39] "GET /tv/series/1 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:39] "GET /assets/index-BbznKxre.js HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:39] "GET /assets/vendor-Bb8JjhAW.js HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:39] "GET /assets/index-DmKtwgPZ.css HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:39] "GET /assets/vendor-react-CJZMWplS.js HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:39] "GET /assets/vendor-icons-BISePPUw.js HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:40] "GET /assets/LibraryWorkspace-kR-DHz1h.js HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:40] "GET /assets/SearchField-C9aLr90M.js HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:40] "GET /assets/moviePresentation-Di650b9v.js HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:40] "GET /assets/useCardGridMetrics-B4-QBy9b.js HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:40] "GET /assets/useMovieCollectionCache-BiWM3ByQ.js HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:40] "GET /assets/MetadataCorrectionModal-DNpn2vOO.js HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:40] "GET /assets/WorkspacePathBar-B5uETC_B.js HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:40] "GET /assets/LibraryControls-C7HfwYCT.js HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:40] "GET /assets/Pagination-DoBVrSkv.js HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:40] "GET /api/tv/capabilities HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:40] "GET /api/power/status HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:40] "GET /api/library/reconcile HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:40] "GET /api/notifications?query=&page=1 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:40] "GET /api/catalog/events HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:40] "GET /assets/TVWorkspace-CyUlHKGZ.js HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:40] "GET /assets/tv-BwQa9PdZ.css HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:40] "GET /api/config HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:40] "GET /api/streaming/config HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:40] "GET /api/user/lists HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:40] "GET /api/user/followed-releases HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:40] "POST /api/user/followed-releases/check HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:40] "GET /api/tv/series/1 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:40] "GET /api/tv/related?tmdb_id=900001&source=recommendations&page=1 HTTP/1.1" 400 -
+127.0.0.1 - - [10/Oct/2026 03:47:40] "GET /api/acquisition/profiles HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:40] "GET /api/tv/series/1/seasons/1?page=1 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:40] "GET /api/tv/tasks?series_id=1 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:40] "GET /api/tv/tasks?series_id=1&history=true HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:47:40] "GET /api/acquisition/profiles HTTP/1.1" 200 -

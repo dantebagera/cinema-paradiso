@@ -309,6 +309,26 @@ class SmartMatchServiceTest(unittest.TestCase):
         self.assertEqual([len(batch) for batch in batches], [8, 2])
         self.assertEqual(coordinator.status()["processed"], 10)
 
+    def test_gpt_binding_uses_pinned_processor_and_failure_does_not_advance_files(self):
+        from services.ai_jobs import AIJobError
+        store, calls = MemoryStore(), []
+        def selected(paths, database, binding):
+            calls.append((paths, database, binding))
+            raise AIJobError('paused_budget')
+        coordinator = SmartMatchCoordinator(load_state=store.load, save_state=store.save,
+            process_path=lambda *args: self.fail('Legacy path was called'),
+            process_batch=lambda *args: self.fail('Ollama path was called'), process_selected_batch=selected)
+        binding = {'ai_job_id': 'job-a', 'selection': {'provider': 'chatgpt', 'model': 'model-a'}}
+        coordinator.start(['one', 'two'], 'plex', 'ai', background=False, ai_binding=binding)
+        state = coordinator.run_batch()
+        self.assertEqual(state['processed'], 0)
+        self.assertEqual(state['remaining'], 2)
+        self.assertEqual(state['status'], 'paused_budget')
+        self.assertEqual(calls[0][1], 'plex')
+        self.assertEqual(calls[0][2]['selection']['model'], 'model-a')
+        coordinator.resume(background=False)
+        self.assertEqual(coordinator.status()['status'], 'running')
+
 
 if __name__ == "__main__":
     unittest.main()

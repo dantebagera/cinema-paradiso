@@ -1,0 +1,236 @@
+
+> cinema-paradiso-frontend@3.0.0-beta.2 test:e2e
+> powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/run_playwright_e2e.ps1 tests/e2e/tv-follow-season-packs.spec.js
+
+CP_TEST_ROOT=C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a
+
+> cinema-paradiso-frontend@3.0.0-beta.2 build
+> vite build --outDir C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a\dist
+
+vite v6.4.3 building for production...
+
+(!) outDir C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a\dist is not inside project root and will not be emptied.
+Use --emptyOutDir to override.
+
+transforming...
+✓ 1690 modules transformed.
+rendering chunks...
+computing gzip size...
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/manifest-CWC4etjQ.webmanifest          0.55 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/logo-Dk1rN4XL.svg                      1.25 kB │ gzip:   0.55 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/index.html                                    1.86 kB │ gzip:   0.83 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/styleguide-motif-crop-B3fTh5_H.png   119.86 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/header-Cr7VYxUL.png                  402.60 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/tv-C0qIaGNz.css                       10.46 kB │ gzip:   2.78 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/IPTVWorkspace-Cx_ZMdzz.css            39.79 kB │ gzip:   6.54 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/index-DmKtwgPZ.css                   207.19 kB │ gzip:  35.43 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/header-CbieqaTQ.js                     0.05 kB │ gzip:   0.07 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/moviePresentation-Di650b9v.js          0.70 kB │ gzip:   0.44 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/Pagination-CiSoaNtf.js                 0.88 kB │ gzip:   0.49 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/DiscoverResultGrid-BHPTQH7-.js         0.88 kB │ gzip:   0.41 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/WorkspacePathBar-B5uETC_B.js           2.50 kB │ gzip:   0.96 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/LibraryControls-BVBw0oGd.js            2.83 kB │ gzip:   0.91 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/DownloadsWorkspace-BEjJXtJp.js         3.81 kB │ gzip:   1.56 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/vendor-Bb8JjhAW.js                     3.85 kB │ gzip:   1.72 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/iptv-DxK5m6Qv.js                       6.50 kB │ gzip:   1.38 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/MetadataCorrectionModal-CvL855fn.js    9.97 kB │ gzip:   3.27 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/StyleGuide-DiRHykO8.js                10.43 kB │ gzip:   3.01 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/CardLab-Cx4N8uxB.js                   11.48 kB │ gzip:   4.12 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/useMovieCollectionCache-DrImP0DB.js   12.11 kB │ gzip:   4.16 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/AIControlWorkspace-2a6yANph.js        16.57 kB │ gzip:   5.74 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/HelpWorkspace-Cb2BtTya.js             21.47 kB │ gzip:   6.96 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/HomeWorkspace-nnXZfrxi.js             22.22 kB │ gzip:   6.61 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/SearchField-C9aLr90M.js               27.27 kB │ gzip:   8.45 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/vendor-icons-BISePPUw.js              32.69 kB │ gzip:   6.62 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/ListsWorkspace-Ct1gAsqu.js            32.97 kB │ gzip:   9.35 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/useCardGridMetrics-B7aM5VtH.js        36.97 kB │ gzip:  11.46 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/LibraryWorkspace-uYvnYWXD.js          47.09 kB │ gzip:  13.96 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/CleanupWorkspace-BXhRWWie.js          63.68 kB │ gzip:  16.78 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/DiscoverWorkspace-DkRuFcvS.js         63.93 kB │ gzip:  18.69 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/TVWorkspace-CSvS9A7k.js               68.64 kB │ gzip:  19.75 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/SettingsWorkspace-1wJodEdj.js         84.72 kB │ gzip:  21.10 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/IPTVWorkspace-DhKuO7kO.js             96.11 kB │ gzip:  25.51 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/index-D8PgOuRU.js                    113.99 kB │ gzip:  34.77 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/vendor-react-CJZMWplS.js             189.82 kB │ gzip:  59.19 kB
+../../../../AppData/Local/Temp/cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a/dist/assets/vendor-player-Dv34CeeU.js            353.87 kB │ gzip: 110.81 kB
+✓ built in 2.18s
+
+Running 3 tests using 1 worker
+
+(node:17812) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tests\e2e\tv-follow-season-packs.spec.js:5:3 › season packs keep manual review and real Follow/import at desktop 1366 (16.4s)
+(node:53072) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  2 tests\e2e\tv-follow-season-packs.spec.js:5:3 › season packs keep manual review and real Follow/import at desktop 1920 (16.4s)
+(node:19832) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  3 tests\e2e\tv-follow-season-packs.spec.js:62:1 › source review shows attributed reasons and reuses the existing confirmation dialog (15.6s)
+
+
+  1) tests\e2e\tv-follow-season-packs.spec.js:5:3 › season packs keep manual review and real Follow/import at desktop 1366 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByRole('dialog', { name: 'TV release review' })
+    Expected substring: "1 selected releases · 3 of 3 episodes"
+    Received string:    "Choose TV downloadsSeason 2CloseQuality profile CP CompatibilitySafe HDSome sources did not finish. Available releases are shown.Retry search1 releases · 3 of 3 episodes · 0.00 GBDestination: C:\\Users\\dante\\AppData\\Local\\Temp\\cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a\\tv\\Louie Pack Fixture 1 (2010)\\Season 02Verified episodes move into the season folder. Completed downloads are removed from qBittorrent.Allow extra episodes only when inseparable from selected episodes in one fileDownload selected releasesSeason-pack coverage is checked against its actual files before downloading. Unselected separate files are skipped.Show blocked releases (1)Louie Pack Fixture 1 (2010) Season 2 S02 (1080p BluRay x265 HEVC 10bit AAC 5.1 Garshasp)Season pack · 1080p · bluray · 0.00 GB · 20 seeders · Fixture TVDetailsSeries title and available year evidence matchLouie.Pack.Fixture.1.S02.1080p.BluRay.x264-FGT [CK] [S02 Two Complete]Season pack · 1080p · bluray · 0.00 GB · 20 seeders · Fixture TVSeveral series share this title; confirm which series this release contains Confirm this is the selected seriesDetails and reasonsSeveral series share this title; confirm which series this release containsStable provider identity has not been verified for this targetSource is a release claim; dimensions cannot prove provenanceSource resultsFixture TV: 3 resultsFixture timeout: Timed out"
+    Timeout: 15000ms
+
+    Call log:
+      - Expect "toContainText" with timeout 15000ms
+      - waiting for getByRole('dialog', { name: 'TV release review' })
+        4 × locator resolved to <dialog open="" aria-label="TV release review" class="tv-version-dialog tv-release-dialog">…</dialog>
+          - unexpected value "Choose TV downloadsSeason 2CloseQuality profile CP CompatibilitySafe HDSearching TV sources…"
+        29 × locator resolved to <dialog open="" aria-label="TV release review" class="tv-version-dialog tv-release-dialog">…</dialog>
+           - unexpected value "Choose TV downloadsSeason 2CloseQuality profile CP CompatibilitySafe HDSome sources did not finish. Available releases are shown.Retry search1 releases · 3 of 3 episodes · 0.00 GBDestination: C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a\tv\Louie Pack Fixture 1 (2010)\Season 02Verified episodes move into the season folder. Completed downloads are removed from qBittorrent.Allow extra episodes only when inseparable from selected episodes in one fileDownload selected releasesSeason-pack coverage is checked against its actual files before downloading. Unselected separate files are skipped.Show blocked releases (1)Louie Pack Fixture 1 (2010) Season 2 S02 (1080p BluRay x265 HEVC 10bit AAC 5.1 Garshasp)Season pack · 1080p · bluray · 0.00 GB · 20 seeders · Fixture TVDetailsSeries title and available year evidence matchLouie.Pack.Fixture.1.S02.1080p.BluRay.x264-FGT [CK] [S02 Two Complete]Season pack · 1080p · bluray · 0.00 GB · 20 seeders · Fixture TVSeveral series share this title; confirm which series this release contains Confirm this is the selected seriesDetails and reasonsSeveral series share this title; confirm which series this release containsStable provider identity has not been verified for this targetSource is a release claim; dimensions cannot prove provenanceSource resultsFixture TV: 3 resultsFixture timeout: Timed out"
+
+
+      13 |     const dialog = page.getByRole('dialog',{name:'TV release review'});
+      14 |     await dialog.getByLabel('Download quality profile').selectOption('cp-compatibility');
+    > 15 |     await expect(dialog).toContainText('1 selected releases · 3 of 3 episodes');
+         |                          ^
+      16 |     await expect(dialog).toContainText('Season pack');
+      17 |     await expect(dialog.getByRole('button',{name:'Confirm this is the selected series'})).toBeVisible();
+      18 |     await dialog.getByRole('checkbox',{name:/Show blocked releases/}).check();
+        at C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\e2e\tv-follow-season-packs.spec.js:15:26
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\tv-follow-season-packs-sea-51f62-llow-import-at-desktop-1366\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\tv-follow-season-packs-sea-51f62-llow-import-at-desktop-1366\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\tv-follow-season-packs-sea-51f62-llow-import-at-desktop-1366\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tv-follow-season-packs-sea-51f62-llow-import-at-desktop-1366\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) tests\e2e\tv-follow-season-packs.spec.js:5:3 › season packs keep manual review and real Follow/import at desktop 1920 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByRole('dialog', { name: 'TV release review' })
+    Expected substring: "1 selected releases · 3 of 3 episodes"
+    Received string:    "Choose TV downloadsSeason 2CloseQuality profile CP CompatibilitySafe HDSome sources did not finish. Available releases are shown.Retry search1 releases · 3 of 3 episodes · 0.00 GBDestination: C:\\Users\\dante\\AppData\\Local\\Temp\\cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a\\tv\\Louie Pack Fixture 2 (2010)\\Season 02Verified episodes move into the season folder. Completed downloads are removed from qBittorrent.Allow extra episodes only when inseparable from selected episodes in one fileDownload selected releasesSeason-pack coverage is checked against its actual files before downloading. Unselected separate files are skipped.Show blocked releases (1)Louie Pack Fixture 2 (2010) Season 2 S02 (1080p BluRay x265 HEVC 10bit AAC 5.1 Garshasp)Season pack · 1080p · bluray · 0.00 GB · 20 seeders · Fixture TVDetailsSeries title and available year evidence matchLouie.Pack.Fixture.2.S02.1080p.BluRay.x264-FGT [CK] [S02 Two Complete]Season pack · 1080p · bluray · 0.00 GB · 20 seeders · Fixture TVSeveral series share this title; confirm which series this release contains Confirm this is the selected seriesDetails and reasonsSeveral series share this title; confirm which series this release containsStable provider identity has not been verified for this targetSource is a release claim; dimensions cannot prove provenanceSource resultsFixture TV: 3 resultsFixture timeout: Timed out"
+    Timeout: 15000ms
+
+    Call log:
+      - Expect "toContainText" with timeout 15000ms
+      - waiting for getByRole('dialog', { name: 'TV release review' })
+        4 × locator resolved to <dialog open="" aria-label="TV release review" class="tv-version-dialog tv-release-dialog">…</dialog>
+          - unexpected value "Choose TV downloadsSeason 2CloseQuality profile CP CompatibilitySafe HDSearching TV sources…"
+        29 × locator resolved to <dialog open="" aria-label="TV release review" class="tv-version-dialog tv-release-dialog">…</dialog>
+           - unexpected value "Choose TV downloadsSeason 2CloseQuality profile CP CompatibilitySafe HDSome sources did not finish. Available releases are shown.Retry search1 releases · 3 of 3 episodes · 0.00 GBDestination: C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a\tv\Louie Pack Fixture 2 (2010)\Season 02Verified episodes move into the season folder. Completed downloads are removed from qBittorrent.Allow extra episodes only when inseparable from selected episodes in one fileDownload selected releasesSeason-pack coverage is checked against its actual files before downloading. Unselected separate files are skipped.Show blocked releases (1)Louie Pack Fixture 2 (2010) Season 2 S02 (1080p BluRay x265 HEVC 10bit AAC 5.1 Garshasp)Season pack · 1080p · bluray · 0.00 GB · 20 seeders · Fixture TVDetailsSeries title and available year evidence matchLouie.Pack.Fixture.2.S02.1080p.BluRay.x264-FGT [CK] [S02 Two Complete]Season pack · 1080p · bluray · 0.00 GB · 20 seeders · Fixture TVSeveral series share this title; confirm which series this release contains Confirm this is the selected seriesDetails and reasonsSeveral series share this title; confirm which series this release containsStable provider identity has not been verified for this targetSource is a release claim; dimensions cannot prove provenanceSource resultsFixture TV: 3 resultsFixture timeout: Timed out"
+
+
+      13 |     const dialog = page.getByRole('dialog',{name:'TV release review'});
+      14 |     await dialog.getByLabel('Download quality profile').selectOption('cp-compatibility');
+    > 15 |     await expect(dialog).toContainText('1 selected releases · 3 of 3 episodes');
+         |                          ^
+      16 |     await expect(dialog).toContainText('Season pack');
+      17 |     await expect(dialog.getByRole('button',{name:'Confirm this is the selected series'})).toBeVisible();
+      18 |     await dialog.getByRole('checkbox',{name:/Show blocked releases/}).check();
+        at C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\e2e\tv-follow-season-packs.spec.js:15:26
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\tv-follow-season-packs-sea-e12b1-llow-import-at-desktop-1920\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\tv-follow-season-packs-sea-e12b1-llow-import-at-desktop-1920\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\tv-follow-season-packs-sea-e12b1-llow-import-at-desktop-1920\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tv-follow-season-packs-sea-e12b1-llow-import-at-desktop-1920\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) tests\e2e\tv-follow-season-packs.spec.js:62:1 › source review shows attributed reasons and reuses the existing confirmation dialog 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByRole('region', { name: 'Follow and download' })
+    Expected substring: "3 needs review"
+    Received string:    "Follow and downloadThis is separate from identifying files already on disk. Saving creates a draft; only Start begins searching or downloading.Scope Whole seriesSelected seasonSelected episodesAction Missing — download existing missing episodesUpgradeQuality profile CP CompatibilitySafe HDPreferred resolution: 1080p. Eligible sources follow this profile’s allowed, manual-only, and blocked rules. Strict Upgrade requires a trusted, provably better source. Verified episodes move into the season folder. Completed downloads are removed from qBittorrent. An owned copy stays until its replacement is verified.Preview targetsSave draftMissing and Future retry unsuccessful source searches every five hours. Future first searches at midnight Africa/Cairo on the listed air date, on the next worker pass. Metadata refresh is separate.TasksSeason 2 · missing · draftcp-compatibility · 0 / 0 acquired · TV metadata refresh failed; the draft remains saved0 queued · 0 waiting · 0 needs reviewLast search: — · Next eligible search: — (Africa/Cairo)StartXTask history (0)"
+    Timeout: 15000ms
+
+    Call log:
+      - Expect "toContainText" with timeout 15000ms
+      - waiting for getByRole('region', { name: 'Follow and download' })
+        31 × locator resolved to <section class="tv-monitoring" aria-label="Follow and download">…</section>
+           - unexpected value "Follow and downloadThis is separate from identifying files already on disk. Saving creates a draft; only Start begins searching or downloading.Scope Whole seriesSelected seasonSelected episodesAction Missing — download existing missing episodesUpgradeQuality profile CP CompatibilitySafe HDPreferred resolution: 1080p. Eligible sources follow this profile’s allowed, manual-only, and blocked rules. Strict Upgrade requires a trusted, provably better source. Verified episodes move into the season folder. Completed downloads are removed from qBittorrent. An owned copy stays until its replacement is verified.Preview targetsSave draftMissing and Future retry unsuccessful source searches every five hours. Future first searches at midnight Africa/Cairo on the listed air date, on the next worker pass. Metadata refresh is separate.TasksSeason 2 · missing · draftcp-compatibility · 0 / 0 acquired · TV metadata refresh failed; the draft remains saved0 queued · 0 waiting · 0 needs reviewLast search: — · Next eligible search: — (Africa/Cairo)StartXTask history (0)"
+
+
+      68 |   await page.goto(`/tv/series/${fixture.series_id}`);
+      69 |   const follow = page.getByRole('region',{name:'Follow and download'});
+    > 70 |   await expect(follow).toContainText('3 needs review');
+         |                        ^
+      71 |   await expect(follow).toContainText('Review required; next automatic search');
+      72 |   await follow.getByText('Source search details',{exact:true}).first().click();
+      73 |   await expect(follow).toContainText('Fixture TV');
+        at C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\e2e\tv-follow-season-packs.spec.js:70:24
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\tv-follow-season-packs-sou-d9b5b-xisting-confirmation-dialog\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\tv-follow-season-packs-sou-d9b5b-xisting-confirmation-dialog\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\tv-follow-season-packs-sou-d9b5b-xisting-confirmation-dialog\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tv-follow-season-packs-sou-d9b5b-xisting-confirmation-dialog\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3 failed
+    tests\e2e\tv-follow-season-packs.spec.js:5:3 › season packs keep manual review and real Follow/import at desktop 1366 
+    tests\e2e\tv-follow-season-packs.spec.js:5:3 › season packs keep manual review and real Follow/import at desktop 1920 
+    tests\e2e\tv-follow-season-packs.spec.js:62:1 › source review shows attributed reasons and reuses the existing confirmation dialog 
+Playwright failure data retained at C:\Users\dante\AppData\Local\Temp\cinema-paradiso-playwright-4772edb4b18a47f4a577a986e2a5d37a
+127.0.0.1 - - [10/Oct/2026 03:43:03] "GET /assets/MetadataCorrectionModal-CvL855fn.js HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:03] "GET /assets/WorkspacePathBar-B5uETC_B.js HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:03] "GET /assets/Pagination-CiSoaNtf.js HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:03] "GET /api/tv/capabilities HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:03] "GET /assets/LibraryControls-BVBw0oGd.js HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:03] "GET /api/power/status HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:03] "GET /api/notifications?query=&page=1 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:03] "GET /api/library/reconcile HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:03] "GET /api/catalog/events HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:03] "GET /assets/TVWorkspace-CSvS9A7k.js HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:03] "GET /assets/tv-C0qIaGNz.css HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:03] "GET /api/config HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:03] "GET /api/streaming/config HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:03] "GET /api/user/followed-releases HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:03] "GET /api/user/lists HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:03] "POST /api/user/followed-releases/check HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:03] "GET /api/tv/series/4 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:03] "GET /api/tv/related?tmdb_id=920003&source=recommendations&page=1 HTTP/1.1" 400 -
+127.0.0.1 - - [10/Oct/2026 03:43:03] "GET /api/acquisition/profiles HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:03] "GET /api/tv/series/4/seasons/2?page=1 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:03] "GET /api/tv/tasks?series_id=4 HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:03] "GET /api/tv/tasks?series_id=4&history=true HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:04] "GET /api/library/status HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:05] "GET /api/library/status HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:06] "GET /api/library/status HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:08] "GET /api/library/status HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:08] "GET /api/power/status HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:09] "GET /api/library/status HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:10] "GET /api/library/status HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:11] "GET /api/library/status HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:13] "GET /api/power/status HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:13] "GET /api/library/status HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:14] "GET /api/library/status HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:15] "GET /api/library/status HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:16] "GET /api/library/status HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:17] "GET /api/library/status HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:18] "GET /api/power/status HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:18] "GET /api/acquisition/profiles HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:18] "GET /api/tv/tasks?series_id=4&history=true HTTP/1.1" 200 -
+127.0.0.1 - - [10/Oct/2026 03:43:18] "GET /api/tv/tasks?series_id=4 HTTP/1.1" 200 -

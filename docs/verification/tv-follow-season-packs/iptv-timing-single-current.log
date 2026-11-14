@@ -1,0 +1,13 @@
+F
+======================================================================
+FAIL: test_movies_get_is_pure_and_projection_is_nonblocking_progressive (tests.test_iptv_movie_gates_0_5.ProjectionAndWorkerTests.test_movies_get_is_pure_and_projection_is_nonblocking_progressive)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_iptv_movie_gates_0_5.py", line 185, in test_movies_get_is_pure_and_projection_is_nonblocking_progressive
+    self.assertLess(time.perf_counter() - started, 1.0)
+AssertionError: 1.5478506000363268 not less than 1.0
+
+----------------------------------------------------------------------
+Ran 1 test in 1.859s
+
+FAILED (failures=1)

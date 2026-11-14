@@ -1,0 +1,14 @@
+{
+  "label": "main-baseline-corrected",
+  "exitCode": 1,
+  "root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\fixtures\\main-baseline-corrected-c1894cacb5d2452bb54cee6926f19b14",
+  "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\logs\\main-baseline-corrected.log",
+  "elapsed": 6.337657,
+  "modules": [
+    "tests.test_movie_awards_bundle",
+    "tests.test_qbittorrent_ui",
+    "tests.test_iptv_movie_gates_0_5.ProjectionAndWorkerTests.test_movies_get_is_pure_and_projection_is_nonblocking_progressive"
+  ],
+  "dist": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\fixtures\\main-baseline-corrected-c1894cacb5d2452bb54cee6926f19b14\\dist",
+  "kind": "python"
+}

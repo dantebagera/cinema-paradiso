@@ -1,0 +1,889 @@
+{
+  "restored": [
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/026a5189e7bf890a736032215daa80f6548d1066528b22ca4f15df4f9b55ccf8.wiki",
+      "restoredMainSha256": "026a5189e7bf890a736032215daa80f6548d1066528b22ca4f15df4f9b55ccf8"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/030b7c56c0fcef198e4576fc5d98eab928457f2241bc16c0261ca5b681aa4dec.wiki",
+      "restoredMainSha256": "030b7c56c0fcef198e4576fc5d98eab928457f2241bc16c0261ca5b681aa4dec"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/04470bcfb644779a2de42d07ee3f4e90099b46222ce5c94f29cd916c2816cf4f.wiki",
+      "restoredMainSha256": "04470bcfb644779a2de42d07ee3f4e90099b46222ce5c94f29cd916c2816cf4f"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/0642b57ac715f524fede0fca8d628c3d4f33e8912363bb8b0460b386274a198f.wiki",
+      "restoredMainSha256": "0642b57ac715f524fede0fca8d628c3d4f33e8912363bb8b0460b386274a198f"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/072d0c2fb2e2aede8a5e884ac77587e5a1cfe5271092fdd9a960c72a6b2e853b.wiki",
+      "restoredMainSha256": "072d0c2fb2e2aede8a5e884ac77587e5a1cfe5271092fdd9a960c72a6b2e853b"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/091904142969e8a73c787566503e19573f543acf1d8c30e7d2bca8ff6eefbb9c.wiki",
+      "restoredMainSha256": "091904142969e8a73c787566503e19573f543acf1d8c30e7d2bca8ff6eefbb9c"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/096305b327a2414c38e9b5bfc36329359d1322b28b0f09a5eef0f4d2d5509736.wiki",
+      "restoredMainSha256": "096305b327a2414c38e9b5bfc36329359d1322b28b0f09a5eef0f4d2d5509736"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/0b4044040f71f449b428eabc78bb7d1bc98fd24e330450b9318c76e71f3034d2.wiki",
+      "restoredMainSha256": "0b4044040f71f449b428eabc78bb7d1bc98fd24e330450b9318c76e71f3034d2"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/0bf33a4196a54869f0812d88787b6898399aeec9270355f018f18d2d878f6705.wiki",
+      "restoredMainSha256": "0bf33a4196a54869f0812d88787b6898399aeec9270355f018f18d2d878f6705"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/0ca84e4ad5305f7dc446b3ce666fc8d33f3df0d5366f732556d553940a08e80b.wiki",
+      "restoredMainSha256": "0ca84e4ad5305f7dc446b3ce666fc8d33f3df0d5366f732556d553940a08e80b"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/0cfb1c79ca260483963f565d9a6530a16cd0fcaae1428191857b641e19723fb6.wiki",
+      "restoredMainSha256": "0cfb1c79ca260483963f565d9a6530a16cd0fcaae1428191857b641e19723fb6"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/0d2beac1e9917c50d9e4475a633d1de7a8cd143f1fd8d799d6e6a1aeb6caa15c.wiki",
+      "restoredMainSha256": "0d2beac1e9917c50d9e4475a633d1de7a8cd143f1fd8d799d6e6a1aeb6caa15c"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/0f21653b329ffac8d5333226405d77d9bb27e76418aa6574db01b722c541d175.wiki",
+      "restoredMainSha256": "0f21653b329ffac8d5333226405d77d9bb27e76418aa6574db01b722c541d175"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/10a878b120f02da6359e2654b5ceb3f3f3d64545a2eb4efee4883cbd1fc0a929.wiki",
+      "restoredMainSha256": "10a878b120f02da6359e2654b5ceb3f3f3d64545a2eb4efee4883cbd1fc0a929"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/1240d20d5a0776c6bfce85dfe519149ed0072154b3f27fbd23225c12a4911757.wiki",
+      "restoredMainSha256": "1240d20d5a0776c6bfce85dfe519149ed0072154b3f27fbd23225c12a4911757"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/14f46ad85a0779f12c357fbc9c5a43cf278149ca72dc33c12189ff236cc26f32.wiki",
+      "restoredMainSha256": "14f46ad85a0779f12c357fbc9c5a43cf278149ca72dc33c12189ff236cc26f32"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/163cbbf5a9c125233158a0f1d11aa686cbf48fd153dbdea5e81379e1e7b1f967.wiki",
+      "restoredMainSha256": "163cbbf5a9c125233158a0f1d11aa686cbf48fd153dbdea5e81379e1e7b1f967"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/1761496bc7c81bba0579e216f09aefd83dbcff3823cc33484f6237013d26a277.wiki",
+      "restoredMainSha256": "1761496bc7c81bba0579e216f09aefd83dbcff3823cc33484f6237013d26a277"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/179becdce079966068335049b291a945a5cbe36e92bafbd54e52485ab55ee240.wiki",
+      "restoredMainSha256": "179becdce079966068335049b291a945a5cbe36e92bafbd54e52485ab55ee240"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/1f02f1b6c2a5dcbd3d09c7b839af53184e9c2f641fe0c61df9590a69ac70633b.wiki",
+      "restoredMainSha256": "1f02f1b6c2a5dcbd3d09c7b839af53184e9c2f641fe0c61df9590a69ac70633b"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/1f0e165b91bf38a3937ccd4321320bdd1aa83e0947add6a17c0c9a8f44285885.wiki",
+      "restoredMainSha256": "1f0e165b91bf38a3937ccd4321320bdd1aa83e0947add6a17c0c9a8f44285885"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/1f1dec93877fd5586dd57cdcf8cf39b48e9173985d06bcaa6f93d85dd49afc82.wiki",
+      "restoredMainSha256": "1f1dec93877fd5586dd57cdcf8cf39b48e9173985d06bcaa6f93d85dd49afc82"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/207dd410678e3b50361fad95acd79f67b060af14527643f1f6f43fa11c1683f8.wiki",
+      "restoredMainSha256": "207dd410678e3b50361fad95acd79f67b060af14527643f1f6f43fa11c1683f8"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/210569eff77156b4f3c75c2b7ca6b6e778540cf6a106692c398f24236bc97d76.wiki",
+      "restoredMainSha256": "210569eff77156b4f3c75c2b7ca6b6e778540cf6a106692c398f24236bc97d76"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/2329a09081306d23a4b54b11e63825a5225e2455076fa5ad806b11dd76a3e70a.wiki",
+      "restoredMainSha256": "2329a09081306d23a4b54b11e63825a5225e2455076fa5ad806b11dd76a3e70a"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/24f8d63791267cfcfa798d5372cc60a322db1cede24ecf7ac9c90bcfdb094b37.wiki",
+      "restoredMainSha256": "24f8d63791267cfcfa798d5372cc60a322db1cede24ecf7ac9c90bcfdb094b37"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/263ad37aab789e22310cccd6a9490a2e1ffd164b4220b21f2a4b791470ec53d2.wiki",
+      "restoredMainSha256": "263ad37aab789e22310cccd6a9490a2e1ffd164b4220b21f2a4b791470ec53d2"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/26a4cbc5b07e176d6e082df755525f898a918c6963ed11f4d852768132a64193.wiki",
+      "restoredMainSha256": "26a4cbc5b07e176d6e082df755525f898a918c6963ed11f4d852768132a64193"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/270a965174f789e81479b1ba84fd562bfe00dad5af07191b350805eb2e6039ff.wiki",
+      "restoredMainSha256": "270a965174f789e81479b1ba84fd562bfe00dad5af07191b350805eb2e6039ff"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/28a8551bdc008263cebc5db171c3d726446c978341dd9e0943d4667d291d2a8f.wiki",
+      "restoredMainSha256": "28a8551bdc008263cebc5db171c3d726446c978341dd9e0943d4667d291d2a8f"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/2c52ca6dc2a2d1d04b519097a68f37206213f3c745b2f90a57d5c1017eeda553.wiki",
+      "restoredMainSha256": "2c52ca6dc2a2d1d04b519097a68f37206213f3c745b2f90a57d5c1017eeda553"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/2f2457da0f28e2ee3d19453684f61738b91fdf7c117bb5fd346cd8809bcf0feb.wiki",
+      "restoredMainSha256": "2f2457da0f28e2ee3d19453684f61738b91fdf7c117bb5fd346cd8809bcf0feb"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/2f4627c5a71e8d598dcb760915d525ecf36954bcf1e55635135e7b49b90e0ca6.wiki",
+      "restoredMainSha256": "2f4627c5a71e8d598dcb760915d525ecf36954bcf1e55635135e7b49b90e0ca6"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/3045b6aa71f660547928e741bc72078459482f0aaa6e3ff98e7d802bc911cc76.wiki",
+      "restoredMainSha256": "3045b6aa71f660547928e741bc72078459482f0aaa6e3ff98e7d802bc911cc76"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/307c01d2124185fad4da45add5757f47cf90ca6fb784fae3c02eb8cdeebe9ccb.wiki",
+      "restoredMainSha256": "307c01d2124185fad4da45add5757f47cf90ca6fb784fae3c02eb8cdeebe9ccb"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/31261fc3ffde34adb39ffc99ecebd4078d0d37d66f139e18968d1cbe5a87416e.wiki",
+      "restoredMainSha256": "31261fc3ffde34adb39ffc99ecebd4078d0d37d66f139e18968d1cbe5a87416e"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/32da0f7e9d94478f649022e20016d2a810d86ac66d7b4de5a5b5bd27233a2f16.wiki",
+      "restoredMainSha256": "32da0f7e9d94478f649022e20016d2a810d86ac66d7b4de5a5b5bd27233a2f16"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/3526154ad736bd3215316b0ab50ae531480cd8d2ae537dc745f886b0329c047a.wiki",
+      "restoredMainSha256": "3526154ad736bd3215316b0ab50ae531480cd8d2ae537dc745f886b0329c047a"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/3529779121afc821b02d0d78abf2b0444e3ca02046c9c4978099c7de60d6cd12.wiki",
+      "restoredMainSha256": "3529779121afc821b02d0d78abf2b0444e3ca02046c9c4978099c7de60d6cd12"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/3542fad5230347fa2a7940971e25857ab48c6c25f71e2bb2af9cdbc01160052f.wiki",
+      "restoredMainSha256": "3542fad5230347fa2a7940971e25857ab48c6c25f71e2bb2af9cdbc01160052f"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/35726a74ba53ed52daab62ce8e7b78cafa61f0d70a91b708744d3f029b52dc1b.wiki",
+      "restoredMainSha256": "35726a74ba53ed52daab62ce8e7b78cafa61f0d70a91b708744d3f029b52dc1b"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/36a38ebe3289a53c4b91dea39acb313e935123778ad0a43cdd0906243eec45ff.wiki",
+      "restoredMainSha256": "36a38ebe3289a53c4b91dea39acb313e935123778ad0a43cdd0906243eec45ff"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/36d70a9c85895583b1225a243cc56ae9ee7b06827d08edbb538ce6f9fc82bdf6.wiki",
+      "restoredMainSha256": "36d70a9c85895583b1225a243cc56ae9ee7b06827d08edbb538ce6f9fc82bdf6"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/3801f6831fb49f3af782c22f1f393c89034710fe9921471a42362f47f978c2bc.wiki",
+      "restoredMainSha256": "3801f6831fb49f3af782c22f1f393c89034710fe9921471a42362f47f978c2bc"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/3869316b0f1053e53f4a44e0893ac5c84b0dd73e19489fd654b9e130797cbef5.wiki",
+      "restoredMainSha256": "3869316b0f1053e53f4a44e0893ac5c84b0dd73e19489fd654b9e130797cbef5"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/388b48836d0be5c1a1246639774265bf499ed9c09c74ad41763f0766819e6e12.wiki",
+      "restoredMainSha256": "388b48836d0be5c1a1246639774265bf499ed9c09c74ad41763f0766819e6e12"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/39655c4cd86b8572644facfa38de6b77cfc6cad83734121ffe4b0adfd365d839.wiki",
+      "restoredMainSha256": "39655c4cd86b8572644facfa38de6b77cfc6cad83734121ffe4b0adfd365d839"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/39ea2859b800abbeded4ba7eb33a67ac02e83fb460ee4931ed0d0f439b3ae1ae.wiki",
+      "restoredMainSha256": "39ea2859b800abbeded4ba7eb33a67ac02e83fb460ee4931ed0d0f439b3ae1ae"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/3a9b58926bb3ed0f579457117dc2a7abf980a457dd60025affb5fa0bd52f3086.wiki",
+      "restoredMainSha256": "3a9b58926bb3ed0f579457117dc2a7abf980a457dd60025affb5fa0bd52f3086"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/3b25e188df3d0be426a982b6d24a8ca5061c914739119133708a26041f76eaf2.wiki",
+      "restoredMainSha256": "3b25e188df3d0be426a982b6d24a8ca5061c914739119133708a26041f76eaf2"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/3b324b42f43b01699d4c5c2e7d7c911af974db57be551f163871e23319bc0d70.wiki",
+      "restoredMainSha256": "3b324b42f43b01699d4c5c2e7d7c911af974db57be551f163871e23319bc0d70"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/3bef97002962cd317b208d88919b9cc0ddc3fdab267832cf0442d838dd5c9a59.wiki",
+      "restoredMainSha256": "3bef97002962cd317b208d88919b9cc0ddc3fdab267832cf0442d838dd5c9a59"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/40681d5cd624d7f9c76535c67995fc4d8c3ebc5917de6dd97d6912faf9341595.wiki",
+      "restoredMainSha256": "40681d5cd624d7f9c76535c67995fc4d8c3ebc5917de6dd97d6912faf9341595"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/40f7835141ecf689d49cc5369a27473eba95403603ef42d3da10ed00b530001c.wiki",
+      "restoredMainSha256": "40f7835141ecf689d49cc5369a27473eba95403603ef42d3da10ed00b530001c"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/4187d45369e736df097660df56be9e82eefd875e3b24eadbe6fbfb2fa6e42adf.wiki",
+      "restoredMainSha256": "4187d45369e736df097660df56be9e82eefd875e3b24eadbe6fbfb2fa6e42adf"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/42f3181b896e64ec4973eadcd11bb5d98142f4822c7e2096864feeee37901014.wiki",
+      "restoredMainSha256": "42f3181b896e64ec4973eadcd11bb5d98142f4822c7e2096864feeee37901014"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/449ecc8e09de6935ab626945915793aa28d7f53093584821c6d24de50358f7ea.wiki",
+      "restoredMainSha256": "449ecc8e09de6935ab626945915793aa28d7f53093584821c6d24de50358f7ea"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/48f188d9eb83c5bfa107dac16ada853ceadc10343932a288de2743bad319e6bb.wiki",
+      "restoredMainSha256": "48f188d9eb83c5bfa107dac16ada853ceadc10343932a288de2743bad319e6bb"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/4931c5da2f68a0968f18609b4735148e3a32bf62094c72416a763c257e8107e5.wiki",
+      "restoredMainSha256": "4931c5da2f68a0968f18609b4735148e3a32bf62094c72416a763c257e8107e5"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/4a0a544ff75a49abef8534b45752d7359c231a49375e3538abea3c3b0cf47411.wiki",
+      "restoredMainSha256": "4a0a544ff75a49abef8534b45752d7359c231a49375e3538abea3c3b0cf47411"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/4b7049c047dcc121c38bfbb1b370b16c37dffef8b6d190323f1bf718901bd452.wiki",
+      "restoredMainSha256": "4b7049c047dcc121c38bfbb1b370b16c37dffef8b6d190323f1bf718901bd452"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/4bee52296d44338f4934d379ee9c58a3fd20d34f93fb930555cc4b4e63ad5261.wiki",
+      "restoredMainSha256": "4bee52296d44338f4934d379ee9c58a3fd20d34f93fb930555cc4b4e63ad5261"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/4c2bd213e0c1b86dd8e3eb93f4447bd562a7d8f2a3cfcad59bdfb5d0a042abbe.wiki",
+      "restoredMainSha256": "4c2bd213e0c1b86dd8e3eb93f4447bd562a7d8f2a3cfcad59bdfb5d0a042abbe"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/4f867d718351235fbb4d1b919f1fd2bb38906225ba5ab481274e234ec28a7fe7.wiki",
+      "restoredMainSha256": "4f867d718351235fbb4d1b919f1fd2bb38906225ba5ab481274e234ec28a7fe7"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/4f9ea775cb92acd8a775d311eed3c6c8dc22b82c3355700378f2e0b19d5e7e4f.wiki",
+      "restoredMainSha256": "4f9ea775cb92acd8a775d311eed3c6c8dc22b82c3355700378f2e0b19d5e7e4f"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/55e4400e624b64ac3154738d9df45c25164651ba7bab9d72cd339ff689d77001.wiki",
+      "restoredMainSha256": "55e4400e624b64ac3154738d9df45c25164651ba7bab9d72cd339ff689d77001"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/5a1bfa5069afc073868c024b62bef3e753472e4474eafff45a71873263e287a2.wiki",
+      "restoredMainSha256": "5a1bfa5069afc073868c024b62bef3e753472e4474eafff45a71873263e287a2"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/5a856ab7951a33e2a3fbbf5df341a661c0a2a14d8b2fb4041162623b77da6e00.wiki",
+      "restoredMainSha256": "5a856ab7951a33e2a3fbbf5df341a661c0a2a14d8b2fb4041162623b77da6e00"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/5a8d45fdafaa7e738e3275feb7607af8c33ee7dd8ea70f3390e81bf9cef11f4b.wiki",
+      "restoredMainSha256": "5a8d45fdafaa7e738e3275feb7607af8c33ee7dd8ea70f3390e81bf9cef11f4b"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/5ad7831dea4e9701d01247e296d17ff1fb39b0afd939f4914d95f20743b9cb5f.wiki",
+      "restoredMainSha256": "5ad7831dea4e9701d01247e296d17ff1fb39b0afd939f4914d95f20743b9cb5f"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/5bf3c77446b9c63c82c543c2ccb3b051c51cfa1e9852c2531ec0ec3fea318145.wiki",
+      "restoredMainSha256": "5bf3c77446b9c63c82c543c2ccb3b051c51cfa1e9852c2531ec0ec3fea318145"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/5c57ae17de86d876403096a81963dbb226ebf450928e5f223039ffaec82e1d44.wiki",
+      "restoredMainSha256": "5c57ae17de86d876403096a81963dbb226ebf450928e5f223039ffaec82e1d44"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/5c972f3473298ac42083cb32e4fd6d80546fb13a33ce1f2fa671fd3d3f8af171.wiki",
+      "restoredMainSha256": "5c972f3473298ac42083cb32e4fd6d80546fb13a33ce1f2fa671fd3d3f8af171"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/605c69d72c0fe53973fb161fd696a2c663f452479303890a4c679ecf011c24f0.wiki",
+      "restoredMainSha256": "605c69d72c0fe53973fb161fd696a2c663f452479303890a4c679ecf011c24f0"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/60bd90cb4d66f67bb419ac5f776d5b693db5c3620d240a3eec625abd57214e6e.wiki",
+      "restoredMainSha256": "60bd90cb4d66f67bb419ac5f776d5b693db5c3620d240a3eec625abd57214e6e"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/62283ec9c2cde7810a30d32092fd72aaf14afa7b387728419ef47dc2111c9d6e.wiki",
+      "restoredMainSha256": "62283ec9c2cde7810a30d32092fd72aaf14afa7b387728419ef47dc2111c9d6e"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/6258c500f59bd889ca263bb9d462b4186117e990c26f387cbb0c600711c5a749.wiki",
+      "restoredMainSha256": "6258c500f59bd889ca263bb9d462b4186117e990c26f387cbb0c600711c5a749"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/63fe5c25e942aefc0d020c2a7fda5e4715edc6c4b85948007847f5b1cd24b128.wiki",
+      "restoredMainSha256": "63fe5c25e942aefc0d020c2a7fda5e4715edc6c4b85948007847f5b1cd24b128"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/642ead11279c83be2649d6bf805a77ff02d451bc728af67e37d90c3cd62fb7d5.wiki",
+      "restoredMainSha256": "642ead11279c83be2649d6bf805a77ff02d451bc728af67e37d90c3cd62fb7d5"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/647f780a85075ae23866854c7cf90e076248a2151ed2a47843c7a8a5ff76fd91.wiki",
+      "restoredMainSha256": "647f780a85075ae23866854c7cf90e076248a2151ed2a47843c7a8a5ff76fd91"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/65412c2f87776c838ec62c31b6323dacd895e5f409b171e77bedd80719aa7126.wiki",
+      "restoredMainSha256": "65412c2f87776c838ec62c31b6323dacd895e5f409b171e77bedd80719aa7126"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/65b60d32b20a9dca343bc0bd810396f17a0d6839356b7342f19b5a0d532a41e4.wiki",
+      "restoredMainSha256": "65b60d32b20a9dca343bc0bd810396f17a0d6839356b7342f19b5a0d532a41e4"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/65be7f2cf8436cedfd7a71d60e0c96cd46fc981bb88ffa61ff2e959abe1c8ac4.wiki",
+      "restoredMainSha256": "65be7f2cf8436cedfd7a71d60e0c96cd46fc981bb88ffa61ff2e959abe1c8ac4"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/66d2bb4825ce537e013c1944a08b1c15fe5ab4735ebb4237d04f1608b1bc0b0e.wiki",
+      "restoredMainSha256": "66d2bb4825ce537e013c1944a08b1c15fe5ab4735ebb4237d04f1608b1bc0b0e"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/676e40b50231355bfa8caea363910af1c15e5058d253581a8af64d6b956efe5b.wiki",
+      "restoredMainSha256": "676e40b50231355bfa8caea363910af1c15e5058d253581a8af64d6b956efe5b"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/6a6bbd4248550aa12e692dbc6159c75669cb9b828636c6584d263c340e386997.wiki",
+      "restoredMainSha256": "6a6bbd4248550aa12e692dbc6159c75669cb9b828636c6584d263c340e386997"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/6b37c6d9fa6b8092470eb8de07fbbcbe3f0c46e25d2ab147a0bf0b76eb4a6b18.wiki",
+      "restoredMainSha256": "6b37c6d9fa6b8092470eb8de07fbbcbe3f0c46e25d2ab147a0bf0b76eb4a6b18"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/6d2bd2e8d93cef1e61e647de08bfad3c7dfdb737a1f5b20deb501e595b8ab649.wiki",
+      "restoredMainSha256": "6d2bd2e8d93cef1e61e647de08bfad3c7dfdb737a1f5b20deb501e595b8ab649"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/6ddec4e1cb783a639562826d199f84e166a61650bf962e612bfdd48bb6ef1eb2.wiki",
+      "restoredMainSha256": "6ddec4e1cb783a639562826d199f84e166a61650bf962e612bfdd48bb6ef1eb2"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/6e46235cdaea4b0275b61dea3a530ab577e17e7327d23a71d52fa21bc72e78dd.wiki",
+      "restoredMainSha256": "6e46235cdaea4b0275b61dea3a530ab577e17e7327d23a71d52fa21bc72e78dd"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/7042538f66a45bb29dfbcbb6736c72c53e84d9bf1fedb82586c860b049504de4.wiki",
+      "restoredMainSha256": "7042538f66a45bb29dfbcbb6736c72c53e84d9bf1fedb82586c860b049504de4"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/71253c4e4c29fbdbbe8b51b0af8f4102424dcdbff92721594269315da3e1fbaa.wiki",
+      "restoredMainSha256": "71253c4e4c29fbdbbe8b51b0af8f4102424dcdbff92721594269315da3e1fbaa"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/728703f9adac19fbb010c913a2305939e842791b26945c57e615031eee54e3e6.wiki",
+      "restoredMainSha256": "728703f9adac19fbb010c913a2305939e842791b26945c57e615031eee54e3e6"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/72a3eed3cf7c6da934f936cb4c3f88bca10dcc3be6dc71e8cd435b013f85d79a.wiki",
+      "restoredMainSha256": "72a3eed3cf7c6da934f936cb4c3f88bca10dcc3be6dc71e8cd435b013f85d79a"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/72ec216ada5b51e50a62f652f64dd154dd28dc2ac35e249c0dc11272ca531b5f.wiki",
+      "restoredMainSha256": "72ec216ada5b51e50a62f652f64dd154dd28dc2ac35e249c0dc11272ca531b5f"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/74e2ac97f75658287549eb7070ca756623370f8af168a51ab11c126fc7978c04.wiki",
+      "restoredMainSha256": "74e2ac97f75658287549eb7070ca756623370f8af168a51ab11c126fc7978c04"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/75631097e2b15b788bd63b618b97016c89121492cc25aa1908c4960be394be5a.wiki",
+      "restoredMainSha256": "75631097e2b15b788bd63b618b97016c89121492cc25aa1908c4960be394be5a"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/79fd7c62f86236cdb4e2dc683ad95ded823b5a67cf1792730be1c7b774448b81.wiki",
+      "restoredMainSha256": "79fd7c62f86236cdb4e2dc683ad95ded823b5a67cf1792730be1c7b774448b81"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/7a80668832e2623effc2fd68c2882f39c2ce0b7d6ab85a88a7d87eea56d2b6ab.wiki",
+      "restoredMainSha256": "7a80668832e2623effc2fd68c2882f39c2ce0b7d6ab85a88a7d87eea56d2b6ab"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/7cd8fdb87dc2577fc44952dbfba12c5106f665f45ba44d34e9437c2a2a3c4206.wiki",
+      "restoredMainSha256": "7cd8fdb87dc2577fc44952dbfba12c5106f665f45ba44d34e9437c2a2a3c4206"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/7d88afb94ba80072f5a32585550847a4f89f265b6e7bc2ac92287388715f7b19.wiki",
+      "restoredMainSha256": "7d88afb94ba80072f5a32585550847a4f89f265b6e7bc2ac92287388715f7b19"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/82df78eadd4fc737f36e49084c6fa5a33ddff405d5987f04483df61622ff5367.wiki",
+      "restoredMainSha256": "82df78eadd4fc737f36e49084c6fa5a33ddff405d5987f04483df61622ff5367"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/83b5503a7e15f961f256d220c55415f6de67a73ddf941506bf6ba56258f82880.wiki",
+      "restoredMainSha256": "83b5503a7e15f961f256d220c55415f6de67a73ddf941506bf6ba56258f82880"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/8418305d220278bc57418ee469735ccc3bcbd2b896da53e3109417d66375bf37.wiki",
+      "restoredMainSha256": "8418305d220278bc57418ee469735ccc3bcbd2b896da53e3109417d66375bf37"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/85e2b6709bfecb5a28cb7165fc1c150b8c5c06728574585109e7c3002332606e.wiki",
+      "restoredMainSha256": "85e2b6709bfecb5a28cb7165fc1c150b8c5c06728574585109e7c3002332606e"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/85f6b79eac2bca0994484cf9209b3c62ff746a2cfd32d46654a148435ea11e99.wiki",
+      "restoredMainSha256": "85f6b79eac2bca0994484cf9209b3c62ff746a2cfd32d46654a148435ea11e99"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/86177c8dfe8f0d8bd3432ed88f893f760a2505588b1e5a80a759f202397124d7.wiki",
+      "restoredMainSha256": "86177c8dfe8f0d8bd3432ed88f893f760a2505588b1e5a80a759f202397124d7"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/865f9827c774d288cd6e7f090bc785959c3a293bd6ea723ddefd50ab1454a43d.wiki",
+      "restoredMainSha256": "865f9827c774d288cd6e7f090bc785959c3a293bd6ea723ddefd50ab1454a43d"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/868059db333ba07d9b2ba2553280ee3a0fda89c5d028071efb4cd3b1c9c01670.wiki",
+      "restoredMainSha256": "868059db333ba07d9b2ba2553280ee3a0fda89c5d028071efb4cd3b1c9c01670"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/89ad74b923a2f971c15374da0470f29d4ab92b1c17da2a857219d8838692a05a.wiki",
+      "restoredMainSha256": "89ad74b923a2f971c15374da0470f29d4ab92b1c17da2a857219d8838692a05a"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/8a9df4c61fd577c11a23e2041898270008aeeb226e5ab2d034e11737d469232f.wiki",
+      "restoredMainSha256": "8a9df4c61fd577c11a23e2041898270008aeeb226e5ab2d034e11737d469232f"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/8d23868a87af2d63c4a0b1da19c68e86c7c0218e8a4eb9282ce9f27f41398fce.wiki",
+      "restoredMainSha256": "8d23868a87af2d63c4a0b1da19c68e86c7c0218e8a4eb9282ce9f27f41398fce"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/8d792e00221029c381decc86bd640cc0b4fa4e519dbb02ad3cb2a6156a719abb.wiki",
+      "restoredMainSha256": "8d792e00221029c381decc86bd640cc0b4fa4e519dbb02ad3cb2a6156a719abb"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/913d20c6e5e1ea80d617edd9f8d9a5903bde1fe55e7ada882a5e0f4f6e898f89.wiki",
+      "restoredMainSha256": "913d20c6e5e1ea80d617edd9f8d9a5903bde1fe55e7ada882a5e0f4f6e898f89"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/91f57d8bac5c0eb6781e6712b7c85112e95158a94e3e6b688e1b140ea670420c.wiki",
+      "restoredMainSha256": "91f57d8bac5c0eb6781e6712b7c85112e95158a94e3e6b688e1b140ea670420c"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/926229eb8f9104c272a1c0ae361d6d2a220a56d07a489b5f94d5fd1cc91285e6.wiki",
+      "restoredMainSha256": "926229eb8f9104c272a1c0ae361d6d2a220a56d07a489b5f94d5fd1cc91285e6"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/93f6840d049847cdc563310f34ab7408ccb97d91d3b10ca3ffa6a1234cd5de05.wiki",
+      "restoredMainSha256": "93f6840d049847cdc563310f34ab7408ccb97d91d3b10ca3ffa6a1234cd5de05"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/954faad7565da18d58c423fe877341f7e1a3cae10230e7bcc1e0e8997050a562.wiki",
+      "restoredMainSha256": "954faad7565da18d58c423fe877341f7e1a3cae10230e7bcc1e0e8997050a562"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/9582fbe8f0ac338a74eb7de04d6b2691b01e4605368184b35fab002b6ed52e7d.wiki",
+      "restoredMainSha256": "9582fbe8f0ac338a74eb7de04d6b2691b01e4605368184b35fab002b6ed52e7d"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/95eef4e08a4bf97da2ee4641916c410dfa90a44c86561e76292f5be7eccd9e32.wiki",
+      "restoredMainSha256": "95eef4e08a4bf97da2ee4641916c410dfa90a44c86561e76292f5be7eccd9e32"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/98013e6fb68a6ff9a8bf44f648a32f89192ecc7f35f206a76cdfcbcc9ecab64d.wiki",
+      "restoredMainSha256": "98013e6fb68a6ff9a8bf44f648a32f89192ecc7f35f206a76cdfcbcc9ecab64d"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/989bab17fb5089c03ebded098ebfbb27bcf8185fd0741352148fc71f063339f0.wiki",
+      "restoredMainSha256": "989bab17fb5089c03ebded098ebfbb27bcf8185fd0741352148fc71f063339f0"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/98b7ae6792f47add3ca4fe7318eb4b23ee4f3d12d483f4c61f5ad0fd340db75b.wiki",
+      "restoredMainSha256": "98b7ae6792f47add3ca4fe7318eb4b23ee4f3d12d483f4c61f5ad0fd340db75b"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/99251f0b1a9ee97d5fc9ec818492ceb585096022ab4f1a3d2a21ca04f4269321.wiki",
+      "restoredMainSha256": "99251f0b1a9ee97d5fc9ec818492ceb585096022ab4f1a3d2a21ca04f4269321"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/9a17b0b647f66b1183d96ceb6d8824fa28cd6441bb682ac0762174d40955845f.wiki",
+      "restoredMainSha256": "9a17b0b647f66b1183d96ceb6d8824fa28cd6441bb682ac0762174d40955845f"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/9a82965c3304d74cbf9a8f60849f19506753a564a74213c1c72026f0038aa446.wiki",
+      "restoredMainSha256": "9a82965c3304d74cbf9a8f60849f19506753a564a74213c1c72026f0038aa446"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/9b4fbe8f1b53966d202af154b42e3808b013e4200249a454b1489c951c0781db.wiki",
+      "restoredMainSha256": "9b4fbe8f1b53966d202af154b42e3808b013e4200249a454b1489c951c0781db"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/9db1deadb45058467e63af8200a3b8b5e744d70f006aa3fe1a4278939acbf487.wiki",
+      "restoredMainSha256": "9db1deadb45058467e63af8200a3b8b5e744d70f006aa3fe1a4278939acbf487"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/9dbfe8a321f06e3048934a861a1433c38534412b370b21fb5a42b94b9f70ee0e.wiki",
+      "restoredMainSha256": "9dbfe8a321f06e3048934a861a1433c38534412b370b21fb5a42b94b9f70ee0e"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/a0b7390d073a4f003763f07166ca91c9dad09eaf3d0dcff1b32ff6f3c8bdff67.wiki",
+      "restoredMainSha256": "a0b7390d073a4f003763f07166ca91c9dad09eaf3d0dcff1b32ff6f3c8bdff67"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/a0efb5a9d9aecdb858f51dc593ab64def6444c4c57320e3fac9ac660126062b9.wiki",
+      "restoredMainSha256": "a0efb5a9d9aecdb858f51dc593ab64def6444c4c57320e3fac9ac660126062b9"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/a103ab0d2df1b61b426575b696125ac43cb249d93bfbff8ac83834dc4ccf3e96.wiki",
+      "restoredMainSha256": "a103ab0d2df1b61b426575b696125ac43cb249d93bfbff8ac83834dc4ccf3e96"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/a283d60e2acfb69a4cb9b5428990d808a7460175bc2663ee9300d3449350a44d.wiki",
+      "restoredMainSha256": "a283d60e2acfb69a4cb9b5428990d808a7460175bc2663ee9300d3449350a44d"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/a4531e5d13805dc4fe36f8051c24352595c30303a4bc356b257ca939045c9dcd.wiki",
+      "restoredMainSha256": "a4531e5d13805dc4fe36f8051c24352595c30303a4bc356b257ca939045c9dcd"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/a562bdce3a6b2344b4909b35c0c66064d8f884b12773c36e0d08cd927afc1d13.wiki",
+      "restoredMainSha256": "a562bdce3a6b2344b4909b35c0c66064d8f884b12773c36e0d08cd927afc1d13"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/a59c1e45ddcb23a9c40190c23557d1104af66d99faeda2b3c6c6a07a5065bac3.wiki",
+      "restoredMainSha256": "a59c1e45ddcb23a9c40190c23557d1104af66d99faeda2b3c6c6a07a5065bac3"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/a63c9cf571331e2c9451238ca1774633750c3001af5a15af0e8861a4a0ffc370.wiki",
+      "restoredMainSha256": "a63c9cf571331e2c9451238ca1774633750c3001af5a15af0e8861a4a0ffc370"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/a642d31eeee04b9c499a2cef03325b4056410751b681fe66f48857c8b77d421c.wiki",
+      "restoredMainSha256": "a642d31eeee04b9c499a2cef03325b4056410751b681fe66f48857c8b77d421c"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/a695dd363e39c696dede186cdc5fc0a8e81cef185f8b9ee05b79e83df623cb43.wiki",
+      "restoredMainSha256": "a695dd363e39c696dede186cdc5fc0a8e81cef185f8b9ee05b79e83df623cb43"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/a6ba9ee0af6924e2cab98f41e6c6f2e2a444c05de47168c0c6596906c9dfd198.wiki",
+      "restoredMainSha256": "a6ba9ee0af6924e2cab98f41e6c6f2e2a444c05de47168c0c6596906c9dfd198"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/a70688b9070654705e14be2ce161d6a26b15f61638937ebd39c9c5abb2b0fe79.wiki",
+      "restoredMainSha256": "a70688b9070654705e14be2ce161d6a26b15f61638937ebd39c9c5abb2b0fe79"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/a7c1fc6c9587342742b67a51138a18d8ee643a7a04a702aae68e6a4b4819a802.wiki",
+      "restoredMainSha256": "a7c1fc6c9587342742b67a51138a18d8ee643a7a04a702aae68e6a4b4819a802"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/aa70b4bb1a55fd8dbd3d3f846d2e1543d86dad0403e43be7b0a933d3349b456f.wiki",
+      "restoredMainSha256": "aa70b4bb1a55fd8dbd3d3f846d2e1543d86dad0403e43be7b0a933d3349b456f"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/acb7047e787342d2aa9f203b4e38e3d1474485b06c50f4c3b379885b9a91f60f.wiki",
+      "restoredMainSha256": "acb7047e787342d2aa9f203b4e38e3d1474485b06c50f4c3b379885b9a91f60f"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/accb2f9aac435634e03df90b481706057f86d75a6e24c43875e2a22ac24969b1.wiki",
+      "restoredMainSha256": "accb2f9aac435634e03df90b481706057f86d75a6e24c43875e2a22ac24969b1"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/ae3d75a0660898e909f5431c604c25bfdeb2fb38715160a7e342faded3bdd690.wiki",
+      "restoredMainSha256": "ae3d75a0660898e909f5431c604c25bfdeb2fb38715160a7e342faded3bdd690"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/aebb28d0cafd21d1de34eacdd70ab3d04f31a0a6ea46564aae34c8215504f3bf.wiki",
+      "restoredMainSha256": "aebb28d0cafd21d1de34eacdd70ab3d04f31a0a6ea46564aae34c8215504f3bf"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/b0d8f4481eaeee29e80180e4d4b6aca0870e5c53eacfc23e04aa555215fdee3e.wiki",
+      "restoredMainSha256": "b0d8f4481eaeee29e80180e4d4b6aca0870e5c53eacfc23e04aa555215fdee3e"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/b1ef886d64110ec8423e354389651a4dc5c8618412e642ea35f2b0d254769930.wiki",
+      "restoredMainSha256": "b1ef886d64110ec8423e354389651a4dc5c8618412e642ea35f2b0d254769930"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/b2302cea802715a80b40d3ea3fbc780acb35cb4a02be4f741541502624c6e72e.wiki",
+      "restoredMainSha256": "b2302cea802715a80b40d3ea3fbc780acb35cb4a02be4f741541502624c6e72e"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/b27125ea03d18e152ada4b3d18c3063ce44d09c4d05e486f71a7532a47b92929.wiki",
+      "restoredMainSha256": "b27125ea03d18e152ada4b3d18c3063ce44d09c4d05e486f71a7532a47b92929"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/b44d434e4a763bc98f8db307de4e37c34059179c8db422924cc66659b5fc3142.wiki",
+      "restoredMainSha256": "b44d434e4a763bc98f8db307de4e37c34059179c8db422924cc66659b5fc3142"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/b52bcd94c8533264e94e9f65b0c868dc105a7fd1e1a7eea8ba20be143014ca4e.wiki",
+      "restoredMainSha256": "b52bcd94c8533264e94e9f65b0c868dc105a7fd1e1a7eea8ba20be143014ca4e"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/b79240df1ebb16dc2826f78f78c02b95fd24f8d65afc8249527c420d58aee9a9.wiki",
+      "restoredMainSha256": "b79240df1ebb16dc2826f78f78c02b95fd24f8d65afc8249527c420d58aee9a9"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/b9a6a39a0c58f0fa12adbb58bc3fa843606fdd34febfd1bf5775cd4e7bf1c24c.wiki",
+      "restoredMainSha256": "b9a6a39a0c58f0fa12adbb58bc3fa843606fdd34febfd1bf5775cd4e7bf1c24c"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/ba6d95a0650e8b1087a1764a207dfde3928640776fbb2c52a8e6b6e7af9c643a.wiki",
+      "restoredMainSha256": "ba6d95a0650e8b1087a1764a207dfde3928640776fbb2c52a8e6b6e7af9c643a"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/bb7d7a574c5cc9e74b5eb916c84d6a85ef1565f73773e2ea491362fba6dceb4a.wiki",
+      "restoredMainSha256": "bb7d7a574c5cc9e74b5eb916c84d6a85ef1565f73773e2ea491362fba6dceb4a"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/c15c357da4fac76c6a177eb69e70bfbab9c9f108a2304cea69cdc09261ba3f94.wiki",
+      "restoredMainSha256": "c15c357da4fac76c6a177eb69e70bfbab9c9f108a2304cea69cdc09261ba3f94"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/c1ed326fb87c00614f34b045c2f11f86d31193a6eb391c6552b176f9e1d7ebe9.wiki",
+      "restoredMainSha256": "c1ed326fb87c00614f34b045c2f11f86d31193a6eb391c6552b176f9e1d7ebe9"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/c480da159226b47903406223197718c6591a6ef5cec9e60002e4580be79c1c96.wiki",
+      "restoredMainSha256": "c480da159226b47903406223197718c6591a6ef5cec9e60002e4580be79c1c96"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/c4c79d80d154f0346df88e96a88050a7a524644c996353dd403bd90b27b25d78.wiki",
+      "restoredMainSha256": "c4c79d80d154f0346df88e96a88050a7a524644c996353dd403bd90b27b25d78"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/c68bc1bc1c3357154f863bac36735cf115ca69471297a02712496065c9f98f77.wiki",
+      "restoredMainSha256": "c68bc1bc1c3357154f863bac36735cf115ca69471297a02712496065c9f98f77"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/c82c16aa35d43171e7e9ef321a5ff58abb79ac5f423b652bf7ce7d70efe10726.wiki",
+      "restoredMainSha256": "c82c16aa35d43171e7e9ef321a5ff58abb79ac5f423b652bf7ce7d70efe10726"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/c84ecd556797d80fcb6c629f0b10ed02b4dd6f45658b028370faf55c3d0c2a28.wiki",
+      "restoredMainSha256": "c84ecd556797d80fcb6c629f0b10ed02b4dd6f45658b028370faf55c3d0c2a28"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/c8b9919da913d3ceb2354c5bc82a2be65d21de64a494578e956fc150939fa30d.wiki",
+      "restoredMainSha256": "c8b9919da913d3ceb2354c5bc82a2be65d21de64a494578e956fc150939fa30d"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/ca528b0397d4911d6746972dc8766b64ffac1863e29a7a8b7f9cb5137b72ed57.wiki",
+      "restoredMainSha256": "ca528b0397d4911d6746972dc8766b64ffac1863e29a7a8b7f9cb5137b72ed57"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/cc274dc9ec572450f60032f6d713b9a6de5e87ff4c707e776182b7ffcafc4d91.wiki",
+      "restoredMainSha256": "cc274dc9ec572450f60032f6d713b9a6de5e87ff4c707e776182b7ffcafc4d91"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/ccef91c46af0d0c7714414d9b1dab3c8eb41a8167e73a2c761ee486490c28f50.wiki",
+      "restoredMainSha256": "ccef91c46af0d0c7714414d9b1dab3c8eb41a8167e73a2c761ee486490c28f50"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/cde41147ec2bbeb226f896203f078ae984e0fe486b643751d3c1b78ebf87ba26.wiki",
+      "restoredMainSha256": "cde41147ec2bbeb226f896203f078ae984e0fe486b643751d3c1b78ebf87ba26"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/cf40193340d037dbf3913fc2a75c98a5384420981a68a8f46471931b7acbe46e.wiki",
+      "restoredMainSha256": "cf40193340d037dbf3913fc2a75c98a5384420981a68a8f46471931b7acbe46e"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/cf5caca40b3e8d4d82eb61b1d3d0e78926b0f82406a9ba5a8e3cbbe8faf875e1.wiki",
+      "restoredMainSha256": "cf5caca40b3e8d4d82eb61b1d3d0e78926b0f82406a9ba5a8e3cbbe8faf875e1"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/d3fdd2167a468e49d17ce521e351d12c65a2d818bd50286013744a38cef7b2b2.wiki",
+      "restoredMainSha256": "d3fdd2167a468e49d17ce521e351d12c65a2d818bd50286013744a38cef7b2b2"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/d484661914a3f6049b8172354e2cc0ffdbd8bebcd0e0eef0aab0078377bce5f7.wiki",
+      "restoredMainSha256": "d484661914a3f6049b8172354e2cc0ffdbd8bebcd0e0eef0aab0078377bce5f7"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/d4ff903a6310ee7a2b0d47a37ce641f557cad79b1941176afe22de3b47ea3db2.wiki",
+      "restoredMainSha256": "d4ff903a6310ee7a2b0d47a37ce641f557cad79b1941176afe22de3b47ea3db2"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/d55a6cc802af85a5dcad3e4b5abc6a018c6db2791f11d15e88ad41fa375fb101.wiki",
+      "restoredMainSha256": "d55a6cc802af85a5dcad3e4b5abc6a018c6db2791f11d15e88ad41fa375fb101"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/d74f0f5ba6e150ebc087b8bfa9b6f684bbb47e97dbc12e066269ad06d24385f0.wiki",
+      "restoredMainSha256": "d74f0f5ba6e150ebc087b8bfa9b6f684bbb47e97dbc12e066269ad06d24385f0"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/d8b078177bf33733ea3babaa45f6cd1a8cbdf93fccbe7702de69968405c3e554.wiki",
+      "restoredMainSha256": "d8b078177bf33733ea3babaa45f6cd1a8cbdf93fccbe7702de69968405c3e554"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/d91ff6d770eab211f7b4021495ed80b6c1896fdc3dd815e822945db5b32f67de.wiki",
+      "restoredMainSha256": "d91ff6d770eab211f7b4021495ed80b6c1896fdc3dd815e822945db5b32f67de"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/d9585b9bd3dc8a0d119823e3b1c1c82f74967f196dd684fafaecbb98a4d333fa.wiki",
+      "restoredMainSha256": "d9585b9bd3dc8a0d119823e3b1c1c82f74967f196dd684fafaecbb98a4d333fa"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/da010454995a8bf1b7625cf114c7bb41dad44a7fb596bb4e3e318785bc282a0d.wiki",
+      "restoredMainSha256": "da010454995a8bf1b7625cf114c7bb41dad44a7fb596bb4e3e318785bc282a0d"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/da3cee6b7637cb487b11ca414fcfe0b3ed44c984b703eb744f2ddef1bba01fa9.wiki",
+      "restoredMainSha256": "da3cee6b7637cb487b11ca414fcfe0b3ed44c984b703eb744f2ddef1bba01fa9"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/dbaf4b4b1c7448cc883faf7b7939a01c15bf8dc4300fdf48d0d2fe6e17084103.wiki",
+      "restoredMainSha256": "dbaf4b4b1c7448cc883faf7b7939a01c15bf8dc4300fdf48d0d2fe6e17084103"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/dc04c9c720a4f958c34080ba584eea4b25261c3b2f77d668b7aca7ebe1888e73.wiki",
+      "restoredMainSha256": "dc04c9c720a4f958c34080ba584eea4b25261c3b2f77d668b7aca7ebe1888e73"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/dc1c7d034c89e5b17b7886977f12d194304e547e88bd685494e939a16b3e0e5b.wiki",
+      "restoredMainSha256": "dc1c7d034c89e5b17b7886977f12d194304e547e88bd685494e939a16b3e0e5b"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/dc7e344db9ee10d100f921a816082c6eebbda8958c858e93caa99a8037441222.wiki",
+      "restoredMainSha256": "dc7e344db9ee10d100f921a816082c6eebbda8958c858e93caa99a8037441222"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/dcaee05968549324802751aed9da1507475e89d2b6df95086f6d9fd38b4eeca5.wiki",
+      "restoredMainSha256": "dcaee05968549324802751aed9da1507475e89d2b6df95086f6d9fd38b4eeca5"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/df6de95f792f5956cad83fc53460ccd3ecbf48ca8e481ede216f51d85f0df6e0.wiki",
+      "restoredMainSha256": "df6de95f792f5956cad83fc53460ccd3ecbf48ca8e481ede216f51d85f0df6e0"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/e190d85a51b070e8e7721a71e4b202dd1c81f2f4329d9abadd4d0b8e3e0c5fd3.wiki",
+      "restoredMainSha256": "e190d85a51b070e8e7721a71e4b202dd1c81f2f4329d9abadd4d0b8e3e0c5fd3"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/e1a343b17e32ea8422ce461226fbb2a7796ad6cfe3513bc0351f80881d1bef6b.wiki",
+      "restoredMainSha256": "e1a343b17e32ea8422ce461226fbb2a7796ad6cfe3513bc0351f80881d1bef6b"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/e23e2b64ac201ce8e55fa27f26c7e81dee209279c14271cb58c53669bb388f85.wiki",
+      "restoredMainSha256": "e23e2b64ac201ce8e55fa27f26c7e81dee209279c14271cb58c53669bb388f85"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/e2cc2d456c71f8c9b20b7da142e490586606e924354609277a035f4958638f1b.wiki",
+      "restoredMainSha256": "e2cc2d456c71f8c9b20b7da142e490586606e924354609277a035f4958638f1b"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/e2ddec83b9cacb1488d724edc58fdf374757506a5fafa6cb683d789567fa0949.wiki",
+      "restoredMainSha256": "e2ddec83b9cacb1488d724edc58fdf374757506a5fafa6cb683d789567fa0949"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/e5a83ab2bf0baa1fd929a461e02fa3b1133fbea90c5af8b2ef38857888139f7d.wiki",
+      "restoredMainSha256": "e5a83ab2bf0baa1fd929a461e02fa3b1133fbea90c5af8b2ef38857888139f7d"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/e6a744db485774ae338fdc59f04a52315a4841916e248fbabe53090b54a0e047.wiki",
+      "restoredMainSha256": "e6a744db485774ae338fdc59f04a52315a4841916e248fbabe53090b54a0e047"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/e6fa39212e81fb69be94bcb930c65b561dcaba4593ca21f4bfa82bd80189ddbf.wiki",
+      "restoredMainSha256": "e6fa39212e81fb69be94bcb930c65b561dcaba4593ca21f4bfa82bd80189ddbf"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/e848d2da77e13d42bc53ef6a64414ef5dc41986c39896eee733a9e938bac93f7.wiki",
+      "restoredMainSha256": "e848d2da77e13d42bc53ef6a64414ef5dc41986c39896eee733a9e938bac93f7"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/e9e825e35b14aea26a2847463733c4f12c85a1b627c8692edf63dadc415a7412.wiki",
+      "restoredMainSha256": "e9e825e35b14aea26a2847463733c4f12c85a1b627c8692edf63dadc415a7412"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/eb1c6ac1cecedcb1f97c26206e8d6960edf6ba09373c80b1d351f2673933957c.wiki",
+      "restoredMainSha256": "eb1c6ac1cecedcb1f97c26206e8d6960edf6ba09373c80b1d351f2673933957c"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/eb5dd2fd04e77945825f859cc8df8989de6752f409b51a1ed5ad3b44d4701f98.wiki",
+      "restoredMainSha256": "eb5dd2fd04e77945825f859cc8df8989de6752f409b51a1ed5ad3b44d4701f98"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/eb9d8767dca4fb906efc564378db211b45f7db1ad466fe4212263e73bc438a7a.wiki",
+      "restoredMainSha256": "eb9d8767dca4fb906efc564378db211b45f7db1ad466fe4212263e73bc438a7a"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/ec0600b581654128e0b63509960ab0ee048a8458607ae189dc602dcc0e5d3f01.wiki",
+      "restoredMainSha256": "ec0600b581654128e0b63509960ab0ee048a8458607ae189dc602dcc0e5d3f01"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/eca115c7c5ae482d835f17100cbaeda1359a8768a57e5738758be34430c01914.wiki",
+      "restoredMainSha256": "eca115c7c5ae482d835f17100cbaeda1359a8768a57e5738758be34430c01914"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/f04eab283f80a971862dd803f14dc7480fa67aa2156df97126ee39d7085947f3.wiki",
+      "restoredMainSha256": "f04eab283f80a971862dd803f14dc7480fa67aa2156df97126ee39d7085947f3"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/f062fe7b273b21a48783ee4a500f956256487ecb901ba2bd003a4bf937e556e1.wiki",
+      "restoredMainSha256": "f062fe7b273b21a48783ee4a500f956256487ecb901ba2bd003a4bf937e556e1"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/f14276f5a323ee3ca0994ddc997cc6e883edd1106f66c273a76d928cb8729871.wiki",
+      "restoredMainSha256": "f14276f5a323ee3ca0994ddc997cc6e883edd1106f66c273a76d928cb8729871"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/f155057ff400566a7cf1b769871cfa54e5ee60287edca2f56ffba0d60ae84bda.wiki",
+      "restoredMainSha256": "f155057ff400566a7cf1b769871cfa54e5ee60287edca2f56ffba0d60ae84bda"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/f386b135ea76443075f9c4b4a942432efcededa9e06661a4913c63529b4d78ba.wiki",
+      "restoredMainSha256": "f386b135ea76443075f9c4b4a942432efcededa9e06661a4913c63529b4d78ba"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/f55ce1b06a64faff745a27bc429bfd429cbed99921280b3683ab33b8cdc38ddd.wiki",
+      "restoredMainSha256": "f55ce1b06a64faff745a27bc429bfd429cbed99921280b3683ab33b8cdc38ddd"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/f638824b791b69f1a0fc244a091439a19a240de8ee95e81d4caa3be7f1d79444.wiki",
+      "restoredMainSha256": "f638824b791b69f1a0fc244a091439a19a240de8ee95e81d4caa3be7f1d79444"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/f64e27577fe7eef2485d645873ddb677c9e7192bccc615677220e50c1790a230.wiki",
+      "restoredMainSha256": "f64e27577fe7eef2485d645873ddb677c9e7192bccc615677220e50c1790a230"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/f65915765676070c4417e407a6b50aad5a93167aae3c614c5298498be23a4b98.wiki",
+      "restoredMainSha256": "f65915765676070c4417e407a6b50aad5a93167aae3c614c5298498be23a4b98"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/f6671e4254a82553cbd5fc6978ce512b0a0b62f3a23fddebde2b2b733bb043d5.wiki",
+      "restoredMainSha256": "f6671e4254a82553cbd5fc6978ce512b0a0b62f3a23fddebde2b2b733bb043d5"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/f69922f233f5b9949816686c6a0d3a3839696ec9aaa25bdef9551a04879909f1.wiki",
+      "restoredMainSha256": "f69922f233f5b9949816686c6a0d3a3839696ec9aaa25bdef9551a04879909f1"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/f90b9574457fadad7003c089ef884088e6dd3f3f7a14818cf83c81083de3cf16.wiki",
+      "restoredMainSha256": "f90b9574457fadad7003c089ef884088e6dd3f3f7a14818cf83c81083de3cf16"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/fa6346e1f7afea35cc6119179d3a9d4c5bbb472cf6423420a76bcd60269c1580.wiki",
+      "restoredMainSha256": "fa6346e1f7afea35cc6119179d3a9d4c5bbb472cf6423420a76bcd60269c1580"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/fa7d0c9662df41e0a9e409a59fd3def20bfa742bfa61bc2626c12fa9ded0e267.wiki",
+      "restoredMainSha256": "fa7d0c9662df41e0a9e409a59fd3def20bfa742bfa61bc2626c12fa9ded0e267"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/fa873f69b7f0bcc49ea0d5940e909d9caaac48059e61a83e7e04174acc5aa9f1.wiki",
+      "restoredMainSha256": "fa873f69b7f0bcc49ea0d5940e909d9caaac48059e61a83e7e04174acc5aa9f1"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/fae07fb47785814b0e8f01ba36d60b451dbc9a4190bc129d6cba8e79a99e407b.wiki",
+      "restoredMainSha256": "fae07fb47785814b0e8f01ba36d60b451dbc9a4190bc129d6cba8e79a99e407b"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/fc453b26babf36ae5f5df491ddad0d73c4f9dab209b90820452887b9697914f8.wiki",
+      "restoredMainSha256": "fc453b26babf36ae5f5df491ddad0d73c4f9dab209b90820452887b9697914f8"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/fc9205b3e9ef32560fc556d812888db95ff4f28e1931e1ea92ab783fa7010b1e.wiki",
+      "restoredMainSha256": "fc9205b3e9ef32560fc556d812888db95ff4f28e1931e1ea92ab783fa7010b1e"
+    },
+    {
+      "file": "docs/verification/movie-awards/reproduction/inputs/ff6ee2fae5dd061643de4ec81c95cd657bb977ff12ca175d6868eae06078f23f.wiki",
+      "restoredMainSha256": "ff6ee2fae5dd061643de4ec81c95cd657bb977ff12ca175d6868eae06078f23f"
+    }
+  ],
+  "rule": "Main exact original bytes retained for entire pinned awards reproduction namespace"
+}

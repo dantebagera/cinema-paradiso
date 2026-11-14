@@ -7,16 +7,19 @@ import sqlite3
 import threading
 import time
 import uuid
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 from .iptv_metadata_settings import IPTVMetadataSettings
 from .iptv_movie_service import IPTVMovieService
+from .iptv_movie_store import IPTVMovieStore
 from .iptv_service import IPTVService
 from .iptv_xtream import normalize_server_url
 
 
 PROVIDER_ID_RE = re.compile(r"^[0-9a-f]{32}$")
 REGISTRY_SCHEMA_VERSION = 1
+_availability_executor = ThreadPoolExecutor(max_workers=4, thread_name_prefix="iptv-availability")
 
 
 def _atomic_json_write(path, payload):
@@ -137,8 +140,12 @@ class IPTVProviderManager:
         }
 
     def _load_registry(self):
+        return self._read_registry(self.registry_path)
+
+    @staticmethod
+    def _read_registry(path):
         try:
-            payload = json.loads(self.registry_path.read_text(encoding="utf-8-sig"))
+            payload = json.loads(Path(path).read_text(encoding="utf-8-sig"))
         except (OSError, json.JSONDecodeError) as error:
             raise RuntimeError("The IPTV provider registry is unreadable") from error
         if not isinstance(payload, dict) or payload.get("schema_version") != REGISTRY_SCHEMA_VERSION:
@@ -178,15 +185,49 @@ class IPTVProviderManager:
         _atomic_json_write(self.registry_path, registry)
 
     def _provider_path(self, provider_id):
+        return self._validated_provider_path(self.providers_root, provider_id)
+
+    @staticmethod
+    def _validated_provider_path(providers_root, provider_id):
         provider_id = str(provider_id or "")
         if not PROVIDER_ID_RE.fullmatch(provider_id):
             raise KeyError("IPTV provider was not found")
-        candidate = (self.providers_root / provider_id).resolve()
+        candidate = (Path(providers_root) / provider_id).resolve()
         try:
-            candidate.relative_to(self.providers_root.resolve())
+            candidate.relative_to(Path(providers_root).resolve())
         except ValueError:
             raise KeyError("IPTV provider was not found") from None
         return candidate
+
+    @classmethod
+    def _read_provider_registry(cls, user_data_dir):
+        root = Path(user_data_dir).resolve() / "iptv"
+        path = root / "providers.json"
+        registry = cls._read_registry(path) if path.exists() else cls._empty_registry()
+        return root, registry
+
+    @classmethod
+    def movie_availability(cls, user_data_dir, tmdb_ids):
+        root, registry = cls._read_provider_registry(user_data_dir)
+        pending = []
+        for record in registry["providers"]:
+            path = cls._validated_provider_path(root / "providers", record["provider_id"])
+            future = _availability_executor.submit(
+                IPTVMovieStore.lookup_availability, path, record["provider_id"], tmdb_ids)
+            pending.append((record, future))
+        providers = [{
+            "provider_id": record["provider_id"], "name": record["name"], **future.result(),
+        } for record, future in pending]
+        revision = hashlib.sha256(json.dumps(registry, sort_keys=True).encode()).hexdigest()
+        return {"providers": providers, "registry_revision": revision, "checked_at": time.time()}
+
+    @classmethod
+    def movie_sources(cls, user_data_dir, provider_id, tmdb_id):
+        root, registry = cls._read_provider_registry(user_data_dir)
+        if not any(record["provider_id"] == provider_id for record in registry["providers"]):
+            raise KeyError("IPTV provider was not found")
+        path = cls._validated_provider_path(root / "providers", provider_id)
+        return IPTVMovieStore.lookup_sources(path, provider_id, tmdb_id)
 
     def _record(self, provider_id):
         for provider in self._registry["providers"]:

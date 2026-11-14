@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass3_behavior.py", line 22, in <module>
+    if server.poll() is not None:raise RuntimeError('Owned server exited before readiness')
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Owned server exited before readiness

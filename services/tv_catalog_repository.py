@@ -1,6 +1,7 @@
 """Canonical TV identities, local versions and episode-only progress."""
 from datetime import date
 from contextlib import nullcontext
+from dataclasses import dataclass, field
 import hashlib
 import json
 import re
@@ -22,10 +23,140 @@ def released(value, today=None):
         return False
 
 
+EPISODE_STATE_INPUTS = ('id', 'series_id', 'season_number', 'episode_number', 'title', 'air_date',
+                        'reconciliation_required', 'position_ms', 'duration_ms', 'completed',
+                        'last_played', 'selected_file_id')
+
+
+@dataclass
+class TVLibraryReadContext:
+    """One read operation's compact facts; no connection or full episode payloads."""
+    today: date
+    series_records: dict = field(default_factory=dict)
+    curation: dict = field(default_factory=dict)
+    episode_rows: dict = field(default_factory=dict)
+    versions: dict = field(default_factory=dict)
+    source_order: list = field(default_factory=list)
+    hydration_records: dict = field(default_factory=dict)
+    pending_review_counts: dict = field(default_factory=dict)
+    watched_action_ids: set = field(default_factory=set)
+    assigned_ids: set = field(default_factory=set)
+    cursor_records: dict = field(default_factory=dict)
+    poster_timestamps: dict = field(default_factory=dict)
+    legacy_cast: dict = field(default_factory=dict)
+    path_exists: dict = field(default_factory=dict)
+    coverage_results: dict = field(default_factory=dict)
+
+    def retain_series(self, series_ids):
+        """Discard filter-only facts before selected detail/response preparation."""
+        keep = set(series_ids)
+        for name in ('series_records', 'curation', 'episode_rows', 'hydration_records',
+                     'pending_review_counts', 'cursor_records', 'poster_timestamps', 'legacy_cast', 'coverage_results'):
+            values = getattr(self, name)
+            for identity in list(values):
+                if identity not in keep:
+                    del values[identity]
+        episodes = {row['id'] for rows in self.episode_rows.values() for row in rows}
+        for identity in list(self.versions):
+            if identity not in episodes:
+                del self.versions[identity]
+        self.source_order.clear()
+        self.path_exists.clear()
+        self.watched_action_ids.intersection_update(keep)
+        self.assigned_ids.intersection_update(keep)
+
+
 class TVCatalogRepository:
     def __init__(self, path, clock=time.time):
         self.store = TVCatalogStore(path)
         self.clock = clock
+
+    def library_read_context(self):
+        context = TVLibraryReadContext(date.today())
+        with self.store.connection() as db:
+            db.execute('BEGIN')
+            for row in db.execute('SELECT * FROM series'):
+                context.series_records[row['id']] = {**dict(row), 'metadata': json.loads(row['metadata'])}
+            context.curation = {r['series_id']: r['watchlisted'] for r in db.execute('SELECT * FROM series_curation')}
+            for row in db.execute('SELECT e.*,p.position_ms,p.duration_ms,p.completed,p.last_played,p.file_id AS selected_file_id '
+                                  'FROM episodes e LEFT JOIN playback_progress p ON p.episode_id=e.id '
+                                  'ORDER BY e.series_id,e.season_number,e.episode_number'):
+                # Keep existing malformed-metadata failures without retaining the decoded payload.
+                self._episode_overview(row['metadata'])
+                context.episode_rows.setdefault(row['series_id'], []).append({key: row[key] for key in EPISODE_STATE_INPUTS})
+            row = None
+            for row in db.execute('SELECT b.*,f.* FROM episode_file_bindings b JOIN media_files f ON f.id=b.file_id '
+                                  'JOIN episodes e ON e.id=b.episode_id ORDER BY b.episode_id,b.file_id'):
+                value = dict(row)
+                value['facts'] = json.loads(value['facts'])
+                context.versions.setdefault(row['episode_id'], []).append(value)
+            # Preserve the original local_rows join's encounter order independently of episode chronology.
+            for row in db.execute('SELECT e.id AS episode_id,e.series_id,e.air_date,f.* FROM episodes e '
+                                  'JOIN episode_file_bindings b ON b.episode_id=e.id JOIN media_files f ON f.id=b.file_id'):
+                context.source_order.append((row['episode_id'], row['series_id'], row['id']))
+            row = None
+            context.hydration_records = {r['series_id']: dict(r) for r in db.execute('SELECT * FROM series_hydration')}
+            context.pending_review_counts = {r[0]: r[1] for r in db.execute(
+                "SELECT CAST(json_extract(payload,'$.series_id') AS INTEGER),COUNT(*) FROM ingestion_candidates "
+                "WHERE state='needs_review' GROUP BY CAST(json_extract(payload,'$.series_id') AS INTEGER)")}
+            context.watched_action_ids = {r[0] for r in db.execute('SELECT series_id FROM series_watched_actions')}
+            context.cursor_records = {r['series_id']: {'episode_id': r['episode_id'], 'played_at': r['played_at']}
+                                      for r in db.execute('SELECT * FROM series_viewing_cursor')}
+            # Keep the standalone legacy query's per-series ordering, including its existing ties.
+            for row in db.execute('SELECT s.id AS series_id,p.episode_id,p.last_played AS played_at FROM series s '
+                                  'JOIN playback_progress p ON p.episode_id=(SELECT p2.episode_id FROM playback_progress p2 '
+                                  'JOIN episodes e ON e.id=p2.episode_id WHERE e.series_id=s.id AND p2.file_id IS NOT NULL '
+                                  'ORDER BY p2.last_played DESC LIMIT 1)'):
+                context.cursor_records.setdefault(row['series_id'], {'episode_id': row['episode_id'], 'played_at': row['played_at']})
+            context.poster_timestamps = {r[0]: r[1] for r in db.execute('SELECT series_id,updated_at FROM series_poster_overrides')}
+            for row in db.execute('SELECT c.series_id,p.tmdb_id,p.name,c.role FROM people p JOIN series_credits c ON c.person_id=p.id ORDER BY p.id'):
+                cast = context.legacy_cast.setdefault(row['series_id'], [])
+                if len(cast) < 30:
+                    cast.append({'tmdb_id': row['tmdb_id'], 'name': row['name'], 'role': row['role']})
+            context.assigned_ids = {r[0] for r in db.execute('SELECT DISTINCT series_id FROM tv_path_assignments')}
+        for versions in context.versions.values():
+            for value in versions:
+                path = value['path']
+                if path not in context.path_exists:
+                    context.path_exists[path] = Path(path).is_file()
+                value['available'] = bool(value['available'] and context.path_exists[path])
+        for rows in context.episode_rows.values():
+            for index, row in enumerate(rows):
+                rows[index] = self._assemble_episode_state(row, context.versions.get(row['id'], []), today=context.today)
+        return context
+
+    def library_episode_rows(self, series_id, season=None, *, limit=None, offset=0, read_context):
+        rows = read_context.episode_rows.get(series_id, [])
+        if season is not None:
+            rows = [row for row in rows if row['season_number'] == int(season)]
+        if limit is not None:
+            start = max(0, int(offset))
+            rows = rows[start:start+min(100, max(1, int(limit)))]
+        return rows
+
+    def library_option_facts(self):
+        keys = ('genre_records', 'genres', 'original_language', 'original_language_name', 'origin_country')
+        series = []
+        with self.store.connection() as db:
+            db.execute('BEGIN')
+            for row in db.execute('SELECT id,metadata FROM series'):
+                metadata = json.loads(row['metadata'])
+                series.append({'id': row['id'], **{key: metadata[key] for key in keys if key in metadata}})
+            files = [dict(r) for r in db.execute('SELECT e.series_id,f.path,f.available FROM episodes e '
+                     'JOIN episode_file_bindings b ON b.episode_id=e.id JOIN media_files f ON f.id=b.file_id')]
+        return {'series_records': series, 'files': files}
+
+    def coverage_facts(self, series_id, *, read_context=None):
+        if read_context is not None:
+            return {'hydration': self.hydration(series_id, read_context=read_context),
+                    'pending_review_count': read_context.pending_review_counts.get(series_id, 0),
+                    'series_watched_action_active': series_id in read_context.watched_action_ids}
+        hydration = self.hydration(series_id)
+        with self.store.connection() as db:
+            pending = db.execute("SELECT COUNT(*) FROM ingestion_candidates WHERE state='needs_review' "
+                                 "AND CAST(json_extract(payload,'$.series_id') AS INTEGER)=?", (series_id,)).fetchone()[0]
+            active = db.execute('SELECT 1 FROM series_watched_actions WHERE series_id=?', (series_id,)).fetchone() is not None
+        return {'hydration': hydration, 'pending_review_count': pending, 'series_watched_action_active': active}
 
     def path_assignments(self):
         with self.store.connection() as db:
@@ -335,7 +466,10 @@ class TVCatalogRepository:
                             '' if complete else 'Season counts or episode identities require reconciliation'))
         return series_id
 
-    def hydration(self, series_id):
+    def hydration(self, series_id, *, read_context=None):
+        if read_context is not None:
+            row = read_context.hydration_records.get(series_id)
+            return dict(row) if row else {'series_id': series_id, 'status': 'unknown', 'error': 'Complete season metadata has not been loaded'}
         with self.store.connection() as db:
             row = db.execute('SELECT * FROM series_hydration WHERE series_id=?', (series_id,)).fetchone()
         return dict(row) if row else {'series_id': series_id, 'status': 'unknown', 'error': 'Complete season metadata has not been loaded'}
@@ -422,7 +556,10 @@ class TVCatalogRepository:
                        'ON CONFLICT(series_id) DO UPDATE SET status=CASE WHEN series_hydration.status="complete" THEN "complete" ELSE "retry" END,updated_at=excluded.updated_at,error=excluded.error',
                        (series_id, 'retry', self.clock(), str(error)[:500]))
 
-    def viewing_cursor(self, series_id):
+    def viewing_cursor(self, series_id, *, read_context=None):
+        if read_context is not None:
+            row = read_context.cursor_records.get(series_id)
+            return dict(row) if row else None
         with self.store.connection() as db:
             row = db.execute('SELECT episode_id,played_at FROM series_viewing_cursor WHERE series_id=?', (series_id,)).fetchone()
             if row:
@@ -474,21 +611,33 @@ class TVCatalogRepository:
                 db.execute('DELETE FROM series_watched_actions WHERE series_id=?', (series_id,))
         return {'watched': bool(watched), 'changed': changed}
 
-    def series(self, series_id):
+    @staticmethod
+    def _assemble_series(row, metadata, poster_timestamp, watchlisted, legacy_cast):
+        result = {**metadata, 'id': row['id'], 'tmdb_id': row['tmdb_id'], 'title': row['title']}
+        if poster_timestamp is not None:
+            result['provider_poster_url'] = result.get('poster_url', '')
+            result['poster_url'] = f'/api/tv/series/{row["id"]}/poster?v={int(poster_timestamp)}'
+            result['poster_override'] = True
+        result['watchlisted'] = bool(watchlisted)
+        result['cast'] = result.get('credits') if 'credits' in result else [dict(p) for p in legacy_cast]
+        return result
+
+    def series(self, series_id, *, read_context=None):
+        if read_context is not None:
+            row = read_context.series_records.get(series_id)
+            if row is None:
+                raise LookupError('Series not found')
+            return self._assemble_series(row, row['metadata'], read_context.poster_timestamps.get(series_id),
+                                         read_context.curation.get(series_id), read_context.legacy_cast.get(series_id, []))
         with self.store.connection() as db:
             row = db.execute('SELECT * FROM series WHERE id=?', (series_id,)).fetchone()
             if not row:
                 raise LookupError('Series not found')
-            result = {**json.loads(row['metadata']), 'id': row['id'], 'tmdb_id': row['tmdb_id'], 'title': row['title']}
+            metadata = json.loads(row['metadata'])
             poster = db.execute('SELECT updated_at FROM series_poster_overrides WHERE series_id=?', (series_id,)).fetchone()
-            if poster:
-                result['provider_poster_url'] = result.get('poster_url', '')
-                result['poster_url'] = f'/api/tv/series/{series_id}/poster?v={int(poster[0])}'
-                result['poster_override'] = True
             curated = db.execute('SELECT watchlisted FROM series_curation WHERE series_id=?', (series_id,)).fetchone()
-            result['watchlisted'] = bool(curated and curated[0])
-            result['cast'] = result.get('credits') if 'credits' in result else [dict(p) for p in db.execute('SELECT p.tmdb_id,p.name,c.role FROM people p JOIN series_credits c ON c.person_id=p.id WHERE c.series_id=? ORDER BY p.id LIMIT 30', (series_id,))]
-            return result
+            cast = [] if 'credits' in metadata else db.execute('SELECT p.tmdb_id,p.name,c.role FROM people p JOIN series_credits c ON c.person_id=p.id WHERE c.series_id=? ORDER BY p.id LIMIT 30', (series_id,)).fetchall()
+            return self._assemble_series(row, metadata, poster[0] if poster else None, curated and curated[0], cast)
 
     def episode(self, episode_id):
         with self.store.connection() as db:
@@ -496,6 +645,16 @@ class TVCatalogRepository:
             if not row:
                 raise LookupError('Episode not found')
             return dict(row)
+
+    @staticmethod
+    def _episode_overview(metadata_json):
+        return json.loads(metadata_json).get('overview', '')
+
+    @staticmethod
+    def _assemble_episode_state(row, versions, *, today=None):
+        return {**{key: row[key] for key in EPISODE_STATE_INPUTS}, 'versions': versions,
+                'available': any(v['available'] for v in versions), 'released': released(row['air_date'], today),
+                'code': f"S{row['season_number']:02d}E{row['episode_number']:02d}"}
 
     def episodes(self, series_id, season=None, *, limit=None, offset=0, today=None):
         query, args = 'SELECT e.*,p.position_ms,p.duration_ms,p.completed,p.last_played,p.file_id AS selected_file_id FROM episodes e LEFT JOIN playback_progress p ON p.episode_id=e.id WHERE e.series_id=?', [series_id]
@@ -519,11 +678,8 @@ class TVCatalogRepository:
                 versions.setdefault(r['episode_id'], []).append(value)
             for row in rows:
                 row['guest_stars'] = credits.get(row['id'], [])[:30]
-                row['overview'] = json.loads(row['metadata']).get('overview', '')
-                row['versions'] = versions.get(row['id'], [])
-                row['available'] = any(v['available'] for v in row['versions'])
-                row['released'] = released(row['air_date'], today)
-                row['code'] = f"S{row['season_number']:02d}E{row['episode_number']:02d}"
+                row['overview'] = self._episode_overview(row['metadata'])
+                row.update(self._assemble_episode_state(row, versions.get(row['id'], []), today=today))
             return rows
 
     def bind_file(self, path, episode_ids, facts, roots, segments=None, *, _connection=None):

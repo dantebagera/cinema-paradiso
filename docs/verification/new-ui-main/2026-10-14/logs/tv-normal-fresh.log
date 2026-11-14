@@ -1,0 +1,13 @@
+
+Running 6 tests using 1 worker
+
+(node:32048) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-normal-import.spec.js:5:1 › review renders the backend season destination and normal lifecycle in existing desktop dialog (1.5s)
+  ok 2 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-normal-import.spec.js:22:1 › unsafe canonical show name retains source browsing while destination review blocks download (2.9s)
+  ok 3 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-normal-import.spec.js:37:1 › Downloads distinguishes cleanup failure and hides rollback after cleanup begins (328ms)
+  ok 4 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-normal-import.spec.js:53:1 › real isolated completion returns the season binding and renders completed status without rollback (3.2s)
+  ok 5 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-normal-import.spec.js:79:1 › ambiguous home selection persists through the owner and refreshes a long desktop destination (1.6s)
+  ok 6 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-normal-import.spec.js:99:1 › review keeps loading, failed search and partial coverage in existing dialog (951ms)
+
+  6 passed (12.1s)

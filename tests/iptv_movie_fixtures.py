@@ -102,6 +102,9 @@ class FakeTMDBClient:
             return list(self.search_results)
         return [self.movies[550]]
 
+    def search_movie_page(self, title, page=1, *, primary_year=0):
+        return self.search_movies(title, primary_year, page), 1
+
 
 class FakeHTTPResponse:
     def __init__(self, payload, status=200, headers=None):

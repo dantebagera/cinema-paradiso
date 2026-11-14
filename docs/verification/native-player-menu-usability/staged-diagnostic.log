@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\dante\Desktop\cinema paradiso\native\player\tools\smoke_player_ui.py", line 302, in <module>
+    if __name__=='__main__': main()
+                             ^^^^^^
+  File "C:\Users\dante\Desktop\cinema paradiso\native\player\tools\smoke_player_ui.py", line 182, in main
+    assert any('Two movie' in e.window_text() for e in session.buttons())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

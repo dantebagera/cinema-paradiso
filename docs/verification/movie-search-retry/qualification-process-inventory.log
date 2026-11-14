@@ -1,0 +1,27 @@
+test_a_real_termination_keeps_durable_stage_reservations_and_handoff (tests.test_movie_isolated_qualification.MovieIsolatedQualificationTest.test_a_real_termination_keeps_durable_stage_reservations_and_handoff) ... ok
+test_b_simultaneous_inventory_writers_preserve_each_other_and_generation (tests.test_movie_isolated_qualification.MovieIsolatedQualificationTest.test_b_simultaneous_inventory_writers_preserve_each_other_and_generation) ... ok
+test_z_equal_due_retry_admission_order_survives_real_process_restart (tests.test_movie_isolated_qualification.MovieIsolatedQualificationTest.test_z_equal_due_retry_admission_order_survives_real_process_restart) ... FAIL
+
+======================================================================
+FAIL: test_z_equal_due_retry_admission_order_survives_real_process_restart (tests.test_movie_isolated_qualification.MovieIsolatedQualificationTest.test_z_equal_due_retry_admission_order_survives_real_process_restart)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\Desktop\cinema paradiso\tests\test_movie_isolated_qualification.py", line 125, in test_z_equal_due_retry_admission_order_survives_real_process_restart
+    self.assertEqual(actual, ['A', 'B', 'C'], 'Restart must retain retry admission order, not original file discovery order')
+AssertionError: Lists differ: ['C', 'B', 'A'] != ['A', 'B', 'C']
+
+First differing element 0:
+'C'
+'A'
+
+- ['C', 'B', 'A']
+?   ^         ^
+
++ ['A', 'B', 'C']
+?   ^         ^
+ : Restart must retain retry admission order, not original file discovery order
+
+----------------------------------------------------------------------
+Ran 3 tests in 5.564s
+
+FAILED (failures=1)

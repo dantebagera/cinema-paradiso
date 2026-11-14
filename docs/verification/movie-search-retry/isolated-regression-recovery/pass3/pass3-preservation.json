@@ -1,0 +1,20 @@
+{
+  "files_compared": 1722,
+  "changed_or_missing": [],
+  "runtime_inputs_matched": 243,
+  "compiled_bundle_files_matched": 35,
+  "tracked_dirty_status_identical": true,
+  "tracked_dirty_count": 114,
+  "source_or_existing_test_changes_this_pass": 0,
+  "verified_utc": "2026-10-24T18:31:22.814882+00:00",
+  "production_boundary_evidence": "Reviewed action record and installed guard; no live HTTP/process control or production data reads/writes performed. Not independently measured hardware access counters.",
+  "final_authorized_documentation_updates": [
+    "docs/plans/2026-10-24-isolated-regression-and-recovery.md",
+    "docs/verification/movie-search-retry/isolated-regression-recovery/README.md"
+  ],
+  "changed_files_in_original_seal": [
+    "docs/verification/movie-search-retry/isolated-regression-recovery/README.md"
+  ],
+  "final_non_documentation_drift": [],
+  "owned_test_processes_at_close": []
+}

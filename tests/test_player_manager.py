@@ -134,6 +134,9 @@ class FakePlaybackHistory:
         self.events.append((session.playback_context, dict(message)))
         self.received.set()
 
+    def flush_session(self, session):
+        return None
+
 
 class FakeSubtitleService:
     def __init__(self):

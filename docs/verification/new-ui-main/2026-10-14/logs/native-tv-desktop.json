@@ -1,0 +1,17 @@
+{
+  "root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\fixtures\\native-tv-desktop-0ad1a550937c44918a8e82e3d8ac9242",
+  "label": "native-tv-desktop",
+  "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\logs\\native-tv-desktop.log",
+  "exitCode": 1,
+  "specs": [
+    "tests/e2e/native-tv.spec.js",
+    "tests/e2e/tv-follow-season-packs.spec.js",
+    "tests/e2e/tv-download-contracts.spec.js",
+    "tests/e2e/tv-normal-import.spec.js",
+    "tests/e2e/tv-parity.spec.js",
+    "tests/e2e/tv-expanded-parity.spec.js",
+    "tests/e2e/tv-stabilization.spec.js"
+  ],
+  "fixture": "tv",
+  "port": 5145
+}

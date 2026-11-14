@@ -1,0 +1,329 @@
+{
+  "model": "gpt-6.1-sol",
+  "prompt": "i need you to lit 50 movies with very twisted story you wont expect the ending\nyour responce should be a list of movies names and years , no any other details , dont seek more info , dont reply by paragarph or any way of responce  only the list",
+  "records": [
+    {
+      "label": "slot-qualified-1",
+      "model": "gpt-6.1-sol",
+      "gpt_calls": 1,
+      "verified_movies": 50,
+      "slot_acquire_seconds": 0.01116609999735374,
+      "slot_release_seconds": 0.010231299995211884,
+      "attempt_reserve_seconds": 0.009603600003174506,
+      "gpt_http_seconds": 16.05419,
+      "full_seconds": 19.098905,
+      "timings": {
+        "gpt_seconds": 16.089137,
+        "gpt_http_seconds": 16.05419,
+        "matching_after_gpt_seconds": 2.268679,
+        "tmdb_http_active_seconds": 9.108327,
+        "gpt_tmdb_overlap_seconds": 7.880217,
+        "other_seconds": 0.741089,
+        "full_seconds": 19.098905,
+        "first_cards_seconds": 16.843051
+      },
+      "slowest_leaf_phases": [
+        {
+          "phase": "sqlite_commit",
+          "operation": "",
+          "at_seconds": 17.3934714999923,
+          "seconds": 1.6849508000013884,
+          "thread_cpu_seconds": 0.0,
+          "thread": 42448
+        },
+        {
+          "phase": "trace_emit",
+          "operation": "",
+          "at_seconds": 12.479539199994178,
+          "seconds": 0.32907210000848863,
+          "thread_cpu_seconds": 0.0,
+          "thread": 4012
+        },
+        {
+          "phase": "trace_emit",
+          "operation": "",
+          "at_seconds": 12.580639799998607,
+          "seconds": 0.22844249999616295,
+          "thread_cpu_seconds": 0.0,
+          "thread": 30640
+        },
+        {
+          "phase": "trace_emit",
+          "operation": "",
+          "at_seconds": 12.601716299992404,
+          "seconds": 0.20791969999845605,
+          "thread_cpu_seconds": 0.0,
+          "thread": 37256
+        },
+        {
+          "phase": "trace_emit",
+          "operation": "",
+          "at_seconds": 12.677453600001172,
+          "seconds": 0.1326600999891525,
+          "thread_cpu_seconds": 0.0,
+          "thread": 35504
+        },
+        {
+          "phase": "sqlite_commit",
+          "operation": "",
+          "at_seconds": 0.039090499994927086,
+          "seconds": 0.007820900005754083,
+          "thread_cpu_seconds": 0.0,
+          "thread": 42448
+        },
+        {
+          "phase": "sqlite_executescript",
+          "operation": "",
+          "at_seconds": 0.012969000003067777,
+          "seconds": 0.006851999991340563,
+          "thread_cpu_seconds": 0.015625,
+          "thread": 42448
+        },
+        {
+          "phase": "sqlite_commit",
+          "operation": "",
+          "at_seconds": 19.085904499996104,
+          "seconds": 0.006607400006032549,
+          "thread_cpu_seconds": 0.0,
+          "thread": 42448
+        },
+        {
+          "phase": "sqlite_close",
+          "operation": "",
+          "at_seconds": 19.078439099990646,
+          "seconds": 0.006499400013126433,
+          "thread_cpu_seconds": 0.0,
+          "thread": 42448
+        },
+        {
+          "phase": "sqlite_commit",
+          "operation": "slot_release_actual",
+          "at_seconds": 16.797114000000875,
+          "seconds": 0.006379899990861304,
+          "thread_cpu_seconds": 0.0,
+          "thread": 42448
+        }
+      ],
+      "diagnostic_samples_dropped": 0
+    },
+    {
+      "label": "slot-qualified-2",
+      "model": "gpt-6.1-sol",
+      "gpt_calls": 1,
+      "verified_movies": 50,
+      "slot_acquire_seconds": 0.019887000002199784,
+      "slot_release_seconds": 0.01947959999961313,
+      "attempt_reserve_seconds": 0.009726899996167049,
+      "gpt_http_seconds": 15.556239,
+      "full_seconds": 16.532659,
+      "timings": {
+        "gpt_seconds": 15.609025,
+        "gpt_http_seconds": 15.556239,
+        "matching_after_gpt_seconds": 0.261343,
+        "tmdb_http_active_seconds": 11.003836,
+        "gpt_tmdb_overlap_seconds": 10.426331,
+        "other_seconds": 0.662291,
+        "full_seconds": 16.532659,
+        "first_cards_seconds": 16.282412
+      },
+      "slowest_leaf_phases": [
+        {
+          "phase": "sqlite_commit",
+          "operation": "slot_acquire_actual",
+          "at_seconds": 0.6416526999964844,
+          "seconds": 0.016136799997184426,
+          "thread_cpu_seconds": 0.0,
+          "thread": 10028
+        },
+        {
+          "phase": "sqlite_commit",
+          "operation": "slot_release_actual",
+          "at_seconds": 16.22987949999515,
+          "seconds": 0.015522499990765937,
+          "thread_cpu_seconds": 0.0,
+          "thread": 10028
+        },
+        {
+          "phase": "sqlite_executescript",
+          "operation": "",
+          "at_seconds": 0.013179799992940389,
+          "seconds": 0.00676940000266768,
+          "thread_cpu_seconds": 0.0,
+          "thread": 10028
+        },
+        {
+          "phase": "sqlite_commit",
+          "operation": "",
+          "at_seconds": 16.470249399993918,
+          "seconds": 0.00601979999919422,
+          "thread_cpu_seconds": 0.0,
+          "thread": 10028
+        },
+        {
+          "phase": "sqlite_commit",
+          "operation": "",
+          "at_seconds": 16.291696499989484,
+          "seconds": 0.006009600008837879,
+          "thread_cpu_seconds": 0.015625,
+          "thread": 10028
+        },
+        {
+          "phase": "sqlite_commit",
+          "operation": "",
+          "at_seconds": 16.36260009999387,
+          "seconds": 0.00593460000527557,
+          "thread_cpu_seconds": 0.0,
+          "thread": 10028
+        },
+        {
+          "phase": "sqlite_commit",
+          "operation": "",
+          "at_seconds": 16.39892529998906,
+          "seconds": 0.005888200001209043,
+          "thread_cpu_seconds": 0.0,
+          "thread": 10028
+        },
+        {
+          "phase": "sqlite_commit",
+          "operation": "",
+          "at_seconds": 0.03582109999842942,
+          "seconds": 0.005861799989361316,
+          "thread_cpu_seconds": 0.0,
+          "thread": 10028
+        },
+        {
+          "phase": "sqlite_commit",
+          "operation": "",
+          "at_seconds": 0.04731389999506064,
+          "seconds": 0.005860000004759058,
+          "thread_cpu_seconds": 0.0,
+          "thread": 10028
+        },
+        {
+          "phase": "sqlite_commit",
+          "operation": "",
+          "at_seconds": 0.024019399992539547,
+          "seconds": 0.005807599998661317,
+          "thread_cpu_seconds": 0.0,
+          "thread": 10028
+        }
+      ],
+      "diagnostic_samples_dropped": 0
+    },
+    {
+      "label": "slot-qualified-3",
+      "model": "gpt-6.1-sol",
+      "gpt_calls": 1,
+      "verified_movies": 50,
+      "slot_acquire_seconds": 0.014567599995643832,
+      "slot_release_seconds": 0.011324299994157627,
+      "attempt_reserve_seconds": 0.009432100006961264,
+      "gpt_http_seconds": 20.566429,
+      "full_seconds": 22.024641,
+      "timings": {
+        "gpt_seconds": 20.605398,
+        "gpt_http_seconds": 20.566429,
+        "matching_after_gpt_seconds": 0.744988,
+        "tmdb_http_active_seconds": 6.527973,
+        "gpt_tmdb_overlap_seconds": 5.199365,
+        "other_seconds": 0.674255,
+        "full_seconds": 22.024641,
+        "first_cards_seconds": 21.583937
+      },
+      "slowest_leaf_phases": [
+        {
+          "phase": "sqlite_commit",
+          "operation": "",
+          "at_seconds": 21.28168440000445,
+          "seconds": 0.2977580000006128,
+          "thread_cpu_seconds": 0.0,
+          "thread": 50004
+        },
+        {
+          "phase": "sqlite_commit",
+          "operation": "slot_acquire_actual",
+          "at_seconds": 0.6530999000096926,
+          "seconds": 0.010558099995250814,
+          "thread_cpu_seconds": 0.0,
+          "thread": 50004
+        },
+        {
+          "phase": "sqlite_executescript",
+          "operation": "",
+          "at_seconds": 0.012998400008655153,
+          "seconds": 0.0067743999970844015,
+          "thread_cpu_seconds": 0.0,
+          "thread": 50004
+        },
+        {
+          "phase": "sqlite_commit",
+          "operation": "",
+          "at_seconds": 21.742774800004554,
+          "seconds": 0.0065448999957880005,
+          "thread_cpu_seconds": 0.0,
+          "thread": 50004
+        },
+        {
+          "phase": "sqlite_commit",
+          "operation": "",
+          "at_seconds": 21.97835699999996,
+          "seconds": 0.006343400003970601,
+          "thread_cpu_seconds": 0.0,
+          "thread": 50004
+        },
+        {
+          "phase": "sqlite_commit",
+          "operation": "",
+          "at_seconds": 21.612383100000443,
+          "seconds": 0.00602870000875555,
+          "thread_cpu_seconds": 0.0,
+          "thread": 50004
+        },
+        {
+          "phase": "sqlite_commit",
+          "operation": "slot_release_actual",
+          "at_seconds": 21.24588909999875,
+          "seconds": 0.005952800012892112,
+          "thread_cpu_seconds": 0.0,
+          "thread": 50004
+        },
+        {
+          "phase": "sqlite_commit",
+          "operation": "",
+          "at_seconds": 21.685745900002075,
+          "seconds": 0.00592789999791421,
+          "thread_cpu_seconds": 0.0,
+          "thread": 50004
+        },
+        {
+          "phase": "sqlite_commit",
+          "operation": "",
+          "at_seconds": 0.03567969999858178,
+          "seconds": 0.00592720000713598,
+          "thread_cpu_seconds": 0.0,
+          "thread": 50004
+        },
+        {
+          "phase": "sqlite_commit",
+          "operation": "",
+          "at_seconds": 21.649063900011242,
+          "seconds": 0.005803499996545725,
+          "thread_cpu_seconds": 0.0,
+          "thread": 50004
+        }
+      ],
+      "diagnostic_samples_dropped": 0
+    }
+  ],
+  "means": {
+    "slot_acquire_seconds": 0.015206899998399118,
+    "slot_release_seconds": 0.013678399996327547,
+    "attempt_reserve_seconds": 0.009587533335434273,
+    "gpt_http_seconds": 17.392286,
+    "full_seconds": 19.218735
+  },
+  "historical_delay_reproduced": false,
+  "historical_cause_resolved": false,
+  "product_slot_fix_applied": false,
+  "measurement_fix_applied": true
+}

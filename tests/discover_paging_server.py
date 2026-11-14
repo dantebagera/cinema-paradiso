@@ -1,5 +1,6 @@
 """Isolated desktop proof with real Discover routes and overlapping provider pages."""
 import os
+import datetime
 from pathlib import Path
 import tempfile
 from urllib.parse import parse_qs, urlparse
@@ -25,8 +26,31 @@ app._tmdb_filter_options_cache = {
 
 
 def provider(url):
-    params = parse_qs(urlparse(url).query)
+    parsed = urlparse(url)
+    params = parse_qs(parsed.query)
     page = int(params['page'][0])
+    upcoming = (parsed.path == '/3/movie/upcoming'
+                or 'primary_release_date.gte' in params
+                or 'upcoming' in params.get('query', [''])[0].lower())
+    if upcoming:
+        today = datetime.date.today()
+        rows = []
+        for identity in range(1, 82):
+            rows.extend([
+                {'id': 70000 + identity, 'title': f'Past Movie {identity:03}',
+                 'release_date': (today - datetime.timedelta(days=1)).isoformat()},
+                {'id': 60000 + identity, 'title': f'Upcoming Movie {identity:03}',
+                 'release_date': today.isoformat(), 'genre_ids': [18], 'vote_average': 8,
+                 'vote_count': 100, 'original_language': 'en',
+                 'overview': 'Isolated Upcoming backend eligibility fixture.'},
+            ])
+        rows.extend([{'id': 71000, 'title': 'Missing Date', 'release_date': ''},
+                     {'id': 71001, 'title': 'Invalid Date', 'release_date': '2026-02-30'},
+                     dict(rows[1])])
+        # Deliberately include ineligible provider rows even with a date floor:
+        # only the real backend gate may decide what reaches the desktop UI.
+        return {'page': page, 'total_pages': (len(rows) + 19) // 20,
+                'total_results': len(rows), 'results': rows[(page - 1) * 20:page * 20]}
     small = 'lord of the rings' in params.get('query', [''])[0].lower()
     sorted_case = 'sorted' in params.get('query', [''])[0].lower()
     titles = ['The Fellowship of the Ring', 'The Two Towers', 'The Return of the King']

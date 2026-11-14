@@ -1,9 +1,26 @@
+import SectionTabs, { SectionTab } from '../../components/ui/SectionTabs.jsx';
+import WorkspaceEmptyState from '../../components/WorkspaceEmptyState.jsx';
+import Button, { StreamButton } from '../../components/ui/Button.jsx';
+import { Input, Textarea, Select } from '../../components/ui/FormField.jsx';
+import useIPTVMovieAvailability from '../../hooks/useIPTVMovieAvailability.js';
+import IPTVAvailabilityBadge from '../../components/IPTVAvailabilityBadge.jsx';
+import CatalogMetadataFilters from '../../components/CatalogMetadataFilters.jsx';
+import { useAIProvider } from '../ai/AIProviderContext.jsx';
+import useAIJob from '../ai/useAIJob.js';
+import AIJobStatus from '../ai/AIJobStatus.jsx';
+import { exactCount, formatExactCount, jobIsRunning, openAIReview } from '../ai/aiClient.js';
+import { pickAction } from '../ai/pickStatus.js';
+import { movieGenres as discoverGenres, catalogCountries as discoverCountries } from '../../utils/catalogFilterOptions.js';
 import SearchField from '../search/SearchField.jsx';
+import SearchModeSelect from '../search/SearchModeSelect.jsx';
+import WorkspaceControls from '../../components/WorkspaceControls.jsx';
+import WorkspaceChrome from '../../components/WorkspaceChrome.jsx';
+import WorkspaceSelectionBar from '../../components/WorkspaceSelectionBar.jsx';
 import {
   AlertTriangle, Bot, CheckCircle2, CirclePlus, Compass, Film, Loader2,
   MonitorPlay, Play, Radio, RefreshCcw, Search, Star, Wand2, X
 } from 'lucide-react';
-import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useId, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { restoreWorkspaceScroll } from '../../components/movie-card/expandedCardViewport.js';
 import { fetchJson } from '../../api/client.js';
 import { buildPersonAwardsContext } from '../../api/movieAwards.js';
@@ -78,25 +95,6 @@ function PaginatedDiscoverResults({ children, pagination }) {
   );
 }
 
-const discoverGenres = [
-  { value: '', label: 'All genres' },
-  { value: '28', label: 'Action' },
-  { value: '12', label: 'Adventure' },
-  { value: '16', label: 'Animation' },
-  { value: '35', label: 'Comedy' },
-  { value: '80', label: 'Crime' },
-  { value: '99', label: 'Documentary' },
-  { value: '18', label: 'Drama' },
-  { value: '10751', label: 'Family' },
-  { value: '14', label: 'Fantasy' },
-  { value: '27', label: 'Horror' },
-  { value: '9648', label: 'Mystery' },
-  { value: '10749', label: 'Romance' },
-  { value: '878', label: 'Sci-Fi' },
-  { value: '53', label: 'Thriller' },
-  { value: '10752', label: 'War' }
-];
-
 const discoverLanguages = [
   { value: '', label: 'All languages' },
   { value: 'en', label: 'English' },
@@ -120,38 +118,8 @@ const discoverLanguages = [
   { value: 'no', label: 'Norwegian' }
 ];
 
-const discoverCountries = [
-  { value: '', label: 'All countries' },
-  { value: 'US', label: 'United States' },
-  { value: 'GB', label: 'United Kingdom' },
-  { value: 'CA', label: 'Canada' },
-  { value: 'AU', label: 'Australia' },
-  { value: 'FR', label: 'France' },
-  { value: 'DE', label: 'Germany' },
-  { value: 'IT', label: 'Italy' },
-  { value: 'ES', label: 'Spain' },
-  { value: 'JP', label: 'Japan' },
-  { value: 'KR', label: 'South Korea' },
-  { value: 'CN', label: 'China' },
-  { value: 'HK', label: 'Hong Kong' },
-  { value: 'IN', label: 'India' },
-  { value: 'BR', label: 'Brazil' },
-  { value: 'MX', label: 'Mexico' },
-  { value: 'AR', label: 'Argentina' },
-  { value: 'SE', label: 'Sweden' },
-  { value: 'NO', label: 'Norway' },
-  { value: 'DK', label: 'Denmark' },
-  { value: 'FI', label: 'Finland' },
-  { value: 'NL', label: 'Netherlands' },
-  { value: 'PL', label: 'Poland' },
-  { value: 'RU', label: 'Russia' },
-  { value: 'TR', label: 'Turkey' },
-  { value: 'EG', label: 'Egypt' },
-  { value: 'SA', label: 'Saudi Arabia' },
-  { value: 'ZA', label: 'South Africa' }
-];
-
 export default function DiscoverWorkspace({
+  active = true,
   followed,
   notify,
   onPlay,
@@ -176,6 +144,12 @@ export default function DiscoverWorkspace({
   onOpenFileDetails,
   mediaNavigation
 }) {
+  const ai = useAIProvider();
+  const gpt = useAIJob('F1');
+  const [pickSource, setPickSource] = useState(null);
+  const [pickCount, setPickCount] = useState('');
+  const pickRequestedSourceRef = useRef(null);
+  const [controlsExpandedByTab, setControlsExpandedByTab] = useState({});
   const [discoverList, setDiscoverList] = useState('trending_week');
   const [discoverGenre, setDiscoverGenre] = useState('');
   const [discoverCountry, setDiscoverCountry] = useState('');
@@ -187,6 +161,7 @@ export default function DiscoverWorkspace({
   const [discoverMinRating, setDiscoverMinRating] = useState('0');
   const [discoverSort, setDiscoverSort] = useState('auto');
   const [discoverOwnershipFilter, setDiscoverOwnershipFilter] = useState('all');
+  const filterNoticeId = useId();
   const [discoverSearchKind, setDiscoverSearchKind] = useState('movies');
   const [advancedQuery, setAdvancedQuery] = useState(() => createEmptyQuery('discover'));
   const [executedAdvancedQuery, setExecutedAdvancedQuery] = useState(() => createEmptyQuery('discover'));
@@ -231,6 +206,7 @@ export default function DiscoverWorkspace({
   const [pickLocalPage, setPickLocalPage] = useState(1);
   const [pickModel, setPickModel] = useState('');
   const [pickLoading, setPickLoading] = useState(false);
+  const [pickDraftEdits, setPickDraftEdits] = useState({});
   const [pickError, setPickError] = useState('');
   const [ownership, setOwnership] = useState({});
   const [detailsCache, setDetailsCache] = useState({});
@@ -278,6 +254,13 @@ export default function DiscoverWorkspace({
   } = useCardGridMetrics({ target: 20, max: 100, bias: 'lower' });
 
   const discoverYearDraft = useMemo(() => yearRangeDraft(discoverYearFrom, discoverYearTo), [discoverYearFrom, discoverYearTo]);
+  const additionalFilterSummary = [
+    discoverCountry && `Country: ${discoverCountryOptions.find((item) => item.value === discoverCountry)?.label || discoverCountry}`,
+    discoverMinVotes !== '0' && `Votes: ${formatCount(discoverMinVotes)}+`,
+    discoverYearFrom.trim() && `Year from: ${discoverYearFrom}${discoverYearDraft.ready ? '' : ' (draft)'}`,
+    discoverYearTo.trim() && `Year to: ${discoverYearTo}${discoverYearDraft.ready ? '' : ' (draft)'}`,
+    discoverMinRating !== '0' && `Rating: ${discoverMinRating}+`
+  ].filter(Boolean);
   const simpleDiscoverQuery = useMemo(() => compileDiscoverSimpleQuery({
     query: tmdbQuery,
     genre: discoverGenre,
@@ -507,9 +490,10 @@ export default function DiscoverWorkspace({
     }
   }
 
-  function currentDiscoverSnapshot() {
+  function currentDiscoverSnapshot(snapshotTab = activeTab) {
     return {
-      activeTab,
+      activeTab: snapshotTab,
+      controlsExpanded: Boolean(controlsExpandedByTab[snapshotTab]),
       label: discoverContext?.label || discoverBaseLabel(),
       context: discoverContext,
       results: discoverResults,
@@ -571,6 +555,7 @@ export default function DiscoverWorkspace({
     restoringSnapshotRef.current = true;
     setIsNavigatingDiscoverContext(false);
     setActiveTab(snapshot.activeTab || 'explore');
+    setControlsExpandedByTab(current => ({ ...current, [snapshot.activeTab || 'explore']: Boolean(snapshot.controlsExpanded) }));
     restoreWorkspaceScroll(snapshot.scrollTop);
     discoverAbortRef.current?.abort();
     discoverRequestSeq.current += 1;
@@ -1226,7 +1211,7 @@ export default function DiscoverWorkspace({
       context.baseUrl = `/api/tmdb/related?tmdb_id=${encodeURIComponent(context.movie.tmdb_id)}&source=${context.relationshipSource}`;
       const previous = relationshipRequest.origin
         ? { label: relationshipRequest.origin.label, externalSection: relationshipRequest.origin.section }
-        : { ...currentDiscoverSnapshot(), activeTab: relationshipRequest.originTab || 'explore',
+        : { ...currentDiscoverSnapshot(relationshipRequest.originTab || 'explore'),
           label: relationshipRequest.originTab === 'pick' ? 'Pick My Movie' : relationshipRequest.originTab === 'browse' ? 'Browse Indexers' : (discoverContext?.label || 'Discover') };
       if (!relationshipRequest.origin) pushDiscoverBrowserEntry(previous);
       const history = relationshipRequest.origin ? [previous] : [...discoverHistory, previous];
@@ -1326,7 +1311,7 @@ export default function DiscoverWorkspace({
   async function browsePersonAwards(target,movie,role,person,award) {
     const context=buildPersonAwardsContext(person,role,award);
     if (!context) return;
-    const previous={...currentDiscoverSnapshot(),activeTab:target,label:target==='pick' ? 'Pick My Movie' : target==='browse' ? 'Browse Indexers' : (discoverContext?.label || 'Discover')};
+    const previous={...currentDiscoverSnapshot(target),label:target==='pick' ? 'Pick My Movie' : target==='browse' ? 'Browse Indexers' : (discoverContext?.label || 'Discover')};
     pushDiscoverBrowserEntry(previous);
     setDiscoverHistory(history=>[...history,previous]);
     setIsNavigatingDiscoverContext(true);setActiveTab('explore');clearDiscoverCriteriaForFilmography();
@@ -1632,11 +1617,33 @@ export default function DiscoverWorkspace({
     }
   }
 
+  const gptPickAction = pickAction(gpt.job, pickPrompt, pickCount, pickDraftEdits);
+  useEffect(() => { setPickDraftEdits({}); }, [gpt.job?.id]);
+
   async function askPickMyMovie(event) {
     event.preventDefault();
-    const prompt = pickPrompt.trim();
+    if (ai.provider === 'chatgpt') {
+      if (gpt.busy) return;
+      if (gptPickAction.kind === 'stop') { await gpt.cancel(); return; }
+      if (gptPickAction.kind === 'continue') { setPickError(''); await gpt.continueJob(); return; }
+      if (gptPickAction.kind === 'review') { openAIReview('ai-control', null, gpt.job.output.prompt); return; }
+    }
+    const restart = ai.provider === 'chatgpt' && gptPickAction.kind === 'restart';
+    const prompt = pickPrompt.trim() || (restart ? gpt.job.request.prompt : '');
     if (!prompt) {
       setPickError('Describe what you want to watch first.');
+      return;
+    }
+    if (!ai.config) { setPickError('Wait for AI settings to load.'); return; }
+    pickRequestedSourceRef.current = ai.provider;
+    setPickSource(ai.provider);
+    if (ai.provider === 'chatgpt') {
+      if (pickCount.trim() && !exactCount(pickCount)) { setPickError('Enter a positive whole number.'); return; }
+      pickAbortRef.current?.abort(); pickRequestSeq.current += 1;
+      setPickError(''); setPickResults([]); setPickLoading(true); setPickContext(null); setPickHistory([]); setExpandedMovieKey('');
+      try { await gpt.start('/api/ai/recommendations', { prompt,
+        ...(pickCount.trim() ? { count: exactCount(pickCount) } : restart ? { count: gpt.job.requested_count } : {}) }, { followUp: !restart }); }
+      catch { /* The job status keeps the failure visible. */ }
       return;
     }
     pickAbortRef.current?.abort();
@@ -1664,6 +1671,19 @@ export default function DiscoverWorkspace({
       setPickLoading(false);
     }
   }
+
+  useEffect(() => {
+    if (gpt.job && !pickRequestedSourceRef.current) setPickSource('chatgpt');
+    if (pickSource !== 'chatgpt' || pickContext) return;
+    if (!gpt.job) {
+      if (!gpt.busy) { setPickResults([]); setPickModel(''); setPickLoading(false); }
+      return;
+    }
+    const rows = gpt.job.results || [];
+    setPickResults(rows); setPickModel(gpt.job.selection.model);
+    setPickLoading(gpt.busy || jobIsRunning(gpt.job));
+    checkOwnership(rows);
+  }, [gpt.job, gpt.error, gpt.busy, pickSource, pickContext]);
 
   useEffect(() => {
     if (restoringSnapshotRef.current) return;
@@ -1823,9 +1843,13 @@ export default function DiscoverWorkspace({
   const pickLocalTotalPages = Math.max(1, Math.ceil(pickResults.length / pickMoviePageSize));
   const safePickLocalPage = Math.min(pickLocalPage, pickLocalTotalPages);
   const pickLocalPageStart = (safePickLocalPage - 1) * pickMoviePageSize;
-  const visiblePickResults = localPickContext
+  const gptPickRoot = pickSource === 'chatgpt' && !pickContext && Boolean(gpt.job);
+  const visiblePickResults = gptPickRoot ? pickResults : localPickContext
     ? pickResults.slice(pickLocalPageStart, pickLocalPageStart + pickMoviePageSize)
     : pickResults;
+  const availabilityMovies = activeTab === 'explore' ? visibleDiscoverResults
+    : activeTab === 'browse' ? filteredBrowseRows : visiblePickResults;
+  const iptvAvailability = useIPTVMovieAvailability(availabilityMovies.map(movie => movie.tmdb_id), active);
   const exploreMoviePagination = localDiscoverContext && filteredDiscoverResults.length > 0
     ? {
         ariaLabel: 'Local Discover result pagination',
@@ -1867,7 +1891,13 @@ export default function DiscoverWorkspace({
             onPageChange: (nextPage) => loadContextPage('explore', discoverContext, { page: nextPage })
           }
         : null;
-  const pickMoviePagination = localPickContext && pickResults.length > 0
+  const pickMoviePagination = gptPickRoot && gpt.job.accepted_count > 0
+    ? { ariaLabel: 'ChatGPT recommendation pagination', page: gpt.job.page,
+        totalPages: Math.max(1, Math.ceil(gpt.job.accepted_count / gpt.job.page_size)),
+        total: gpt.job.accepted_count, pageStart: (gpt.job.page - 1) * gpt.job.page_size,
+        pageEnd: (gpt.job.page - 1) * gpt.job.page_size + pickResults.length,
+        onPageChange: gpt.setPage }
+    : localPickContext && pickResults.length > 0
     ? {
         ariaLabel: 'Local AI Pick pagination',
         page: safePickLocalPage,
@@ -1913,7 +1943,7 @@ export default function DiscoverWorkspace({
     if (activeTab === 'pick') {
       const contextKey = pickContext
         ? [pickContext.type || '', pickContext.baseUrl || '', pickContext.label || '', pickContext.criteriaKey || ''].join('|')
-        : pickResults.map((movie) => movieKey(movie)).join(',');
+        : gptPickRoot ? `gpt-job:${gpt.job.id}` : pickResults.map((movie) => movieKey(movie)).join(',');
       return `pick|${contextKey}`;
     }
     return [
@@ -1948,6 +1978,8 @@ export default function DiscoverWorkspace({
     discoverYearTo,
     executedAdvancedQuery,
     pickContext,
+    gptPickRoot,
+    gpt.job?.id,
     pickResults,
     tmdbQuery
   ]);
@@ -1963,7 +1995,8 @@ export default function DiscoverWorkspace({
     () => [...selectedDiscoverByKey.values()],
     [selectedDiscoverByKey]
   );
-  const allDiscoverResultsSelected = activeDiscoverSelectionMovies.length > 0 && activeDiscoverSelectionMovies.every((movie) => {
+  const allDiscoverResultsSelected = (!gptPickRoot || selectedDiscoverByKey.size === gpt.job.accepted_count)
+    && activeDiscoverSelectionMovies.length > 0 && activeDiscoverSelectionMovies.every((movie) => {
     const payload = discoverMoviePayload(movie, ownedMovieFor(movie, ownership));
     return selectedDiscoverByKey.has(movieIdentityKey(payload));
   });
@@ -1979,7 +2012,20 @@ export default function DiscoverWorkspace({
     });
   }
 
-  function selectAllDiscoverResults() {
+  async function selectAllDiscoverResults() {
+    if (gptPickRoot) {
+      try {
+        const total = gpt.job.accepted_count;
+        const rows = [];
+        for (let page = 1; rows.length < total; page += 1) {
+          const next = await fetchJson(`/api/ai/jobs/${gpt.job.id}?page=${page}&page_size=100`);
+          rows.push(...next.results.slice(0, total - rows.length));
+          if (!next.has_more) break;
+        }
+        setSelectedDiscoverByKey(new Map(rows.map(movie => { const payload = discoverMoviePayload(movie, ownedMovieFor(movie, ownership)); return [movieIdentityKey(payload), payload]; })));
+      } catch (failure) { notify(failure.message, 'error'); }
+      return;
+    }
     setSelectedDiscoverByKey((current) => {
       const next = new Map(current);
       activeDiscoverSelectionMovies.forEach((movie) => {
@@ -1991,6 +2037,7 @@ export default function DiscoverWorkspace({
   }
 
   function deselectAllDiscoverResults() {
+    if (gptPickRoot) { setSelectedDiscoverByKey(new Map()); return; }
     setSelectedDiscoverByKey((current) => {
       const next = new Map(current);
       activeDiscoverSelectionMovies.forEach((movie) => {
@@ -2034,7 +2081,7 @@ export default function DiscoverWorkspace({
   }
 
   const tabs = [
-    { id: 'explore', label: 'Explore Movies', icon: Compass },
+    { id: 'explore', label: 'Movies', icon: Compass },
     { id: 'browse', label: 'Browse Indexers', icon: Radio },
     { id: 'pick', label: 'Pick My Movie', icon: Bot }
   ];
@@ -2093,13 +2140,35 @@ export default function DiscoverWorkspace({
     loadDiscover({ append: false, search: tmdbQuery, page: 1 });
   }
 
-  function resetDiscoverAdvanced() {
+  function clearDiscoverSearch() {
+    setTmdbQuery('');
+    if (discoverSearchKind === 'movies') {
+      loadDiscover({ append: false, search: '', page: 1 });
+      return;
+    }
+    discoverAbortRef.current?.abort();
+    discoverRequestSeq.current += 1;
+    setDiscoverPeopleResults([]);
+    setDiscoverPeoplePage(1);
+    setDiscoverPeopleTotalPages(1);
+    setDiscoverPeopleTotalResults(0);
+    setDiscoverPeopleLoading(false);
+    setDiscoverPeopleError('');
+    setDiscoverKeywordResults([]);
+    setDiscoverKeywordPage(1);
+    setDiscoverKeywordTotalPages(1);
+    setDiscoverKeywordTotalResults(0);
+    setDiscoverKeywordLoading(false);
+    setDiscoverKeywordError('');
+  }
+
+  function clearDiscoverAdvancedSearch() {
     const empty = createEmptyQuery('discover');
-    advancedImportedRef.current = false;
+    advancedImportedRef.current = true;
     discoverResultIdentityRef.current = '';
     setAdvancedQuery(empty);
     setExecutedAdvancedQuery(empty);
-    setDiscoverSearchKind('movies');
+    setDiscoverSearchKind('advanced');
     setTmdbQuery('');
     setDiscoverContext(null);
     setDiscoverContextSourceResults([]);
@@ -2152,38 +2221,8 @@ export default function DiscoverWorkspace({
     })).filter((item) => item.id && item.label);
   }
 
-  return (
-    <section className="discover-workspace">
-      <header className="library-header discover-header">
-        <div>
-          <p className="screen-kicker">Online discovery</p>
-          <h2>Discover</h2>
-          <p>TMDB discovery, live indexer availability, and local Ollama recommendations with archive-aware actions.</p>
-        </div>
-        <div className="settings-summary">
-          <strong>{formatCount(discoverResults.length + browseRows.length + pickResults.length)}</strong>
-          <span>loaded titles</span>
-        </div>
-      </header>
-
-      {mediaNavigation || <div className="discover-tabs" role="tablist" aria-label="Discover tools">
-        {tabs.map((tab) => {
-          const Icon = tab.icon;
-          return (
-            <button
-              type="button"
-              key={tab.id}
-              className={cx(activeTab === tab.id && 'discover-tab-active')}
-              onClick={() => setActiveTab(tab.id)}
-            >
-              <Icon size={16} /> {tab.label}
-            </button>
-          );
-        })}
-      </div>}
-
-      {activeTab !== 'pick' && (
-        <form className="discover-search-panel" onSubmit={runDiscoverSearch}>
+  const searchControls = <>{activeTab !== 'pick' && (
+        <form className="workspace-search-form" onSubmit={runDiscoverSearch}>
           {activeTab === 'explore' && discoverSearchKind === 'advanced' ? <AdvancedSearchBuilder
             scope="discover"
             query={advancedQuery}
@@ -2192,7 +2231,7 @@ export default function DiscoverWorkspace({
               if (querySignature(executedAdvancedQuery) === querySignature(advancedQuery)) loadDiscover({ append: false, search: '', page: 1, force: true });
               else setExecutedAdvancedQuery(advancedQuery);
             }}
-            onReset={resetDiscoverAdvanced}
+            onClearSearch={clearDiscoverAdvancedSearch}
             loading={discoverLoading}
             error={discoverError}
             searchIdentities={searchDiscoverAdvancedIdentities}
@@ -2202,9 +2241,10 @@ export default function DiscoverWorkspace({
               country: discoverCountryOptions.filter((item) => item.value).map((item) => ({ id: item.value, label: item.label })),
               movie_list: userLists.filter((list) => !list.system_type).map((list) => ({ id: String(list.id), label: list.name }))
             }}
-          /> : <SearchField className="discover-main-search">
+          /> : <SearchField className="discover-main-search" clearLabel="Clear Discover search"
+            onClear={activeTab === 'explore' && tmdbQuery ? clearDiscoverSearch : undefined}>
             <Search size={17} />
-            <input
+            <Input
               value={activeTab === 'browse' ? browseQuery : tmdbQuery}
               onChange={(event) => (activeTab === 'browse' ? setBrowseQuery : setTmdbQuery)(event.target.value)}
               placeholder={activeTab === 'browse'
@@ -2222,9 +2262,8 @@ export default function DiscoverWorkspace({
                     ? 'Search TMDB keywords'
                     : 'Search TMDB movies'}
             />
-          </SearchField>}
-          {activeTab === 'explore' && (
-            <select
+          </SearchField>}      {activeTab === 'explore' && (
+            <SearchModeSelect
               value={discoverSearchKind}
               onChange={(event) => enterDiscoverSearchMode(event.target.value)}
               aria-label="TMDB search type"
@@ -2233,18 +2272,163 @@ export default function DiscoverWorkspace({
               <option value="people">People</option>
               <option value="keywords">Keywords</option>
               <option value="advanced">Advanced</option>
-            </select>
+            </SearchModeSelect>
           )}
-          <button
+          <Button variant={activeTab === 'explore' && discoverSearchKind === 'advanced' ? 'ai' : 'primary'}
             type="submit"
-            className={cx('btn btn-primary discover-search-submit', activeTab === 'explore' && discoverSearchKind === 'advanced' && 'advanced-search-submit')}
+            className={cx('discover-search-submit', activeTab === 'explore' && discoverSearchKind === 'advanced' && 'advanced-search-submit')}
             disabled={activeTab === 'browse' ? browseLoading : discoverLoading || discoverPeopleLoading || discoverKeywordLoading}
           >
             {(activeTab === 'browse' ? browseLoading : discoverLoading || discoverPeopleLoading || discoverKeywordLoading) ? <Loader2 size={15} className="spin" /> : <Search size={15} />}
             Search
-          </button>
+          </Button>
         </form>
       )}
+
+{activeTab === 'pick' && (<form className="workspace-search-form pick-prompt-panel" onSubmit={askPickMyMovie}>
+            <div>
+              <p className="screen-kicker">{ai.provider === 'chatgpt' ? 'ChatGPT curator' : 'Local AI curator'}</p>
+              <h3>Describe what you want to watch</h3>
+              <p>Use a mood, memory, actor, era, half-remembered plot, or a specific kind of night.</p>
+            </div>
+            <Textarea aria-label="Describe what you want to watch"
+              value={pickPrompt}
+              onChange={(event) => { setPickPrompt(event.target.value); setPickDraftEdits(current => ({ ...current, promptEdited: true })); }}
+              onKeyDown={(event) => {
+                if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') askPickMyMovie(event);
+              }}
+              placeholder="Something funny but a little sad, maybe an indie movie with a warm ending..."
+              rows={3}
+            />
+            {!ai.config ? <p className="discover-inline-status" role={ai.error ? 'alert' : 'status'}>
+              {ai.error ? <>Couldn’t load AI settings. <a href="/settings">Open Settings to retry.</a></> : 'Loading AI settings…'}
+            </p> : !ai.feature('F1')?.ready && <p className="discover-inline-status discover-inline-error" role="alert">
+              Finish setting up {ai.provider === 'chatgpt' ? 'ChatGPT' : 'Ollama'} in <a href="/settings">AI Settings</a>.
+            </p>}
+            <div className="pick-prompt-actions">
+            {ai.provider === 'chatgpt' && <label className="pick-count-field"><span>Count</span>
+              <Input aria-label="Recommendation count for this request" type="text" inputMode="numeric" pattern="[0-9]+" value={pickCount}
+                placeholder={ai.config?.chatgpt?.recommendation_count || '15'} onChange={event => { setPickCount(event.target.value); setPickDraftEdits(current => ({ ...current, countEdited: true })); }} />
+            </label>}
+            <Button variant="ai" type="submit"  formNoValidate={ai.provider === 'chatgpt' && ['stop', 'continue', 'review'].includes(gptPickAction.kind)} disabled={!ai.config || (ai.provider === 'chatgpt'
+              ? gpt.busy || gptPickAction.kind !== 'stop' && !ai.feature('F1')?.ready : pickLoading)}>
+              {ai.provider === 'chatgpt' && gptPickAction.kind === 'stop' ? <X size={15} />
+                : pickLoading || gpt.busy ? <Loader2 size={15} className="spin" /> : <Bot size={15} />}
+              {ai.provider === 'chatgpt' ? gptPickAction.label : 'Ask AI'}
+            </Button>
+            {ai.provider === 'chatgpt' && gpt.job && <Button type="button"  disabled={gpt.busy || jobIsRunning(gpt.job)} onClick={gpt.newSession}>New conversation</Button>}
+            </div>
+            {pickSource !== 'chatgpt' && pickModel && <p className="discover-inline-status"><CheckCircle2 size={15} /> Results from {pickModel}</p>}
+            {pickError && <p className="discover-inline-status discover-inline-error"><AlertTriangle size={15} /> {pickError}</p>}
+          </form>)}</>;
+  const filterControls = <>{activeTab === 'explore' && <>{discoverContext?.type === 'related' && <div className="workspace-filter-grid">
+            <div className="related-source-selector" aria-label="Related movie sources">
+              {[['all', 'All'], ['recommendations', 'Recommended'], ['similar', 'Similar']].map(([source, label]) => <button type="button" key={source} aria-pressed={discoverContext.relationshipSource === source} onClick={() => selectRelationshipSource(source)}>{label}</button>)}
+            </div>
+            <Select aria-label="Library ownership" value={discoverOwnershipFilter} onChange={(event) => setDiscoverOwnershipFilter(event.target.value)}>
+              <option value="all">All movies</option><option value="owned">Owned</option><option value="unowned">Not owned</option>
+            </Select>
+            {discoverContext.sourceLimit && <span className="discover-related-limit" role="status">
+              Browse limit: up to {formatCount(discoverContext.sourceLimit)} per source.
+              {relatedTotal != null ? ` Total: ${formatCount(relatedTotal)} movies.` : ''}
+              {relatedSummary.key === relationshipSummaryKey(discoverContext) && relatedSummary.loading && relatedTotal == null ? ' Counting total…' : ''}
+              {relatedSummary.key === relationshipSummaryKey(discoverContext) && relatedSummary.error && relatedTotal == null ? ` ${relatedSummary.error}` : ''}
+            </span>}
+            {relatedSummary.key === relationshipSummaryKey(discoverContext) && relatedSummary.error && relatedTotal == null
+              && <Button size="compact" type="button"  onClick={() => loadRelationshipSummary(discoverContext)}>Retry count</Button>}
+            {discoverError && <Button size="compact" type="button"  onClick={() => loadRelatedContext(discoverContext)}>Retry</Button>}
+          </div>}
+          {discoverSearchKind === 'movies' && !['related', 'movie', 'person-awards'].includes(discoverContext?.type) && <div className="workspace-filter-grid">
+            <>
+            <Select aria-label="Discover feed" value={discoverList} onChange={(event) => selectDiscoverList(event.target.value)}>
+              {discoverLists.map((item) => <option key={item.value} value={item.value}>{item.label}</option>)}
+            </Select>
+            <Select aria-label="Library ownership" value={discoverOwnershipFilter} onChange={(event) => setDiscoverOwnershipFilter(event.target.value)}>
+              <option value="all">All movies</option>
+              <option value="owned">Owned</option>
+              <option value="unowned">Not owned</option>
+            </Select>
+            <CatalogMetadataFilters genres={discoverGenres} countries={discoverCountryOptions} sortLabel="Sort Discover results"
+              values={{ genre: discoverGenre, sort: discoverSort, country: discoverCountry, minVotes: discoverMinVotes, yearFrom: discoverYearFrom, yearTo: discoverYearTo, minRating: discoverMinRating }}
+              yearError={discoverYearDraft.error} yearErrorId={`${filterNoticeId}-error`}
+              onChange={(key, value) => {
+                const setters = { genre: setDiscoverGenre, sort: setDiscoverSort, country: setDiscoverCountry, minVotes: setDiscoverMinVotes, yearFrom: setDiscoverYearFrom, yearTo: setDiscoverYearTo, minRating: setDiscoverMinRating };
+                setDiscoverCriterion(setters[key], value, key === 'sort' ? 'auto' : ['minVotes', 'minRating'].includes(key) ? '0' : '');
+              }} />
+            {hasAdvancedDiscoverCriteria() && (
+              <Button type="button" className="discover-toolbar-icon-button" onClick={resetDiscoverCriteria} disabled={discoverLoading} aria-label="Reset Discover filters" title="Reset filters">
+                <X size={17} />
+              </Button>
+            )}
+            <Button type="button" className="discover-toolbar-icon-button" onClick={() => loadDiscover({ append: false, search: discoverMode === 'search' ? tmdbQuery : '' })} disabled={discoverLoading || !discoverYearDraft.ready} aria-label="Refresh Discover results" title="Refresh">
+              <RefreshCcw size={17} />
+            </Button>
+            </>
+          </div>}</>}{activeTab === 'browse' && (<div className="workspace-filter-grid">
+            <Select aria-label="Indexer quality" value={browseResolution} onChange={(event) => setBrowseResolution(event.target.value)}>
+              <option value="all">All qualities</option>
+              <option value="4K">4K</option>
+              <option value="1080p">1080p</option>
+              <option value="720p">720p</option>
+              <option value="480p">480p</option>
+              <option value="Unknown">Unknown</option>
+            </Select>
+            <Select aria-label="Indexer source" value={browseIndexer} onChange={(event) => setBrowseIndexer(event.target.value)}>
+              <option value="all">All indexers</option>
+              {browseIndexerOptions.map((indexer) => <option key={indexer.id} value={indexer.id}>{indexer.name}</option>)}
+            </Select>
+            <Select aria-label="Sort indexer results" value={browseSort} onChange={(event) => setBrowseSort(event.target.value)}>
+              <option value="seeders-desc">Seeders most</option>
+              <option value="quality-desc">Quality best</option>
+              <option value="year-desc">Year newest</option>
+              <option value="title-asc">Title A-Z</option>
+            </Select>
+
+            <Button type="button"  onClick={() => loadBrowse({ query: '' })} disabled={browseLoading}>
+              {browseLoading && browseMode === 'latest' ? <Loader2 size={15} className="spin" /> : <Radio size={15} />} Load latest
+            </Button>
+            <span className="discover-count">
+              <span className="discover-filter-label">Indexer source</span>
+              {browseMode === 'search' && browseQuery.trim() ? `Search: ${browseQuery.trim()} / ${selectedBrowseIndexerName} - ` : browseMode === 'latest' ? `Latest / ${selectedBrowseIndexerName} - ` : ''}
+              {formatCount(filteredBrowseRows.length)} movies
+              {browseHiddenCount > 0 ? `, ${formatCount(browseHiddenCount)} without TMDB details` : ''}
+              {browseIndexerLoading ? ', loading sources' : ''}
+            </span>
+            <Button type="button"  onClick={() => loadBrowse({ query: browseMode === 'latest' ? '' : browseQuery })} disabled={browseLoading || (!browseQuery.trim() && browseMode !== 'latest' && !browseHasLoaded)}>
+              {browseLoading ? <Loader2 size={15} className="spin" /> : <RefreshCcw size={15} />} Refresh
+            </Button>
+          </div>)}</>;
+  const loadedCount = activeTab === 'browse' ? filteredBrowseRows.length : activeTab === 'pick' ? pickResults.length : discoverSearchKind === 'people' ? discoverPeopleResults.length : discoverSearchKind === 'keywords' ? discoverKeywordResults.length : filteredDiscoverResults.length;
+  const selectionControls = (activeTab !== 'explore' || ['movies', 'advanced'].includes(discoverSearchKind)) && (loadedCount > 0 || selectedDiscoverMovies.length > 0) ? <WorkspaceSelectionBar className="discover-bulk-selection" selectedCount={selectedDiscoverMovies.length} allSelected={allDiscoverResultsSelected}
+      selectAllLabel={gptPickRoot ? `Select all ${formatExactCount(gpt.job.accepted_count)} verified results` : 'Select all results'}
+      label={activeTab === 'browse' ? 'Select all browse indexer results' : activeTab === 'pick' ? 'Select all AI pick results' : 'Select all discover results'}
+      onToggleAll={checked => checked ? selectAllDiscoverResults() : deselectAllDiscoverResults()} onSelectAll={selectAllDiscoverResults} onClear={clearDiscoverSelection}>
+      <Button size="compact" type="button"  onClick={() => setListEditorTarget({ bulkItems: selectedDiscoverMovies })}><CirclePlus size={13}/> Add to list</Button>
+      <Button variant="source" size="compact" type="button"  onClick={openSelectedSourceReview}><Search size={13}/> Find sources</Button>
+    </WorkspaceSelectionBar> : null;
+  return (
+    <section className="discover-workspace" aria-label="Discover Movies">
+
+      <WorkspaceChrome navigation={mediaNavigation || <SectionTabs className="" role="tablist" aria-label="Discover tools">
+        {tabs.map((tab) => {
+          const Icon = tab.icon;
+          return (
+            <SectionTab
+              type="button"
+              key={tab.id}
+              className={cx(activeTab === tab.id && 'discover-tab-active')}
+              onClick={() => setActiveTab(tab.id)}
+            >
+              <Icon size={16} /> {tab.label}
+            </SectionTab>
+          );
+        })}
+      </SectionTabs>}>
+
+      <WorkspaceControls key={activeTab} autoCollapseKey={expandedMovieKey} expanded={Boolean(controlsExpandedByTab[activeTab])} onExpandedChange={expanded => setControlsExpandedByTab(current => ({ ...current, [activeTab]: expanded }))} search={searchControls} filters={filterControls} selection={selectionControls} loadedCount={loadedCount} selectedCount={selectedDiscoverMovies.length}
+        summary={activeTab === 'explore' && discoverSearchKind === 'movies' ? additionalFilterSummary.join(' · ') : undefined}
+        notice={activeTab === 'explore' ? discoverSearchKind === 'movies' && !discoverYearDraft.ready && <span id={`${filterNoticeId}-error`} className="year-draft-error" role={discoverYearDraft.error ? 'alert' : 'status'}>{discoverYearDraft.error || 'Complete the year range to refresh results.'}</span> : activeTab === 'pick' && pickSource !== 'chatgpt' && (pickError || pickLoading) ? <span role={pickError ? 'alert' : 'status'}>{pickError || 'Finding recommendations…'}</span> : null}/>
+      </WorkspaceChrome>
 
       {activeTab === 'explore' && (
         <section className="discover-panel">
@@ -2257,96 +2441,7 @@ export default function DiscoverWorkspace({
             onReset={resetDiscoverPath}
             onCrumb={jumpDiscoverPath}
           />
-          {discoverContext?.type === 'related' && <div className="discover-related-toolbar">
-            <div className="related-source-selector" aria-label="Related movie sources">
-              {[['all', 'All'], ['recommendations', 'Recommended'], ['similar', 'Similar']].map(([source, label]) => <button type="button" key={source} aria-pressed={discoverContext.relationshipSource === source} onClick={() => selectRelationshipSource(source)}>{label}</button>)}
-            </div>
-            <select aria-label="Library ownership" value={discoverOwnershipFilter} onChange={(event) => setDiscoverOwnershipFilter(event.target.value)}>
-              <option value="all">All movies</option><option value="owned">Owned</option><option value="unowned">Not owned</option>
-            </select>
-            {discoverContext.sourceLimit && <span className="discover-related-limit" role="status">
-              Browse limit: up to {formatCount(discoverContext.sourceLimit)} per source.
-              {relatedTotal != null ? ` Total: ${formatCount(relatedTotal)} movies.` : ''}
-              {relatedSummary.key === relationshipSummaryKey(discoverContext) && relatedSummary.loading && relatedTotal == null ? ' Counting total…' : ''}
-              {relatedSummary.key === relationshipSummaryKey(discoverContext) && relatedSummary.error && relatedTotal == null ? ` ${relatedSummary.error}` : ''}
-            </span>}
-            {relatedSummary.key === relationshipSummaryKey(discoverContext) && relatedSummary.error && relatedTotal == null
-              && <button type="button" className="mini-action" onClick={() => loadRelationshipSummary(discoverContext)}>Retry count</button>}
-            {discoverError && <button type="button" className="mini-action" onClick={() => loadRelatedContext(discoverContext)}>Retry</button>}
-          </div>}
-          {discoverSearchKind === 'movies' && !['related', 'movie', 'person-awards'].includes(discoverContext?.type) && <div className="discover-toolbar">
-            <select aria-label="Discover feed" value={discoverList} onChange={(event) => selectDiscoverList(event.target.value)}>
-              {discoverLists.map((item) => <option key={item.value} value={item.value}>{item.label}</option>)}
-            </select>
-            <select aria-label="Library ownership" value={discoverOwnershipFilter} onChange={(event) => setDiscoverOwnershipFilter(event.target.value)}>
-              <option value="all">All movies</option>
-              <option value="owned">Owned</option>
-              <option value="unowned">Not owned</option>
-            </select>
-            <select aria-label="Genre" value={discoverGenre} onChange={(event) => setDiscoverCriterion(setDiscoverGenre, event.target.value, '')}>
-              {discoverGenres.map((item) => <option key={item.value} value={item.value}>{item.label}</option>)}
-            </select>
-            <select aria-label="Production country" value={discoverCountry} onChange={(event) => setDiscoverCriterion(setDiscoverCountry, event.target.value, '')}>
-              {discoverCountryOptions.map((item) => <option key={item.value} value={item.value}>{item.label}</option>)}
-            </select>
-            <select aria-label="Minimum votes" value={discoverMinVotes} onChange={(event) => setDiscoverCriterion(setDiscoverMinVotes, event.target.value, '0')}>
-              <option value="0">Any votes</option>
-              <option value="500">500+ votes</option>
-              <option value="1000">1,000+ votes</option>
-              <option value="5000">5,000+ votes</option>
-              <option value="10000">10,000+ votes</option>
-            </select>
-            <input className="library-mini-input" value={discoverYearFrom} onChange={(event) => setDiscoverCriterion(setDiscoverYearFrom, event.target.value, '')} placeholder="Year from" inputMode="numeric" maxLength={4} aria-invalid={Boolean(discoverYearDraft.error)} />
-            <input className="library-mini-input" value={discoverYearTo} onChange={(event) => setDiscoverCriterion(setDiscoverYearTo, event.target.value, '')} placeholder="Year to" inputMode="numeric" maxLength={4} aria-invalid={Boolean(discoverYearDraft.error)} />
-            {discoverYearDraft.error && <span className="year-draft-error" role="alert">{discoverYearDraft.error}</span>}
-            <select aria-label="Minimum rating" value={discoverMinRating} onChange={(event) => setDiscoverCriterion(setDiscoverMinRating, event.target.value, '0')}>
-              <option value="0">Any rating</option>
-              <option value="6">6+</option>
-              <option value="7">7+</option>
-              <option value="8">8+</option>
-              <option value="8.5">8.5+</option>
-            </select>
-            <select aria-label="Sort Discover results" value={discoverSort} onChange={(event) => setDiscoverCriterion(setDiscoverSort, event.target.value, 'auto')}>
-              <option value="auto">Default order</option>
-              <option value="popularity.desc">Popularity</option>
-              <option value="vote_average.desc">Rating</option>
-              <option value="vote_count.desc">Most voted</option>
-              <option value="primary_release_date.desc">Release date</option>
-              <option value="title.asc">Title A-Z</option>
-            </select>
-            <button type="button" className="btn btn-secondary discover-toolbar-icon-button" onClick={() => loadDiscover({ append: false, search: discoverMode === 'search' ? tmdbQuery : '' })} disabled={discoverLoading || !discoverYearDraft.ready} aria-label="Refresh Discover results" title="Refresh">
-              <RefreshCcw size={17} />
-            </button>
-            {hasAdvancedDiscoverCriteria() && (
-              <button type="button" className="btn btn-secondary discover-toolbar-icon-button" onClick={resetDiscoverCriteria} disabled={discoverLoading} aria-label="Reset Discover filters" title="Reset filters">
-                <X size={17} />
-              </button>
-            )}
-            {discoverMode === 'search' && (
-              <button type="button" className="btn btn-secondary discover-toolbar-icon-button" onClick={() => { setTmdbQuery(''); loadDiscover({ append: false, search: '', page: 1 }); }} aria-label="Clear Discover search" title="Clear search">
-                <X size={17} />
-              </button>
-            )}
-          </div>}
-          {['movies', 'advanced'].includes(discoverSearchKind) && filteredDiscoverResults.length > 0 && (
-            <div className="bulk-selection-bar discover-bulk-selection">
-              <SelectionCheckbox
-                className="discover-selection-master"
-                checked={allDiscoverResultsSelected}
-                onChange={(checked) => { if (checked) selectAllDiscoverResults(); else deselectAllDiscoverResults(); }}
-                label="Select all discover results"
-              />
-              <span>{selectedDiscoverMovies.length ? `${formatCount(selectedDiscoverMovies.length)} selected` : 'Select movies'}</span>
-              <button type="button" className="mini-action" onClick={selectAllDiscoverResults}>Select all results</button>
-              <button type="button" className="mini-action" onClick={clearDiscoverSelection} disabled={!selectedDiscoverMovies.length}>Clear</button>
-              <button type="button" className="mini-action" onClick={() => setListEditorTarget({ bulkItems: selectedDiscoverMovies })} disabled={!selectedDiscoverMovies.length}>
-                <CirclePlus size={13} /> Add to list
-              </button>
-              <button type="button" className="mini-action mini-action-source" onClick={openSelectedSourceReview} disabled={!selectedDiscoverMovies.length}>
-                <Search size={13} /> Find sources
-              </button>
-            </div>
-          )}
+
 
           {discoverSearchKind === 'people' ? (
             <PaginatedDiscoverResults pagination={{
@@ -2406,6 +2501,7 @@ export default function DiscoverWorkspace({
               const collectionView = getCollectionView(details);
               return (
                 <DiscoverMovieCard
+                  iptvAvailability={iptvAvailability}
                   key={`${movie.tmdb_id || movie.title}-${movie.year}-${index}`}
                   movie={movie}
                   owned={owned}
@@ -2450,65 +2546,13 @@ export default function DiscoverWorkspace({
 
       {activeTab === 'browse' && (
         <section className="discover-panel">
-          <div className="discover-toolbar">
-            <select value={browseResolution} onChange={(event) => setBrowseResolution(event.target.value)}>
-              <option value="all">All qualities</option>
-              <option value="4K">4K</option>
-              <option value="1080p">1080p</option>
-              <option value="720p">720p</option>
-              <option value="480p">480p</option>
-              <option value="Unknown">Unknown</option>
-            </select>
-            <select value={browseIndexer} onChange={(event) => setBrowseIndexer(event.target.value)}>
-              <option value="all">All indexers</option>
-              {browseIndexerOptions.map((indexer) => <option key={indexer.id} value={indexer.id}>{indexer.name}</option>)}
-            </select>
-            <select value={browseSort} onChange={(event) => setBrowseSort(event.target.value)}>
-              <option value="seeders-desc">Seeders most</option>
-              <option value="quality-desc">Quality best</option>
-              <option value="year-desc">Year newest</option>
-              <option value="title-asc">Title A-Z</option>
-            </select>
-            <button type="button" className="btn btn-secondary" onClick={() => loadBrowse({ query: browseMode === 'latest' ? '' : browseQuery })} disabled={browseLoading || (!browseQuery.trim() && browseMode !== 'latest' && !browseHasLoaded)}>
-              {browseLoading ? <Loader2 size={15} className="spin" /> : <RefreshCcw size={15} />} Refresh
-            </button>
-            <button type="button" className="btn btn-secondary" onClick={() => loadBrowse({ query: '' })} disabled={browseLoading}>
-              {browseLoading && browseMode === 'latest' ? <Loader2 size={15} className="spin" /> : <Radio size={15} />} Load latest
-            </button>
-            <span className="discover-count">
-              <span className="discover-filter-label">Indexer source</span>
-              {browseMode === 'search' && browseQuery.trim() ? `Search: ${browseQuery.trim()} / ${selectedBrowseIndexerName} - ` : browseMode === 'latest' ? `Latest / ${selectedBrowseIndexerName} - ` : ''}
-              {formatCount(filteredBrowseRows.length)} movies
-              {browseHiddenCount > 0 ? `, ${formatCount(browseHiddenCount)} without TMDB details` : ''}
-              {browseIndexerLoading ? ', loading sources' : ''}
-            </span>
-          </div>
 
-          {filteredBrowseRows.length > 0 && (
-            <div className="bulk-selection-bar discover-bulk-selection">
-              <SelectionCheckbox
-                className="discover-selection-master"
-                checked={allDiscoverResultsSelected}
-                onChange={(checked) => { if (checked) selectAllDiscoverResults(); else deselectAllDiscoverResults(); }}
-                label="Select all browse indexer results"
-              />
-              <span>{selectedDiscoverMovies.length ? `${formatCount(selectedDiscoverMovies.length)} selected` : 'Select movies'}</span>
-              <button type="button" className="mini-action" onClick={selectAllDiscoverResults}>Select all results</button>
-              <button type="button" className="mini-action" onClick={clearDiscoverSelection} disabled={!selectedDiscoverMovies.length}>Clear</button>
-              <button type="button" className="mini-action" onClick={() => setListEditorTarget({ bulkItems: selectedDiscoverMovies })} disabled={!selectedDiscoverMovies.length}>
-                <CirclePlus size={13} /> Add to list
-              </button>
-              <button type="button" className="mini-action mini-action-source" onClick={openSelectedSourceReview} disabled={!selectedDiscoverMovies.length}>
-                <Search size={13} /> Find sources
-              </button>
-            </div>
-          )}
 
           {!browseHasLoaded && !browseLoading ? (
-            <div className="empty-state discover-empty">
+            <WorkspaceEmptyState size="regular" className="discover-empty">
               <strong>Search indexers by movie title.</strong>
               <span>Choose an indexer source, use the top search for a targeted search, or click Load latest for a broad Prowlarr browse that may take longer.</span>
-            </div>
+            </WorkspaceEmptyState>
           ) : (
             <DiscoverResultGrid
               error={browseError}
@@ -2523,6 +2567,7 @@ export default function DiscoverWorkspace({
                 const collectionView = getCollectionView(details);
                 return (
                   <IndexerMovieCard
+                    iptvAvailability={iptvAvailability}
                     key={`${movie.parsed_title}-${movie.parsed_year}`}
                     movie={movie}
                     selectedIndex={selectedIndex}
@@ -2577,28 +2622,7 @@ export default function DiscoverWorkspace({
 
       {activeTab === 'pick' && (
         <section className="discover-panel pick-panel-react">
-          <form className="pick-prompt-panel" onSubmit={askPickMyMovie}>
-            <div>
-              <p className="screen-kicker">Local AI curator</p>
-              <h3>Describe what you want to watch</h3>
-              <p>Use a mood, memory, actor, era, half-remembered plot, or a specific kind of night.</p>
-            </div>
-            <textarea
-              value={pickPrompt}
-              onChange={(event) => setPickPrompt(event.target.value)}
-              onKeyDown={(event) => {
-                if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') askPickMyMovie(event);
-              }}
-              placeholder="Something funny but a little sad, maybe an indie movie with a warm ending..."
-              rows={5}
-            />
-            <button type="submit" className="btn btn-primary btn-violet" disabled={pickLoading}>
-              {pickLoading ? <Loader2 size={15} className="spin" /> : <Bot size={15} />} Ask AI
-            </button>
-            {pickModel && <p className="discover-inline-status"><CheckCircle2 size={15} /> Results from {pickModel}</p>}
-            {pickError && <p className="discover-inline-status discover-inline-error"><AlertTriangle size={15} /> {pickError}</p>}
-          </form>
-
+          <AIJobStatus operation={gpt} title="ChatGPT recommendations" inline />
           <WorkspacePathBar
             ariaLabel="Discovery path"
             history={pickHistory}
@@ -2608,31 +2632,13 @@ export default function DiscoverWorkspace({
             onReset={resetPickPath}
             onCrumb={jumpPickPath}
           />
-          {pickResults.length > 0 && (
-            <div className="bulk-selection-bar discover-bulk-selection">
-              <SelectionCheckbox
-                className="discover-selection-master"
-                checked={allDiscoverResultsSelected}
-                onChange={(checked) => { if (checked) selectAllDiscoverResults(); else deselectAllDiscoverResults(); }}
-                label="Select all AI pick results"
-              />
-              <span>{selectedDiscoverMovies.length ? `${formatCount(selectedDiscoverMovies.length)} selected` : 'Select movies'}</span>
-              <button type="button" className="mini-action" onClick={selectAllDiscoverResults}>Select all results</button>
-              <button type="button" className="mini-action" onClick={clearDiscoverSelection} disabled={!selectedDiscoverMovies.length}>Clear</button>
-              <button type="button" className="mini-action" onClick={() => setListEditorTarget({ bulkItems: selectedDiscoverMovies })} disabled={!selectedDiscoverMovies.length}>
-                <CirclePlus size={13} /> Add to list
-              </button>
-              <button type="button" className="mini-action mini-action-source" onClick={openSelectedSourceReview} disabled={!selectedDiscoverMovies.length}>
-                <Search size={13} /> Find sources
-              </button>
-            </div>
-          )}
+
 
           <PaginatedDiscoverResults pagination={pickMoviePagination}>
           <DiscoverResultGrid
             error={pickError && pickResults.length ? pickError : ''}
             loading={pickLoading && !pickResults.length}
-            emptyText={pickContext?.emptyText || 'No recommendations yet. Ask Ollama for a mood or memory.'}
+            emptyText={pickContext?.emptyText || (ai.provider === 'chatgpt' ? 'No recommendations yet. Ask ChatGPT for a mood or memory.' : 'No recommendations yet. Ask Ollama for a mood or memory.')}
             gridRef={pickMovieGridRef}
           >
             {visiblePickResults.map((movie) => {
@@ -2641,6 +2647,7 @@ export default function DiscoverWorkspace({
               const collectionView = getCollectionView(details);
               return (
                 <DiscoverMovieCard
+                  iptvAvailability={iptvAvailability}
                   key={`${movie.title}-${movie.year}`}
                   movie={movie}
                   reason={movie.reason}
@@ -2720,10 +2727,10 @@ function PeopleSearchResults({ people, loading, error, onOpenFilmography, gridRe
     return <div ref={gridRef} className="discover-grid person-search-grid"><div className="person-search-card skeleton-card" /></div>;
   }
   if (error) {
-    return <div className="empty-state discover-empty"><strong>Could not search people.</strong><span>{error}</span></div>;
+    return <WorkspaceEmptyState size="regular" className="discover-empty"><strong>Could not search people.</strong><span>{error}</span></WorkspaceEmptyState>;
   }
   if (!people.length) {
-    return <div className="empty-state discover-empty"><strong>Search TMDB people by name.</strong></div>;
+    return <WorkspaceEmptyState size="regular" className="discover-empty"><strong>Search TMDB people by name.</strong></WorkspaceEmptyState>;
   }
   return (
     <div ref={gridRef} className="discover-grid person-search-grid">
@@ -2746,10 +2753,10 @@ function KeywordSearchResults({ keywords, loading, error, onOpenKeyword, gridRef
     return <div ref={gridRef} className="discover-grid keyword-search-grid"><div className="keyword-search-card skeleton-card" /></div>;
   }
   if (error) {
-    return <div className="empty-state discover-empty"><strong>Could not search TMDB keywords.</strong><span>{error}</span></div>;
+    return <WorkspaceEmptyState size="regular" className="discover-empty"><strong>Could not search TMDB keywords.</strong><span>{error}</span></WorkspaceEmptyState>;
   }
   if (!keywords.length) {
-    return <div className="empty-state discover-empty"><strong>Search TMDB keywords by name.</strong><span>Select a keyword identity to discover its movies.</span></div>;
+    return <WorkspaceEmptyState size="regular" className="discover-empty"><strong>Search TMDB keywords by name.</strong><span>Select a keyword identity to discover its movies.</span></WorkspaceEmptyState>;
   }
   return (
     <div ref={gridRef} className="discover-grid keyword-search-grid">
@@ -2768,6 +2775,7 @@ function KeywordSearchResults({ keywords, loading, error, onOpenKeyword, gridRef
 
 
 function IndexerMovieCard({
+  iptvAvailability,
   movie,
   selectedIndex,
   owned,
@@ -2818,14 +2826,17 @@ function IndexerMovieCard({
     : collection;
 
   return (
-    <UnifiedMovieCard
+    <UnifiedMovieCard ratingsIdentity={awardIdentity}
+      availability={Number(movie.tmdb_id) > 0
+        ? <IPTVAvailabilityBadge movie={movie} providers={iptvAvailability?.providers} onStream={onStream} /> : undefined}
       className={cx('indexer-card', 'movie-awards-consumer', expanded && 'discover-card-expanded')}
       awardCounts={awardCounts}
       title={displayMovie.title}
       year={displayMovie.year}
       posterUrl={displayMovie.poster_url}
+      backdropUrl={displayDetails?.backdrop_url || displayMovie.backdrop_url || displayMovie.poster_url}
       rating={displayMovie.tmdb_rating}
-      voteCount={formatVoteCount(displayMovie.tmdb_vote_count)}
+      voteCount={formatVoteCount(displayMovie.tmdb_vote_count, { includeLabel: expanded })}
       chips={(displayMovie.genres || []).slice(0, 2)}
       mutedChips={[
         selectedVariant.resolution || movie.best_resolution,
@@ -2921,28 +2932,28 @@ function IndexerMovieCard({
             />
             {owned ? (
               <>
-                <button type="button" className="btn btn-primary btn-green" onClick={() => onPlay(owned.path)}>
+                <Button variant="play" type="button"  onClick={() => onPlay(owned.path)}>
                   <Play size={15} /> Play
-                </button>
+                </Button>
                 <OwnedFileDetailsButton owned={owned} onOpenFileDetails={onOpenFileDetails} />
               </>
             ) : streamingAvailable ? (
-              <button type="button" className="btn btn-secondary btn-green-outline" onClick={() => onStream(movie)}>
-                <MonitorPlay size={15} /> {streamingLabel}
-              </button>
+              <StreamButton type="button"  onClick={() => onStream(movie)}>
+                 {streamingLabel}
+              </StreamButton>
             ) : null}
             {lowQuality ? (
-              <button type="button" className="btn btn-secondary" onClick={() => onFindTorrent(movie, true)}>
+              <Button type="button"  onClick={() => onFindTorrent(movie, true)}>
                 <Wand2 size={15} /> Find upgrade
-              </button>
+              </Button>
             ) : (
-              <button type="button" className="btn btn-secondary" onClick={() => onFindTorrent(movie)}>
+              <Button type="button"  onClick={() => onFindTorrent(movie)}>
                 <Search size={15} /> Find sources
-              </button>
+              </Button>
             )}
-            <button type="button" className="btn btn-secondary" onClick={() => onTrailer(movie)}>
+            <Button type="button"  onClick={() => onTrailer(movie)}>
               <Film size={15} /> Trailer
-            </button>
+            </Button>
             <MoviePlotDetailsButton movie={displayMovie} />
           </div>
           <MovieExpandedFacts movie={displayMovie} details={displayDetails} />

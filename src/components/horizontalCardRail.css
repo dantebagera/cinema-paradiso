@@ -1,0 +1,43 @@
+.horizontal-card-rail { min-width: 0; }
+.horizontal-card-rail-header { display: flex; align-items: center; gap: var(--space-3); min-height: 34px; margin-bottom: var(--space-2); }
+.horizontal-card-rail-arrows { display: flex; gap: var(--space-1); margin-left: auto; flex: 0 0 auto; }
+.horizontal-card-rail-arrows .rail-arrow { display: grid; place-items: center; width: 30px; height: 30px; min-height: 30px; padding: 0; background: var(--surface-raised); border: 1px solid var(--border); border-radius: var(--radius-ui); color: var(--text-soft); }
+.horizontal-card-rail-arrows .rail-arrow:hover:not(:disabled) { border-color: var(--projector-gold); color: var(--projector-gold); }
+.horizontal-card-rail-arrows .rail-arrow:disabled { opacity: .35; cursor: default; }
+.horizontal-card-rail .horizontal-card-rail-track { display: grid; grid-auto-flow: column; grid-template-columns: none; grid-auto-columns: var(--rail-card-width, max(var(--rail-min-card-width), calc((100% - (var(--rail-visible-count) - 1) * var(--compact-card-gap)) / var(--rail-visible-count)))); gap: var(--compact-card-gap); align-items: stretch; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x proximity; padding: 3px; scroll-padding: 3px; }
+.horizontal-card-rail-track:not(.horizontal-card-rail-track-native-scrollbar) { scrollbar-width: none; }
+.horizontal-card-rail-track:not(.horizontal-card-rail-track-native-scrollbar)::-webkit-scrollbar { display: none; }
+.horizontal-card-rail-track > * { scroll-snap-align: start; }
+.horizontal-card-rail-body { min-width: 0; }
+.horizontal-card-rail-body-edges { position: relative; }
+.horizontal-card-rail-edge-arrows { position: absolute; inset: 3px 0; margin: 0; z-index: 3; pointer-events: none; }
+.horizontal-card-rail-edge-arrows::before, .horizontal-card-rail-edge-arrows::after { content: ''; position: absolute; top: 0; bottom: 0; width: 96px; z-index: 1; opacity: 0; transition: opacity .2s ease; }
+.horizontal-card-rail-edge-arrows::before { left: 0; background: linear-gradient(to right, var(--panel-black) 44px, transparent); }
+.horizontal-card-rail-edge-arrows::after { right: 0; background: linear-gradient(to left, var(--panel-black) 44px, transparent); }
+.horizontal-card-rail-edge-arrows:has(.rail-arrow:first-child:is(:hover, :focus-visible):not(:disabled))::before,
+.horizontal-card-rail-edge-arrows:has(.rail-arrow:last-child:is(:hover, :focus-visible):not(:disabled))::after { opacity: 1; }
+.horizontal-card-rail-edge-arrows .rail-arrow { position: absolute; top: 0; bottom: 0; transform: none; z-index: 2; display: flex; width: 44px; height: 100%; padding: 0 8px; border: 0; border-radius: 0; pointer-events: auto; background: transparent; opacity: 0; transition: opacity .2s ease, color .2s ease; }
+.horizontal-card-rail-edge-arrows .rail-arrow:is(:hover, :focus-visible):not(:disabled) { opacity: 1; }
+.horizontal-card-rail-edge-arrows .rail-arrow:disabled { opacity: 0; pointer-events: none; }
+.horizontal-card-rail-edge-arrows .rail-arrow:first-child { left: 0; justify-content: flex-start; }
+.horizontal-card-rail-edge-arrows .rail-arrow:last-child { right: 0; justify-content: flex-end; }
+.horizontal-card-rail-edge-arrows .rail-arrow:focus-visible { outline: 2px solid var(--projector-gold); outline-offset: 2px; }
+@media (hover: none) {
+  .horizontal-card-rail-edge-arrows .rail-arrow:not(:disabled),
+  .horizontal-card-rail-edge-arrows[data-can-scroll-left="true"]::before,
+  .horizontal-card-rail-edge-arrows[data-can-scroll-right="true"]::after { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) { .horizontal-card-rail-edge-arrows::before, .horizontal-card-rail-edge-arrows::after, .horizontal-card-rail-edge-arrows .rail-arrow { transition: none; } }
+
+/* Portrait actions sit in a dedicated column instead of covering the artwork. */
+.credit-card-rail .person-card { grid-template-columns: minmax(0, 1fr) 28px; grid-template-rows: 132px auto auto; align-content: start; justify-items: start; gap: 6px 8px; padding: 8px; min-height: 200px; }
+.credit-card-rail .person-card .person-avatar { grid-column: 1; grid-row: 1; justify-self: center; width: 106px; max-width: 100%; height: 132px; border-radius: var(--radius-ui); }
+.credit-card-rail .person-card .person-bio-button, .credit-card-rail .person-card .person-discover-button { right: 8px; padding: 0; display: grid; place-items: center; }
+.credit-card-rail .person-card .person-bio-button { top: 8px; }
+.credit-card-rail .person-card .person-discover-button { top: 42px; }
+.credit-card-rail .person-card > strong, .credit-card-rail .person-card > small { grid-column: 1 / -1; width: 100%; margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; }
+.credit-card-rail .person-card > strong { font-size: .82rem; }
+.credit-card-rail .person-card > small { font-size: .74rem; color: var(--text-muted); }
+.credit-card-rail .director-person { background: linear-gradient(160deg, #d4af3724, #17150f 65%); box-shadow: inset 0 0 0 1px #d4af3760; }
+.credit-card-rail .director-person small { color: var(--projector-gold); font-weight: 750; }
+.credit-card-rail .director-person .person-avatar { box-shadow: 0 0 0 1px #d4af3770; }

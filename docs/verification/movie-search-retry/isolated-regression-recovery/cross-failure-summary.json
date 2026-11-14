@@ -1,0 +1,364 @@
+[
+  {
+    "test": "ERROR: test_local_rows_preserve_binding_encounter_order (tests.test_tv_library_read_performance.TVLibraryReadPerformanceTests.test_local_rows_preserve_binding_encounter_order)",
+    "reason": [],
+    "classification": "missing_baseline_fixture"
+  },
+  {
+    "test": "ERROR: test_blank_secret_fields_preserve_saved_credentials (tests.test_iptv_service.IPTVServiceConfigTests.test_blank_secret_fields_preserve_saved_credentials)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_credentials_are_saved_but_redacted_from_public_config (tests.test_iptv_service.IPTVServiceConfigTests.test_credentials_are_saved_but_redacted_from_public_config)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_image_proxy_rejects_provider_supplied_private_network_url (tests.test_iptv_service.IPTVServiceConfigTests.test_image_proxy_rejects_provider_supplied_private_network_url)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_insecure_tls_is_explicit_and_provider_scoped (tests.test_iptv_service.IPTVServiceConfigTests.test_insecure_tls_is_explicit_and_provider_scoped)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_live_hls_command_can_catch_up_and_uses_a_rolling_playlist (tests.test_iptv_service.IPTVServiceConfigTests.test_live_hls_command_can_catch_up_and_uses_a_rolling_playlist)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_playback_session_keeps_its_provider_tls_choice_after_config_edit (tests.test_iptv_service.IPTVServiceConfigTests.test_playback_session_keeps_its_provider_tls_choice_after_config_edit)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_provider_key_changes_with_xtream_account_without_exposing_credentials (tests.test_iptv_service.IPTVServiceConfigTests.test_provider_key_changes_with_xtream_account_without_exposing_credentials)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_running_sync_cannot_be_started_twice (tests.test_iptv_service.IPTVServiceConfigTests.test_running_sync_cannot_be_started_twice)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_slow_ffmpeg_kill_defers_directory_removal_until_process_exits (tests.test_iptv_service.IPTVServiceConfigTests.test_slow_ffmpeg_kill_defers_directory_removal_until_process_exits)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_startup_only_removes_old_orphaned_playback_directories (tests.test_iptv_service.IPTVServiceConfigTests.test_startup_only_removes_old_orphaned_playback_directories)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_stop_waits_for_killed_ffmpeg_before_removing_session_directory (tests.test_iptv_service.IPTVServiceConfigTests.test_stop_waits_for_killed_ffmpeg_before_removing_session_directory)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_sync_errors_and_status_never_expose_credentials (tests.test_iptv_service.IPTVServiceConfigTests.test_sync_errors_and_status_never_expose_credentials)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_config_only_migration_and_corrupt_registry_handling (tests.test_iptv_provider_manager.IPTVLegacyMigrationTests.test_config_only_migration_and_corrupt_registry_handling)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_full_migration_preserves_state_excludes_playback_and_is_idempotent (tests.test_iptv_provider_manager.IPTVLegacyMigrationTests.test_full_migration_preserves_state_excludes_playback_and_is_idempotent)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_interrupted_migration_rolls_back_legacy_layout (tests.test_iptv_provider_manager.IPTVLegacyMigrationTests.test_interrupted_migration_rolls_back_legacy_layout)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_blank_password_preserves_saved_password (tests.test_iptv_provider_manager.IPTVProviderManagerTests.test_blank_password_preserves_saved_password)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_duplicate_account_rejected_but_same_server_different_user_allowed (tests.test_iptv_provider_manager.IPTVProviderManagerTests.test_duplicate_account_rejected_but_same_server_different_user_allowed)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_error_redaction_removes_credentials_and_query_secrets (tests.test_iptv_provider_manager.IPTVProviderManagerTests.test_error_redaction_removes_credentials_and_query_secrets)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_images_epg_playback_roots_and_service_instances_are_isolated (tests.test_iptv_provider_manager.IPTVProviderManagerTests.test_images_epg_playback_roots_and_service_instances_are_isolated)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_provider_sync_replaces_only_that_provider_catalog (tests.test_iptv_provider_manager.IPTVProviderManagerTests.test_provider_sync_replaces_only_that_provider_catalog)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_registry_defaults_and_redacted_crud (tests.test_iptv_provider_manager.IPTVProviderManagerTests.test_registry_defaults_and_redacted_crud)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_removal_requires_exact_name_and_rejects_invalid_ids (tests.test_iptv_provider_manager.IPTVProviderManagerTests.test_removal_requires_exact_name_and_rejects_invalid_ids)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_same_ids_catalog_and_user_state_are_isolated (tests.test_iptv_provider_manager.IPTVProviderManagerTests.test_same_ids_catalog_and_user_state_are_isolated)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_sync_and_remove_one_provider_do_not_change_the_other (tests.test_iptv_provider_manager.IPTVProviderManagerTests.test_sync_and_remove_one_provider_do_not_change_the_other)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_automatic_enrichment_prefers_valid_provider_id_and_preserves_raw_identity (tests.test_iptv_movie_enrichment.IPTVMatchEngineTests.test_automatic_enrichment_prefers_valid_provider_id_and_preserves_raw_identity)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_full_provider_release_date_is_normalized_before_recording_match_evidence (tests.test_iptv_movie_enrichment.IPTVMatchEngineTests.test_full_provider_release_date_is_normalized_before_recording_match_evidence)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_manual_search_separates_title_year_before_tmdb_request (tests.test_iptv_movie_enrichment.IPTVMatchEngineTests.test_manual_search_separates_title_year_before_tmdb_request)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_manual_match_favorite_and_custom_list_use_provider_local_owners (tests.test_iptv_movie_enrichment.IPTVMovieRouteTests.test_manual_match_favorite_and_custom_list_use_provider_local_owners)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_metadata_settings_api_is_redacted_and_validates_with_one_bounded_call (tests.test_iptv_movie_enrichment.IPTVMovieRouteTests.test_metadata_settings_api_is_redacted_and_validates_with_one_bounded_call)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_movies_are_provider_scoped_lazy_and_raw_fallback_needs_no_tmdb (tests.test_iptv_movie_enrichment.IPTVMovieRouteTests.test_movies_are_provider_scoped_lazy_and_raw_fallback_needs_no_tmdb)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_startup_is_lazy_missing_tmdb_blocks_only_enrichment_and_provider_delete_is_confined (tests.test_iptv_movie_enrichment.IPTVMovieRouteTests.test_startup_is_lazy_missing_tmdb_blocks_only_enrichment_and_provider_delete_is_confined)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_arabic_localization_repair_preserves_the_accepted_match (tests.test_iptv_movie_enrichment.IPTVMovieStoreTests.test_arabic_localization_repair_preserves_the_accepted_match)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_movie_store_is_lazy_and_live_or_series_access_never_creates_it (tests.test_iptv_movie_enrichment.IPTVMovieStoreTests.test_movie_store_is_lazy_and_live_or_series_access_never_creates_it)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_raw_projection_uses_bounded_batches (tests.test_iptv_movie_enrichment.IPTVMovieStoreTests.test_raw_projection_uses_bounded_batches)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_inactive_cancel_finishes_immediately_and_preserves_pending_work (tests.test_iptv_movie_enrichment.IPTVWorkerTests.test_inactive_cancel_finishes_immediately_and_preserves_pending_work)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_repeated_start_cannot_replace_a_live_or_exiting_worker_lease (tests.test_iptv_movie_enrichment.IPTVWorkerTests.test_repeated_start_cannot_replace_a_live_or_exiting_worker_lease)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_worker_has_a_hard_source_budget_and_does_not_requeue_uncertain_results (tests.test_iptv_movie_enrichment.IPTVWorkerTests.test_worker_has_a_hard_source_budget_and_does_not_requeue_uncertain_results)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_worker_pause_resume_cancel_and_crash_recovery_state_are_provider_local (tests.test_iptv_movie_enrichment.IPTVWorkerTests.test_worker_pause_resume_cancel_and_crash_recovery_state_are_provider_local)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_movies_get_is_pure_and_projection_is_nonblocking_progressive (tests.test_iptv_movie_gates_0_5.ProjectionAndWorkerTests.test_movies_get_is_pure_and_projection_is_nonblocking_progressive)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_one_consent_continues_beyond_one_hundred_with_durable_checkpoint (tests.test_iptv_movie_gates_0_5.ProjectionAndWorkerTests.test_one_consent_continues_beyond_one_hundred_with_durable_checkpoint)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "ERROR: test_existing_v3_provider_requires_explicit_v4_migration_then_catches_up (tests.test_iptv_movie_gates_0_5.SchemaV3MigrationTests.test_existing_v3_provider_requires_explicit_v4_migration_then_catches_up)",
+    "reason": [
+      "guard.BoundaryViolation: ISOLATION BLOCKED read: c:\\users\\dante\\appdata\\local\\microsoft\\winget\\packages\\gyan.ffmpeg_microsoft.winget.source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe"
+    ],
+    "classification": "ffmpeg_discovery_guard"
+  },
+  {
+    "test": "FAIL: test_provider_crud_is_redacted_and_old_singular_routes_are_absent (tests.test_iptv_routes.IPTVRouteTests.test_provider_crud_is_redacted_and_old_singular_routes_are_absent)",
+    "reason": [
+      "AssertionError: 500 != 201"
+    ],
+    "classification": "iptv_route_guard_failure"
+  },
+  {
+    "test": "FAIL: test_provider_required_catalog_and_user_state_routes_are_isolated (tests.test_iptv_routes.IPTVRouteTests.test_provider_required_catalog_and_user_state_routes_are_isolated)",
+    "reason": [
+      "AssertionError: 500 != 201"
+    ],
+    "classification": "iptv_route_guard_failure"
+  },
+  {
+    "test": "FAIL: test_selection_and_removal_are_explicit_and_isolated (tests.test_iptv_routes.IPTVRouteTests.test_selection_and_removal_are_explicit_and_isolated)",
+    "reason": [
+      "AssertionError: 500 != 201"
+    ],
+    "classification": "iptv_route_guard_failure"
+  },
+  {
+    "test": "FAIL: test_unknown_provider_is_404_and_errors_redact_credentials (tests.test_iptv_routes.IPTVRouteTests.test_unknown_provider_is_404_and_errors_redact_credentials)",
+    "reason": [
+      "AssertionError: 500 != 201"
+    ],
+    "classification": "iptv_route_guard_failure"
+  },
+  {
+    "test": "FAIL: test_home_scrolling_rails_share_layout_and_group_trailers (tests.test_full_row_card_grids_ui.FullRowCardGridUiTests.test_home_scrolling_rails_share_layout_and_group_trailers)",
+    "reason": [
+      "AssertionError: '/api/tmdb/discover?list=upcoming&page=1&page_size=100' not found in 'import Sidebar, { navItems } from \\'./components/Sidebar.jsx\\';\\nimport MediaWorkspace from \\'./features/tv/MediaWorkspace.jsx\\';\\nimport { buildTvStreamTemplateUrl } from \\'./utils/appUtils.js\\';\\nimport {\\n  AlertTriangle,\\n  Bell,\\n  Compass,\\n  Database,\\n  ExternalLink,\\n  Film,\\n  Loader2,\\n  RefreshCw,\\n  Search,\\n  X\\n} from \\'lucide-react\\';\\nimport { lazy, Suspense, useCallback, useEffect, useLayoutEf"
+    ],
+    "classification": "source_text_assertion"
+  },
+  {
+    "test": "FAIL: test_library_uses_measured_full_row_page_size (tests.test_full_row_card_grids_ui.FullRowCardGridUiTests.test_library_uses_measured_full_row_page_size)",
+    "reason": [
+      "AssertionError: 'activeLibraryQueryRef.current = activeLibraryQuery' not found in 'import WorkspaceYearRange from \\'../../components/WorkspaceYearRange.jsx\\';\\nimport WorkspaceControls from \\'../../components/WorkspaceControls.jsx\\';\\nimport WorkspaceChrome from \\'../../components/WorkspaceChrome.jsx\\';\\nimport WorkspaceViewActions from \\'../../components/WorkspaceViewActions.jsx\\';\\nimport WorkspaceSelectionBar from \\'../../components/WorkspaceSelectionBar.jsx\\';\\nimport SearchField from \\'../s"
+    ],
+    "classification": "source_text_assertion"
+  },
+  {
+    "test": "FAIL: test_home_health_uses_backend_cleanup_counts (tests.test_library_action_ux.LibraryActionUxTest.test_home_health_uses_backend_cleanup_counts)",
+    "reason": [
+      "AssertionError: \"['Duplicates', stats?.duplicate_groups, 'duplicates']\" not found in 'import Sidebar, { navItems } from \\'./components/Sidebar.jsx\\';\\nimport MediaWorkspace from \\'./features/tv/MediaWorkspace.jsx\\';\\nimport { buildTvStreamTemplateUrl } from \\'./utils/appUtils.js\\';\\nimport {\\n  AlertTriangle,\\n  Bell,\\n  Compass,\\n  Database,\\n  ExternalLink,\\n  Film,\\n  Loader2,\\n  RefreshCw,\\n  Search,\\n  X\\n} from \\'lucide-react\\';\\nimport { lazy, Suspense, useCallback, useEffect, useLayoutEf"
+    ],
+    "classification": "source_text_assertion"
+  },
+  {
+    "test": "FAIL: test_library_loads_ignore_older_responses (tests.test_library_action_ux.LibraryActionUxTest.test_library_loads_ignore_older_responses)",
+    "reason": [
+      "AssertionError: 'const backgroundRequestSeq = useRef(0)' not found in 'import WorkspaceYearRange from \\'../../components/WorkspaceYearRange.jsx\\';\\nimport WorkspaceControls from \\'../../components/WorkspaceControls.jsx\\';\\nimport WorkspaceChrome from \\'../../components/WorkspaceChrome.jsx\\';\\nimport WorkspaceViewActions from \\'../../components/WorkspaceViewActions.jsx\\';\\nimport WorkspaceSelectionBar from \\'../../components/WorkspaceSelectionBar.jsx\\';\\nimport SearchField from \\'../search/Search"
+    ],
+    "classification": "source_text_assertion"
+  },
+  {
+    "test": "FAIL: test_library_refreshes_quietly_for_background_changes (tests.test_library_action_ux.LibraryActionUxTest.test_library_refreshes_quietly_for_background_changes)",
+    "reason": [
+      "AssertionError: 'if (!background && requestSeq === libraryRequestSeq.current) setLoading(false)' not found in 'import Sidebar, { navItems } from \\'./components/Sidebar.jsx\\';\\nimport MediaWorkspace from \\'./features/tv/MediaWorkspace.jsx\\';\\nimport { buildTvStreamTemplateUrl } from \\'./utils/appUtils.js\\';\\nimport {\\n  AlertTriangle,\\n  Bell,\\n  Compass,\\n  Database,\\n  ExternalLink,\\n  Film,\\n  Loader2,\\n  RefreshCw,\\n  Search,\\n  X\\n} from \\'lucide-react\\';\\nimport { lazy, Suspense, useCallbac"
+    ],
+    "classification": "source_text_assertion"
+  },
+  {
+    "test": "FAIL: test_release_watcher_exposes_manual_full_scan_and_ownership_reconciliation (tests.test_library_action_ux.LibraryActionUxTest.test_release_watcher_exposes_manual_full_scan_and_ownership_reconciliation)",
+    "reason": [
+      "AssertionError: \"onScanFollowed={() => executeFollowedOperation('full', { announceCompletion: true })}\" not found in 'import Sidebar, { navItems } from \\'./components/Sidebar.jsx\\';\\nimport MediaWorkspace from \\'./features/tv/MediaWorkspace.jsx\\';\\nimport { buildTvStreamTemplateUrl } from \\'./utils/appUtils.js\\';\\nimport {\\n  AlertTriangle,\\n  Bell,\\n  Compass,\\n  Database,\\n  ExternalLink,\\n  Film,\\n  Loader2,\\n  RefreshCw,\\n  Search,\\n  X\\n} from \\'lucide-react\\';\\nimport { lazy, Suspense, use"
+    ],
+    "classification": "source_text_assertion"
+  }
+]

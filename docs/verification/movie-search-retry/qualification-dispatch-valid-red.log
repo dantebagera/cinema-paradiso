@@ -1,0 +1,21 @@
+test_e_equal_durable_deadlines_dispatch_fifo_despite_conversion_jitter (tests.test_movie_isolated_qualification.MovieIsolatedQualificationTest.test_e_equal_durable_deadlines_dispatch_fifo_despite_conversion_jitter) ... FAIL
+
+======================================================================
+FAIL: test_e_equal_durable_deadlines_dispatch_fifo_despite_conversion_jitter (tests.test_movie_isolated_qualification.MovieIsolatedQualificationTest.test_e_equal_durable_deadlines_dispatch_fifo_despite_conversion_jitter)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\Desktop\cinema paradiso\tests\test_movie_isolated_qualification.py", line 159, in test_e_equal_durable_deadlines_dispatch_fifo_despite_conversion_jitter
+    self.assertEqual(calls, ['A', 'B'])
+AssertionError: Lists differ: ['B', 'A'] != ['A', 'B']
+
+First differing element 0:
+'B'
+'A'
+
+- ['B', 'A']
++ ['A', 'B']
+
+----------------------------------------------------------------------
+Ran 1 test in 0.015s
+
+FAILED (failures=1)

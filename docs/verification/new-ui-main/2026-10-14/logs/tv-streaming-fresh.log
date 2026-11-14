@@ -1,0 +1,8 @@
+
+Running 1 test using 1 worker
+
+(node:49780) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\stream-player.spec.js:81:1 › TV page load clears CP status without changing episode identity or watched state (1.3s)
+
+  1 passed (1.9s)

@@ -1,0 +1,4724 @@
+{
+  "runs": [
+    {
+      "iteration": 1,
+      "acquire": 0.010101199994096532,
+      "release": 0.00985709999804385
+    },
+    {
+      "iteration": 2,
+      "acquire": 0.009818199992878363,
+      "release": 0.009915900009218603
+    },
+    {
+      "iteration": 3,
+      "acquire": 0.009974000000511296,
+      "release": 0.011293700008536689
+    },
+    {
+      "iteration": 4,
+      "acquire": 0.010517700007767417,
+      "release": 0.010235800000373274
+    },
+    {
+      "iteration": 5,
+      "acquire": 0.009964999990188517,
+      "release": 0.009900999997626059
+    },
+    {
+      "iteration": 6,
+      "acquire": 0.00993130001006648,
+      "release": 0.010337100000469945
+    },
+    {
+      "iteration": 7,
+      "acquire": 0.010527800011914223,
+      "release": 0.010376599995652214
+    },
+    {
+      "iteration": 8,
+      "acquire": 0.01010459999088198,
+      "release": 0.009833900010562502
+    },
+    {
+      "iteration": 9,
+      "acquire": 0.009886899992125109,
+      "release": 0.009991500002797693
+    },
+    {
+      "iteration": 10,
+      "acquire": 0.010321800000383519,
+      "release": 0.00999700000102166
+    },
+    {
+      "iteration": 11,
+      "acquire": 0.009794800003874116,
+      "release": 0.009814799996092916
+    },
+    {
+      "iteration": 12,
+      "acquire": 0.009867899992968887,
+      "release": 0.010097300008055754
+    },
+    {
+      "iteration": 13,
+      "acquire": 0.010181700010434724,
+      "release": 0.009876099997200072
+    },
+    {
+      "iteration": 14,
+      "acquire": 0.009904100006679073,
+      "release": 0.009805599998799153
+    },
+    {
+      "iteration": 15,
+      "acquire": 0.010104000000865199,
+      "release": 0.010061100008897483
+    },
+    {
+      "iteration": 16,
+      "acquire": 0.009972699990612455,
+      "release": 0.009691300001577474
+    },
+    {
+      "iteration": 17,
+      "acquire": 0.00977710000006482,
+      "release": 0.010000200010836124
+    },
+    {
+      "iteration": 18,
+      "acquire": 0.010002400013036095,
+      "release": 0.00996599999780301
+    },
+    {
+      "iteration": 19,
+      "acquire": 0.009913100002449937,
+      "release": 0.010198099989793263
+    },
+    {
+      "iteration": 20,
+      "acquire": 0.009831500006839633,
+      "release": 0.009745100003783591
+    },
+    {
+      "iteration": 21,
+      "acquire": 0.009872300011920743,
+      "release": 0.010073500001453795
+    },
+    {
+      "iteration": 22,
+      "acquire": 0.009977699999581091,
+      "release": 0.009879400007775985
+    },
+    {
+      "iteration": 23,
+      "acquire": 0.009879000004730187,
+      "release": 0.00978439999744296
+    },
+    {
+      "iteration": 24,
+      "acquire": 0.010134999989531934,
+      "release": 0.009904700011247769
+    },
+    {
+      "iteration": 25,
+      "acquire": 0.009874600000330247,
+      "release": 0.010018000000854954
+    },
+    {
+      "iteration": 26,
+      "acquire": 0.00996750000922475,
+      "release": 0.009748800002853386
+    },
+    {
+      "iteration": 27,
+      "acquire": 0.00975349999498576,
+      "release": 0.009923299992806278
+    },
+    {
+      "iteration": 28,
+      "acquire": 0.009925600010319613,
+      "release": 0.01008739999087993
+    },
+    {
+      "iteration": 29,
+      "acquire": 0.009933299996191636,
+      "release": 0.009681000010459684
+    },
+    {
+      "iteration": 30,
+      "acquire": 0.009779699990758672,
+      "release": 0.009872700000414625
+    },
+    {
+      "iteration": 31,
+      "acquire": 0.009943600001861341,
+      "release": 0.010119700003997423
+    },
+    {
+      "iteration": 32,
+      "acquire": 0.009642699995310977,
+      "release": 0.009886600004392676
+    },
+    {
+      "iteration": 33,
+      "acquire": 0.009998399997130036,
+      "release": 0.009893800001009367
+    },
+    {
+      "iteration": 34,
+      "acquire": 0.010238599992590025,
+      "release": 0.00973109999904409
+    },
+    {
+      "iteration": 35,
+      "acquire": 0.009747000003699213,
+      "release": 0.009782000008272007
+    },
+    {
+      "iteration": 36,
+      "acquire": 0.010164699997403659,
+      "release": 0.010052500001620501
+    },
+    {
+      "iteration": 37,
+      "acquire": 0.009591399997589178,
+      "release": 0.01016150000214111
+    },
+    {
+      "iteration": 38,
+      "acquire": 0.010016100000939332,
+      "release": 0.014917300009983592
+    },
+    {
+      "iteration": 39,
+      "acquire": 0.012128099988331087,
+      "release": 0.010060300002805889
+    },
+    {
+      "iteration": 40,
+      "acquire": 0.009862000006251037,
+      "release": 0.01003419999324251
+    }
+  ],
+  "events": [
+    {
+      "phase": "sqlite_connect",
+      "during": "setup",
+      "start": 0.0009206000104313716,
+      "seconds": 0.00027319999935571104
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "setup",
+      "start": 0.001196400000480935,
+      "seconds": 0.00014030000602360815
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "setup",
+      "start": 0.0013441000046441332,
+      "seconds": 0.0002069000038318336
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "setup",
+      "start": 0.001552000001538545,
+      "seconds": 0.00035539999953471124
+    },
+    {
+      "phase": "sqlite_executescript",
+      "during": "setup",
+      "start": 0.011435200009145774,
+      "seconds": 0.006819100002758205
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "setup",
+      "start": 0.018258399999467656,
+      "seconds": 0.0030747000128030777
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "setup",
+      "start": 0.021343700005672872,
+      "seconds": 0.0002072000061161816
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "setup",
+      "start": 0.021553200000198558,
+      "seconds": 1.0900010238401592e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "setup",
+      "start": 0.02156459999969229,
+      "seconds": 0.0005348000122467056
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "setup",
+      "start": 0.022105000010924414,
+      "seconds": 8.829998841974884e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "setup",
+      "start": 0.0222150000045076,
+      "seconds": 1.790000533219427e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "setup",
+      "start": 0.02223740000044927,
+      "seconds": 2.2500011255033314e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "setup",
+      "start": 0.02226209999935236,
+      "seconds": 0.005796200013719499
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "setup",
+      "start": 0.028059600008418784,
+      "seconds": 0.0030011999915586784
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "setup",
+      "start": 0.031145900007686578,
+      "seconds": 0.0001314999972237274
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "setup",
+      "start": 0.03127920000406448,
+      "seconds": 8.300004992634058e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "setup",
+      "start": 0.031289200007449836,
+      "seconds": 0.0006407000037143007
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "setup",
+      "start": 0.031937700012349524,
+      "seconds": 2.2799998987466097e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "setup",
+      "start": 0.031964200010406785,
+      "seconds": 1.379998866468668e-05
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "setup",
+      "start": 0.032007900008466095,
+      "seconds": 0.00010609999299049377
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "setup",
+      "start": 0.032128600010764785,
+      "seconds": 0.0002086000022245571
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "setup",
+      "start": 0.03233860000909772,
+      "seconds": 6.100002792663872e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "setup",
+      "start": 0.03234530000190716,
+      "seconds": 0.0005040000105509534
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "setup",
+      "start": 0.03285180000239052,
+      "seconds": 7.789999654050916e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "setup",
+      "start": 0.032937600000877865,
+      "seconds": 1.580000389367342e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "setup",
+      "start": 0.032954800000879914,
+      "seconds": 0.005614800000330433
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "setup",
+      "start": 0.03857110001263209,
+      "seconds": 0.003078599998843856
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "setup",
+      "start": 0.04172170000674669,
+      "seconds": 0.0001314999972237274
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "setup",
+      "start": 0.04185430001234636,
+      "seconds": 6.799993570894003e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "setup",
+      "start": 0.04186219999974128,
+      "seconds": 0.00059710000641644
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "setup",
+      "start": 0.04246590001275763,
+      "seconds": 1.7099999240599573e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "setup",
+      "start": 0.04248690001259092,
+      "seconds": 1.2799995602108538e-05
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "setup",
+      "start": 0.042522800009464845,
+      "seconds": 9.560000034980476e-05
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.04263080000237096,
+      "seconds": 0.0003863000019919127
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.043024400001741014,
+      "seconds": 0.0001934000028995797
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.04321930000151042,
+      "seconds": 6.100002792663872e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.04322600000887178,
+      "seconds": 0.0004847999953199178
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.04371360001096036,
+      "seconds": 8.209999941755086e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.04379750000953209,
+      "seconds": 1.0599993402138352e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.043827300003613345,
+      "seconds": 9.60000033956021e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.0438381000130903,
+      "seconds": 0.005717299995012581
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.04955740000877995,
+      "seconds": 0.0028997000044910237
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.05247120000422001,
+      "seconds": 0.00025290000485256314
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.05273260000103619,
+      "seconds": 0.00018610000552143902
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.05292500001087319,
+      "seconds": 0.00017980000120587647
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.05310640000971034,
+      "seconds": 8.499991963617504e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.053115500006242655,
+      "seconds": 0.0005156999977771193
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.05363390001002699,
+      "seconds": 8.469999011140317e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.053720100011560135,
+      "seconds": 0.005601299999398179
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.05932250000478234,
+      "seconds": 0.002996099996380508
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.06233380000048783,
+      "seconds": 0.00024649999977555126
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.06259140001202468,
+      "seconds": 0.0001947999990079552
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.06279280000308063,
+      "seconds": 0.000192599996807985
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.0629870000120718,
+      "seconds": 8.799994247965515e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.06299650001164991,
+      "seconds": 0.0005191999953240156
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.06351880000147503,
+      "seconds": 7.900000491645187e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.0635997000063071,
+      "seconds": 1.0000003385357559e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.06362770000123419,
+      "seconds": 9.499999578110874e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.06363830000918824,
+      "seconds": 0.005620199997792952
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.06925990000308957,
+      "seconds": 0.0029215999966254458
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.07219150000310037,
+      "seconds": 0.0002116999967256561
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.07240950000414159,
+      "seconds": 0.00025270000332966447
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.07266900000104215,
+      "seconds": 0.00019469999824650586
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.07286510000994895,
+      "seconds": 7.299997378140688e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.07287290001113433,
+      "seconds": 0.0005183999892324209
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.07339440000941977,
+      "seconds": 7.989999721758068e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.07347550000122283,
+      "seconds": 0.005702300011762418
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.07917970001290087,
+      "seconds": 0.0029020999936619774
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.08209480000368785,
+      "seconds": 0.00022309999621938914
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.08232760000100825,
+      "seconds": 0.00019710000196937472
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.08253060000424739,
+      "seconds": 0.000182400006451644
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.08271450000756886,
+      "seconds": 9.60000033956021e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.0827248999994481,
+      "seconds": 0.0004944000102113932
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.0832217999995919,
+      "seconds": 8.080000407062471e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.08330410000053234,
+      "seconds": 1.0000003385357559e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.083331800007727,
+      "seconds": 1.0000003385357559e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.08334290000493638,
+      "seconds": 0.005764300003647804
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.08911000000080094,
+      "seconds": 0.0029334999999264255
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.09205880000081379,
+      "seconds": 0.00023689999943599105
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.09230180000304244,
+      "seconds": 0.00019190000602975488
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.09249980001186486,
+      "seconds": 0.00018540000019129366
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.09268680000968743,
+      "seconds": 1.0899995686486363e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.09269820000918116,
+      "seconds": 0.0005120999994687736
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.09321230000932701,
+      "seconds": 9.229998977389187e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.09330620001128409,
+      "seconds": 0.005554099989240058
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.09886230000120122,
+      "seconds": 0.0044618000101763755
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.1033414000121411,
+      "seconds": 0.00024679998750798404
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.10359930001141038,
+      "seconds": 0.0001841999910539016
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.10378970000601839,
+      "seconds": 0.00018570000247564167
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.10397720000764821,
+      "seconds": 1.1399999493733048e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.10398920001171064,
+      "seconds": 0.0005163999885553494
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.10450860000855755,
+      "seconds": 8.430000161752105e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.1045944000070449,
+      "seconds": 9.900002623908222e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.10462310000730213,
+      "seconds": 1.0000003385357559e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.10463420000451151,
+      "seconds": 0.005836700001964346
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.11047330001019873,
+      "seconds": 0.0033634999999776483
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.113855000003241,
+      "seconds": 0.0002539999986765906
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.11411730000691023,
+      "seconds": 0.00018459999409969896
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.11430830000608694,
+      "seconds": 0.00018960000306833535
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.11450020001211669,
+      "seconds": 1.1799987987615168e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.11451270000543445,
+      "seconds": 0.0005359000060707331
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.1150610000040615,
+      "seconds": 9.519999730400741e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.11515779999899678,
+      "seconds": 0.00584050000179559
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.12099990001297556,
+      "seconds": 0.003109299999778159
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.12412190000759438,
+      "seconds": 0.0002229999954579398
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.12435399999958463,
+      "seconds": 0.00019130000146105886
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.1245517000061227,
+      "seconds": 0.00020619999850168824
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.12475950000225566,
+      "seconds": 9.60000033956021e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.12476970000716392,
+      "seconds": 0.0006737999938195571
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.1254499000060605,
+      "seconds": 8.480000542476773e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.12553650001063943,
+      "seconds": 1.0099989594891667e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.1255690000107279,
+      "seconds": 1.2299991794861853e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.1255827999993926,
+      "seconds": 0.0055745000136084855
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.13115890001063235,
+      "seconds": 0.0029042999958619475
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.13407430000370368,
+      "seconds": 0.0002384999970672652
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.1343191000050865,
+      "seconds": 0.0001883999939309433
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.1345125000079861,
+      "seconds": 0.00017389999993611127
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.13468760000250768,
+      "seconds": 6.700007361359894e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.13469489999988582,
+      "seconds": 0.0005271000118227676
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.1352241000131471,
+      "seconds": 7.809999806340784e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.1353036000073189,
+      "seconds": 0.0056640999973751605
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.14096900000004098,
+      "seconds": 0.0030017000099178404
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.14398430001165252,
+      "seconds": 0.00022879999596625566
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.14422190000186674,
+      "seconds": 0.00018440000712871552
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.14441200000874233,
+      "seconds": 0.0001799000019673258
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.14459350000834092,
+      "seconds": 1.0100004146806896e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.14460430000326596,
+      "seconds": 0.0005291999987093732
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.14513600000645965,
+      "seconds": 7.850000110920519e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.14521580000291578,
+      "seconds": 9.399998816661537e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.14524390001315624,
+      "seconds": 9.199997293762863e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.14525430000503547,
+      "seconds": 0.0058465000038268045
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.15110220000497065,
+      "seconds": 0.002824399998644367
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.15393620000395458,
+      "seconds": 0.00021090000518597662
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.15415349999966566,
+      "seconds": 0.0001990000018849969
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.15435820000129752,
+      "seconds": 0.00018529999942984432
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.1545448000106262,
+      "seconds": 8.099988917820156e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.15455340000335127,
+      "seconds": 0.0005241000035312027
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.15507990001060534,
+      "seconds": 8.420000085607171e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.1551655000075698,
+      "seconds": 0.005890400003409013
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.1610584000009112,
+      "seconds": 0.003170500000123866
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.16424370001186617,
+      "seconds": 0.0002395999908912927
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.16449310000461992,
+      "seconds": 0.00019279999833088368
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.16469210000650492,
+      "seconds": 0.00018879999697674066
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.16488229999959003,
+      "seconds": 1.060000795405358e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.16489350001211278,
+      "seconds": 0.0005204999906709418
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.1654172000125982,
+      "seconds": 8.13999940874055e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.16550010000355542,
+      "seconds": 9.700001101009548e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.16552740000770427,
+      "seconds": 1.0200004908256233e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.16553870000643656,
+      "seconds": 0.006284400005824864
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.17182590000447817,
+      "seconds": 0.002962900005513802
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.17479910000110976,
+      "seconds": 0.00021520000882446766
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.17502049999893643,
+      "seconds": 0.00022770000214222819
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.17525350001233164,
+      "seconds": 0.00018089999502990395
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.17543590000423137,
+      "seconds": 6.999995093792677e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.17544350000389386,
+      "seconds": 0.0005139999993843958
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.17595950000395533,
+      "seconds": 8.240000170189887e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.17604340000252705,
+      "seconds": 0.005830000009154901
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.18187500000931323,
+      "seconds": 0.003173599994624965
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.18507740000495687,
+      "seconds": 0.00031230000604409724
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.1853996999998344,
+      "seconds": 0.00021209999977145344
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.18561780000163708,
+      "seconds": 0.00020110000332351774
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.18582050000259187,
+      "seconds": 1.0000003385357559e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.18583110001054592,
+      "seconds": 0.0005322999932104722
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.18636640001204796,
+      "seconds": 7.959999493323267e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.18644750000385102,
+      "seconds": 9.800001862458885e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.18647700001019984,
+      "seconds": 9.60000033956021e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.18648770000436343,
+      "seconds": 0.005853800001204945
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.1923428000009153,
+      "seconds": 0.002923500011092983
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.19527840000228025,
+      "seconds": 0.0002195999986724928
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.19550359999993816,
+      "seconds": 0.00018700001237448305
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.19569580000825226,
+      "seconds": 0.00017430000298190862
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.19587150000734255,
+      "seconds": 7.199996616691351e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.19587920000776649,
+      "seconds": 0.0005129000055603683
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.1963953000085894,
+      "seconds": 8.109999180305749e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.1964777000102913,
+      "seconds": 0.005725199996959418
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.2022041000018362,
+      "seconds": 0.0029126000008545816
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.2051248000061605,
+      "seconds": 0.00020650000078603625
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.2053388000058476,
+      "seconds": 0.00017660000594332814
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.2055203000054462,
+      "seconds": 0.0001770999951986596
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.2056987000105437,
+      "seconds": 6.599992047995329e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.20570580000639893,
+      "seconds": 0.00048659999447409064
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.2062008000066271,
+      "seconds": 7.280000136233866e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.20627510000485927,
+      "seconds": 9.700001101009548e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.20630080001137685,
+      "seconds": 8.799994247965515e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.20631050001247786,
+      "seconds": 0.005769399998825975
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.2120815000089351,
+      "seconds": 0.002910900002461858
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.21500180001021363,
+      "seconds": 0.00021859999105799943
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.2152261000010185,
+      "seconds": 0.00019370000518392771
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.21542500000214204,
+      "seconds": 0.00020960000983905047
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.21563590000732802,
+      "seconds": 7.399998139590025e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.21564380000927486,
+      "seconds": 0.0005329999985406175
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.2161793000122998,
+      "seconds": 8.129999332595617e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.21626200000173412,
+      "seconds": 0.005727600000682287
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.22199120000004768,
+      "seconds": 0.002973300011944957
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.2249774000083562,
+      "seconds": 0.00023380000493489206
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.22522100000060163,
+      "seconds": 0.0001799000019673258
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.22540650000155438,
+      "seconds": 0.00017929999739862978
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.22558730001037475,
+      "seconds": 8.199989679269493e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.22559620000538416,
+      "seconds": 0.0005052000051364303
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.22610420000273734,
+      "seconds": 7.730000652372837e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.22618290000536945,
+      "seconds": 9.800001862458885e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.22621100000105798,
+      "seconds": 1.1800002539530396e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.2262240000127349,
+      "seconds": 0.006077899990486912
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.23230320001312066,
+      "seconds": 0.0029968999879201874
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.2353094999998575,
+      "seconds": 0.00022650000755675137
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.23554190000868402,
+      "seconds": 0.00018149999959859997
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.23572820000117645,
+      "seconds": 0.0001795999996829778
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.23590930001228116,
+      "seconds": 7.099995855242014e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.2359170000127051,
+      "seconds": 0.0005440999957500026
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.23646310000913218,
+      "seconds": 8.13999940874055e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.23654610000085086,
+      "seconds": 0.005665200005751103
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.24221250000118744,
+      "seconds": 0.00309880000713747
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.24532040000485722,
+      "seconds": 0.00021230000129435211
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.24553980000200681,
+      "seconds": 0.0001731000083964318
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.24571780000405852,
+      "seconds": 0.00016999999934341758
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.24588900001253933,
+      "seconds": 7.700000423938036e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.2458974000037415,
+      "seconds": 0.0005398000066634268
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.24643970000033733,
+      "seconds": 7.320000440813601e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.24651430000085384,
+      "seconds": 9.2999980552122e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.24654040001041722,
+      "seconds": 9.2999980552122e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.24655080000229646,
+      "seconds": 0.00561970000853762
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.25217230000998825,
+      "seconds": 0.002913699994678609
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.25509710000187624,
+      "seconds": 0.00023240000882651657
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.2553351000096882,
+      "seconds": 0.00018649999401532114
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.2555267999996431,
+      "seconds": 0.00017750001279637218
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.2557056000077864,
+      "seconds": 7.700000423938036e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.25571390001277905,
+      "seconds": 0.0005350999999791384
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.25625099999888334,
+      "seconds": 8.060000254772604e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.2563331000128528,
+      "seconds": 0.0057111999922199175
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.2620454999996582,
+      "seconds": 0.0028738000110024586
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.26493020000634715,
+      "seconds": 0.00021359999664127827
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.2651522000087425,
+      "seconds": 0.00017749999824445695
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.2653347000014037,
+      "seconds": 0.00018260000797454268
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.26552000000083353,
+      "seconds": 7.90000194683671e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.26552850000734907,
+      "seconds": 0.0005323999939719215
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.26606370000808965,
+      "seconds": 7.769999501761049e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.26614279999921564,
+      "seconds": 9.900002623908222e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.26617020000412595,
+      "seconds": 9.199997293762863e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.2661804000090342,
+      "seconds": 0.005666500001098029
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.2718485000077635,
+      "seconds": 0.0029608000040752813
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.27481750000151806,
+      "seconds": 0.00019710000196937472
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.2750203000032343,
+      "seconds": 0.0002055000077234581
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.2752323000022443,
+      "seconds": 0.0002091000060318038
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.2754430000059074,
+      "seconds": 6.400005077011883e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.2754499000002397,
+      "seconds": 0.0005307000101311132
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.2759828000125708,
+      "seconds": 7.899999036453664e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.2760631000128342,
+      "seconds": 0.005902799995965324
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.2819688000017777,
+      "seconds": 0.0029063999973004684
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.284888400012278,
+      "seconds": 0.00022239999088924378
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.2851197999989381,
+      "seconds": 0.0001903000083984807
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.28531580000708345,
+      "seconds": 0.00019489999976940453
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.2855120000021998,
+      "seconds": 1.0100004146806896e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.28552280001167674,
+      "seconds": 0.0005360999930417165
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.28606180001224857,
+      "seconds": 8.169999637175351e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.2861449000047287,
+      "seconds": 1.0200004908256233e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.28617240001040045,
+      "seconds": 9.900002623908222e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.28618350000760984,
+      "seconds": 0.0057234999985666946
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.29190850000304636,
+      "seconds": 0.003159100000630133
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.2950767000002088,
+      "seconds": 0.00021910000941716135
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.29530110000632703,
+      "seconds": 0.00018829999316949397
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.2954945000092266,
+      "seconds": 0.00018429999181535095
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.29568020001170225,
+      "seconds": 6.599992047995329e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.29568740000831895,
+      "seconds": 0.0005099999980302528
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.2961993000062648,
+      "seconds": 7.959999493323267e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.2962802000110969,
+      "seconds": 0.00564269999449607
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.30192410000017844,
+      "seconds": 0.003022800010512583
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.3049553000018932,
+      "seconds": 0.00021610000112559646
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.30517890000191983,
+      "seconds": 0.000182400006451644
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.30536620000202674,
+      "seconds": 0.00017890000890474766
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.305547399999341,
+      "seconds": 7.200011168606579e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.30555509999976493,
+      "seconds": 0.0005300000048009679
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.30608810001285747,
+      "seconds": 6.979999307077378e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.3061591000005137,
+      "seconds": 9.200011845678091e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.30618450000474695,
+      "seconds": 9.2999980552122e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.30619480001041666,
+      "seconds": 0.005690699996193871
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.3118875000072876,
+      "seconds": 0.002951799993752502
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.3148520000104327,
+      "seconds": 0.000225499999942258
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.31508410000242293,
+      "seconds": 0.00018680001085158437
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.31527630001073703,
+      "seconds": 0.00018859999545384198
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.31546630000229925,
+      "seconds": 8.300004992634058e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.3154752000118606,
+      "seconds": 0.0005056999943917617
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.31598320000921376,
+      "seconds": 8.369999704882503e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.31606830000237096,
+      "seconds": 0.0056607000005897135
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.32173020001209807,
+      "seconds": 0.0028975999885005876
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.3246365000086371,
+      "seconds": 0.00024619999749120325
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.3248906000080751,
+      "seconds": 0.00018799999088514596
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.32508390001021326,
+      "seconds": 0.00017579999985173345
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.32526110000617336,
+      "seconds": 6.799993570894003e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.3252684000035515,
+      "seconds": 0.0005250999965937808
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.32579650000843685,
+      "seconds": 7.579999510198832e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.32587359999888577,
+      "seconds": 9.200011845678091e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.3258994000061648,
+      "seconds": 9.199997293762863e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.32590960001107305,
+      "seconds": 0.005926400001044385
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.33183710000594147,
+      "seconds": 0.002935800002887845
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.33478119999927003,
+      "seconds": 0.00020810001296922565
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.33499510001274757,
+      "seconds": 0.00018309999722987413
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.33518259999982547,
+      "seconds": 0.00017290000687353313
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.3353569000028074,
+      "seconds": 6.200003554113209e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.33536360001016874,
+      "seconds": 0.0005155999970156699
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.3358819000131916,
+      "seconds": 7.699998968746513e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.33596050000051036,
+      "seconds": 0.005914100009249523
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.3418767000111984,
+      "seconds": 0.002920499988249503
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.34481190000951756,
+      "seconds": 0.00023769999097567052
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.345058600010816,
+      "seconds": 0.00018529999942984432
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.3452500000130385,
+      "seconds": 0.0001804999919841066
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.3454321000026539,
+      "seconds": 9.700001101009548e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.34544230000756215,
+      "seconds": 0.0005318000039551407
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.34597710000525694,
+      "seconds": 7.999999797903001e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.34605849999934435,
+      "seconds": 9.800001862458885e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.3460864000080619,
+      "seconds": 9.900002623908222e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.3460975000052713,
+      "seconds": 0.0056610000028740615
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.3517598000034923,
+      "seconds": 0.0030420999974012375
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.3548130000126548,
+      "seconds": 0.00021239998750388622
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.3550309999991441,
+      "seconds": 0.000182100004167296
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.35521790001075715,
+      "seconds": 0.00018139999883715063
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.3554005000041798,
+      "seconds": 8.100003469735384e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.3554092000122182,
+      "seconds": 0.0005387999990489334
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.35594990001118276,
+      "seconds": 8.349999552592635e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.3560347000020556,
+      "seconds": 0.005629999999655411
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.36166600001160987,
+      "seconds": 0.002821999994921498
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.3644975000061095,
+      "seconds": 0.00021860000560991466
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.36472360001062043,
+      "seconds": 0.00018649999401532114
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.3649149000120815,
+      "seconds": 0.0001846999948611483
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.3651008000015281,
+      "seconds": 7.200011168606579e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.36510850000195205,
+      "seconds": 0.0005257000011624768
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.36563670000759885,
+      "seconds": 6.999999459367245e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.3657081000128528,
+      "seconds": 9.69998654909432e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.3657345000101486,
+      "seconds": 9.399998816661537e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.36574510000355076,
+      "seconds": 0.005604699996183626
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.3713513000111561,
+      "seconds": 0.002930899994680658
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.3742911000008462,
+      "seconds": 0.00020450000010896474
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.3745006000099238,
+      "seconds": 0.00017869999282993376
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.3746839000086766,
+      "seconds": 0.00017339999612886459
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.37485860000015236,
+      "seconds": 7.300011930055916e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.37486640000133775,
+      "seconds": 0.0005210000090301037
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.3753894000110449,
+      "seconds": 8.669999078847468e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.3754776999994647,
+      "seconds": 0.005787400004919618
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.38126750000810716,
+      "seconds": 0.002972499991301447
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.3842550000117626,
+      "seconds": 0.00023969999165274203
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.38450440000451636,
+      "seconds": 0.00019150000298395753
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.3847021000110544,
+      "seconds": 0.0001841999910539016
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.38488800000050105,
+      "seconds": 9.800001862458885e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.3848984000069322,
+      "seconds": 0.0005581000004895031
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.3854596000019228,
+      "seconds": 8.30000062705949e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.3855440000043018,
+      "seconds": 9.700001101009548e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.38557220000075176,
+      "seconds": 9.900002623908222e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.3855832000117516,
+      "seconds": 0.005724199989344925
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.39130909999948926,
+      "seconds": 0.002944700012449175
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.3942673000128707,
+      "seconds": 0.00023239999427460134
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.39450680000300054,
+      "seconds": 0.00019449999672360718
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.39470730000175536,
+      "seconds": 0.00018570000247564167
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.39489480000338517,
+      "seconds": 9.700001101009548e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.3949051000090549,
+      "seconds": 0.0005607999919448048
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.3954699000023538,
+      "seconds": 9.329999738838524e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.39556470001116395,
+      "seconds": 0.005742699999245815
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.4013087000057567,
+      "seconds": 0.002931800001533702
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.4042502000083914,
+      "seconds": 0.00021559999731834978
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.4044735000061337,
+      "seconds": 0.00018360000103712082
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.4046624000038719,
+      "seconds": 0.00017949999892152846
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.4048435000004247,
+      "seconds": 7.599999662488699e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.40485170000465587,
+      "seconds": 0.0005314000009093434
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.40538560001004953,
+      "seconds": 7.359999290201813e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.4054605999990599,
+      "seconds": 1.2300006346777081e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.4054900000046473,
+      "seconds": 9.499999578110874e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.40550060001260135,
+      "seconds": 0.005575499992119148
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.4110774000000674,
+      "seconds": 0.003068400008487515
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.41415550000965595,
+      "seconds": 0.00022539999918080866
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.414386900010868,
+      "seconds": 0.000199099988094531
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.41459160001249984,
+      "seconds": 0.00017829998978413641
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.41477149999991525,
+      "seconds": 8.200004231184721e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.4147802000079537,
+      "seconds": 0.0005574999959208071
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.4153396000037901,
+      "seconds": 8.440000237897038e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.41542540000227746,
+      "seconds": 0.005683299998054281
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.42110990000946913,
+      "seconds": 0.003241999991587363
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.4243641000066418,
+      "seconds": 0.00021440000273287296
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.4245872000028612,
+      "seconds": 0.0001773999974830076
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.424770500001614,
+      "seconds": 0.00017670000670477748
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.42494860000442713,
+      "seconds": 8.400005754083395e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.42495749999943655,
+      "seconds": 0.0005310000124154612
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.42549110000254586,
+      "seconds": 7.720000576227903e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.42556980000517797,
+      "seconds": 9.499999578110874e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.4255976999993436,
+      "seconds": 9.700001101009548e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.42560850000882056,
+      "seconds": 0.005734399994253181
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.43134410001221113,
+      "seconds": 0.0028522999928100035
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.43420530000003055,
+      "seconds": 0.00020760000916197896
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.4344184000074165,
+      "seconds": 0.0001914000022225082
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.4346148000040557,
+      "seconds": 0.00017980000120587647
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.4347959000006085,
+      "seconds": 6.600006599910557e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.4348030000110157,
+      "seconds": 0.0005332000000635162
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.4353383000125177,
+      "seconds": 8.030000026337802e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.4354198000073666,
+      "seconds": 0.005633399996440858
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.4410543000121834,
+      "seconds": 0.002880499989259988
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.4439458000124432,
+      "seconds": 0.00021189999824855477
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.4441650000080699,
+      "seconds": 0.00017719999596010894
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.4443475000007311,
+      "seconds": 0.0001728000061120838
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.4445214000006672,
+      "seconds": 8.500006515532732e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.44453040001099,
+      "seconds": 0.0005533999938052148
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.4450863000092795,
+      "seconds": 7.650000043213367e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.44516430000658147,
+      "seconds": 9.800001862458885e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.44519060000311583,
+      "seconds": 9.60000033956021e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.4452014000125928,
+      "seconds": 0.00572709999687504
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.45093210000777617,
+      "seconds": 0.00287209999805782
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.4538147000130266,
+      "seconds": 0.00021729999571107328
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.45403790001000743,
+      "seconds": 0.0002032999909715727
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.454246500012232,
+      "seconds": 0.00017979998665396124
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.45442770000954624,
+      "seconds": 7.599999662488699e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.454435800013016,
+      "seconds": 0.0005028999876230955
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.45494070000131615,
+      "seconds": 8.100000559352338e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.45502310000301804,
+      "seconds": 0.0059308000054443255
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.46095510000304785,
+      "seconds": 0.002942899998743087
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.4639066000090679,
+      "seconds": 0.00019869999960064888
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.4641128000075696,
+      "seconds": 0.0002108000044245273
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.4643291000102181,
+      "seconds": 0.00018039999122265726
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.4645110000128625,
+      "seconds": 7.700000423938036e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.46451920000254177,
+      "seconds": 0.000549400007002987
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.46507090001250617,
+      "seconds": 7.419999747071415e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.46514650000608526,
+      "seconds": 9.800001862458885e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.4651728000026196,
+      "seconds": 9.2999980552122e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.4651832000090508,
+      "seconds": 0.0056791999959386885
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.4708637000003364,
+      "seconds": 0.003007400009664707
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.47388250000949483,
+      "seconds": 0.00020319999021012336
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.47409100001095794,
+      "seconds": 0.00018459999409969896
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.4742805000132648,
+      "seconds": 0.00016969999705906957
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.4744513000041479,
+      "seconds": 6.400005077011883e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.47445810001227073,
+      "seconds": 0.0005254999996395782
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.4749856000125874,
+      "seconds": 7.729999197181314e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.47506430000066757,
+      "seconds": 0.005647000012686476
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.48071320001326967,
+      "seconds": 0.003027799990377389
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.4837512000085553,
+      "seconds": 0.0002128999913111329
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.4839722000033362,
+      "seconds": 0.00017719999596010894
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.48415440000826493,
+      "seconds": 0.00017339999612886459
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.48432899999897927,
+      "seconds": 7.50001345295459e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.484337100002449,
+      "seconds": 0.0005200000014156103
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.48485940000682604,
+      "seconds": 7.409999670926481e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.4849348999996437,
+      "seconds": 9.60000033956021e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.4849615000130143,
+      "seconds": 9.399998816661537e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.4849722000071779,
+      "seconds": 0.005780199993751012
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.4907536000100663,
+      "seconds": 0.0028734999941661954
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.4936349000054179,
+      "seconds": 0.00021070000366307795
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.4938510000065435,
+      "seconds": 0.0001812999980757013
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.4940367000090191,
+      "seconds": 0.00017159999697469175
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.4942092999990564,
+      "seconds": 6.200003554113209e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.49421600000641774,
+      "seconds": 0.0005321000062394887
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.4947503000003053,
+      "seconds": 7.670000195503235e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.49482830001215916,
+      "seconds": 0.005630399988149293
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.5004603000124916,
+      "seconds": 0.0029349999967962503
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.5034073000133503,
+      "seconds": 0.00022229999012779444
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.5036380000092322,
+      "seconds": 0.00019799999427050352
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.5038419000047725,
+      "seconds": 0.00018509999790694565
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.5040281000110554,
+      "seconds": 8.099988917820156e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.5040368000045419,
+      "seconds": 0.0005226000066613778
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.5045615000126418,
+      "seconds": 7.659998664166778e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.5046395000099437,
+      "seconds": 1.0000003385357559e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.5046761000121478,
+      "seconds": 9.899988071992993e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.5046871000085957,
+      "seconds": 0.005870900000445545
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.5105598000081955,
+      "seconds": 0.002950900001451373
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.5135252000036417,
+      "seconds": 0.00024000000848900527
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.5137736000033328,
+      "seconds": 0.00020589999621734023
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.5139854000008199,
+      "seconds": 0.00018709999858401716
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.5141737000085413,
+      "seconds": 1.0100004146806896e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.5141843000019435,
+      "seconds": 0.0005336000031093135
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.5147199000057299,
+      "seconds": 8.600000001024455e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.5148074000026099,
+      "seconds": 0.005662199997459538
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.5204709000099683,
+      "seconds": 0.002969099994516
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.5234496000048239,
+      "seconds": 0.00022190000163391232
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.5236790000053588,
+      "seconds": 0.00017850000585895032
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.5238628000079188,
+      "seconds": 0.00017339999612886459
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.5240374000131851,
+      "seconds": 7.699985872022808e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.5240456000028644,
+      "seconds": 0.0005034000059822574
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.524551300011808,
+      "seconds": 7.369999366346747e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.5246266000031028,
+      "seconds": 9.900002623908222e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.5246534000034444,
+      "seconds": 9.199997293762863e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.5246637000091141,
+      "seconds": 0.005622999990009703
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.530288300011307,
+      "seconds": 0.0030484000017168
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.5333458000095561,
+      "seconds": 0.00020260000019334257
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.5335539000079734,
+      "seconds": 0.00017630000365898013
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.533734500000719,
+      "seconds": 0.00018510001245886087
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.5339209000085248,
+      "seconds": 9.399998816661537e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.5339308000111487,
+      "seconds": 0.0005434999911813065
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.5344764000037685,
+      "seconds": 7.999999797903001e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.5345577000116464,
+      "seconds": 0.005720799992559478
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.5402797000133432,
+      "seconds": 0.0030279999919002876
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.5433190000039758,
+      "seconds": 0.00024670000129844993
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.5435743000125512,
+      "seconds": 0.00017970000044442713
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.543760000000475,
+      "seconds": 0.00018200000340584666
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.5439432000130182,
+      "seconds": 9.099996532313526e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.5439528999995673,
+      "seconds": 0.0005086000019218773
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.544463900005212,
+      "seconds": 7.740000728517771e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.5445428000093671,
+      "seconds": 9.499999578110874e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.5445700000127545,
+      "seconds": 9.399998816661537e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.5445806000061566,
+      "seconds": 0.005757299994002096
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.5503392000100575,
+      "seconds": 0.0029667999915545806
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.5533173000003444,
+      "seconds": 0.00021850000484846532
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.5535422000102699,
+      "seconds": 0.0002125000028172508
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.5537599000090268,
+      "seconds": 0.00017649999062996358
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.5539380000118399,
+      "seconds": 7.700000423938036e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.5539462000015192,
+      "seconds": 0.0005812000017613173
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.5545296000054805,
+      "seconds": 8.280000474769622e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.554613900007098,
+      "seconds": 0.005542900005821139
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.5601582000090275,
+      "seconds": 0.0029101999971317127
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.563078500010306,
+      "seconds": 0.00020619999850168824
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.5632923000084702,
+      "seconds": 0.00020009999570902437
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.5634976000001188,
+      "seconds": 0.00017769999976735562
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.5636765000090236,
+      "seconds": 6.999995093792677e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.5636840000079246,
+      "seconds": 0.0005146000039530918
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.564201300003333,
+      "seconds": 7.249999907799065e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.5642752000130713,
+      "seconds": 9.899988071992993e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.5643019000126515,
+      "seconds": 9.499999578110874e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.5643125000060536,
+      "seconds": 0.005611200002022088
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.5699250000034226,
+      "seconds": 0.00289580000389833
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.5728326000098605,
+      "seconds": 0.00020769999537151307
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.573045600001933,
+      "seconds": 0.0001849999971454963
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.5732355000072857,
+      "seconds": 0.00019449999672360718
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.5734314000001177,
+      "seconds": 6.800008122809231e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.5734387000120478,
+      "seconds": 0.0004985999985365197
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.5739396999997552,
+      "seconds": 7.700000423938036e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.574017900013132,
+      "seconds": 0.005666299999575131
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.5796864000003552,
+      "seconds": 0.0030319000070448965
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.5827327000006335,
+      "seconds": 0.00023010000586509705
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.582971700001508,
+      "seconds": 0.00018110001110471785
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.5831592000031378,
+      "seconds": 0.00017840000509750098
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.5833408000034979,
+      "seconds": 1.0100004146806896e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.5833515000122134,
+      "seconds": 0.0005237999866949394
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.583878100005677,
+      "seconds": 8.120000711642206e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.5839606000081403,
+      "seconds": 9.900002623908222e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.5839887000038289,
+      "seconds": 9.800001862458885e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.5839997000002768,
+      "seconds": 0.005697800006601028
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.5896991000045091,
+      "seconds": 0.002965899999253452
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.5926755000109551,
+      "seconds": 0.00021610000112559646
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.59289759999956,
+      "seconds": 0.00019890000112354755
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.5931018000119366,
+      "seconds": 0.00018209998961538076
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.5932853000122122,
+      "seconds": 7.299997378140688e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.5932934000011301,
+      "seconds": 0.0005119999987073243
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.5938077000027988,
+      "seconds": 8.230000094044954e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.5938915000006091,
+      "seconds": 0.005921400006627664
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.5998140000010608,
+      "seconds": 0.0029522000113502145
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.6027748000051361,
+      "seconds": 0.00020360000780783594
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.6029864000011003,
+      "seconds": 0.00018000000272877514
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.6031714000127977,
+      "seconds": 0.00017029998707585037
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.6033428000082495,
+      "seconds": 6.100002792663872e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.6033494000002975,
+      "seconds": 0.0005000000091968104
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.6038518000132171,
+      "seconds": 7.939999341033399e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.6039325000019744,
+      "seconds": 9.399998816661537e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.6039594000030775,
+      "seconds": 9.700001101009548e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.6039703000133159,
+      "seconds": 0.005735999991884455
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.609708000003593,
+      "seconds": 0.002980400007800199
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.6127015000092797,
+      "seconds": 0.00021279999054968357
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.6129198000126053,
+      "seconds": 0.00018569998792372644
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.613110800011782,
+      "seconds": 0.0001750999945215881
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.6132870000001276,
+      "seconds": 8.600007276982069e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.6132961000112118,
+      "seconds": 0.0005277999880490825
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.6138261000014609,
+      "seconds": 8.350001007784158e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.6139111000084085,
+      "seconds": 0.005536199998459779
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.6194485000014538,
+      "seconds": 0.002888100003474392
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.6223485000082292,
+      "seconds": 0.0002462999982526526
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.6226025000069058,
+      "seconds": 0.0002077999961329624
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.6228155999997398,
+      "seconds": 0.000178700007381849
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.6229954000009457,
+      "seconds": 7.90000194683671e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.6230039000074612,
+      "seconds": 0.0005247999943094328
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.623531000004732,
+      "seconds": 7.470000127796084e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.6236070000013569,
+      "seconds": 1.0200004908256233e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.6236334999994142,
+      "seconds": 9.900002623908222e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.6236444000096526,
+      "seconds": 0.005663599993567914
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.6293092000123579,
+      "seconds": 0.0028485999937402084
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.6321664000133751,
+      "seconds": 0.00021019999985583127
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.6323820000106934,
+      "seconds": 0.00017439998919144273
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.6325609000050463,
+      "seconds": 0.00018109999655280262
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.6327433000114979,
+      "seconds": 6.299989763647318e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.6327502000058303,
+      "seconds": 0.0004914000019198284
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.6332438000099501,
+      "seconds": 8.579999848734587e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.6333311000053072,
+      "seconds": 0.005686100004822947
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.6390184000047157,
+      "seconds": 0.003010500004165806
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.6420377000031294,
+      "seconds": 0.00021150000975467265
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.6422565000102622,
+      "seconds": 0.00021779999951831996
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.6424808000010671,
+      "seconds": 0.00021840000408701599
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.6427003999997396,
+      "seconds": 6.700007361359894e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.6427076000109082,
+      "seconds": 0.0005290999979479238
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.6432389000110561,
+      "seconds": 7.359999290201813e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.6433141000015894,
+      "seconds": 1.0000003385357559e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.6433400000096299,
+      "seconds": 9.499999578110874e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.643350600003032,
+      "seconds": 0.005680900008883327
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.6490328000072623,
+      "seconds": 0.0029199999989941716
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.651966600009473,
+      "seconds": 0.00022819999139755964
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.6522010000044247,
+      "seconds": 0.00018060000729747117
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.6523871000099462,
+      "seconds": 0.00019159998919349164
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.652579900008277,
+      "seconds": 9.499999578110874e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.6525900000124238,
+      "seconds": 0.0005659999878844246
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.6531583000032697,
+      "seconds": 8.800000068731606e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.6532475999993039,
+      "seconds": 0.005779500002972782
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.6590284000121756,
+      "seconds": 0.003046300000278279
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.6620859000104247,
+      "seconds": 0.00022799998987466097
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.6623221000045305,
+      "seconds": 0.00017749999824445695
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.6625046000117436,
+      "seconds": 0.00017980000120587647
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.6626878000097349,
+      "seconds": 7.800001185387373e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.6626962000009371,
+      "seconds": 0.0005033000052208081
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.6632023000129266,
+      "seconds": 7.429999823216349e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.6632780000072671,
+      "seconds": 9.399998816661537e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.66330420000304,
+      "seconds": 9.199997293762863e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.6633145000087097,
+      "seconds": 0.005546599990339018
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.6688624000089476,
+      "seconds": 0.0028768999909516424
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.6717496000055689,
+      "seconds": 0.00020959999528713524
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.67196469999908,
+      "seconds": 0.00017160001152660698
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.6721409000019776,
+      "seconds": 0.0001914000022225082
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.6723338000010699,
+      "seconds": 6.700007361359894e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.6723410000122385,
+      "seconds": 0.0005369999998947605
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.6728801999997813,
+      "seconds": 7.750000804662704e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.6729590000031749,
+      "seconds": 0.0057336000027135015
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.6786942000035197,
+      "seconds": 0.0029236999980639666
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.6816300000064075,
+      "seconds": 0.0002148000057786703
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.6818532000033883,
+      "seconds": 0.000182100004167296
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.6820410000073025,
+      "seconds": 0.0001883999939309433
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.6822309000126552,
+      "seconds": 9.60000033956021e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.6822411000030115,
+      "seconds": 0.0005449000018415973
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.6827885000093374,
+      "seconds": 7.819999882485718e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.6828680000035092,
+      "seconds": 9.60000033956021e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.6828945000015665,
+      "seconds": 9.700001101009548e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.6829053000110434,
+      "seconds": 0.0058314999914728105
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.6887381000124151,
+      "seconds": 0.00290099999983795
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.6916478000057396,
+      "seconds": 0.0001984999980777502
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.6918518000020413,
+      "seconds": 0.00017850000585895032
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.6920347000123002,
+      "seconds": 0.00017549999756738544
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.6922116000059759,
+      "seconds": 6.200003554113209e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.6922183000133373,
+      "seconds": 0.0005078999965917319
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.6927282000106061,
+      "seconds": 8.699999307282269e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.6928167000005487,
+      "seconds": 0.0056401000038022175
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.6984579999989364,
+      "seconds": 0.0030329000001074746
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.7015023000130896,
+      "seconds": 0.00023719998716842383
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.7017478000052506,
+      "seconds": 0.00019120000069960952
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.7019444000034127,
+      "seconds": 0.0001897000038297847
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.702135300001828,
+      "seconds": 8.300004992634058e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.7021441000106279,
+      "seconds": 0.0007233999931486323
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.7028699000074994,
+      "seconds": 7.720000576227903e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.7029486000101315,
+      "seconds": 9.499999578110874e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.7029746000043815,
+      "seconds": 9.2999980552122e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.7029850000108127,
+      "seconds": 0.005613599991193041
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.708600000012666,
+      "seconds": 0.0031495999865001068
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.7117621000070358,
+      "seconds": 0.0002187999925808981
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.711986700000125,
+      "seconds": 0.00017640000442042947
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.712168300000485,
+      "seconds": 0.00017759999900590628
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.7123473000101512,
+      "seconds": 8.099988917820156e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.7123559000028763,
+      "seconds": 0.0005481999978655949
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.7129062000021804,
+      "seconds": 8.379999781027436e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.7129912000091281,
+      "seconds": 0.005684000003384426
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.7186768000101438,
+      "seconds": 0.0028029999957652763
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.7214902000123402,
+      "seconds": 0.00022109999554231763
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.7217191000090679,
+      "seconds": 0.0001799000019673258
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.7219048000115436,
+      "seconds": 0.00017239998851437122
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.7220786000107182,
+      "seconds": 7.599999662488699e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.7220868000003975,
+      "seconds": 0.0005306000093696639
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.7226197999989381,
+      "seconds": 7.390000973828137e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.7226950000040233,
+      "seconds": 1.030000566970557e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.7227219000051264,
+      "seconds": 9.499999578110874e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.7227325000130804,
+      "seconds": 0.005604899997706525
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.7283388000068953,
+      "seconds": 0.0029021999944234267
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.7312510000047041,
+      "seconds": 0.00020989999757148325
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.7314666000020225,
+      "seconds": 0.0001866000093286857
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.7316578000027221,
+      "seconds": 0.00018350000027567148
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.7318425000121351,
+      "seconds": 7.599999662488699e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.7318507000018144,
+      "seconds": 0.0005409000004874542
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.7323937000037404,
+      "seconds": 8.209999941755086e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.7324771000130568,
+      "seconds": 0.0055668999993940815
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.7380453000077978,
+      "seconds": 0.0029857000045012683
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.7410387999989325,
+      "seconds": 0.0002038000093307346
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.7412500000064028,
+      "seconds": 0.00017559999832883477
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.7414306999999098,
+      "seconds": 0.00017320000915788114
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.7416052000044147,
+      "seconds": 6.900008884258568e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.7416126000025542,
+      "seconds": 0.0005100999987917021
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.7421255000081146,
+      "seconds": 7.490000280085951e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.7422018000070238,
+      "seconds": 3.310000465717167e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.742254500000854,
+      "seconds": 1.6600009985268116e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.7422723000054248,
+      "seconds": 0.005809099995531142
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.7480842000077246,
+      "seconds": 0.003054500004509464
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.7511538000107976,
+      "seconds": 0.0002275000006193295
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.7514171000075294,
+      "seconds": 0.0002271999983349815
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.751650400008657,
+      "seconds": 0.00020379999477881938
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.7518557000003057,
+      "seconds": 1.0400006431154907e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.7518667000113055,
+      "seconds": 0.000680199998896569
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.7525500000047032,
+      "seconds": 9.080000745598227e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.7526425000105519,
+      "seconds": 0.005668999991030432
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.7583129000122426,
+      "seconds": 0.0029205999890109524
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.7612441000092076,
+      "seconds": 0.0002175999979954213
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.7614695000083884,
+      "seconds": 0.0001787999935913831
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.761653200010187,
+      "seconds": 0.0001767999929143116
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.7618313999992097,
+      "seconds": 6.50000583846122e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.7618384000088554,
+      "seconds": 0.0005696000007446855
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.7624106000002939,
+      "seconds": 7.570000889245421e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.7624879000068177,
+      "seconds": 9.60000033956021e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.7625150000094436,
+      "seconds": 9.800001862458885e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.7625259000051301,
+      "seconds": 0.005542800005059689
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.7680698000040138,
+      "seconds": 0.0027600000030361116
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.7708379000105197,
+      "seconds": 0.00021769999875687063
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.771061200008262,
+      "seconds": 0.00017719999596010894
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.7712427000078605,
+      "seconds": 0.00017299999308306724
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.7714168000093196,
+      "seconds": 6.000002031214535e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.7714233000006061,
+      "seconds": 0.0005209000082686543
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.7719462000095518,
+      "seconds": 8.319999324157834e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.7720310000004247,
+      "seconds": 0.005895800000871532
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.7779286000004504,
+      "seconds": 0.0030261000065365806
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.7809660000057193,
+      "seconds": 0.0002499999973224476
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.7812253000010969,
+      "seconds": 0.00021240000205580145
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.7814439000067068,
+      "seconds": 0.00020640000002458692
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.7816517000028398,
+      "seconds": 1.0500007192604244e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.7816628000000492,
+      "seconds": 0.000661700003547594
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.7823286000057124,
+      "seconds": 8.890000754036009e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.7824189000093611,
+      "seconds": 9.700001101009548e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.7824462999997195,
+      "seconds": 9.900002623908222e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.7824576000130037,
+      "seconds": 0.005679699999745935
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.7881388000096194,
+      "seconds": 0.0028738999972119927
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.7910231000132626,
+      "seconds": 0.00021219998598098755
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.7912412000005133,
+      "seconds": 0.00017680000746622682
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.791422500013141,
+      "seconds": 0.00017939999816007912
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.7916031000058865,
+      "seconds": 6.799993570894003e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.7916104000032647,
+      "seconds": 0.0005322000070009381
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.7921448000124656,
+      "seconds": 8.189999789465219e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.79222820000723,
+      "seconds": 0.005538600002182648
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.7977682000055211,
+      "seconds": 0.008152700000209734
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.8059329000097932,
+      "seconds": 0.00021939999714959413
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.8061604000104126,
+      "seconds": 0.00017800000205170363
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.8063440000114497,
+      "seconds": 0.00017839999054558575
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.8065237000118941,
+      "seconds": 8.099988917820156e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.8065323000046192,
+      "seconds": 0.0005515999946510419
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.8070864000037545,
+      "seconds": 7.429999823216349e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.807162299999618,
+      "seconds": 9.499999578110874e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.8071882000076585,
+      "seconds": 9.199997293762863e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.8071985999995377,
+      "seconds": 0.006401400009053759
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.8136034000053769,
+      "seconds": 0.00442329999350477
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.8180418000119971,
+      "seconds": 0.00024059999850578606
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.818289700007881,
+      "seconds": 0.00017899999511428177
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.8184743000019807,
+      "seconds": 0.00018470000941306353
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.8186605000082636,
+      "seconds": 1.0499992640689015e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.8186717000062345,
+      "seconds": 0.0005782999942312017
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.81925250000495,
+      "seconds": 9.099999442696571e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.8193451000115601,
+      "seconds": 0.005731500001274981
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.8250785000127507,
+      "seconds": 0.003020099989953451
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.8281122000043979,
+      "seconds": 0.00023010000586509705
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.8283512000052724,
+      "seconds": 0.00018489999638404697
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "acquire",
+      "start": 0.8285419000021648,
+      "seconds": 0.00018509999790694565
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.828728400010732,
+      "seconds": 9.2999980552122e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.8287383000133559,
+      "seconds": 0.0005441999965114519
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.8292852000013227,
+      "seconds": 8.16000101622194e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.8293682000075933,
+      "seconds": 1.0100004146806896e-05
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "acquire",
+      "start": 0.8293953000102192,
+      "seconds": 9.900002623908222e-06
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "acquire",
+      "start": 0.8294063000066672,
+      "seconds": 0.0056801000027917325
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "acquire",
+      "start": 0.8350877000048058,
+      "seconds": 0.002904199995100498
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "acquire",
+      "start": 0.8380005000071833,
+      "seconds": 0.0002069000038318336
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.8382129000092391,
+      "seconds": 0.0001875000016298145
+    },
+    {
+      "phase": "sqlite_connect",
+      "during": "release",
+      "start": 0.8384052000037627,
+      "seconds": 0.00018080000882036984
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.8385875000094529,
+      "seconds": 6.399990525096655e-06
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.8385944000037853,
+      "seconds": 0.0005447000003186986
+    },
+    {
+      "phase": "sqlite_execute",
+      "during": "release",
+      "start": 0.8391410000040196,
+      "seconds": 7.979999645613134e-05
+    },
+    {
+      "phase": "sqlite_commit",
+      "during": "release",
+      "start": 0.8392223000118975,
+      "seconds": 0.00574929999129381
+    },
+    {
+      "phase": "sqlite_close",
+      "during": "release",
+      "start": 0.8449739000061527,
+      "seconds": 0.003015199996298179
+    },
+    {
+      "phase": "diagnostic_log_write",
+      "during": "release",
+      "start": 0.8480045000032987,
+      "seconds": 0.00023600000713486224
+    }
+  ]
+}

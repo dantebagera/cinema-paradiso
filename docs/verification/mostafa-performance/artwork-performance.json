@@ -1,0 +1,104 @@
+{
+  "date": "2026-10-12",
+  "workspace": "C:\\Users\\dante\\.codex\\worktrees\\mostafa-ui-ux\\cinema paradiso",
+  "source_only": true,
+  "root_cause": "CSS background URLs were attached to every supplied-artwork card at mount. Native loading=lazy on poster images does not defer CSS backgrounds, so offscreen and rail-clipped artwork was requested eagerly.",
+  "authoritative_owner": "src/components/movie-card/cardArtwork.js: useMediaCardArtwork shares one IntersectionObserver; mediaCardArtworkStyle remains the unchanged style builder.",
+  "behavior": {
+    "observed_cards": "UnifiedMovieCard, UpcomingMovieCard, ContinueMovieCard, related Movie/TV tiles, IPTV series poster tiles",
+    "root_margin": "200px",
+    "expanded_artwork": "immediate",
+    "without_intersection_observer": "eager fallback",
+    "activated_artwork": "kept when scrolling away",
+    "replacement_urls": "independently checked for visibility",
+    "css_changed": false,
+    "design": "No CSS, DOM geometry, artwork gradients, or interaction redesign."
+  },
+  "files": [
+    "src/components/movie-card/cardArtwork.js",
+    "src/components/movie-card/MovieCard.jsx",
+    "src/components/RelatedMovieRail.jsx",
+    "src/features/iptv/IPTVWorkspace.jsx",
+    "tests/e2e/card-artwork-performance.spec.js"
+  ],
+  "initial_backdrop_requests": [
+    {
+      "surface": "Library",
+      "cards": 40,
+      "before": 40,
+      "after": 6
+    },
+    {
+      "surface": "Home",
+      "cards": 60,
+      "before": 60,
+      "after": 5
+    },
+    {
+      "surface": "Related titles",
+      "cards": 20,
+      "before": 20,
+      "after": 13
+    }
+  ],
+  "request_claim_scope": "Fixture-backed compiled Chromium desktop at 1600x1000. Counts measure additional backdrop requests, not elapsed live API time or a guarantee for every viewport/data set.",
+  "red_green": {
+    "initial_red": "Library/Home offscreen URL assertions failed with40/40 and60/60; related rail failed with20/20.",
+    "green": "7 artwork browser cases passed after implementation.",
+    "observer_race_red": "Both retired-observer (1 pending card) and same-observer (2 pending cards) stale notifications activated a new URL on hidden retained Home before the guards.",
+    "observer_race_fix": "Registrations carry observer identity and performance.now start time. Callback rejects a different observer or earlier entry.time. Cleanup only unregisters the matching registration from its own observer.",
+    "observer_race_green": "Both scenarios passed and also proved a later valid notification activates the replacement URL."
+  },
+  "verification": {
+    "compiled_browser": {
+      "passed": 18,
+      "failed": 0,
+      "duration_seconds": 27.4,
+      "specs": [
+        "card-artwork-performance.spec.js",
+        "movie-scroll-return.spec.js",
+        "continue-watching.spec.js"
+      ]
+    },
+    "node_relationships": {
+      "passed": 5,
+      "failed": 0
+    },
+    "build": "passed; isolated temp dist",
+    "scoped_diff_check": "clean",
+    "broader_suite": "Owned by root agent; this report makes no full-suite claim."
+  },
+  "isolation": {
+    "CP_TEST_MODE": "1",
+    "CP_TEST_ROOT": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-artwork-005356c1cd2b491c8b0f4c6dfafefb4d",
+    "CP_TEST_DIST_DIR": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-artwork-005356c1cd2b491c8b0f4c6dfafefb4d\\dist",
+    "CP_TEST_QBT_MODE": "system",
+    "port": 5129,
+    "providers": "blocked by CP_TEST_MODE; artwork and card metadata fixtures intercepted in browser",
+    "server": "isolated test process stopped; port5129 checked without listener",
+    "main": "Desktop main was read-only and untouched",
+    "production_operations": "None",
+    "temporary_artifacts": "retained"
+  },
+  "evidence": {
+    "before_log": "artwork-before.log",
+    "after_log": "artwork-after.log",
+    "final_regression_log": "artwork-final-regression.log",
+    "log_provenance": "Readable excerpts preserved from actual tool console output; stdout was not originally redirected. Excerpts written to the retained test temp root then copied here. Original Playwright trace and last-run metadata remain under CP_TEST_ROOT.",
+    "artifact_directories": [
+      "before-requests-results",
+      "before-related-results",
+      "stale-red-results",
+      "final-artwork-results",
+      "stale-green-results",
+      "final-regression-results"
+    ]
+  },
+  "source_sha256": {
+    "src/components/movie-card/cardArtwork.js": "610EC53FED5B7CEA789FE1D6284969FC631CF19F43C02D0EF57356FEF60D49C0",
+    "src/components/movie-card/MovieCard.jsx": "80806D9C10DD7B3F408DB0B5DA9DA739693CE08C58DA5837280CFBC0D62A5504",
+    "src/components/RelatedMovieRail.jsx": "3A6E1FFE2DCD77EB08D5B5281A28375C36C3EE1A7E9A7D1DD643FD1CBEB59134",
+    "src/features/iptv/IPTVWorkspace.jsx": "586BC4A58A8B0FE1C915A1A44BDE7368EF70C62F1C38B6651A129B64EC7C4733",
+    "tests/e2e/card-artwork-performance.spec.js": "A311A0F58F302DB68B95F704E5CE194D3F1D34BF4D38D4D5CEB417CC5A48609B"
+  }
+}

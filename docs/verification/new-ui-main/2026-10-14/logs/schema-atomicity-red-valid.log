@@ -1,0 +1,63 @@
+E
+======================================================================
+ERROR: test_failed_schema_batch_leaves_no_partial_tables_and_can_retry (tests.test_iptv_movie_gates_0_5.AtomicSchemaInitializationTests.test_failed_schema_batch_leaves_no_partial_tables_and_can_retry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_iptv_movie_gates_0_5.py", line 198, in test_failed_schema_batch_leaves_no_partial_tables_and_can_retry
+    self.assertEqual(tables, [])
+AssertionError: Lists differ: [('movie_meta',), ('movie_sources',), ('so[268 chars]e',)] != []
+
+First list contains 16 additional elements.
+First extra element 0:
+('movie_meta',)
+
++ []
+- [('movie_meta',),
+-  ('movie_sources',),
+-  ('source_matches',),
+-  ('tmdb_movies',),
+-  ('genres',),
+-  ('movie_genres',),
+-  ('people',),
+-  ('movie_credits',),
+-  ('keywords',),
+-  ('movie_keywords',),
+-  ('collections',),
+-  ('movie_collections',),
+-  ('movie_languages',),
+-  ('movie_countries',),
+-  ('movie_list_memberships',),
+-  ('enrichment_queue',)]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Program Files\Python312\Lib\shutil.py", line 633, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\dante\\AppData\\Local\\Temp\\tmpvzq5kjrm\\aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\\movies.sqlite'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_iptv_movie_gates_0_5.py", line 190, in test_failed_schema_batch_leaves_no_partial_tables_and_can_retry
+    with tempfile.TemporaryDirectory() as temporary:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\tempfile.py", line 946, in __exit__
+    self.cleanup()
+  File "C:\Program Files\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Program Files\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Program Files\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+  File "C:\Program Files\Python312\Lib\tempfile.py", line 905, in onexc
+    _os.unlink(path)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\dante\\AppData\\Local\\Temp\\tmpvzq5kjrm\\aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\\movies.sqlite'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.339s
+
+FAILED (errors=1)

@@ -1,0 +1,10 @@
+**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.14.42
+** Copyright (c) 2025 Microsoft Corporation
+**********************************************************************
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+-- Configuring done (1.1s)
+-- Generating done (0.4s)
+-- Build files have been written to: C:/Users/dante/AppData/Local/Temp/cp-player-menu-usability-20261024/ui-build
+[1/3] Automatic MOC and UIC for target cp-player-ui-tests

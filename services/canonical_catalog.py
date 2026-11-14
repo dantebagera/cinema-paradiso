@@ -15,7 +15,7 @@ CANONICAL_CARD_FIELDS = (
     "accepted", "adult", "status", "identity_status", "enrichment_status",
     "metadata_contract_version", "source", "detail_provider", "selected_provider",
     "selected_provider_snapshot", "fallback_active", "people_status", "movie_key",
-    "title", "year", "tmdb_id", "imdb_id", "plex_guid", "identity_revision",
+    "title", "original_title", "original_language", "year", "tmdb_id", "imdb_id", "plex_guid", "identity_revision",
     "poster_url", "genres", "plot", "summary", "rating", "tmdb_rating",
     "plex_rating", "tmdb_vote_count", "language", "country", "country_flag",
     "release_date",
@@ -41,6 +41,8 @@ _CANONICAL_DEFAULTS = {
     "people_status": "missing",
     "movie_key": "",
     "title": "",
+    "original_title": "",
+    "original_language": "",
     "year": "",
     "tmdb_id": "",
     "imdb_id": "",
@@ -1105,7 +1107,10 @@ class CanonicalCatalog:
             """, (_json(movie_keys),)).fetchall()
         }
         snapshots = [dict(row) for row in connection.execute("""
-            SELECT * FROM provider_movie_snapshots
+            SELECT *,
+                CASE WHEN json_valid(source_json) THEN json_extract(source_json, '$.original_title') END AS original_title,
+                CASE WHEN json_valid(source_json) THEN json_extract(source_json, '$.original_language') END AS original_language
+            FROM provider_movie_snapshots
             WHERE movie_key IN (SELECT value FROM json_each(?))
         """, (_json(movie_keys),)).fetchall()]
         snapshots_by_movie = {}
@@ -1218,6 +1223,8 @@ class CanonicalCatalog:
         for movie in movie_rows:
             path_key = movie["path_key"]
             snapshot = chosen.get(path_key, {})
+            original_metadata = next((candidate for candidate in snapshots_by_movie.get(movie["movie_key"], [])
+                                      if candidate["snapshot_key"] == f"tmdb:{movie.get('tmdb_id')}"), snapshot)
             snapshot_key = snapshot.get("snapshot_key", "")
             selected_snapshot_present = selected_present.get(path_key, False)
             source_details = {}
@@ -1245,6 +1252,8 @@ class CanonicalCatalog:
                 "people_status": snapshot.get("people_state", "missing"),
                 "movie_key": movie.get("movie_key", ""),
                 "title": movie.get("title") or snapshot.get("title", ""),
+                "original_title": _text(original_metadata.get("original_title")),
+                "original_language": _text(original_metadata.get("original_language")),
                 "year": movie.get("year") or snapshot.get("year", ""),
                 "tmdb_id": movie.get("tmdb_id", ""),
                 "imdb_id": movie.get("imdb_id") or snapshot.get("imdb_id", ""),

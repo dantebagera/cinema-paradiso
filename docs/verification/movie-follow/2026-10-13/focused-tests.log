@@ -1,0 +1,6 @@
+[perf] POST /api/user/followed-releases 1589.8ms
+[perf] POST /api/user/followed-releases 275.8ms
+----------------------------------------------------------------------
+Ran 118 tests in 134.461s
+
+OK

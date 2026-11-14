@@ -1,0 +1,9 @@
+EVIDENCE_ROOT=C:\Users\dante\AppData\Local\Temp\cp-ai-timing-uinxp1vt
+{"sequence": 3, "event": "capture_started", "at_seconds": 0.364718, "feature": "F1", "label": "comparison-cp-3", "prompt": "i need you to lit 50 movies with very twisted story you wont expect the ending\nyour responce should be a list of movies names and years , no any other details , dont seek more info , dont reply by paragarph or any way of responce  only the list", "model": "gpt-6.1-sol", "count": "50", "maximum_calls": 3, "maximum_seconds": 180, "reasoning_effort": "default", "output_format": "JSON/tools", "cache_state": "fresh diagnostic process; no production TMDB memory cache"}
+{"sequence": 19, "event": "gpt_start", "at_seconds": 1.050039, "attempt": 1}
+{"sequence": 31, "event": "gpt_reply", "at_seconds": 15.667862, "response_id": "resp_0bce405faab58f65016ae9c8fc8e9081918e827be283471f90", "calls": []}
+{"sequence": 61, "event": "first_cards", "at_seconds": 16.001409, "count": 1}
+{"sequence": 634, "event": "gpt_start", "at_seconds": 23.434179, "attempt": 2}
+{"sequence": 645, "event": "gpt_reply", "at_seconds": 27.587857, "response_id": "resp_07d4f7f74e28260b016ae9c912e0c081919fcaa89b0fb679ab", "calls": []}
+{"sequence": 682, "event": "job_finished", "at_seconds": 28.210605, "state": "completed", "message": "Requested verified target reached.", "accepted_count": 50, "inference_attempts": 2, "tmdb_requests": 144, "elapsed_seconds": 27.841832}
+TIMINGS={"gpt_seconds": 18.813232, "gpt_http_seconds": 18.74598, "tmdb_matching_seconds": 8.334477, "other_seconds": 0.694123, "full_seconds": 27.841832, "first_cards_seconds": 15.636004}

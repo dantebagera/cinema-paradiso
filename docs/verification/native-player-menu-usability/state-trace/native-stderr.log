@@ -1,0 +1,8 @@
+qml: OPEN SIDE REQUEST playlist  false
+qml: SIDE MODE playlist true
+qml: POPUP SHOW playerSidePanel
+qml: POPUP CLOSED playerSidePanel true
+qml: SIDE MODE  true
+qml: OPEN SIDE REQUEST playlist  false
+qml: SIDE MODE playlist true
+qml: POPUP SHOW playerSidePanel

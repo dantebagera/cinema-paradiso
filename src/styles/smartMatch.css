@@ -39,13 +39,7 @@
 .smart-match-dialog {
   display: grid;
   gap: var(--space-4);
-  width: min(980px, 94vw);
-  max-height: 90vh;
   overflow: auto;
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius-lg);
-  background: #0d0e10;
-  padding: 20px;
 }
 
 .smart-match-progress,
@@ -96,21 +90,6 @@
   display: flex;
   align-items: center;
   gap: var(--space-2);
-}
-
-.smart-match-label-recommended {
-  border-color: #22c55e66;
-  color: #86efac;
-}
-
-.smart-match-label-review {
-  border-color: #d4af3766;
-  color: var(--projector-gold);
-}
-
-.smart-match-label-weak {
-  border-color: #f59e0b55;
-  color: #fbbf24;
 }
 
 .smart-match-warning {
@@ -170,13 +149,6 @@
   .smart-match-evidence {
     align-items: flex-start;
     flex-wrap: wrap;
-  }
-
-  .smart-match-dialog {
-    width: 100%;
-    max-height: 94vh;
-    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-    padding: 16px;
   }
 
   .smart-match-footer .btn,

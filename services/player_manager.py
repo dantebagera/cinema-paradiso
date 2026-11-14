@@ -1,5 +1,6 @@
 import os
 import secrets
+import sqlite3
 import subprocess
 import threading
 import time
@@ -15,6 +16,8 @@ from services.player_runtime import PlayerRuntimeError
 from services.player_windows_pipe import WindowsNamedPipeServer
 from services.playback_history import PlaybackHistoryError
 from services.subtitle_service import SubtitleServiceError
+from services.player_catalog import PlayerMediaError
+from services.player_queue import PlayerQueue
 
 
 PLAYER_STARTUP_TIMEOUT_SECONDS = 10
@@ -41,6 +44,7 @@ def safe_player_preferences(payload):
         "subtitle_style",
         "keyboard_shortcuts",
         "window_state",
+        "autoplay",
     }
     return {
         key: value
@@ -78,6 +82,10 @@ class PlayerSession:
         self.on_event = on_event
         self.playback_context = playback_context
         self.media = dict(media or {})
+        self.media_generation = 1
+        self.queue = {}
+        self.ended = False
+        self.transition_pending = False
         self.last_sequence = 0
         self.closed = threading.Event()
         self._send_sequence = 1
@@ -106,6 +114,7 @@ class PlayerSession:
                 "protocol": PLAYER_PROTOCOL_VERSION,
                 "session_id": self.session_id,
                 "sequence": self._send_sequence,
+                "media_generation": self.media_generation,
                 **payload,
             }
             self._send_sequence += 1
@@ -188,6 +197,7 @@ class PlayerManager:
         subtitle_service=None,
         persist_config=None,
         startup_timeout=PLAYER_STARTUP_TIMEOUT_SECONDS,
+        queue_provider=None,
     ):
         self.player_config = player_config
         self.player_runtime = player_runtime
@@ -199,6 +209,7 @@ class PlayerManager:
         self.subtitle_service = subtitle_service
         self.persist_config = persist_config
         self.startup_timeout = float(startup_timeout)
+        self.queue_provider = queue_provider or PlayerQueue(lambda _: {})
         self._lock = threading.RLock()
         self._active = None
         self._last_event = {}
@@ -300,9 +311,11 @@ class PlayerManager:
                 playback_context=playback_context,
                 media=media,
             )
+            session.queue = self.queue_provider.snapshot(media)
             session.send(
                 "load",
                 media=media,
+                queue=session.queue,
                 start_position_ms=(
                     playback_context["start_position_ms"]
                     if playback_context
@@ -361,27 +374,50 @@ class PlayerManager:
             raise
 
     def _handle_event(self, session, message):
+        kind = message['type']
+        if kind not in {'window.state', 'closing', 'closed'}:
+            if message.get('media_generation', 1) != session.media_generation:
+                return
+        if kind == 'queue.select':
+            self._select_queue_item(session, message)
+            return
+        if kind == 'player.preferences':
+            if self._active is session:
+                try:
+                    self.player_config.update({'autoplay': message['autoplay']})
+                    if self.persist_config and self.persist_config() is False:
+                        raise OSError('Preference save failed')
+                except (OSError, RuntimeError, ValueError):
+                    self._send_to_active(session, 'queue.error',
+                                         message='Autoplay changed for this session, but its preference could not be saved.')
+            return
+        if kind == 'ready':
+            session.transition_pending = False
+        if kind == 'playback.state' and message.get('state') == 'ended':
+            session.ended = True
         if message["type"] == "subtitle.search" and self.subtitle_service:
+            generation = session.media_generation
             self.subtitle_service.search_async(
                 session.session_id,
                 session.media,
                 lambda payload: self._send_to_active(
                     session,
                     "subtitle.results",
+                    media_generation=generation,
                     **payload,
                 ),
             )
         elif message["type"] == "subtitle.download" and self.subtitle_service:
             threading.Thread(
                 target=self._download_subtitle,
-                args=(session, message["result_id"]),
+                args=(session, message["result_id"], session.media_generation, dict(session.media)),
                 name=f"cp-subtitle-download-{session.session_id[:8]}",
                 daemon=True,
             ).start()
         elif message["type"] == "subtitle.save" and self.subtitle_service:
             threading.Thread(
                 target=self._save_subtitle,
-                args=(session, message["result_id"]),
+                args=(session, message["result_id"], session.media_generation, dict(session.media)),
                 name=f"cp-subtitle-save-{session.session_id[:8]}",
                 daemon=True,
             ).start()
@@ -395,7 +431,7 @@ class PlayerManager:
         if self.playback_history:
             try:
                 self.playback_history.handle_event(session, message)
-            except (PlaybackHistoryError, OSError, RuntimeError):
+            except (PlaybackHistoryError, OSError, RuntimeError, sqlite3.Error):
                 # Playback remains available if a history write is temporarily
                 # unavailable; the next bounded event can retry it.
                 pass
@@ -425,26 +461,70 @@ class PlayerManager:
 
     def _send_to_active(self, session, message_type, **payload):
         with self._lock:
-            active = self._active is session and not session.closed.is_set()
-        if active:
-            try:
-                session.send(message_type, **payload)
-            except (OSError, RuntimeError):
-                pass
+            active = (self._active is session and not session.closed.is_set()
+                      and payload.get('media_generation', session.media_generation) == session.media_generation)
+            if active:
+                try:
+                    session.send(message_type, **payload)
+                except (OSError, RuntimeError):
+                    pass
 
-    def _download_subtitle(self, session, result_id):
+    def _select_queue_item(self, session, message):
+        with self._lock:
+            if (self._active is not session or session.closed.is_set() or session.transition_pending
+                    or message.get('media_generation') != session.media_generation):
+                return
+            rows = session.queue.get('items') or []
+            index = next((i for i, row in enumerate(rows) if row['path_key'] == message['path_key']), -1)
+            current = session.queue.get('current_index', -1)
+            automatic = message['automatic']
+            if index < 0 or index == current:
+                return
+            if automatic and (not session.ended or index != current + 1
+                              or not self.player_config.storage_payload()['autoplay']
+                              or session.queue.get('autoplay_blocked_reason')
+                              or session.media.get('shared_without_segments')):
+                return
+            item = rows[index]
+            try:
+                if not item['available']:
+                    raise PlayerMediaError(item.get('reason') or 'The next file is unavailable')
+                media = self.media_resolver(item['path_key'])
+                if self.playback_history:
+                    self.playback_history.flush_session(session)
+                context = self.playback_history.begin_session(media, restart=automatic) if self.playback_history else None
+            except (PlayerMediaError, LookupError, OSError, RuntimeError, PlaybackHistoryError, sqlite3.Error) as error:
+                self._send_to_active(session, 'queue.error', message=str(error)[:1024] or 'The file is unavailable')
+                return
+            session.transition_pending = True
+            session.ended = False
+            session.media_generation += 1
+            session.media = dict(media)
+            session.playback_context = context
+            # Retain the opening sequence; availability is revalidated on every selection.
+            session.queue = {**session.queue, 'current_index': index}
+            with session._subtitle_downloads_lock:
+                session._subtitle_downloads.clear()
+            session.send('load', media=media, queue=session.queue,
+                         start_position_ms=(context or {}).get('start_position_ms', 0),
+                         playback_state={key: (context or {}).get(key) or (0 if key == 'subtitle_delay_ms' else '')
+                                         for key in ('audio_track_fingerprint', 'subtitle_track_fingerprint', 'subtitle_delay_ms')},
+                         preferences=safe_player_preferences(self.player_config.storage_payload()))
+
+    def _download_subtitle(self, session, result_id, generation, media):
         try:
             loaded = self.subtitle_service.download(
                 session.session_id,
                 result_id,
-                session.media,
+                media,
             )
             save_available = bool(loaded.pop("save_available", False))
-            if save_available:
+            if save_available and session.media_generation == generation:
                 session.remember_subtitle_download(result_id, loaded["path"])
             self._send_to_active(
                 session,
                 "subtitle.loaded",
+                media_generation=generation,
                 result_id=result_id,
                 save_available=save_available,
                 **loaded,
@@ -453,16 +533,18 @@ class PlayerManager:
             self._send_to_active(
                 session,
                 "error",
+                media_generation=generation,
                 code="subtitle_download_failed",
                 message="The selected subtitle could not be loaded.",
             )
 
-    def _save_subtitle(self, session, result_id):
+    def _save_subtitle(self, session, result_id, generation, media):
         cached_path = session.subtitle_download_path(result_id)
         if not cached_path:
             self._send_to_active(
                 session,
                 "error",
+                media_generation=generation,
                 code="subtitle_save_failed",
                 message="The selected subtitle is not available to save.",
             )
@@ -470,12 +552,13 @@ class PlayerManager:
         try:
             saved = self.subtitle_service.save_beside_movie(
                 cached_path,
-                session.media,
+                media,
             )
             session.forget_subtitle_download(result_id)
             self._send_to_active(
                 session,
                 "subtitle.saved",
+                media_generation=generation,
                 result_id=result_id,
                 path=saved["path"],
             )
@@ -483,6 +566,7 @@ class PlayerManager:
             self._send_to_active(
                 session,
                 "error",
+                media_generation=generation,
                 code="subtitle_save_failed",
                 message="The selected subtitle could not be saved beside the movie.",
             )

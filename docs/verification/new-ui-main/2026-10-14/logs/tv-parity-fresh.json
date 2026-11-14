@@ -1,0 +1,11 @@
+{
+  "label": "tv-parity-fresh",
+  "root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\fixtures\\tv-parity-fresh-989c676af77c4f258f56bf52a8b48fe8",
+  "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\logs\\tv-parity-fresh.log",
+  "port": 5146,
+  "fixture": "tv",
+  "exitCode": 0,
+  "specs": [
+    "tests/e2e/tv-parity.spec.js"
+  ]
+}

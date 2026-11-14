@@ -21,7 +21,8 @@ function withQuery(path, params = {}) {
 }
 
 export const iptvApi = {
-  metadataSettings: () => fetchJson('/api/iptv/metadata/settings'),
+  person: (providerId, personId, options) => fetchJson(providerPath(providerId, `/people/${encodeURIComponent(personId)}`), options),
+  metadataSettings: (options) => fetchJson('/api/iptv/metadata/settings', options),
   saveMetadataSettings: (payload) => fetchJson('/api/iptv/metadata/settings', {
     method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
@@ -56,11 +57,11 @@ export const iptvApi = {
   categories: (providerId, kind) => fetchJson(`${providerPath(providerId, '/categories')}?${queryString({ kind })}`),
   items: (providerId, params) => fetchJson(`${providerPath(providerId, '/items')}?${queryString(params)}`),
   movies: (providerId, params, options) => fetchJson(`${providerPath(providerId, '/movies')}?${queryString(params)}`, options),
-  movieFacets: (providerId, params = {}) => fetchJson(withQuery(providerPath(providerId, '/movies/facets'), params)),
+  movieFacets: (providerId, params = {}, options) => fetchJson(withQuery(providerPath(providerId, '/movies/facets'), params), options),
   movieProjectionStatus: (providerId) => fetchJson(providerPath(providerId, '/movies/projection/status')),
   retryMovieProjection: (providerId) => fetchJson(providerPath(providerId, '/movies/projection/retry'), { method: 'POST' }),
-  movieStatus: (providerId, params = {}) => fetchJson(withQuery(providerPath(providerId, '/movies/metadata/status'), params)),
-  movieMetadataReview: (providerId, params = {}) => fetchJson(`${providerPath(providerId, '/movies/metadata/review')}?${queryString(params)}`),
+  movieStatus: (providerId, params = {}, options) => fetchJson(withQuery(providerPath(providerId, '/movies/metadata/status'), params), options),
+  movieMetadataReview: (providerId, params = {}, options) => fetchJson(withQuery(providerPath(providerId, '/movies/metadata/review'), params), options),
   movieClassificationPreview: (providerId, payload = {}) => fetchJson(providerPath(providerId, '/movies/classification/preview'), {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -117,10 +118,10 @@ export const iptvApi = {
   movieSources: (providerId, movieKey) => fetchJson(providerPath(providerId, `/movies/${encodeURIComponent(movieKey)}/sources`)),
   movieLocalization: (providerId, movieKey, locale) => fetchJson(providerPath(providerId, `/movies/${encodeURIComponent(movieKey)}/localization/${encodeURIComponent(locale)}`)),
   movieMatchSearch: (providerId, movieKey, params = {}) => fetchJson(`${providerPath(providerId, `/movies/${encodeURIComponent(movieKey)}/match/search`)}?${queryString(params)}`),
-  setMovieMatch: (providerId, movieKey, tmdbId) => fetchJson(providerPath(providerId, `/movies/${encodeURIComponent(movieKey)}/match`), {
+  setMovieMatch: (providerId, movieKey, tmdbId, expectedCategory, catalogGeneration) => fetchJson(providerPath(providerId, `/movies/${encodeURIComponent(movieKey)}/match`), {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ tmdb_id: tmdbId })
+    body: JSON.stringify({ tmdb_id: tmdbId, expected_category: expectedCategory, catalog_generation: catalogGeneration })
   }),
   removeMovieMatch: (providerId, movieKey, reprocess = false) => fetchJson(`${providerPath(providerId, `/movies/${encodeURIComponent(movieKey)}/match`)}${reprocess ? '?reprocess=1' : ''}`, { method: 'DELETE' }),
   movieFavorite: (providerId, movieKey, favorite) => fetchJson(providerPath(providerId, `/movies/${encodeURIComponent(movieKey)}/favorite`), {

@@ -1,0 +1,11 @@
+{
+  "updated_methods": [
+    "test_home_health_uses_backend_cleanup_counts",
+    "test_library_refreshes_quietly_for_background_changes",
+    "test_release_watcher_exposes_manual_full_scan_and_ownership_reconciliation",
+    "test_library_loads_ignore_older_responses",
+    "test_home_scrolling_rails_share_layout_and_group_trailers",
+    "test_library_uses_measured_full_row_page_size"
+  ],
+  "product_behavior_changed": false
+}

@@ -1,0 +1,18 @@
+{
+  "modules": [
+    "tests.test_iptv_movie_enrichment",
+    "tests.test_iptv_movie_gates_0_5",
+    "tests.test_iptv_movie_ui",
+    "tests.test_iptv_provider_manager",
+    "tests.test_iptv_routes",
+    "tests.test_iptv_service",
+    "tests.test_iptv_ui"
+  ],
+  "root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\fixtures\\iptv-owner-regressions-826af52976c44c97a1a5b5ccbe78ef78",
+  "exitCode": 1,
+  "label": "iptv-owner-regressions",
+  "dist": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\fixtures\\iptv-owner-regressions-826af52976c44c97a1a5b5ccbe78ef78\\dist",
+  "kind": "python",
+  "elapsed": 103.1302937,
+  "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\logs\\iptv-owner-regressions.log"
+}

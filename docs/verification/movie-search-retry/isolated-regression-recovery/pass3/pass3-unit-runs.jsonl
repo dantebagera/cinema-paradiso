@@ -1,0 +1,2 @@
+{"kind": "tv-module", "root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\tmp\\pass3-tv-module-a86a152b1125476a81072cd0e03812b4", "tests": ["tests.test_tv_library_read_performance"], "exit_code": 0}
+{"kind": "evidence-repeat", "root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\tmp\\pass3-evidence-repeat-2e38e0cb6e1d4e6999cb35fa6d901c47", "tests": ["tests.test_tv_library_read_performance.TVLibraryProbeContractTests.test_invalid_observation_preserves_evidence"], "exit_code": 0}

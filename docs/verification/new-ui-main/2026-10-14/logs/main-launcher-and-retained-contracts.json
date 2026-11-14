@@ -1,0 +1,16 @@
+{
+  "root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\fixtures\\main-launcher-and-retained-contracts-751c1243dbb6456f9b9957c6a9d7bce8",
+  "elapsed": 8.3237667,
+  "dist": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\fixtures\\main-launcher-and-retained-contracts-751c1243dbb6456f9b9957c6a9d7bce8\\dist",
+  "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\logs\\main-launcher-and-retained-contracts.log",
+  "kind": "python",
+  "exitCode": 1,
+  "label": "main-launcher-and-retained-contracts",
+  "modules": [
+    "tests.test_windows_launcher",
+    "tests.test_movie_awards_bundle",
+    "tests.test_qbittorrent_ui",
+    "tests.test_catalog_store",
+    "tests.test_movie_awards_sources.HistoricalSeedBuildTests"
+  ]
+}

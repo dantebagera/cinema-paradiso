@@ -1,0 +1,957 @@
+{
+  "src/App.jsx|markup|0ede48e7c1bd744be05c": {
+    "count": 1,
+    "owner": "trailerAlternativePanel",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/App.jsx|markup|14454eb950b8ab74aeba": {
+    "count": 1,
+    "owner": "TrailerModal",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/App.jsx|markup|71184b55aeaec8fb0799": {
+    "count": 1,
+    "owner": "TrailerModal",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/App.jsx|markup|6beeb70066784a074a43": {
+    "count": 1,
+    "owner": "TrailerModal",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/App.jsx|markup|6632775ff7be71bf5e4c": {
+    "count": 1,
+    "owner": "TrailerRecommendationGrid",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/ExportCopyDialog.jsx|markup|d1805541b3735ba405a8": {
+    "count": 2,
+    "owner": "FolderBrowserDialog",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/ExportCopyDialog.jsx|markup|0f4af102b76ffdaa09e4": {
+    "count": 1,
+    "owner": "FolderBrowserDialog",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/horizontalCardRail.css|css|4f1092a03111359f202c": {
+    "count": 1,
+    "owner": ".horizontal-card-rail-arrows .rail-arrow",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/components/horizontalCardRail.css|css|5292651fbe7030aeb022": {
+    "count": 1,
+    "owner": ".horizontal-card-rail-arrows .rail-arrow:hover:not(:disabled)",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/components/horizontalCardRail.css|css|ad87243f6f6fae8988ee": {
+    "count": 1,
+    "owner": ".horizontal-card-rail-edge-arrows .rail-arrow",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/components/IPTVAvailabilityBadge.jsx|markup|2f2a15c9d351b56e8670": {
+    "count": 1,
+    "owner": "IPTVAvailabilityBadge",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/IPTVAvailabilityBadge.jsx|markup|76704782dd49bf424ca0": {
+    "count": 1,
+    "owner": "IPTVAvailabilityBadge",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/LibraryControls.jsx|markup|eaaddba8070147181fa9": {
+    "count": 1,
+    "owner": "LibraryStat",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/ListEditorModal.jsx|markup|990c71e4bf60236ce13b": {
+    "count": 1,
+    "owner": "ListEditorModal",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/ListEditorModal.jsx|markup|f62968d0be40926e6f90": {
+    "count": 1,
+    "owner": "ListEditorModal",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/ListsToolbar.jsx|markup|2554bd4a783ae5932a38": {
+    "count": 1,
+    "owner": "ListsToolbar",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/ListsToolbar.jsx|markup|7589685d423d92f0a969": {
+    "count": 1,
+    "owner": "ListsToolbar",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/ListsToolbar.jsx|markup|54e4d6c4d6d962a35e06": {
+    "count": 1,
+    "owner": "ListsToolbar",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/MetadataAuthorityPanel.jsx|markup|b60d15cdc7f71ae23ca6": {
+    "count": 1,
+    "owner": "MetadataAuthorityPanel",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/movie-card/movieCard.css|css|e3905df479c84cb0f5e9": {
+    "count": 1,
+    "owner": ".unified-chip-row",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/components/movie-card/movieCard.css|css|1dc18d609ffbc6a6f796": {
+    "count": 1,
+    "owner": ".unified-chip-row-actions",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/components/movie-card/MovieCard.jsx|markup|f27520f1a98bb123bef9": {
+    "count": 1,
+    "owner": "UnifiedMoviePoster",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/movie-card/MovieCard.jsx|markup|fe7dbc3c185b8e0d26e8": {
+    "count": 1,
+    "owner": "ContinueMovieCard",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/movie-card/MovieCard.jsx|markup|67a6f37b7fb6433e092f": {
+    "count": 1,
+    "owner": "ContinueMovieCard",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/movie-card/MovieCard.jsx|markup|91e6b688dd1064dd56e7": {
+    "count": 1,
+    "owner": "ContinueMovieCard",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/movie-card/MovieCard.jsx|markup|5305caa38bd7a2659d35": {
+    "count": 1,
+    "owner": "UpcomingMovieCard",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/MovieAwards.jsx|markup|03aea9cccaaea078e3e7": {
+    "count": 1,
+    "owner": "MovieAwards",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/PersonCreditCard.jsx|markup|ddbf9a3ae4ca552b004f": {
+    "count": 1,
+    "owner": "PersonCreditCard",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/PersonCreditCard.jsx|markup|d9d7630e363533b0af87": {
+    "count": 1,
+    "owner": "PersonCreditCard",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/PosterEditorModal.jsx|markup|6873ecc5d8983570f3cd": {
+    "count": 1,
+    "owner": "renderOptions",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/RelatedMovieRail.jsx|markup|2e0ba49fa176e721397d": {
+    "count": 1,
+    "owner": "RelatedMovieRail",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/RelatedMovieRail.jsx|markup|49b0e018c1134c47ad8d": {
+    "count": 1,
+    "owner": "RelatedMovieTile",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/SharedMovieCards.jsx|markup|4d763349281539fe9d88": {
+    "count": 1,
+    "owner": "PosterEditButton",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/SharedMovieCards.jsx|markup|dd87a1f0d52c17615ab5": {
+    "count": 1,
+    "owner": "PosterStateControls",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/SharedMovieCards.jsx|markup|2e614fc8dd3fabca3c9a": {
+    "count": 1,
+    "owner": "PosterStateControls",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/SharedMovieCards.jsx|markup|92d9cff5976671a8085d": {
+    "count": 1,
+    "owner": "MovieExpandedCuration",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/SharedMovieCards.jsx|markup|43ad0d835c9add273b5c": {
+    "count": 1,
+    "owner": "MovieExpandedCuration",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/SharedMovieCards.jsx|markup|2c325fa7edb085e3c5a4": {
+    "count": 1,
+    "owner": "MovieExpandedCuration",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/Sidebar.jsx|markup|9f7cf06383fd19a948b4": {
+    "count": 1,
+    "owner": "renderNavItem",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/Sidebar.jsx|markup|26a42305d695c491295f": {
+    "count": 1,
+    "owner": "Sidebar",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/Sidebar.jsx|markup|b37f4e6997bf62ead8df": {
+    "count": 1,
+    "owner": "Sidebar",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/Sidebar.jsx|markup|345b52ee2c3d6e64c45d": {
+    "count": 1,
+    "owner": "Sidebar",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/Sidebar.jsx|markup|6ff4707f93693d4ec548": {
+    "count": 1,
+    "owner": "Sidebar",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/Sidebar.jsx|markup|3739657d4c95ba1a9d34": {
+    "count": 1,
+    "owner": "Sidebar",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/Sidebar.jsx|markup|5a942b5b84b3ba3e785a": {
+    "count": 1,
+    "owner": "Sidebar",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/Sidebar.jsx|markup|849bbc1274311ca69902": {
+    "count": 1,
+    "owner": "Sidebar",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/Sidebar.jsx|markup|ef6eeef2835e6b767f95": {
+    "count": 1,
+    "owner": "Sidebar",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/StreamPlayerModal.jsx|markup|668141fc33aa74f622c6": {
+    "count": 1,
+    "owner": "providerRow",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/StreamPlayerModal.jsx|markup|8fc7890e3933661eb225": {
+    "count": 1,
+    "owner": "StreamPlayerModal",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/StreamPlayerModal.jsx|markup|ba94ab88924577afa208": {
+    "count": 1,
+    "owner": "StreamPlayerModal",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/StreamSourceList.jsx|markup|1395aff174724b452bff": {
+    "count": 1,
+    "owner": "StreamSourceList",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/WorkspaceControls.jsx|markup|418389b0c0361eab8516": {
+    "count": 1,
+    "owner": "WorkspaceControls",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/WorkspacePathBar.jsx|markup|3e0a71c0f4f9a13eb7f8": {
+    "count": 1,
+    "owner": "WorkspacePathBar",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/WorkspaceViewActions.jsx|markup|15d95dab4391cafea92b": {
+    "count": 1,
+    "owner": "WorkspaceViewActions",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/components/WorkspaceViewActions.jsx|markup|e344b9210945f4113a5a": {
+    "count": 1,
+    "owner": "WorkspaceViewActions",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/card-lab/CardLab.jsx|markup|7dcbd1fb8a63cca708de": {
+    "count": 1,
+    "owner": "CardLabMovieCard",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/card-lab/CardLab.jsx|markup|37850539f8df62595b1f": {
+    "count": 1,
+    "owner": "CardLabMovieCard",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/cleanup/TVMaintenanceTab.jsx|markup|f6b05328fc9429efd27e": {
+    "count": 1,
+    "owner": "TVMaintenanceTab",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/discover/DiscoverWorkspace.jsx|markup|0f0395409f482bf96591": {
+    "count": 1,
+    "owner": "filterControls",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/discover/DiscoverWorkspace.jsx|markup|88fa94edb5fa36c5d940": {
+    "count": 1,
+    "owner": "IndexerMovieCard",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/home/home.css|css|86d4a969df7bbbf7894a": {
+    "count": 1,
+    "owner": ".home-detail-card .unified-chip-row-actions",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/features/home/HomeTrailersPanel.jsx|markup|53b9dcd458c1d6750a59": {
+    "count": 1,
+    "owner": "heading",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/home/HomeTrailersPanel.jsx|markup|552f671aa9e1e0c611c6": {
+    "count": 1,
+    "owner": "heading",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/home/HomeTrailersPanel.jsx|markup|7359ebf3f9292e04e6fc": {
+    "count": 1,
+    "owner": "HomeTrailersPanel",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/home/HomeTrailersPanel.jsx|markup|0c9a34365ad3248d6b64": {
+    "count": 1,
+    "owner": "HomeTrailersPanel",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/home/HomeTrailersPanel.jsx|markup|57fce1480a51a6713f21": {
+    "count": 1,
+    "owner": "HomeTrailersPanel",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/home/HomeTrailersPanel.jsx|markup|53dbeb69f22c774731ed": {
+    "count": 1,
+    "owner": "HomeTrailersPanel",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/home/HomeTrailersPanel.jsx|markup|f4920d61f4f568b73fd8": {
+    "count": 1,
+    "owner": "HomeTrailersPanel",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/home/HomeTrailersPanel.jsx|markup|6f2a2f9c22ea250c4fb5": {
+    "count": 1,
+    "owner": "HomeTrailersPanel",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/home/HomeWorkspace.jsx|markup|2400516aa81059c2f637": {
+    "count": 1,
+    "owner": "detailsFor",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/home/HomeWorkspace.jsx|markup|68467ccb10d43f6dd3f2": {
+    "count": 1,
+    "owner": "module",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/home/HomeWorkspace.jsx|markup|355ae3ad4dd4141d93d5": {
+    "count": 1,
+    "owner": "ComingSoonPanel",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/home/HomeWorkspace.jsx|markup|26324adee682e1298db0": {
+    "count": 1,
+    "owner": "ComingSoonPanel",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/home/HomeWorkspace.jsx|markup|18256e5be5755d506217": {
+    "count": 1,
+    "owner": "HealthPanel",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/home/HomeWorkspace.jsx|markup|88807bba01ad3d92eb63": {
+    "count": 1,
+    "owner": "HealthPanel",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/home/HomeWorkspace.jsx|markup|7c41ee9a445389f7297f": {
+    "count": 1,
+    "owner": "HealthPanel",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/home/HomeWorkspace.jsx|markup|b2c652c8e9755105b32b": {
+    "count": 1,
+    "owner": "ReleasePanel",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/home/HomeWorkspace.jsx|markup|c12eb7af5c7bdc65040d": {
+    "count": 1,
+    "owner": "ReleasePanel",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/home/HomeWorkspace.jsx|markup|8aa9e4845486a9fb4672": {
+    "count": 1,
+    "owner": "ReleasePanel",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/iptv/iptv.css|css|4f772c1a1d74b570513b": {
+    "count": 1,
+    "owner": ".iptv-favorites-empty",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/features/iptv/iptv.css|css|82f4bccfd28972fefefc": {
+    "count": 1,
+    "owner": ".iptv-favorites-empty svg",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/features/iptv/iptv.css|css|ec853c91a3d4867affd8": {
+    "count": 1,
+    "owner": ".iptv-favorites-empty strong",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/features/iptv/iptv.css|css|f39650c083d01ff026ca": {
+    "count": 1,
+    "owner": ".iptv-favorites-empty span",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/features/iptv/iptv.css|css|9b778c1ebd98a9421591": {
+    "count": 1,
+    "owner": ".iptv-list-picker > header span",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/features/iptv/iptv.css|css|8905070f7be3b1eb2058": {
+    "count": 1,
+    "owner": ".iptv-list-picker > form",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/features/iptv/iptv.css|css|c12454e7ae8391321e57": {
+    "count": 1,
+    "owner": ".iptv-workspace .iptv-diagnostic-controls .btn",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/features/iptv/IPTVBulkMetadataJob.jsx|markup|743eccfa12a5dab3caac": {
+    "count": 1,
+    "owner": "IPTVBulkMetadataJob",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/iptv/IPTVCards.jsx|markup|9cf8cffdf0318b89df03": {
+    "count": 1,
+    "owner": "FavoriteButton",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/iptv/IPTVCards.jsx|markup|eb4d4e7f8adbef7f7091": {
+    "count": 1,
+    "owner": "ListActionButton",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/iptv/IPTVListsWorkspace.jsx|markup|e50d743e52e1cf1e444a": {
+    "count": 1,
+    "owner": "IPTVListPickerModal",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/iptv/IPTVListsWorkspace.jsx|markup|2f012d6d9dcec4edce38": {
+    "count": 1,
+    "owner": "IPTVListsWorkspace",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/iptv/IPTVListsWorkspace.jsx|markup|c049dadc83ce76da8d4c": {
+    "count": 1,
+    "owner": "IPTVListsWorkspace",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/iptv/IPTVListsWorkspace.jsx|markup|e01cd4e972801868cc6a": {
+    "count": 1,
+    "owner": "IPTVListsWorkspace",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/iptv/IPTVListsWorkspace.jsx|markup|d736da7b27c4d4f71af3": {
+    "count": 1,
+    "owner": "IPTVListsWorkspace",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/iptv/IPTVPlayer.jsx|markup|22cd25de80967088cd68": {
+    "count": 1,
+    "owner": "IPTVPlayer",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/iptv/IPTVWorkspace.jsx|markup|438210c0c00f2e6cdbbe": {
+    "count": 1,
+    "owner": "IPTVWorkspace",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/iptv/IPTVWorkspace.jsx|markup|a8eadbb7282362159ec4": {
+    "count": 1,
+    "owner": "IPTVWorkspace",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/iptv/IPTVWorkspace.jsx|markup|806a024c0c04eb67c5a6": {
+    "count": 1,
+    "owner": "HomeStat",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/iptv/IPTVWorkspace.jsx|markup|be3f37b82573cc83af6a": {
+    "count": 1,
+    "owner": "BrowseToolbar",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/iptv/IPTVWorkspace.jsx|markup|f4a69da64e62116de02d": {
+    "count": 1,
+    "owner": "MovieToolbar",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/iptv/IPTVWorkspace.jsx|markup|08163975afd235b723e1": {
+    "count": 1,
+    "owner": "MovieToolbar",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/iptv/IPTVWorkspace.jsx|markup|5c46f64ce947cd1fd589": {
+    "count": 1,
+    "owner": "MovieToolbar",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/iptv/IPTVWorkspace.jsx|markup|135b8684a4143da16d22": {
+    "count": 1,
+    "owner": "LiveView",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/iptv/IPTVWorkspace.jsx|markup|e86f6c5a0bf7d71b7f7c": {
+    "count": 1,
+    "owner": "LiveView",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/iptv/IPTVWorkspace.jsx|markup|62ddfd4cb31008242f64": {
+    "count": 1,
+    "owner": "LiveView",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/iptv/IPTVWorkspace.jsx|markup|72014efebe7e8042e52d": {
+    "count": 1,
+    "owner": "SeriesView",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/iptv/IPTVWorkspace.jsx|markup|6f54f1e376f701f01654": {
+    "count": 1,
+    "owner": "FavoritesView",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/library/LibraryWorkspace.jsx|markup|08911158476f9370d61f": {
+    "count": 1,
+    "owner": "CollectionEditorModal",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/notifications/NotificationWindow.jsx|markup|52a1c4f83f233c350ef3": {
+    "count": 1,
+    "owner": "NotificationWindow",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/search/AdvancedSearchBuilder.jsx|markup|c17caaf2d5a6f70e77c6": {
+    "count": 1,
+    "owner": "IdentityPicker",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/search/AdvancedSearchBuilder.jsx|markup|2ea59f857a24917f0764": {
+    "count": 1,
+    "owner": "IdentityPicker",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/search/AdvancedSearchBuilder.jsx|markup|8bdfb3c404174672f3a3": {
+    "count": 1,
+    "owner": "AdvancedSearchBuilder",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/search/AdvancedSearchBuilder.jsx|markup|5bb7c1ef23d05aeb2fff": {
+    "count": 1,
+    "owner": "AdvancedSearchBuilder",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/search/AdvancedSearchBuilder.jsx|markup|18e9e50ef78a36158b6a": {
+    "count": 1,
+    "owner": "AdvancedSearchBuilder",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/search/AdvancedSearchBuilder.jsx|markup|2a258c9246e6f826f96a": {
+    "count": 1,
+    "owner": "AdvancedSearchBuilder",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/search/AdvancedSearchBuilder.jsx|markup|4be277cd61bd0e6fa858": {
+    "count": 1,
+    "owner": "AdvancedSearchBuilder",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/search/AdvancedSearchBuilder.jsx|markup|c66e00228371c5bfe842": {
+    "count": 1,
+    "owner": "AdvancedSearchBuilder",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/search/AdvancedSearchBuilder.jsx|markup|4005af425b453979d256": {
+    "count": 1,
+    "owner": "AdvancedSearchBuilder",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/search/AdvancedSearchBuilder.jsx|markup|785a4b50c74629c66e84": {
+    "count": 1,
+    "owner": "AdvancedSearchBuilder",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/search/AdvancedSearchBuilder.jsx|markup|1e7224a6e11041b4d033": {
+    "count": 1,
+    "owner": "AdvancedSearchBuilder",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/search/AdvancedSearchBuilder.jsx|markup|910aeef848b97d8585a5": {
+    "count": 1,
+    "owner": "AdvancedSearchBuilder",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/search/AdvancedSearchBuilder.jsx|markup|6c8a30665b7535ecfd14": {
+    "count": 1,
+    "owner": "AdvancedSearchBuilder",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/settings/SettingsWorkspace.jsx|markup|36b53f9f12b51d98cbc9": {
+    "count": 1,
+    "owner": "SettingsWorkspace",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/settings/SettingsWorkspace.jsx|markup|013d9e48909f84d612d8": {
+    "count": 1,
+    "owner": "SettingsWorkspace",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/settings/SettingsWorkspace.jsx|markup|68dfa2120c89489d2567": {
+    "count": 1,
+    "owner": "SecretField",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/tv/tv.css|css|62e65dfba4fa36a96a92": {
+    "count": 1,
+    "owner": ".tv-version-dialog::backdrop",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/features/tv/tv.css|css|4017587734758a7ce2a7": {
+    "count": 1,
+    "owner": ".tv-version-dialog table",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/features/tv/tv.css|css|89420985399b5aa5fcfd": {
+    "count": 1,
+    "owner": ".tv-version-dialog th,\n.tv-version-dialog td",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/features/tv/tv.css|css|59d89076026605ca1a40": {
+    "count": 1,
+    "owner": ".tv-release-dialog select",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/features/tv/tv.css|css|72177a5e135900fb64d8": {
+    "count": 1,
+    "owner": ".tv-series-page .movie-language-toggle",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/features/tv/tv.css|css|f9c37119b478ee926de0": {
+    "count": 1,
+    "owner": ".tv-series-page .tv-series-badges .unified-chip",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/features/tv/TVLibraryImport.jsx|markup|b9e0033587e381a36b46": {
+    "count": 1,
+    "owner": "TVLibraryImport",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/features/tv/TVWorkspace.jsx|markup|0f85c965b2619c0cee09": {
+    "count": 1,
+    "owner": "TVSeriesCard",
+    "reason": "Existing specialized semantic control; reuse this owner rather than copying it."
+  },
+  "src/styles/identityReview.css|css|d6dc38dfe9686a346b40": {
+    "count": 1,
+    "owner": ".identity-review-intro .btn",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles/identityReview.css|css|e219702d74adfb54a551": {
+    "count": 1,
+    "owner": ".identity-review-scan-actions .btn",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles/identityReview.css|css|22e06ae3a51a6ec48085": {
+    "count": 1,
+    "owner": ".identity-review-row .cleanup-row-actions .btn,\r\n  .identity-review-footer .btn",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles/metadataAuthority.css|css|84411e4d9c21ade86fd3": {
+    "count": 1,
+    "owner": ".metadata-authority-actions .btn,\r\n  .metadata-migration-preview .btn,\r\n  .metadata-migration-controls .btn,\r\n  .metadata-identity-audit-heading .btn,\r\n  .metadata-audit-review > .btn,\r\n  .metadata-review-routing .btn",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles/metadataAuthority.css|css|e7d9123e9012d4974ef0": {
+    "count": 1,
+    "owner": ".metadata-identity-audit-heading .btn",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles/metadataCorrection.css|css|c1bcbc6ac4ff795dd5df": {
+    "count": 1,
+    "owner": ".metadata-correction-search .dialog-field",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles/metadataCorrection.css|css|97bfe5b20972a056f7af": {
+    "count": 1,
+    "owner": ".metadata-correction-search .dialog-field input",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles/movieRelationships.css|css|45d24cd4c76c1f98bbf5": {
+    "count": 1,
+    "owner": ".related-movie-rail .horizontal-card-rail-header > .mini-action",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles/posterEditor.css|css|c649b70a8e0a441e4047": {
+    "count": 1,
+    "owner": ".poster-editor-modal .dialog-header p:last-child",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles/posterEditor.css|css|dba153853720ac275c9c": {
+    "count": 1,
+    "owner": ".poster-editor-actions .btn",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles/smartMatch.css|css|d120ee84f0c3293d158d": {
+    "count": 1,
+    "owner": ".smart-match-footer .btn,\n  .smart-match-controls .btn",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|be811e5cb211247de9b7": {
+    "count": 1,
+    "owner": ".discover-movie-card .btn:hover,\r\n.indexer-card .btn:hover",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|3541bdf622fcdf9786fc": {
+    "count": 1,
+    "owner": ".btn:active:not(:disabled),\r\n.discover-movie-card .btn:active:not(:disabled),\r\n.indexer-card .btn:active:not(:disabled)",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|c1851af739d6bff27572": {
+    "count": 1,
+    "owner": ".movie-play-action .spin",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|91f3a103d61b3bebd653": {
+    "count": 1,
+    "owner": ".search-mode-select",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|1f2295fd8a751fc6018f": {
+    "count": 1,
+    "owner": ".search-mode-select:hover",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|95227db65d499743f3e5": {
+    "count": 1,
+    "owner": ".search-mode-select:focus-visible",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|abd1dca16857f109415f": {
+    "count": 1,
+    "owner": ".search-mode-select option,\r\n.advanced-add-popover select option",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|3bc02182f724e213ef63": {
+    "count": 1,
+    "owner": ".search-mode-select::picker(select)",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|be3a63e7b865410031d7": {
+    "count": 1,
+    "owner": ".search-mode-select option",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|1040b431e60e0a833232": {
+    "count": 1,
+    "owner": ".search-mode-select option:hover,\r\n  .search-mode-select option:focus-visible",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|cd07c92b43d38a70d827": {
+    "count": 1,
+    "owner": ".search-mode-select option:checked",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|0b93d73c3b937d7a5aa0": {
+    "count": 1,
+    "owner": ".search-mode-select option::checkmark",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|aec0f7d2b3019739c2a3": {
+    "count": 1,
+    "owner": ".person-search-actions .btn",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|57d88c521cf675f9cb88": {
+    "count": 1,
+    "owner": ".keyword-search-card > .btn",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|c9a116db3a6f765adc8e": {
+    "count": 1,
+    "owner": ".lists-picker-trigger",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|4192bb94641e5346ba1a": {
+    "count": 1,
+    "owner": ".lists-picker-trigger > svg",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|4711cb4a369868235352": {
+    "count": 1,
+    "owner": ".lists-name-dialog",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|8c85db4c109f7e916ae5": {
+    "count": 1,
+    "owner": ".lists-name-dialog::backdrop",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|35952cc5e38920c3c90a": {
+    "count": 1,
+    "owner": ".workspace-filter-grid .btn.library-filter-icon-button,\r\n.workspace-filter-grid .btn.discover-toolbar-icon-button",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|0121434975273a162282": {
+    "count": 1,
+    "owner": ".library-toolbar select,\r\n.library-mini-input",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|8a50c126c82a9ca1d8ea": {
+    "count": 1,
+    "owner": ".library-mini-input::placeholder",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|25dea1102ddc6ef1ef1d": {
+    "count": 1,
+    "owner": ".collection-panel strong,\r\n.list-chip button",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|7a451d962b31085a6e98": {
+    "count": 1,
+    "owner": ".list-chip button",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|0a3cc5b051fc235630a0": {
+    "count": 1,
+    "owner": ".list-chip button:last-child",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|dc5bc9f75fcb2e68f7d8": {
+    "count": 1,
+    "owner": ".cleanup-match-dialog .dialog-header h2",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|41d861f5074d1c26263e": {
+    "count": 1,
+    "owner": ".cleanup-match-form .dialog-field",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|41b13aa5b6920cca1d3d": {
+    "count": 1,
+    "owner": ".cleanup-match-form .dialog-field input",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|d4aef01aadc054cdd7de": {
+    "count": 1,
+    "owner": ".settings-chip small",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|e5e9080555a3cc82a5bd": {
+    "count": 1,
+    "owner": ".settings-chip-ready small",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|b1b526db9287864adb44": {
+    "count": 1,
+    "owner": ".ollama-model-lookup .btn",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|703b40dab5f893e58acd": {
+    "count": 1,
+    "owner": ".workspace-filter-grid > select, .workspace-filter-grid > .library-mini-input",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|95dbeeae5e72ac63d671": {
+    "count": 1,
+    "owner": ".discover-toolbar select,\r\n.discover-toolbar .library-mini-input",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|47cd45e935519bd1a430": {
+    "count": 1,
+    "owner": ".discover-toolbar .btn",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|19987ab8cfc69fe83212": {
+    "count": 1,
+    "owner": ".indexer-action-row-expanded .btn",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|0f16df1ee33250e15015": {
+    "count": 1,
+    "owner": ".movie-language-toggle",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|87ac760e3e59f7972282": {
+    "count": 1,
+    "owner": ".torrent-action-group .btn",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|4cfecb9c73f200b5c055": {
+    "count": 1,
+    "owner": ".advanced-confirm-add",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|9697bafd3e0af70e35c1": {
+    "count": 1,
+    "owner": ".card-actions .btn",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|c817da3b21a824519054": {
+    "count": 1,
+    "owner": ".library-header-actions,\r\n  .library-header-actions .btn,\r\n  .segmented-control",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|b6043d1db78b7768f426": {
+    "count": 1,
+    "owner": ".cleanup-selection-bar div,\r\n  .cleanup-selection-bar .mini-action,\r\n  .duplicate-group-card > header .btn,\r\n  .match-result-row .btn",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|4c7aaa4c0eb2bbfc0036": {
+    "count": 1,
+    "owner": ".cleanup-tabs button",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|513372efa8f157c3a3e8": {
+    "count": 1,
+    "owner": ".cleanup-tabs button:last-child",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|1848543dd58645703d5a": {
+    "count": 1,
+    "owner": ".file-row-actions .btn,\r\n  .library-card-actions .btn,\r\n  .cleanup-row-actions .btn,\r\n  .dialog-actions .btn,\r\n  .settings-action-grid .btn",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/styles.css|css|ff97442c1d505f03f3e1": {
+    "count": 1,
+    "owner": ".dialog-actions",
+    "reason": "Existing shared layout or specialized composition; change the authoritative owner instead of adding overrides."
+  },
+  "src/App.jsx|markup|732000227f2356303903": {
+    "count": 1,
+    "owner": "TrailerModal",
+    "reason": "Existing media playback stage, explicitly excluded from dialog-shell redesign; keep its player geometry and dismissal owner."
+  },
+  "src/components/StreamPlayerModal.jsx|markup|df21dfba28beb5acfb09": {
+    "count": 1,
+    "owner": "StreamPlayerModal",
+    "reason": "Existing media playback stage, explicitly excluded from dialog-shell redesign; keep its player geometry and dismissal owner."
+  },
+  "src/features/home/HomeTrailersPanel.jsx|markup|10998d13ef4dc0567cba": {
+    "count": 1,
+    "owner": "HomeTrailersPanel",
+    "reason": "Existing media playback stage, explicitly excluded from dialog-shell redesign; keep its player geometry and dismissal owner."
+  }
+}

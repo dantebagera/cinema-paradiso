@@ -11,6 +11,17 @@ from contextlib import closing
 
 
 class FriendTestPackageTests(unittest.TestCase):
+    def test_recipient_must_choose_their_own_account_and_evidence_permissions(self):
+        from tools.build_portable_release import friend_test_config
+        original = {'ai_provider': 'chatgpt', 'chatgpt': {'active_account_id': 'private', 'model': 'private-model',
+            'recommendation_count': '120', 'allow_iptv_titles': True, 'allow_movie_identity_hints': True}}
+        copied = friend_test_config(original)
+        self.assertIsNone(copied['chatgpt']['active_account_id'])
+        self.assertEqual(copied['chatgpt']['model'], '')
+        self.assertFalse(copied['chatgpt']['allow_iptv_titles'])
+        self.assertFalse(copied['chatgpt']['allow_movie_identity_hints'])
+        self.assertEqual(copied['chatgpt']['recommendation_count'], '120')
+        self.assertEqual(original['chatgpt']['active_account_id'], 'private')
     def test_private_config_preserves_keys_and_uses_empty_package_libraries(self):
         from tools.build_portable_release import friend_test_config
         original = {'tmdb_key': 'private-test-key', 'movies_dirs': ['E:/Movies'],

@@ -1,0 +1,21 @@
+100-TITLE LIONZ GPT TIMING COMPARISON
+
+Completed 2026-11-06. Four real GPT requests, all 100 output rows schema-valid in every request. No transport retries or output repairs.
+
+The basic instructions exactly equal IPTV_BULK_INSTRUCTIONS in the current CP source. The advanced instructions are the same proposed rules used in the earlier 48-title experiment. The advanced skill has not been installed into CP.
+
+Same 100 seeded random Lionz titles (seed 20261106) and identical input/output format for both prompts. Selected from the historical 6,413-source completed GPT job. Prior outcomes: 65 verified, 13 review, 22 unmatched. This mixed historical sample is not a representative sample of only the sources that would survive a revised CP first pass.
+
+Model gpt-6.1-sol, default reasoning settings, existing CP OAuth owner and request transport. Execution was standalone, not inside the running CP job. No app import, server restart, job creation, catalogue update, Egysat access, or CP source/configuration modification. All artifacts written to this temporary directory. Order basic, advanced, advanced, basic. No input cache hits were reported.
+
+Current prompt: 72.529 and 71.646 seconds; mean 72.0875 seconds. 7,074 and 7,076 total tokens; mean 7,075.
+Advanced prompt: 72.927 and 73.333 seconds; mean 73.13 seconds. 7,406 and 7,430 total tokens; mean 7,418.
+Difference: +1.0425 seconds (+1.45%) and +343 tokens (+4.85%) per 100-title request on this sample.
+
+Metric boundaries: Timed from request invocation through completed streamed response. Includes transport/network and token access inside the request. Does not include initial data preparation, pre-request authentication, CP's initial matching, TMDB searching/verification, catalogue application, or production scheduler contention. No TMDB calls were made. These numbers measure prompt overhead on CP's normal batch size; they do not establish full CP workflow duration or a universal live request average.
+
+Accuracy scope: JSON schema and source ID coverage were checked. Movie identity correctness and downstream match yield were not re-evaluated in this timing-only experiment. The prior 48-title experiment includes a limited candidate-retrieval comparison.
+
+Interpretation: The proposed concise advanced rules added little request latency in these four measurements. Their input overhead is 240 tokens shared across the batch; total usage rose about 5%. Two runs per prompt on one sample are insufficient for a general latency guarantee. Full CP end-to-end timing and production acceptance remain separate work.
+
+Evidence: experiment.json contains both exact prompts and the 100 inputs; calls.json contains request metrics and provider-reported usage; trial*.json contain complete responses; summary.json contains recalculated means and differences.

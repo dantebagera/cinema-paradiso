@@ -1,0 +1,35 @@
+Recorded console evidence excerpts from the tool execution transcript.
+Original Playwright stdout was displayed by the tool, not redirected to a file.
+Compiled isolated frontend; CP_TEST_MODE=1; port 5129.
+
+Command:
+playwright test tests/e2e/card-artwork-performance.spec.js tests/e2e/movie-scroll-return.spec.js tests/e2e/continue-watching.spec.js
+
+Running 18 tests using 1 worker
+Library initial backdrop requests: 6/40
+ok 1 Library defers offscreen backdrops while preserving visible artwork and scroll loading
+ok 2 An expanded card has its artwork immediately even before its visibility notification
+Home initial backdrop requests: 5/60
+ok 3 Home poster rails defer clipped and below-screen artwork then load it on navigation
+ok 4 Browsers without IntersectionObserver still show supplied artwork
+Related initial backdrop requests: 13/20
+ok 5 Related titles defer clipped artwork and preserve navigation after scrolling
+ok 6 A stale artwork notification cannot activate a replacement URL in hidden Home (1 pending cards)
+ok 7 A stale artwork notification cannot activate a replacement URL in hidden Home (2 pending cards)
+ok 8 Continue Watching keeps only the selected menu open with mouse and keyboard
+ok 9 Continue Watching View card opens only that expanded movie and supports a second selection
+ok 10 Continue Watching View card selects Movies when Discover last showed TV
+ok 11 Continue Watching explains missing identity without searching for a different movie
+ok 12 discover restores the pre-expansion scroll after repeated mouse and keyboard collapses
+ok 13 library restores the pre-expansion scroll after repeated mouse and keyboard collapses
+ok 14 movie-lists restores the pre-expansion scroll after repeated mouse and keyboard collapses
+ok 15 ai-control restores the pre-expansion scroll after repeated mouse and keyboard collapses
+ok 16 pick restores the pre-expansion scroll after repeated mouse and keyboard collapses
+ok 17 browse restores the pre-expansion scroll after repeated mouse and keyboard collapses
+ok 18 Switching movies lets the new expanded card own scrolling
+
+18 passed (27.4s)
+Artifacts: C:\Users\dante\AppData\Local\Temp\cp-artwork-005356c1cd2b491c8b0f4c6dfafefb4d\final-regression-results
+
+Known non-fatal runner warning: NO_COLOR ignored because FORCE_COLOR is set.
+Fixture provider routes return blocked responses under CP_TEST_MODE; no external providers or live catalog used.

@@ -1,0 +1,236 @@
+[
+  {
+    "name": "Minimize",
+    "rect": [
+      3280,
+      135,
+      3385,
+      240
+    ]
+  },
+  {
+    "name": "Close",
+    "rect": [
+      3395,
+      135,
+      3500,
+      240
+    ]
+  },
+  {
+    "name": "Previous file",
+    "rect": [
+      390,
+      1765,
+      495,
+      1870
+    ]
+  },
+  {
+    "name": "Pause",
+    "rect": [
+      520,
+      1765,
+      625,
+      1870
+    ]
+  },
+  {
+    "name": "Next: Missing member — Missing locally",
+    "rect": [
+      650,
+      1765,
+      755,
+      1870
+    ]
+  },
+  {
+    "name": "Mute",
+    "rect": [
+      780,
+      1765,
+      885,
+      1870
+    ]
+  },
+  {
+    "name": "Playback speed 1.00",
+    "rect": [
+      2695,
+      1765,
+      2800,
+      1870
+    ]
+  },
+  {
+    "name": "",
+    "rect": [
+      2825,
+      1765,
+      2930,
+      1870
+    ]
+  },
+  {
+    "name": "Subtitles",
+    "rect": [
+      2955,
+      1765,
+      3060,
+      1870
+    ]
+  },
+  {
+    "name": "Playlist",
+    "rect": [
+      3085,
+      1765,
+      3190,
+      1870
+    ]
+  },
+  {
+    "name": "Settings",
+    "rect": [
+      3215,
+      1765,
+      3320,
+      1870
+    ]
+  },
+  {
+    "name": "Enter fullscreen",
+    "rect": [
+      3345,
+      1765,
+      3450,
+      1870
+    ]
+  },
+  {
+    "name": "Unknown — Audio 01 · Long release label · العربية — AAC — 2 · Default",
+    "rect": [
+      2692,
+      430,
+      3394,
+      502
+    ]
+  },
+  {
+    "name": "Unknown — Audio 02 · Long release label · العربية — AAC — 2 · Default",
+    "rect": [
+      2692,
+      512,
+      3394,
+      584
+    ]
+  },
+  {
+    "name": "Unknown — Audio 03 · Long release label · العربية — AAC — 2 · Default",
+    "rect": [
+      2692,
+      595,
+      3394,
+      667
+    ]
+  },
+  {
+    "name": "Unknown — Audio 04 · Long release label · العربية — AAC — 2 · Default",
+    "rect": [
+      2692,
+      677,
+      3394,
+      749
+    ]
+  },
+  {
+    "name": "Unknown — Audio 05 · Long release label · العربية — AAC — 2 · Default",
+    "rect": [
+      2692,
+      760,
+      3394,
+      832
+    ]
+  },
+  {
+    "name": "Unknown — Audio 06 · Long release label · العربية — AAC — 2 · Default",
+    "rect": [
+      2692,
+      842,
+      3394,
+      914
+    ]
+  },
+  {
+    "name": "Unknown — Audio 07 · Long release label · العربية — AAC — 2 · Default",
+    "rect": [
+      2692,
+      925,
+      3394,
+      997
+    ]
+  },
+  {
+    "name": "Unknown — Audio 08 · Long release label · العربية — AAC — 2 · Default",
+    "rect": [
+      2692,
+      1007,
+      3394,
+      1079
+    ]
+  },
+  {
+    "name": "Unknown — Audio 09 · Long release label · العربية — AAC — 2 · Default",
+    "rect": [
+      2692,
+      1090,
+      3394,
+      1162
+    ]
+  },
+  {
+    "name": "Unknown — Audio 10 · Long release label · العربية — AAC — 2 · Default",
+    "rect": [
+      2692,
+      1172,
+      3394,
+      1244
+    ]
+  },
+  {
+    "name": "Unknown — Audio 11 · Long release label · العربية — AAC — 2 · Default",
+    "rect": [
+      2692,
+      1255,
+      3394,
+      1327
+    ]
+  },
+  {
+    "name": "Unknown — Audio 12 · Long release label · العربية — AAC — 2 · Default",
+    "rect": [
+      2692,
+      1337,
+      3394,
+      1409
+    ]
+  },
+  {
+    "name": "Unknown — Audio 13 · Long release label · العربية — AAC — 2 · Default",
+    "rect": [
+      2692,
+      1420,
+      3394,
+      1492
+    ]
+  },
+  {
+    "name": "Unknown — Audio 14 · Long release label · العربية — AAC — 2 · Default",
+    "rect": [
+      2692,
+      1502,
+      3394,
+      1574
+    ]
+  }
+]

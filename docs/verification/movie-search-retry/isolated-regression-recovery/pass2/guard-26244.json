@@ -1,0 +1,49 @@
+{
+  "pid": 26244,
+  "role": "recovery",
+  "root": "c:\\users\\dante\\appdata\\local\\temp\\cp-regression-recovery-30b40a41d572",
+  "violations": [
+    {
+      "event": "socket.connect",
+      "value": "('127.0.0.1', 5163)"
+    },
+    {
+      "event": "socket.connect",
+      "value": "('127.0.0.1', 5163)"
+    }
+  ],
+  "audit_counts": {
+    "import": 397,
+    "os.listdir": 43,
+    "open": 442,
+    "cpython.run_file": 1,
+    "compile": 2390,
+    "exec": 1084,
+    "os.chdir": 1,
+    "marshal.loads": 257,
+    "sys._getframemodulename": 22,
+    "object.__setattr__": 76,
+    "object.__getattr__": 306,
+    "builtins.id": 219,
+    "ctypes.dlopen": 8,
+    "ctypes.dlsym": 37,
+    "socket.gethostname": 1,
+    "_wmi.exec_query": 2,
+    "sys._getframe": 12,
+    "socket.getaddrinfo": 3,
+    "socket.__new__": 3,
+    "socket.bind": 1,
+    "socket.gethostbyaddr": 1,
+    "os.remove": 1,
+    "os.mkdir": 32,
+    "sqlite3.connect": 54,
+    "sqlite3.connect/handle": 54,
+    "winreg.OpenKey": 2,
+    "winreg.OpenKey/result": 2,
+    "winreg.QueryValue": 2,
+    "_thread.start_new_thread": 17,
+    "urllib.Request": 2,
+    "http.client.connect": 2,
+    "socket.connect": 2
+  }
+}

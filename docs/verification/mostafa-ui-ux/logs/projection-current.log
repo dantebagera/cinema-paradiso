@@ -1,0 +1,14 @@
+test_movies_get_is_pure_and_projection_is_nonblocking_progressive (tests.test_iptv_movie_gates_0_5.ProjectionAndWorkerTests.test_movies_get_is_pure_and_projection_is_nonblocking_progressive) ... FAIL
+
+======================================================================
+FAIL: test_movies_get_is_pure_and_projection_is_nonblocking_progressive (tests.test_iptv_movie_gates_0_5.ProjectionAndWorkerTests.test_movies_get_is_pure_and_projection_is_nonblocking_progressive)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\test_iptv_movie_gates_0_5.py", line 185, in test_movies_get_is_pure_and_projection_is_nonblocking_progressive
+    self.assertLess(time.perf_counter() - started, 1.0)
+AssertionError: 1.0148717000265606 not less than 1.0
+
+----------------------------------------------------------------------
+Ran 1 test in 1.549s
+
+FAILED (failures=1)

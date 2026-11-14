@@ -1,0 +1,101 @@
+--- tests/test_library_action_ux.py (before)
++++ tests/test_library_action_ux.py (after)
+@@ -248,11 +248,17 @@
+         self.assertIn("if (item.metadata_status === 'pending') return 'Pending metadata';", self.cleanup_utils_source)
+ 
+     def test_home_health_uses_backend_cleanup_counts(self):
+-        self.assertIn("['Duplicates', stats?.duplicate_groups, 'duplicates']", self.source)
+-        self.assertIn("['Unmatched', stats?.unmatched_count, 'unmatched']", self.source)
+-        self.assertIn("['Identity review', stats?.identity_review_count, 'identity']", self.source)
+-        self.assertNotIn("label: 'Plex matched'", self.source)
+-        self.assertNotIn("value: stats?.dup_groups", self.source)
++        home = (APP_JSX.parent / "features" / "home" / "HomeWorkspace.jsx").read_text(encoding="utf-8")
++        # HealthPanel is authoritative; each action must retain its backend count and destination.
++        for label, field, destination in (
++            ('Duplicates', 'duplicate_groups', 'duplicates'),
++            ('Unmatched', 'unmatched_count', 'unmatched'),
++            ('Identity review', 'identity_review_count', 'identity'),
++        ):
++            self.assertRegex(home, rf"\{{ label: '{label}', value: stats\?\.{field},[^\n]+tab: '{destination}' \}}")
++        self.assertIn("onOpenCleanup(card.tab)", home)
++        self.assertNotIn("label: 'Plex matched'", home)
++        self.assertNotIn("value: stats?.dup_groups", home)
+ 
+     def test_home_health_refreshes_when_library_changes(self):
+         self.assertIn("function announceLibraryChanged", self.source)
+@@ -295,17 +301,18 @@
+         self.assertIn("merged[section] = { ...merged[section], [field]: current[section][field] }", self.source)
+ 
+     def test_library_refreshes_quietly_for_background_changes(self):
+-        self.assertIn("function LibraryWorkspace({", self.source)
+-        self.assertIn("window.addEventListener('cp-library-changed', handleLibraryChanged)", self.source)
+-        self.assertIn(
+-            "loadLibrary(false, { background: true, quiet: true, silentSuccess: true })",
+-            self.source,
+-        )
+-        self.assertIn("if (!background) {", self.source)
+-        self.assertIn("if (!background && requestSeq === libraryRequestSeq.current) setLoading(false)", self.source)
+-        self.assertIn("const requestedPage = forceScan ? 1 : currentPage", self.source)
+-        self.assertNotIn("if (!quiet) setCurrentPage(1)", self.source)
+-        self.assertNotIn("Library changed. Refresh view", self.source)
++        library = LIBRARY_WORKSPACE.read_text(encoding="utf-8")
++        self.assertIn("window.addEventListener('cp-library-changed', handleLibraryChanged)", library)
++        self.assertIn("loadLibrary(false, { background: true, quiet: true, silentSuccess: true })", library)
++        foreground = library.split("if (!background) {", 1)[1].split("    try {", 1)[0]
++        self.assertIn("setLoading(true)", foreground)
++        self.assertIn("if (forceScan) setCurrentPage(1)", foreground)
++        self.assertIn("const quiet = Boolean(options.quiet)", library)
++        self.assertIn("if (!forceScan && !background && !quiet && !options.silentSuccess)", library)
++        self.assertIn("visibleLibraryReadRef.current = { query: activeLibraryQuery, page: currentPage, pageSize, intent:", library)
++        self.assertIn("if (descriptor ? canCommit() : requestSeq === libraryRequestSeq.current && libraryReadsRef.current) setLoading(false)", library)
++        self.assertNotIn("if (!quiet) setCurrentPage(1)", library)
++        self.assertNotIn("Library changed. Refresh view", library)
+ 
+     def test_movie_view_exposes_local_metadata_correction(self):
+         self.assertIn("Correct metadata", self.shared_cards_source)
+@@ -640,11 +647,11 @@
+         self.assertNotIn("/api/user/lists/following", movie_lists_source)
+ 
+     def test_release_watcher_exposes_manual_full_scan_and_ownership_reconciliation(self):
+-        home_source = (Path(__file__).resolve().parents[1] / "src" / "features" / "home" / "HomeWorkspace.jsx").read_text(encoding="utf-8")
+-        # The approved scrolling/filter contract is exercised by compiled Home
+-        # browser tests; the old three-row/drawer assertions contradicted it.
++        home_source = (APP_JSX.parent / "features" / "home" / "HomeWorkspace.jsx").read_text(encoding="utf-8")
+         self.assertIn("aria-label={checking ? 'Scanning followed releases' : 'Scan followed releases'}", home_source)
+-        self.assertIn("onScanFollowed={() => executeFollowedOperation('full', { announceCompletion: true })}", self.source)
++        # The named callback preserves manual full scan; ownership reconciliation remains separate.
++        self.assertIn("const scanHomeFollowed = useCallback(() => executeFollowedOperation('full', { announceCompletion: true })", self.source)
++        self.assertIn("onScanFollowed={scanHomeFollowed}", self.source)
+         self.assertIn("/api/user/followed-releases/reconcile-owned", self.source)
+ 
+     def test_movie_lists_reuses_global_movie_cards_and_normal_per_card_source_search(self):
+@@ -674,18 +681,17 @@
+         self.assertIn(".finally(() => {", movie_lists_source)
+ 
+     def test_library_loads_ignore_older_responses(self):
+-        library_workspace = (Path(__file__).resolve().parents[1] / "src" / "features" / "library" / "LibraryWorkspace.jsx").read_text(encoding="utf-8")
+-        self.assertIn("const backgroundRequestSeq = useRef(0)", library_workspace)
+-        self.assertIn("? backgroundRequestSeq.current + 1", library_workspace)
+-        self.assertIn(": libraryRequestSeq.current + 1", library_workspace)
+-        self.assertIn("if (background) backgroundRequestSeq.current = requestSeq", library_workspace)
+-        self.assertIn("else libraryRequestSeq.current = requestSeq", library_workspace)
+-        self.assertGreaterEqual(
+-            library_workspace.count(
+-                "requestSeq !== (background ? backgroundRequestSeq.current : libraryRequestSeq.current)"
+-            ),
+-            3,
+-        )
++        library = LIBRARY_WORKSPACE.read_text(encoding="utf-8")
++        # The shared request scheduler is exercised by Node and compiled desktop race tests.
++        # This checks that the visible Library commits are wired to that owner and current intent.
++        self.assertIn("import { createLibrarySearchRequests } from './librarySearchRequests.js'", library)
++        self.assertIn("libraryReadsRef.current = createLibrarySearchRequests", library)
++        self.assertIn("const outcome = await libraryReadsRef.current.request(descriptor)", library)
++        self.assertIn("requestSeq === libraryRequestSeq.current", library)
++        self.assertIn("descriptor.intent === visibleLibraryReadRef.current?.intent", library)
++        self.assertIn("descriptor.freshness === libraryFreshnessRef.current", library)
++        self.assertIn("if (descriptor ? !canCommit() : requestSeq !== libraryRequestSeq.current || !libraryReadsRef.current) return", library)
++        self.assertIn("if (descriptor ? canCommit() : requestSeq === libraryRequestSeq.current && libraryReadsRef.current) setLoading(false)", library)
+ 
+     def test_ai_control_ownership_checks_ignore_a_previous_page_or_plan(self):
+         ai_control = AI_CONTROL.read_text(encoding="utf-8")

@@ -1,7 +1,11 @@
+import sqlite3
 from flask import Response, jsonify, request, send_file, stream_with_context
+
+from .iptv_provider_manager import IPTVProviderManager
 
 from .iptv_tmdb import IPTVTMDBClient, IPTVTMDBError
 from .iptv_xtream import XtreamError
+from .tmdb_people import normalize_tmdb_person_details
 
 
 def _iter_upstream_chunks(upstream, chunk_size=64 * 1024):
@@ -16,7 +20,7 @@ def _iter_upstream_chunks(upstream, chunk_size=64 * 1024):
         upstream.close()
 
 
-def register_iptv_routes(app, manager_provider):
+def register_iptv_routes(app, manager_provider, *, ai_provider=lambda: 'ollama', data_root_provider=None):
     def current_manager():
         return manager_provider() if callable(manager_provider) else manager_provider
 
@@ -25,6 +29,52 @@ def register_iptv_routes(app, manager_provider):
 
     def movie_service(provider_id):
         return current_manager().movie_service(provider_id)
+
+    def read_data_root():
+        if data_root_provider is not None:
+            return data_root_provider()
+        return current_manager().root.parent
+
+    def valid_movie_id(value):
+        return type(value) is int and 0 < value <= 2147483647
+
+    @app.post("/api/iptv/movies/availability")
+    def iptv_movie_availability():
+        body = request.get_json(silent=True)
+        if not isinstance(body, dict) or set(body) != {"tmdb_ids"}:
+            return jsonify({"error": "tmdb_ids is required"}), 400
+        ids = body["tmdb_ids"]
+        if not isinstance(ids, list) or not 1 <= len(ids) <= 100 or not all(map(valid_movie_id, ids)):
+            return jsonify({"error": "Supply 1 to 100 positive integer movie IDs"}), 400
+        try:
+            return jsonify(IPTVProviderManager.movie_availability(read_data_root(), list(dict.fromkeys(ids))))
+        except (OSError, RuntimeError, ValueError):
+            return jsonify({"error": "Saved IPTV provider registry is unavailable"}), 503
+
+    @app.post("/api/iptv/movies/sources")
+    def iptv_movie_available_sources():
+        body = request.get_json(silent=True)
+        if (not isinstance(body, dict) or set(body) != {"provider_id", "tmdb_id"}
+                or not isinstance(body["provider_id"], str) or not valid_movie_id(body["tmdb_id"])):
+            return jsonify({"error": "A provider ID and positive integer movie ID are required"}), 400
+        try:
+            return jsonify(IPTVProviderManager.movie_sources(read_data_root(), body["provider_id"], body["tmdb_id"]))
+        except KeyError:
+            return jsonify({"error": "IPTV provider was not found"}), 404
+        except (OSError, RuntimeError, ValueError, sqlite3.Error):
+            return jsonify({"error": "Saved IPTV movie catalog is unavailable"}), 503
+
+    @app.get("/api/iptv/providers/<provider_id>/people/<int:person_id>")
+    def iptv_person(provider_id, person_id):
+        try:
+            manager = current_manager()
+            manager._record(provider_id)
+            if not 0 < person_id <= 2147483647:
+                raise ValueError("A valid person ID is required")
+            raw = IPTVTMDBClient(manager.metadata_settings).person(person_id)
+            return jsonify(normalize_tmdb_person_details(raw))
+        except (KeyError, ValueError, RuntimeError) as error:
+            return error_response(error, provider_id)
 
     def error_response(error, provider_id="", status=400):
         if isinstance(error, KeyError):
@@ -162,6 +212,8 @@ def register_iptv_routes(app, manager_provider):
                 "view": request.args.get("view", "provider"),
                 "category": request.args.get("category", ""),
                 "q": request.args.get("q", ""),
+                "person_id": request.args.get("person_id", ""),
+                "person_role": request.args.get("person_role", ""),
                 "playlist_id": request.args.get("playlist_id", ""),
                 "list_id": request.args.get("list_id", ""),
                 "genre_id": request.args.get("genre_id", ""),
@@ -230,6 +282,7 @@ def register_iptv_routes(app, manager_provider):
                     "q": request.args.get("q", ""),
                     "category": request.args.get("category", ""),
                     "playlist_id": request.args.get("playlist_id", ""),
+                    "review_scope": request.args.get("review_scope", ""),
                 },
             ))
         except (KeyError, TypeError, ValueError, RuntimeError) as error:
@@ -251,6 +304,9 @@ def register_iptv_routes(app, manager_provider):
 
     @app.post("/api/iptv/providers/<provider_id>/movies/match-jobs")
     def iptv_movie_match_jobs(provider_id):
+        if (request.get_json(silent=True) or {}).get('method') == 'ai' and ai_provider() == 'chatgpt':
+            return jsonify({'error': 'Use the selected provider job endpoint', 'code': 'ai_job_endpoint_required',
+                'endpoint': f'/api/iptv/providers/{provider_id}/movies/ai/match-jobs'}), 409
         try:
             return jsonify(movie_service(provider_id).create_match_job(request.get_json(silent=True) or {}))
         except (KeyError, TypeError, ValueError, RuntimeError, IPTVTMDBError) as error:
@@ -376,7 +432,8 @@ def register_iptv_routes(app, manager_provider):
     def iptv_movie_match_search(provider_id, movie_key):
         try:
             return jsonify(movie_service(provider_id).manual_search(
-                movie_key, request.args.get("q", ""), request.args.get("year", 0)
+                movie_key, request.args.get("q", ""), request.args.get("year", 0),
+                tmdb_id=request.args.get("tmdb_id"),
             ))
         except (KeyError, TypeError, ValueError, RuntimeError, IPTVTMDBError) as error:
             return error_response(error, provider_id)
@@ -392,7 +449,8 @@ def register_iptv_routes(app, manager_provider):
                     reprocess=request.args.get("reprocess", "").lower() in {"1", "true", "yes"},
                 )
                 return jsonify({"success": True})
-            next_key = provider_movies.manual_match(movie_key, data.get("tmdb_id"))
+            next_key = provider_movies.manual_match(movie_key, data.get("tmdb_id"),
+                expected_category=data.get("expected_category"), expected_generation=data.get("catalog_generation"))
             return jsonify({"success": True, "movie_key": next_key})
         except (KeyError, TypeError, ValueError, RuntimeError, IPTVTMDBError) as error:
             return error_response(error, provider_id)

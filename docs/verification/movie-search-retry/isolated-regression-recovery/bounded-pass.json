@@ -1,0 +1,144 @@
+{
+  "batches": [
+    {
+      "name": "prepare",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\prepare.py"
+      ],
+      "exit_code": 0,
+      "active_seconds": 80.075,
+      "process_tree_cpu_seconds": 59.625,
+      "process_tree_write_bytes": 2671185472,
+      "processes": 3,
+      "temporary_footprint_bytes": 2671535414,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\prepare.log",
+      "expected_exit_code": 0
+    },
+    {
+      "name": "guard-probe",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\dispatch.py",
+        "probe"
+      ],
+      "exit_code": 0,
+      "active_seconds": 9.202,
+      "process_tree_cpu_seconds": 0.203125,
+      "process_tree_write_bytes": 1526,
+      "processes": 5,
+      "temporary_footprint_bytes": 2671546171,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\guard-probe.log",
+      "expected_exit_code": 0
+    },
+    {
+      "name": "movie-owners",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\dispatch.py",
+        "owners"
+      ],
+      "exit_code": 1,
+      "active_seconds": 108.175,
+      "process_tree_cpu_seconds": 49.21875,
+      "process_tree_write_bytes": 695925220,
+      "processes": 5,
+      "temporary_footprint_bytes": 2672141424,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\movie-owners.log",
+      "expected_exit_code": 0
+    },
+    {
+      "name": "focused-diagnosis",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\dispatch.py",
+        "focused"
+      ],
+      "exit_code": 0,
+      "active_seconds": 9.558,
+      "process_tree_cpu_seconds": 0.671875,
+      "process_tree_write_bytes": 1288735,
+      "processes": 9,
+      "temporary_footprint_bytes": 2672151070,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\focused-diagnosis.log",
+      "expected_exit_code": 0
+    },
+    {
+      "name": "movie-owners-final",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\dispatch.py",
+        "owners"
+      ],
+      "exit_code": 0,
+      "active_seconds": 136.129,
+      "process_tree_cpu_seconds": 48.34375,
+      "process_tree_write_bytes": 694654366,
+      "processes": 9,
+      "temporary_footprint_bytes": 2672166743,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\movie-owners-final.log",
+      "expected_exit_code": 0
+    },
+    {
+      "name": "cross-domain",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\dispatch.py",
+        "cross"
+      ],
+      "exit_code": 1,
+      "active_seconds": 227.065,
+      "process_tree_cpu_seconds": 82.125,
+      "process_tree_write_bytes": 275999197,
+      "processes": 5,
+      "temporary_footprint_bytes": 2675320358,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\cross-domain.log",
+      "expected_exit_code": 0
+    },
+    {
+      "name": "node-regression",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\node_tests.py"
+      ],
+      "exit_code": 1,
+      "active_seconds": 9.463,
+      "process_tree_cpu_seconds": 2.78125,
+      "process_tree_write_bytes": 285740,
+      "processes": 29,
+      "temporary_footprint_bytes": 2675336418,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\node-regression.log",
+      "expected_exit_code": 0
+    },
+    {
+      "name": "final-controls",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\final_controls.py"
+      ],
+      "exit_code": 0,
+      "active_seconds": 9.841,
+      "process_tree_cpu_seconds": 2.921875,
+      "process_tree_write_bytes": 338245,
+      "processes": 41,
+      "temporary_footprint_bytes": 2675397710,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\final-controls.log",
+      "expected_exit_code": 0
+    }
+  ],
+  "halted": false,
+  "product_failure": false,
+  "closed": true,
+  "closure_reason": "Only about 10 active seconds remain; insufficient for safe recovered boot/checkpoint/reopen. No allowance extension.",
+  "active_seconds": 589.508,
+  "process_tree_write_bytes": 4339678501,
+  "process_tree_cpu_seconds": 245.890625
+}

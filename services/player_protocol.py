@@ -12,6 +12,9 @@ MAX_DURATION_MS = 30 * 24 * 60 * 60 * 1000
 MESSAGE_TYPES = {
     "hello",
     "load",
+    "queue.select",
+    "queue.error",
+    "player.preferences",
     "ready",
     "playback.state",
     "progress",
@@ -116,6 +119,10 @@ def validate_message(message, *, expected_type=None, session_id=None, token=None
     )
     if session_id is not None and received_session_id != session_id:
         raise PlayerProtocolError("Player session does not match")
+    if "media_generation" in message:
+        generation = message['media_generation']
+        if isinstance(generation, bool) or not isinstance(generation, int) or not 1 <= generation <= 2147483647:
+            raise PlayerProtocolError('Player media generation is invalid')
     sequence = message.get("sequence", 0)
     if isinstance(sequence, bool) or not isinstance(sequence, int) or sequence < 0:
         raise PlayerProtocolError("Player message sequence is invalid")
@@ -128,6 +135,15 @@ def validate_message(message, *, expected_type=None, session_id=None, token=None
         )
         if token is not None and received_token != token:
             raise PlayerProtocolError("Player session authentication failed")
+    elif message_type == 'queue.select':
+        _bounded_string(message.get('path_key', ''), 'queue.path_key')
+        if 'media_generation' not in message or not isinstance(message.get('automatic'), bool):
+            raise PlayerProtocolError('Queue selection requires generation and automatic flag')
+    elif message_type == 'queue.error':
+        _bounded_string(message.get('message', ''), 'queue.message', maximum=1024)
+    elif message_type == 'player.preferences':
+        if not isinstance(message.get('autoplay'), bool):
+            raise PlayerProtocolError('autoplay must be true or false')
     elif message_type == "load":
         media = message.get("media")
         if not isinstance(media, dict):

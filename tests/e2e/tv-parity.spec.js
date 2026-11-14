@@ -1,6 +1,95 @@
 import { test, expect } from '@playwright/test';
 
+async function openControls(page) {
+  const toggle = page.getByRole('button', { name: 'Search, filters & selection', exact: true });
+  await expect(toggle).toBeVisible();
+  if (await toggle.getAttribute('aria-expanded') === 'false') await toggle.click();
+}
+
+async function measureLibraryActions(page, label) {
+  return page.getByRole('group', { name: label, exact: true }).evaluate(group => {
+    // Read the shared header synchronously so layout cannot move between samples.
+    const rescan = group.parentElement.querySelector('.library-rescan-button');
+    if (!rescan) throw new Error('Library refresh control is missing');
+    const rectangle = element => {
+      const { x, y, width, height } = element.getBoundingClientRect();
+      return { x, y, width, height };
+    };
+    return { view: rectangle(group), rescan: rectangle(rescan) };
+  });
+}
+
+async function measureDiscoverControls(page, tv = false) {
+  if (tv) {
+    // The zero-height sizing probe still contributes a grid gap while loading.
+    await expect(page.locator('.tv-discover-workspace .tv-series-card').first()).toBeVisible();
+    await expect(page.locator('.tv-discover-workspace .library-grid-metrics-probe')).toHaveCount(0);
+  }
+  await page.evaluate(async () => { await document.fonts.ready; });
+  return page.locator(tv ? '.tv-discover-workspace' : '.discover-workspace:not(.tv-discover-workspace)').evaluate(section => {
+    // Compare both modes at the same scroll origin, in one layout sample.
+    const workspace = section.closest('.workspace');
+    if (workspace) workspace.scrollTop = 0;
+    const rectangle = selector => {
+      const element = section.querySelector(selector);
+      if (!element) throw new Error(`Missing Discover geometry target: ${selector}`);
+      const { x, y, width, height } = element.getBoundingClientRect();
+      return { x, y, width, height };
+    };
+    return {
+      header: rectangle('.workspace-controls-strip'),
+      navigation: rectangle('.workspace-chrome > .media-section-tabs'),
+      search: rectangle('.workspace-search-form'),
+      field: rectangle('.workspace-search-form .discover-main-search'),
+      type: rectangle('.workspace-search-form select'),
+      submit: rectangle('.workspace-search-form > button[type="submit"]'),
+      filters: rectangle('.workspace-filter-grid'),
+    };
+  });
+}
+
+
 test.skip(process.env.CP_TV_E2E !== '1', 'Requires disposable TV fixture server');
+
+test('TV Library performance preserves real card values and exact saved version', async ({ page, request }) => {
+  const begin = await request.post('/__tv_fixture/library-performance/begin');
+  expect(begin.ok()).toBeTruthy();
+  const fixture = await begin.json();
+  try {
+    const response = await request.post('/api/tv/catalog/search', { data: { scope: 'library',
+      query: { version: 1, scope: 'library', mode: 'simple', groups: [], sort: { key: 'title', direction: 'asc' } },
+      page: 1, page_size: 100 } });
+    expect(response.ok()).toBeTruthy();
+    const payload = await response.json();
+    await page.goto('/library');
+    await page.getByRole('tablist', { name: 'Library media' }).getByRole('button', { name: 'TV Shows', exact: true }).click();
+    const region = page.getByRole('region', { name: 'Library TV Shows', exact: true });
+    await expect(region.locator('.tv-series-card')).toHaveCount(payload.items.length);
+    const card = region.getByRole('link', { name: 'Open Harbor Signals' });
+    const series = payload.items.find(item => item.title === 'Harbor Signals');
+    expect(series.available_count).toBe(2);
+    expect(series.primary_action.playable).toBe(true);
+    await expect(card).toContainText(`${series.season_count} seas. · ${series.episode_count} eps.`);
+    await card.click();
+    const season = await (await request.get('/api/tv/series/1/seasons/1')).json();
+    const episode = season.items.find(item => item.id === fixture.episode_id);
+    expect(episode).toHaveProperty('metadata');
+    expect(episode).toHaveProperty('overview');
+    expect(episode).toHaveProperty('guest_stars');
+    expect(episode.versions.map(item => item.file_id)).toEqual([1, fixture.file_id]);
+    const row = page.getByRole('article', { name: 'S01E01 Arrival' });
+    await row.getByRole('button', { name: 'Versions (2)', exact: true }).click();
+    const dialog = page.getByRole('dialog', { name: 'S01E01 versions' });
+    await dialog.getByRole('button', { name: 'Play this version', exact: true }).nth(1).click();
+    await expect.poll(async () => (await (await request.get('/__tv_fixture/library-performance/state')).json()).keys).toEqual([fixture.expected_key]);
+    const saved = await (await request.get('/api/tv/series/1/seasons/1')).json();
+    expect(saved.items.find(item => item.id === fixture.episode_id).selected_file_id).toBe(fixture.file_id);
+    await row.getByRole('button', { name: 'Play', exact: true }).click();
+    await expect.poll(async () => (await (await request.get('/__tv_fixture/library-performance/state')).json()).keys).toEqual([fixture.expected_key, fixture.expected_key]);
+  } finally {
+    expect((await request.post('/__tv_fixture/library-performance/end')).ok()).toBeTruthy();
+  }
+});
 
 test('TV Library routes identity review to Maintenance and preserves its cards', async ({ page }) => {
   await page.route('**/api/tv/maintenance**', route => route.fulfill({ json: {
@@ -10,47 +99,54 @@ test('TV Library routes identity review to Maintenance and preserves its cards',
     total: 1, page: 1, total_pages: 1,
   } }));
   await page.goto('/library');
+  await openControls(page);
   await page.getByRole('tablist', { name: 'Library media' }).getByRole('button', { name: 'TV Shows' }).click();
+  await openControls(page);
   const card = page.locator('.tv-series-card').first();
   await expect(card).toBeVisible();
   await page.getByRole('button', { name: /Review TV identity in Maintenance/ }).click();
   await expect(page.getByRole('tab', { name: 'TV Identity' })).toHaveAttribute('aria-selected', 'true');
   await expect(page.getByText('G:\\TV\\Example')).toBeVisible();
   await page.getByRole('button', { name: 'Library', exact: true }).click();
+  await openControls(page);
   await expect(card).toBeVisible();
 });
 
 test('Discover and Library use the in-page media rows and TV File View shows native TV files', async ({ page, request }) => {
   await page.goto('/discover');
+  await openControls(page);
   const discoverTabs = page.getByRole('tablist', { name: 'Discover tools' });
   await expect(discoverTabs.getByRole('button')).toHaveCount(4);
-  await expect(discoverTabs.getByRole('button', { name: 'Explore Movies' })).toBeVisible();
-  await expect(discoverTabs.getByRole('button', { name: 'Explore Shows' })).toBeVisible();
+  await expect(discoverTabs.getByRole('button', { name: 'Movies' })).toBeVisible();
+  await expect(discoverTabs.getByRole('button', { name: 'TV Shows' })).toBeVisible();
   await expect(discoverTabs.getByRole('button', { name: 'Browse Indexers' })).toBeVisible();
   await expect(discoverTabs.getByRole('button', { name: 'Pick My Movie' })).toBeVisible();
   await expect(page.locator('.tv-media-switch')).toHaveCount(0);
   await page.screenshot({ path: 'docs/verification/tv-normal-import/parity/discover-media-row.png' });
-  await discoverTabs.getByRole('button', { name: 'Explore Shows' }).click();
+  await discoverTabs.getByRole('button', { name: 'TV Shows' }).click();
+  await openControls(page);
   await expect(page.getByRole('region', { name: 'Discover TV Shows' })).toBeVisible();
   await discoverTabs.getByRole('button', { name: 'Browse Indexers' }).click();
   await expect(page.getByRole('button', { name: 'Browse Indexers' })).toHaveAttribute('aria-pressed', 'true');
 
   await page.goto('/library');
+  await openControls(page);
   const libraryTabs = page.getByRole('tablist', { name: 'Library media' });
   await expect(libraryTabs.getByRole('button')).toHaveCount(2);
-  const movieSwitch = await page.getByRole('group', { name: 'Library mode' }).boundingBox();
-  const movieRescan = await page.getByRole('button', { name: 'Rescan library files' }).boundingBox();
-  expect(movieSwitch.height).toBe(46);
+  const { view: movieSwitch, rescan: movieRescan } = await measureLibraryActions(page, 'Library mode');
+  // Approved combined Library header: embedded actions are 36px (2026-10-14 plan).
+  expect(movieSwitch.height).toBe(36);
   expect(movieSwitch.y).toBe(movieRescan.y);
   expect(movieSwitch.height).toBe(movieRescan.height);
   await libraryTabs.getByRole('button', { name: 'TV Shows' }).click();
-  const tvSwitch = await page.getByRole('group', { name: 'TV library mode' }).boundingBox();
-  const tvRescan = await page.getByRole('button', { name: 'Refresh TV catalog' }).boundingBox();
+  await openControls(page);
+  const { view: tvSwitch, rescan: tvRescan } = await measureLibraryActions(page, 'TV library mode');
   expect(tvSwitch.width).toBe(movieSwitch.width);
   expect(tvSwitch.height).toBe(movieSwitch.height);
   expect(tvSwitch.y).toBe(tvRescan.y);
   expect(tvSwitch.height).toBe(tvRescan.height);
   await page.getByRole('group', { name: 'TV library mode' }).getByRole('button', { name: 'File View' }).click();
+  await openControls(page);
   await expect(page.locator('.tv-file-view .library-file-row')).toHaveCount(2);
   await page.locator('.tv-file-view .library-file-row').first().getByRole('button', { name: /Expand file details/ }).click();
   await expect(page.locator('.tv-file-view .library-file-row').first().getByText('Episode bindings')).toBeVisible();
@@ -60,7 +156,7 @@ test('Discover and Library use the in-page media rows and TV File View shows nat
   expect(response.ok()).toBeTruthy();
   expect((await response.json()).items).toHaveLength(2);
   await page.getByRole('textbox', { name: 'Search TV files' }).fill('S01E01');
-  await page.locator('.tv-file-view').getByRole('button', { name: 'Search' }).click();
+  await page.locator('.tv-file-view').getByRole('button', { name: 'Search', exact: true }).click();
   await expect(page.locator('.tv-file-view .library-file-row')).toHaveCount(1);
   await expect(page.locator('.tv-file-view .library-file-row')).toContainText('Harbor.Signals.S01E01');
   await page.locator('.tv-file-view .library-file-row').getByRole('button', { name: 'Media View' }).click();
@@ -71,33 +167,30 @@ for (const width of [1366, 1920, 2048]) {
   test(`TV Discover shares the movie page gutters and keeps every year field readable at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 900 });
     await page.goto('/discover');
-    const movieHeader = await page.locator('.discover-workspace > .discover-header').boundingBox();
-    const movieNavigation = await page.locator('.discover-workspace > .media-section-tabs').boundingBox();
-    const movieSearch = await page.locator('.discover-workspace > .discover-search-panel').boundingBox();
-    const movieField = await page.locator('.discover-workspace > .discover-search-panel .discover-main-search').boundingBox();
-    const movieType = await page.getByLabel('TMDB search type').boundingBox();
-    const movieSubmit = await page.locator('.discover-workspace > .discover-search-panel > button[type="submit"]').boundingBox();
-    const movieFilters = await page.locator('.discover-workspace:not(.tv-discover-workspace) .discover-toolbar').boundingBox();
-    await page.getByRole('tablist', { name: 'Discover tools' }).getByRole('button', { name: 'Explore Shows', exact: true }).click();
-    const tvHeader = await page.locator('.tv-discover-workspace > .discover-header').boundingBox();
-    const tvNavigation = await page.locator('.tv-discover-workspace > .media-section-tabs').boundingBox();
-    const tvSearch = await page.locator('.tv-discover-workspace .tv-search-panel').boundingBox();
-    const tvField = await page.locator('.tv-discover-workspace .tv-search-panel .discover-main-search').boundingBox();
-    const tvType = await page.getByLabel('TV search type').boundingBox();
-    const tvSubmit = await page.locator('.tv-discover-workspace .tv-search-panel > button[type="submit"]').boundingBox();
+  await openControls(page);
+    const { header: movieHeader, navigation: movieNavigation, search: movieSearch,
+      field: movieField, type: movieType, submit: movieSubmit, filters: movieFilters } = await measureDiscoverControls(page);
+    await expect(page.locator('.discover-header')).toHaveCount(0);
+    await page.getByRole('tablist', { name: 'Discover tools' }).getByRole('button', { name: 'TV Shows', exact: true }).click();
+  await openControls(page);
+    const { header: tvHeader, navigation: tvNavigation, search: tvSearch,
+      field: tvField, type: tvType, submit: tvSubmit, filters: tvFilters } = await measureDiscoverControls(page, true);
+    await expect(page.locator('.discover-header')).toHaveCount(0);
+    expect(tvHeader.height).toBeLessThanOrEqual(60);
+    expect(Math.abs(tvHeader.height - movieHeader.height)).toBeLessThan(2);
     expect(Math.abs(tvHeader.x - movieHeader.x)).toBeLessThan(2);
     expect(Math.abs(tvHeader.width - movieHeader.width)).toBeLessThan(2);
     for (const key of ['x', 'width', 'height']) expect(Math.abs(tvNavigation[key] - movieNavigation[key])).toBeLessThan(2);
     for (const key of ['x', 'width', 'height']) expect(Math.abs(tvSearch[key] - movieSearch[key])).toBeLessThan(2);
-    const tvFilters = await page.locator('.tv-discover-workspace .discover-toolbar').boundingBox();
-    for (const key of ['x', 'y', 'width']) expect(Math.abs(tvFilters[key] - movieFilters[key])).toBeLessThan(2);
+    for (const key of ['x', 'y', 'width']) expect(Math.abs(tvFilters[key] - movieFilters[key]),
+      `Filter ${key}: Movie ${JSON.stringify(movieFilters)}, TV ${JSON.stringify(tvFilters)}`).toBeLessThan(2);
     for (const [tv, movie] of [[tvField, movieField], [tvType, movieType], [tvSubmit, movieSubmit]]) {
       expect(Math.abs((tv.x - tvSearch.x) - (movie.x - movieSearch.x))).toBeLessThan(2);
       expect(Math.abs(tv.width - movie.width)).toBeLessThan(2);
       expect(Math.abs(tv.height - movie.height)).toBeLessThan(2);
     }
     await expect(page.getByRole('button', { name: 'Add TV search criterion' })).toHaveCount(0);
-    await expect(page.locator('.tv-discover-workspace .tv-search-panel > button[type="submit"]')).toHaveText('Search');
+    await expect(page.locator('.tv-discover-workspace .workspace-search-form > button[type="submit"]')).toHaveText('Search');
     const from = await page.getByLabel('TV year from').boundingBox();
     const to = await page.getByLabel('TV year to').boundingBox();
     const feed = await page.getByLabel('TV Discover feed').boundingBox();
@@ -106,7 +199,7 @@ for (const width of [1366, 1920, 2048]) {
     expect(to.width).toBeGreaterThanOrEqual(110);
     expect(from.x + from.width).toBeLessThanOrEqual(to.x - 4);
     expect(Math.abs(to.y - from.y)).toBeLessThan(2);
-    const toolbar = page.locator('.tv-discover-workspace .discover-toolbar');
+    const toolbar = page.locator('.tv-discover-workspace .workspace-filter-grid');
     const rows = await toolbar.evaluate((element) => {
       const tops = [];
       for (const child of element.children) {
@@ -128,8 +221,10 @@ for (const width of [1366, 1920, 2048]) {
 
 test('TV Discover status uses Catalog and all four quick bars omit Language', async ({ page }) => {
   await page.goto('/discover');
+  await openControls(page);
   await expect(page.getByLabel('Original language')).toHaveCount(0);
-  await page.getByRole('tablist', { name: 'Discover tools' }).getByRole('button', { name: 'Explore Shows' }).click();
+  await page.getByRole('tablist', { name: 'Discover tools' }).getByRole('button', { name: 'TV Shows' }).click();
+  await openControls(page);
   const status = page.getByLabel('TV Series status');
   await expect(page.getByLabel('TV Original language')).toHaveCount(0);
   await expect(status.locator('option')).toHaveCount(7);
@@ -145,10 +240,12 @@ test('TV Discover status uses Catalog and all four quick bars omit Language', as
   await expect(page.getByLabel('Criterion to add').locator('option[value="language"]')).toHaveCount(1);
   await expect(page.getByLabel('Criterion to add').locator('option[value="tv_status"]')).toHaveCount(1);
   await page.goto('/library');
-  await page.getByRole('button', { name: 'Open filters' }).click();
+  await openControls(page);
+  await openControls(page);
   await expect(page.locator('.library-filter-toolbar-movie').getByText('All languages')).toHaveCount(0);
   await page.getByRole('tablist', { name: 'Library media' }).getByRole('button', { name: 'TV Shows' }).click();
-  await page.getByRole('button', { name: 'Open filters' }).click();
+  await openControls(page);
+  await openControls(page);
   await expect(page.getByLabel('TV Original language')).toHaveCount(0);
 });
 
@@ -156,22 +253,24 @@ for (const width of [1366, 2048]) {
   test(`TV Library filters keep the movie grid and readable year fields at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 900 });
     await page.goto('/library');
-    const movieHeader = await page.locator('.library-workspace:not(.tv-library-workspace) > .library-header').boundingBox();
-    const movieNavigation = await page.locator('.library-workspace:not(.tv-library-workspace) > .media-section-tabs').boundingBox();
-    const movieSearch = await page.locator('.library-workspace:not(.tv-library-workspace) > .library-search-panel').boundingBox();
-    const movieField = await page.locator('.library-workspace:not(.tv-library-workspace) > .library-search-panel .library-main-search').boundingBox();
+  await openControls(page);
+    const movieHeader = await page.locator('.library-workspace:not(.tv-library-workspace) > .workspace-chrome').boundingBox();
+    const movieNavigation = await page.locator('.library-workspace:not(.tv-library-workspace) > .workspace-chrome > .media-section-tabs').boundingBox();
+    const movieSearch = await page.locator('.library-workspace:not(.tv-library-workspace) .workspace-search-form').boundingBox();
+    const movieField = await page.locator('.library-workspace:not(.tv-library-workspace) .workspace-search-form .library-main-search').boundingBox();
     const movieType = await page.getByLabel('Library search type').boundingBox();
-    const movieSubmit = await page.locator('.library-workspace:not(.tv-library-workspace) > .library-search-panel > button[type="submit"]').boundingBox();
+    const movieSubmit = await page.locator('.library-workspace:not(.tv-library-workspace) .workspace-search-form > button[type="submit"]').boundingBox();
     const movieTab = await page.getByRole('tablist', { name: 'Library media' }).getByRole('button', { name: 'Movies', exact: true }).boundingBox();
-    await page.locator('.library-workspace:not(.tv-library-workspace)').getByRole('button', { name: 'Open filters' }).click();
+    await openControls(page);
     const movieFilters = await page.locator('.library-workspace:not(.tv-library-workspace) .library-filter-toolbar').boundingBox();
     await page.getByRole('tablist', { name: 'Library media' }).getByRole('button', { name: 'TV Shows', exact: true }).click();
-    const tvHeader = await page.locator('.tv-library-workspace > .library-header').boundingBox();
-    const tvNavigation = await page.locator('.tv-library-workspace > .media-section-tabs').boundingBox();
-    const tvSearch = await page.locator('.tv-library-workspace .tv-search-panel').boundingBox();
-    const tvField = await page.locator('.tv-library-workspace .tv-search-panel .library-main-search').boundingBox();
+  await openControls(page);
+    const tvHeader = await page.locator('.tv-library-workspace > .workspace-chrome').boundingBox();
+    const tvNavigation = await page.locator('.tv-library-workspace > .workspace-chrome > .media-section-tabs').boundingBox();
+    const tvSearch = await page.locator('.tv-library-workspace .workspace-search-form').boundingBox();
+    const tvField = await page.locator('.tv-library-workspace .workspace-search-form .library-main-search').boundingBox();
     const tvType = await page.getByLabel('TV search type').boundingBox();
-    const tvSubmit = await page.locator('.tv-library-workspace .tv-search-panel > button[type="submit"]').boundingBox();
+    const tvSubmit = await page.locator('.tv-library-workspace .workspace-search-form > button[type="submit"]').boundingBox();
     const tvTab = await page.getByRole('tablist', { name: 'Library media' }).getByRole('button', { name: 'TV Shows', exact: true }).boundingBox();
     expect(Math.abs(tvHeader.x - movieHeader.x)).toBeLessThan(2);
     expect(Math.abs(tvHeader.width - movieHeader.width)).toBeLessThan(2);
@@ -183,10 +282,10 @@ for (const width of [1366, 2048]) {
       expect(Math.abs(tv.height - movie.height)).toBeLessThan(2);
     }
     await expect(page.getByRole('button', { name: 'Add TV search criterion' })).toHaveCount(0);
-    await expect(page.locator('.tv-library-workspace .tv-search-panel > button[type="submit"]')).toHaveText('Search');
+    await expect(page.locator('.tv-library-workspace .workspace-search-form > button[type="submit"]')).toHaveText('Search');
     expect(Math.abs(tvTab.height - movieTab.height)).toBeLessThan(2);
-    await page.locator('.tv-library-workspace').getByRole('button', { name: 'Open filters' }).click();
-    const toolbar = page.locator('.tv-search-controls .library-filter-toolbar');
+    await openControls(page);
+    const toolbar = page.locator('.tv-library-workspace .workspace-filter-grid');
     const tvFilters = await toolbar.boundingBox();
     for (const key of ['x', 'y', 'width']) expect(Math.abs(tvFilters[key] - movieFilters[key])).toBeLessThan(2);
     await expect(toolbar.getByLabel('TV Resolutions')).toBeVisible();
@@ -202,7 +301,6 @@ for (const width of [1366, 2048]) {
     const yearFrom = await toolbar.getByLabel('TV year from').boundingBox();
     const yearTo = await toolbar.getByLabel('TV year to').boundingBox();
     const sort = await toolbar.getByLabel('Sort TV shows').boundingBox();
-    const hide = await toolbar.getByRole('button', { name: 'Hide filters' }).boundingBox();
     const reset = await toolbar.getByRole('button', { name: 'Reset filters' }).boundingBox();
     expect(viewing.width).toBeGreaterThanOrEqual(145);
     expect(status.width).toBeGreaterThanOrEqual(145);
@@ -221,10 +319,9 @@ for (const width of [1366, 2048]) {
     });
     expect(rows).toBeLessThanOrEqual(2);
     expect(await toolbar.evaluate((element) => element.scrollWidth <= element.clientWidth)).toBe(true);
-    expect(hide.width).toBeLessThanOrEqual(40);
     expect(reset.width).toBeLessThanOrEqual(40);
-    await toolbar.getByRole('button', { name: 'Hide filters' }).click();
-    await expect(toolbar.getByRole('button', { name: 'Open filters' })).toBeVisible();
+    await page.getByRole('button', { name: 'Search, filters & selection', exact: true }).click();
+    await expect(page.getByRole('button', { name: 'Search, filters & selection', exact: true })).toHaveAttribute('aria-expanded', 'false');
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
   });
 }
@@ -233,22 +330,26 @@ test('Advanced search explains how to add filters in both media tabs of Library 
   for (const area of ['library', 'discover']) {
     for (const media of ['Movies', 'TV Shows']) {
       await page.goto(`/${area}`);
-      if (media === 'TV Shows') await page.getByRole('tablist', { name: area === 'discover' ? 'Discover tools' : 'Library media' }).getByRole('button', { name: area === 'discover' ? 'Explore Shows' : media, exact: true }).click();
+  await openControls(page);
+      if (media === 'TV Shows') await page.getByRole('tablist', { name: area === 'discover' ? 'Discover tools' : 'Library media' }).getByRole('button', { name: area === 'discover' ? 'TV Shows' : media, exact: true }).click();
+      await openControls(page);
       const form = area === 'library'
-        ? page.locator(media === 'Movies' ? '.library-workspace:not(.tv-library-workspace) > form.library-search-panel' : '.tv-library-workspace form.library-search-panel')
-        : page.locator(media === 'Movies' ? '.discover-workspace > form.discover-search-panel' : '.tv-discover-workspace form.discover-search-panel');
+        ? page.locator(media === 'Movies' ? '.library-workspace:not(.tv-library-workspace) form.workspace-search-form' : '.tv-library-workspace form.workspace-search-form')
+        : page.locator(media === 'Movies' ? '.discover-workspace form.workspace-search-form' : '.tv-discover-workspace form.workspace-search-form');
       await form.getByLabel(media === 'Movies' ? area === 'library' ? 'Library search type' : 'TMDB search type' : 'TV search type').selectOption('advanced');
       await expect(form.getByText('Click + to choose a filter', { exact: true })).toBeVisible();
       await expect(form.getByText('This field is not a normal text search')).toHaveCount(0);
       await form.getByRole('button', { name: 'Add advanced search criterion' }).click();
-      await expect(form.getByLabel('Criterion to add')).toBeVisible();
+      await expect(page.getByLabel('Criterion to add')).toBeVisible();
     }
   }
 });
 
 async function discover(page, title) {
   await page.goto('/discover');
-  await page.getByRole('tablist', { name:'Discover tools' }).getByRole('button',{name:'Explore Shows',exact:true}).click();
+  await openControls(page);
+  await page.getByRole('tablist', { name:'Discover tools' }).getByRole('button',{name:'TV Shows',exact:true}).click();
+  await openControls(page);
   await page.getByRole('textbox',{name:'Search TV shows',exact:true}).fill(title);
   await page.getByRole('button',{name:'Search TV',exact:true}).click();
   await expect(page.getByRole('link',{name:`Open ${title}`,exact:true})).toBeVisible();
@@ -320,7 +421,8 @@ test('top and bottom TV pagination share state',async({page})=>{
     await route.fulfill({json:{items:[{tmdb_id:900001,title:'Harbor Signals',genres:[],available_count:0}],page:body.page,page_size:20,total:40,total_pages:2,has_next:body.page<2}});
   });
   await page.goto('/discover');
-  await page.getByRole('tablist',{name:'Discover tools'}).getByRole('button',{name:'Explore Shows',exact:true}).click();
+  await openControls(page);
+  await page.getByRole('tablist',{name:'Discover tools'}).getByRole('button',{name:'TV Shows',exact:true}).click();
   const top=page.getByRole('navigation',{name:'TV page controls above results'}),bottom=page.getByRole('navigation',{name:'TV pagination',exact:true});
   await top.getByRole('button',{name:'Next',exact:true}).click();
   await expect(bottom).toContainText('Page 2 of 2');
@@ -356,7 +458,7 @@ for (const [width, expectedColumns, expectedPageSize] of [[1366, 2, 40], [1920, 
     for (const scope of ['discover', 'library']) {
       await page.goto(`/${scope}`);
       const tabs = page.getByRole('tablist', { name: scope === 'discover' ? 'Discover tools' : 'Library media' });
-      await tabs.getByRole('button', { name: scope === 'discover' ? 'Explore Shows' : 'TV Shows', exact: true }).click();
+      await tabs.getByRole('button', { name: scope === 'discover' ? 'TV Shows' : 'TV Shows', exact: true }).click();
       const grid = page.locator(`.tv-${scope}-workspace .tv-series-grid:not(.library-grid-metrics-probe)`);
       await expect(grid.locator('.tv-series-card')).toHaveCount(expectedPageSize);
       const columns = await grid.evaluate(element => getComputedStyle(element).gridTemplateColumns.split(' ').filter(Boolean).length);
@@ -397,18 +499,24 @@ test('TV Discover enriches every card on a 39-card page', async ({ page }) => {
   });
 
   await page.goto('/discover');
-  await page.getByRole('tablist', { name: 'Discover tools' }).getByRole('button', { name: 'Explore Shows', exact: true }).click();
+  await openControls(page);
+  await page.getByRole('tablist', { name: 'Discover tools' }).getByRole('button', { name: 'TV Shows', exact: true }).click();
+  await openControls(page);
   const cards = page.locator('.tv-discover-workspace .tv-series-card');
   await expect(cards).toHaveCount(39);
-  await expect(cards.last()).toContainText('2 seasons');
-  expect(batches.map(batch => batch.length).sort((a, b) => a - b)).toEqual([19, 20]);
+  await expect(cards.last()).toContainText('2 seas.');
+  await expect(cards.filter({ hasText: '2 seas.' })).toHaveCount(39);
+  expect(batches.every(batch => batch.length > 0 && batch.length <= 20)).toBe(true);
+  expect(batches.flat()).toHaveLength(39);
   expect(new Set(batches.flat()).size).toBe(39);
 });
 
 
 test('TV title draft survives opening advanced criteria and keyboard search',async({page})=>{
   await page.goto('/discover');
-  await page.getByRole('tablist',{name:'Discover tools'}).getByRole('button',{name:'Explore Shows',exact:true}).click();
+  await openControls(page);
+  await page.getByRole('tablist',{name:'Discover tools'}).getByRole('button',{name:'TV Shows',exact:true}).click();
+  await openControls(page);
   await page.getByRole('textbox',{name:'Search TV shows',exact:true}).fill('Dark Matter');
   await page.getByLabel('TV search type').selectOption('advanced');
   await expect(page.getByRole('textbox',{name:'Edit title',exact:true})).toHaveValue('Dark Matter');

@@ -1,0 +1,57 @@
+[
+  {
+    "requested_title": "Frailty",
+    "requested_year": "2001",
+    "id": 12149,
+    "title": "Frailty",
+    "primary_release": "2002-04-12",
+    "runtime": 100,
+    "eligibility": "eligible",
+    "tmdb_reads": 2,
+    "seconds": 0.5451755999965826
+  },
+  {
+    "requested_title": "Coherence",
+    "requested_year": "2013",
+    "id": 220289,
+    "title": "Coherence",
+    "primary_release": "2014-04-06",
+    "runtime": 89,
+    "eligibility": "eligible",
+    "tmdb_reads": 2,
+    "seconds": 0.5762900999980047
+  },
+  {
+    "requested_title": "The Invisible Guest",
+    "requested_year": "2016",
+    "id": 411088,
+    "title": "The Invisible Guest",
+    "primary_release": "2017-01-06",
+    "runtime": 107,
+    "eligibility": "eligible",
+    "tmdb_reads": 2,
+    "seconds": 0.43220740000833757
+  },
+  {
+    "requested_title": "Perfect Blue",
+    "requested_year": "1997",
+    "id": 10494,
+    "title": "Perfect Blue",
+    "primary_release": "1998-02-28",
+    "runtime": 81,
+    "eligibility": "eligible",
+    "tmdb_reads": 2,
+    "seconds": 0.41856049999478273
+  },
+  {
+    "requested_title": "Audition",
+    "requested_year": "1999",
+    "id": 11075,
+    "title": "Audition",
+    "primary_release": "2000-03-03",
+    "runtime": 115,
+    "eligibility": "eligible",
+    "tmdb_reads": 2,
+    "seconds": 0.4504787000041688
+  }
+]

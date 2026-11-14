@@ -14,9 +14,11 @@ class TVMonitoring:
     ACTIONS = {'missing', 'future', 'upgrade', 'selected'}
     SCOPES = {'series', 'season', 'episodes'}
 
-    def __init__(self, tv, store, acquisition, clock=time.time, active_media_path=lambda: '', trash_file=send2trash, timezone='Africa/Cairo'):
+    def __init__(self, tv, store, acquisition, clock=time.time, active_media_path=lambda: '', trash_file=send2trash, timezone='Africa/Cairo', monotonic=time.monotonic):
         self.tv, self.store, self.acquisition, self.clock = tv, store, acquisition, clock
         self.active_media_path, self.trash_file = active_media_path, trash_file
+        self.monotonic = monotonic
+        self.acquisition.monotonic = monotonic
         self.timezone, self.timezone_error = timezone, ''
         try: self.zone = ZoneInfo(timezone)
         except ZoneInfoNotFoundError:
@@ -186,8 +188,11 @@ class TVMonitoring:
         details = {item['id']: item for item in self.tv.episodes(result['series_id'])} if result['series_id'] else {}
         for item in episodes:
             item['code'] = details.get(item['episode_id'], {}).get('code', f"Episode {item['episode_id']}")
+            item['season'] = details.get(item['episode_id'], {}).get('season_number')
+            try: item['source_diagnostics'] = json.loads(item['source_diagnostics'])
+            except (ValueError, TypeError): item['source_diagnostics'] = {}
         result['counts'] = {key: sum(item['state'] in states for item in episodes) for key, states in {
-            'acquired': {'acquired'}, 'queued': {'queued'}, 'waiting': {'waiting','waiting_release','retry'}, 'review': {'needs_review'}}.items()}
+            'acquired': {'acquired'}, 'queued': {'queued'}, 'waiting': {'waiting','waiting_release','retry','submitting'}, 'review': {'needs_review'}}.items()}
         result['counts']['targets'] = len(result['target_episode_ids'])
         result['next_eligible_search'] = min((item['next_retry'] for item in episodes if item['state'] not in {'acquired','queued'}), default=None)
         result['scheduling_timezone'] = self.timezone
@@ -318,7 +323,7 @@ class TVMonitoring:
         task = self.task(task_id)
         if task['state'] in {'completed', 'cancelled'}:
             raise ValueError('This task has already finished')
-        intents = sorted({item['intent_id'] for item in task['episodes'] if item['intent_id']})
+        intents = sorted({item['intent_id'] for item in task['episodes'] if item['intent_id']} | {intent['id'] for intent,_ in self._group_intents(task) if intent['state']=='selected'})
         manager = self.acquisition.manager()
         jobs = manager.jobs.all()
         torrents = {str(item.get('hash') or '').lower(): item for item in manager.client.torrents()} if intents else {}
@@ -337,6 +342,9 @@ class TVMonitoring:
                                     (intent['id'], task_id)).fetchone()[0]
                 shared += db.execute('SELECT COUNT(*) FROM intents WHERE info_hash=? AND id<>?',
                                      (intent['info_hash'], intent['id'])).fetchone()[0]
+                if not job and intent['state']=='selected' and not shared and torrent_hash not in torrents:
+                    transfers.append({'intent_id':intent['id'],'hash':torrent_hash,'state':'selected','paths':[], 'deletable_incomplete':False,'reservation_only':True})
+                    continue
                 if not job or job.get('acquisition_id') != intent['id'] or shared:
                     protected.append({'path': '', 'reason': f'Transfer {torrent_hash} has uncertain or shared ownership'})
                     continue
@@ -383,6 +391,10 @@ class TVMonitoring:
         return payload
 
     def cancel_task(self, task_id, mode, token):
+        with self.acquisition._lock:
+            return self._cancel_task(task_id, mode, token)
+
+    def _cancel_task(self, task_id, mode, token):
         if mode not in {'keep', 'incomplete', 'all'}:
             raise ValueError('Choose a cancellation outcome')
         preview = self.cancel_preview(task_id)
@@ -395,6 +407,10 @@ class TVMonitoring:
                 raise ValueError('Transfers or files changed; review cancellation again')
             for transfer in preview['transfers']:
                 try:
+                    if transfer.get('reservation_only'):
+                        self.store.event(transfer['intent_id'],'cancel',{'task_id':task_id,'mode':mode},state='cancelled')
+                        stopped.append(transfer['hash'])
+                        continue
                     manager.client.pause(transfer['hash'])
                     if mode in {'incomplete','all'} and transfer['deletable_incomplete']:
                         manager.client.remove_with_files(transfer['hash'])
@@ -442,8 +458,156 @@ class TVMonitoring:
             finally: self.store.release_lease('tv-monitoring-pass', self.owner)
         finally: self._run_lock.release()
 
+    def _group_intents(self, task):
+        prefix = f'task:{task["id"]}:season:'
+        with self.store.connection() as db:
+            rows = [dict(row) for row in db.execute('SELECT * FROM intents WHERE substr(request_key,1,?)=?', (len(prefix),prefix))]
+        proved = []
+        for intent in rows:
+            decision = self.store.decision(intent['decision_token'],max_age=365*86400)
+            coverage = set(decision.get('covered_episodes',[]))
+            if coverage and coverage <= set(task['target_episode_ids']) and decision['request'].get('series_id') == task['series_id'] and intent['profile_id'] == task['profile_id']:
+                proved.append((intent,decision))
+        return proved
+
+    def _recover_group_associations(self, task):
+        with self.acquisition._lock:
+            if self.task(task['id'])['state'] in {'cancelled','cancel_pending','completed'}: return
+            for intent, decision in self._group_intents(task):
+                if intent['state'] not in {'selected','submitted','import_pending'}: continue
+                coverage = set(decision['covered_episodes'])
+                with self.store.transaction() as db:
+                    members = list(db.execute('SELECT episode_id,intent_id FROM tv_task_episodes WHERE task_id=?', (task['id'],)))
+                    if any(row['intent_id'] not in {None,intent['id']} for row in members if row['episode_id'] in coverage):
+                        db.execute('UPDATE tv_tasks SET state="needs_review",error=? WHERE id=?', ('Reserved pack has conflicting task ownership',task['id']))
+                        continue
+                    for episode_id in coverage:
+                        db.execute('UPDATE tv_task_episodes SET intent_id=?,state="submitting",next_retry=0 WHERE task_id=? AND episode_id=? AND intent_id IS NULL', (intent['id'],task['id'],episode_id))
+
+    def _queue_group_decision(self, task, decision, now):
+        coverage = set(decision['covered_episodes'])
+        key = f'task:{task["id"]}:season:{decision["request"]["season"]}:{decision["decision_token"][:24]}'
+        with self.acquisition._lock:
+            fresh = self.task(task['id'])
+            if fresh['state'] in {'cancelled','cancel_pending','completed'}: raise ValueError('Task stopped before pack submission')
+            if not coverage <= set(fresh['target_episode_ids']): raise ValueError('Task targets changed before pack submission')
+            if any(row['intent_id'] for row in fresh['episodes'] if row['episode_id'] in coverage): raise ValueError('Task member already has an acquisition')
+            reservation = self.acquisition.reserve_intent(decision['decision_token'],key)
+            intent_id = reservation['intent']['id']
+            with self.store.transaction() as db:
+                for episode_id in coverage:
+                    db.execute('UPDATE tv_task_episodes SET intent_id=?,state="submitting",error="",next_retry=0,source_diagnostics="{}" WHERE task_id=? AND episode_id=?', (intent_id,task['id'],episode_id))
+            try:
+                result = self.acquisition.submit(decision['decision_token'],key)
+                state, error, retry = 'queued','',now+3600
+            except Exception as failure:
+                state, error, retry = 'needs_review',str(failure)[:500],now+self._source_retry(task)
+                result = None
+            with self.store.transaction() as db:
+                db.execute('UPDATE tv_task_episodes SET state=?,error=?,next_retry=? WHERE task_id=? AND intent_id=?', (state,error,retry,task['id'],intent_id))
+            return result, error
+
+    def _save_source_outcome(self, task, episode_ids, diagnostics, now, *, selected=False):
+        diagnostics = {**diagnostics,'searched_episode_ids':sorted(episode_ids)}
+        state = 'needs_review' if diagnostics['state']=='review_required' else 'retry'
+        with self.store.transaction() as db:
+            active = db.execute('SELECT state FROM tv_tasks WHERE id=?',(task['id'],)).fetchone()
+            if active['state'] in {'cancelled','cancel_pending','completed'}: return
+            for episode_id in episode_ids:
+                db.execute('UPDATE tv_task_episodes SET state=?,next_retry=?,last_search=?,source_diagnostics=?,error=? WHERE task_id=? AND episode_id=? AND intent_id IS NULL',
+                    (state,now+self._source_retry(task),now,json.dumps(diagnostics),'' if selected else diagnostics['summary'],task['id'],episode_id))
+            db.execute('UPDATE tv_tasks SET last_search=? WHERE id=?',(now,task['id']))
+        if state == 'needs_review':
+            self.store.notify(media_type='tv',source='follow',task_id=task['id'],event_key=f'task:{task["id"]}:season:{diagnostics["season"]}:source-review',
+                severity='warning',title='TV sources need review',body=diagnostics['summary'],link=f'/tv/series/{task["series_id"]}')
+
+    def _run_missing_groups(self, task, rows, pending, uncertain, exclusions, results, limit, submit, deadline):
+        handled = set()
+        if task['kind']!='follow' or task['action']!='missing' or task['scope'] not in {'series','season'} or uncertain or self.tv.hydration(task['series_id'])['status']!='complete': return handled
+        with self.store.connection() as db:
+            claimed = {row[0] for row in db.execute('SELECT target FROM intent_claims')}
+        members = {row['episode_id']:row for row in task['episodes']}
+        seasons = sorted({row['season_number'] for row in rows.values() if row['id'] in members and row['season_number']>0})
+        work_limit = max(1,min(25,int(limit)))
+        for season in seasons:
+            group = [row for row in rows.values() if row['season_number']==season]
+            ids = {row['id'] for row in group}
+            if season in exclusions or not group or any(row['id'] not in members or not row['released'] or row['reconciliation_required'] or (season,row['episode_number']) in pending for row in group): continue
+            continuation_ids = {row['id'] for row in group if members[row['id']]['source_diagnostics'].get('fallback_pending') and set(members[row['id']]['source_diagnostics'].get('episode_ids',[]))==ids}
+            covered = {row['id'] for row in group if row['available'] or f'tv:episode:{row["id"]}' in claimed or members[row['id']]['intent_id'] or members[row['id']]['state']=='acquired'}
+            # A new group must be wholly missing. A persisted continuation
+            # retains its original evaluation scope and excludes new ownership.
+            if covered and not continuation_ids: continue
+            now = self.clock()
+            due = {row['id'] for row in group if members[row['id']]['next_retry']<=now and row['id'] not in covered and (not continuation_ids or row['id'] in continuation_ids)}
+            readiness,_ = self._readiness(task['series_id'],[season],require_metadata=False)
+            if not due or not readiness['ready'] or len(results)>=work_limit or self.monotonic()>=deadline: continue
+            handled |= ids-{row['id'] for row in group if members[row['id']]['intent_id'] or row['available']}
+            budget, resolutions = 30.0,0
+            attempted_gaps = set()
+            start = self.monotonic()
+            try:
+                if continuation_ids:
+                    diagnostic = {key:value for key,value in members[min(continuation_ids)]['source_diagnostics'].items() if key!='fallback_pending'}
+                else:
+                    review = self.acquisition.search_missing_season(task['series_id'],season,[row['episode_number'] for row in group],task['profile_id'],budget=budget)
+                    budget -= self.monotonic()-start
+                    selection = self.acquisition.select_automatic_plan(review,due_episode_ids=due,deadline=deadline)
+                    resolutions += selection['diagnostics']['resolution_count']
+                    diagnostic = selection['diagnostics']
+                    submitted, errors = [],[]
+                    for decision in selection['decisions']:
+                        if submit:
+                            outcome,error = self._queue_group_decision(task,decision,now)
+                            if error: errors.append(error)
+                            if outcome: submitted.append(outcome)
+                        covered.update(decision['covered_episodes'])
+                    self._save_source_outcome(task,due&covered,diagnostic,now,selected=True)
+                    results.append({'task_id':task['id'],'season':season,'episode_id':min(due),'decisions':selection['decisions'],'submitted':bool(submitted),'source_state':diagnostic['state'],'error':'; '.join(errors) or ('' if selection['decisions'] else diagnostic['summary'])})
+                for row in group:
+                    if row['id'] not in due-covered or len(results)>=work_limit or budget<1 or self.monotonic()>=deadline: continue
+                    attempted_gaps.add(row['id'])
+                    start = self.monotonic()
+                    # Query the gap, but evaluate returned packs against this
+                    # season's authorized targets, not just the query episode.
+                    gap_review = self.acquisition.search_missing_season(task['series_id'],season,[member['episode_number'] for member in group],task['profile_id'],budget=budget,query_episode=row['episode_number'])
+                    budget -= self.monotonic()-start
+                    gap = self.acquisition.select_automatic_plan(gap_review,due_episode_ids=due-covered,resolution_limit=max(0,5-resolutions),excluded_episode_ids=covered,deadline=deadline)
+                    resolutions += gap['diagnostics']['resolution_count']
+                    gap_errors, gap_submitted = [],[]
+                    for decision in gap['decisions']:
+                        if submit:
+                            outcome,error = self._queue_group_decision(task,decision,now)
+                            if outcome: gap_submitted.append(outcome)
+                            if error: gap_errors.append(error)
+                        covered.update(decision['covered_episodes'])
+                    gap_diagnostic = gap['diagnostics']
+                    if not gap['decisions'] and diagnostic['state']=='review_required': gap_diagnostic = diagnostic
+                    self._save_source_outcome(task,{row['id']} | (due & set(gap['covered_episodes'])),gap_diagnostic,now,selected=bool(gap['decisions']))
+                    results.append({'task_id':task['id'],'episode_id':row['id'],'decision':gap['decisions'][0] if gap['decisions'] else None,'decisions':gap['decisions'],'submitted':bool(gap_submitted),'source_state':gap_diagnostic['state'],'error':'; '.join(gap_errors) or ('' if gap['decisions'] else gap_diagnostic['summary'])})
+                # The season search is an attempt for its triggering due target.
+                # Later gap work is a continuation, not another season retry.
+                trigger = set() if continuation_ids else {min(due)}-covered-attempted_gaps
+                self._save_source_outcome(task,trigger,diagnostic,now)
+                deferred = due-covered-attempted_gaps-trigger
+                if deferred:
+                    continuation = {**diagnostic,'fallback_pending':True,'searched_episode_ids':[]}
+                    with self.store.transaction() as db:
+                        if db.execute('SELECT state FROM tv_tasks WHERE id=?',(task['id'],)).fetchone()[0] not in {'cancelled','cancel_pending','completed'}:
+                            for episode_id in deferred:
+                                db.execute('UPDATE tv_task_episodes SET source_diagnostics=? WHERE task_id=? AND episode_id=? AND intent_id IS NULL', (json.dumps(continuation),task['id'],episode_id))
+            except Exception as failure:
+                diagnostic = self.acquisition.summarize_search({'decisions':[],'target':{'season':season,'episode_ids':sorted(ids)}},preparation_errors=[str(failure)])
+                self._save_source_outcome(task,due,diagnostic,now)
+                results.append({'task_id':task['id'],'season':season,'submitted':False,'error':diagnostic['summary']})
+            with self.store.transaction() as db:
+                db.execute('UPDATE tv_task_episodes SET last_search=? WHERE task_id=? AND intent_id IS NOT NULL AND episode_id IN ('+','.join('?' for _ in ids)+')', (now,task['id'],*sorted(ids)))
+            self._settle(task['id'])
+        return handled
+
     def _run_once(self, *, limit=10, submit=False):
         now, results = self.clock(), []
+        deadline = self.monotonic()+900
         with self.store.connection() as db:
             ids = [row[0] for row in db.execute("SELECT id FROM tv_tasks WHERE state IN ('running','waiting','waiting_season_end','needs_review') "
                                               "AND next_due<=? ORDER BY next_due,created_at LIMIT 25", (now,))]
@@ -488,27 +652,36 @@ class TVMonitoring:
             rows = {row['id']: row for row in self.tv.episodes(task['series_id'], today=self._today() if self.zone else None)}
             with self.store.connection() as db:
                 excluded_seasons = {row[0] for row in db.execute('SELECT season FROM tv_task_exclusions WHERE task_id=?', (task_id,))}
+            self._recover_group_associations(task)
+            task = self.task(task_id)
+            handled = self._run_missing_groups(task, rows, pending, uncertain, excluded_seasons, results, limit, submit, deadline)
+            task = self.task(task_id)
+            if task['state'] in {'cancelled','cancel_pending','completed'}: continue
+            processed_intents = set()
             for item in task['episodes']:
-                if len(results) >= max(1, min(25, int(limit))):
+                if len(results) >= max(1, min(25, int(limit))) or self.monotonic() >= deadline:
                     return results
+                if item['episode_id'] in handled: continue
                 if item['state'] == 'acquired':
                     continue
                 row = rows.get(item['episode_id'])
                 if not row or row['season_number'] in excluded_seasons:
                     continue
                 intent_id = None
-                if item['state'] in {'queued', 'needs_review'} and item['intent_id']:
+                if item['state'] in {'queued', 'needs_review','submitting'} and item['intent_id']:
                     with self.store.connection() as db:
                         intent = db.execute('SELECT * FROM intents WHERE id=?', (item['intent_id'],)).fetchone()
                     if intent and intent['state'] == 'selected':
                         if not submit or item['next_retry'] > now: continue
+                        if intent['id'] in processed_intents: continue
+                        processed_intents.add(intent['id'])
                         try:
                             self.acquisition.submit(intent['decision_token'], intent['request_key'])
                             with self.store.transaction() as db:
-                                db.execute('UPDATE tv_task_episodes SET state="queued",error="",next_retry=? WHERE task_id=? AND episode_id=?', (now+3600, task_id, row['id']))
+                                db.execute('UPDATE tv_task_episodes SET state="queued",error="",next_retry=? WHERE task_id=? AND intent_id=?', (now+3600, task_id, intent['id']))
                         except Exception as error:
                             with self.store.transaction() as db:
-                                db.execute('UPDATE tv_task_episodes SET state="needs_review",error=?,next_retry=? WHERE task_id=? AND episode_id=?', (str(error)[:500], now+self._source_retry(task), task_id, row['id']))
+                                db.execute('UPDATE tv_task_episodes SET state="needs_review",error=?,next_retry=? WHERE task_id=? AND intent_id=?', (str(error)[:500], now+self._source_retry(task), task_id, intent['id']))
                         continue
                     if intent and intent['state'] == 'ready':
                         job = self.acquisition.manager().jobs.get(intent['info_hash']) or {}
@@ -535,6 +708,19 @@ class TVMonitoring:
                             title=f'{row["code"]} needs review', body=series['title'],
                             link=f'/tv/series/{task["series_id"]}')
                         continue
+                    if intent and intent['state'] in {'submitted','import_pending'}:
+                        job = self.acquisition.manager().jobs.get(intent['info_hash']) or {}
+                        if job.get('state') in {'needs_review','cleanup_failed','import_failed','validation_failed'}:
+                            with self.store.transaction() as db:
+                                db.execute('UPDATE tv_task_episodes SET state="needs_review",error=? WHERE task_id=? AND intent_id=?',
+                                    (job.get('last_error') or 'Transfer or import requires review',task_id,intent['id']))
+                            continue
+                    if item['state']=='submitting' and intent and intent['state'] in {'submitted','import_pending'}:
+                        with self.store.transaction() as db:
+                            db.execute('UPDATE tv_task_episodes SET state="queued",error="",next_retry=? WHERE task_id=? AND intent_id=?',(now+3600,task_id,intent['id']))
+                        continue
+                    # An associated transfer is never replaced by a fresh source search.
+                    if intent and intent['state'] not in {'ready','failed_terminal','cancelled'}: continue
                 if row['available'] and task['action'] != 'upgrade':
                     state, retry = 'acquired', 0
                 elif not row['air_date'] or self.zone and (self._eligible_at(row['air_date']) is None or self._eligible_at(row['air_date']) > now):
@@ -560,14 +746,18 @@ class TVMonitoring:
                                 body=series['title'], link=f'/tv/series/{task["series_id"]}')
                         review = self.acquisition.search(task['series_id'], row['season_number'], row['episode_number'],
                             task['profile_id'], manual=False, missing_only=task['action'] != 'upgrade', upgrade=task['action'] == 'upgrade')
-                        selection = self.acquisition.select_automatic(review)
+                        selection = self.acquisition.select_automatic(review, deadline=deadline)
                         accepted = selection['decision']
                         submission_key = f'task:{task_id}:{row["id"]}:{accepted["decision_token"][:24]}' if accepted and submit else None
                         submitted = self.acquisition.submit(accepted['decision_token'], submission_key) if submission_key else None
                         results.append({'task_id': task_id, 'episode_id': row['id'], 'decision': accepted,
                                         'submitted': bool(submitted), 'source_state': selection['state'], 'error': '' if accepted else selection['error']})
                         intent_id = submitted['intent']['id'] if submitted else None
-                        state, retry = ('queued', now+3600) if accepted and submit else ('retry', now+self._source_retry(task))
+                        state, retry = ('queued', now+3600) if accepted and submit else ('needs_review' if selection['state']=='review_required' else 'retry', now+self._source_retry(task))
+                        diagnostics = selection['diagnostics']
+                        diagnostics['searched_episode_ids'] = [row['id']]
+                        with self.store.transaction() as db:
+                            db.execute('UPDATE tv_task_episodes SET source_diagnostics=?,last_search=? WHERE task_id=? AND episode_id=?', (json.dumps(diagnostics),now,task_id,row['id']))
                         if accepted:
                             self.store.notify(media_type='tv', source='follow', task_id=task_id,
                                 episode_key=row['code'], event_key=f'task:{task_id}:{row["id"]}:source', severity='info',
@@ -585,7 +775,7 @@ class TVMonitoring:
                         if prior: state = 'needs_review'
                 with self.store.transaction() as db:
                     db.execute('UPDATE tv_task_episodes SET state=?,next_retry=?,last_search=?,error=?,intent_id=COALESCE(?,intent_id) WHERE task_id=? AND episode_id=?',
-                               (state, retry, now if state in {'queued','retry'} else item['last_search'],
+                               (state, retry, now if state in {'queued','retry'} or intent_id is None and results and results[-1].get('episode_id') == row['id'] else item['last_search'],
                                 results[-1].get('error', '') if results and results[-1].get('episode_id') == row['id'] else '',
                                 intent_id, task_id, row['id']))
                     if state in {'queued','retry'}:
@@ -599,6 +789,7 @@ class TVMonitoring:
 
     def _settle(self, task_id):
         task = self.task(task_id)
+        if task['state'] in {'cancelled','cancel_pending'}: return
         states = [row['state'] for row in task['episodes']]
         if task['kind'] == 'bulk' and (not states or all(state in {'acquired','retry','needs_review','queued'} for state in states)):
             state = 'completed'

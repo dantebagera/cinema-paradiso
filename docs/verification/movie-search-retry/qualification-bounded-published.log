@@ -1,0 +1,7 @@
+test_d_durable_path_order_does_not_reorder_mixed_in_memory_work (tests.test_movie_isolated_qualification.MovieIsolatedQualificationTest.test_d_durable_path_order_does_not_reorder_mixed_in_memory_work) ... ok
+test_c_named_file_reads_remain_bounded_among_four_thousand_movies (tests.test_movie_remaining_qualification.RemainingMovieQualificationTest.test_c_named_file_reads_remain_bounded_among_four_thousand_movies) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.929s
+
+OK

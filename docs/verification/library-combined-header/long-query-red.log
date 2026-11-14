@@ -1,0 +1,41 @@
+
+Running 1 test using 1 worker
+
+(node:44348) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 tests\e2e\workspace-controls-empty-layout.spec.js:167:1 › combined Library header keeps a long TV File search summary from crowding view actions (1.8s)
+
+
+  1) tests\e2e\workspace-controls-empty-layout.spec.js:167:1 › combined Library header keeps a long TV File search summary from crowding view actions 
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 60
+    Received:    120
+
+      68 |   const headingBox = await heading.locator('.workspace-controls-heading').boundingBox();
+      69 |   const count = await controls.locator('.workspace-controls-summary').boundingBox();
+    > 70 |   expect(header.height).toBeLessThanOrEqual(60);
+         |                         ^
+      71 |   for (const control of [group, refresh]) {
+      72 |     await expect(control).toBeVisible();
+      73 |     const box = await control.boundingBox();
+        at assertCombinedLibraryHeader (C:\Users\dante\Desktop\cinema paradiso\tests\e2e\workspace-controls-empty-layout.spec.js:70:25)
+        at C:\Users\dante\Desktop\cinema paradiso\tests\e2e\workspace-controls-empty-layout.spec.js:186:3
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\AppData\Local\Temp\cp-combined-header-094ed49f323c420298d3e35588eec032\long-query-red\workspace-controls-empty-l-8d652--from-crowding-view-actions\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\AppData\Local\Temp\cp-combined-header-094ed49f323c420298d3e35588eec032\long-query-red\workspace-controls-empty-l-8d652--from-crowding-view-actions\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\..\AppData\Local\Temp\cp-combined-header-094ed49f323c420298d3e35588eec032\long-query-red\workspace-controls-empty-l-8d652--from-crowding-view-actions\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\..\AppData\Local\Temp\cp-combined-header-094ed49f323c420298d3e35588eec032\long-query-red\workspace-controls-empty-l-8d652--from-crowding-view-actions\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    tests\e2e\workspace-controls-empty-layout.spec.js:167:1 › combined Library header keeps a long TV File search summary from crowding view actions 

@@ -1,0 +1,1264 @@
+--- a/app.py
++++ b/app.py
+@@ -34,6 +34,10 @@
+ from services.movie_relationships import MovieRelationships
+ from services.movie_awards_store import MovieAwardsStore
+ from services.movie_awards_routes import register_movie_awards_routes
++from services.movie_ratings import MovieRatingsService, movie_identity
++from services.movie_ratings_store import MovieRatingsStore
++from services.movie_ratings_routes import register_movie_ratings_routes
++from services.plex_transport import plex_json
+ from services.movie_awards_refresh import MovieAwardsRefresh, BoundedSourceTransport, RuntimeAwardsSources, bundled_seed_loader
+ from services.catalog_writer_lease import CatalogWriterLease, CatalogWriterLeaseError
+ from services.canonical_catalog import (
+@@ -4208,12 +4212,16 @@
+     if not _plex_url or not _plex_token:
+         return {}, {}, {}, {}, []
+ 
++    ratings_owner = None
++    ratings_config = (_plex_url, _plex_token, str(_user_data_dir))
++    try:
++        ratings_owner = _get_movie_ratings_service()
++        ratings_epoch = ratings_owner.store.epoch
++    except Exception:
++        pass
++
+     def plex_get(path):
+-        sep = '&' if '?' in path else '?'
+-        url = f"{_plex_url}{path}{sep}X-Plex-Token={_plex_token}"
+-        req = urllib.request.Request(url, headers={'Accept': 'application/json'})
+-        with urllib.request.urlopen(req, timeout=15) as resp:
+-            return _json.loads(resp.read().decode())
++        return plex_json(_plex_url, _plex_token, path, timeout=15, max_bytes=None, open_url=urllib.request.urlopen)
+ 
+     data = plex_get('/library/sections')
+     sections = data.get('MediaContainer', {}).get('Directory', [])
+@@ -4223,9 +4231,13 @@
+     unmatched = {}
+     matched_by_fname = {}
+     unmatched_by_fname = {}
++    rating_facts = []
+     for section_key in movie_sections:
+         data = plex_get(f'/library/sections/{section_key}/all')
+         for item in data.get('MediaContainer', {}).get('Metadata', []):
++            rating_facts.append({'_rt_observed_at': time.time(), **{key: item[key] for key in (
++                'type', 'guid', 'Guid', 'Rating', 'rating', 'ratingImage',
++                'audienceRating', 'audienceRatingImage') if key in item}})
+             guid        = item.get('guid', '')
+             rating_key  = item.get('ratingKey', '')
+             title       = item.get('title', '')
+@@ -4269,6 +4281,11 @@
+                                      'plex_guid': guid}
+                             matched[norm] = entry
+                             matched_by_fname.setdefault(fname, entry)
++    try:
++        if ratings_owner is not None and ratings_config == (_plex_url, _plex_token, str(_user_data_dir)):
++            ratings_owner.offer_local_snapshot(rating_facts, movie_sections, expected_epoch=ratings_epoch)
++    except Exception:
++        pass  # Optional observations must not fail the existing library sync.
+     return matched, unmatched, matched_by_fname, unmatched_by_fname, movie_sections
+ 
+ 
+@@ -4352,6 +4369,8 @@
+     _plex_url   = data.get('url', 'http://localhost:32400').rstrip('/')
+     _plex_token = data.get('token', '')
+     _save_config(_all_config())
++    if _movie_ratings_instance is not None:
++        _movie_ratings_instance.invalidate_config()
+     return jsonify({'success': True})
+ 
+ 
+@@ -4510,6 +4529,7 @@
+     if ai_root_changed:
+         _stop_ai_for_data_root_change()
+     _stop_movie_awards_refresh()
++    _stop_movie_ratings()
+     _user_data_dir = user_dir
+     _tmdb_cache_dir = cache_dir
+     _TMDB_CACHE_DIR = _tmdb_cache_dir
+@@ -9416,6 +9436,7 @@
+ 
+ def _shutdown_library_background_services():
+     _stop_movie_awards_refresh()
++    _stop_movie_ratings()
+     _catalog_event_broker.shutdown()
+     if _library_observer_instance is not None:
+         _library_observer_instance.shutdown()
+@@ -13457,6 +13478,55 @@
+     return MovieAwardsStore(path) if create or path.is_file() else None
+ 
+ 
++_movie_ratings_instance = None
++_movie_ratings_lock = threading.RLock()
++
++
++def _ratings_owned_movies(identities):
++    # Reuse only an initialized canonical owner. An optional read cannot migrate it.
++    with _catalog_repository_lock:
++        repository = _catalog_repository_cache.get(str(Path(_user_data_dir).resolve()))
++    if repository is None:
++        return {}
++    keys = []
++    for identity in identities:
++        keys.extend(_ownership_keys(identity))
++    candidates = repository.store.owned_identity_candidates(keys)
++    result = {}
++    for identity in identities:
++        for candidate in candidates:
++            if not all(str(candidate.get(field) or '') == identity[field]
++                       for field in ('tmdb_id', 'imdb_id', 'plex_guid') if identity.get(field)):
++                continue
++            path = candidate['path_key']
++            plex = _plex_cache.get(path) or repository.get_record('app_metadata/plex_metadata.json', path, {})
++            result[identity['key']] = {'rating_key': plex.get('rating_key', ''),
++                'identity': movie_identity({field: candidate.get(field) for field in ('tmdb_id', 'imdb_id', 'plex_guid')})}
++            break
++    return result
++
++
++def _get_movie_ratings_service():
++    global _movie_ratings_instance
++    with _movie_ratings_lock:
++        if _movie_ratings_instance is None:
++            _movie_ratings_instance = MovieRatingsService(
++                MovieRatingsStore(Path(_user_data_dir) / 'ratings' / 'movie-ratings.sqlite'),
++                config=lambda: {'url': _plex_url, 'token': _plex_token}, ownership=_ratings_owned_movies)
++        return _movie_ratings_instance
++
++
++def _stop_movie_ratings():
++    global _movie_ratings_instance
++    with _movie_ratings_lock:
++        owner, _movie_ratings_instance = _movie_ratings_instance, None
++    if owner is not None:
++        owner.stop()
++
++
++register_movie_ratings_routes(app, _get_movie_ratings_service)
++
++
+ def _project_awards_movie(facts):
+     # Awards GETs may reuse an already initialized cache, but do not initialize
+     # or migrate the catalog merely to show an uncached winning film.
+--- /dev/null
++++ b/services/movie_ratings.py
+@@ -0,0 +1,357 @@
++"""Plex ratings are optional display data, never a card-loading dependency."""
++from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
++import re
++import threading
++import time
++import uuid
++from collections import OrderedDict, deque
++from email.utils import parsedate_to_datetime
++from .plex_transport import plex_json
++
++
++_CRITIC_IMAGES = {'rottentomatoes://image.rating.ripe', 'rottentomatoes://image.rating.rotten'}
++_AUDIENCE_IMAGES = {'rottentomatoes://image.rating.upright', 'rottentomatoes://image.rating.spilled'}
++
++
++def _score(value):
++    if isinstance(value, bool) or not isinstance(value, (str, int, float)):
++        return None
++    try:
++        number = Decimal(str(value))
++        if number.is_finite() and 0 <= number <= 10:
++            return int((number * 10).quantize(Decimal('1'), rounding=ROUND_HALF_UP))
++    except (InvalidOperation, ValueError):
++        pass
++    return None
++
++
++def normalize_plex_ratings(item):
++    result = {'critics': None, 'audience': None}
++    rows = item.get('Rating') if isinstance(item.get('Rating'), list) else []
++    for field, role, images, scalar, marker in (
++        ('critics', 'critic', _CRITIC_IMAGES, 'rating', 'ratingImage'),
++        ('audience', 'audience', _AUDIENCE_IMAGES, 'audienceRating', 'audienceRatingImage'),
++    ):
++        tagged = [row for row in rows if isinstance(row, dict) and row.get('image') in images and row.get('type') == role]
++        if tagged:
++            values = {_score(row.get('value')) for row in tagged}
++            if len(values) == 1:
++                result[field] = values.pop()
++        elif item.get(marker) in images:
++            result[field] = _score(item.get(scalar))
++    return result
++
++
++def movie_identity(value):
++    if not isinstance(value, dict) or value.get('type', 'movie') != 'movie':
++        raise ValueError('invalid_movie_identity')
++    out = {}
++    for field, pattern in [('tmdb_id', r'[0-9]{1,12}'), ('imdb_id', r'tt[0-9]{5,12}'), ('plex_guid', r'plex://movie/[a-f0-9]{24}')]:
++        raw = value.get(field)
++        if raw is None or raw == '':
++            continue
++        text = str(raw).strip().lower()
++        if isinstance(raw, bool) or not re.fullmatch(pattern, text):
++            raise ValueError('invalid_movie_identity')
++        if field == 'tmdb_id':
++            if int(text) < 1:
++                raise ValueError('invalid_movie_identity')
++            text = str(int(text))
++        out[field] = text
++    aliases = []
++    if out.get('tmdb_id'): aliases.append('movie:tmdb:' + out['tmdb_id'])
++    if out.get('imdb_id'): aliases.append('movie:imdb:' + out['imdb_id'])
++    if out.get('plex_guid'): aliases.append('movie:plex:' + out['plex_guid'].rsplit('/', 1)[-1])
++    if not aliases:
++        raise ValueError('missing_movie_identity')
++    return {**out, 'key': aliases[0], 'aliases': aliases,
++            'priority': 'expanded' if value.get('priority') == 'expanded' else 'visible'}
++
++
++def plex_identity(item):
++    if item.get('type', 'movie') != 'movie':
++        raise ValueError('not_movie')
++    ids = [item.get('guid', '')] + [g.get('id', '') for g in (item.get('Guid') or []) if isinstance(g, dict)]
++    value = {}
++    for ident in ids:
++        for prefix, field in [('tmdb://', 'tmdb_id'), ('imdb://', 'imdb_id'), ('plex://movie/', 'plex_guid')]:
++            if str(ident).startswith(prefix):
++                candidate = ident if field == 'plex_guid' else ident[len(prefix):]
++                if field in value and value[field] != candidate:
++                    raise ValueError('conflicting_provider_ids')
++                value[field] = candidate
++    return movie_identity(value)
++
++
++def matches_identity(identity, item):
++    try:
++        actual = plex_identity(item)
++        return all(actual.get(field) == identity[field] for field in ('tmdb_id', 'imdb_id', 'plex_guid') if identity.get(field))
++    except (ValueError, TypeError):
++        return False
++
++
++def _demand_key(identity):
++    return '|'.join(str(identity.get(field) or '') for field in ('tmdb_id', 'imdb_id', 'plex_guid'))
++
++
++class MovieRatingsService:
++    """One bounded, lazy worker. Card APIs never call this provider synchronously."""
++    def __init__(self, store, *, config, ownership, transport=plex_json, clock=time.time):
++        self.store, self.config, self.ownership = store, config, ownership
++        self.transport, self.clock = transport, clock
++        self.owner = uuid.uuid4().hex
++        self._condition = threading.Condition(threading.RLock())
++        self._queue, self._snapshots, self._states = OrderedDict(), deque(maxlen=200), {}
++        self._thread, self._stopped, self._active = None, False, None
++        self._fingerprint = self._credentials()
++        self._lease, self._retry, self._failures = 0, 0, 0
++        self._local_lease, self._online_lease = 0, 0
++        self._last_online_start = 0
++        self._plex_state = 'unknown' if all(self._fingerprint) else 'not_configured'
++
++    def _credentials(self):
++        value = self.config() or {}
++        return str(value.get('url') or '').rstrip('/'), str(value.get('token') or '')
++
++    def invalidate_config(self):
++        with self._condition:
++            self._fingerprint = self._credentials()
++            self.store.invalidate()
++            self.owner = uuid.uuid4().hex
++            self._queue.clear()
++            self._snapshots.clear()
++            self._states.clear()
++            self._lease = self._retry = self._failures = 0
++            self._local_lease = self._online_lease = 0
++            self._plex_state = 'unknown' if all(self._fingerprint) else 'not_configured'
++
++    def _check_config(self):
++        if self._credentials() != self._fingerprint:
++            self.invalidate_config()
++
++    def _owned(self, items):
++        try:
++            return self.ownership(items) or {}
++        except Exception:
++            return {}  # An unavailable catalog cannot grant the offline exception.
++
++    def read(self, items):
++        with self._condition:
++            self._check_config()
++            owned = self._owned(items)
++            cache_available = True
++            try:
++                saved = self.store.read_many([i['key'] for i in items])
++            except Exception:
++                saved = {}
++                cache_available = False
++            now = self.clock()
++            available = all(self._fingerprint) and self._plex_state == 'available' and self._lease > now
++            result = {}
++            for ident in items:
++                key = ident['key']
++                is_owned = key in owned
++                record = saved.get(key, {}).get('local_saved' if is_owned else 'online_cache')
++                accepted = (owned.get(key) or {}).get('identity') or ident
++                # Every supplied accepted ID must agree, even when a cache alias exists.
++                if record and not all(record.get('identity', {}).get(f) == evidence[f]
++                                      for evidence in (ident, accepted) for f in ('tmdb_id', 'imdb_id', 'plex_guid') if evidence.get(f)):
++                    record = None
++                allowed = bool(record and (is_owned or available))
++                state, retry = self._states.get(_demand_key(ident), ('missing', 0))
++                if allowed: state = 'ready'
++                elif not cache_available: state = 'unavailable'
++                elif not all(self._fingerprint) or self._plex_state == 'unavailable': state = 'unavailable'
++                result[key] = {'state': state, 'owned': is_owned, 'display_allowed': allowed,
++                    'critics': record.get('critics') if allowed else None,
++                    'audience': record.get('audience') if allowed else None,
++                    'source': ('plex_local' if is_owned else 'plex_catalog') if allowed else None,
++                    'retrieved_at': record.get('retrieved_at') if allowed else None,
++                    'revision': record.get('sequence') if allowed else None,
++                    'stale': bool(allowed and now > record.get('expires_at', record['retrieved_at']+604800)),
++                    'retry_at': max(retry, self._retry, record.get('refresh_after', 0) if allowed else 0) if self._retry != float('inf') else None}
++            return {'schema_version': 1, 'owner': self.owner, 'generation': self.store.epoch,
++                'cache_state': 'available' if cache_available else 'unavailable',
++                'plex': {'state': 'available' if available else ('unknown' if self._plex_state == 'available' else self._plex_state),
++                         'valid_until': self._lease}, 'items': result}
++
++    def request(self, items):
++        with self._condition:
++            result = self.read(items)
++            now = self.clock()
++            if self._stopped or not all(self._fingerprint) or now < self._retry:
++                return result
++            for ident in items:
++                key = ident['key']
++                demand = _demand_key(ident)
++                item = result['items'][key]
++                if item['display_allowed'] and not item['stale']: continue
++                if (item.get('retry_at') or 0) > now: continue
++                if self._states.get(demand, ('', 0))[1] > now: continue
++                if self._active and demand == _demand_key(self._active):
++                    self._states[demand] = ('pending', 0)
++                    continue
++                duplicate = demand if demand in self._queue else None
++                if duplicate:
++                    self._queue[duplicate] = (self._queue[duplicate][0], now + 15, self.store.epoch)
++                    continue
++                self._queue[demand] = (ident, now + 15, self.store.epoch)
++                self._queue.move_to_end(demand, last=ident['priority'] != 'expanded')
++                self._states[demand] = ('pending', 0)
++                while len(self._queue) > 200:
++                    dropped, _ = self._queue.popitem(last=True)
++                    self._states.pop(dropped, None)
++            if self._queue: self._start()
++            return self.read(items)
++
++    def _start(self):
++        if not self._thread or not self._thread.is_alive():
++            self._thread = threading.Thread(target=self._run, name='cp-movie-ratings', daemon=True)
++            self._thread.start()
++        self._condition.notify_all()
++
++    def offer_local_snapshot(self, items, section_ids=(), *, expected_epoch=None):
++        """Already-fetched minimal facts; no network or disk work on the sync caller."""
++        with self._condition:
++            self._check_config()
++            if self._stopped or (expected_epoch is not None and expected_epoch != self.store.epoch): return
++            self._local_lease = self.clock() + 300
++            self._lease = min(self._local_lease, self._online_lease)
++            for start in range(0, min(len(items), 10000), 50):
++                self._snapshots.append((items[start:start+50], self.store.epoch, self.clock()))
++            if self._snapshots: self._start()
++
++    def _record(self, item, source, observed_at=None):
++        identity = plex_identity(item)
++        observed_at = item.get('_rt_observed_at', observed_at if observed_at is not None else self.clock())
++        scores = normalize_plex_ratings(item)
++        refresh_after = observed_at + (604800 if all(v is not None for v in scores.values()) else 86400)
++        raw = {}
++        for field, role, images, scalar, marker in (
++            ('critics', 'critic', _CRITIC_IMAGES, 'rating', 'ratingImage'),
++            ('audience', 'audience', _AUDIENCE_IMAGES, 'audienceRating', 'audienceRatingImage')):
++            rows = [r for r in (item.get('Rating') or []) if isinstance(r, dict) and r.get('type') == role and r.get('image') in images]
++            if scores[field] is not None:
++                raw[field] = {'value': float(rows[0]['value'] if rows else item[scalar]),
++                              'type': role, 'image': rows[0]['image'] if rows else item[marker]}
++        return {'key': ('movie:plex:' + identity['plex_guid'].rsplit('/', 1)[-1]) if identity.get('plex_guid') else identity['key'],
++            'aliases': identity['aliases'], 'identity': identity, 'source': source,
++            **scores, 'raw': raw, 'retrieved_at': observed_at,
++            'expires_at': refresh_after, 'refresh_after': refresh_after, 'sequence': observed_at}
++
++    def _run(self):
++        while True:
++            with self._condition:
++                if self._stopped: return
++                if self._queue:
++                    key, (ident, expires, epoch) = self._queue.popitem(last=False)
++                    if expires < self.clock():
++                        self._states.pop(key, None)
++                        continue
++                    self._active = ident
++                    snapshot = None
++                elif self._snapshots:
++                    snapshot, epoch, observed_at = self._snapshots.popleft()
++                else:
++                    self._condition.wait(30)
++                    continue
++            try:
++                if snapshot is not None:
++                    records = []
++                    for item in snapshot:
++                        try: records.append(self._record(item, 'local_saved', observed_at))
++                        except (ValueError, TypeError): pass
++                    try:
++                        self.store.publish(records, expected_epoch=epoch)
++                    except ValueError:
++                        for record in records:
++                            try: self.store.publish([record], expected_epoch=epoch)
++                            except ValueError: pass
++                else:
++                    self._resolve(ident, epoch)
++            except Exception:
++                if snapshot is None:
++                    with self._condition:
++                        if epoch == self.store.epoch: self._states[_demand_key(ident)] = ('unavailable', self.clock()+60)
++            finally:
++                with self._condition: self._active = None
++
++    def _resolve(self, ident, epoch):
++        with self._condition:
++            if epoch != self.store.epoch or self.clock() < self._retry: return
++            # A preceding compatible demand may have confirmed this fuller identity.
++            # Recheck evidence before HTTP; never merge unverified conflicting hints.
++            cached = self.read([ident])['items'][ident['key']]
++            if cached['display_allowed'] and (not cached['stale'] or (cached.get('retry_at') or 0) > self.clock()):
++                self._states[_demand_key(ident)] = ('ready', 0)
++                return
++            base, token = self._fingerprint
++            owned = self._owned([ident]).get(ident['key'])
++            accepted = {**ident, **((owned or {}).get('identity') or {})}
++            lease = self._local_lease
++        try:
++            if owned is not None:
++                rating_key = str(owned.get('rating_key') or '')
++                if not rating_key.isdigit():
++                    with self._condition: self._states[_demand_key(ident)] = ('missing', self.clock()+3600)
++                    return
++                payload = self.transport(base, token, '/library/metadata/' + rating_key)
++                source = 'local_saved'
++                local_checked = True
++            else:
++                local_checked = lease <= self.clock()
++                if lease <= self.clock():
++                    self.transport(base, token, '/library/sections')
++                with self._condition:
++                    if epoch != self.store.epoch: return
++                    while time.monotonic() - self._last_online_start < .5:
++                        self._condition.wait(.5 - (time.monotonic() - self._last_online_start))
++                        if self._stopped or epoch != self.store.epoch: return
++                    self._last_online_start = time.monotonic()
++                if ident.get('tmdb_id') or ident.get('imdb_id'):
++                    guid = ('tmdb://' + ident['tmdb_id']) if ident.get('tmdb_id') else ('imdb://' + ident['imdb_id'])
++                    payload = self.transport('https://metadata.provider.plex.tv', token, '/library/metadata/matches', params={'guid': guid, 'type': 1})
++                else:
++                    payload = self.transport('https://metadata.provider.plex.tv', token, '/library/metadata/' + ident['plex_guid'].rsplit('/', 1)[-1])
++                source = 'online_cache'
++            rows = payload.get('MediaContainer', {}).get('Metadata', [])
++            matches = [row for row in rows if isinstance(row, dict) and matches_identity(ident, row) and matches_identity(accepted, row)]
++            with self._condition:
++                if epoch != self.store.epoch or self._stopped: return
++                if local_checked: self._local_lease = self.clock()+300
++                if source == 'online_cache': self._online_lease = self.clock()+300
++                self._lease = min(self._local_lease, self._online_lease)
++                self._plex_state, self._retry, self._failures = ('available' if self._lease > self.clock() else 'unknown'), 0, 0
++                if len(matches) != 1:
++                    self._states[_demand_key(ident)] = ('identity_mismatch' if rows else 'not_found', self.clock()+86400)
++                    return
++            published = self.store.publish([self._record(matches[0], source)], expected_epoch=epoch)
++            with self._condition:
++                if published and epoch == self.store.epoch:
++                    self._states[_demand_key(ident)] = ('ready', 0)
++        except Exception as exc:
++            with self._condition:
++                if epoch != self.store.epoch: return
++                code = getattr(exc, 'code', None)
++                self._failures += 1
++                delay = (60, 300, 1800)[min(self._failures-1, 2)]
++                if code in (401, 403): delay = float('inf')
++                elif code == 429:
++                    retry = (getattr(exc, 'headers', None) or {}).get('Retry-After', '')
++                    try: delay = max(1, float(retry))
++                    except (ValueError, TypeError):
++                        try: delay = max(1, parsedate_to_datetime(retry).timestamp()-self.clock())
++                        except (ValueError, TypeError, OverflowError): delay = 900
++                self._plex_state, self._lease, self._retry = 'unavailable', 0, self.clock()+delay
++                self._local_lease = self._online_lease = 0
++                self._states[_demand_key(ident)] = ('unavailable', self._retry)
++
++    def stop(self):
++        with self._condition:
++            self._stopped = True
++            self.store.invalidate()
++            self._queue.clear()
++            self._snapshots.clear()
++            self._condition.notify_all()
++        if self._thread: self._thread.join(timeout=7)
+--- /dev/null
++++ b/services/movie_ratings_store.py
+@@ -0,0 +1,97 @@
++"""Optional RT observations. Never creates or joins CP's canonical catalog."""
++import json
++import sqlite3
++import threading
++from pathlib import Path
++from contextlib import contextmanager
++
++
++@contextmanager
++def _connection(path, **kwargs):
++    db = sqlite3.connect(path, timeout=.05, **kwargs)
++    try:
++        with db:
++            yield db
++    finally:
++        db.close()
++
++
++class RatingsIdentityConflict(ValueError):
++    pass
++
++
++class MovieRatingsStore:
++    def __init__(self, path):
++        self.path = Path(path)
++        self.epoch = 0
++        self._write_lock = threading.RLock()
++
++    def read_many(self, keys):
++        keys = list(dict.fromkeys(keys))
++        if not keys or not self.path.is_file():
++            return {}
++        with _connection(self.path.resolve().as_uri() + '?mode=ro', uri=True) as db:
++            if db.execute('PRAGMA user_version').fetchone()[0] != 1:
++                raise ValueError('unsupported_ratings_schema')
++            rows = db.execute('''SELECT a.alias,o.source,o.payload FROM aliases a
++                JOIN observations o ON o.key=a.key AND o.source=a.source
++                WHERE a.alias IN (SELECT value FROM json_each(?))''', (json.dumps(keys),)).fetchall()
++        result = {}
++        for alias, source, payload in rows:
++            result.setdefault(alias, {})[source] = json.loads(payload)
++        return result
++
++    def publish(self, records, expected_epoch=None):
++        records = list(records)
++        if not records:
++            return True
++        with self._write_lock:
++            if expected_epoch is not None and self.epoch != expected_epoch:
++                return False
++            self.path.parent.mkdir(parents=True, exist_ok=True)
++            with _connection(self.path) as db:
++                db.execute('PRAGMA journal_mode=WAL')
++                version = db.execute('PRAGMA user_version').fetchone()[0]
++                if version not in (0, 1):
++                    raise ValueError('unsupported_ratings_schema')
++                db.executescript('''CREATE TABLE IF NOT EXISTS observations (
++                    key TEXT NOT NULL, source TEXT NOT NULL, sequence REAL NOT NULL, payload TEXT NOT NULL,
++                    PRIMARY KEY(key,source));
++                    CREATE TABLE IF NOT EXISTS aliases (
++                    alias TEXT NOT NULL, source TEXT NOT NULL, key TEXT NOT NULL, PRIMARY KEY(alias,source));
++                    PRAGMA user_version=1;''')
++                db.execute('BEGIN IMMEDIATE')
++                for record in records:
++                    key, source = record['key'], record['source']
++                    aliases = list(dict.fromkeys([key, *record.get('aliases', [])]))
++                    old = db.execute('SELECT sequence,payload FROM observations WHERE key=? AND source=?', (key, source)).fetchone()
++                    if old and old[0] > record['sequence']:
++                        continue
++                    for alias in aliases:
++                        conflict = db.execute('SELECT key FROM aliases WHERE alias=? AND source=?', (alias, source)).fetchone()
++                        if conflict and conflict[0] != key:
++                            raise RatingsIdentityConflict('conflicting_movie_alias')
++                    previous = json.loads(old[1]) if old else {}
++                    retained = previous.get('aliases', [])
++                    prior_identity = previous.get('identity', {})
++                    current_identity = record.get('identity', {})
++                    for field in ('tmdb_id', 'imdb_id', 'plex_guid'):
++                        if prior_identity.get(field) and current_identity.get(field) and prior_identity[field] != current_identity[field]:
++                            raise RatingsIdentityConflict('conflicting_movie_identity')
++                    saved = {**previous, **record, 'identity': {**prior_identity, **current_identity},
++                             'aliases': list(dict.fromkeys([*retained, *aliases]))}
++                    if all(record.get(f) is None for f in ('critics', 'audience')) and any(previous.get(f) is not None for f in ('critics', 'audience')):
++                        for field in ('critics', 'audience', 'raw', 'retrieved_at', 'expires_at'):
++                            if field in previous: saved[field] = previous[field]
++                    db.execute('INSERT OR REPLACE INTO observations VALUES(?,?,?,?)',
++                               (key, source, record['sequence'], json.dumps(saved, allow_nan=False)))
++                    db.executemany('INSERT OR REPLACE INTO aliases VALUES(?,?,?)', [(a, source, key) for a in aliases])
++        return True
++
++    def read_state(self):
++        return {'schema_version': 1, 'exists': self.path.is_file()}
++
++    def invalidate(self):
++        with self._write_lock:
++            self.epoch += 1
++
+--- /dev/null
++++ b/services/movie_ratings_routes.py
+@@ -0,0 +1,25 @@
++"""Optional display data only: these routes never wait for a provider."""
++from flask import jsonify, request
++from .movie_ratings import movie_identity
++
++
++def register_movie_ratings_routes(app, get_service):
++    def handle(resolve=False):
++        if request.content_length and request.content_length > 32768:
++            return jsonify({'error': 'invalid_ratings_request'}), 400
++        body = request.get_json(silent=True)
++        try:
++            raw = body.get('items') if isinstance(body, dict) else None
++            if not isinstance(raw, list) or not 1 <= len(raw) <= 40:
++                raise ValueError()
++            items = [movie_identity(item) for item in raw]
++        except (TypeError, ValueError):
++            return jsonify({'error': 'invalid_ratings_request'}), 400
++        service = get_service()
++        result = service.request(items) if resolve else service.read(items)
++        response = jsonify(result)
++        response.headers['Cache-Control'] = 'private, no-store'
++        return response, (202 if resolve and any(v['state'] == 'pending' for v in result['items'].values()) else 200)
++
++    app.add_url_rule('/api/movie-ratings/read', 'movie_ratings_read', lambda: handle(), methods=['POST'])
++    app.add_url_rule('/api/movie-ratings/resolve', 'movie_ratings_resolve', lambda: handle(True), methods=['POST'])
+--- /dev/null
++++ b/services/plex_transport.py
+@@ -0,0 +1,22 @@
++"""Small bounded Plex JSON transport; credentials stay in headers."""
++import json
++import urllib.parse
++import urllib.request
++
++
++class _NoRedirect(urllib.request.HTTPRedirectHandler):
++    def redirect_request(self, req, fp, code, msg, headers, newurl):
++        return None
++
++
++def plex_json(base, token, path, *, params=None, timeout=5, max_bytes=1048576, open_url=None):
++    url = base.rstrip('/') + path
++    if params:
++        url += '?' + urllib.parse.urlencode(params)
++    req = urllib.request.Request(url, headers={'X-Plex-Token': token, 'Accept': 'application/json'})
++    opener = open_url or urllib.request.build_opener(_NoRedirect).open
++    with opener(req, timeout=timeout) as response:
++        raw = response.read(max_bytes + 1 if max_bytes is not None else -1)
++        if max_bytes is not None and len(raw) > max_bytes:
++            raise ValueError('plex_response_too_large')
++        return json.loads(raw)
+--- /dev/null
++++ b/src/api/movieRatings.js
+@@ -0,0 +1,136 @@
++export function ratingsIdentity(movie) {
++  if (!movie || (movie.type && movie.type !== 'movie') || movie.media_type === 'tv') return null;
++  const out = {};
++  for (const [field, pattern] of [['tmdb_id', /^[0-9]{1,12}$/], ['imdb_id', /^tt[0-9]{5,12}$/], ['plex_guid', /^plex:\/\/movie\/[a-f0-9]{24}$/]]) {
++    const raw = movie[field];
++    if (raw == null || raw === '') continue;
++    const value = String(raw).trim().toLowerCase();
++    if (typeof raw === 'boolean' || !pattern.test(value)) return null;
++    out[field] = field === 'tmdb_id' ? String(Number(value)) : value;
++    if (field === 'tmdb_id' && Number(value) <= 0) return null;
++  }
++  const key = out.tmdb_id ? `movie:tmdb:${out.tmdb_id}` : out.imdb_id ? `movie:imdb:${out.imdb_id}` : out.plex_guid ? `movie:plex:${out.plex_guid.split('/').at(-1)}` : '';
++  return key ? { ...out, key } : null;
++}
++
++async function fetchBatch(route, items) {
++  const response = await fetch(`/api/movie-ratings/${route}`, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({items})});
++  if (!response.ok) throw new Error('optional_ratings_unavailable');
++  return response.json();
++}
++
++export function createMovieRatingsClient({eligible, fetchBatch: request = fetchBatch, idle = callback => setTimeout(callback, 0)} = {}) {
++  const entries = new Map();
++  let timer, timerDue = 0, leaseTimer, busy = false, destroyed = false, epoch = 0, owner = null, leaseUntil = 0;
++  const visible = entry => [...entry.subscribers].some(s => s.visible());
++  const notify = entry => { for (const s of entry.subscribers) s.listener(); };
++  function schedule(delay = 50) {
++    if (destroyed || busy || ![...entries.values()].some(e=>e.subscribers.size)) return;
++    const due=Date.now()+delay;
++    if(timer&&timerDue<=due)return;
++    clearTimeout(timer);timerDue=due;
++    timer = setTimeout(() => { timer = null;timerDue=0; idle(run); }, Math.min(delay,2147483647));
++  }
++  function hideUnowned() {
++    for (const entry of entries.values()) if (entry.value && !entry.value.owned) {
++      entry.value = null; entry.phase = 'read'; notify(entry);
++    }
++  }
++  function trim() {
++    let excess = entries.size - 1000;
++    for (const [key, entry] of entries) {
++      if (excess <= 0) break;
++      if (!entry.subscribers.size) { entries.delete(key); excess--; }
++    }
++  }
++  function invalidate() {
++    epoch++; owner = null; leaseUntil = 0; clearTimeout(leaseTimer);
++    for (const entry of entries.values()) {
++      entry.value = null; entry.phase = 'read'; entry.polls = 0; entry.due = 0; notify(entry);
++    }
++    schedule();
++  }
++  async function run() {
++    if (busy || destroyed || !eligible()) return;
++    const candidates = [...entries.values()].filter(e => visible(e) && e.phase !== 'done' && e.due <= Date.now());
++    if (!candidates.length) {
++      const due=[...entries.values()].filter(e=>visible(e)&&e.phase!=='done').map(e=>e.due);
++      if(due.length) schedule(Math.max(50,Math.min(...due)-Date.now()));
++      return;
++    }
++    candidates.sort((a,b) => Number(b.expanded)-Number(a.expanded));
++    const phase = candidates[0].phase;
++    const batch = candidates.filter(e => e.phase === phase).slice(0,40);
++    const revisions = new Map(batch.map(e=>[e,e.revision]));
++    const version = epoch;
++    busy = true;
++    let response;
++    try { response = await request(['resolve','poll'].includes(phase) ? 'resolve' : 'read', batch.map(e => ({...e.identity, priority:e.expanded?'expanded':'visible'}))); }
++    catch { response = null; }
++    // Permission revocation is immediate. Adding scores waits for idle/input gates.
++    if (version === epoch && (!response || response.plex?.state !== 'available')) hideUnowned();
++    const publish = () => {
++      if (destroyed || version !== epoch) { busy = false; schedule(); return; }
++      if (!eligible()) { timer = setTimeout(() => {timer=null; idle(publish);}, 250); return; }
++      if (response?.owner && owner && response.owner !== owner) {
++        invalidate();
++      }
++      owner = response?.owner || owner;
++      const currentEpoch = epoch;
++      leaseUntil=response?.plex?.state === 'available' ? response.plex.valid_until*1000 : 0;
++      for (const entry of batch) {
++        if(entry.revision!==revisions.get(entry))continue;
++        const incoming = response?.items?.[entry.identity.key];
++        const retainSaved = entry.value?.owned && ((!response) || (response.cache_state==='unavailable' && incoming?.owned));
++        const value = retainSaved ? entry.value : incoming || null;
++        const changed = JSON.stringify(entry.value) !== JSON.stringify(value);
++        entry.value = value;
++        if (changed) notify(entry);
++        if (!response) { entry.phase='retry'; entry.due=Date.now()+60000; }
++        else if (value?.state === 'pending' && entry.polls++ < 15) { entry.phase='poll'; entry.due=Date.now()+1000; }
++        else if (value?.state==='unavailable' && value.retry_at*1000>Date.now()) {entry.phase='retry';entry.due=value.retry_at*1000;}
++        else if (['read','retry'].includes(phase) && (!value?.display_allowed || value.stale) && (!['not_found','identity_mismatch'].includes(value?.state) || (value.retry_at && value.retry_at*1000<=Date.now())) && response.plex?.state !== 'not_configured' && response.plex?.state !== 'disconnected' && (!value?.retry_at || value.retry_at*1000 <= Date.now())) { entry.phase='resolve'; entry.due=0; }
++        else { entry.phase='done'; entry.due=(value?.retry_at || 0)*1000; }
++      }
++      clearTimeout(leaseTimer);
++      if (response?.plex?.state === 'available') leaseTimer=setTimeout(() => {
++        if (currentEpoch !== epoch) return;
++        hideUnowned(); schedule();
++      }, Math.max(0,response.plex.valid_until*1000-Date.now()));
++      busy=false; trim(); schedule(50);
++      // One shared timer only while pending visible work exists.
++      if (!timer && [...entries.values()].some(e=>visible(e)&&e.phase==='poll')) schedule(1000);
++    };
++    idle(publish);
++  }
++  return {
++    get: (key,identity) => {
++      const entry=entries.get(key),value=entry?.value;
++      if(identity&&['tmdb_id','imdb_id','plex_guid'].some(f=>identity[f]&&identity[f]!==entry?.identity[f]))return null;
++      return value && (value.owned || leaseUntil>Date.now()) ? value : null;
++    },
++    subscribe(identity, isVisible, listener, expanded=false) {
++      let entry=entries.get(identity.key);
++      if (!entry) { entry={identity,revision:0,subscribers:new Set(),phase:'read',due:0,polls:0,value:null,expanded}; entries.set(identity.key,entry); }
++      else {
++        const conflict=['tmdb_id','imdb_id','plex_guid'].some(f=>identity[f]&&entry.identity[f]&&identity[f]!==entry.identity[f]);
++        const next=conflict?identity:ratingsIdentity({...entry.identity,...identity});
++        if(JSON.stringify(next)!==JSON.stringify(entry.identity)) {entry.revision++;entry.identity=next;entry.value=null;entry.phase='read';entry.due=0;notify(entry);}
++      }
++      entry.expanded=expanded;
++      const sub={visible:isVisible,listener}; entry.subscribers.add(sub); schedule();
++      return () => {entry.subscribers.delete(sub);trim();};
++    },
++    wake() { schedule(); }, invalidate,
++    refresh(identities) {
++      for(const identity of identities) {
++        const entry=entries.get(identity?.key);
++        if(!entry)continue;
++        entry.revision++;entry.value=null;entry.phase='read';entry.due=0;entry.polls=0;notify(entry);
++      }
++      schedule();
++    },
++    revisit() {for(const entry of entries.values()) if(visible(entry)&&entry.phase==='done'&&entry.due<=Date.now()&&(!entry.value?.display_allowed||entry.value.stale||(!entry.value.owned&&leaseUntil<=Date.now()))) {entry.phase='read';entry.polls=0;} schedule();},
++    destroy() {destroyed=true;epoch++;clearTimeout(timer);clearTimeout(leaseTimer);entries.clear();}
++  };
++}
+--- a/src/api/library.js
++++ b/src/api/library.js
+@@ -80,6 +80,11 @@
+       storeOwnershipCheck(missing[index] || result, result, freshTime);
+       results.push(result);
+     });
++    // The first ownership answer need not change catalog generation. Optional
++    // per-movie displays still need to recheck their permission after it arrives.
++    if (typeof window !== 'undefined') window.dispatchEvent(new CustomEvent('cp-ownership-resolved', {
++      detail: { identities: missing }
++    }));
+   }
+   return results;
+ }
+--- /dev/null
++++ b/src/contexts/MovieRatingsContext.jsx
+@@ -0,0 +1,98 @@
++import {createContext, useContext, useEffect, useMemo, useSyncExternalStore, useCallback, useRef} from 'react';
++import {CardPosterPriority, isPosterInViewport} from '../components/movie-card/cardArtwork.js';
++import {createMovieRatingsClient, ratingsIdentity} from '../api/movieRatings.js';
++
++const Context=createContext(null);
++const empty=()=>null;
++const noop=()=>()=>{};
++
++export function MovieRatingsProvider({children}) {
++  const priority=useContext(CardPosterPriority);
++  const owner=useMemo(()=>{
++    let pausedUntil=0;
++    const visible=new Map();
++    const pendingSubscriptions=new Set();
++    const eligible=()=>document.visibilityState!=='hidden'&&Date.now()>=pausedUntil&&Boolean(priority?.isDeferredReady());
++    const idle=callback=>{
++      let called=false;
++      const once=()=>{if(!called){called=true;callback();}};
++      if(window.requestIdleCallback)window.requestIdleCallback(once);
++      else setTimeout(once,250);
++    };
++    const client=createMovieRatingsClient({
++      eligible,idle
++    });
++    let activationScheduled=false;
++    const result={client,visible,pendingSubscriptions,mounts:0,pause:()=>{pausedUntil=Date.now()+150;}};
++    result.activate=()=>{
++      if(activationScheduled||!pendingSubscriptions.size)return;
++      activationScheduled=true;
++      idle(()=>{
++        activationScheduled=false;
++        if(!result.mounts||!eligible())return;
++        for(const start of pendingSubscriptions)start();
++        pendingSubscriptions.clear();
++      });
++    };
++    return result;
++  },[priority]);
++  useEffect(()=>{
++    owner.mounts++;
++    let resume;
++    const observer=typeof IntersectionObserver!=='undefined'?new IntersectionObserver(entries=>{
++      for(const entry of entries) owner.visible.set(entry.target,entry.isIntersecting);
++      owner.client.revisit();
++    }):null;
++    owner.observer=observer;
++    const wake=()=>{owner.activate();owner.client.wake();};
++    const pause=()=>{owner.pause();clearTimeout(resume);resume=setTimeout(wake,160);};
++    const invalidate=()=>owner.client.invalidate();
++    const revisit=()=>{owner.activate();owner.client.revisit();};
++    const ownership=event=>owner.client.refresh((event.detail?.identities||[]).map(ratingsIdentity));
++    const unsub=priority?.subscribeDeferredReady(wake);
++    owner.activate();
++    for(const event of ['scroll','pointerdown','keydown','popstate']) window.addEventListener(event,pause,{capture:true,passive:true});
++    for(const event of ['cp-library-changed','cp-catalog-generation-changed','cp-ratings-config-changed']) window.addEventListener(event,invalidate);
++    window.addEventListener('focus',revisit);
++    window.addEventListener('cp-ownership-resolved',ownership);
++    document.addEventListener('visibilitychange',revisit);
++    return ()=>{
++      clearTimeout(resume);observer?.disconnect();unsub?.();
++      for(const event of ['scroll','pointerdown','keydown','popstate']) window.removeEventListener(event,pause,true);
++      for(const event of ['cp-library-changed','cp-catalog-generation-changed','cp-ratings-config-changed']) window.removeEventListener(event,invalidate);
++      window.removeEventListener('focus',revisit);document.removeEventListener('visibilitychange',revisit);
++      window.removeEventListener('cp-ownership-resolved',ownership);
++      // StrictMode replays effects on this same owner; invalidate, don't destroy it.
++      owner.client.invalidate();
++      owner.mounts--;
++      queueMicrotask(()=>{if(!owner.mounts)owner.client.destroy();});
++    };
++  },[owner,priority]);
++  return <Context.Provider value={owner}>{children}</Context.Provider>;
++}
++
++export function useMovieRatings(identity, elementRef, expanded) {
++  const owner=useContext(Context);
++  const signature=JSON.stringify(ratingsIdentity(identity));
++  const normalized=useMemo(()=>JSON.parse(signature),[signature]);
++  const active=useRef(null);
++  const subscribe=useCallback(listener=>{
++    const element=elementRef.current;
++    if(!owner||!normalized||!element) return ()=>{};
++    // Even cache registration and observation wait behind posters and idle input.
++    let stop;
++    const subscription={signature};
++    const start=()=>{
++      owner.observer?.observe(element);
++      active.current=subscription;
++      stop=owner.client.subscribe(normalized,()=>owner.visible.get(element)!==false&&isPosterInViewport(element),listener,expanded);
++      listener(); // A duplicate card may already have a cached snapshot.
++    };
++    owner.pendingSubscriptions.add(start);
++    owner.activate();
++    listener(); // Pending cards cannot display a cache value without invalidation notifications.
++    return ()=>{if(active.current===subscription)active.current=null;owner.pendingSubscriptions.delete(start);owner.observer?.unobserve(element);owner.visible.delete(element);stop?.();};
++  },[owner,normalized,signature,elementRef,expanded]);
++  const snapshot=useCallback(()=>active.current?.signature===signature?(owner?.client.get(normalized?.key,normalized)||null):null,[owner,normalized,signature]);
++  return useSyncExternalStore(owner&&normalized?subscribe:noop,snapshot,empty);
++}
+--- /dev/null
++++ b/src/components/movie-card/MovieRatings.jsx
+@@ -0,0 +1,23 @@
++import Tooltip from '../Tooltip.jsx';
++import {useMovieRatings} from '../../contexts/MovieRatingsContext.jsx';
++import {RottenTomatoesIcon} from './RottenTomatoesIcons.jsx';
++
++export function MovieRatings({identity, cardRef, expanded=false}) {
++  const value=useMovieRatings(identity,cardRef,expanded);
++  const allowed=Boolean(value?.display_allowed);
++  const date=value?.retrieved_at ? new Date(value.retrieved_at*1000).toLocaleString() : '';
++  return <span className={`movie-rt-pair${expanded?' movie-rt-expanded':''}`} aria-hidden={!allowed||undefined} data-rt-visible={allowed}>
++    {allowed ? ['critics','audience'].map(type=>{
++      const score=value[type];
++      const valid=Number.isInteger(score)&&score>=0&&score<=100;
++      const kind=type==='critics'?(score>=60?'fresh':'rotten'):(score>=60?'upright':'spilled');
++      const label=valid?`Rotten Tomatoes® ${type}: ${score}%`:`No ${type} score available`;
++      return <Tooltip key={type} title={label} description={`${value.owned?'Saved in CP':'Via Plex'}${date?` · Retrieved ${date}`:''}`}>
++        <span className="movie-rt-score" data-movie-rating tabIndex={0} aria-label={label} onClick={e=>e.stopPropagation()} onKeyDown={e=>e.stopPropagation()}>
++          {expanded?<small>{type==='critics'?'Critics':'Audience'}</small>:null}
++          <span>{valid?<RottenTomatoesIcon kind={kind}/>:null}<strong>{valid?`${score}%`:'—'}</strong></span>
++        </span>
++      </Tooltip>;
++    }):null}
++  </span>;
++}
+--- /dev/null
++++ b/src/components/movie-card/RottenTomatoesIcons.jsx
+@@ -0,0 +1,9 @@
++// Small CP vector depictions. Bundled locally; no image requests or emoji fonts.
++export function RottenTomatoesIcon({kind}) {
++  return <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" data-rt-icon={kind}>
++    {kind==='fresh' ? <><path fill="#ed4136" d="M12 6C2 3 0 18 9 21c3 1 5 0 7-1C25 15 22 3 12 6Z"/><path fill="#4d9b48" d="m12 8-5-4 5 1 2-5 1 5 5-1-4 4-3-1Z"/><path stroke="#ff9886" fill="none" strokeLinecap="round" d="M6 10q-3 4 0 7"/></> : null}
++    {kind==='rotten' ? <><path fill="#73a847" d="m11 5 3-4 2 6 6-1-3 5 5 4-7 1-1 7-5-5-5 4 1-7-7-2 7-3-3-6Z"/><ellipse cx="12" cy="12" rx="5" ry="4" fill="#426e35"/><circle cx="3" cy="20" r="2" fill="#73a847"/></> : null}
++    {kind==='upright' ? <><path fill="#fff1c3" d="M4 10C-1 6 4 1 8 4 8-1 16-1 16 4c5-3 10 3 5 7Z"/><path fill="#f2e9d2" d="m4 9 3 14h11l3-14Z"/><path fill="#e9453b" d="m5 10 3 12h3L9 10Zm10 0-1 12h3l2-12Z"/></> : null}
++    {kind==='spilled' ? <><path fill="#f2e9d2" d="m4 7 15 6-7 10L1 14Z"/><path fill="#e9453b" d="m5 8 12 7-2 3-12-7Zm-3 5 11 7-2 2-10-7Z"/><ellipse cx="17" cy="13" rx="3" ry="6" transform="rotate(36 17 13)" fill="#807966"/><path fill="#eee7c8" d="M17 7c-4-3 0-7 3-4 4-2 5 4 1 5Zm-7-2c-3-3 1-6 3-3 3 2 0 5-3 3Zm10 17c-3-3 1-6 3-3 3 2 0 5-3 3Z"/></> : null}
++  </svg>;
++}
+--- a/src/components/movie-card/MovieCard.jsx
++++ b/src/components/movie-card/MovieCard.jsx
+@@ -3,6 +3,8 @@
+ import { centeredWorkspaceScroll } from './expandedCardViewport.js';
+ import { useMediaCardArtwork, useMediaPosterSource, usePrioritizedCardPoster } from './cardArtwork.js';
+ import { MovieAwards } from '../MovieAwards.jsx';
++import { MovieRatings } from './MovieRatings.jsx';
++import { ratingsIdentity as normalizeRatingsIdentity } from '../../api/movieRatings.js';
+ import { positiveAwards } from '../../api/movieAwards.js';
+ import useMovieCardScrollReturn from '../../hooks/useMovieCardScrollReturn.js';
+ 
+@@ -82,6 +84,7 @@
+   rating,
+   voteCount,
+   awardCounts = null,
++  ratingsIdentity = null,
+   chips = [],
+   mutedChips = [],
+   statusLabel = '',
+@@ -111,6 +114,7 @@
+   aside
+ }) {
+   const interactive = Boolean(onToggle);
++  const rtIdentity = normalizeRatingsIdentity(ratingsIdentity);
+   const cardRef = useRef(null);
+   const artworkStyle = useMediaCardArtwork(cardRef, backdropUrl, posterUrl, expanded);
+   const captureScrollOrigin = useMovieCardScrollReturn(cardRef, expanded);
+@@ -194,7 +198,7 @@
+     // Capture plain content clicks before body sections stop propagation. Leave
+     // nested actions and portaled dialogs to their own handlers.
+     if (!expanded || !interactive || !event.currentTarget.contains(event.target)) return;
+-    if (event.target.closest('button, a, input, select, textarea, label, summary, [role="button"], [role="checkbox"], [contenteditable="true"]')) return;
++    if (event.target.closest('button, a, input, select, textarea, label, summary, [role="button"], [role="checkbox"], [contenteditable="true"], [data-movie-rating]')) return;
+     event.stopPropagation();
+     onToggle();
+   }
+@@ -205,6 +209,7 @@
+       className={cx(
+         'unified-movie-card',
+         expanded && 'unified-movie-card-expanded',
++        rtIdentity && 'unified-movie-card-ratings',
+         selected && 'unified-movie-card-selected',
+         interactive && 'unified-movie-card-interactive',
+         className
+@@ -244,6 +249,7 @@
+             </div>
+             <div className="unified-movie-header-meta">
+               {expanded ? <MovieAwards counts={awardCounts} /> : null}
++              {expanded && rtIdentity ? <MovieRatings identity={rtIdentity} cardRef={cardRef} expanded /> : null}
+               {rating && expanded ? <ExpandedRating rating={rating} voteCount={voteCount} /> : null}
+               {headerActions ? (
+                 <span className="unified-header-actions" onClick={stopCardToggle}>
+@@ -299,12 +305,13 @@
+             </div>
+           ) : null}
+ 
+-          {!expanded && (rating || positiveAwards(awardCounts).length) ? (
++          {!expanded && (rating || rtIdentity || positiveAwards(awardCounts).length) ? (
+             <div className="unified-rating-row">
+               {rating ? <span className="unified-rating">
+                 <Star size={16} fill="currentColor" />
+                 {rating}{voteCount ? ` - ${voteCount}` : ''}
+               </span> : null}
++              {rtIdentity ? <MovieRatings identity={rtIdentity} cardRef={cardRef} /> : null}
+               <MovieAwards counts={awardCounts} />
+             </div>
+           ) : null}
+--- a/src/components/movie-card/cardArtwork.js
++++ b/src/components/movie-card/cardArtwork.js
+@@ -5,7 +5,7 @@
+ 
+ export const CardPosterPriority = createContext(null);
+ 
+-function isPosterInViewport(element) {
++export function isPosterInViewport(element) {
+   const rect = element.getBoundingClientRect();
+   const workspace = element.closest('main.workspace')?.getBoundingClientRect();
+   const rail = element.closest('.horizontal-card-rail-track')?.getBoundingClientRect();
+@@ -20,11 +20,12 @@
+   const posters = new Map();
+   const pending = new Set();
+   const backdrops = new Map();
++  const deferredListeners = new Set();
+   let viewportObserver;
+   let flushScheduled = false;
+ 
+   function scheduleBackdrops() {
+-    if (flushScheduled || pending.size || !backdrops.size) return;
++    if (flushScheduled || pending.size || (!backdrops.size && !deferredListeners.size)) return;
+     flushScheduled = true;
+     requestAnimationFrame(() => {
+       flushScheduled = false;
+@@ -38,6 +39,7 @@
+         backdrops.delete(start);
+         start();
+       }
++      for (const listener of deferredListeners) listener();
+     });
+   }
+ 
+@@ -55,6 +57,17 @@
+   }
+ 
+   return {
++    isDeferredReady() {
++      if (flushScheduled || pending.size) return false;
++      for (const [element, poster] of posters) if (!poster.settled && isPosterInViewport(element)) return false;
++      for (const element of backdrops.values()) if (isPosterInViewport(element)) return false;
++      return true;
++    },
++    subscribeDeferredReady(listener) {
++      deferredListeners.add(listener);
++      scheduleBackdrops();
++      return () => deferredListeners.delete(listener);
++    },
+     watchPoster(element, image, url) {
+       viewportObserver ??= new IntersectionObserver(observeViewport);
+       const poster = {
+--- a/src/components/movie-card/movieCard.css
++++ b/src/components/movie-card/movieCard.css
+@@ -210,6 +210,30 @@
+   align-items: flex-end;
+   margin-top: auto;
+ }
++
++.movie-rt-pair {
++  display: inline-flex;
++  flex: 0 0 116px;
++  width: 116px;
++  min-height: 20px;
++  gap: 8px;
++  margin-left: 0;
++  color: var(--text-soft);
++  font-size: 13px;
++  font-weight: 800;
++  font-variant-numeric: tabular-nums;
++}
++.movie-rt-score { width: 54px; flex: 0 0 54px; outline-offset: 3px; }
++.movie-rt-score > span { display: inline-flex; gap: 4px; align-items: center; white-space: nowrap; }
++.movie-rt-score svg { width: 16px; height: 16px; flex: none; }
++.movie-rt-score strong { font: inherit; }
++.unified-movie-card-ratings .unified-rating-row { --movie-rating-column-gap: 8px; align-items: center; gap: 8px; }
++.unified-movie-card-ratings .unified-rating { min-width: 0; }
++.unified-movie-card-ratings.unified-movie-card-expanded .unified-movie-title-block h3 { -webkit-line-clamp: unset; overflow: visible; }
++.movie-rt-expanded { margin: 0; flex: 0 0 118px; width: 118px; min-height: 36px; gap: 12px; }
++.movie-rt-expanded .movie-rt-score { display: grid; width: 53px; flex-basis: 53px; gap: 2px; }
++.movie-rt-expanded .movie-rt-score small { color: var(--text-muted); font-size: 11px; }
++.movie-rt-expanded svg { width: 18px; height: 18px; }
+ 
+ .unified-rating {
+   display: inline-flex;
+--- a/src/components/SharedMovieCards.jsx
++++ b/src/components/SharedMovieCards.jsx
+@@ -206,7 +206,7 @@
+   const ownedPath = owned?.path || '';
+   const playAction = usePendingPlay(onPlay, ownedPath);
+   return (
+-    <UnifiedMovieCard
++    <UnifiedMovieCard ratingsIdentity={displayMovie}
+       availability={iptvAvailability && Number(movie.tmdb_id) > 0
+         ? <IPTVAvailabilityBadge movie={movie} providers={iptvAvailability.providers} onStream={onStream} /> : undefined}
+       className={cx('discover-movie-card', 'movie-awards-consumer', expanded && 'discover-card-expanded')}
+@@ -216,7 +216,7 @@
+       posterUrl={displayMovie.poster_url}
+       backdropUrl={displayDetails?.backdrop_url || displayMovie.backdrop_url || displayMovie.poster_url}
+       rating={displayMovie.tmdb_rating}
+-      voteCount={formatVoteCount(displayMovie.tmdb_vote_count)}
++      voteCount={formatVoteCount(displayMovie.tmdb_vote_count, { includeLabel: expanded })}
+       chips={(displayMovie.genres || []).slice(0, 2)}
+       mutedChips={[
+         displayMovie.language,
+@@ -679,7 +679,7 @@
+   const playAction = usePendingPlay(onPlay, item.path);
+ 
+   return (
+-    <UnifiedMovieCard
++    <UnifiedMovieCard ratingsIdentity={displayMovie}
+       className={cx('library-movie-card', 'movie-awards-consumer', expanded && 'library-movie-card-expanded')}
+       awardCounts={awardCounts}
+       title={displayMovie.title}
+@@ -687,7 +687,7 @@
+       posterUrl={displayMovie.poster_url}
+       backdropUrl={displayDetails?.backdrop_url || displayMovie.backdrop_url || displayMovie.poster_url}
+       rating={displayMovie.rating || displayMovie.tmdb_rating || item.plex_rating}
+-      voteCount={formatVoteCount(displayMovie.tmdb_vote_count)}
++      voteCount={formatVoteCount(displayMovie.tmdb_vote_count, { includeLabel: expanded })}
+       chips={(displayMovie.genres || genres).slice(0, 2)}
+       mutedChips={[
+         locale,
+--- a/src/features/discover/DiscoverWorkspace.jsx
++++ b/src/features/discover/DiscoverWorkspace.jsx
+@@ -2822,7 +2822,7 @@
+     : collection;
+ 
+   return (
+-    <UnifiedMovieCard
++    <UnifiedMovieCard ratingsIdentity={awardIdentity}
+       availability={Number(movie.tmdb_id) > 0
+         ? <IPTVAvailabilityBadge movie={movie} providers={iptvAvailability?.providers} onStream={onStream} /> : undefined}
+       className={cx('indexer-card', 'movie-awards-consumer', expanded && 'discover-card-expanded')}
+@@ -2832,7 +2832,7 @@
+       posterUrl={displayMovie.poster_url}
+       backdropUrl={displayDetails?.backdrop_url || displayMovie.backdrop_url || displayMovie.poster_url}
+       rating={displayMovie.tmdb_rating}
+-      voteCount={formatVoteCount(displayMovie.tmdb_vote_count)}
++      voteCount={formatVoteCount(displayMovie.tmdb_vote_count, { includeLabel: expanded })}
+       chips={(displayMovie.genres || []).slice(0, 2)}
+       mutedChips={[
+         selectedVariant.resolution || movie.best_resolution,
+--- a/src/features/home/HomeWorkspace.jsx
++++ b/src/features/home/HomeWorkspace.jsx
+@@ -283,7 +283,7 @@
+   const trailerUrl = displayDetails?.trailer_url || '';
+ 
+   const awardCounts = useMovieAwardCounts(displayMovie, { enabled: true });
+-  return <UnifiedMovieCard className="home-detail-card movie-awards-consumer" expanded onToggle={onClose} title={displayMovie.title} year={displayMovie.year}
++  return <UnifiedMovieCard ratingsIdentity={displayMovie} className="home-detail-card movie-awards-consumer" expanded onToggle={onClose} title={displayMovie.title} year={displayMovie.year}
+     posterUrl={displayMovie.poster_url} backdropUrl={displayDetails?.backdrop_url || displayMovie.backdrop_url}
+     awardCounts={awardCounts} rating={displayMovie.tmdb_rating} voteCount={formatVoteCount(displayMovie.tmdb_vote_count)} chips={displayMovie.genres || []}
+     mutedChips={[displayMovie.language, displayMovie.country_flag || displayMovie.country, owned ? getCompactQualityLabel(ownedItem) : '']}
+--- a/src/features/iptv/IPTVCards.jsx
++++ b/src/features/iptv/IPTVCards.jsx
+@@ -49,13 +49,13 @@
+   const isArabic = locale === 'ar-SA' || (locale === 'default' && current.display_locale === 'ar-SA');
+   const selectionControl = selectable ? <label className="iptv-card-selection" onClick={(event) => event.stopPropagation()}><input type="checkbox" checked={checked} onChange={onSelect} aria-label={`Select ${movie.provider_title || movie.name}`} /><CheckSquare size={15} /></label> : null;
+   return (
+-    <UnifiedMovieCard
++    <UnifiedMovieCard ratingsIdentity={movie.matched ? {tmdb_id: movie.tmdb_id} : null}
+       title={mediaTitle(current)}
+       year={current.year || movie.year}
+       posterUrl={movie.matched ? (current.image_url || movie.image_url) : (movie.image_url ? iptvImage(providerId, 'movie', movie.item_id) : '')}
+       backdropUrl={movie.matched ? current.backdrop_url : undefined}
+       rating={current.rating ? Number(current.rating).toFixed(1) : ''}
+-      voteCount={formatVoteCount(current.vote_count)}
++      voteCount={formatVoteCount(current.vote_count, { includeLabel: expanded })}
+       chips={genres}
+       mutedChips={sourceLabels}
+       following={followed.some((item) => movieKey(item) === movieKey({ title: mediaTitle(movie), year: movie.year }))}
+--- a/src/features/settings/SettingsWorkspace.jsx
++++ b/src/features/settings/SettingsWorkspace.jsx
+@@ -564,6 +564,7 @@
+         body: JSON.stringify(forms.appData)
+       });
+       setForms((state) => ({ ...state, appData: { user_data_dir: data.user_data_dir || '', tmdb_cache_dir: data.tmdb_cache_dir || '' } }));
++      window.dispatchEvent(new Event('cp-ratings-config-changed'));
+       setCardStatus('appData', 'success', 'App data paths saved.', 'Folders are ready.');
+       notify('App data paths saved');
+     } catch (error) {
+@@ -609,6 +610,7 @@
+         headers: { 'Content-Type': 'application/json' },
+         body: JSON.stringify(payloads[service])
+       });
++      if (service === 'plex') window.dispatchEvent(new Event('cp-ratings-config-changed'));
+       if (service === 'streaming') {
+         setForms((state) => ({
+           ...state,
+--- a/src/App.jsx
++++ b/src/App.jsx
+@@ -33,6 +33,7 @@
+ } from './api/curation.js';
+ import { MovieRelationshipNavigation } from './components/MovieRelationshipNavigation.jsx';
+ import { CardPosterPriority, createCardPosterPriority } from './components/movie-card/cardArtwork.js';
++import { MovieRatingsProvider } from './contexts/MovieRatingsContext.jsx';
+ import { restoreWorkspaceScroll } from './components/movie-card/expandedCardViewport.js';
+ import PosterEditorModal from './components/PosterEditorModal.jsx';
+ import TorrentActions from './components/TorrentActions.jsx';
+@@ -1237,6 +1238,7 @@
+   return (
+     <MovieRelationshipNavigation.Provider value={openRelatedInDiscover}>
+     <CardPosterPriority.Provider value={cardPosterPriority}>
++    <MovieRatingsProvider>
+     <div className={cx('app-shell', sidebarCollapsed && 'app-shell-sidebar-collapsed')}>
+       <Sidebar
+         activeSection={activeSection}
+@@ -1514,6 +1516,7 @@
+         />
+       )}
+     </div>
++    </MovieRatingsProvider>
+     </CardPosterPriority.Provider>
+     </MovieRelationshipNavigation.Provider>
+   );
+--- a/src/styles/movieAwards.css
++++ b/src/styles/movieAwards.css
+@@ -3,7 +3,7 @@
+ .movie-award-pair strong { font-size: 16px; font-weight: 900; }
+ .movie-award-pair img { width: auto; height: 24px; object-fit: contain; }
+ .movie-award-pair:focus-visible { outline: 2px solid var(--projector-gold); outline-offset: 3px; }
+-.unified-rating-row:has(.movie-awards) { flex-wrap: wrap; align-items: center; gap: 8px 12px; }
++.unified-rating-row:has(.movie-awards) { flex-wrap: wrap; align-items: center; gap: 8px var(--movie-rating-column-gap, 12px); }
+ .unified-rating-row > .movie-awards { margin-left: auto; }
+ .unified-movie-header-meta > .movie-awards { margin-right: 4px; align-self: flex-start; }
+ .movie-awards-person { position: absolute; inset: 0; display: block; pointer-events: none; }
+@@ -18,4 +18,5 @@
+   /* Fit the selected control area; portrait and grid sizing remain owned by movieRelationships.css. */
+   .unified-movie-card-expanded .movie-awards-person { --person-award-row-height: clamp(12px, calc((min(106px, 100cqw) * 132 / 106 - 74px) / 2), 28px); }
+   .unified-movie-card-expanded .unified-movie-header-meta { flex-wrap: wrap; max-width: 270px; }
++  .unified-movie-card-expanded.unified-movie-card-ratings .unified-movie-header-meta { flex-wrap: nowrap; max-width: none; }
+ }
+--- a/src/utils/moviePresentation.js
++++ b/src/utils/moviePresentation.js
+@@ -20,10 +20,11 @@
+   return `${RELEASE_MONTHS[monthIndex]} ${dayNumber}, ${year}`;
+ }
+ 
+-export function formatVoteCount(value) {
++export function formatVoteCount(value, { includeLabel = true } = {}) {
+   const votes = Number(value || 0);
+   if (!votes) return '';
+-  if (votes >= 1000000) return `${(votes / 1000000).toFixed(votes >= 10000000 ? 0 : 1)}M votes`;
+-  if (votes >= 1000) return `${(votes / 1000).toFixed(votes >= 10000 ? 0 : 1)}K votes`;
+-  return `${votes} votes`;
++  const label = includeLabel ? ' votes' : '';
++  if (votes >= 1000000) return `${(votes / 1000000).toFixed(votes >= 10000000 ? 0 : 1)}M${label}`;
++  if (votes >= 1000) return `${(votes / 1000).toFixed(votes >= 10000 ? 0 : 1)}K${label}`;
++  return `${votes}${label}`;
+ }

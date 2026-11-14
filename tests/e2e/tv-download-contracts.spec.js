@@ -46,7 +46,8 @@ test('new unsaved collection stays read-only through review then reserves and pu
   try {
     const before = (await (await request.get('/api/tv/acquisitions')).json()).items.length;
     await page.goto('/discover');
-    await page.getByRole('tablist',{name:'Discover tools'}).getByRole('button',{name:'Explore Shows'}).click();
+    await page.getByRole('tablist',{name:'Discover tools'}).getByRole('button',{name:'TV Shows'}).click();
+    await page.getByRole('button',{name:'Search, filters & selection',exact:true}).click();
     await page.getByRole('textbox',{name:'Search TV shows',exact:true}).fill('Louie Fixture');
     await page.getByRole('button',{name:'Search TV',exact:true}).click();
     await page.getByRole('link',{name:'Open Louie Fixture',exact:true}).click();

@@ -74,6 +74,11 @@ export function streamTemplateTokens(template) {
   return ['imdb_id', 'tmdb_id'].filter((token) => source.includes(`{${token}}`));
 }
 
+export function canResolveMovieStreamTemplate(template, movie = {}) {
+  return streamTemplateTokens(template).every(token => Boolean(String(movie[token] || '').trim())
+    || (token === 'imdb_id' && Boolean(movie.tmdb_id)));
+}
+
 export function buildStreamTemplateUrl(template, ids = {}) {
   const source = String(template || '').trim();
   if (!/^https?:\/\//i.test(source)) {

@@ -1,11 +1,15 @@
 {
   "name": "cinema-paradiso-frontend",
   "private": true,
-  "version": "3.0.0-beta.2",
+  "version": "3.0.0",
   "type": "module",
   "scripts": {
+    "predev": "node tools/check_ui_reuse.mjs",
     "dev": "vite --host 127.0.0.1",
+    "prebuild": "node tools/check_ui_reuse.mjs",
     "build": "vite build",
+    "check:ui-reuse": "node tools/check_ui_reuse.mjs",
+    "test:shared-ui": "node --test tests/shared-ui.test.mjs tests/ui-reuse.test.mjs",
     "preview": "vite preview --host 127.0.0.1",
     "test:ownership-cache": "node --test tests/browser_ownership_cache.test.mjs",
     "test:e2e": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/run_playwright_e2e.ps1"

@@ -35,10 +35,14 @@ class MovieAcquisition:
                 if self.ports._is_timeout_error(error):
                     continue
                 raise
+            result_deadline = deadline_at or (time.monotonic() + query_timeout)
             for result in results:
-                if not self.ports._prowlarr_result_matches_movie(result, movie):
+                identity_timeout = self.ports._remaining_timeout(result_deadline, query_timeout)
+                if identity_timeout <= 0:
+                    break
+                if not self.ports._prowlarr_result_matches_movie(result, movie, identity_timeout=identity_timeout):
                     continue
-                if not self.ports._yts_result_matches_movie_identity(result, movie):
+                if not self.ports._yts_result_matches_movie_identity(result, movie, timeout=identity_timeout):
                     continue
                 if accept_result is not None and (not accept_result(result)):
                     continue
@@ -96,6 +100,7 @@ class MovieAcquisition:
 
     def check_followed(self):
         scan_started = time.perf_counter()
+        self.ports._clear_failed_yts_source_identity_checks()
         store = self.ports._curation_store()
         current = self.ports._backfill_followed_release_dates(store, store.followed_all())
         removed_owned = []
@@ -134,9 +139,10 @@ class MovieAcquisition:
         trusted_yts = any((self.ports._is_yts_indexer_name(indexer.get('name')) for indexer in context.get('indexers', [])))
         if pending and trusted_yts:
             rss_rows = self.ports._fetch_yts_rss_latest(limit=100, timeout=self.ports.FOLLOWED_RELEASE_RSS_TIMEOUT_SECONDS)
+            identity_deadline_at = time.monotonic() + self.ports.FOLLOWED_RELEASE_RSS_TIMEOUT_SECONDS
             unmatched = []
             for item in pending:
-                release = self.ports._followed_rss_release(item, rss_rows)
+                release = self.ports._followed_rss_release(item, rss_rows, identity_deadline_at=identity_deadline_at)
                 if not release:
                     unmatched.append(item)
                     continue
@@ -146,15 +152,10 @@ class MovieAcquisition:
                 rss_matches += 1
             pending = unmatched
         pending = self.ports._backfill_followed_release_dates(store, pending)
-        eligible = []
-        for item in pending:
-            eligibility = self.ports._followed_release_eligibility(item, now)
-            if eligibility['eligible']:
-                eligible.append(item)
-                continue
-            skipped[eligibility['reason']] += 1
-            if eligibility['patch']:
-                scan_updates.append(self.ports._followed_scan_update(item, eligibility['patch']))
+        # Every startup/manual scan checks pending films afresh. A cinema
+        # release date or historical retry clock cannot establish whether a
+        # verified qualifying source exists. TV scheduling is a separate owner.
+        eligible = list(pending)
         eligible.sort(key=self.ports._followed_release_priority)
         if eligible and context.get('ready'):
             worker_count = max(1, min(self.ports.FOLLOWED_RELEASE_WORKERS, len(eligible)))

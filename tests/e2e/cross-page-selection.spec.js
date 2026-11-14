@@ -1,5 +1,11 @@
 import { expect, test } from '@playwright/test';
 
+async function openControls(page) {
+  const toggle = page.getByRole('button', { name: 'Search, filters & selection', exact: true });
+  await expect(toggle).toBeVisible();
+  if (await toggle.getAttribute('aria-expanded') === 'false') await toggle.click();
+}
+
 const libraryCardsRoute = /\/api\/library(?:\?view=cards.*|\/search\/advanced)$/;
 
 function discoverMovie(tmdbId, title) {
@@ -51,6 +57,7 @@ test('Discover keeps selected movies and bulk payloads across server pages', asy
   });
 
   await page.goto('/discover', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   await expect(page.getByRole('heading', { name: 'Page One Alpha', exact: true })).toBeVisible();
   const topPagination = page.getByRole('navigation', { name: 'TMDB movie page controls above results', exact: true });
   const bottomPagination = page.getByRole('navigation', { name: 'TMDB movie pagination', exact: true });
@@ -134,6 +141,7 @@ test('Library keeps selected movies and resolved bulk items across server pages'
   } }));
 
   await page.goto('/library', { waitUntil: 'domcontentloaded' });
+  await openControls(page);
   await expect(page.getByRole('heading', { name: 'Library Page One', exact: true })).toBeVisible();
   await page.getByLabel('Select Library Page One').click({ force: true });
   await expect(page.getByText('1 selected', { exact: true })).toBeVisible();
@@ -177,14 +185,14 @@ test('Movie Lists keeps selection and source-review payloads across client pages
   await expect(topPagination.getByText('Page 1 of 2', { exact: true })).toBeVisible();
   await expect(bottomPagination.getByText('Page 1 of 2', { exact: true })).toBeVisible();
   await page.getByLabel('Select List Movie 1', { exact: true }).click({ force: true });
-  await expect(page.getByText('1 selected', { exact: true })).toBeVisible();
+  await expect(page.getByRole('region', { name: 'Selected movie actions' }).getByText('1 selected', { exact: true })).toBeVisible();
 
   await bottomPagination.getByRole('button', { name: 'Next' }).click();
   await expect(topPagination.getByText('Page 2 of 2', { exact: true })).toBeVisible();
   await expect(bottomPagination.getByText('Page 2 of 2', { exact: true })).toBeVisible();
-  await expect(page.getByText('1 selected', { exact: true })).toBeVisible();
+  await expect(page.getByRole('region', { name: 'Selected movie actions' }).getByText('1 selected', { exact: true })).toBeVisible();
   await page.getByLabel('Select List Movie 41').click({ force: true });
-  await expect(page.getByText('2 selected', { exact: true })).toBeVisible();
+  await expect(page.getByRole('region', { name: 'Selected movie actions' }).getByText('2 selected', { exact: true })).toBeVisible();
 
   await page.getByRole('button', { name: 'Find sources', exact: true }).click();
   await expect.poll(() => reviewPayload).not.toBeNull();

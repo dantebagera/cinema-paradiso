@@ -1,0 +1,254 @@
+[
+  {
+    "name": "Minimize",
+    "rect": [
+      3280,
+      135,
+      3385,
+      240
+    ]
+  },
+  {
+    "name": "Close",
+    "rect": [
+      3395,
+      135,
+      3500,
+      240
+    ]
+  },
+  {
+    "name": "Previous file",
+    "rect": [
+      390,
+      1765,
+      495,
+      1870
+    ]
+  },
+  {
+    "name": "Play",
+    "rect": [
+      520,
+      1765,
+      625,
+      1870
+    ]
+  },
+  {
+    "name": "Next: Missing member — Missing locally",
+    "rect": [
+      650,
+      1765,
+      755,
+      1870
+    ]
+  },
+  {
+    "name": "Mute",
+    "rect": [
+      780,
+      1765,
+      885,
+      1870
+    ]
+  },
+  {
+    "name": "Playback speed 1.00",
+    "rect": [
+      2695,
+      1765,
+      2800,
+      1870
+    ]
+  },
+  {
+    "name": "",
+    "rect": [
+      2825,
+      1765,
+      2930,
+      1870
+    ]
+  },
+  {
+    "name": "Subtitles",
+    "rect": [
+      2955,
+      1765,
+      3060,
+      1870
+    ]
+  },
+  {
+    "name": "Playlist",
+    "rect": [
+      3085,
+      1765,
+      3190,
+      1870
+    ]
+  },
+  {
+    "name": "Settings",
+    "rect": [
+      3215,
+      1765,
+      3320,
+      1870
+    ]
+  },
+  {
+    "name": "Enter fullscreen",
+    "rect": [
+      3345,
+      1765,
+      3450,
+      1870
+    ]
+  },
+  {
+    "name": "Close",
+    "rect": [
+      3312,
+      335,
+      3429,
+      407
+    ]
+  },
+  {
+    "name": "Autoplay next file  ·  Off",
+    "rect": [
+      2410,
+      520,
+      3405,
+      592
+    ]
+  },
+  {
+    "name": "Back 10 seconds    [Left]",
+    "rect": [
+      2410,
+      607,
+      3405,
+      679
+    ]
+  },
+  {
+    "name": "Forward 10 seconds    [Right]",
+    "rect": [
+      2410,
+      695,
+      3405,
+      767
+    ]
+  },
+  {
+    "name": "Back 1 minute    [Shift+Left]",
+    "rect": [
+      2410,
+      782,
+      3405,
+      854
+    ]
+  },
+  {
+    "name": "Forward 1 minute    [Shift+Right]",
+    "rect": [
+      2410,
+      870,
+      3405,
+      942
+    ]
+  },
+  {
+    "name": "Chapters    [C]",
+    "rect": [
+      2410,
+      957,
+      3405,
+      1029
+    ]
+  },
+  {
+    "name": "A–B repeat  ·  Off    [Ctrl+B]",
+    "rect": [
+      2410,
+      1045,
+      3405,
+      1117
+    ]
+  },
+  {
+    "name": "Always on top  ·  Off    [T]",
+    "rect": [
+      2410,
+      1220,
+      3405,
+      1292
+    ]
+  },
+  {
+    "name": "Cycle aspect ratio    [V]",
+    "rect": [
+      2410,
+      1307,
+      3405,
+      1379
+    ]
+  },
+  {
+    "name": "Cycle crop    [Shift+V]",
+    "rect": [
+      2410,
+      1395,
+      3405,
+      1467
+    ]
+  },
+  {
+    "name": "Rotate 90°    [Alt+R]",
+    "rect": [
+      2410,
+      1482,
+      3405,
+      1554
+    ]
+  },
+  {
+    "name": "Zoom in    [Ctrl++]",
+    "rect": [
+      2410,
+      1570,
+      3405,
+      1642
+    ]
+  },
+  {
+    "name": "Zoom out    [Ctrl+-]",
+    "rect": [
+      2410,
+      1657,
+      3405,
+      1729
+    ]
+  },
+  {
+    "name": "Move picture left    [Alt+Left]",
+    "rect": [
+      2410,
+      1745,
+      3405,
+      1817
+    ]
+  },
+  {
+    "name": "Move picture right    [Alt+Right]",
+    "rect": [
+      2410,
+      1832,
+      3405,
+      1904
+    ]
+  }
+]

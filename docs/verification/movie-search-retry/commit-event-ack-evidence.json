@@ -1,0 +1,731 @@
+[
+  {
+    "boundary": "after-commit-before-event",
+    "before_job": {
+      "hash": "qualification-import",
+      "state": "imported",
+      "library_scan_pending": true,
+      "imported_paths": [
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-6tu0pwxn\\after-commit-before-event\\media\\Qualification.Import.2026.1080p.mkv"
+      ],
+      "tmdb_id": "810001",
+      "title": "Qualification Import",
+      "year": "2026",
+      "plot": "Persistent isolated poster retry and publication fixture.",
+      "poster_url": "https://fixture.invalid/poster.png",
+      "genres": [
+        "Drama"
+      ],
+      "cast": [],
+      "directors": [],
+      "writers": [],
+      "certification": "",
+      "keywords": [],
+      "identity_handoff": {
+        "state": "queued",
+        "paths": []
+      }
+    },
+    "recovered": {
+      "pid": 23020,
+      "job": {
+        "hash": "qualification-import",
+        "state": "imported",
+        "library_scan_pending": false,
+        "imported_paths": [
+          "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-6tu0pwxn\\after-commit-before-event\\media\\Qualification.Import.2026.1080p.mkv"
+        ],
+        "tmdb_id": "810001",
+        "title": "Qualification Import",
+        "year": "2026",
+        "plot": "Persistent isolated poster retry and publication fixture.",
+        "poster_url": "https://fixture.invalid/poster.png",
+        "genres": [
+          "Drama"
+        ],
+        "cast": [],
+        "directors": [],
+        "writers": [],
+        "certification": "",
+        "keywords": [],
+        "identity_handoff": {
+          "paths": [
+            "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-6tu0pwxn\\after-commit-before-event\\media\\Qualification.Import.2026.1080p.mkv"
+          ],
+          "state": "applied",
+          "tmdb_id": "810001"
+        }
+      },
+      "ledger": {
+        "admission_order": 1,
+        "attempts": {
+          "assets": 1,
+          "facts": 1,
+          "provider": 1
+        },
+        "correlation_id": "qbt:qualification-import",
+        "evidence_signature": "28a4d6439bab7c8c1a4e9b3d3c6178d4257c35baa278198c56ba056661409869",
+        "first_observed_at": 1792784844.9462144,
+        "handoff": {
+          "paths": [
+            "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-6tu0pwxn\\after-commit-before-event\\media\\Qualification.Import.2026.1080p.mkv"
+          ],
+          "state": "ready",
+          "tmdb_id": "810001"
+        },
+        "last_error": "",
+        "next_due_at": 0,
+        "reason": "qbittorrent",
+        "require_publication": true,
+        "reservation_guard": "536c73b411f8f0d517efdc553f278a5575311b90302b0055d2092fd9eeafde34",
+        "revision": 6,
+        "source_identity": {
+          "imdb_id": "",
+          "paths": [
+            "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-6tu0pwxn\\after-commit-before-event\\media\\Qualification.Import.2026.1080p.mkv"
+          ],
+          "title": "Qualification Import",
+          "tmdb_id": "810001",
+          "year": "2026"
+        },
+        "stage": "assets",
+        "state": "complete",
+        "version": 1
+      },
+      "publication": {
+        "path": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-6tu0pwxn\\after-commit-before-event\\media\\Qualification.Import.2026.1080p.mkv",
+        "movie_key": "tmdb:810001",
+        "eligible_to_publish": true,
+        "recoverable_prepared": true,
+        "publication_committed": true,
+        "legacy_visible": false,
+        "required_stages": [],
+        "blockers": {}
+      },
+      "poster_calls": 1,
+      "events": 1,
+      "generation": 8,
+      "followed_count": 1,
+      "library_api_status": 200,
+      "library_api": {
+        "cached": true,
+        "catalog_generation": 8,
+        "count": 1,
+        "facets": {
+          "countries": [],
+          "genres": [
+            "Drama"
+          ],
+          "languages": [],
+          "sources": [
+            "Unknown"
+          ]
+        },
+        "items": [
+          {
+            "added_time": 1792784844.9266105,
+            "audio_bitrate": 0,
+            "audio_channels": 0.0,
+            "audio_codec": "",
+            "canonical_metadata": {
+              "accepted": true,
+              "adult": false,
+              "asset_generation": 2,
+              "country": "",
+              "country_flag": "",
+              "deferred_fields": [
+                "backdrop_url",
+                "runtime",
+                "tagline",
+                "trailer_url",
+                "collection",
+                "cast",
+                "directors",
+                "director",
+                "writers",
+                "certification",
+                "keywords"
+              ],
+              "detail_provider": "tmdb_snapshot",
+              "enrichment_status": "complete",
+              "fallback_active": false,
+              "genres": [
+                "Drama"
+              ],
+              "identity_revision": 1,
+              "identity_status": "accepted",
+              "imdb_id": "",
+              "language": "",
+              "local_poster_url": "/api/assets/3dd8b08e502140f01f275ceccd4bd88af64ca439e22b418fb63e335ff0f43e94",
+              "metadata_contract_version": 4,
+              "movie_key": "tmdb:810001",
+              "people_status": "empty",
+              "plex_guid": "",
+              "plex_rating": "",
+              "plot": "Persistent isolated poster retry and publication fixture.",
+              "poster_url": "/api/assets/3dd8b08e502140f01f275ceccd4bd88af64ca439e22b418fb63e335ff0f43e94",
+              "projection_contract": "canonical_movie_card",
+              "rating": "",
+              "release_date": "",
+              "remote_poster_url": "https://fixture.invalid/poster.png",
+              "selected_provider": "tmdb",
+              "selected_provider_snapshot": true,
+              "source": "download_submission",
+              "status": "accepted",
+              "summary": "Persistent isolated poster retry and publication fixture.",
+              "title": "Qualification Import",
+              "tmdb_id": "810001",
+              "tmdb_rating": "",
+              "tmdb_vote_count": 0,
+              "year": "2026"
+            },
+            "classifier_version": 2,
+            "duration_ms": 0,
+            "file_facts_version": 3,
+            "filename": "Qualification.Import.2026.1080p.mkv",
+            "filename_quality_claim": "Unknown",
+            "library_root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-6tu0pwxn\\after-commit-before-event\\media",
+            "maintenance_upgrade_candidate": false,
+            "metadata_accepted": true,
+            "metadata_source": "download_submission",
+            "metadata_status": "accepted",
+            "modified_time": 1792784784.9276104,
+            "path": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-6tu0pwxn\\after-commit-before-event\\media\\Qualification.Import.2026.1080p.mkv",
+            "probe_error": "",
+            "probe_status": "ok",
+            "quality_class": "1080p",
+            "quality_conflict": false,
+            "quality_display": "1080p",
+            "quality_nonstandard": true,
+            "quality_source": "measured",
+            "resolution": "1080p",
+            "rip_source": "Unknown",
+            "size": 14,
+            "size_human": "14.0 B",
+            "title": "Qualification Import (2026)",
+            "video_bit_depth": 0,
+            "video_bitrate": 0,
+            "video_codec": "",
+            "video_frame_rate": 0.0,
+            "video_height": 0,
+            "video_profile": "",
+            "video_width": 0
+          }
+        ],
+        "metadata_matched": 0,
+        "metadata_pending": 0,
+        "metadata_review": 0,
+        "new_files": 0,
+        "page": 1,
+        "page_count": 1,
+        "page_end": 1,
+        "page_size": 40,
+        "page_start": 0,
+        "plex_cached": false,
+        "plex_enabled": false,
+        "source": "catalog",
+        "stats": {
+          "low": 0,
+          "matched": 1,
+          "pending": 0,
+          "total": 1,
+          "unmatched": 0
+        },
+        "total": 1,
+        "total_pages": 1
+      },
+      "followed_count_after_ownership": 0,
+      "reconnect_event": {
+        "type": "catalog-sync",
+        "generation": 8
+      }
+    }
+  },
+  {
+    "boundary": "after-event-before-ack",
+    "before_job": {
+      "hash": "qualification-import",
+      "state": "imported",
+      "library_scan_pending": true,
+      "imported_paths": [
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-6tu0pwxn\\after-event-before-ack\\media\\Qualification.Import.2026.1080p.mkv"
+      ],
+      "tmdb_id": "810001",
+      "title": "Qualification Import",
+      "year": "2026",
+      "plot": "Persistent isolated poster retry and publication fixture.",
+      "poster_url": "https://fixture.invalid/poster.png",
+      "genres": [
+        "Drama"
+      ],
+      "cast": [],
+      "directors": [],
+      "writers": [],
+      "certification": "",
+      "keywords": [],
+      "identity_handoff": {
+        "state": "queued",
+        "paths": []
+      }
+    },
+    "recovered": {
+      "pid": 4956,
+      "job": {
+        "hash": "qualification-import",
+        "state": "imported",
+        "library_scan_pending": false,
+        "imported_paths": [
+          "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-6tu0pwxn\\after-event-before-ack\\media\\Qualification.Import.2026.1080p.mkv"
+        ],
+        "tmdb_id": "810001",
+        "title": "Qualification Import",
+        "year": "2026",
+        "plot": "Persistent isolated poster retry and publication fixture.",
+        "poster_url": "https://fixture.invalid/poster.png",
+        "genres": [
+          "Drama"
+        ],
+        "cast": [],
+        "directors": [],
+        "writers": [],
+        "certification": "",
+        "keywords": [],
+        "identity_handoff": {
+          "paths": [
+            "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-6tu0pwxn\\after-event-before-ack\\media\\Qualification.Import.2026.1080p.mkv"
+          ],
+          "state": "applied",
+          "tmdb_id": "810001"
+        }
+      },
+      "ledger": {
+        "admission_order": 1,
+        "attempts": {
+          "assets": 1,
+          "facts": 1,
+          "provider": 1
+        },
+        "correlation_id": "qbt:qualification-import",
+        "evidence_signature": "7142ab60f3391713e6ffa180c1b59c8b709c1c0f906ce617e93b6424aca77ff5",
+        "first_observed_at": 1792784848.139436,
+        "handoff": {
+          "paths": [
+            "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-6tu0pwxn\\after-event-before-ack\\media\\Qualification.Import.2026.1080p.mkv"
+          ],
+          "state": "ready",
+          "tmdb_id": "810001"
+        },
+        "last_error": "",
+        "next_due_at": 0,
+        "reason": "qbittorrent",
+        "require_publication": true,
+        "reservation_guard": "cf665096d7ef563177132acc14d518adc9c3be5e190e0aff5cb4f819a7c5ed98",
+        "revision": 6,
+        "source_identity": {
+          "imdb_id": "",
+          "paths": [
+            "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-6tu0pwxn\\after-event-before-ack\\media\\Qualification.Import.2026.1080p.mkv"
+          ],
+          "title": "Qualification Import",
+          "tmdb_id": "810001",
+          "year": "2026"
+        },
+        "stage": "assets",
+        "state": "complete",
+        "version": 1
+      },
+      "publication": {
+        "path": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-6tu0pwxn\\after-event-before-ack\\media\\Qualification.Import.2026.1080p.mkv",
+        "movie_key": "tmdb:810001",
+        "eligible_to_publish": true,
+        "recoverable_prepared": true,
+        "publication_committed": true,
+        "legacy_visible": false,
+        "required_stages": [],
+        "blockers": {}
+      },
+      "poster_calls": 1,
+      "events": 1,
+      "generation": 8,
+      "followed_count": 1,
+      "library_api_status": 200,
+      "library_api": {
+        "cached": true,
+        "catalog_generation": 8,
+        "count": 1,
+        "facets": {
+          "countries": [],
+          "genres": [
+            "Drama"
+          ],
+          "languages": [],
+          "sources": [
+            "Unknown"
+          ]
+        },
+        "items": [
+          {
+            "added_time": 1792784848.1246312,
+            "audio_bitrate": 0,
+            "audio_channels": 0.0,
+            "audio_codec": "",
+            "canonical_metadata": {
+              "accepted": true,
+              "adult": false,
+              "asset_generation": 2,
+              "country": "",
+              "country_flag": "",
+              "deferred_fields": [
+                "backdrop_url",
+                "runtime",
+                "tagline",
+                "trailer_url",
+                "collection",
+                "cast",
+                "directors",
+                "director",
+                "writers",
+                "certification",
+                "keywords"
+              ],
+              "detail_provider": "tmdb_snapshot",
+              "enrichment_status": "complete",
+              "fallback_active": false,
+              "genres": [
+                "Drama"
+              ],
+              "identity_revision": 1,
+              "identity_status": "accepted",
+              "imdb_id": "",
+              "language": "",
+              "local_poster_url": "/api/assets/3dd8b08e502140f01f275ceccd4bd88af64ca439e22b418fb63e335ff0f43e94",
+              "metadata_contract_version": 4,
+              "movie_key": "tmdb:810001",
+              "people_status": "empty",
+              "plex_guid": "",
+              "plex_rating": "",
+              "plot": "Persistent isolated poster retry and publication fixture.",
+              "poster_url": "/api/assets/3dd8b08e502140f01f275ceccd4bd88af64ca439e22b418fb63e335ff0f43e94",
+              "projection_contract": "canonical_movie_card",
+              "rating": "",
+              "release_date": "",
+              "remote_poster_url": "https://fixture.invalid/poster.png",
+              "selected_provider": "tmdb",
+              "selected_provider_snapshot": true,
+              "source": "download_submission",
+              "status": "accepted",
+              "summary": "Persistent isolated poster retry and publication fixture.",
+              "title": "Qualification Import",
+              "tmdb_id": "810001",
+              "tmdb_rating": "",
+              "tmdb_vote_count": 0,
+              "year": "2026"
+            },
+            "classifier_version": 2,
+            "duration_ms": 0,
+            "file_facts_version": 3,
+            "filename": "Qualification.Import.2026.1080p.mkv",
+            "filename_quality_claim": "Unknown",
+            "library_root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-6tu0pwxn\\after-event-before-ack\\media",
+            "maintenance_upgrade_candidate": false,
+            "metadata_accepted": true,
+            "metadata_source": "download_submission",
+            "metadata_status": "accepted",
+            "modified_time": 1792784788.124631,
+            "path": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-6tu0pwxn\\after-event-before-ack\\media\\Qualification.Import.2026.1080p.mkv",
+            "probe_error": "",
+            "probe_status": "ok",
+            "quality_class": "1080p",
+            "quality_conflict": false,
+            "quality_display": "1080p",
+            "quality_nonstandard": true,
+            "quality_source": "measured",
+            "resolution": "1080p",
+            "rip_source": "Unknown",
+            "size": 14,
+            "size_human": "14.0 B",
+            "title": "Qualification Import (2026)",
+            "video_bit_depth": 0,
+            "video_bitrate": 0,
+            "video_codec": "",
+            "video_frame_rate": 0.0,
+            "video_height": 0,
+            "video_profile": "",
+            "video_width": 0
+          }
+        ],
+        "metadata_matched": 0,
+        "metadata_pending": 0,
+        "metadata_review": 0,
+        "new_files": 0,
+        "page": 1,
+        "page_count": 1,
+        "page_end": 1,
+        "page_size": 40,
+        "page_start": 0,
+        "plex_cached": false,
+        "plex_enabled": false,
+        "source": "catalog",
+        "stats": {
+          "low": 0,
+          "matched": 1,
+          "pending": 0,
+          "total": 1,
+          "unmatched": 0
+        },
+        "total": 1,
+        "total_pages": 1
+      },
+      "followed_count_after_ownership": 0,
+      "reconnect_event": {
+        "type": "catalog-sync",
+        "generation": 8
+      }
+    }
+  },
+  {
+    "boundary": "after-ack",
+    "before_job": {
+      "hash": "qualification-import",
+      "state": "imported",
+      "library_scan_pending": false,
+      "imported_paths": [
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-6tu0pwxn\\after-ack\\media\\Qualification.Import.2026.1080p.mkv"
+      ],
+      "tmdb_id": "810001",
+      "title": "Qualification Import",
+      "year": "2026",
+      "plot": "Persistent isolated poster retry and publication fixture.",
+      "poster_url": "https://fixture.invalid/poster.png",
+      "genres": [
+        "Drama"
+      ],
+      "cast": [],
+      "directors": [],
+      "writers": [],
+      "certification": "",
+      "keywords": [],
+      "identity_handoff": {
+        "paths": [
+          "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-6tu0pwxn\\after-ack\\media\\Qualification.Import.2026.1080p.mkv"
+        ],
+        "state": "applied",
+        "tmdb_id": "810001"
+      }
+    },
+    "recovered": {
+      "pid": 27280,
+      "job": {
+        "hash": "qualification-import",
+        "state": "imported",
+        "library_scan_pending": false,
+        "imported_paths": [
+          "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-6tu0pwxn\\after-ack\\media\\Qualification.Import.2026.1080p.mkv"
+        ],
+        "tmdb_id": "810001",
+        "title": "Qualification Import",
+        "year": "2026",
+        "plot": "Persistent isolated poster retry and publication fixture.",
+        "poster_url": "https://fixture.invalid/poster.png",
+        "genres": [
+          "Drama"
+        ],
+        "cast": [],
+        "directors": [],
+        "writers": [],
+        "certification": "",
+        "keywords": [],
+        "identity_handoff": {
+          "paths": [
+            "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-6tu0pwxn\\after-ack\\media\\Qualification.Import.2026.1080p.mkv"
+          ],
+          "state": "applied",
+          "tmdb_id": "810001"
+        }
+      },
+      "ledger": {
+        "admission_order": 1,
+        "attempts": {
+          "assets": 1,
+          "facts": 1,
+          "provider": 1
+        },
+        "correlation_id": "qbt:qualification-import",
+        "evidence_signature": "8ef4f13a18e9ae1084a714a7807dffb08857a9e56426860d6426bba0813b821d",
+        "first_observed_at": 1792784849.882616,
+        "handoff": {
+          "paths": [
+            "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-6tu0pwxn\\after-ack\\media\\Qualification.Import.2026.1080p.mkv"
+          ],
+          "state": "ready",
+          "tmdb_id": "810001"
+        },
+        "last_error": "",
+        "next_due_at": 0,
+        "reason": "qbittorrent",
+        "require_publication": true,
+        "reservation_guard": "6f1728d7552b5b3fef60b8020d072188dc1c2ca598de8a9d89accd9ff07ae3eb",
+        "revision": 6,
+        "source_identity": {
+          "imdb_id": "",
+          "paths": [
+            "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-6tu0pwxn\\after-ack\\media\\Qualification.Import.2026.1080p.mkv"
+          ],
+          "title": "Qualification Import",
+          "tmdb_id": "810001",
+          "year": "2026"
+        },
+        "stage": "assets",
+        "state": "complete",
+        "version": 1
+      },
+      "publication": {
+        "path": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-6tu0pwxn\\after-ack\\media\\Qualification.Import.2026.1080p.mkv",
+        "movie_key": "tmdb:810001",
+        "eligible_to_publish": true,
+        "recoverable_prepared": true,
+        "publication_committed": true,
+        "legacy_visible": false,
+        "required_stages": [],
+        "blockers": {}
+      },
+      "poster_calls": 1,
+      "events": 0,
+      "generation": 8,
+      "followed_count": 1,
+      "library_api_status": 200,
+      "library_api": {
+        "cached": true,
+        "catalog_generation": 8,
+        "count": 1,
+        "facets": {
+          "countries": [],
+          "genres": [
+            "Drama"
+          ],
+          "languages": [],
+          "sources": [
+            "Unknown"
+          ]
+        },
+        "items": [
+          {
+            "added_time": 1792784849.8669252,
+            "audio_bitrate": 0,
+            "audio_channels": 0.0,
+            "audio_codec": "",
+            "canonical_metadata": {
+              "accepted": true,
+              "adult": false,
+              "asset_generation": 2,
+              "country": "",
+              "country_flag": "",
+              "deferred_fields": [
+                "backdrop_url",
+                "runtime",
+                "tagline",
+                "trailer_url",
+                "collection",
+                "cast",
+                "directors",
+                "director",
+                "writers",
+                "certification",
+                "keywords"
+              ],
+              "detail_provider": "tmdb_snapshot",
+              "enrichment_status": "complete",
+              "fallback_active": false,
+              "genres": [
+                "Drama"
+              ],
+              "identity_revision": 1,
+              "identity_status": "accepted",
+              "imdb_id": "",
+              "language": "",
+              "local_poster_url": "/api/assets/3dd8b08e502140f01f275ceccd4bd88af64ca439e22b418fb63e335ff0f43e94",
+              "metadata_contract_version": 4,
+              "movie_key": "tmdb:810001",
+              "people_status": "empty",
+              "plex_guid": "",
+              "plex_rating": "",
+              "plot": "Persistent isolated poster retry and publication fixture.",
+              "poster_url": "/api/assets/3dd8b08e502140f01f275ceccd4bd88af64ca439e22b418fb63e335ff0f43e94",
+              "projection_contract": "canonical_movie_card",
+              "rating": "",
+              "release_date": "",
+              "remote_poster_url": "https://fixture.invalid/poster.png",
+              "selected_provider": "tmdb",
+              "selected_provider_snapshot": true,
+              "source": "download_submission",
+              "status": "accepted",
+              "summary": "Persistent isolated poster retry and publication fixture.",
+              "title": "Qualification Import",
+              "tmdb_id": "810001",
+              "tmdb_rating": "",
+              "tmdb_vote_count": 0,
+              "year": "2026"
+            },
+            "classifier_version": 2,
+            "duration_ms": 0,
+            "file_facts_version": 3,
+            "filename": "Qualification.Import.2026.1080p.mkv",
+            "filename_quality_claim": "Unknown",
+            "library_root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-6tu0pwxn\\after-ack\\media",
+            "maintenance_upgrade_candidate": false,
+            "metadata_accepted": true,
+            "metadata_source": "download_submission",
+            "metadata_status": "accepted",
+            "modified_time": 1792784789.8684273,
+            "path": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-search-retry-1792774509070\\remaining-6tu0pwxn\\after-ack\\media\\Qualification.Import.2026.1080p.mkv",
+            "probe_error": "",
+            "probe_status": "ok",
+            "quality_class": "1080p",
+            "quality_conflict": false,
+            "quality_display": "1080p",
+            "quality_nonstandard": true,
+            "quality_source": "measured",
+            "resolution": "1080p",
+            "rip_source": "Unknown",
+            "size": 14,
+            "size_human": "14.0 B",
+            "title": "Qualification Import (2026)",
+            "video_bit_depth": 0,
+            "video_bitrate": 0,
+            "video_codec": "",
+            "video_frame_rate": 0.0,
+            "video_height": 0,
+            "video_profile": "",
+            "video_width": 0
+          }
+        ],
+        "metadata_matched": 0,
+        "metadata_pending": 0,
+        "metadata_review": 0,
+        "new_files": 0,
+        "page": 1,
+        "page_count": 1,
+        "page_end": 1,
+        "page_size": 40,
+        "page_start": 0,
+        "plex_cached": false,
+        "plex_enabled": false,
+        "source": "catalog",
+        "stats": {
+          "low": 0,
+          "matched": 1,
+          "pending": 0,
+          "total": 1,
+          "unmatched": 0
+        },
+        "total": 1,
+        "total_pages": 1
+      },
+      "followed_count_after_ownership": 0,
+      "reconnect_event": {
+        "type": "catalog-sync",
+        "generation": 8
+      }
+    }
+  }
+]

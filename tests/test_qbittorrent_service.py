@@ -960,6 +960,99 @@ class QBittorrentJobStoreTests(unittest.TestCase):
             manager.client.add_magnet.assert_called_once_with(magnet, str(manager.staging_dir), stop_after_metadata=True)
             manager.client.resume.assert_called_once_with(torrent_hash)
 
+    def test_manager_validates_a_hybrid_magnet_using_the_clients_primary_id(self):
+        with tempfile.TemporaryDirectory() as root:
+            manager = QBittorrentManager(root, {}, [])
+            v1, v2 = "a" * 40, "b" * 64
+            primary = v2[:40]
+            magnet = f"magnet:?xt=urn:btih:{v1}&xt=urn:btmh:1220{v2}"
+            manager.ensure_running = MagicMock(return_value=True)
+            manager.client.torrents = MagicMock(return_value=[
+                {"hash": primary, "infohash_v1": v1, "infohash_v2": v2, "progress": 0},
+            ])
+            manager.client.files = MagicMock(return_value=[{"name": "Movie.mkv", "size": 1_000_000_000}])
+            manager.client.add_magnet = MagicMock()
+            manager.client.resume = MagicMock()
+
+            queued = manager.submit_magnet(magnet, {"title": "Movie", "expected_info_hash": v1})
+            validated = manager.process_completed()[0]
+            repeated = manager.submit_magnet(magnet, {"title": "Movie", "expected_info_hash": v1})
+
+            self.assertEqual(queued["hash"], v1)
+            self.assertEqual(validated["state"], "downloading")
+            self.assertEqual(repeated["hash"], v1)
+            self.assertTrue(repeated["already_exists"])
+            self.assertEqual(list(manager.jobs.all()), [v1])
+            manager.client.add_magnet.assert_called_once()
+            manager.client.files.assert_called_once_with(primary)
+            manager.client.resume.assert_called_once_with(primary)
+
+    def test_manager_recovers_a_completed_hybrid_movie_after_the_old_timeout(self):
+        for matching_id, safe_payload, expected_state in (
+            ("alias", True, "imported"),
+            ("alias", False, "validation_failed"),
+            ("primary", True, "validation_failed"),
+            ("unrelated", True, "validation_failed"),
+        ):
+            with self.subTest(matching_id=matching_id, safe_payload=safe_payload), tempfile.TemporaryDirectory() as root:
+                staging = Path(root) / "staging"
+                destination = Path(root) / "library"
+                staging.mkdir()
+                destination.mkdir()
+                source = staging / ("Movie.mkv" if safe_payload else "Movie.exe")
+                source.write_bytes(b"existing payload")
+                manager = QBittorrentManager(root, {
+                    "incomplete_dir": str(staging), "download_dir": str(destination),
+                }, [str(destination)])
+                v1, v2 = "a" * 40, "b" * 64
+                primary = v2[:40]
+                job_id = {"alias": v1, "primary": primary, "unrelated": "c" * 40}[matching_id]
+                manager.jobs.upsert(job_id, {
+                    "state": "validation_failed",
+                    "source_type": "magnet",
+                    "validation_mode": "stopped_after_metadata",
+                    "validation_started_at": 1,
+                    "last_error": "qBittorrent could not resolve the magnet metadata within 15 minutes",
+                    "expected_info_hash": job_id,
+                    "destination": str(destination),
+                })
+                manager.ensure_running = MagicMock(return_value=True)
+                manager.client.torrents = MagicMock(return_value=[{
+                    "hash": primary, "infohash_v1": v1, "infohash_v2": v2,
+                    "progress": 1, "save_path": str(staging),
+                }])
+                manager.client.files = MagicMock(return_value=[{"name": source.name, "size": source.stat().st_size}])
+                manager.client.add_magnet = MagicMock()
+                manager.client.resume = MagicMock()
+                manager.client.pause = MagicMock()
+                manager.client.remove_without_files = MagicMock()
+
+                manager.process_completed()
+                manager.process_completed()
+                result = manager.jobs.get(job_id)
+
+                self.assertEqual(result["state"], expected_state)
+                self.assertEqual(list(manager.jobs.all()), [job_id])
+                manager.client.add_magnet.assert_not_called()
+                manager.client.resume.assert_not_called()
+                if expected_state == "imported":
+                    target = destination / source.name
+                    self.assertEqual(target.read_bytes(), b"existing payload")
+                    self.assertFalse(source.exists())
+                    self.assertTrue(result["library_scan_pending"])
+                    self.assertEqual(result["imported_paths"], [str(target)])
+                    manager.client.pause.assert_called_once_with(primary)
+                    manager.client.remove_without_files.assert_called_once_with(primary)
+                else:
+                    self.assertTrue(source.is_file())
+                    self.assertFalse((destination / source.name).exists())
+                    if not safe_payload:
+                        self.assertIn("unsafe torrent payload", result["last_error"])
+                        manager.client.remove_without_files.assert_called_once_with(primary)
+                    else:
+                        manager.client.files.assert_not_called()
+                        manager.client.remove_without_files.assert_not_called()
+
     def test_manager_removes_an_unsafe_magnet_before_resuming_it(self):
         with tempfile.TemporaryDirectory() as root:
             manager = QBittorrentManager(root, {}, [])

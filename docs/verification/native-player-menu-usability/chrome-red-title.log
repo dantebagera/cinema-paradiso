@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\dante\Desktop\cinema paradiso\native\player\tools\smoke_player_ui.py", line 361, in <module>
+    if __name__=='__main__': main()
+                             ^^^^^^
+  File "C:\Users\dante\Desktop\cinema paradiso\native\player\tools\smoke_player_ui.py", line 194, in main
+    assert hit==1,('Menu title strip must be HTCLIENT, not HTCAPTION',hit)
+           ^^^^^^
+AssertionError: ('Menu title strip must be HTCLIENT, not HTCAPTION', 2)

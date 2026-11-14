@@ -161,6 +161,48 @@ class SchemaV2MigrationTests(unittest.TestCase):
                 self.assertEqual(connection.execute("SELECT COUNT(DISTINCT tmdb_id) FROM movie_credits WHERE person_id=10").fetchone()[0], 2)
 
 
+class AtomicSchemaInitializationTests(unittest.TestCase):
+    def test_failed_schema_batch_leaves_no_partial_tables_and_can_retry(self):
+        original_connect = IPTVMovieStore._connect
+
+        class FailingSchemaConnection:
+            def __init__(self, connection):
+                self.connection = connection
+
+            def __getattr__(self, name):
+                return getattr(self.connection, name)
+
+            def __enter__(self):
+                self.connection.__enter__()
+                return self
+
+            def __exit__(self, *args):
+                return self.connection.__exit__(*args)
+
+            def executescript(self, script):
+                # Fail after the real CREATE statements, rather than mocking
+                # away the SQLite writes whose rollback this test verifies.
+                return self.connection.executescript(script + '\nSELECT missing_schema_failure;')
+
+        def failing_connect(store, **kwargs):
+            return FailingSchemaConnection(original_connect(store, **kwargs))
+
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary) / PROVIDER_A
+            with patch.object(IPTVMovieStore, '_connect', failing_connect):
+                with self.assertRaises(sqlite3.OperationalError):
+                    IPTVMovieStore(root, PROVIDER_A)
+            database = root / 'movies.sqlite'
+            connection = sqlite3.connect(database)
+            try:
+                tables = connection.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall()
+            finally:
+                connection.close()
+            self.assertEqual(tables, [])
+            store = IPTVMovieStore(root, PROVIDER_A)
+            self.assertEqual(store.inspect_schema_version(database), 4)
+
+
 class ProjectionAndWorkerTests(unittest.TestCase):
     def test_movies_get_is_pure_and_projection_is_nonblocking_progressive(self):
         rows = [{"stream_id": str(index), "category_id": "movies-a", "name": f"Movie {index}"} for index in range(200)]

@@ -12,10 +12,12 @@ from contextlib import contextmanager
 from pathlib import Path
 
 from .iptv_movie_classifier import CLASSIFIER_VERSION
-from .iptv_tmdb import MATCHER_VERSION, PARSER_VERSION, combine_provider_title_evidence
+from .iptv_tmdb import MATCHER_VERSION, PARSER_VERSION, combine_provider_title_evidence, extract_year, provider_release_evidence
 
 
 MOVIE_SCHEMA_VERSION = 4
+IPTV_SELECTION_LIMIT = 5000
+IPTV_BULK_SELECTION_LIMIT = 100_000
 STATUS_PROJECTION_VERSION = 1
 SEARCH_VERSION = 1
 CONTROL_BUSY_TIMEOUT_MS = 250
@@ -23,6 +25,8 @@ ENRICHMENT_STAGE_BATCH_SIZE = 100
 ENRICHMENT_CLUSTER_MEMBER_LIMIT = 8
 CATEGORIES = {"film", "sports", "plays", "music", "misc", "unclassified"}
 ACCEPTED_STATES = {"matched-auto", "matched-manual"}
+ACCEPTED_FILM_SQL = """s.available=1 AND sc.category='film'
+    AND m.state IN ('matched-auto','matched-manual') AND m.tmdb_id IS NOT NULL"""
 MATCH_STATES = {
     "unprocessed",
     "provider-id-pending",
@@ -51,13 +55,23 @@ ARABIC_TEXT_RE = re.compile(r"[\u0600-\u06ff]")
 ARABIC_MARKS_RE = re.compile(r"[\u0610-\u061a\u064b-\u065f\u0670\u06d6-\u06ed]")
 
 
+class IPTVSelectionError(ValueError):
+    def __init__(self, code, message):
+        super().__init__(message)
+        self.code = code
+
+
+class IPTVEnrichmentSuperseded(RuntimeError):
+    """The source changed while an automatic evaluation was in flight."""
+
+
 def _text(value):
     return str(value or "").strip()
 
 
 def normalize_search_text(value):
     """Normalize lookup text without changing the provider's display evidence."""
-    value = unicodedata.normalize("NFKC", _text(value)).casefold().replace("ـ", "")
+    value = unicodedata.normalize("NFKC", _text(value)).casefold().replace("Ù€", "")
     value = ARABIC_MARKS_RE.sub("", value)
     value = "".join(character if character.isalnum() else " " for character in value)
     return re.sub(r"\s+", " ", value).strip()
@@ -96,11 +110,12 @@ def _arabic_text(value):
 
 
 def _provider_year(value, title=""):
-    match = re.search(
-        r"\b(19\d{2}|20\d{2}|21\d{2})\b",
-        f"{_text(value)} {_text(title)}",
-    )
-    return int(match.group(1)) if match else 0
+    raw = unicodedata.normalize("NFKC", _text(title))
+    explicit, parenthesized, _ = provider_release_evidence(raw, extract_year(value))
+    if explicit or parenthesized:
+        return explicit or parenthesized
+    inferred, _, _ = provider_release_evidence(raw, extract_year(raw))
+    return inferred
 
 
 def source_key(source_id):
@@ -131,8 +146,8 @@ def _source_claims(title, playlist_name):
         quality = "HD"
     else:
         quality = ""
-    dubbed = bool(re.search(r"\b(?:dubbed|dublaj|مدبلج)\b", evidence))
-    subtitled = bool(re.search(r"\b(?:subbed|subtitle|subtitles|مترجم)\b", evidence))
+    dubbed = bool(re.search(r"\b(?:dubbed|dublaj|Ù…Ø¯Ø¨Ù„Ø¬)\b", evidence))
+    subtitled = bool(re.search(r"\b(?:subbed|subtitle|subtitles|Ù…ØªØ±Ø¬Ù…)\b", evidence))
     return quality, dubbed, subtitled
 
 
@@ -142,6 +157,71 @@ class IPTVMovieStore:
     The database path is fixed to the validated provider root. No provider ID is
     stored in rows because the file itself is the provider boundary.
     """
+
+    @staticmethod
+    @contextmanager
+    def _read_catalog(provider_root, provider_id):
+        root = Path(provider_root).resolve()
+        if not PROVIDER_ID_RE.fullmatch(str(provider_id)) or root.name != provider_id:
+            raise ValueError("A valid provider root is required")
+        path = root / "movies.sqlite"
+        if not path.is_file():
+            raise FileNotFoundError("Saved movie catalog is missing")
+        connection = sqlite3.connect(path.as_uri() + "?mode=ro", uri=True, timeout=0.1)
+        connection.row_factory = sqlite3.Row
+        deadline = time.monotonic() + 0.25
+        connection.set_progress_handler(lambda: int(time.monotonic() > deadline), 1000)
+        try:
+            connection.execute("BEGIN")
+            version = _integer(connection.execute(
+                "SELECT value FROM movie_meta WHERE key='schema_version'"
+            ).fetchone()[0])
+            if version not in {3, 4}:
+                raise RuntimeError("unsupported_schema")
+            yield connection
+        finally:
+            connection.close()
+
+    @classmethod
+    def lookup_availability(cls, provider_root, provider_id, tmdb_ids):
+        try:
+            with cls._read_catalog(provider_root, provider_id) as connection:
+                placeholders = ",".join("?" for _ in tmdb_ids)
+                rows = connection.execute(f"""
+                    SELECT m.tmdb_id,COUNT(*) source_count
+                    FROM source_matches m INDEXED BY idx_source_matches_tmdb
+                    CROSS JOIN movie_sources s USING(source_key)
+                    CROSS JOIN source_classifications sc USING(source_key)
+                    WHERE m.tmdb_id IN ({placeholders}) AND {ACCEPTED_FILM_SQL}
+                    GROUP BY m.tmdb_id
+                """, tmdb_ids).fetchall()
+                meta = dict(connection.execute(
+                    "SELECT key,value FROM movie_meta WHERE key IN ('source_catalog_generation','movie_generation')"
+                ))
+                return {
+                    "state": "ready", "reason": "",
+                    "source_generation": _integer(meta.get("source_catalog_generation")),
+                    "movie_generation": _integer(meta.get("movie_generation")),
+                    "matches": {str(row["tmdb_id"]): {
+                        "movie_key": f"tmdb:{row['tmdb_id']}",
+                        "source_count": row["source_count"],
+                    } for row in rows},
+                }
+        except (OSError, sqlite3.Error, RuntimeError, TypeError):
+            return {"state": "unknown", "reason": "catalog_unavailable",
+                    "source_generation": None, "movie_generation": None, "matches": {}}
+
+    @classmethod
+    def lookup_sources(cls, provider_root, provider_id, tmdb_id):
+        with cls._read_catalog(provider_root, provider_id) as connection:
+            keys = [row[0] for row in connection.execute(f"""
+                SELECT s.source_key FROM source_matches m INDEXED BY idx_source_matches_tmdb
+                CROSS JOIN movie_sources s USING(source_key)
+                CROSS JOIN source_classifications sc USING(source_key)
+                WHERE m.tmdb_id=? AND {ACCEPTED_FILM_SQL}
+            """, (tmdb_id,))]
+            items = cls._source_rows(connection, keys) if keys else []
+            return {"provider_id": provider_id, "movie_key": f"tmdb:{tmdb_id}", "items": items}
 
     def __init__(self, provider_root, provider_id):
         self.provider_id = _text(provider_id)
@@ -247,8 +327,12 @@ class IPTVMovieStore:
 
     def _initialize(self):
         with self._lock, self.connection(immediate=True) as connection:
+            # executescript commits the connection's pending transaction first.
+            # Begin inside each schema batch so DDL is atomic and does not
+            # flush every CREATE separately during first-time initialization.
             connection.executescript(
                 """
+                BEGIN IMMEDIATE;
                 CREATE TABLE IF NOT EXISTS movie_meta (
                     key TEXT PRIMARY KEY,
                     value TEXT NOT NULL
@@ -447,6 +531,7 @@ class IPTVMovieStore:
         self._add_column(connection, "enrichment_queue", "completed_at REAL NOT NULL DEFAULT 0")
         connection.executescript(
             """
+            BEGIN IMMEDIATE;
             CREATE TABLE IF NOT EXISTS tmdb_movie_localizations (
                 tmdb_id INTEGER NOT NULL,
                 locale TEXT NOT NULL,
@@ -557,6 +642,7 @@ class IPTVMovieStore:
         self._add_column(connection, "source_matches", "classifier_version INTEGER NOT NULL DEFAULT 0")
         connection.executescript(
             """
+            BEGIN IMMEDIATE;
             CREATE TABLE IF NOT EXISTS playlist_classifications (
                 playlist_id TEXT PRIMARY KEY,
                 playlist_name TEXT NOT NULL DEFAULT '',
@@ -760,6 +846,7 @@ class IPTVMovieStore:
         self._add_column(connection, "movie_sources", "work_year INTEGER NOT NULL DEFAULT 0")
         connection.executescript(
             """
+            BEGIN IMMEDIATE;
             CREATE TABLE IF NOT EXISTS movie_status_summary (
                 summary_id INTEGER PRIMARY KEY CHECK (summary_id=1),
                 projection_version INTEGER NOT NULL DEFAULT 1,
@@ -1246,13 +1333,24 @@ class IPTVMovieStore:
         with self.connection() as connection:
             return _integer(self._meta(connection, "source_catalog_generation", 0))
 
+    def _bulk_generation(self, connection):
+        if self._meta(connection, "source_projection_generation", "") != "":
+            return None
+        return _integer(self._meta(connection, "source_catalog_generation", 0))
+
+    def bulk_selection_current(self, generation):
+        with self.connection() as connection:
+            connection.execute("BEGIN")
+            return self._bulk_generation(connection) == generation
+
     @staticmethod
     def _current_movie_key(connection, source_key_value):
         row = connection.execute(
-            "SELECT state,tmdb_id FROM source_matches WHERE source_key=?",
+            """SELECT m.state,m.tmdb_id,sc.category FROM source_matches m
+               LEFT JOIN source_classifications sc USING(source_key) WHERE m.source_key=?""",
             (source_key_value,),
         ).fetchone()
-        if row and row["state"] in ACCEPTED_STATES and row["tmdb_id"]:
+        if row and row["category"] not in {"plays", "sports", "music"} and row["state"] in ACCEPTED_STATES and row["tmdb_id"]:
             return f"tmdb:{int(row['tmdb_id'])}"
         return f"source:{source_key_value}"
 
@@ -1279,6 +1377,7 @@ class IPTVMovieStore:
         now = time.time()
         history = history or {}
         projected = []
+        evidence = {}
         for position, row in enumerate(rows or []):
             if not isinstance(row, dict):
                 continue
@@ -1286,21 +1385,24 @@ class IPTVMovieStore:
             if not source_id_value:
                 continue
             playlist_name = _text(row.get("playlist_name") or row.get("category_name"))
+            playlist_id = _text(row.get("category_id") or row.get("playlist_id"))
             title = _text(row.get("name") or row.get("provider_title")) or "Untitled"
             provider_year = _provider_year(row.get("year"), title)
+            provider_tmdb_id = _integer(row.get("tmdb_id"))
+            key = source_key(source_id_value)
+            evidence[key] = (title, provider_year, provider_tmdb_id, playlist_id, playlist_name)
             work_title, work_year = movie_work_identity(title, provider_year)
             quality, dubbed, subtitled = _source_claims(title, playlist_name)
             watch = history.get(source_id_value) or {}
             projected.append((
-                source_key(source_id_value), source_id_value,
-                _text(row.get("category_id") or row.get("playlist_id")), playlist_name,
+                key, source_id_value, playlist_id, playlist_name,
                 title, normalize_search_text(title), provider_year, work_title, work_year,
                 _number(row.get("rating")),
                 _text(row.get("image_url") or row.get("provider_poster_url")),
                 _text(row.get("backdrop_url") or row.get("provider_backdrop_url")),
                 _text(row.get("plot")), _text(row.get("cast_names") or row.get("cast")),
                 _text(row.get("director")), _text(row.get("genre")), _text(row.get("duration")),
-                _text(row.get("container_extension")), _integer(row.get("tmdb_id")),
+                _text(row.get("container_extension")), provider_tmdb_id,
                 _text(row.get("added")), _integer(row.get("position", position)), quality,
                 int(dubbed), int(subtitled), generation,
                 _number(watch.get("position_seconds")), _number(watch.get("duration_seconds")),
@@ -1314,6 +1416,32 @@ class IPTVMovieStore:
                     raise RuntimeError("The IPTV movie projection lease was lost")
             projected_keys = [row[0] for row in projected]
             status_before = self._status_contributions(connection, projected_keys)
+            # Only unresolved decisions depend on new listing evidence. Changes
+            # to artwork, list order, or the sync generation are not new evidence.
+            changed, changed_identity = [], []
+            for old in connection.execute(
+                f"""SELECT s.source_key,s.provider_title,s.provider_year,s.playlist_id,s.playlist_name,
+                           json_extract(s.raw_json,'$.tmdb') raw_tmdb,
+                           json_extract(s.raw_json,'$.tmdb_id') raw_tmdb_id
+                    FROM movie_sources s JOIN source_matches m USING(source_key)
+                    WHERE s.source_key IN ({','.join('?' for _ in projected_keys)})
+                      AND m.manual_lock=0 AND (
+                          m.state IN ('unprocessed','provider-id-pending','search-pending','ambiguous','unmatched')
+                          OR (m.state='error-retryable' AND EXISTS (
+                              SELECT 1 FROM enrichment_queue q WHERE q.source_key=s.source_key AND q.status='running'
+                          ))
+                      )""",
+                projected_keys,
+            ):
+                key = old["source_key"]
+                title, year, tmdb_id, playlist_id, playlist_name = evidence[key]
+                old_listing_id = _integer(old["raw_tmdb"] or old["raw_tmdb_id"])
+                identity_changed = ((title, year) != (old["provider_title"], old["provider_year"]) or
+                                    (tmdb_id > 0 and tmdb_id != old_listing_id))
+                if identity_changed:
+                    changed_identity.append((tmdb_id, key))
+                if identity_changed or (playlist_id, playlist_name) != (old["playlist_id"], old["playlist_name"]):
+                    changed.append((now, key))
             connection.executemany(
                 """INSERT INTO movie_sources(
                     source_key,source_id,playlist_id,playlist_name,provider_title,sort_title,
@@ -1353,6 +1481,28 @@ class IPTVMovieStore:
                    SELECT source_key,'unclassified','pending',0,'','{}',0,0,'',?
                    FROM movie_sources WHERE source_generation=?""",
                 (now, generation),
+            )
+            connection.executemany(
+                """UPDATE movie_sources SET detail_title='',detail_sort_title='',detail_year=0,
+                       detail_json='{}',provider_tmdb_id=? WHERE source_key=?""",
+                changed_identity,
+            )
+            connection.executemany(
+                """UPDATE source_classifications SET category='unclassified',status='pending',confidence=0,
+                       method='',evidence_json='{}',review_reason='',updated_at=?
+                   WHERE source_key=? AND manual_lock=0""",
+                changed,
+            )
+            connection.executemany(
+                """UPDATE source_matches SET state='unprocessed',tmdb_id=NULL,confidence=0,
+                       method='',evidence_json='{}',terminal_at=0,stale=0,updated_at=?
+                   WHERE source_key=? AND state<>'unprocessed'""",
+                changed,
+            )
+            connection.executemany(
+                """UPDATE enrichment_queue SET status='cancelled',attempts=0,next_attempt_at=0,
+                       claimed_at=0,completed_at=0,last_error='',updated_at=? WHERE source_key=?""",
+                changed,
             )
             self._refresh_search_aliases(
                 connection, source_keys=[row[0] for row in projected], tmdb_ids=[]
@@ -1441,8 +1591,13 @@ class IPTVMovieStore:
 
     def projection_status(self):
         with self.connection() as connection:
-            row = connection.execute("SELECT * FROM projection_jobs WHERE job_id=1").fetchone()
+            connection.execute("BEGIN")
             published = connection.execute("SELECT COUNT(*) FROM movie_sources WHERE available=1").fetchone()[0]
+            return self._projection_status(connection, published)
+
+    @staticmethod
+    def _projection_status(connection, published):
+        row = connection.execute("SELECT * FROM projection_jobs WHERE job_id=1").fetchone()
         data = dict(row) if row else {}
         data.update({
             "published": int(published),
@@ -1492,7 +1647,9 @@ class IPTVMovieStore:
             tmdb_id = int(movie_key.split(":", 1)[1])
             rows = connection.execute(
                 """SELECT s.source_key FROM movie_sources s JOIN source_matches m USING(source_key)
+                   LEFT JOIN source_classifications sc USING(source_key)
                    WHERE m.tmdb_id=? AND m.state IN ('matched-auto','matched-manual')
+                     AND COALESCE(sc.category,'unclassified') NOT IN ('plays','sports','music')
                    ORDER BY s.position,s.source_key""",
                 (tmdb_id,),
             ).fetchall()
@@ -1504,11 +1661,20 @@ class IPTVMovieStore:
         with self.connection() as connection:
             return self._source_keys_for_movie(connection, movie_key)
 
-    def update_provider_detail(self, source_key_value, detail):
+    @staticmethod
+    def _require_enrichment_claim(connection, key, claimed_at):
+        if claimed_at is not None and not connection.execute(
+            "SELECT 1 FROM enrichment_queue WHERE source_key=? AND status='running' AND claimed_at=?",
+            (key, claimed_at),
+        ).fetchone():
+            raise IPTVEnrichmentSuperseded("The IPTV source evaluation was superseded")
+
+    def update_provider_detail(self, source_key_value, detail, *, claimed_at=None):
         detail = detail if isinstance(detail, dict) else {}
         detail_title = _text(detail.get("name"))
         detail_year = _provider_year(detail.get("year"), detail_title)
         with self._lock, self.connection(immediate=True) as connection:
+            self._require_enrichment_claim(connection, _text(source_key_value), claimed_at)
             current = connection.execute(
                 """SELECT provider_title,provider_year,detail_title,detail_year
                      FROM movie_sources WHERE source_key=?""",
@@ -1656,6 +1822,7 @@ class IPTVMovieStore:
                      JOIN movie_sources s USING(source_key)
                      JOIN source_classifications sc USING(source_key)
                     WHERE s.available=1 AND m.state='matched-manual' AND m.tmdb_id>0
+                      AND sc.category NOT IN ('plays','sports','music')
                       AND (sc.category<>'film' OR sc.status<>'classified')
                     ORDER BY s.position,s.source_key LIMIT ?""",
                 (limit,),
@@ -1698,7 +1865,7 @@ class IPTVMovieStore:
             "siblings": [dict(row) for row in sibling_rows],
         }
 
-    def set_match_state(self, source_keys, state, *, tmdb_id=None, method="", confidence=0, manual_lock=False, evidence=None, error_code="", error_message="", parser_version=PARSER_VERSION, matcher_version=MATCHER_VERSION):
+    def set_match_state(self, source_keys, state, *, tmdb_id=None, method="", confidence=0, manual_lock=False, evidence=None, error_code="", error_message="", parser_version=PARSER_VERSION, matcher_version=MATCHER_VERSION, claimed_at=None):
         if state not in MATCH_STATES:
             raise ValueError("Unsupported IPTV movie match state")
         keys = list(dict.fromkeys(_text(key) for key in source_keys if _text(key)))
@@ -1707,6 +1874,7 @@ class IPTVMovieStore:
         with self._lock, self.connection(immediate=True) as connection:
             status_before = self._status_contributions(connection, keys)
             for key in keys:
+                self._require_enrichment_claim(connection, key, claimed_at)
                 if not connection.execute("SELECT 1 FROM movie_sources WHERE source_key=?", (key,)).fetchone():
                     raise KeyError("IPTV movie source was not found")
                 connection.execute(
@@ -1850,7 +2018,10 @@ class IPTVMovieStore:
                 continue
             connection.execute("""INSERT INTO genres(genre_id,name) VALUES (?,?)
                                   ON CONFLICT(genre_id) DO UPDATE SET name=excluded.name""", (int(genre["id"]), _text(genre.get("name"))))
-            connection.execute("INSERT INTO movie_genres(tmdb_id,genre_id) VALUES (?,?)", (tmdb_id, int(genre["id"])))
+            connection.execute(
+                "INSERT INTO movie_genres(tmdb_id,genre_id) VALUES (?,?) ON CONFLICT(tmdb_id,genre_id) DO NOTHING",
+                (tmdb_id, int(genre["id"])),
+            )
         credits = (
             [(row, "director", "Director") for row in movie.get("directors") or []]
             + [(row, "writer", _text(row.get("job")) or "Writer") for row in movie.get("writers") or [] if isinstance(row, dict)]
@@ -1886,43 +2057,104 @@ class IPTVMovieStore:
                 connection.execute("INSERT INTO movie_countries(tmdb_id,code,name) VALUES (?,?,?)", (tmdb_id, _text(country.get("code")), _text(country.get("name"))))
         self._refresh_search_aliases(connection, source_keys=[], tmdb_ids=[tmdb_id])
 
-    def apply_match(self, movie_key, movie, *, manual=False, method="manual", confidence=100, evidence=None):
+    @staticmethod
+    def _bulk_match_receipt(connection, source, operation_id):
+        return connection.execute("""SELECT current_json FROM decision_audit
+            WHERE source_key=? AND domain='bulk-match' AND job_id=? LIMIT 1""", (source, operation_id)).fetchone()
+
+    @contextmanager
+    def bulk_match_receipts(self, sources, operation_id):
+        # Keep the WAL connection open during the chunk. Each match still commits separately.
+        with self.connection() as connection:
+            receipts = connection.execute("""SELECT source_key FROM decision_audit
+                WHERE source_key IN (SELECT value FROM json_each(?)) AND domain='bulk-match' AND job_id=?""",
+                (json.dumps(sources), operation_id)).fetchall()
+            yield {row[0] for row in receipts}
+
+    def apply_match(self, movie_key, movie, *, manual=False, method="manual", confidence=100, evidence=None,
+                    expected_category=None, preserve_match_lock=False, expected_generation=None,
+                    preserve_classification_lock=False, stable_projection=False, bulk_operation_id=None,
+                    stop_requested=None, expected_source_revision=None, expected_match_revision=None,
+                    bulk_automatic=False, claimed_at=None):
         movie_key = validate_movie_key(movie_key)
         tmdb_id = _integer(movie.get("tmdb_id"))
         if tmdb_id <= 0:
             raise ValueError("A valid TMDB movie snapshot is required")
         with self._lock, self.connection(immediate=True) as connection:
+            if bulk_operation_id:
+                if not movie_key.startswith('source:'):
+                    raise ValueError('Bulk proposals must identify one IPTV source.')
+                receipt = self._bulk_match_receipt(connection, movie_key.split(':', 1)[1], bulk_operation_id)
+                if receipt:
+                    return json.loads(receipt[0])['movie_key']
+            if stop_requested and stop_requested():
+                raise IPTVSelectionError('bulk_apply_stopped', 'Apply stopped before the next write.')
+            if stable_projection and self._bulk_generation(connection) != expected_generation:
+                raise IPTVSelectionError('iptv_selection_changed', 'The provider catalog changed. Start a new review.')
+            if expected_generation is not None and _integer(self._meta(connection, 'source_catalog_generation', 0)) != expected_generation:
+                raise ValueError('The provider catalog changed. Prepare a new match review.')
             keys = self._source_keys_for_movie(connection, movie_key)
             if not keys:
                 raise KeyError("IPTV movie was not found")
+            for key in keys:
+                self._require_enrichment_claim(connection, key, claimed_at)
             status_before = self._status_contributions(connection, keys)
             old_keys = [self._current_movie_key(connection, key) for key in keys]
             self._save_tmdb_movie(connection, movie)
             state = "matched-manual" if manual else "matched-auto"
+            new_key = f"tmdb:{tmdb_id}"
             for key in keys:
-                row = connection.execute("SELECT manual_lock FROM source_matches WHERE source_key=?", (key,)).fetchone()
+                row = connection.execute("SELECT manual_lock,updated_at FROM source_matches WHERE source_key=?", (key,)).fetchone()
+                classification = connection.execute(
+                    "SELECT * FROM source_classifications WHERE source_key=?", (key,)
+                ).fetchone()
+                category = classification["category"] if classification else "unclassified"
+                if bulk_operation_id and ((row and row[0]) or
+                        (classification and classification["manual_lock"] and category != 'film')):
+                    raise IPTVSelectionError('locked', 'A manual match or classification lock was preserved.')
+                if method == 'chatgpt-bulk' and category not in {'film', 'unclassified'}:
+                    raise IPTVSelectionError('skipped', 'The source is no longer eligible for a Film match.')
+                if expected_category is not None and category != expected_category:
+                    raise IPTVSelectionError('skipped', 'The source classification changed. Prepare a new match review.')
+                if expected_category is not None and not connection.execute(
+                    "SELECT 1 FROM movie_sources WHERE source_key=? AND available=1", (key,)
+                ).fetchone():
+                    raise IPTVSelectionError('skipped', 'This source is no longer available.')
+                if expected_source_revision is not None and not connection.execute(
+                    "SELECT 1 FROM movie_sources WHERE source_key=? AND updated_at=?", (key, expected_source_revision)
+                ).fetchone():
+                    raise IPTVSelectionError('skipped', 'Provider metadata changed after verification.')
+                if expected_match_revision is not None and (not row or row['updated_at'] != expected_match_revision):
+                    raise IPTVSelectionError('skipped', 'The catalogue match changed after verification.')
+                if preserve_match_lock and row and row[0]:
+                    raise ValueError("The source has a manual match lock. Prepare a new match review.")
                 if row and row[0] and not manual:
                     continue
-                if manual:
-                    classification = connection.execute(
-                        "SELECT * FROM source_classifications WHERE source_key=?", (key,)
-                    ).fetchone()
+                if category in {"sports", "music"}:
+                    raise ValueError("This source classification only supports provider metadata")
+                if manual and category == "plays":
+                    new_key = movie_key
+                elif manual:
                     if classification and classification["manual_lock"] and classification["category"] != "film":
                         raise ValueError(
                             "Resolve the source's manual non-Film classification before matching it to a TMDB movie"
                         )
+                if (manual or bulk_automatic) and category != "plays" and not (
+                        preserve_classification_lock and classification and classification["manual_lock"]):
                     previous = dict(classification) if classification else {}
+                    classification_method = 'manual-tmdb-match' if manual else method
                     classification_evidence = {
                         "tmdb_id": tmdb_id,
-                        "reason": "manual TMDB movie identity",
+                        "reason": "manual TMDB movie identity" if manual else "verified bulk movie identity",
                     }
                     connection.execute(
                         """UPDATE source_classifications SET category='film',status='classified',
-                               confidence=1,method='manual-tmdb-match',evidence_json=?,classifier_version=?,
-                               manual_lock=1,review_reason='',updated_at=? WHERE source_key=?""",
+                               confidence=1,method=?,evidence_json=?,classifier_version=?,
+                               manual_lock=?,review_reason='',updated_at=? WHERE source_key=?""",
                         (
+                            classification_method,
                             json.dumps(classification_evidence, ensure_ascii=False, separators=(",", ":")),
-                            CLASSIFIER_VERSION, time.time(), key,
+                            CLASSIFIER_VERSION, int(manual), time.time(), key,
                         ),
                     )
                     connection.execute(
@@ -1932,11 +2164,11 @@ class IPTVMovieStore:
                         (
                             key, json.dumps(previous, ensure_ascii=False, default=str),
                             json.dumps(
-                                {"category": "film", "status": "classified", "manual_lock": 1,
+                                {"category": "film", "status": "classified", "manual_lock": int(manual),
                                  "evidence": classification_evidence},
                                 ensure_ascii=False,
                             ),
-                            "manual-tmdb-match", time.time(),
+                            classification_method, time.time(),
                         ),
                     )
                 connection.execute(
@@ -1947,10 +2179,14 @@ class IPTVMovieStore:
                      json.dumps(evidence or {}, ensure_ascii=False), PARSER_VERSION, MATCHER_VERSION, CLASSIFIER_VERSION,
                      time.time(), time.time(), key),
                 )
-            new_key = f"tmdb:{tmdb_id}"
-            self._merge_memberships(connection, old_keys, new_key)
+            if new_key.startswith("tmdb:"):
+                self._merge_memberships(connection, old_keys, new_key)
             self._set_meta(connection, "movie_generation", _integer(self._meta(connection, "movie_generation", 0)) + 1)
             self._apply_status_transitions(connection, status_before, keys)
+            if bulk_operation_id:
+                connection.execute("""INSERT INTO decision_audit(source_key,domain,current_json,method,job_id,created_at)
+                    VALUES (?,'bulk-match',?,?,?,?)""", (keys[0], json.dumps({'movie_key': new_key, 'tmdb_id': tmdb_id}),
+                                                          method, bulk_operation_id, time.time()))
         return new_key
 
     @staticmethod
@@ -2065,10 +2301,12 @@ class IPTVMovieStore:
             return """
                 WITH cards AS (
                     SELECT 'source:'||s.source_key movie_key,
-                           CASE WHEN m.state IN ('matched-auto','matched-manual') THEN m.tmdb_id ELSE NULL END tmdb_id,
+                           CASE WHEN m.state IN ('matched-auto','matched-manual')
+                             AND COALESCE(sc.category,'unclassified') NOT IN ('sports','music') THEN m.tmdb_id END tmdb_id,
                            s.source_key representative_source_key,1 source_count,0 grouped,
                            s.position source_position,CAST(NULLIF(s.added,'') AS REAL) recent_added,
-                           s.last_watched,s.watched_completed,m.state metadata_status,
+                           s.last_watched,s.watched_completed,
+                           CASE WHEN sc.category IN ('sports','music') THEN 'classified-non-film' ELSE m.state END metadata_status,
                            m.error_code,m.error_message,COALESCE(sc.category,'unclassified') category,
                            COALESCE(sc.status,'pending') classification_status,
                            COALESCE(sc.confidence,0) classification_confidence,
@@ -2079,7 +2317,7 @@ class IPTVMovieStore:
                     WHERE s.available=1
                 )
             """
-        return """
+        return f"""
             WITH accepted AS (
                 SELECT s.*,m.state,m.tmdb_id,m.manual_lock,m.error_code,m.error_message,
                        COALESCE(sc.category,'unclassified') category,
@@ -2088,8 +2326,7 @@ class IPTVMovieStore:
                        COALESCE(sc.review_reason,'') classification_review_reason
                 FROM movie_sources s JOIN source_matches m USING(source_key)
                 LEFT JOIN source_classifications sc USING(source_key)
-                WHERE s.available=1 AND sc.category='film'
-                  AND m.state IN ('matched-auto','matched-manual') AND m.tmdb_id IS NOT NULL
+                WHERE {ACCEPTED_FILM_SQL}
             ),
             matched_cards AS (
                 SELECT 'tmdb:'||tmdb_id movie_key,tmdb_id,MIN(source_key) representative_source_key,
@@ -2103,10 +2340,13 @@ class IPTVMovieStore:
             ),
             source_cards AS (
                 SELECT 'source:'||s.source_key movie_key,
-                       CASE WHEN m.state IN ('matched-auto','matched-manual') THEN m.tmdb_id ELSE NULL END tmdb_id,
+                       CASE WHEN m.state IN ('matched-auto','matched-manual')
+                         AND COALESCE(sc.category,'unclassified') NOT IN ('sports','music') THEN m.tmdb_id END tmdb_id,
                        s.source_key representative_source_key,1 source_count,0 grouped,
                        s.position source_position,CAST(NULLIF(s.added,'') AS REAL) recent_added,
-                       s.last_watched,s.watched_completed,m.state metadata_status,m.error_code,m.error_message,
+                       s.last_watched,s.watched_completed,
+                       CASE WHEN sc.category IN ('sports','music') THEN 'classified-non-film' ELSE m.state END metadata_status,
+                       m.error_code,m.error_message,
                        COALESCE(sc.category,'unclassified') category,COALESCE(sc.status,'pending') classification_status,
                        COALESCE(sc.confidence,0) classification_confidence,
                        COALESCE(sc.review_reason,'') classification_review_reason
@@ -2124,8 +2364,9 @@ class IPTVMovieStore:
     def _member_clause(extra="1=1"):
         return f"""EXISTS(
             SELECT 1 FROM movie_sources ms JOIN source_matches mm USING(source_key)
+            LEFT JOIN source_classifications mc USING(source_key)
             WHERE ms.available=1 AND
-              ((c.grouped=1 AND mm.tmdb_id=c.tmdb_id AND mm.state IN ('matched-auto','matched-manual'))
+              ((c.grouped=1 AND mc.category='film' AND mm.tmdb_id=c.tmdb_id AND mm.state IN ('matched-auto','matched-manual'))
                OR (c.grouped=0 AND ms.source_key=c.representative_source_key))
                AND ({extra})
         )"""
@@ -2163,7 +2404,8 @@ class IPTVMovieStore:
                   ON sah.source_key='' AND sah.tmdb_id=sm.tmdb_id
                  AND sm.state IN ('matched-auto','matched-manual')
                 JOIN movie_sources s ON s.source_key=sm.source_key AND s.available=1
-                WHERE sah.tmdb_id>0
+                LEFT JOIN source_classifications sc ON sc.source_key=sm.source_key
+                WHERE sah.tmdb_id>0 AND COALESCE(sc.category,'unclassified') NOT IN ('sports','music')
             ),
             search_card_keys(movie_key) AS MATERIALIZED (
                 {card_keys}
@@ -2178,7 +2420,9 @@ class IPTVMovieStore:
                      (c.grouped=1 AND c.tmdb_id IN (
                          SELECT mm.tmdb_id
                          FROM movie_sources ms JOIN source_matches mm USING(source_key)
+                         JOIN source_classifications mc USING(source_key)
                          WHERE ms.available=1
+                           AND mc.category='film'
                            AND mm.state IN ('matched-auto','matched-manual')
                            AND mm.tmdb_id IS NOT NULL AND ({grouped_clause})
                      )))"""
@@ -2192,6 +2436,15 @@ class IPTVMovieStore:
         clauses = []
         params = []
         cte_params = []
+        person_id = _text(filters.get("person_id"))
+        person_role = _text(filters.get("person_role"))
+        if person_id or person_role:
+            if not person_id.isascii() or not person_id.isdigit() or not 0 < int(person_id) <= 2147483647 or person_role not in {"actor", "director"}:
+                raise ValueError("A valid person ID and actor or director role are required")
+            clauses.append("""c.category='film' AND EXISTS(
+                SELECT 1 FROM movie_credits credit WHERE credit.tmdb_id=c.tmdb_id
+                AND credit.person_id=? AND credit.department=?)""")
+            params.extend([int(person_id), "cast" if person_role == "actor" else "director"])
         query = normalize_search_text(filters.get("q"))
         if query:
             cards_cte += self._search_card_ctes(view)
@@ -2209,7 +2462,7 @@ class IPTVMovieStore:
         if list_id:
             clauses.append("""EXISTS(SELECT 1 FROM movie_list_memberships ml
                                WHERE ml.list_id=? AND (ml.movie_key=c.movie_key OR
-                                 (c.tmdb_id IS NOT NULL AND ml.movie_key='tmdb:'||c.tmdb_id)))""")
+                                 (c.category NOT IN ('plays','sports','music') AND c.tmdb_id IS NOT NULL AND ml.movie_key='tmdb:'||c.tmdb_id)))""")
             params.append(list_id)
         if view == "cp":
             genre_id = _integer(filters.get("genre_id"))
@@ -2288,7 +2541,7 @@ class IPTVMovieStore:
                     ar.title ar_title,ar.original_title ar_original_title,ar.plot ar_plot,
                     ar.poster_url ar_poster_url,ar.backdrop_url ar_backdrop_url,
                     EXISTS(SELECT 1 FROM movie_list_memberships fav WHERE fav.list_id=? AND
-                      (fav.movie_key=c.movie_key OR (c.tmdb_id IS NOT NULL AND fav.movie_key='tmdb:'||c.tmdb_id))) favorite
+                      (fav.movie_key=c.movie_key OR (c.category NOT IN ('plays','sports','music') AND c.tmdb_id IS NOT NULL AND fav.movie_key='tmdb:'||c.tmdb_id))) favorite
              FROM page_cards c JOIN movie_sources rep ON rep.source_key=c.representative_source_key
              LEFT JOIN tmdb_movies t ON t.tmdb_id=c.tmdb_id
              LEFT JOIN tmdb_movie_localizations ar ON ar.tmdb_id=c.tmdb_id AND ar.locale='ar-SA'"""
@@ -2382,7 +2635,7 @@ class IPTVMovieStore:
                        ar.title ar_title,ar.original_title ar_original_title,ar.plot ar_plot,
                        ar.poster_url ar_poster_url,ar.backdrop_url ar_backdrop_url,
                        EXISTS(SELECT 1 FROM movie_list_memberships fav WHERE fav.list_id=? AND
-                         (fav.movie_key=c.movie_key OR (c.tmdb_id IS NOT NULL AND fav.movie_key='tmdb:'||c.tmdb_id))) favorite
+                         (fav.movie_key=c.movie_key OR (c.category NOT IN ('plays','sports','music') AND c.tmdb_id IS NOT NULL AND fav.movie_key='tmdb:'||c.tmdb_id))) favorite
                 FROM cards c JOIN movie_sources rep ON rep.source_key=c.representative_source_key
                 LEFT JOIN tmdb_movies t ON t.tmdb_id=c.tmdb_id
                 LEFT JOIN tmdb_movie_localizations ar ON ar.tmdb_id=c.tmdb_id AND ar.locale='ar-SA'
@@ -2471,17 +2724,21 @@ class IPTVMovieStore:
             keys = self._source_keys_for_movie(connection, movie_key)
             if not keys:
                 raise KeyError("IPTV movie was not found")
-            placeholders = ",".join("?" for _ in keys)
-            rows = connection.execute(
-                f"""SELECT source_key,source_id item_id,'movie' kind,provider_title name,provider_year year,
-                           provider_rating rating,provider_poster_url image_url,provider_backdrop_url backdrop_url,
-                           provider_plot plot,provider_cast cast_names,provider_director director,provider_genre genre,
-                           provider_duration duration,container_extension,playlist_id,playlist_name,quality_claim,
-                           dubbed_claim,subtitled_claim,available,last_watched,watched_completed
-                    FROM movie_sources WHERE source_key IN ({placeholders})
-                    ORDER BY available DESC,position,source_key""",
-                keys,
-            ).fetchall()
+            return self._source_rows(connection, keys)
+
+    @staticmethod
+    def _source_rows(connection, keys):
+        placeholders = ",".join("?" for _ in keys)
+        rows = connection.execute(
+            f"""SELECT source_key,source_id item_id,'movie' kind,provider_title name,provider_year year,
+                       provider_rating rating,provider_poster_url image_url,provider_backdrop_url backdrop_url,
+                       provider_plot plot,provider_cast cast_names,provider_director director,provider_genre genre,
+                       provider_duration duration,container_extension,playlist_id,playlist_name,quality_claim,
+                       dubbed_claim,subtitled_claim,available,last_watched,watched_completed
+                FROM movie_sources WHERE source_key IN ({placeholders})
+                ORDER BY available DESC,position,source_key""",
+            keys,
+        ).fetchall()
         return [dict(row) for row in rows]
 
     def facets(self):
@@ -2575,8 +2832,9 @@ class IPTVMovieStore:
         token = uuid.uuid4().hex
         with self._lock, self.connection(immediate=True, control=True) as connection:
             lease = connection.execute(
-                "SELECT consent FROM worker_lease WHERE lease_id=1"
+                "SELECT * FROM worker_lease WHERE lease_id=1"
             ).fetchone()
+            self._require_available_worker_lease(lease, now)
             if not bool(lease["consent"]) and not consent:
                 raise ValueError("Confirm Improve this provider's Movies before starting metadata enrichment")
             affected_keys = [row[0] for row in connection.execute(
@@ -2672,15 +2930,23 @@ class IPTVMovieStore:
             row = connection.execute("SELECT token FROM worker_lease WHERE lease_id=1").fetchone()
         return _text(row[0]) if row else ""
 
+    @staticmethod
+    def _require_available_worker_lease(lease, now):
+        active = lease["state"] in {"starting", "running", "pausing", "cancelling"}
+        if active and lease["lease_expires_at"] > now:
+            raise RuntimeError("An IPTV metadata worker already owns this provider")
+        return active
+
     def resume_worker(self, *, continue_after_restart=False):
-        status = self.worker_control_status()
-        if status["restart_confirmation_required"] and not continue_after_restart:
-            raise ValueError("Confirm Continue metadata improvement after restart")
-        if not status["consent"]:
-            raise ValueError("Confirm Improve this provider's Movies before starting metadata enrichment")
         token = uuid.uuid4().hex
         now = time.time()
         with self._lock, self.connection(immediate=True) as connection:
+            lease = connection.execute("SELECT * FROM worker_lease WHERE lease_id=1").fetchone()
+            interrupted = self._require_available_worker_lease(lease, now)
+            if (interrupted or lease["restart_confirmation_required"]) and not continue_after_restart:
+                raise ValueError("Confirm Continue metadata improvement after restart")
+            if not lease["consent"]:
+                raise ValueError("Confirm Improve this provider's Movies before starting metadata enrichment")
             affected_keys = [row[0] for row in connection.execute(
                 "SELECT source_key FROM enrichment_queue WHERE status='running'"
             )]
@@ -2692,6 +2958,7 @@ class IPTVMovieStore:
             connection.execute(
                 """UPDATE worker_lease SET token=?,pid=0,state='starting',command='run',
                        restart_confirmation_required=0,heartbeat_at=?,lease_expires_at=?,
+                       diagnostic_limit=CASE WHEN state='complete' THEN 0 ELSE diagnostic_limit END,
                        started_at=CASE WHEN started_at=0 THEN ? ELSE started_at END,
                        finished_at=0,error='',retry_reason='',backoff_until=0 WHERE lease_id=1""",
                 (token, now, now + 90, now),
@@ -2779,16 +3046,18 @@ class IPTVMovieStore:
             if not cursor.rowcount:
                 raise RuntimeError("The IPTV metadata worker lease was lost")
 
-    def worker_finished(self, state="complete", error="", token=""):
+    def worker_finished(self, state="complete", error="", token="", *, only_active=False):
         with self._lock, self.connection(immediate=True) as connection:
             clause = " AND token=?" if token else ""
+            if only_active:
+                clause += " AND state IN ('starting','running','pausing','cancelling')"
             cursor = connection.execute(
                 f"""UPDATE worker_lease SET pid=0,state=?,command=?,heartbeat_at=?,lease_expires_at=0,
                            finished_at=?,error=?,restart_confirmation_required=0
                        WHERE lease_id=1{clause}""",
                 [state, "pause" if state == "paused" else "idle", time.time(), time.time(), _text(error)[:500], *([_text(token)] if token else [])],
             )
-            if token and not cursor.rowcount:
+            if not cursor.rowcount:
                 return False
             self._set_meta(connection, "worker_pid", 0)
             self._set_meta(connection, "worker_state", state)
@@ -2937,7 +3206,7 @@ class IPTVMovieStore:
                 (now, now + 90),
             )
             self._apply_status_transitions(connection, status_before, members)
-            return {"work_key": work_key, "source_keys": members}
+            return {"work_key": work_key, "source_keys": members, "claimed_at": now}
 
     def release_cluster(self, work_key, token=""):
         """Return unprocessed claimed members to the durable pending queue."""
@@ -2997,17 +3266,20 @@ class IPTVMovieStore:
             )
         return counts
 
-    def finish_job(self, source_key_value, *, status="done", retry_after=0, error=""):
+    def finish_job(self, source_key_value, *, status="done", retry_after=0, error="", claimed_at=None):
         if status not in {"pending", "done", "cancelled", "failed"}:
             raise ValueError("Unsupported IPTV enrichment queue status")
         with self._lock, self.connection(immediate=True) as connection:
             key = _text(source_key_value)
             status_before = self._status_contributions(connection, [key])
-            connection.execute(
+            updated = connection.execute(
                 """UPDATE enrichment_queue SET status=?,next_attempt_at=?,last_error=?,updated_at=?
-                   WHERE source_key=?""",
-                (status, time.time() + max(0, int(retry_after or 0)), _text(error)[:500], time.time(), _text(source_key_value)),
+                   WHERE source_key=? AND status='running' AND (? IS NULL OR claimed_at=?)""",
+                (status, time.time() + max(0, int(retry_after or 0)), _text(error)[:500],
+                 time.time(), key, claimed_at, claimed_at),
             )
+            if not updated.rowcount:
+                return
             if status == "done":
                 self._set_meta(connection, "movie_generation", _integer(self._meta(connection, "movie_generation", 0)) + 1)
                 connection.execute(
@@ -3053,6 +3325,8 @@ class IPTVMovieStore:
                      AND (parser_version<>? OR matcher_version<>?)""",
                 (PARSER_VERSION, MATCHER_VERSION),
             )
+            self._set_meta(connection, 'parser_version', PARSER_VERSION)
+            self._set_meta(connection, 'matcher_version', MATCHER_VERSION)
             self._apply_status_transitions(connection, status_before, affected_keys)
         return int(cursor.rowcount)
 
@@ -3123,6 +3397,8 @@ class IPTVMovieStore:
             "grouped_movies": int(grouped),
             "distinct_tmdb_movies": int(distinct_tmdb),
             "stale": int(stale),
+            "rules_update_pending": (_integer(meta.get('parser_version')) < PARSER_VERSION or
+                                     _integer(meta.get('matcher_version')) < MATCHER_VERSION),
             "needs_review": int(needs_review),
             "automatic_remaining": int(automatic_remaining),
             "classification_review": int(classification_review),
@@ -3189,20 +3465,25 @@ class IPTVMovieStore:
             "categories": categories,
         }
 
-    def worker_control_status(self):
+    def worker_control_status(self, *, include_projection=False):
         """Constant-time exact status for control responses and active polling."""
         with self.connection(control=True) as connection:
+            connection.execute("BEGIN")
             meta = {row["key"]: row["value"] for row in connection.execute(
                 """SELECT key,value FROM movie_meta
                    WHERE key IN ('worker_state','worker_command','worker_error',
-                                 'movie_generation','source_catalog_generation')"""
+                                 'movie_generation','source_catalog_generation','parser_version','matcher_version')"""
             )}
             lease = connection.execute("SELECT * FROM worker_lease WHERE lease_id=1").fetchone()
             summary = connection.execute(
                 "SELECT * FROM movie_status_summary WHERE summary_id=1"
             ).fetchone()
-        arguments = self._status_summary_arguments(summary)
-        return self._worker_status_payload(meta, dict(lease) if lease else {}, **arguments)
+            arguments = self._status_summary_arguments(summary)
+            projection = self._projection_status(connection, arguments["sources"]) if include_projection else None
+        result = self._worker_status_payload(meta, dict(lease) if lease else {}, **arguments)
+        if include_projection:
+            result["projection"] = projection
+        return result
 
     def worker_status(self):
         with self.connection() as connection:
@@ -3215,17 +3496,25 @@ class IPTVMovieStore:
             meta, dict(lease) if lease else {}, **self._status_summary_arguments(summary)
         )
 
-    def review_queue(self, view="needs-review", *, page=1, page_size=50, filters=None):
-        page = max(1, _integer(page) or 1)
-        page_size = min(100, max(1, _integer(page_size) or 50))
+    @staticmethod
+    def _review_scope(view, filters):
         filters = filters or {}
         clauses = {
+            "classification-review": "COALESCE(sc.category,'unclassified')='unclassified' AND COALESCE(sc.status,'pending') IN ('pending','review')",
             "needs-review": "m.state='ambiguous' OR m.stale=1",
             "unmatched": "m.state='unmatched'",
             "failed": "m.state IN ('error-retryable','error-terminal')",
             "manual": "m.state='matched-manual' OR (m.manual_lock=1 AND m.method='manual-unmatched')",
         }
         where = clauses.get(_text(view), clauses["needs-review"])
+        if filters.get("review_scope") == "leftovers":
+            unknown_category = "sc.category='unclassified' AND sc.status='review' AND m.state='unprocessed'"
+            where = {
+                "classification-review": unknown_category,
+                "needs-review": "m.state='ambiguous'",
+                "unmatched": f"m.state IN ('unmatched','ambiguous') OR ({unknown_category})",
+            }.get(_text(view), "0")
+            where = f"({where}) AND m.manual_lock=0"
         parameters = []
         query = normalize_search_text(filters.get("q"))
         if query:
@@ -3239,6 +3528,26 @@ class IPTVMovieStore:
         if playlist_id:
             where = f"({where}) AND s.playlist_id=?"
             parameters.append(playlist_id)
+        return where, parameters
+
+    def _validate_leftover_selection(self, connection, keys, filters):
+        if not keys or filters.get("review_scope") != "leftovers":
+            return
+        where, parameters = self._review_scope(filters.get("review_view"), filters)
+        count = connection.execute(
+            f"""SELECT COUNT(*) FROM source_matches m JOIN movie_sources s USING(source_key)
+                LEFT JOIN source_classifications sc USING(source_key)
+                WHERE s.available=1 AND ({where})
+                  AND s.source_key IN (SELECT value FROM json_each(?))""",
+            (*parameters, json.dumps(keys)),
+        ).fetchone()[0]
+        if count != len(keys):
+            raise IPTVSelectionError("bulk_selection_count_changed", "Some selected sources are no longer in the review queue. Refresh the selection.")
+
+    def review_queue(self, view="needs-review", *, page=1, page_size=50, filters=None):
+        page = max(1, _integer(page) or 1)
+        page_size = min(100, max(1, _integer(page_size) or 50))
+        where, parameters = self._review_scope(view, filters)
         with self.connection() as connection:
             total = connection.execute(
                 f"""SELECT COUNT(*) FROM source_matches m JOIN movie_sources s USING(source_key)
@@ -3268,7 +3577,8 @@ class IPTVMovieStore:
             except json.JSONDecodeError:
                 item["evidence"] = {}
             items.append(item)
-        return {"view": _text(view), "items": items, "page": page, "page_size": page_size, "total": int(total)}
+        return {"view": _text(view), "items": items, "page": page, "page_size": page_size,
+                "total": int(total), "selection_limit": IPTV_SELECTION_LIMIT}
 
     def classification_rows(self, *, only_pending=False, limit=1000, offset=0):
         clause = "AND sc.manual_lock=0 AND (sc.status='pending' OR sc.classifier_version<>?)" if only_pending else ""
@@ -3379,14 +3689,21 @@ class IPTVMovieStore:
             self._apply_status_transitions(connection, status_before, keys)
         return result
 
-    def apply_classification_decisions(self, decisions, *, manual=False):
-        rows = [row for row in list(decisions or [])[:1000] if isinstance(row, dict) and _text(row.get("source_key"))]
+    def apply_classification_decisions(self, decisions, *, manual=False, preserve_manual_locks=False,
+                                       expected_generation=None, preserve_match_locks=False, stable_projection=False):
+        rows = [row for row in list(decisions or []) if isinstance(row, dict) and _text(row.get("source_key"))]
+        if len(rows) > 5000:
+            raise ValueError('The classification selection exceeds the safe limit')
         result = {"applied": [], "locked": [], "missing": []}
         if not rows:
             return result
         now = time.time()
         decision_keys = [_text(row.get("source_key")) for row in rows]
         with self._lock, self.connection(immediate=True) as connection:
+            if stable_projection and self._bulk_generation(connection) != expected_generation:
+                raise ValueError('The provider catalog changed. Start a new review.')
+            if expected_generation is not None and _integer(self._meta(connection, 'source_catalog_generation', 0)) != expected_generation:
+                raise ValueError('The provider catalog changed. Prepare a new classification review.')
             status_before = self._status_contributions(connection, decision_keys)
             for decision in rows:
                 key = _text(decision.get("source_key"))
@@ -3396,7 +3713,24 @@ class IPTVMovieStore:
                 if not current_row:
                     result["missing"].append(key)
                     continue
-                if current_row["manual_lock"] and not manual:
+                if "source_generation" in decision and not connection.execute(
+                    "SELECT 1 FROM movie_sources WHERE source_key=? AND available=1 AND source_generation=?",
+                    (key, decision["source_generation"]),
+                ).fetchone():
+                    result["missing"].append(key)
+                    continue
+                if current_row["manual_lock"] and (not manual or preserve_manual_locks):
+                    result["locked"].append(key)
+                    continue
+                if preserve_match_locks and connection.execute(
+                        "SELECT 1 FROM source_matches WHERE source_key=? AND manual_lock=1", (key,)).fetchone():
+                    result["locked"].append(key)
+                    continue
+                if stable_projection and not connection.execute(
+                        "SELECT 1 FROM movie_sources WHERE source_key=? AND available=1", (key,)).fetchone():
+                    result["missing"].append(key)
+                    continue
+                if "expected_category" in decision and current_row["category"] != decision["expected_category"]:
                     result["locked"].append(key)
                     continue
                 category = _text(decision.get("category")).casefold()
@@ -3436,27 +3770,40 @@ class IPTVMovieStore:
             self._apply_status_transitions(connection, status_before, decision_keys)
         return result
 
-    def resolve_selection(self, *, mode="explicit", selected_keys=None, filters=None, page=1, page_size=50, max_selection=5000):
+    def resolve_selection(self, *, mode="explicit", selected_keys=None, filters=None, page=1, page_size=50,
+                          max_selection=IPTV_SELECTION_LIMIT, bulk=False):
         mode = _text(mode) or "explicit"
+        if mode == "all_filtered":
+            mode = "all-filtered"
+        if mode not in {"explicit", "all-filtered", "page"}:
+            raise IPTVSelectionError("invalid_selection_mode", "Choose individual sources, a page, or all filtered sources")
         filters = dict(filters or {})
-        max_selection = min(5000, max(1, _integer(max_selection) or 5000))
+        if bulk:
+            return self._resolve_bulk_selection(mode, selected_keys, filters, page, page_size)
+        generation = self.source_generation()
+        max_selection = min(IPTV_SELECTION_LIMIT, max(1, _integer(max_selection) or IPTV_SELECTION_LIMIT))
+        limit_message = f"Choose up to {max_selection:,} IPTV sources per job. Add the current page or narrow the filters."
         keys = []
         if mode == "explicit":
             candidates = list(dict.fromkeys(_text(key) for key in (selected_keys or []) if _text(key)))
             if len(candidates) > max_selection:
-                raise ValueError("The IPTV Movies selection is too large")
+                raise IPTVSelectionError("iptv_selection_too_large", limit_message)
             with self.connection() as connection:
-                for value in candidates:
-                    if value.startswith("source:"):
-                        source_value = value.split(":", 1)[1]
-                        if connection.execute("SELECT 1 FROM movie_sources WHERE source_key=? AND available=1", (source_value,)).fetchone():
-                            keys.append(source_value)
-                    elif value.startswith("s_") and connection.execute(
-                        "SELECT 1 FROM movie_sources WHERE source_key=? AND available=1", (value,)
-                    ).fetchone():
-                        keys.append(value)
-                    elif value.startswith("tmdb:"):
-                        keys.extend(self._source_keys_for_movie(connection, value))
+                if filters.get("review_scope") == "leftovers":
+                    keys = list(dict.fromkeys(value.removeprefix("source:") for value in candidates))
+                    self._validate_leftover_selection(connection, keys, filters)
+                else:
+                    for value in candidates:
+                        if value.startswith("source:"):
+                            source_value = value.split(":", 1)[1]
+                            if connection.execute("SELECT 1 FROM movie_sources WHERE source_key=? AND available=1", (source_value,)).fetchone():
+                                keys.append(source_value)
+                        elif value.startswith("s_") and connection.execute(
+                            "SELECT 1 FROM movie_sources WHERE source_key=? AND available=1", (value,)
+                        ).fetchone():
+                            keys.append(value)
+                        elif value.startswith("tmdb:"):
+                            keys.extend(self._source_keys_for_movie(connection, value))
         else:
             requested_page = max(1, _integer(page) or 1)
             query_page = requested_page if mode == "page" else 1
@@ -3467,6 +3814,8 @@ class IPTVMovieStore:
                         filters.get("review_view"), page=query_page, page_size=bounded_page_size,
                         filters=filters,
                     )
+                    if mode == "all-filtered" and result["total"] > max_selection:
+                        raise IPTVSelectionError("iptv_selection_too_large", limit_message)
                     keys.extend(item["source_key"] for item in result["items"])
                 else:
                     result = self.list_movies(filters, page=query_page, page_size=bounded_page_size)
@@ -3475,14 +3824,80 @@ class IPTVMovieStore:
                             keys.extend(self._source_keys_for_movie(connection, movie["movie_key"]))
                 keys = list(dict.fromkeys(keys))
                 if len(keys) > max_selection:
-                    raise ValueError("The filtered IPTV Movies selection exceeds the safe limit")
+                    raise IPTVSelectionError("iptv_selection_too_large", limit_message)
                 if mode == "page" or query_page * result["page_size"] >= result["total"]:
                     break
                 query_page += 1
         keys = list(dict.fromkeys(keys))
         if len(keys) > max_selection:
-            raise ValueError("The IPTV Movies selection exceeds the safe limit")
-        return {"source_keys": keys, "catalog_generation": self.source_generation(), "mode": mode, "filters": filters}
+            raise IPTVSelectionError("iptv_selection_too_large", limit_message)
+        if generation != self.source_generation():
+            raise IPTVSelectionError('iptv_selection_changed', 'The provider catalog changed. Select the sources again.')
+        return {"source_keys": keys, "catalog_generation": generation, "mode": mode, "filters": filters}
+
+    def _resolve_bulk_selection(self, mode, selected_keys, filters, page, page_size):
+        limit = IPTV_BULK_SELECTION_LIMIT
+        with self.connection() as connection:
+            connection.execute("BEGIN")
+            generation = self._bulk_generation(connection)
+            if generation is None:
+                raise IPTVSelectionError('iptv_projection_in_progress', 'Wait until provider movies finish preparing.')
+            if mode == 'explicit':
+                keys = list(dict.fromkeys(_text(key).removeprefix('source:') for key in (selected_keys or [])))
+                if len(keys) <= limit and filters.get('review_scope') == 'leftovers':
+                    self._validate_leftover_selection(connection, keys, filters)
+                elif len(keys) <= limit and any(not connection.execute(
+                    "SELECT 1 FROM movie_sources WHERE source_key=? AND available=1", (key,)
+                ).fetchone() for key in keys):
+                    raise IPTVSelectionError('invalid_bulk_source', 'A selected source is unavailable for this provider.')
+            else:
+                view = filters.get('review_view')
+                if view not in {'classification-review', 'needs-review', 'unmatched', 'failed', 'manual'}:
+                    raise IPTVSelectionError('invalid_selection_mode', 'Choose an IPTV Metadata review queue.')
+                where, parameters = self._review_scope(view, filters)
+                size = min(100, max(1, _integer(page_size) or 50)) if mode == 'page' else limit + 1
+                offset = (max(1, _integer(page) or 1) - 1) * size if mode == 'page' else 0
+                keys = [row[0] for row in connection.execute(
+                    f"""SELECT s.source_key FROM source_matches m JOIN movie_sources s USING(source_key)
+                         LEFT JOIN source_classifications sc USING(source_key)
+                         WHERE s.available=1 AND ({where})
+                         ORDER BY m.stale DESC,m.updated_at DESC,s.position,s.source_key LIMIT ? OFFSET ?""",
+                    [*parameters, size, offset])]
+        if len(keys) > limit:
+            raise IPTVSelectionError('iptv_selection_too_large', f'Choose up to {limit:,} sources for one bulk job.')
+        return {'source_keys': keys, 'catalog_generation': generation, 'mode': mode, 'filters': filters}
+
+    def bulk_sources(self, keys, generation):
+        with self.connection() as connection:
+            connection.execute("BEGIN")
+            if self._bulk_generation(connection) != generation:
+                raise IPTVSelectionError('iptv_selection_changed', 'The provider catalog changed. Start a new review.')
+            rows = connection.execute(f"""SELECT s.source_key,s.provider_title,s.provider_year,s.detail_title,
+                    s.detail_year,s.detail_json,s.provider_duration,s.provider_plot,s.provider_cast,s.provider_director,
+                    s.updated_at AS source_revision,s.playlist_name,s.provider_tmdb_id,sc.category,
+                    sc.confidence AS classification_confidence,
+                    sc.manual_lock AS classification_manual_lock, COALESCE(m.manual_lock,0) AS match_manual_lock,
+                    m.state AS match_state,m.stale AS match_stale,m.updated_at AS match_revision
+                FROM movie_sources s JOIN source_classifications sc USING(source_key)
+                LEFT JOIN source_matches m USING(source_key)
+                WHERE s.available=1 AND s.source_key IN ({','.join('?' for _ in keys)})""", keys).fetchall()
+        return {row['source_key']: dict(row) for row in rows}
+
+    def bulk_catalog_continuation(self, keys, filters, raw_generation):
+        with self.connection() as connection:
+            connection.execute('BEGIN')
+            generation = self._bulk_generation(connection)
+            projection = connection.execute('SELECT state FROM projection_jobs WHERE job_id=1').fetchone()
+            if generation is None or generation != raw_generation or not projection or projection[0] != 'complete':
+                raise IPTVSelectionError('iptv_projection_in_progress', 'Finish preparing provider movies in IPTV Metadata before resuming.')
+            where, parameters = self._review_scope(filters['review_view'], filters) if filters.get('review_view') else ('1', [])
+            eligible = {row[0] for row in connection.execute(f"""SELECT s.source_key FROM movie_sources s
+                LEFT JOIN source_matches m USING(source_key) LEFT JOIN source_classifications sc USING(source_key)
+                WHERE s.available=1 AND coalesce(m.manual_lock,0)=0
+                AND (coalesce(m.state,'') NOT IN ('matched-auto','matched-manual') OR m.stale=1)
+                AND ({where}) AND s.source_key IN (SELECT value FROM json_each(?))""",
+                (*parameters, json.dumps(keys)))}
+            return generation, eligible
 
     def create_proposal_job(self, *, method, selection, ttl=86400):
         job_id = uuid.uuid4().hex
@@ -3538,6 +3953,16 @@ class IPTVMovieStore:
                 raise KeyError("IPTV movie proposal job was not found")
         return self.proposal_job(job_id)
 
+    def resume_proposal_job(self, job_id, selection):
+        with self._lock, self.connection(immediate=True) as connection:
+            row = connection.execute('SELECT * FROM proposal_jobs WHERE job_id=?', (job_id,)).fetchone()
+            if (not row or row['state'] not in ('running', 'failed') or row['expires_at'] <= time.time()
+                    or row['catalog_generation'] != selection['catalog_generation']
+                    or json.loads(row['selected_keys_json']) != selection['source_keys']):
+                raise ValueError('The proposal selection changed or expired; create a new preview')
+            connection.execute("UPDATE proposal_jobs SET state='running',error='',updated_at=? WHERE job_id=?", (time.time(), job_id))
+        return self.proposal_job(job_id)
+
     def proposal_job(self, job_id):
         with self.connection() as connection:
             job = connection.execute("SELECT * FROM proposal_jobs WHERE job_id=?", (_text(job_id),)).fetchone()
@@ -3575,12 +4000,19 @@ class IPTVMovieStore:
                 """SELECT job_id,method,state,total,processed,error,created_at,updated_at
                    FROM proposal_jobs ORDER BY created_at DESC,job_id DESC LIMIT 1"""
             ).fetchone()
+            tmdb_proposal = proposal
+            if proposal and proposal['method'] != 'tmdb':
+                tmdb_proposal = connection.execute(
+                    """SELECT job_id,method,state,total,processed,error,created_at,updated_at
+                       FROM proposal_jobs WHERE method='tmdb' ORDER BY created_at DESC,job_id DESC LIMIT 1"""
+                ).fetchone()
             rebuild = connection.execute(
                 """SELECT job_id,state,catalog_generation,checkpoint,error,created_at,updated_at
                    FROM rebuild_jobs ORDER BY created_at DESC,job_id DESC LIMIT 1"""
             ).fetchone()
         return {
             "match": dict(proposal) if proposal else None,
+            "match_tmdb": dict(tmdb_proposal) if tmdb_proposal else None,
             "rebuild": dict(rebuild) if rebuild else None,
         }
 

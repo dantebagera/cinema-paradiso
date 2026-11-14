@@ -1,0 +1,12 @@
+
+Running 3 tests using 1 worker
+
+(node:7664) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\app-smoke.spec.js:270:1 › release watcher fills the Continue Watching height while card filters and Following expose the complete set (2.7s)
+(node:25952) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 2 tests\e2e\scrollbar.spec.js:44:1 › Following native scrollbar has a 2px reveal line on hover and keyboard focus (1.5s)
+  ok 3 tests\e2e\scrollbar.spec.js:77:1 › wheel, keyboard, native dragging and Following filters keep scrolling (996ms)
+
+  3 passed (6.4s)

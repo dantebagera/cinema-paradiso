@@ -1,0 +1,15 @@
+
+Running 8 tests using 1 worker
+
+(node:22192) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\workspace-controls-empty-layout.spec.js:94:5 › combined Library header movie desktop 1280 keeps views and refresh independent in Media and File View (3.1s)
+  ok 2 tests\e2e\workspace-controls-empty-layout.spec.js:94:5 › combined Library header tv desktop 1280 keeps views and refresh independent in Media and File View (2.0s)
+  ok 3 tests\e2e\workspace-controls-empty-layout.spec.js:94:5 › combined Library header movie desktop 1600 keeps views and refresh independent in Media and File View (1.4s)
+  ok 4 tests\e2e\workspace-controls-empty-layout.spec.js:94:5 › combined Library header tv desktop 1600 keeps views and refresh independent in Media and File View (2.3s)
+  ok 5 tests\e2e\workspace-controls-empty-layout.spec.js:94:5 › combined Library header movie desktop 2048 keeps views and refresh independent in Media and File View (2.0s)
+  ok 6 tests\e2e\workspace-controls-empty-layout.spec.js:94:5 › combined Library header tv desktop 2048 keeps views and refresh independent in Media and File View (2.5s)
+  ok 7 tests\e2e\workspace-controls-empty-layout.spec.js:143:1 › combined Library header retains a disabled scan during loading and exposes scan failure without expanding filters (1.2s)
+  ok 8 tests\e2e\workspace-controls-empty-layout.spec.js:167:1 › combined Library header keeps a long TV File search summary from crowding view actions (976ms)
+
+  8 passed (16.3s)

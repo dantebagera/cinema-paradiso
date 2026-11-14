@@ -1,0 +1,16 @@
+..........E
+======================================================================
+ERROR: test_movie_relationships_ui (unittest.loader._FailedTest.test_movie_relationships_ui)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_movie_relationships_ui
+Traceback (most recent call last):
+  File "C:\Program Files\Python312\Lib\unittest\loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'tests.test_movie_relationships_ui'
+
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.002s
+
+FAILED (errors=1)

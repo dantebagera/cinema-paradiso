@@ -1,0 +1,98 @@
+{
+  "databases": [
+    {
+      "path": ".catalog-test.sqlite",
+      "mode": "ro; query_only=ON",
+      "quick_check": [
+        [
+          "ok"
+        ]
+      ],
+      "foreign_key_errors": 0,
+      "counts": {
+        "media_files": 3957,
+        "tmdb_movies": 5208
+      }
+    },
+    {
+      "path": "acquisition.sqlite",
+      "mode": "ro; query_only=ON",
+      "quick_check": [
+        [
+          "ok"
+        ]
+      ],
+      "foreign_key_errors": 0,
+      "counts": {}
+    },
+    {
+      "path": "tv-catalog.sqlite",
+      "mode": "ro; query_only=ON",
+      "quick_check": [
+        [
+          "ok"
+        ]
+      ],
+      "foreign_key_errors": 0,
+      "counts": {}
+    },
+    {
+      "path": "awards\\awards.sqlite",
+      "mode": "ro; query_only=ON",
+      "quick_check": [
+        [
+          "ok"
+        ]
+      ],
+      "foreign_key_errors": 0,
+      "counts": {}
+    },
+    {
+      "path": "iptv\\providers\\2d44d898e1284947b8eb1a64df18af28\\iptv.sqlite",
+      "mode": "ro; query_only=ON",
+      "quick_check": [
+        [
+          "ok"
+        ]
+      ],
+      "foreign_key_errors": 0,
+      "counts": {}
+    },
+    {
+      "path": "iptv\\providers\\2d44d898e1284947b8eb1a64df18af28\\movies.sqlite",
+      "mode": "ro; query_only=ON",
+      "quick_check": [
+        [
+          "ok"
+        ]
+      ],
+      "foreign_key_errors": 0,
+      "counts": {}
+    },
+    {
+      "path": "iptv\\providers\\55219f5721c44255aeff300451a404b4\\iptv.sqlite",
+      "mode": "ro; query_only=ON",
+      "quick_check": [
+        [
+          "ok"
+        ]
+      ],
+      "foreign_key_errors": 0,
+      "counts": {}
+    },
+    {
+      "path": "iptv\\providers\\55219f5721c44255aeff300451a404b4\\movies.sqlite",
+      "mode": "ro; query_only=ON",
+      "quick_check": [
+        [
+          "ok"
+        ]
+      ],
+      "foreign_key_errors": 0,
+      "counts": {}
+    }
+  ],
+  "all_ok": true,
+  "movie_rows_preserved": true,
+  "after_completed_second_recovery_boot": true
+}

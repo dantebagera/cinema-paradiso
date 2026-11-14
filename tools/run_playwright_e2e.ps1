@@ -1,3 +1,10 @@
+[CmdletBinding(PositionalBinding=$false)]
+param(
+    [switch]$AIProviderOffline,
+    [string]$AICompiledDist,
+    [Parameter(ValueFromRemainingArguments = $true)]
+    [string[]]$PlaywrightArguments
+)
 $ErrorActionPreference = 'Stop'
 
 $projectRoot = Split-Path -Parent $PSScriptRoot
@@ -19,7 +26,7 @@ $testExitCode = 1
 $env:CP_PORT = '5117'
 $env:CP_TEST_MODE = '1'
 $env:CP_TEST_ROOT = $isolatedRoot
-$env:CP_TEST_QBT_MODE = 'system'
+$env:CP_TEST_QBT_MODE = if ($AIProviderOffline) { 'embedded' } else { 'system' }
 $env:CP_TEST_DIST_DIR = $isolatedDist
 Write-Output "CP_TEST_ROOT=$isolatedRoot"
 
@@ -28,19 +35,27 @@ try {
         throw 'Port 5117 is already owned by another process.'
     }
     $python = Join-Path $projectRoot '.venv\Scripts\python.exe'
+    if (-not $AIProviderOffline) {
     & $python -m tests.seed_iptv_e2e $isolatedRoot
     if ($LASTEXITCODE -ne 0) {
         throw "Could not create isolated IPTV provider fixtures."
     }
     & $python -m tests.seed_movie_awards_e2e $isolatedRoot
     if ($LASTEXITCODE -ne 0) { throw 'Could not create isolated awards fixtures.' }
-    & npm.cmd run build -- --outDir $isolatedDist
-    if ($LASTEXITCODE -ne 0) {
-        throw "Could not build the isolated Playwright frontend."
+    }
+    if ($AICompiledDist) {
+        $compiledSource = [IO.Path]::GetFullPath($AICompiledDist)
+        if (-not $AIProviderOffline -or -not $compiledSource.StartsWith($temporaryRoot + '\', [StringComparison]::OrdinalIgnoreCase) -or -not (Test-Path -LiteralPath (Join-Path $compiledSource 'index.html'))) {
+            throw 'Compiled reuse requires an existing isolated AI fixture bundle in OS temp.'
+        }
+        Copy-Item -LiteralPath $compiledSource -Destination $isolatedDist -Recurse
+    } else {
+        & npm.cmd run build -- --outDir $isolatedDist
+        if ($LASTEXITCODE -ne 0) { throw "Could not build the isolated Playwright frontend." }
     }
     $server = Start-Process `
         -FilePath $python `
-        -ArgumentList $(if ($env:CP_DISCOVER_PAGING_E2E -eq '1') { '-m tests.discover_paging_server' } elseif ($env:CP_TV_E2E -eq '1') { '-m tests.native_tv_server' } else { 'app.py' }) `
+        -ArgumentList $(if ($AIProviderOffline) { '-m tests.ai_provider_server' } elseif ($env:CP_DISCOVER_PAGING_E2E -eq '1') { '-m tests.discover_paging_server' } elseif ($env:CP_TV_E2E -eq '1') { '-m tests.native_tv_server' } else { 'app.py' }) `
         -WorkingDirectory $projectRoot `
         -WindowStyle Hidden `
         -RedirectStandardOutput $stdoutPath `
@@ -70,7 +85,7 @@ try {
     }
 
     $playwright = Join-Path $projectRoot 'node_modules\.bin\playwright.cmd'
-    & $playwright test @args
+    & $playwright test @PlaywrightArguments
     $testExitCode = $LASTEXITCODE
 } catch {
     Write-Error $_
@@ -95,7 +110,7 @@ try {
         }
     }
 
-    if ($testExitCode -eq 0) {
+    if ($testExitCode -eq 0 -and -not $AIProviderOffline) {
         $resolvedRoot = [IO.Path]::GetFullPath($isolatedRoot)
         if (-not $resolvedRoot.StartsWith($temporaryRoot + '\', [StringComparison]::OrdinalIgnoreCase)) {
             throw "Refusing to remove an unverified Playwright directory: $resolvedRoot"
@@ -110,7 +125,7 @@ try {
             }
         }
     } else {
-        Write-Output "Playwright failure data retained at $isolatedRoot"
+        Write-Output "Playwright evidence retained at $isolatedRoot"
         if (Test-Path -LiteralPath $stderrPath) {
             Get-Content -LiteralPath $stderrPath -Tail 40
         }

@@ -1,0 +1,10 @@
+
+Running 3 tests using 1 worker
+
+(node:74228) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\e2e\app-smoke.spec.js:3301:1 › every stateful workspace preserves its page state after sidebar navigation (6.3s)
+  ok 2 tests\e2e\movie-awards.spec.js:330:3 › pick award click uses the accepted identity and Back restores its expanded origin (2.1s)
+  ok 3 tests\e2e\movie-awards.spec.js:330:3 › browse award click uses the accepted identity and Back restores its expanded origin (923ms)
+
+  3 passed (10.4s)

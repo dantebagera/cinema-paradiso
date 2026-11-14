@@ -1,0 +1,59 @@
+FFFF.F
+======================================================================
+FAIL: test_contradictory_seasons_cannot_claim_an_episode (tests.test_tv_follow_season_planning.ReleaseRecognitionTests.test_contradictory_seasons_cannot_claim_an_episode)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_tv_follow_season_planning.py", line 20, in test_contradictory_seasons_cannot_claim_an_episode
+    self.assertTrue(claim.get('contradictory'))
+AssertionError: None is not true
+
+======================================================================
+FAIL: test_existing_numbering_and_identity_remain_distinct (tests.test_tv_follow_season_planning.ReleaseRecognitionTests.test_existing_numbering_and_identity_remain_distinct) (title='The.100.S02.1080p.BluRay')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_tv_follow_season_planning.py", line 36, in test_existing_numbering_and_identity_remain_distinct
+    self.assertEqual((claim['scope'], claim['season_number'], claim['episode_numbers']), (scope, season, episodes))
+AssertionError: Tuples differ: ('absolute', None, []) != ('season', 2, [])
+
+First differing element 0:
+'absolute'
+'season'
+
+- ('absolute', None, [])
++ ('season', 2, [])
+
+======================================================================
+FAIL: test_redundant_season_title_preserves_year_and_coverage (tests.test_tv_follow_season_planning.ReleaseRecognitionTests.test_redundant_season_title_preserves_year_and_coverage)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_tv_follow_season_planning.py", line 13, in test_redundant_season_title_preserves_year_and_coverage
+    self.assertEqual((claim['scope'], claim['season_number'], claim['series_title']), ('season', 2, 'Louie (2010)'))
+AssertionError: Tuples differ: ('absolute', None, 'Louie (2010) Season') != ('season', 2, 'Louie (2010)')
+
+First differing element 0:
+'absolute'
+'season'
+
+- ('absolute', None, 'Louie (2010) Season')
++ ('season', 2, 'Louie (2010)')
+
+======================================================================
+FAIL: test_automatic_batch_singletons_cover_their_own_subset (tests.test_tv_follow_season_planning.SeasonPlanningTests.test_automatic_batch_singletons_cover_their_own_subset)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_tv_follow_season_planning.py", line 73, in test_automatic_batch_singletons_cover_their_own_subset
+    self.assertTrue(all(row['accepted'] for row in review['decisions']))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_http_in_magnet_field_uses_existing_resolver (tests.test_tv_follow_season_planning.SeasonPlanningTests.test_http_in_magnet_field_uses_existing_resolver)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\.codex\worktrees\tv-follow-season-packs\cinema paradiso\tests\test_tv_follow_season_planning.py", line 56, in test_http_in_magnet_field_uses_existing_resolver
+    self.assertTrue(review['decisions'][0]['candidate']['transport_verified'])
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 6 tests in 4.564s
+
+FAILED (failures=5)

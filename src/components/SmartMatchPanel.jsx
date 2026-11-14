@@ -1,6 +1,13 @@
+import Badge from './ui/Badge.jsx';
+import DialogShell, { DialogHeader } from './ui/DialogShell.jsx';
+import Button from './ui/Button.jsx';
 import { AlertTriangle, Bot, CheckCircle2, Clapperboard, Loader2, Search, Sparkles, Wand2, X } from 'lucide-react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { fetchJson } from '../api/client.js';
+import { useAIProvider } from '../features/ai/AIProviderContext.jsx';
+import useAIJob from '../features/ai/useAIJob.js';
+import AIJobStatus from '../features/ai/AIJobStatus.jsx';
+import { jobIsRunning, requestKey } from '../features/ai/aiClient.js';
 
 function normalizeProposal(proposal) {
   const evidenceScore = proposal.evidence_score ?? proposal.confidence ?? 0;
@@ -14,6 +21,8 @@ function normalizeProposal(proposal) {
 }
 
 export function SmartMatchControls({ selectedPaths, ollamaAvailable, providers, onStarted, notify }) {
+  const ai = useAIProvider();
+  const aiAvailable = ai.provider === 'chatgpt' ? Boolean(ai.feature('F3')?.ready) : ollamaAvailable;
   const [provider, setProvider] = useState('tmdb');
   const [method, setMethod] = useState('classic');
   const [busy, setBusy] = useState(false);
@@ -29,7 +38,7 @@ export function SmartMatchControls({ selectedPaths, ollamaAvailable, providers, 
       const job = await fetchJson('/api/metadata/smart-match', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ paths: selectedPaths, provider, method })
+        body: JSON.stringify({ paths: selectedPaths, provider, method, ...(ai.provider === 'chatgpt' ? { request_key: requestKey() } : {}) })
       });
       onStarted(job);
     } catch (error) {
@@ -53,15 +62,15 @@ export function SmartMatchControls({ selectedPaths, ollamaAvailable, providers, 
       <fieldset>
         <legend>Method</legend>
         <label><input type="radio" name="smart-method" value="classic" checked={method === 'classic'} onChange={() => setMethod('classic')} /> Classic match</label>
-        <label title={ollamaAvailable ? '' : 'Configure Ollama in Settings to use Match by AI'}>
-          <input type="radio" name="smart-method" value="ai" checked={method === 'ai'} onChange={() => setMethod('ai')} disabled={!ollamaAvailable} />
+        <label title={aiAvailable ? '' : ai.provider === 'chatgpt' ? 'Connect ChatGPT, choose a model and enable Movie identity hints in Settings' : 'Configure Ollama in Settings to use Match by AI'}>
+          <input type="radio" name="smart-method" value="ai" checked={method === 'ai'} onChange={() => setMethod('ai')} disabled={!aiAvailable} />
           Match by AI
         </label>
       </fieldset>
-      <button type="button" className="btn btn-primary btn-violet" onClick={start} disabled={busy || !selectedPaths.length || !providers?.[provider]}>
+      <Button variant="ai" type="button"  onClick={start} disabled={busy || !selectedPaths.length || !providers?.[provider] || method === 'ai' && !aiAvailable}>
         {busy ? <Loader2 size={15} className="spin" /> : method === 'ai' ? <Bot size={15} /> : <Wand2 size={15} />}
         Smart Match Selected ({selectedPaths.length})
-      </button>
+      </Button>
     </section>
   );
 }
@@ -77,6 +86,8 @@ export function SmartMatchReviewModal({
   plexAvailable,
   notify
 }) {
+  const gpt = useAIJob('F3');
+  const aiJobId = job?.ai_binding?.ai_job_id || job?.ai_job_id;
   const [selected, setSelected] = useState(new Set());
   const [confirmApply, setConfirmApply] = useState(false);
   const [applying, setApplying] = useState(false);
@@ -93,7 +104,11 @@ export function SmartMatchReviewModal({
   );
 
   useEffect(() => {
-    if (!job?.id || job.status !== 'running') return undefined;
+    if (aiJobId && gpt.job?.id !== aiJobId) gpt.attach(aiJobId).catch(error => notify(error.message, 'error'));
+  }, [aiJobId]);
+
+  useEffect(() => {
+    if (!job?.id || (job.status !== 'running' && !(aiJobId && jobIsRunning(gpt.job)))) return undefined;
     const timer = window.setInterval(async () => {
       try {
         const next = await fetchJson(`/api/metadata/smart-match/${job.id}`);
@@ -103,7 +118,7 @@ export function SmartMatchReviewModal({
       }
     }, 700);
     return () => window.clearInterval(timer);
-  }, [job?.id, job?.status, notify, onJobChange]);
+  }, [job?.id, job?.status, gpt.job?.state, aiJobId, notify, onJobChange]);
 
   useEffect(() => {
     if (job?.status === 'completed') {
@@ -205,21 +220,28 @@ export function SmartMatchReviewModal({
 
   return (
     <div className="modal-backdrop" role="presentation" onClick={onClose}>
-      <section className="smart-match-dialog" role="dialog" aria-modal="true" aria-label="Smart Match review" onClick={(event) => event.stopPropagation()}>
-        <header className="dialog-header">
+      <DialogShell size="match-review" className="smart-match-dialog" role="dialog" aria-modal="true" aria-label="Smart Match review" onClick={(event) => event.stopPropagation()}>
+        <DialogHeader as="header" >
           <div>
             <p className="screen-kicker">Unmatched metadata</p>
             <h2>Smart Match review</h2>
             <p>{job.provider?.toUpperCase()} · {job.method === 'ai' ? 'Match by AI' : 'Classic match'}</p>
+            {job.ai_binding?.selection && <p>ChatGPT · {job.ai_binding.selection.model}</p>}
           </div>
-          <button type="button" className="inspector-close" onClick={onClose} aria-label="Close Smart Match review"><X size={18} /></button>
-        </header>
+          <Button size="icon" type="button" className="inspector-close" onClick={onClose} aria-label="Close Smart Match review"><X size={18} /></Button>
+        </DialogHeader>
+
+        {aiJobId && gpt.job?.id === aiJobId && <AIJobStatus title="Smart Match AI request" operation={{ ...gpt,
+          continueJob: async () => { await gpt.continueJob(); onJobChange(await fetchJson(`/api/metadata/smart-match/${job.id}`)); },
+          cancel: async () => { await gpt.cancel(); onJobChange(await fetchJson(`/api/metadata/smart-match/${job.id}`)); }
+        }} />}
+        {job.ai_error && <p className="library-status library-status-error" role="alert">{job.ai_error.replaceAll('_', ' ')}. Switch providers manually in Settings if needed.</p>}
 
         {job.status === 'running' && (
           <div className="smart-match-progress">
             <Loader2 size={17} className="spin" />
             <div><strong>{job.processed} of {job.total}</strong><span>{job.current_path || 'Preparing next file...'}</span></div>
-            <button type="button" className="btn btn-secondary" onClick={cancel}>Cancel preview</button>
+            <Button type="button"  onClick={cancel}>Cancel preview</Button>
           </div>
         )}
 
@@ -237,9 +259,9 @@ export function SmartMatchReviewModal({
                   <span>{selected.size} of {proposalIds.length} selected</span>
                 </label>
                 <div>
-                  <button type="button" className="mini-action" onClick={() => selectProposalIds(recommendedIds)} disabled={!recommendedIds.length}>Select recommended</button>
-                  <button type="button" className="mini-action" onClick={() => selectProposalIds(proposalIds)} disabled={!proposalIds.length}>Select all proposals</button>
-                  <button type="button" className="mini-action" onClick={() => selectProposalIds([])} disabled={!selected.size}>Clear</button>
+                  <Button size="compact" type="button"  onClick={() => selectProposalIds(recommendedIds)} disabled={!recommendedIds.length}>Select recommended</Button>
+                  <Button size="compact" type="button"  onClick={() => selectProposalIds(proposalIds)} disabled={!proposalIds.length}>Select all proposals</Button>
+                  <Button size="compact" type="button"  onClick={() => selectProposalIds([])} disabled={!selected.size}>Clear</Button>
                 </div>
               </div>
             )}
@@ -259,7 +281,7 @@ export function SmartMatchReviewModal({
                     {job.method === 'ai' && aiQuery?.title && <span>AI query: {aiQuery.title}{aiQuery.year ? ` (${aiQuery.year})` : ''}</span>}
                     <b>{proposal.candidate.title || proposal.candidate.name} {proposal.candidate.year ? `(${proposal.candidate.year})` : ''}</b>
                     <div className="smart-match-evidence">
-                      <span className={`chip smart-match-label-${proposal.recommendation}`}>{proposal.recommendation}</span>
+                      <Badge size="compact" kind="status" tone={proposal.recommendation === 'recommended' ? 'owned' : proposal.recommendation === 'weak' ? 'warning' : 'neutral'}>{proposal.recommendation}</Badge>
                       <small>Evidence score {proposal.evidence_score} · Runner-up gap {proposal.runner_up_gap} · {(proposal.reasons || []).join(' · ')}</small>
                     </div>
                     {proposal.ai_status === 'classic_fallback' && (
@@ -279,8 +301,8 @@ export function SmartMatchReviewModal({
                       {entry.ai_status === 'classic_fallback' && <small className="smart-match-warning">Classic fallback — {entry.ai_warning || 'AI response invalid'}</small>}
                     </div>
                     <div className="cleanup-row-actions">
-                      <button type="button" className="btn btn-secondary" onClick={() => item && onTmdbMatch(item)}><Search size={14} /> Search TMDB manually</button>
-                      <button type="button" className="btn btn-secondary" onClick={() => item && onPlexMatch(item)} disabled={!item || !plexAvailable}><Clapperboard size={14} /> Search Plex manually</button>
+                      <Button type="button"  onClick={() => item && onTmdbMatch(item)}><Search size={14} /> Search TMDB manually</Button>
+                      <Button type="button"  onClick={() => item && onPlexMatch(item)} disabled={!item || !plexAvailable}><Clapperboard size={14} /> Search Plex manually</Button>
                     </div>
                   </article>
                 );
@@ -294,15 +316,15 @@ export function SmartMatchReviewModal({
             </div>
             <footer className="smart-match-footer">
               {approved.length ? (
-                <button type="button" className="btn btn-secondary" onClick={previewRename}><Sparkles size={15} /> Preview rename approved files</button>
+                <Button type="button"  onClick={previewRename}><Sparkles size={15} /> Preview rename approved files</Button>
               ) : confirmApply ? (
-                <button type="button" className="btn btn-primary btn-violet" onClick={applyMatches} disabled={applying || !selected.size}>
+                <Button variant="ai" type="button"  onClick={applyMatches} disabled={applying || !selected.size}>
                   {applying ? <Loader2 size={15} className="spin" /> : <CheckCircle2 size={15} />} Confirm apply matches
-                </button>
+                </Button>
               ) : (
-                <button type="button" className="btn btn-primary btn-violet" onClick={() => setConfirmApply(true)} disabled={!selected.size}>
+                <Button variant="ai" type="button"  onClick={() => setConfirmApply(true)} disabled={!selected.size}>
                   Review selected matches ({selected.size})
-                </button>
+                </Button>
               )}
               <span>Only explicitly selected proposals will be applied.</span>
             </footer>
@@ -330,19 +352,19 @@ export function SmartMatchReviewModal({
             </div>
             <footer className="smart-match-footer">
               {confirmRename ? (
-                <button type="button" className="btn btn-primary" onClick={applyRename} disabled={applying || !renameSelected.size}>
+                <Button variant="primary" type="button"  onClick={applyRename} disabled={applying || !renameSelected.size}>
                   Confirm rename selected files
-                </button>
+                </Button>
               ) : (
-                <button type="button" className="btn btn-secondary" onClick={() => setConfirmRename(true)} disabled={!renameSelected.size}>
+                <Button type="button"  onClick={() => setConfirmRename(true)} disabled={!renameSelected.size}>
                   Review file rename ({renameSelected.size})
-                </button>
+                </Button>
               )}
               <span>Renaming is optional, file-only, and separate from metadata matching.</span>
             </footer>
           </>
         )}
-      </section>
+      </DialogShell>
     </div>
   );
 }

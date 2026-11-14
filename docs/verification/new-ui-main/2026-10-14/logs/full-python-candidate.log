@@ -1,0 +1,84 @@
+[perf] POST /api/ai-control/preview 1920.9ms
+[perf] GET /api/library 3532.1ms
+[perf] POST /api/plex/match-apply 296.5ms
+[perf] GET /api/plex/match-search 1876.6ms
+[perf] GET /api/plex/match-search 1863.1ms
+[perf] GET /api/plex/match-search 439.7ms
+[perf] GET /api/plex/match-search 305.7ms
+..........................................................................................................................................................................................................................F........................................................................................................................................................................................................F.................................................................................................................................................................................................................................................................................................................................................................F............................................................................F.......................................................................................................................................................................................................................................................................C:\Program Files\Python312\Lib\pathlib.py:447: ResourceWarning: unclosed file <_io.FileIO name='C:\\Users\\dante\\AppData\\Local\\Temp\\tmpxstkcjgo' mode='rb+' closefd=True>
+  def __fspath__(self):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.....................................................................................................................F....C:\Program Files\Python312\Lib\unittest\case.py:589: ResourceWarning: unclosed file <_io.BufferedReader name='C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\fixtures\\full-python-candidate-df856096214f4c7a9ce11a2771822824\\dist/index.html'>
+  if method() is not None:
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+[perf] POST /api/metadata/smart-match 273.8ms
+[perf] POST /api/metadata/smart-match 252.4ms
+[perf] POST /api/user/system-lists/watched/toggle 265.9ms
+[perf] POST /api/user/system-lists/watchlist/toggle 287.4ms
+[perf] POST /api/user/followed-releases 394.5ms
+[perf] GET /api/user/followed-releases 1414.3ms
+.................................................................................................................................................................................................................................................................................................................................................................E..................................................................................................................................................................
+======================================================================
+ERROR: test_ui_preview_launcher (unittest.loader._FailedTest.test_ui_preview_launcher)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_ui_preview_launcher
+Traceback (most recent call last):
+  File "C:\Program Files\Python312\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "C:\Users\dante\AppData\Local\Temp\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\promotion-candidate\tests\test_ui_preview_launcher.py", line 13, in <module>
+    spec.loader.exec_module(preview)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1132, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1190, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\promotion-candidate\\tools\\ui_preview_launcher.py'
+
+
+======================================================================
+FAIL: test_test_mode_refuses_catalogue_database_outside_temporary_directory (test_catalog_store.CatalogStoreTest.test_test_mode_refuses_catalogue_database_outside_temporary_directory)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\promotion-candidate\tests\test_catalog_store.py", line 25, in test_test_mode_refuses_catalogue_database_outside_temporary_directory
+    with self.assertRaisesRegex(CatalogError, "operating-system temporary directory"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: CatalogError not raised
+
+======================================================================
+FAIL: test_movies_get_is_pure_and_projection_is_nonblocking_progressive (test_iptv_movie_gates_0_5.ProjectionAndWorkerTests.test_movies_get_is_pure_and_projection_is_nonblocking_progressive)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\promotion-candidate\tests\test_iptv_movie_gates_0_5.py", line 185, in test_movies_get_is_pure_and_projection_is_nonblocking_progressive
+    self.assertLess(time.perf_counter() - started, 1.0)
+AssertionError: 1.4254541999980574 not less than 1.0
+
+======================================================================
+FAIL: test_pinned_offline_inputs_reproduce_complete_seed_and_bootstrap_both_organizations (test_movie_awards_bundle.MovieAwardsBundleTests.test_pinned_offline_inputs_reproduce_complete_seed_and_bootstrap_both_organizations)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\promotion-candidate\tests\test_movie_awards_bundle.py", line 26, in test_pinned_offline_inputs_reproduce_complete_seed_and_bootstrap_both_organizations
+    self.assertEqual(canonical_bytes(result['seed']), raw)
+AssertionError: b'null\n' != b'{"ceremonies":[{"ceremony":1,"ceremony_ye[2885729 chars]\r\n'
+
+======================================================================
+FAIL: test_network_build_is_disabled_in_test_mode_and_live_output_is_rejected (test_movie_awards_sources.HistoricalSeedBuildTests.test_network_build_is_disabled_in_test_mode_and_live_output_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\promotion-candidate\tests\test_movie_awards_sources.py", line 713, in test_network_build_is_disabled_in_test_mode_and_live_output_is_rejected
+    with self.assertRaises(adapter().SourceError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: SourceError not raised
+
+======================================================================
+FAIL: test_streaming_modal_shows_loading_feedback_until_iframe_loads (test_qbittorrent_ui.QBittorrentUiTests.test_streaming_modal_shows_loading_feedback_until_iframe_loads)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\promotion-candidate\tests\test_qbittorrent_ui.py", line 113, in test_streaming_modal_shows_loading_feedback_until_iframe_loads
+    self.assertIn("streamLoaded", modal_source)
+AssertionError: 'streamLoaded' not found in '{ state, onClose }) {\n  const dialogRef = usePlayerDialog(onClose);\n  const { title, year, embedUrl } = state;\n  const titleLabel = [title, year].filter(Boolean).join(\' \');\n  const [streamStatusVisible, setStreamStatusVisible] = useState(true);\n  const [streamSlow, setStreamSlow] = useState(false);\n\n  useEffect(() => {\n    setStreamStatusVisible(true);\n    setStreamSlow(false);\n    const slowTimer = window.setTimeout(() => setStreamSlow(true), 12000);\n    const hideTimer = window.setTimeout(() => setStreamStatusVisible(false), 30000);\n    return () => {\n      window.clearTimeout(slowTimer);\n      window.clearTimeout(hideTimer);\n    };\n  }, [embedUrl]);\n\n  const statusDetail = streamSlow\n    ? \'The streaming page is taking longer than usual. You can keep waiting or close the player.\'\n    : \'The streaming page can take a moment to load.\';\n\n  return (\n    <div className="modal-backdrop trailer-backdrop" role="presentation" onClick={onClose}>\n      <section ref={dialogRef} className="trailer-dialog stream-dialog" role="dialog" aria-modal="true" aria-label={`Stream ${titleLabel}`} onClick={(event) => event.stopPropagation()}>\n        <div className="dialog-header trailer-dialog-header">\n          <div>\n            <p className="screen-kicker">Streaming</p>\n            <h2>{titleLabel}</h2>\n          </div>\n          <button type="button" className="inspector-close" onClick={onClose} aria-label="Close stream">\n            <X size={18} />\n          </button>\n        </div>\n        <div className="trailer-player-shell stream-player-shell">\n          {streamStatusVisible && (\n            <div className="stream-loading-overlay" role="status" aria-live="polite">\n              <Loader2 size={28} className="spin" />\n              <strong>Loading stream page...</strong>\n              <span className="stream-loading-bar" aria-hidden="true"><span /></span>\n              <small>{statusDetail}</small>\n            </div>\n          )}\n          <iframe\n            key={embedUrl}\n            title={`${titleLabel} stream`}\n            src={embedUrl}\n            allow="autoplay; fullscreen; picture-in-picture; encrypted-media"\n            // Page load does not report video playback inside the external player.\n            onLoad={() => setStreamStatusVisible(false)}\n            allowFullScreen\n          />\n        </div>\n      </section>\n    </div>\n  );\n}\n\n'
+
+----------------------------------------------------------------------
+Ran 1752 tests in 763.241s
+
+FAILED (failures=5, errors=1)

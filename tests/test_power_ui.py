@@ -6,7 +6,7 @@ class PowerUiTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         root = Path(__file__).resolve().parents[1]
-        cls.app = (root / "src" / "App.jsx").read_text(encoding="utf-8")
+        cls.app = (root / 'src/App.jsx').read_text(encoding='utf-8') + (root / 'src/components/Sidebar.jsx').read_text(encoding='utf-8')
         cls.styles = (root / "src" / "styles.css").read_text(encoding="utf-8")
 
     def test_sidebar_exposes_windows_style_power_choices_above_version(self):

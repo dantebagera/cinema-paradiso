@@ -1,0 +1,245 @@
+{
+  "batches": [
+    {
+      "name": "pass4-prepare",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass4_prepare.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "active_seconds": 1.361,
+      "process_tree_cpu_seconds": 1.078125,
+      "process_tree_write_bytes": 455352,
+      "processes": 9,
+      "temporary_footprint_bytes": 2708527544,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass4-prepare.log"
+    },
+    {
+      "name": "pass4-harness-red",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass4_audit_contract_tests.py",
+        "--legacy"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "active_seconds": 0.354,
+      "process_tree_cpu_seconds": 0.1875,
+      "process_tree_write_bytes": 6116,
+      "processes": 3,
+      "temporary_footprint_bytes": 2708540211,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass4-harness-red.log"
+    },
+    {
+      "name": "pass4-harness-green",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass4_audit_contract_tests.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "active_seconds": 0.452,
+      "process_tree_cpu_seconds": 0.203125,
+      "process_tree_write_bytes": 10470,
+      "processes": 3,
+      "temporary_footprint_bytes": 2708553430,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass4-harness-green.log"
+    },
+    {
+      "name": "pass4-library-desktop",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass4_library_audit.py"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 0,
+      "active_seconds": 4.765,
+      "process_tree_cpu_seconds": 4.0625,
+      "process_tree_write_bytes": 10456068,
+      "processes": 14,
+      "temporary_footprint_bytes": 2712090340,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass4-library-desktop.log"
+    },
+    {
+      "name": "pass4-setup-controls-red",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass4_audit_contract_tests.py",
+        "AuditTests.test_browser_report_utf8_with_non_ascii_error",
+        "AuditTests.test_redirected_profile_uses_existing_browser_cache"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "active_seconds": 0.369,
+      "process_tree_cpu_seconds": 0.171875,
+      "process_tree_write_bytes": 2204,
+      "processes": 3,
+      "temporary_footprint_bytes": 2712094870,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass4-setup-controls-red.log"
+    },
+    {
+      "name": "pass4-setup-behavior-red",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass4_audit_contract_tests.py",
+        "AuditTests.test_browser_report_utf8_with_non_ascii_error",
+        "AuditTests.test_redirected_profile_uses_existing_browser_cache"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "active_seconds": 0.363,
+      "process_tree_cpu_seconds": 0.203125,
+      "process_tree_write_bytes": 2872,
+      "processes": 3,
+      "temporary_footprint_bytes": 2712098138,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass4-setup-behavior-red.log"
+    },
+    {
+      "name": "pass4-setup-assertions-red",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass4_audit_contract_tests.py",
+        "AuditTests.test_browser_report_utf8_with_non_ascii_error",
+        "AuditTests.test_redirected_profile_uses_existing_browser_cache"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "active_seconds": 0.349,
+      "process_tree_cpu_seconds": 0.203125,
+      "process_tree_write_bytes": 3548,
+      "processes": 3,
+      "temporary_footprint_bytes": 2712102081,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass4-setup-assertions-red.log"
+    },
+    {
+      "name": "pass4-final-controls-green",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass4_audit_contract_tests.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "active_seconds": 0.454,
+      "process_tree_cpu_seconds": 0.1875,
+      "process_tree_write_bytes": 11254,
+      "processes": 3,
+      "temporary_footprint_bytes": 2712111542,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass4-final-controls-green.log"
+    },
+    {
+      "name": "pass4-library-qualification",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass4_library_audit.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "active_seconds": 18.923,
+      "process_tree_cpu_seconds": 16.1875,
+      "process_tree_write_bytes": 102141456,
+      "processes": 16,
+      "temporary_footprint_bytes": 2717387409,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass4-library-qualification.log"
+    },
+    {
+      "name": "pass4-preservation-preclose",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass4_preserve.py",
+        "preclose"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "active_seconds": 1.16,
+      "process_tree_cpu_seconds": 0.84375,
+      "process_tree_write_bytes": 57031,
+      "processes": 9,
+      "temporary_footprint_bytes": 2715452492,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass4-preservation-preclose.log"
+    },
+    {
+      "name": "pass4-review-controls-red",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass4_audit_contract_tests.py",
+        "ReportingFailureTests",
+        "BudgetFailureTests"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "active_seconds": 0.458,
+      "process_tree_cpu_seconds": 0.171875,
+      "process_tree_write_bytes": 7483,
+      "processes": 3,
+      "temporary_footprint_bytes": 2715465615,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass4-review-controls-red.log"
+    },
+    {
+      "name": "pass4-review-fixes-green",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass4_audit_contract_tests.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "active_seconds": 0.455,
+      "process_tree_cpu_seconds": 0.21875,
+      "process_tree_write_bytes": 16162,
+      "processes": 3,
+      "temporary_footprint_bytes": 2715470808,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass4-review-fixes-green.log",
+      "accounting_complete": true,
+      "active_processes_at_final_query": 0
+    },
+    {
+      "name": "pass4-final-closeout",
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass4_closeout.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "active_seconds": 1.174,
+      "process_tree_cpu_seconds": 0.984375,
+      "process_tree_write_bytes": 1139034,
+      "processes": 9,
+      "temporary_footprint_bytes": 2715495657,
+      "stop_reason": "",
+      "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\pass4-final-closeout.log",
+      "accounting_complete": true,
+      "active_processes_at_final_query": 0
+    }
+  ],
+  "limits": {
+    "active_seconds": 180,
+    "batch_seconds": 90,
+    "write_bytes": 1073741824,
+    "footprint_bytes": 4294967296,
+    "workers": 1,
+    "retries": 0
+  },
+  "halted": false,
+  "closed": true,
+  "closure": "All scoped tests and metadata helpers complete; no further test execution authorized by this closed allowance.",
+  "totals": {
+    "active_seconds": 30.637,
+    "process_tree_cpu_seconds": 24.703125,
+    "process_tree_write_bytes": 114309050,
+    "maximum_batch_seconds": 18.923,
+    "peak_temporary_footprint_bytes": 2717387409,
+    "batches": 13
+  }
+}

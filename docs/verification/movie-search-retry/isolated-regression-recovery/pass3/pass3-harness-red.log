@@ -1,0 +1,85 @@
+FFFFFFFFF
+======================================================================
+FAIL: test_identity_requires_exact_child_root_nonce_and_nonproduction_port (__main__.HarnessContracts.test_identity_requires_exact_child_root_nonce_and_nonproduction_port) (field='pid', value=456)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass3_support_tests.py", line 18, in test_identity_requires_exact_child_root_nonce_and_nonproduction_port
+    with self.assertRaises((AssertionError,ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_identity_requires_exact_child_root_nonce_and_nonproduction_port (__main__.HarnessContracts.test_identity_requires_exact_child_root_nonce_and_nonproduction_port) (field='nonce', value='other')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass3_support_tests.py", line 18, in test_identity_requires_exact_child_root_nonce_and_nonproduction_port
+    with self.assertRaises((AssertionError,ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_identity_requires_exact_child_root_nonce_and_nonproduction_port (__main__.HarnessContracts.test_identity_requires_exact_child_root_nonce_and_nonproduction_port) (field='root', value='C:\\Users\\dante\\AppData\\Local\\Temp\\cp-regression-recovery-30b40a41d572\\checkout')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass3_support_tests.py", line 18, in test_identity_requires_exact_child_root_nonce_and_nonproduction_port
+    with self.assertRaises((AssertionError,ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_identity_requires_exact_child_root_nonce_and_nonproduction_port (__main__.HarnessContracts.test_identity_requires_exact_child_root_nonce_and_nonproduction_port) (field='port', value=5000)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass3_support_tests.py", line 18, in test_identity_requires_exact_child_root_nonce_and_nonproduction_port
+    with self.assertRaises((AssertionError,ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_identity_requires_exact_child_root_nonce_and_nonproduction_port (__main__.HarnessContracts.test_identity_requires_exact_child_root_nonce_and_nonproduction_port) (field='port', value=8686)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass3_support_tests.py", line 18, in test_identity_requires_exact_child_root_nonce_and_nonproduction_port
+    with self.assertRaises((AssertionError,ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_identity_requires_exact_child_root_nonce_and_nonproduction_port (__main__.HarnessContracts.test_identity_requires_exact_child_root_nonce_and_nonproduction_port) (field='port', value=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass3_support_tests.py", line 18, in test_identity_requires_exact_child_root_nonce_and_nonproduction_port
+    with self.assertRaises((AssertionError,ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_identity_requires_exact_child_root_nonce_and_nonproduction_port (__main__.HarnessContracts.test_identity_requires_exact_child_root_nonce_and_nonproduction_port) (field='test_mode', value=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass3_support_tests.py", line 18, in test_identity_requires_exact_child_root_nonce_and_nonproduction_port
+    with self.assertRaises((AssertionError,ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_identity_requires_exact_child_root_nonce_and_nonproduction_port (__main__.HarnessContracts.test_identity_requires_exact_child_root_nonce_and_nonproduction_port)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass3_support_tests.py", line 20, in test_identity_requires_exact_child_root_nonce_and_nonproduction_port
+    with self.assertRaises((AssertionError,ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_repeat_runs_allocate_fresh_root_and_preserve_old_evidence (__main__.HarnessContracts.test_repeat_runs_allocate_fresh_root_and_preserve_old_evidence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dante\AppData\Local\Temp\cp-regression-recovery-30b40a41d572\pass3_support_tests.py", line 10, in test_repeat_runs_allocate_fresh_root_and_preserve_old_evidence
+    self.assertNotEqual(first,second)
+AssertionError: WindowsPath('C:/Users/dante/AppData/Local/Temp/cp-regression-recovery-30b40a41d572/tmp/tmpj1ci__6b/unit-probe') == WindowsPath('C:/Users/dante/AppData/Local/Temp/cp-regression-recovery-30b40a41d572/tmp/tmpj1ci__6b/unit-probe')
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.004s
+
+FAILED (failures=9)

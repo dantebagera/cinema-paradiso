@@ -113,6 +113,7 @@ def execute_plan(
     create_list=None,
     prepare_download=None,
     submit_download=None,
+    execute_prepared=None,
 ):
     plan, claim_error = plan_store.claim(
         plan_id,
@@ -141,6 +142,8 @@ def execute_plan(
             submit_download,
             reviewed_downloads=reviewed_downloads,
         )
+    if action == 'domain_operation' and execute_prepared is not None:
+        return execute_prepared(plan)
     return _state("unsupported", f"{action or 'This action'} cannot be executed.")
 
 
@@ -167,22 +170,27 @@ class PlanStore:
     def claim(self, plan_id, *, confirmation_phrase="", selected_keys=None):
         plan_id = str(plan_id or "")
         with self._lock:
-            stored = self._active_plan(plan_id)
-            if not stored:
-                return None, "missing"
-            selected, selection_error = _selected_plan(stored, selected_keys)
+            selected, error = self.validate(plan_id, confirmation_phrase=confirmation_phrase, selected_keys=selected_keys)
             if not selected:
-                return None, selection_error
-            selected_count = len(selected.get("items") or [])
-            needs_confirmation = selected.get("action") == "delete" and selected_count > LARGE_DELETE_CONFIRMATION_THRESHOLD
-            expected_phrase = f"DELETE {selected_count} FILES" if needs_confirmation else ""
-            if needs_confirmation and str(confirmation_phrase or "").strip() != expected_phrase:
-                return None, "confirmation_required"
+                return None, error
             self._plans.pop(plan_id, None)
-            selected["requires_extra_confirmation"] = needs_confirmation
-            selected["confirmation_phrase"] = expected_phrase
-            selected["total_matches"] = selected_count
             return deepcopy(selected), ""
+
+    def validate(self, plan_id, *, confirmation_phrase='', selected_keys=None):
+        with self._lock:
+            stored = self._active_plan(str(plan_id or ''))
+            if not stored:
+                return None, 'missing'
+            selected, error = _selected_plan(stored, selected_keys)
+            if not selected:
+                return None, error
+            count = len(selected.get('items') or [])
+            needs_confirmation = selected.get('action') == 'delete' and count > LARGE_DELETE_CONFIRMATION_THRESHOLD
+            phrase = f'DELETE {count} FILES' if needs_confirmation else ''
+            if needs_confirmation and str(confirmation_phrase or '').strip() != phrase:
+                return None, 'confirmation_required'
+            selected.update(requires_extra_confirmation=needs_confirmation, confirmation_phrase=phrase, total_matches=count)
+            return deepcopy(selected), ''
 
     def _active_plan(self, plan_id):
         stored = self._plans.get(plan_id)
@@ -555,6 +563,10 @@ def _heuristic_intent(prompt, config):
 
 def _preview_delete(prompt, intent, library_items, library_roots, plan_store):
     items = _filter_library_items(library_items, intent.get("filters") or [])
+    return _build_delete_plan(items, library_roots, prompt, plan_store)
+
+
+def _build_delete_plan(items, library_roots, prompt, plan_store):
     candidates = []
     for item in items:
         path = str(item.get("path") or "")
@@ -609,20 +621,7 @@ def _preview_find(prompt, intent, library_items, config, plan_store, tmdb_discov
     items = [_movie_preview_item(movie) for movie in movies]
     if not items:
         return _state("no_matches", "No movies matched this find command.")
-    total = len(items)
-    plan = {
-        "state": "valid_plan",
-        "action": "find",
-        "message": f"Found {total} movie{'s' if total != 1 else ''}.",
-        "summary": "Find results",
-        "source": source or "library",
-        "items": _plan_items(items),
-        "blocked": [],
-        "warnings": [],
-        "total_matches": total,
-        "page_size": PREVIEW_PAGE_SIZE,
-    }
-    return _store_or_return(plan, plan_store)
+    return _assemble_movie_plan('find', items, source=source or 'library', plan_store=plan_store)
 
 
 def _preview_create_list(prompt, intent, library_items, config, plan_store, tmdb_discover, tmdb_search, person_movies, owned_movies_lookup=None):
@@ -642,21 +641,8 @@ def _preview_create_list(prompt, intent, library_items, config, plan_store, tmdb
     items = [_movie_preview_item(movie) for movie in movies]
     if not items:
         return _state("no_matches", "No movies matched this list command.")
-    total = len(items)
-    plan = {
-        "state": "valid_plan",
-        "action": "create_list",
-        "message": f"Review {total} movie{'s' if total != 1 else ''} before creating the list.",
-        "summary": f"Create list: {intent.get('name') or _list_name(prompt)}",
-        "list_name": intent.get("name") or _list_name(prompt),
-        "prompt": prompt,
-        "items": _plan_items(items),
-        "blocked": [],
-        "warnings": [],
-        "total_matches": total,
-        "page_size": PREVIEW_PAGE_SIZE,
-    }
-    return _store_or_return(plan, plan_store)
+    return _assemble_movie_plan('create_list', items, prompt=prompt,
+        list_name=intent.get('name') or _list_name(prompt), plan_store=plan_store)
 
 
 def _preview_download(
@@ -676,42 +662,89 @@ def _preview_download(
     movies = _apply_online_ownership_filter(movies, intent, library_items, owned_movies_lookup)
     if not movies:
         return _state("no_matches", "No online movies matched this download command.")
-    items = _plan_items([_movie_preview_item(movie) for movie in movies])
-    total_matches = len(items)
-    plan = {
-        "state": "valid_plan",
-        "action": "download",
-        "message": (
-            f"{total_matches} movie{'s' if total_matches != 1 else ''} matched. "
-            "Every result is selected. Confirm to find trusted sources and submit every available download to qBittorrent."
-        ),
-        "summary": f"Download {total_matches} movie{'s' if total_matches != 1 else ''} in 1080p",
-        "prompt": prompt,
-        "items": items,
-        "blocked": [],
-        "warnings": [],
-        "total_matches": total_matches,
-        "page_size": PREVIEW_PAGE_SIZE,
-    }
+    return _assemble_movie_plan('download', [_movie_preview_item(movie) for movie in movies],
+        prompt=prompt, plan_store=plan_store)
+
+
+def _assemble_movie_plan(action, items, *, prompt='', list_name='', source='tmdb', plan_store=None, provenance=None):
+    total = len(items)
+    plan = {'state': 'valid_plan', 'action': action, 'items': _plan_items(items),
+            'blocked': [], 'warnings': [], 'total_matches': total, 'page_size': PREVIEW_PAGE_SIZE}
+    if action == 'find':
+        plan.update(message=f"Found {total} movie{'s' if total != 1 else ''}.", summary='Find results', source=source)
+    elif action == 'create_list':
+        plan.update(message=f"Review {total} movie{'s' if total != 1 else ''} before creating the list.",
+                    summary=f'Create list: {list_name}', list_name=list_name, prompt=prompt)
+    elif action == 'download':
+        plan.update(message=f"{total} movie{'s' if total != 1 else ''} matched. "
+                    'Every result is selected. Confirm to find trusted sources and submit every available download to qBittorrent.',
+                    summary=f"Download {total} movie{'s' if total != 1 else ''} in 1080p", prompt=prompt)
+    else:
+        return _state('unsupported', 'This action has no resolved Movie plan contract.')
+    if provenance is not None:
+        plan['ai_provenance'] = deepcopy(provenance)
     return _store_or_return(plan, plan_store)
+
+
+def prepare_resolved(action, *, result_set, list_name='', plan_store, provenance):
+    """Accept a server-validated set; retain the existing selection/execution owner."""
+    from services.ai_catalog import ResultSet
+    if not isinstance(result_set, ResultSet) or result_set.domain != 'movie':
+        return _state('unsafe', 'This operation requires a validated Movie result set.')
+    if action != 'find' and result_set.coverage != 'complete':
+        return _state('needs_clarification', 'The source set is incomplete. Review the partial results and explicitly revise the scope before preparing a change.')
+    if action == 'delete':
+        if not result_set.local_files or not result_set.library_roots:
+            return _state('unsafe', 'Deletion requires validated local file targets and library roots.')
+        plan = _build_delete_plan(result_set.local_files, result_set.library_roots, '', None)
+        if plan.get('state') == 'valid_plan':
+            plan.update(ai_provenance=deepcopy(provenance), result_set_id=result_set.id,
+                        query_fingerprint=result_set.query_fingerprint)
+            return _store_or_return(plan, plan_store)
+        return plan
+    if action == 'download' and not result_set.download_ready:
+        return _state('integration_missing', 'Choose AI Control trusted indexers and a supported download review before planning downloads.')
+    if action == 'create_list' and not str(list_name or '').strip():
+        return _state('needs_clarification', 'Enter a name for the new list.')
+    items = [_movie_preview_item(movie) for movie in result_set.movies]
+    if not items:
+        return _state('no_matches', 'No verified movies matched the requested scope.')
+    plan = _assemble_movie_plan(action, items, list_name=str(list_name or '').strip(), plan_store=None, provenance=provenance)
+    if plan.get('state') == 'valid_plan':
+        plan.update(result_set_id=result_set.id, query_fingerprint=result_set.query_fingerprint, coverage=result_set.coverage)
+        if result_set.coverage != 'complete':
+            plan['warnings'] = ['Source coverage is incomplete; these are the retrieved results only.']
+        return _store_or_return(plan, plan_store)
+    return plan
+
+
+def prepare_domain_operation(*, items, summary, operation, plan_store, provenance, domain):
+    """Use the same expiring plan and exact subset selection for typed domain actions."""
+    if domain not in ('movie', 'tv', 'iptv', 'shared') or not isinstance(operation, dict):
+        return _state('unsafe', 'A validated domain operation is required.')
+    rows = list(items)
+    if not rows:
+        return _state('no_matches', 'No validated targets are available.')
+    return _store_or_return({'state': 'valid_plan', 'action': 'domain_operation', 'domain': domain,
+        'items': _plan_items(rows), 'operation': deepcopy(operation), 'summary': summary,
+        'message': 'Review the exact targets before confirming this change.', 'blocked': [], 'warnings': [],
+        'total_matches': len(rows), 'page_size': PREVIEW_PAGE_SIZE, 'ai_provenance': deepcopy(provenance)}, plan_store)
 
 
 def _execute_delete(plan, library_roots, delete_file):
     if not delete_file:
         return _state("unsafe", "Delete execution is unavailable.")
     deleted = []
+    for item in plan.get('items') or []:
+        message = _delete_target_error(item, library_roots)
+        if message:
+            return _state('unsafe', message)
     for item in plan.get("items") or []:
         path = str(item.get("path") or "")
-        if not _path_in_roots(path, library_roots):
-            return _state("unsafe", "A planned file is outside the library folders.")
-        if not os.path.isfile(path):
-            return _state("unsafe", "A planned file is no longer available.")
-        try:
-            current_size = os.path.getsize(path)
-        except OSError:
-            return _state("unsafe", "A planned file can no longer be read.")
-        if current_size != int(item.get("observed_size") or -1):
-            return _state("unsafe", "A planned file changed after preview. Preview the command again.")
+        message = _delete_target_error(item, library_roots)
+        if message:
+            return {'state': 'partial' if deleted else 'unsafe', 'action': 'delete', 'executed': deleted,
+                    'total_matches': len(deleted), 'message': message + f' Already moved {len(deleted)} files to Recycle Bin.'}
         deleted.append(delete_file(path))
     return {
         "state": "executed",
@@ -721,6 +754,21 @@ def _execute_delete(plan, library_roots, delete_file):
         "total_matches": len(deleted),
         "executed": deleted,
     }
+
+
+def _delete_target_error(item, library_roots):
+    path = str(item.get('path') or '')
+    if not _path_in_roots(path, library_roots):
+        return 'A planned file is outside the library folders.'
+    if not os.path.isfile(path):
+        return 'A planned file is no longer available.'
+    try:
+        current_size = os.path.getsize(path)
+    except OSError:
+        return 'A planned file can no longer be read.'
+    if current_size != int(item.get('observed_size') or -1):
+        return 'A planned file changed after preview. Preview the command again.'
+    return ''
 
 
 def _execute_find(plan):

@@ -69,6 +69,7 @@ public:
     Q_INVOKABLE void cycleAspectRatio();
     Q_INVOKABLE void cycleCrop();
     Q_INVOKABLE void rotateVideo();
+    Q_INVOKABLE void resetPicture();
     Q_INVOKABLE void adjustZoom(double amount);
     Q_INVOKABLE void adjustPan(double horizontal, double vertical);
     Q_INVOKABLE void adjustSubtitleDelay(double seconds);
@@ -134,6 +135,7 @@ private:
     bool m_available = false;
     bool m_paused = false;
     bool m_muted = false;
+    bool m_eofNotified = false;
     bool m_firstFrameNoted = false;
     double m_position = 0.0;
     double m_duration = 0.0;

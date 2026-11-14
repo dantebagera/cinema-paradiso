@@ -1,0 +1,12 @@
+{
+  "exitCode": 1,
+  "root": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\fixtures\\schema-atomicity-red-valid-b8fb81fe8a774232848999354b64eaa1",
+  "modules": [
+    "tests.test_iptv_movie_gates_0_5.AtomicSchemaInitializationTests"
+  ],
+  "elapsed": 0.6172744,
+  "label": "schema-atomicity-red-valid",
+  "kind": "python",
+  "dist": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\fixtures\\schema-atomicity-red-valid-b8fb81fe8a774232848999354b64eaa1\\dist",
+  "log": "C:\\Users\\dante\\AppData\\Local\\Temp\\cp-new-ui-main-3cca1a48528b40d2ae9d5fffb8722f55\\logs\\schema-atomicity-red-valid.log"
+}

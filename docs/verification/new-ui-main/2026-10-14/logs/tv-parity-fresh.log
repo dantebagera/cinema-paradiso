@@ -1,0 +1,26 @@
+
+Running 19 tests using 1 worker
+
+(node:56908) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-parity.spec.js:12:1 › TV Library routes identity review to Maintenance and preserves its cards (2.1s)
+  ok  2 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-parity.spec.js:33:1 › Discover and Library use the in-page media rows and TV File View shows native TV files (1.9s)
+  ok  3 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-parity.spec.js:86:3 › TV Discover shares the movie page gutters and keeps every year field readable at 1366px (990ms)
+  ok  4 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-parity.spec.js:86:3 › TV Discover shares the movie page gutters and keeps every year field readable at 1920px (956ms)
+  ok  5 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-parity.spec.js:86:3 › TV Discover shares the movie page gutters and keeps every year field readable at 2048px (957ms)
+  ok  6 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-parity.spec.js:150:1 › TV Discover status uses Catalog and all four quick bars omit Language (1.6s)
+  ok  7 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-parity.spec.js:181:3 › TV Library filters keep the movie grid and readable year fields at 1366px (1.1s)
+  ok  8 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-parity.spec.js:181:3 › TV Library filters keep the movie grid and readable year fields at 2048px (1.1s)
+  ok  9 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-parity.spec.js:257:1 › Advanced search explains how to add filters in both media tabs of Library and Discover (2.0s)
+  ok 10 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-parity.spec.js:287:3 › TV desktop parity and uncropped Dark Matter poster at 1920x1080 (4.0s)
+  ok 11 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-parity.spec.js:287:3 › TV desktop parity and uncropped Dark Matter poster at 1920x720 (4.0s)
+  ok 12 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-parity.spec.js:287:3 › TV desktop parity and uncropped Dark Matter poster at 1366x768 (2.8s)
+  ok 13 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-parity.spec.js:317:1 › Born Again exposes season downloads and main cast without adding the series (985ms)
+  ok 14 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-parity.spec.js:325:1 › selected Simpsons episodes resolve missing hashes and queue once without enabling monitoring (6.0s)
+  ok 15 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-parity.spec.js:345:1 › top and bottom TV pagination share state (1.4s)
+  ok 16 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-parity.spec.js:362:3 › TV Discover and Library fill complete card rows at 1366px (1.6s)
+  ok 17 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-parity.spec.js:362:3 › TV Discover and Library fill complete card rows at 1920px (1.6s)
+  ok 18 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-parity.spec.js:407:1 › TV Discover enriches every card on a 39-card page (851ms)
+  ok 19 ..\..\..\..\..\..\..\.codex\worktrees\mostafa-ui-ux\cinema paradiso\tests\e2e\tv-parity.spec.js:441:1 › TV title draft survives opening advanced criteria and keyboard search (964ms)
+
+  19 passed (37.9s)

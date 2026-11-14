@@ -1,6 +1,8 @@
+import Button from './ui/Button.jsx';
 import { Languages, Loader2 } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
-import { fetchTransientMovieLanguage, mergeTransientMovieLanguage } from '../api/movieDetails.js';
+import { cachedMovieLanguage, fetchTransientMovieLanguage, mergeTransientMovieLanguage } from '../api/movieDetails.js';
+import { isArabicMovie } from '../utils/movieLanguage.js';
 import { fetchTransientTVLanguage, mergeTransientTVLanguage } from '../api/tvLanguage.js';
 
 function useTransientLanguage(tmdbId, expanded, fetchLanguage) {
@@ -56,8 +58,33 @@ function useTransientLanguage(tmdbId, expanded, fetchLanguage) {
 
 export function useTransientMovieLanguage({ movie, details, expanded }) {
   const tmdbId = String(movie?.tmdb_id || details?.tmdb_id || '').trim();
-  const state = useTransientLanguage(tmdbId, expanded, fetchTransientMovieLanguage);
-  return { ...state, ...mergeTransientMovieLanguage(movie, details, state.localized) };
+  const key = tmdbId || movie?.path || movie?.title || '';
+  const [selection, setSelection] = useState({});
+  const current = selection.key === key ? selection : {};
+  const isArabic = current.choice ?? isArabicMovie(movie, details);
+  const localized = isArabic ? current.localized || movie?.arabic_display || details?.arabic_display || cachedMovieLanguage(tmdbId) : null;
+  const retry = current.retry || 0;
+  useEffect(() => {
+    let cancelled = false;
+    if (!isArabic || !expanded || !tmdbId) return;
+    setSelection(previous => ({ ...(previous.key === key ? previous : {}), key, loading: true, error: '' }));
+    fetchTransientMovieLanguage(tmdbId).then(data => {
+      if (!cancelled) setSelection(previous => ({ ...previous, key, localized: data, loading: false, error: '' }));
+    }).catch(error => {
+      if (!cancelled) setSelection(previous => ({ ...previous, key, loading: false, error: error.message }));
+    });
+    return () => { cancelled = true; };
+  }, [key, tmdbId, expanded, isArabic, retry]);
+  return {
+    localized, isArabic,
+    ...mergeTransientMovieLanguage(movie, details, isArabic ? localized || {} : null),
+    toggleProps: {
+      available: Boolean(tmdbId), isArabic,
+      loading: Boolean(expanded && isArabic && current.loading), error: isArabic ? current.error : '',
+      onToggle: () => setSelection(previous => ({ ...(previous.key === key ? previous : {}), key, choice: !isArabic, loading: false, error: '' })),
+      onRetry: () => setSelection(previous => ({ ...previous, key, retry: retry + 1 }))
+    }
+  };
 }
 
 export function useTransientTVLanguage(series) {
@@ -66,21 +93,22 @@ export function useTransientTVLanguage(series) {
   return { ...state, displaySeries: mergeTransientTVLanguage(series, state.localized) };
 }
 
-export function MovieLanguageToggle({ available, isArabic, loading, error, onToggle }) {
+export function MovieLanguageToggle({ available, isArabic, loading, error, onToggle, onRetry }) {
   if (!available) return null;
   return (
     <div className="movie-language-toolbar">
       {error ? <small className="movie-language-error">{error}</small> : null}
-      <button
+      {error && onRetry ? <Button size="compact" type="button"  onClick={onRetry}>Retry Arabic</Button> : null}
+      <Button size="compact"
         type="button"
-        className="mini-action movie-language-toggle"
+        className="movie-language-toggle"
         onClick={onToggle}
-        disabled={loading}
+        disabled={loading && !isArabic}
         aria-pressed={isArabic}
       >
         {loading ? <Loader2 size={14} className="spin" /> : <Languages size={14} />}
-        {loading ? 'Loading Arabic...' : (isArabic ? 'English' : 'العربية')}
-      </button>
+        {loading && !isArabic ? 'Loading Arabic...' : (isArabic ? 'English' : 'العربية')}
+      </Button>
     </div>
   );
 }

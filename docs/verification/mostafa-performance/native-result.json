@@ -1,0 +1,18 @@
+[
+  {
+    "exit": 0,
+    "group": "native-tv"
+  },
+  {
+    "exit": 0,
+    "group": "tv-expanded-parity"
+  },
+  {
+    "exit": 1,
+    "group": "tv-parity"
+  },
+  {
+    "exit": 0,
+    "group": "tv-stream"
+  }
+]

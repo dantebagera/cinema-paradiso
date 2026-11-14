@@ -1,0 +1,1146 @@
+{
+  "rows": [
+    {
+      "input": {
+        "title": "Frailty",
+        "year": "2001"
+      },
+      "searches": [
+        {
+          "query": "Frailty",
+          "year": "2001",
+          "rows": [
+            {
+              "id": 12149,
+              "title": "Frailty",
+              "original_title": "Frailty",
+              "release_date": "2002-04-12"
+            }
+          ]
+        },
+        {
+          "query": "Frailty",
+          "year": "",
+          "rows": [
+            {
+              "id": 12149,
+              "title": "Frailty",
+              "original_title": "Frailty",
+              "release_date": "2002-04-12"
+            },
+            {
+              "id": 302959,
+              "title": "Frailty",
+              "original_title": "Frailty",
+              "release_date": "2012-04-15"
+            },
+            {
+              "id": 1387467,
+              "title": "Temptation's Hour",
+              "original_title": "Temptation's Hour",
+              "release_date": ""
+            }
+          ]
+        }
+      ],
+      "candidates": [
+        {
+          "tmdb_id": "12149",
+          "title": "Frailty",
+          "original_title": "Frailty",
+          "year": "2002",
+          "release_date": "2002-04-12",
+          "runtime": null,
+          "provider_rank": 1,
+          "query_sources": [
+            "ai_recommendation",
+            "title_with_year",
+            "title_without_year"
+          ],
+          "alternative_titles": [
+            "Calfred",
+            "Las Manos del Diablo",
+            "\u4e0a\u5e1d\u4e4b\u624b",
+            "\u795e\u8c15\u4e4b\u8c0b\u6740"
+          ]
+        },
+        {
+          "tmdb_id": "302959",
+          "title": "Frailty",
+          "original_title": "Frailty",
+          "year": "2012",
+          "release_date": "2012-04-15",
+          "runtime": null,
+          "provider_rank": 2,
+          "query_sources": [
+            "ai_recommendation",
+            "title_without_year"
+          ],
+          "alternative_titles": []
+        },
+        {
+          "tmdb_id": "1387467",
+          "title": "Temptation's Hour",
+          "original_title": "Temptation's Hour",
+          "year": "2001",
+          "release_date": "",
+          "runtime": null,
+          "provider_rank": 3,
+          "query_sources": [
+            "ai_recommendation",
+            "title_without_year"
+          ],
+          "alternative_titles": [
+            "Frailty"
+          ]
+        }
+      ],
+      "decision": {
+        "outcome": "accepted",
+        "status": "accepted",
+        "score": null,
+        "reasons": [
+          "exact title or alias",
+          "release year matches",
+          "provider result rank 3",
+          "found by multiple independent queries"
+        ],
+        "date_discrepancy": false
+      },
+      "selected": {
+        "tmdb_id": "1387467",
+        "title": "Temptation's Hour",
+        "original_title": "Temptation's Hour",
+        "year": "2001",
+        "release_date": "",
+        "runtime": null,
+        "provider_rank": 3,
+        "query_sources": [
+          "ai_recommendation",
+          "title_without_year"
+        ],
+        "alternative_titles": [
+          "Frailty"
+        ],
+        "reasons": [
+          "exact title or alias",
+          "release year matches",
+          "provider result rank 3",
+          "found by multiple independent queries"
+        ]
+      },
+      "details": {
+        "id": 1387467,
+        "title": "Temptation's Hour",
+        "original_title": "Temptation's Hour",
+        "release_date": "",
+        "runtime": 0
+      },
+      "seconds": 1.0635110000002896
+    },
+    {
+      "input": {
+        "title": "Coherence",
+        "year": "2013"
+      },
+      "searches": [
+        {
+          "query": "Coherence",
+          "year": "2013",
+          "rows": [
+            {
+              "id": 220289,
+              "title": "Coherence",
+              "original_title": "Coherence",
+              "release_date": "2014-04-06"
+            }
+          ]
+        },
+        {
+          "query": "Coherence",
+          "year": "",
+          "rows": [
+            {
+              "id": 220289,
+              "title": "Coherence",
+              "original_title": "Coherence",
+              "release_date": "2014-04-06"
+            },
+            {
+              "id": 992200,
+              "title": "Coherence",
+              "original_title": "Coherence",
+              "release_date": ""
+            },
+            {
+              "id": 696019,
+              "title": "Beginning of a Coherence",
+              "original_title": "\u00cenceput de coeren\u021b\u0103",
+              "release_date": "1981-01-01"
+            },
+            {
+              "id": 1781810,
+              "title": "bearing fruit of fondness, Grounds of Coherence #2",
+              "original_title": "bearing fruit of fondness, Grounds of Coherence #2",
+              "release_date": "2026-10-21"
+            },
+            {
+              "id": 1255063,
+              "title": "Grounds of Coherence #1, but this is the language we met in",
+              "original_title": "\u5929\u96e8\u7c9f #1\uff0c\u6211\u4eec\u5728\u8fd9\u4e2a\u8bed\u8a00\u4e2d\u76f8\u9047",
+              "release_date": "2023-01-01"
+            },
+            {
+              "id": 509040,
+              "title": "Coer\u00eancia",
+              "original_title": "Coer\u00eancia",
+              "release_date": "2016-08-22"
+            }
+          ]
+        }
+      ],
+      "candidates": [
+        {
+          "tmdb_id": "220289",
+          "title": "Coherence",
+          "original_title": "Coherence",
+          "year": "2014",
+          "release_date": "2014-04-06",
+          "runtime": null,
+          "provider_rank": 1,
+          "query_sources": [
+            "ai_recommendation",
+            "title_with_year",
+            "title_without_year"
+          ],
+          "alternative_titles": [
+            "\u76f8\u5e72\u6548\u5e94",
+            "\u76f8\u5e72\u6027",
+            "\u0421\u043b\u0430\u0436\u0435\u043d\u043d\u043e\u0441\u0442\u044c",
+            "Coherence \u2013 Nichts ist Zufall",
+            "Coer\u00eancia",
+            "\u5f57\u661f\u4f86\u7684\u90a3\u4e00\u591c",
+            "\u041a\u043e\u0433\u0435\u0440\u0435\u043d\u0442\u043d\u043e\u0441\u0442\u044c"
+          ]
+        },
+        {
+          "tmdb_id": "992200",
+          "title": "Coherence",
+          "original_title": "Coherence",
+          "year": "2013",
+          "release_date": "",
+          "runtime": null,
+          "provider_rank": 2,
+          "query_sources": [
+            "ai_recommendation",
+            "title_without_year"
+          ],
+          "alternative_titles": []
+        },
+        {
+          "tmdb_id": "696019",
+          "title": "Beginning of a Coherence",
+          "original_title": "\u00cenceput de coeren\u021b\u0103",
+          "year": "1981",
+          "release_date": "1981-01-01",
+          "runtime": null,
+          "provider_rank": 3,
+          "query_sources": [
+            "ai_recommendation",
+            "title_without_year"
+          ],
+          "alternative_titles": []
+        },
+        {
+          "tmdb_id": "1781810",
+          "title": "bearing fruit of fondness, Grounds of Coherence #2",
+          "original_title": "bearing fruit of fondness, Grounds of Coherence #2",
+          "year": "2026",
+          "release_date": "2026-10-21",
+          "runtime": null,
+          "provider_rank": 4,
+          "query_sources": [
+            "ai_recommendation",
+            "title_without_year"
+          ],
+          "alternative_titles": []
+        },
+        {
+          "tmdb_id": "1255063",
+          "title": "Grounds of Coherence #1, but this is the language we met in",
+          "original_title": "\u5929\u96e8\u7c9f #1\uff0c\u6211\u4eec\u5728\u8fd9\u4e2a\u8bed\u8a00\u4e2d\u76f8\u9047",
+          "year": "2023",
+          "release_date": "2023-01-01",
+          "runtime": null,
+          "provider_rank": 5,
+          "query_sources": [
+            "ai_recommendation",
+            "title_without_year"
+          ],
+          "alternative_titles": []
+        },
+        {
+          "tmdb_id": "509040",
+          "title": "Coer\u00eancia",
+          "original_title": "Coer\u00eancia",
+          "year": "2016",
+          "release_date": "2016-08-22",
+          "runtime": null,
+          "provider_rank": 6,
+          "query_sources": [
+            "ai_recommendation",
+            "title_without_year"
+          ],
+          "alternative_titles": []
+        }
+      ],
+      "decision": {
+        "outcome": "accepted",
+        "status": "accepted",
+        "score": null,
+        "reasons": [
+          "exact title or alias",
+          "release year matches",
+          "provider result rank 2",
+          "found by multiple independent queries"
+        ],
+        "date_discrepancy": false
+      },
+      "selected": {
+        "tmdb_id": "992200",
+        "title": "Coherence",
+        "original_title": "Coherence",
+        "year": "2013",
+        "release_date": "",
+        "runtime": null,
+        "provider_rank": 2,
+        "query_sources": [
+          "ai_recommendation",
+          "title_without_year"
+        ],
+        "alternative_titles": [],
+        "reasons": [
+          "exact title or alias",
+          "release year matches",
+          "provider result rank 2",
+          "found by multiple independent queries"
+        ]
+      },
+      "details": {
+        "id": 992200,
+        "title": "Coherence",
+        "original_title": "Coherence",
+        "release_date": "",
+        "runtime": 26
+      },
+      "seconds": 0.914301600001636
+    },
+    {
+      "input": {
+        "title": "The Invisible Guest",
+        "year": "2016"
+      },
+      "searches": [
+        {
+          "query": "The Invisible Guest",
+          "year": "2016",
+          "rows": [
+            {
+              "id": 411088,
+              "title": "The Invisible Guest",
+              "original_title": "Contratiempo",
+              "release_date": "2017-01-06"
+            }
+          ]
+        },
+        {
+          "query": "The Invisible Guest",
+          "year": "",
+          "rows": [
+            {
+              "id": 411088,
+              "title": "The Invisible Guest",
+              "original_title": "Contratiempo",
+              "release_date": "2017-01-06"
+            },
+            {
+              "id": 1058588,
+              "title": "The Invisible Guest",
+              "original_title": "The Invisible Guest",
+              "release_date": "2026-11-06"
+            },
+            {
+              "id": 1159242,
+              "title": "The Invisible Guest",
+              "original_title": "\u7792\u5929\u8fc7\u6d77",
+              "release_date": "2023-12-08"
+            }
+          ]
+        }
+      ],
+      "candidates": [
+        {
+          "tmdb_id": "411088",
+          "title": "The Invisible Guest",
+          "original_title": "Contratiempo",
+          "year": "2017",
+          "release_date": "2017-01-06",
+          "runtime": null,
+          "provider_rank": 1,
+          "query_sources": [
+            "ai_recommendation",
+            "title_with_year",
+            "title_without_year"
+          ],
+          "alternative_titles": [
+            "El invitado invisible",
+            "\u30a4\u30f3\u30d3\u30b8\u30d6\u30eb\u30fb\u30b2\u30b9\u30c8 \u60aa\u9b54\u306e\u8a3c\u660e",
+            "\u4f48\u5c40",
+            "\u770b\u4e0d\u89c1\u7684\u5ba2\u4eba",
+            "\u041d\u0435\u043a\u0430\u043d\u0435\u043d\u0438\u044f\u0442 \u0433\u043e\u0441\u0442",
+            "\uc138\ubc88\uc9f8 \uc190\ub2d8",
+            "\uc138 \ubc88\uc9f8 \uc190\ub2d8",
+            "\uc778\ube44\uc800\ube14 \uac8c\uc2a4\ud2b8",
+            "Niewidzialny go\u015b\u0107",
+            "\u05d4\u05d0\u05d5\u05e8\u05d7 \u05d4\u05d1\u05dc\u05ea\u05d9 \u05e0\u05e8\u05d0\u05d4",
+            "G\u00f6r\u00fcnm\u0259z Qonaq"
+          ]
+        },
+        {
+          "tmdb_id": "1058588",
+          "title": "The Invisible Guest",
+          "original_title": "The Invisible Guest",
+          "year": "2026",
+          "release_date": "2026-11-06",
+          "runtime": null,
+          "provider_rank": 2,
+          "query_sources": [
+            "ai_recommendation",
+            "title_without_year"
+          ],
+          "alternative_titles": [
+            "O H\u00f3spede Oculto"
+          ]
+        },
+        {
+          "tmdb_id": "1159242",
+          "title": "The Invisible Guest",
+          "original_title": "\u7792\u5929\u8fc7\u6d77",
+          "year": "2023",
+          "release_date": "2023-12-08",
+          "runtime": null,
+          "provider_rank": 3,
+          "query_sources": [
+            "ai_recommendation",
+            "title_without_year"
+          ],
+          "alternative_titles": [
+            "The Invisible Guest",
+            "\u4e2d\u56fd\u7248\u770b\u4e0d\u89c1\u7684\u5ba2\u4eba",
+            "\u7792\u5929\u8fc7\u6d77",
+            "Man Thi\u00ean Qu\u00e1 H\u1ea3i",
+            "L\u1eeba D\u1ed1i"
+          ]
+        }
+      ],
+      "decision": {
+        "outcome": "ambiguous",
+        "status": "review",
+        "score": null,
+        "reasons": [
+          "the title matches but multiple releases are plausible"
+        ],
+        "date_discrepancy": false
+      },
+      "selected": {
+        "tmdb_id": "411088",
+        "title": "The Invisible Guest",
+        "original_title": "Contratiempo",
+        "year": "2017",
+        "release_date": "2017-01-06",
+        "runtime": null,
+        "provider_rank": 1,
+        "query_sources": [
+          "ai_recommendation",
+          "title_with_year",
+          "title_without_year"
+        ],
+        "alternative_titles": [
+          "El invitado invisible",
+          "\u30a4\u30f3\u30d3\u30b8\u30d6\u30eb\u30fb\u30b2\u30b9\u30c8 \u60aa\u9b54\u306e\u8a3c\u660e",
+          "\u4f48\u5c40",
+          "\u770b\u4e0d\u89c1\u7684\u5ba2\u4eba",
+          "\u041d\u0435\u043a\u0430\u043d\u0435\u043d\u0438\u044f\u0442 \u0433\u043e\u0441\u0442",
+          "\uc138\ubc88\uc9f8 \uc190\ub2d8",
+          "\uc138 \ubc88\uc9f8 \uc190\ub2d8",
+          "\uc778\ube44\uc800\ube14 \uac8c\uc2a4\ud2b8",
+          "Niewidzialny go\u015b\u0107",
+          "\u05d4\u05d0\u05d5\u05e8\u05d7 \u05d4\u05d1\u05dc\u05ea\u05d9 \u05e0\u05e8\u05d0\u05d4",
+          "G\u00f6r\u00fcnm\u0259z Qonaq"
+        ],
+        "reasons": [
+          "exact title or alias",
+          "release year is within one year",
+          "provider result rank 1",
+          "found by multiple independent queries"
+        ]
+      },
+      "details": null,
+      "seconds": 1.0371690999891143
+    },
+    {
+      "input": {
+        "title": "Perfect Blue",
+        "year": "1997"
+      },
+      "searches": [
+        {
+          "query": "Perfect Blue",
+          "year": "1997",
+          "rows": [
+            {
+              "id": 10494,
+              "title": "Perfect Blue",
+              "original_title": "PERFECT BLUE",
+              "release_date": "1998-02-28"
+            }
+          ]
+        },
+        {
+          "query": "Perfect Blue",
+          "year": "",
+          "rows": [
+            {
+              "id": 10494,
+              "title": "Perfect Blue",
+              "original_title": "PERFECT BLUE",
+              "release_date": "1998-02-28"
+            },
+            {
+              "id": 86976,
+              "title": "Perfect Blue: Yume Nara Samete",
+              "original_title": "PERFECT BLUE \u5922\u306a\u3089\u9192\u3081\u3066",
+              "release_date": "2002-08-24"
+            },
+            {
+              "id": 995094,
+              "title": "Perfect Blue",
+              "original_title": "\u30d1\u30fc\u30d5\u30a7\u30af\u30c8\u30fb\u30d6\u30eb\u30fc",
+              "release_date": "2010-09-18"
+            },
+            {
+              "id": 425767,
+              "title": "The Perfect Blue",
+              "original_title": "The Perfect Blue",
+              "release_date": "1998-12-19"
+            },
+            {
+              "id": 1374183,
+              "title": "Perfect Blue",
+              "original_title": "Perfect Blue",
+              "release_date": ""
+            },
+            {
+              "id": 161172,
+              "title": "Blue, White and Perfect",
+              "original_title": "Blue, White and Perfect",
+              "release_date": "1942-01-06"
+            },
+            {
+              "id": 630097,
+              "title": "The Perfect Blue",
+              "original_title": "\u5979\u6740",
+              "release_date": ""
+            },
+            {
+              "id": 927469,
+              "title": "Into the Blue - Perfect Blue Relay Interview File",
+              "original_title": "PERFECT BLUE RELAY INTERVIEW FILE\u300einto the BLUE\u300f",
+              "release_date": "1998-01-01"
+            },
+            {
+              "id": 405182,
+              "title": "A Perfect Blue Sky",
+              "original_title": "Un ciel bleu presque parfait",
+              "release_date": "2016-12-31"
+            },
+            {
+              "id": 1392784,
+              "title": "Perfect Blues",
+              "original_title": "\u96e8\u4e2d\u7684\u4e24\u4eba",
+              "release_date": "2024-10-12"
+            }
+          ]
+        }
+      ],
+      "candidates": [
+        {
+          "tmdb_id": "10494",
+          "title": "Perfect Blue",
+          "original_title": "PERFECT BLUE",
+          "year": "1998",
+          "release_date": "1998-02-28",
+          "runtime": null,
+          "provider_rank": 1,
+          "query_sources": [
+            "ai_recommendation",
+            "title_with_year",
+            "title_without_year"
+          ],
+          "alternative_titles": [
+            "P\u0101fekuto Bur\u016b",
+            "Paafekuto Buruu",
+            "Pafekuto Buru",
+            "\u84dd\u8272\u6050\u60e7",
+            "The Perfect Blue",
+            "\u672a\u9ebb\u4e4b\u90e8\u5c4b",
+            "\u30d1\u30fc\u30d5\u30a7\u30af\u30c8\u30d6\u30eb\u30fc",
+            "\u0e40\u0e1e\u0e2d\u0e23\u0e4c\u0e40\u0e1f\u0e04 \u0e1a\u0e25\u0e39",
+            "PERFECT BLUE \u30d1\u30fc\u30d5\u30a7\u30af\u30c8 \u30d6\u30eb\u30fc",
+            "\u0421\u043e\u0432\u0435\u0440\u0448\u0435\u043d\u043d\u0430\u044f \u0433\u0440\u0443\u0441\u0442\u044c",
+            "\u0418\u0434\u0435\u0430\u043b\u044c\u043d\u0430\u044f \u0441\u0438\u043d\u0435\u0432\u0430",
+            "PERFECT BLUE Remastered",
+            "M\u00fckemmel Mavi",
+            "Perfect Blue"
+          ]
+        },
+        {
+          "tmdb_id": "86976",
+          "title": "Perfect Blue: Yume Nara Samete",
+          "original_title": "PERFECT BLUE \u5922\u306a\u3089\u9192\u3081\u3066",
+          "year": "2002",
+          "release_date": "2002-08-24",
+          "runtime": null,
+          "provider_rank": 2,
+          "query_sources": [
+            "ai_recommendation",
+            "title_without_year"
+          ],
+          "alternative_titles": [
+            "Perfect Blue Live",
+            "Perfect Blue",
+            "\u5922\u306a\u3089\u9192\u3081\u3066",
+            "\u5922\u306a\u3089\u9192\u3081\u3066 - Perfect Blue",
+            "Yume Nara Samete - Perfect Blue"
+          ]
+        },
+        {
+          "tmdb_id": "995094",
+          "title": "Perfect Blue",
+          "original_title": "\u30d1\u30fc\u30d5\u30a7\u30af\u30c8\u30fb\u30d6\u30eb\u30fc",
+          "year": "2010",
+          "release_date": "2010-09-18",
+          "runtime": null,
+          "provider_rank": 3,
+          "query_sources": [
+            "ai_recommendation",
+            "title_without_year"
+          ],
+          "alternative_titles": [
+            "Perfect Blue"
+          ]
+        },
+        {
+          "tmdb_id": "425767",
+          "title": "The Perfect Blue",
+          "original_title": "The Perfect Blue",
+          "year": "1998",
+          "release_date": "1998-12-19",
+          "runtime": null,
+          "provider_rank": 4,
+          "query_sources": [
+            "ai_recommendation",
+            "title_without_year"
+          ],
+          "alternative_titles": []
+        },
+        {
+          "tmdb_id": "1374183",
+          "title": "Perfect Blue",
+          "original_title": "Perfect Blue",
+          "year": "1997",
+          "release_date": "",
+          "runtime": null,
+          "provider_rank": 5,
+          "query_sources": [
+            "ai_recommendation",
+            "title_without_year"
+          ],
+          "alternative_titles": []
+        },
+        {
+          "tmdb_id": "161172",
+          "title": "Blue, White and Perfect",
+          "original_title": "Blue, White and Perfect",
+          "year": "1942",
+          "release_date": "1942-01-06",
+          "runtime": null,
+          "provider_rank": 6,
+          "query_sources": [
+            "ai_recommendation",
+            "title_without_year"
+          ],
+          "alternative_titles": []
+        },
+        {
+          "tmdb_id": "630097",
+          "title": "The Perfect Blue",
+          "original_title": "\u5979\u6740",
+          "year": "1997",
+          "release_date": "",
+          "runtime": null,
+          "provider_rank": 7,
+          "query_sources": [
+            "ai_recommendation",
+            "title_without_year"
+          ],
+          "alternative_titles": []
+        },
+        {
+          "tmdb_id": "927469",
+          "title": "Into the Blue - Perfect Blue Relay Interview File",
+          "original_title": "PERFECT BLUE RELAY INTERVIEW FILE\u300einto the BLUE\u300f",
+          "year": "1998",
+          "release_date": "1998-01-01",
+          "runtime": null,
+          "provider_rank": 8,
+          "query_sources": [
+            "ai_recommendation",
+            "title_without_year"
+          ],
+          "alternative_titles": []
+        },
+        {
+          "tmdb_id": "405182",
+          "title": "A Perfect Blue Sky",
+          "original_title": "Un ciel bleu presque parfait",
+          "year": "2016",
+          "release_date": "2016-12-31",
+          "runtime": null,
+          "provider_rank": 9,
+          "query_sources": [
+            "ai_recommendation",
+            "title_without_year"
+          ],
+          "alternative_titles": []
+        },
+        {
+          "tmdb_id": "1392784",
+          "title": "Perfect Blues",
+          "original_title": "\u96e8\u4e2d\u7684\u4e24\u4eba",
+          "year": "2024",
+          "release_date": "2024-10-12",
+          "runtime": null,
+          "provider_rank": 10,
+          "query_sources": [
+            "ai_recommendation",
+            "title_without_year"
+          ],
+          "alternative_titles": []
+        }
+      ],
+      "decision": {
+        "outcome": "ambiguous",
+        "status": "review",
+        "score": null,
+        "reasons": [
+          "multiple provider identities have the same exact title and year"
+        ],
+        "date_discrepancy": false
+      },
+      "selected": {
+        "tmdb_id": "1374183",
+        "title": "Perfect Blue",
+        "original_title": "Perfect Blue",
+        "year": "1997",
+        "release_date": "",
+        "runtime": null,
+        "provider_rank": 5,
+        "query_sources": [
+          "ai_recommendation",
+          "title_without_year"
+        ],
+        "alternative_titles": [],
+        "reasons": [
+          "exact title or alias",
+          "release year matches",
+          "found by multiple independent queries"
+        ]
+      },
+      "details": null,
+      "seconds": 0.9402791000029538
+    },
+    {
+      "input": {
+        "title": "Audition",
+        "year": "1999"
+      },
+      "searches": [
+        {
+          "query": "Audition",
+          "year": "1999",
+          "rows": [
+            {
+              "id": 11075,
+              "title": "Audition",
+              "original_title": "\u30aa\u30fc\u30c7\u30a3\u30b7\u30e7\u30f3",
+              "release_date": "2000-03-03"
+            },
+            {
+              "id": 29545,
+              "title": "Auditions from Beyond",
+              "original_title": "Auditions from Beyond",
+              "release_date": "1999-01-01"
+            },
+            {
+              "id": 689019,
+              "title": "Gangbang Auditions 2",
+              "original_title": "Gangbang Auditions 2",
+              "release_date": "1999-02-16"
+            },
+            {
+              "id": 1258093,
+              "title": "Gangbang Auditions 3",
+              "original_title": "Gangbang Auditions 3",
+              "release_date": "1999-01-01"
+            },
+            {
+              "id": 703806,
+              "title": "Gangbang Auditions",
+              "original_title": "Gangbang Auditions",
+              "release_date": "1999-11-18"
+            }
+          ]
+        },
+        {
+          "query": "Audition",
+          "year": "",
+          "rows": [
+            {
+              "id": 11075,
+              "title": "Audition",
+              "original_title": "\u30aa\u30fc\u30c7\u30a3\u30b7\u30e7\u30f3",
+              "release_date": "2000-03-03"
+            },
+            {
+              "id": 723562,
+              "title": "Actresses: Sex Audition",
+              "original_title": "\uc5ec\ubc30\uc6b0\ub4e4: \uc139\uc2a4 \uc624\ub514\uc158",
+              "release_date": "2020-07-03"
+            },
+            {
+              "id": 48599,
+              "title": "Audition",
+              "original_title": "Konkurs",
+              "release_date": "1964-02-28"
+            },
+            {
+              "id": 365717,
+              "title": "The Audition",
+              "original_title": "The Audition",
+              "release_date": "2015-10-03"
+            },
+            {
+              "id": 1492357,
+              "title": "Audition",
+              "original_title": "Audi\u00e7\u00e3o",
+              "release_date": ""
+            },
+            {
+              "id": 1397122,
+              "title": "Audition",
+              "original_title": "Audition",
+              "release_date": "2024-12-02"
+            },
+            {
+              "id": 575563,
+              "title": "The Audition",
+              "original_title": "Das Vorspiel",
+              "release_date": "2019-11-06"
+            },
+            {
+              "id": 1371856,
+              "title": "Audition",
+              "original_title": "Audition",
+              "release_date": "2012-01-01"
+            },
+            {
+              "id": 49735,
+              "title": "Audition",
+              "original_title": "L'audition",
+              "release_date": "2005-09-23"
+            },
+            {
+              "id": 499901,
+              "title": "Audition",
+              "original_title": "Audition",
+              "release_date": "2007-04-19"
+            }
+          ]
+        }
+      ],
+      "candidates": [
+        {
+          "tmdb_id": "11075",
+          "title": "Audition",
+          "original_title": "\u30aa\u30fc\u30c7\u30a3\u30b7\u30e7\u30f3",
+          "year": "2000",
+          "release_date": "2000-03-03",
+          "runtime": null,
+          "provider_rank": 1,
+          "query_sources": [
+            "ai_recommendation",
+            "title_with_year",
+            "title_without_year"
+          ],
+          "alternative_titles": [
+            "Audition",
+            "\u5207\u80a4\u4e4b\u7231",
+            "La Audicion",
+            "\u00d6l\u00fcm provasi",
+            "Konkurs",
+            "A Entrevista",
+            "Oodishon",
+            "Meghallgat\u00e1s",
+            "Konkurz na smrt",
+            "Audi\u0163ia",
+            "Anjo ou Dem\u00f3nio",
+            "Konkurz na smr\u0165",
+            "Konkurz",
+            "\u00d4dishon",
+            "Per\u017ei\u016bra",
+            "Audici\u00f3n",
+            "Audicion",
+            "\uc624\ub514\uc158",
+            "Audition (Audici\u00f3n)",
+            "\u041a\u0456\u043d\u043e\u043f\u0440\u043e\u0431\u0430",
+            "Atranka"
+          ]
+        },
+        {
+          "tmdb_id": "29545",
+          "title": "Auditions from Beyond",
+          "original_title": "Auditions from Beyond",
+          "year": "1999",
+          "release_date": "1999-01-01",
+          "runtime": null,
+          "provider_rank": 2,
+          "query_sources": [
+            "ai_recommendation",
+            "title_with_year"
+          ],
+          "alternative_titles": []
+        },
+        {
+          "tmdb_id": "723562",
+          "title": "Actresses: Sex Audition",
+          "original_title": "\uc5ec\ubc30\uc6b0\ub4e4: \uc139\uc2a4 \uc624\ub514\uc158",
+          "year": "2020",
+          "release_date": "2020-07-03",
+          "runtime": null,
+          "provider_rank": 2,
+          "query_sources": [
+            "ai_recommendation",
+            "title_without_year"
+          ],
+          "alternative_titles": [
+            "\u5973\u6f14\u5458\u4eec\u7684X\u7231\u9009\u79c0"
+          ]
+        },
+        {
+          "tmdb_id": "689019",
+          "title": "Gangbang Auditions 2",
+          "original_title": "Gangbang Auditions 2",
+          "year": "1999",
+          "release_date": "1999-02-16",
+          "runtime": null,
+          "provider_rank": 3,
+          "query_sources": [
+            "ai_recommendation",
+            "title_with_year"
+          ],
+          "alternative_titles": []
+        },
+        {
+          "tmdb_id": "48599",
+          "title": "Audition",
+          "original_title": "Konkurs",
+          "year": "1964",
+          "release_date": "1964-02-28",
+          "runtime": null,
+          "provider_rank": 3,
+          "query_sources": [
+            "ai_recommendation",
+            "title_without_year"
+          ],
+          "alternative_titles": []
+        },
+        {
+          "tmdb_id": "1258093",
+          "title": "Gangbang Auditions 3",
+          "original_title": "Gangbang Auditions 3",
+          "year": "1999",
+          "release_date": "1999-01-01",
+          "runtime": null,
+          "provider_rank": 4,
+          "query_sources": [
+            "ai_recommendation",
+            "title_with_year"
+          ],
+          "alternative_titles": []
+        },
+        {
+          "tmdb_id": "365717",
+          "title": "The Audition",
+          "original_title": "The Audition",
+          "year": "2015",
+          "release_date": "2015-10-03",
+          "runtime": null,
+          "provider_rank": 4,
+          "query_sources": [
+            "ai_recommendation",
+            "title_without_year"
+          ],
+          "alternative_titles": []
+        },
+        {
+          "tmdb_id": "703806",
+          "title": "Gangbang Auditions",
+          "original_title": "Gangbang Auditions",
+          "year": "1999",
+          "release_date": "1999-11-18",
+          "runtime": null,
+          "provider_rank": 5,
+          "query_sources": [
+            "ai_recommendation",
+            "title_with_year"
+          ],
+          "alternative_titles": []
+        },
+        {
+          "tmdb_id": "1492357",
+          "title": "Audition",
+          "original_title": "Audi\u00e7\u00e3o",
+          "year": "1999",
+          "release_date": "",
+          "runtime": null,
+          "provider_rank": 5,
+          "query_sources": [
+            "ai_recommendation",
+            "title_without_year"
+          ],
+          "alternative_titles": []
+        },
+        {
+          "tmdb_id": "1397122",
+          "title": "Audition",
+          "original_title": "Audition",
+          "year": "2024",
+          "release_date": "2024-12-02",
+          "runtime": null,
+          "provider_rank": 6,
+          "query_sources": [
+            "ai_recommendation",
+            "title_without_year"
+          ],
+          "alternative_titles": []
+        },
+        {
+          "tmdb_id": "575563",
+          "title": "The Audition",
+          "original_title": "Das Vorspiel",
+          "year": "2019",
+          "release_date": "2019-11-06",
+          "runtime": null,
+          "provider_rank": 7,
+          "query_sources": [
+            "ai_recommendation",
+            "title_without_year"
+          ],
+          "alternative_titles": []
+        },
+        {
+          "tmdb_id": "1371856",
+          "title": "Audition",
+          "original_title": "Audition",
+          "year": "2012",
+          "release_date": "2012-01-01",
+          "runtime": null,
+          "provider_rank": 8,
+          "query_sources": [
+            "ai_recommendation",
+            "title_without_year"
+          ],
+          "alternative_titles": []
+        },
+        {
+          "tmdb_id": "49735",
+          "title": "Audition",
+          "original_title": "L'audition",
+          "year": "2005",
+          "release_date": "2005-09-23",
+          "runtime": null,
+          "provider_rank": 9,
+          "query_sources": [
+            "ai_recommendation",
+            "title_without_year"
+          ],
+          "alternative_titles": []
+        },
+        {
+          "tmdb_id": "499901",
+          "title": "Audition",
+          "original_title": "Audition",
+          "year": "2007",
+          "release_date": "2007-04-19",
+          "runtime": null,
+          "provider_rank": 10,
+          "query_sources": [
+            "ai_recommendation",
+            "title_without_year"
+          ],
+          "alternative_titles": []
+        }
+      ],
+      "decision": {
+        "outcome": "accepted",
+        "status": "accepted",
+        "score": null,
+        "reasons": [
+          "exact title or alias",
+          "release year matches",
+          "found by multiple independent queries"
+        ],
+        "date_discrepancy": false
+      },
+      "selected": {
+        "tmdb_id": "1492357",
+        "title": "Audition",
+        "original_title": "Audi\u00e7\u00e3o",
+        "year": "1999",
+        "release_date": "",
+        "runtime": null,
+        "provider_rank": 5,
+        "query_sources": [
+          "ai_recommendation",
+          "title_without_year"
+        ],
+        "alternative_titles": [],
+        "reasons": [
+          "exact title or alias",
+          "release year matches",
+          "found by multiple independent queries"
+        ]
+      },
+      "details": {
+        "id": 1492357,
+        "title": "Audition",
+        "original_title": "Audi\u00e7\u00e3o",
+        "release_date": "",
+        "runtime": 17
+      },
+      "seconds": 0.9494943000026979
+    }
+  ],
+  "tmdb_reads": 28
+}
